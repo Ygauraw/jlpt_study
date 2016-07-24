@@ -1,0 +1,4850 @@
+---
+kanji:
+  不:
+    english: negative, non-
+    kanji: 不
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: insufficiency, shortage
+      kana: ふそく
+      type: (na-adj,n)
+      vocab: 不足
+    - english: anxiety, uneasiness
+      kana: ふあん
+      type: (na-adj,n)
+      vocab: 不安
+    - english: injustice, unfair
+      kana: ふとう
+      type: (na-adj,n)
+      vocab: 不当
+    - english: partial, incomplete
+      kana: ふぜん
+      type: (na-adj,n)
+      vocab: 不全
+    - english: immobility, motionless
+      kana: ふどう
+      type: (na-adj,n)
+      vocab: 不動
+  世:
+    english: world, generation, society, public
+    kanji: 世
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: world, society
+      kana: せかい
+      type: (n)
+      vocab: 世界
+    - english: generation, age
+      kana: せだい
+      type: (n)
+      vocab: 世代
+    - english: looking after, help
+      kana: せわ
+      type: (n, p-suru)
+      vocab: 世話
+    - english: manager, sponsor, agent
+      kana: せわにん
+      type: (n)
+      vocab: 世話人
+  主:
+    english: main, principle
+    kanji: 主
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: main, principal, important
+      kana: おも
+      type: (na-adj,n)
+      vocab: 主
+    - english: master, landlord, husband, employer
+      kana: しゅじん
+      type: (n)
+      vocab: 主人
+    - english: staple food
+      kana: しゅしょく
+      type: (n)
+      vocab: 主食
+    - english: subject
+      kana: しゅご
+      type: (n, gram)
+      vocab: 主語
+    - english: owner, proprietor
+      kana: もちぬし
+      type: (n)
+      vocab: 持ち主
+  乗:
+    english: to ride, to board, to get on
+    kanji: 乗
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to ride, to board, to get on
+      kana: のる
+      type: (u-v)
+      vocab: 乗る
+    - english: to give a ride, to let (one) take part
+      kana: のせる
+      type: (u-v)
+      vocab: 乗せる
+    - english: crew
+      kana: じょういん
+      type: (n)
+      vocab: 乗員
+    - english: place for boarding vehicles
+      kana: のりば
+      type: (n)
+      vocab: 乗り場
+    - english: vehicle
+      kana: のりもの
+      type: (n)
+      vocab: 乗り物
+  事:
+    english: matter, thing, fact
+    kanji: 事
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: work, occupation
+      kana: しごと
+      type: (no-adj, n)
+      vocab: 仕事
+    - english: fire
+      kana: かじ
+      type: (n)
+      vocab: 火事
+    - english: meal
+      kana: しょくじ
+      type: (n, p-suru)
+      vocab: 食事
+    - english: event, function
+      kana: ぎょうじ
+      type: (n)
+      vocab: 行事
+    - english: incident, affair, event
+      kana: できごと
+      type: (n)
+      vocab: 出来事
+  京:
+    english: capital
+    kanji: 京
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: Tokyo - Capital of Japan
+      kana: とうきょう
+      type: (place)
+      vocab: 東京
+    - english: kyoko
+      kana: きょうこ
+      type: (name)
+      vocab: 京子
+    - english: kyoto
+      kana: きょうと
+      type: (place)
+      vocab: 京都
+    - english: heading to the capital
+      kana: じょうきょう
+      type: (n, p-suru)
+      vocab: 上京
+  仕:
+    english: attend, do
+    kanji: 仕
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to serve, to work for
+      kana: つかえる
+      type: (ru-v)
+      vocab: 仕える
+    - english: work, occupation
+      kana: しごと
+      type: (no-adj, n)
+      vocab: 仕事
+    - english: place where one works
+      kana: しごとば
+      type: (n)
+      vocab: 仕事場
+    - english: to finish up, to complete
+      kana: しあげる
+      type: (ru-v, trans-verb)
+      vocab: 仕上げる
+  代:
+    english: age, generation, substitute
+    kanji: 代
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to take the place of
+      kana: かわる
+      type: (u-v, intrans-verb)
+      vocab: 代わる
+    - english: period, era
+      kana: じだい
+      type: (n)
+      vocab: 時代
+    - english: generation, age
+      kana: せだい
+      type: (n)
+      vocab: 世代
+    - english: price, payment, cost, the bill
+      kana: だいきん
+      type: (n)
+      vocab: 代金
+  以:
+    english: by means of
+    kanji: 以
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: more than, over, this is all
+      kana: いじょう
+      type: (n)
+      vocab: 以上
+    - english: less than, below, under
+      kana: いか
+      type: (n)
+      vocab: 以下
+    - english: within, inside of
+      kana: いない
+      type: (n, n-suf)
+      vocab: 以内
+    - english: with the exception of
+      kana: いがい
+      type: (n)
+      vocab: 以外
+  低:
+    english: short, humble
+    kanji: 低
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: short, low, humble
+      kana: ひくい
+      type: (adj)
+      vocab: 低い
+    - english: low tone, bass
+      kana: ていおん
+      type: (n)
+      vocab: 低音
+    - english: fall, decline, deterioration
+      kana: ていか
+      type: (n, p-suru)
+      vocab: 低下
+    - english: high and low, rise and fall
+      kana: こうてい
+      type: (n)
+      vocab: 高低
+    - english: lowland, plain, low ground
+      kana: ていち
+      type: (n)
+      vocab: 低地
+  住:
+    english: live, dwell, reside
+    kanji: 住
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to reside, to live in
+      kana: すむ
+      type: (u-v)
+      vocab: 住む
+    - english: address (eg house), residence
+      kana: じゅうしょ
+      type: (n)
+      vocab: 住所
+    - english: living peaceably
+      kana: あんじゅう
+      type: (n, p-suru)
+      vocab: 安住
+  体:
+    english: body, object, reality
+    kanji: 体
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: body, health
+      kana: からだ
+      type: (n)
+      vocab: 体
+    - english: substance, real form
+      kana: ほんたい
+      type: (n)
+      vocab: 本体
+    - english: corpse
+      kana: したい
+      type: (n)
+      vocab: 死体
+    - english: human body
+      kana: じんたい
+      type: (n)
+      vocab: 人体
+    - english: natural shape, true character
+      kana: しょうたい
+      type: (n)
+      vocab: 正体
+  作:
+    english: make, create
+    kanji: 作
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to make, to create
+      kana: つくる
+      type: (u-v)
+      vocab: 作る
+    - english: author, writer
+      kana: さっか
+      type: (n)
+      vocab: 作家
+    - english: work, handicraft
+      kana: こうさく
+      type: (n)
+      vocab: 工作
+    - english: fiction, made-up story, myth
+      kana: つくりはなし
+      type: (n)
+      vocab: 作り話
+    - english: to make up, to fabricate
+      kana: つくりあげる
+      type: (ru-v)
+      vocab: 作り上げる
+  使:
+    english: to use
+    kanji: 使
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to use
+      kana: つかう
+      type: (u-v)
+      vocab: 使う
+    - english: way to use something
+      kana: つかいかた
+      type: (n)
+      vocab: 使い方
+    - english: angel
+      kana: てんし
+      type: (n)
+      vocab: 天使
+    - english: messenger
+      kana: ししゃ
+      type: (n)
+      vocab: 使者
+  便:
+    english: convenience, post
+    kanji: 便
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: mail, post
+      kana: びん
+      type: (n)
+      vocab: 便
+    - english: inconvenience
+      kana: ふべん
+      type: (na-adj)
+      vocab: 不便
+    - english: urine
+      kana: しょうべん
+      type: (n, col)
+      vocab: 小便
+    - english: feces, excrement
+      kana: だいべん
+      type: (n)
+      vocab: 大便
+  借:
+    english: borrow, rent
+    kanji: 借
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to borrow
+      kana: かりる
+      type: (ru-v)
+      vocab: 借りる
+    - english: debt, loan, liabilities
+      kana: しゃっきん
+      type: (n)
+      vocab: 借金
+    - english: borrowed thing
+      kana: かりもの
+      type: (n)
+      vocab: 借り物
+  働:
+    english: work
+    kanji: 働
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to work, to labour
+      kana: はたらく
+      type: (u-v)
+      vocab: 働く
+    - english: hardworker, hard working person
+      kana: はたらきもの
+      type: (n)
+      vocab: 働き者
+    - english: position, opening
+      kana: はたらきぐち
+      type: (n)
+      vocab: 働き口
+  元:
+    english: beginning, origin
+    kanji: 元
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: originally, by nature, from the start
+      kana: もともと
+      type: (adv, no-adj)
+      vocab: 元々
+    - english: health, spirit
+      kana: げんき
+      type: (na-adj)
+      vocab: 元気
+    - english: close to the ear
+      kana: みみもと
+      type: (n)
+      vocab: 耳元
+    - english: local
+      kana: じもと
+      type: (n)
+      vocab: 地元
+    - english: new year's day
+      kana: がんじつ
+      type: (n)
+      vocab: 元日
+  兄:
+    english: elder brother
+    kanji: 兄
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: (someone else's) elder brother
+      kana: おにいさん
+      type: (n)
+      vocab: お兄さん
+    - english: (your own) elder brother
+      kana: あに
+      type: (n)
+      vocab: 兄
+    - english: guardians, parents and older brothers
+      kana: ふけい
+      type: (n)
+      vocab: 父兄
+  光:
+    english: ray, light
+    kanji: 光
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: light
+      kana: ひかり
+      type: (n)
+      vocab: 光
+    - english: to shine, to be bright
+      kana: ひかる
+      type: (u-v)
+      vocab: 光る
+    - english: lightning
+      kana: でんこう
+      type: (n)
+      vocab: 電光
+    - english: moonlight
+      kana: げっこう
+      type: (n)
+      vocab: 月光
+    - english: sunlight, Nikko (place name)
+      kana: にっこう
+      type: (n)
+      vocab: 日光
+  写:
+    english: copy, describe
+    kanji: 写
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to copy, to duplicate
+      kana: うつす
+      type: (u-v)
+      vocab: 写す
+    - english: copy, fax, transcript
+      kana: うつし
+      type: (n)
+      vocab: 写し
+    - english: photograph
+      kana: しゃしん
+      type: (n)
+      vocab: 写真
+    - english: lifelike, exact resemblance
+      kana: いきうつし
+      type: (n)
+      vocab: 生き写し
+    - english: photo studio, photographer
+      kana: しゃしんや
+      type: (n)
+      vocab: 写真屋
+  冬:
+    english: winter
+    kanji: 冬
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: winter
+      kana: ふゆ
+      type: (n)
+      vocab: 冬
+    - english: winter season
+      kana: ふゆば
+      type: (n)
+      vocab: 冬場
+    - english: winter clothing
+      kana: ふゆもの
+      type: (n)
+      vocab: 冬物
+    - english: the winter sun
+      kana: ふゆび
+      type: (n)
+      vocab: 冬日
+  切:
+    english: cut, be sharp
+    kanji: 切
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to cut, to chop
+      kana: きる
+      type: (ru-v)
+      vocab: 切る
+    - english: important, valuable
+      kana: たいせつ
+      type: (na-adj, n)
+      vocab: 大切
+    - english: postage stamp
+      kana: きって
+      type: (n)
+      vocab: 切手
+    - english: kind, gentle
+      kana: しんせつ
+      type: (na-adj, n)
+      vocab: 親切
+    - english: unkindness, unfriendliness
+      kana: ふしんせつ
+      type: (na-adj, n)
+      vocab: 不親切
+  別:
+    english: separate, another, extra
+    kanji: 別
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: another, particular
+      kana: べつ
+      type: (na-adj, n)
+      vocab: 別
+    - english: (not) particularly, nothing
+      kana: べつに
+      type: (adv)
+      vocab: 別に
+    - english: separately, individually
+      kana: べつべつに
+      type: (adv)
+      vocab: 別々に
+    - english: special
+      kana: とくべつ
+      type: (na-adj, n)
+      vocab: 特別
+    - english: to be divided, to part from
+      kana: わかれる
+      type: (ru-v)
+      vocab: 別れる
+  力:
+    english: power, strength
+    kanji: 力
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: force, strength, energy
+      kana: ちから
+      type: (n)
+      vocab: 力
+    - english: electric power
+      kana: でんりょく
+      type: (n)
+      vocab: 電力
+    - english: all one's power
+      kana: ぜんりょく
+      type: ~
+      vocab: 全力
+    - english: muscle man, strong man
+      kana: ちからもち
+      type: (n)
+      vocab: 力持ち
+    - english: influential person
+      kana: ゆうりょくしゃ
+      type: (n)
+      vocab: 有力者
+  勉:
+    english: exertion
+    kanji: 勉
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: study, diligence
+      kana: べんきょう
+      type: (n, p-suru)
+      vocab: 勉強
+    - english: study, pursuit of knowledge
+      kana: べんがく
+      type: (n)
+      vocab: 勉学
+    - english: idleness, lack of application
+      kana: ふべんきょう
+      type: (n)
+      vocab: 不勉強
+  動:
+    english: move, motion, change
+    kanji: 動
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to move
+      kana: うごく
+      type: (u-v)
+      vocab: 動く
+    - english: animal
+      kana: どうぶつ
+      type: (n)
+      vocab: 動物
+    - english: automatic, self-motion
+      kana: じどう
+      type: (n)
+      vocab: 自動
+    - english: manual
+      kana: しゅどう
+      type: (n)
+      vocab: 手動
+    - english: immobility, motionless
+      kana: ふどう
+      type: (n)
+      vocab: 不動
+  区:
+    english: section, area, zone
+    kanji: 区
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: ward, district, section
+      kana: く
+      type: (n)
+      vocab: 区
+    - english: distinction, differentiation, classification
+      kana: くべつ
+      type: (n, p-suru)
+      vocab: 区別
+    - english: section (of track etc)
+      kana: くかん
+      type: (n, n-suf)
+      vocab: 区間
+    - english: to punctate, to cut off, to put an end to
+      kana: くぎる
+      type: (u-v, trans-verb)
+      vocab: 区切る
+    - english: (1) several, various, (2) trivial
+      kana: まちまち
+      type: (na-adj, no-adj, n)
+      vocab: 区々
+  医:
+    english: doctor, medicine
+    kanji: 医
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: doctor (medical)
+      kana: いしゃ
+      type: (n)
+      vocab: 医者
+    - english: medical science, medicine
+      kana: いがく
+      type: (n)
+      vocab: 医学
+    - english: medical university, medical school
+      kana: いだい
+      type: (n)
+      vocab: 医大
+    - english: doctor's office (surgery), clinic
+      kana: いいん
+      type: (n)
+      vocab: 医院
+    - english: medical supplies
+      kana: いやくひん
+      type: (n)
+      vocab: 医薬品
+  去:
+    english: leave, gone, past
+    kanji: 去
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: death
+      kana: しきょ
+      type: (n)
+      vocab: 死去
+    - english: to leave, to go away
+      kana: さる
+      type: (u-v)
+      vocab: 去る
+    - english: last year
+      kana: きょねん
+      type: (expr)
+      vocab: 去年
+    - english: coming and going
+      kana: きょらい
+      type: (n)
+      vocab: 去来
+    - english: to take away
+      kana: つれさる
+      type: (u-v)
+      vocab: 連れ去る
+  台:
+    english: stand, pedestal, counter for machines/vehicles
+    kanji: 台
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: stand, rack
+      kana: だい
+      type: (n)
+      vocab: 台
+    - english: typhoon
+      kana: たいふう
+      type: (n)
+      vocab: 台風
+    - english: kitchen
+      kana: だいどころ
+      type: (n)
+      vocab: 台所
+    - english: elevation, high ground
+      kana: たかだい
+      type: (n)
+      vocab: 高台
+    - english: one machine, one vehicle
+      kana: いちだい
+      type: (counter)
+      vocab: 一台
+  合:
+    english: fit, suit, join
+    kanji: 合
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to fit, to suit, to match
+      kana: あう
+      type: (u-v)
+      vocab: 合う
+    - english: match, tournament
+      kana: しあい
+      type: (n)
+      vocab: 試合
+    - english: meeting
+      kana: かいごう
+      type: (n)
+      vocab: 会合
+    - english: rational, consistent
+      kana: ごうり
+      type: (na-adj, n)
+      vocab: 合理
+    - english: to suit, to match
+      kana: にあう
+      type: (u-v)
+      vocab: 似合う
+  同:
+    english: same, agree, equal
+    kanji: 同
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: same, similar
+      kana: おなじ
+      type: (na-adj, n)
+      vocab: 同じ
+    - english: simultaneously, concurrent, same time
+      kana: どうじ
+      type: (no-adj, n)
+      vocab: 同時
+    - english: similar to, natural, just
+      kana: どうぜん
+      type: (na-adj, n)
+      vocab: 同然
+    - english: agreement, consent, approval
+      kana: どうい
+      type: (n, p-suru)
+      vocab: 同意
+    - english: similarly
+      kana: おなじよう
+      type: (na-adj)
+      vocab: 同じよう
+  味:
+    english: flavour, taste
+    kanji: 味
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: taste, flavour
+      kana: あじ
+      type: (na-adj, n)
+      vocab: 味
+    - english: meaning, significance
+      kana: いみ
+      type: (n, p-suru)
+      vocab: 意味
+    - english: plain, simple
+      kana: じみ
+      type: (na-adj, n)
+      vocab: 地味
+    - english: 'inherent flavour, distinctive characteristic, '
+      kana: もちあじ
+      type: (n)
+      vocab: 持ち味
+    - english: to taste, to savour, to relish
+      kana: あじわう
+      type: (u-v)
+      vocab: 味わう
+  品:
+    english: goods, refinement, dignity
+    kanji: 品
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: goods, article, thing
+      kana: しなもの
+      type: ~
+      vocab: 品物
+    - english: parts, accessories
+      kana: ぶひん
+      type: (n)
+      vocab: 部品
+    - english: refined, elegant, polished
+      kana: じょうひん
+      type: (na-adj, n)
+      vocab: 上品
+    - english: product name
+      kana: ひんめい
+      type: (n)
+      vocab: 品名
+    - english: trick, magic, juggling
+      kana: てじな
+      type: (n)
+      vocab: 手品
+  員:
+    english: employee, member
+    kanji: 員
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: shop assistant, employee
+      kana: てんいん
+      type: (n)
+      vocab: 店員
+    - english: factory worker
+      kana: こういん
+      type: (n)
+      vocab: 工員
+    - english: band member
+      kana: がくいん
+      type: (n)
+      vocab: 楽員
+    - english: station attendant
+      kana: えきいんさん
+      type: (n)
+      vocab: 駅員さん
+    - english: crafstman, handicraft worker
+      kana: こうさくいん
+      type: (n)
+      vocab: 工作員
+  問:
+    english: question, ask, problem
+    kanji: 問
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: problem, question
+      kana: もんだい
+      type: (n)
+      vocab: 問題
+    - english: ignorance
+      kana: ふもん
+      type: (n)
+      vocab: 不問
+    - english: asking oneself
+      kana: じもん
+      type: (n, p-suru)
+      vocab: 自問
+  回:
+    english: -times, round, counter for occurrences
+    kanji: 回
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: counter for occurrences
+      kana: かい
+      type: (n)
+      vocab: 回
+    - english: to turn, to revolve, to visit several places
+      kana: まわる
+      type: (u-v)
+      vocab: 回る
+    - english: how many times?
+      kana: なんかい
+      type: (n)
+      vocab: 何回
+    - english: to ride/drive around
+      kana: のりまわす
+      type: (n, n-suf)
+      vocab: 乗り回す
+  図:
+    english: map, drawing, plan
+    kanji: 図
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: drawing, picture, illustration
+      kana: ず
+      type: (n, n-suf)
+      vocab: 図
+    - english: map
+      kana: ちず
+      type: (n)
+      vocab: 地図
+    - english: intention, aim, design
+      kana: いと
+      type: (n)
+      vocab: 意図
+    - english: sign, signal
+      kana: あいず
+      type: (n, p-suru)
+      vocab: 合図
+    - english: library
+      kana: としょかん
+      type: (n)
+      vocab: 図書館
+  地:
+    english: ground, earth
+    kanji: 地
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: earth
+      kana: ち
+      type: (n, n-suf)
+      vocab: 地
+    - english: basement, underground
+      kana: ちか
+      type: (n)
+      vocab: 地下
+    - english: map
+      kana: ちず
+      type: (n)
+      vocab: 地図
+    - english: plain, simple
+      kana: じみ
+      type: (na-adj, n)
+      vocab: 地味
+    - english: place name
+      kana: ちめい
+      type: (n)
+      vocab: 地名
+  堂:
+    english: public chamber, hall
+    kanji: 堂
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: temple, shrin, hall
+      kana: どう
+      type: (n, n-suf, n-pref)
+      vocab: 堂
+    - english: magnificent, impressive
+      kana: どうどう
+      type: (na-adj, n)
+      vocab: 堂々
+    - english: church, chapel
+      kana: かいどう
+      type: (n)
+      vocab: 会堂
+    - english: main temple building
+      kana: ほんどう
+      type: (n)
+      vocab: 本堂
+  場:
+    english: location, place
+    kanji: 場
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: place
+      kana: ば
+      type: (n)
+      vocab: 場
+    - english: standpoint, position, situation
+      kana: たちば
+      type: (n)
+      vocab: 立場
+    - english: factory, plant, mill
+      kana: こうじょう
+      type: (n)
+      vocab: 工場
+    - english: plaza
+      kana: ひろば
+      type: (n)
+      vocab: 広場
+    - english: place of ceremony (eg wedding)
+      kana: しきじょう
+      type: ~
+      vocab: 式場
+  声:
+    english: voice, sound
+    kanji: 声
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: voice
+      kana: こえ
+      type: (n)
+      vocab: 声
+    - english: vocal music
+      kana: せいがく
+      type: (n)
+      vocab: 声楽
+    - english: soft voice, whisper
+      kana: こごえ
+      type: (n)
+      vocab: 小声
+    - english: speaking voice
+      kana: はなしごえ
+      type: (n)
+      vocab: 話し声
+    - english: shrill voice, piercing cry, scream
+      kana: かなきりごえ
+      type: (n)
+      vocab: 金切り声
+  売:
+    english: sell
+    kanji: 売
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to sell
+      kana: うる
+      type: (u-v)
+      vocab: 売る
+    - english: sale
+      kana: はつばい
+      type: (n, p-suru)
+      vocab: 発売
+    - english: to market, to put on sale
+      kana: うりだす
+      type: (u-v)
+      vocab: 売り出す
+    - english: place where things are sold, counter
+      kana: うりば
+      type: (n)
+      vocab: 売り場
+    - english: article for sale, For Sale
+      kana: うりもの
+      type: (n)
+      vocab: 売り物
+  夏:
+    english: summer
+    kanji: 夏
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: summer
+      kana: なつ
+      type: (n)
+      vocab: 夏
+    - english: summer holiday
+      kana: なつやすみ
+      type: (n)
+      vocab: 夏休み
+    - english: summer time, daylight savings time
+      kana: なつじかん
+      type: (n)
+      vocab: 夏時間
+    - english: summertime
+      kana: なつば
+      type: (n)
+      vocab: 夏場
+  夕:
+    english: evening
+    kanji: 夕
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: evening
+      kana: ゆうべ
+      type: (n)
+      vocab: 夕べ
+    - english: Star Festival
+      kana: たなばた
+      type: (n)
+      vocab: 七夕
+    - english: evening
+      kana: ゆうがた
+      type: (n)
+      vocab: 夕方
+    - english: evening meal
+      kana: ゆうはん
+      type: (n)
+      vocab: 夕飯
+  夜:
+    english: night, evening
+    kanji: 夜
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: evening
+      kana: よる
+      type: (n)
+      vocab: 夜
+    - english: tonight, this evening
+      kana: こんや
+      type: (n)
+      vocab: 今夜
+    - english: night school, evening classes
+      kana: やがく
+      type: (n)
+      vocab: 夜学
+    - english: night sky
+      kana: よぞら
+      type: (n)
+      vocab: 夜空
+  太:
+    english: thick, plump
+    kanji: 太
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: thick
+      kana: ふとい
+      type: (adj)
+      vocab: 太い
+    - english: to be on the heavy side
+      kana: ふとる
+      type: (u-v)
+      vocab: 太る
+    - english: bold type, thick characters
+      kana: ふとじ
+      type: (n)
+      vocab: 太字
+    - english: thicker towards the end, club-shaped
+      kana: さきぶと
+      type: (na-adj, n)
+      vocab: 先太
+  好:
+    english: like something, pleasing
+    kanji: 好
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to like
+      kana: すき
+      type: (na-adj, n)
+      vocab: 好き
+    - english: good will, favour
+      kana: こうい
+      type: (n)
+      vocab: 好意
+    - english: to like, to prefer
+      kana: このむ
+      type: (u-v)
+      vocab: 好む
+    - english: lust, sensuality, lewdness
+      kana: こうしょく
+      type: (na-adj, n)
+      vocab: 好色
+    - english: convenient, favourable
+      kana: こうつごう
+      type: (na-adj, n)
+      vocab: 好都合
+  妹:
+    english: younger sister
+    kanji: 妹
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: younger sister
+      kana: いもうと
+      type: (n)
+      vocab: 妹
+    - english: sisters
+      kana: しまい
+      type: (n)
+      vocab: 姉妹
+    - english: Imogawa
+      kana: いもがわ
+      type: (location)
+      vocab: 妹川
+    - english: sister companies
+      kana: しまいがいしゃ
+      type: (n)
+      vocab: 姉妹会社
+    - english: sister cities
+      kana: しまいとし
+      type: (n)
+      vocab: 姉妹都市
+  姉:
+    english: elder sister
+    kanji: 姉
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: (your own) older sister
+      kana: あね
+      type: (n)
+      vocab: 姉
+    - english: sisters
+      kana: しまい
+      type: (n)
+      vocab: 姉妹
+    - english: (someone elses) older sister
+      kana: おねえさん
+      type: (n)
+      vocab: お姉さん
+  始:
+    english: commence, begin
+    kanji: 始
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to start, to begin
+      kana: はじめる
+      type: (ru-v, trans-verb)
+      vocab: 始める
+    - english: new year
+      kana: ねんし
+      type: (n)
+      vocab: 年始
+    - english: start work, commencement, opening
+      kana: しぎょう
+      type: (n)
+      vocab: 始業
+    - english: continuously, from beginning to end
+      kana: しじゅう
+      type: (adv, n)
+      vocab: 始終
+  字:
+    english: character, letter, word
+    kanji: 字
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: character, letter, word
+      kana: じ
+      type: (n)
+      vocab: 字
+    - english: kanji, chinese characters
+      kana: かんじ
+      type: (n)
+      vocab: 漢字
+    - english: deficit, in the red
+      kana: あかじ
+      type: (n)
+      vocab: 赤字
+    - english: surname, family name
+      kana: みょうじ
+      type: (n)
+      vocab: 名字
+    - english: romanization, romaji
+      kana: ロマー字
+      type: (n)
+      vocab: ローマ字
+  室:
+    english: room, apartment
+    kanji: 室
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: room
+      kana: しつ
+      type: (n, n-suf)
+      vocab: 室
+    - english: classroom
+      kana: きょうしつ
+      type: (n)
+      vocab: 教室
+    - english: in the room
+      kana: しつない
+      type: (n)
+      vocab: 室内
+  家:
+    english: house, home
+    kanji: 家
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: house, one's home
+      kana: いえ
+      type: (n)
+      vocab: 家
+    - english: family
+      kana: かぞく
+      type: (n)
+      vocab: 家族
+    - english: writer, author
+      kana: さっか
+      type: (n)
+      vocab: 作家
+    - english: painter, artist
+      kana: がか
+      type: (n)
+      vocab: 画家
+    - english: housework, chores
+      kana: かじ
+      type: (n)
+      vocab: 家事
+  寒:
+    english: cold
+    kanji: 寒
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: cold (weather)
+      kana: さむい
+      type: (adj)
+      vocab: 寒い
+    - english: senstive to cold
+      kana: さむがり
+      type: (na-adj, n)
+      vocab: 寒がり
+    - english: chill, shakes
+      kana: おかん
+      type: (n)
+      vocab: 悪寒
+  屋:
+    english: house, roof, shop
+    kanji: 屋
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: hut, cabin, shed
+      kana: こや
+      type: (n)
+      vocab: 小屋
+    - english: rooftop
+      kana: おくじょう
+      type: (n)
+      vocab: 屋上
+    - english: restaurant
+      kana: りょうりや
+      type: (n)
+      vocab: 料理屋
+    - english: outdoors
+      kana: おくがい
+      type: (n)
+      vocab: 屋外
+    - english: indoors
+      kana: おくない
+      type: (n)
+      vocab: 屋内
+  工:
+    english: craft, construction
+    kanji: 工
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: factory, workshop
+      kana: こうじょう
+      type: (n)
+      vocab: 工場
+    - english: artificial, man-made
+      kana: じんこう
+      type: (n)
+      vocab: 人工
+    - english: engineering
+      kana: こうがく
+      type: (n)
+      vocab: 工学
+    - english: woodworking, woodworker
+      kana: もっこう
+      type: (n)
+      vocab: 木工
+    - english: factory worker
+      kana: こういん
+      type: (n)
+      vocab: 工員
+  市:
+    english: city, town
+    kanji: 市
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: city, town
+      kana: し
+      type: (n-suf)
+      vocab: 市
+    - english: citizen, townspeople
+      kana: しみん
+      type: (n)
+      vocab: 市民
+    - english: within a city
+      kana: しない
+      type: (n)
+      vocab: 市内
+    - english: urban areas
+      kana: しぶ
+      type: (n)
+      vocab: 市部
+  帰:
+    english: return
+    kanji: 帰
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to return, to go back, to go home
+      kana: かえる
+      type: (u-v)
+      vocab: 帰る
+    - english: to send back
+      kana: かえす
+      type: (u-v)
+      vocab: 帰す
+    - english: return, welcome
+      kana: おかえり
+      type: (expression)
+      vocab: お帰り
+    - english: takeout (ie food)
+      kana: もちかえり
+      type: (n)
+      vocab: 持ち帰り
+  広:
+    english: wide, broad, spacious
+    kanji: 広
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: spacious, wide
+      kana: ひろい
+      type: (adj)
+      vocab: 広い
+    - english: to broaden, to propogate
+      kana: ひろめる
+      type: (ru-v)
+      vocab: 広める
+    - english: plaza
+      kana: ひろば
+      type: (n)
+      vocab: 広場
+    - english: huge, very large
+      kana: こうだい
+      type: (na-adj)
+      vocab: 広大
+  度:
+    english: degrees, occurrence
+    kanji: 度
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: how many times? how often?
+      kana: なんど
+      type: (n)
+      vocab: 何度
+    - english: counter for occurrences
+      kana: ど
+      type: (n n-suf)
+      vocab: 度
+    - english: extent, degree
+      kana: どあい
+      type: (n)
+      vocab: 度合い
+    - english: strength, intensity
+      kana: きょうど
+      type: (na-adj)
+      vocab: 強度
+    - english: all at once
+      kana: いちどに
+      type: (adv)
+      vocab: 一度に
+  建:
+    english: build
+    kanji: 建
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: building
+      kana: たてもの
+      type: (n)
+      vocab: 建物
+    - english: to build, to construct
+      kana: たてる
+      type: (ru-v)
+      vocab: 建てる
+    - english: official stance, public position
+      kana: たてまえ
+      type: (n)
+      vocab: 建前
+  引:
+    english: pull, tug, quote, refer to
+    kanji: 引
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to pull
+      kana: ひく
+      type: (u-v)
+      vocab: 引く
+    - english: to pull out, to withdraw
+      kana: ひきだす
+      type: (u-v)
+      vocab: 引き出す
+    - english: drawer
+      kana: ひきだし
+      type: (n)
+      vocab: 引き出し
+    - english: quotation, citation
+      kana: いによう
+      type: (n)
+      vocab: 引用
+    - english: handbook, manual, guide
+      kana: てびきしょ
+      type: (n)
+      vocab: 手引書
+  弟:
+    english: younger brother
+    kanji: 弟
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: younger brother
+      kana: おとうと
+      type: (n)
+      vocab: 弟
+    - english: younger people
+      kana: してい
+      type: (n)
+      vocab: 子弟
+    - english: younger brother and sister
+      kana: ていまい
+      type: (n)
+      vocab: 弟妹
+    - english: siblings
+      kana: きょうだい
+      type: (n)
+      vocab: 兄弟
+  弱:
+    english: weak, frail
+    kanji: 弱
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: weak, frail, delicate
+      kana: よわい
+      type: (adj)
+      vocab: 弱い
+    - english: the weak
+      kana: じゃくしゃ
+      type: (n)
+      vocab: 弱者
+    - english: weakness
+      kana: よわみ
+      type: (n)
+      vocab: 弱み
+    - english: weakling, coward
+      kana: よわむし
+      type: (n)
+      vocab: 弱虫
+    - english: timid, faint-hearted
+      kana: よわき
+      type: (na-adj)
+      vocab: 弱気
+  強:
+    english: strong
+    kanji: 強
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: strong
+      kana: つよい
+      type: (adj)
+      vocab: 強い
+    - english: to get strong
+      kana: つよまる
+      type: (u-v)
+      vocab: 強まる
+    - english: study, diligence
+      kana: べんきょう
+      type: ~
+      vocab: 勉強
+    - english: firm, strong
+      kana: つよき
+      type: (na-adj)
+      vocab: 強気
+    - english: overbearing, coercive, pushy
+      kana: ごういん
+      type: (nad-adj)
+      vocab: 強引
+  待:
+    english: wait
+    kanji: 待
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to wait
+      kana: まつ
+      type: (u-v)
+      vocab: 待つ
+    - english: meeting place
+      kana: まちあい
+      type: (n)
+      vocab: 待合
+    - english: appointment
+      kana: まちあわせ
+      type: (n)
+      vocab: 待ち合わせ
+    - english: anticipation, expectation
+      kana: こころまち
+      type: (n)
+      vocab: 心待ち
+  心:
+    english: heart, mind, spirit
+    kanji: 心
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: heart, mind, spirit
+      kana: こころ
+      type: (n)
+      vocab: 心
+    - english: relief, peace of mind
+      kana: あんしん
+      type: (na-adj)
+      vocab: 安心
+    - english: psychology
+      kana: しんりがく
+      type: (n)
+      vocab: 心理学
+    - english: in one's heart, true motives
+      kana: しんちゅう
+      type: (n)
+      vocab: 心中
+    - english: feeling, sensation, mood
+      kana: ここち
+      type: (n)
+      vocab: 心地
+  思:
+    english: think
+    kanji: 思
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to think, to feel
+      kana: おもう
+      type: (u-v)
+      vocab: 思う
+    - english: thought
+      kana: おもい
+      type: (n)
+      vocab: 思い
+    - english: to be conceited
+      kana: おもいあがる
+      type: (u-v)
+      vocab: 思い上がる
+    - english: to recall, to remember
+      kana: おもいだす
+      type: (u-v)
+      vocab: 思い出す
+    - english: spontaneous, unintentional
+      kana: おもわず
+      type: (adverb)
+      vocab: 思わず
+  急:
+    english: hurry, sudden
+    kanji: 急
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: urgent, sudden, steep
+      kana: きゅう
+      type: (na-adj, n)
+      vocab: 急
+    - english: to hurry, to rush
+      kana: いそぐ
+      type: (u-v)
+      vocab: 急ぐ
+    - english: express train
+      kana: きゅうこう
+      type: (n)
+      vocab: 急行
+    - english: sudden death
+      kana: きゅうし
+      type: (n, p-suru)
+      vocab: 急死
+  悪:
+    english: bad, evil, wrong
+    kanji: 悪
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: bad, inferior
+      kana: わるい
+      type: (adj)
+      vocab: 悪い
+    - english: the worst
+      kana: さいあく
+      type: (na-adj, n)
+      vocab: 最悪
+    - english: bad quality
+      kana: あくしつ
+      type: (na-adj, n)
+      vocab: 悪質
+    - english: badness
+      kana: わるさ
+      type: (n)
+      vocab: 悪さ
+  意:
+    english: idea, mind, thought
+    kanji: 意
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: meaning
+      kana: いみ
+      type: (n, p-suru)
+      vocab: 意味
+    - english: opinion, view
+      kana: いけん
+      type: (n)
+      vocab: 意見
+    - english: caution, being careful
+      kana: ちゅうい
+      type: (n, p-suru)
+      vocab: 注意
+    - english: unexpected, surprising
+      kana: いがい
+      type: (na-adj, n)
+      vocab: 意外
+    - english: popular will
+      kana: みんい
+      type: (n)
+      vocab: 民意
+  所:
+    english: place
+    kanji: 所
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: place
+      kana: ところ
+      type: (n)
+      vocab: 所
+    - english: place, location
+      kana: ばしょ
+      type: (n)
+      vocab: 場所
+    - english: research place, laboratory
+      kana: けんきゅうじょ
+      type: (n)
+      vocab: 研究所
+    - english: address, residence
+      kana: じゅうしょ
+      type: (n)
+      vocab: 住所
+    - english: heights, high altitude
+      kana: こうしょ
+      type: (n)
+      vocab: 高所
+  持:
+    english: hold, have
+    kanji: 持
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to have, to hold, to carry
+      kana: もつ
+      type: (u-v)
+      vocab: 持つ
+    - english: feeling, sensation, mood
+      kana: きもち
+      type: (n)
+      vocab: 気持ち
+    - english: to take out
+      kana: もちだす
+      type: (u-v)
+      vocab: 持ち出す
+    - english: inherent flavour, distinctive characteristic
+      kana: もちあじ
+      type: (n)
+      vocab: 持ち味
+    - english: to carry back/home, to take out (food)
+      kana: もちかえる
+      type: (u-v)
+      vocab: 持ち帰る
+  教:
+    english: teach, faith
+    kanji: 教
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to teach, to inform
+      kana: おしえる
+      type: (u-v)
+      vocab: 教える
+    - english: teaching, lesson
+      kana: おしえ
+      type: (n)
+      vocab: 教え
+    - english: education
+      kana: ぶんきょう
+      type: (n)
+      vocab: 文教
+  文:
+    english: sentence, literature, decoration
+    kanji: 文
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: sentence
+      kana: ぶん
+      type: (n)
+      vocab: 文
+    - english: literature
+      kana: ぶんがく
+      type: (n)
+      vocab: 文学
+    - english: document, writings, paperwork, records
+      kana: ぶんしょ
+      type: (n)
+      vocab: 文書
+    - english: order, request
+      kana: ちゅうもん
+      type: (n, p-suru)
+      vocab: 注文
+    - english: literary person
+      kana: ぶんがくしゃ
+      type: (n)
+      vocab: 文学者
+  料:
+    english: fee, materials
+    kanji: 料
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: cooking, cuisine
+      kana: りょうり
+      type: (n, p-suru)
+      vocab: 料理
+    - english: fee, charge
+      kana: りょうきん
+      type: (n)
+      vocab: 料金
+    - english: restaurant
+      kana: りょうりや
+      type: (n)
+      vocab: 料理屋
+    - english: sample, test piece
+      kana: しりょう
+      type: (n)
+      vocab: 試料
+  方:
+    english: direction, person, alternative
+    kanji: 方
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: (1) person, (2) way of doing
+      kana: かた
+      type: (n-suf)
+      vocab: 方
+    - english: way of thinking
+      kana: かんがえかた
+      type: (n)
+      vocab: 考え方
+    - english: viewpoint
+      kana: みかた
+      type: (n)
+      vocab: 見方
+    - english: friend, person on side
+      kana: みかた
+      type: (n)
+      vocab: 味方
+  旅:
+    english: trip, travel
+    kanji: 旅
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: travel, trip, journey
+      kana: たび
+      type: (n, p-suru)
+      vocab: 旅
+    - english: travel, trip
+      kana: りょこう
+      type: (n, p-suru)
+      vocab: 旅行
+    - english: Japanese-style hotel
+      kana: りょかん
+      type: (n)
+      vocab: 旅館
+    - english: traveller
+      kana: たびびと
+      type: (n)
+      vocab: 旅人
+    - english: destination, goal
+      kana: たびさき
+      type: (n)
+      vocab: 旅先
+  族:
+    english: tribe, family
+    kanji: 族
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: family, members of family
+      kana: かぞく
+      type: (n)
+      vocab: 家族
+    - english: people, race
+      kana: みんぞく
+      type: (n)
+      vocab: 民族
+    - english: aquarium
+      kana: すいぞくかん
+      type: (n)
+      vocab: 水族館
+    - english: royalty
+      kana: おうぞく
+      type: (n)
+      vocab: 王族
+  早:
+    english: early, fast
+    kanji: 早
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: early
+      kana: はやい
+      type: (adj)
+      vocab: 早い
+    - english: to quicken, to expedite
+      kana: はやめる
+      type: (ru-v)
+      vocab: 早める
+    - english: fast talking
+      kana: はやくち
+      type: (n)
+      vocab: 早口
+    - english: early rising
+      kana: はやおき
+      type: (n)
+      vocab: 早起き
+  明:
+    english: bright, light
+    kanji: 明
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: bright, cheerful
+      kana: あかるい
+      type: (adj)
+      vocab: 明るい
+    - english: explanation
+      kana: せつめい
+      type: (n, p-suru)
+      vocab: 説明
+    - english: unknown, ambiguous
+      kana: ふめい
+      type: (na-adj, n)
+      vocab: 不明
+    - english: tomorrow
+      kana: あした
+      type: (n)
+      vocab: 明日
+    - english: invention
+      kana: はつめい
+      type: (n, p-suru)
+      vocab: 発明
+  映:
+    english: reflect, reflection, projection
+    kanji: 映
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: movie, film
+      kana: えいが
+      type: (n)
+      vocab: 映画
+    - english: to be reflected, to harmonize with
+      kana: うつる
+      type: (u-v)
+      vocab: 映る
+    - english: movie theatre, cinema
+      kana: えいがかん
+      type: (n)
+      vocab: 映画館
+    - english: to shine, to look attractive, to look pretty
+      kana: はえる
+      type: (ru-v)
+      vocab: 映える
+  春:
+    english: spring
+    kanji: 春
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: spring
+      kana: はる
+      type: (n)
+      vocab: 春
+    - english: spring vacation
+      kana: はるやすみ
+      type: (n)
+      vocab: 春休み
+  昼:
+    english: daytime, noon
+    kanji: 昼
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: lunch, midday meal
+      kana: ちゅうしょく
+      type: (n)
+      vocab: 昼食
+  暑:
+    english: hot
+    kanji: 暑
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: hot
+      kana: あつい
+      type: (adj)
+      vocab: 暑い
+    - english: heat
+      kana: あつさ
+      type: (n)
+      vocab: 暑さ
+    - english: mid-summer
+      kana: しょちゅう
+      type: (n)
+      vocab: 暑中
+  暗:
+    english: darkness, disappear
+    kanji: 暗
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: dark, gloomy
+      kana: くらい
+      type: (adj)
+      vocab: 暗い
+    - english: total darkness, pitch dark
+      kana: まっくら
+      type: (nad-adj, n)
+      vocab: 真っ暗
+    - english: implicitly
+      kana: あんに
+      type: (adv)
+      vocab: 暗に
+  曜:
+    english: weekday
+    kanji: 曜
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: day of week
+      kana: ようび
+      type: (n)
+      vocab: 曜日
+    - english: thursday
+      kana: もくようび
+      type: (n)
+      vocab: 木曜日
+    - english: tuesday
+      kana: かようび
+      type: (n)
+      vocab: 火曜日
+    - english: wednesday
+      kana: すいようび
+      type: (n)
+      vocab: 水曜日
+  有:
+    english: possess, have, exist
+    kanji: 有
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: famous
+      kana: ゆうめい
+      type: (na-adj)
+      vocab: 有名
+    - english: useful, helpful
+      kana: ゆうよう
+      type: (na-adj)
+      vocab: 有用
+    - english: emergency
+      kana: ゆうじ
+      type: (n)
+      vocab: 有事
+  服:
+    english: clothing
+    kanji: 服
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: clothes
+      kana: ふく
+      type: (n)
+      vocab: 服
+    - english: western clothes
+      kana: ようふく
+      type: (n)
+      vocab: 洋服
+  朝:
+    english: morning, period
+    kanji: 朝
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: morning
+      kana: あさ
+      type: (n)
+      vocab: 朝
+    - english: every morning
+      kana: まいあさ
+      type: (n)
+      vocab: 毎朝
+    - english: morning sun
+      kana: あさひ
+      type: (n)
+      vocab: 朝日
+    - english: breakfast (formal)
+      kana: ちょうしょく
+      type: (n)
+      vocab: 朝食
+    - english: breakfast
+      kana: あさご飯
+      type: (n)
+      vocab: 朝ご飯
+  村:
+    english: town, village
+    kanji: 村
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: village
+      kana: むら
+      type: (n)
+      vocab: 村
+    - english: mountain village
+      kana: さんそん
+      type: (n)
+      vocab: 山村
+    - english: villager
+      kana: むらびと
+      type: (n)
+      vocab: 村人
+  林:
+    english: forest
+    kanji: 林
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: woods, forest
+      kana: はやし
+      type: (n)
+      vocab: 林
+    - english: forest
+      kana: しんりん
+      type: (n)
+      vocab: 森林
+    - english: forestry
+      kana: りんぎょう
+      type: (n)
+      vocab: 林業
+  森:
+    english: forest, woods
+    kanji: 森
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: forest
+      kana: もり
+      type: (n)
+      vocab: 森
+    - english: forest
+      kana: しんりん
+      type: (n)
+      vocab: 森林
+  業:
+    english: business, performance
+    kanji: 業
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: trader
+      kana: ぎょうしゃ
+      type: ~
+      vocab: 業者
+    - english: manufacturing industry
+      kana: こうぎょう
+      type: (n)
+      vocab: 工業
+    - english: closed (store), shutdown
+      kana: きゅうぎょう
+      type: (n)
+      vocab: 休業
+    - english: opening of business
+      kana: かいぎょう
+      type: (n)
+      vocab: 開業
+  楽:
+    english: music, comfort, ease
+    kanji: 楽
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: comfort, ease
+      kana: らく
+      type: (na-adj, n, n-suf)
+      vocab: 楽
+    - english: music
+      kana: おんがく
+      type: (n)
+      vocab: 音楽
+    - english: to enjoy
+      kana: たのしむ
+      type: ~
+      vocab: 楽しむ
+    - english: enjoyable, fun
+      kana: たのしい
+      type: (adj)
+      vocab: 楽しい
+  歌:
+    english: song, sing
+    kanji: 歌
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: song, poetry
+      kana: うた
+      type: (n)
+      vocab: 歌
+    - english: to sing
+      kana: うたう
+      type: (u-v)
+      vocab: 歌う
+    - english: singer
+      kana: かしゅ
+      type: (n)
+      vocab: 歌手
+    - english: national anthem
+      kana: こっか
+      type: (n)
+      vocab: 国歌
+    - english: singing voice
+      kana: うたごえ
+      type: (n)
+      vocab: 歌声
+  止:
+    english: stop, halt
+    kanji: 止
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: suspension, stoppage, interruption
+      kana: ちゅうし
+      type: (n, p-suru)
+      vocab: 中止
+    - english: to stop (something)
+      kana: とめる
+      type: (ru-v)
+      vocab: 止める
+    - english: to remain, to stay
+      kana: とまる
+      type: (u-v)
+      vocab: 止まる
+    - english: pause, rest
+      kana: きゅうし
+      type: (n, p-suru)
+      vocab: 休止
+    - english: to cease, to stop, be over
+      kana: やむ
+      type: (u-v, intrans verb)
+      vocab: 止む
+  正:
+    english: correct, justice, righteous
+    kanji: 正
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: correct, truthful, righteous
+      kana: ただしい
+      type: (adj)
+      vocab: 正しい
+    - english: New Year's Day, the first month
+      kana: しょうがつ
+      type: (n)
+      vocab: 正月
+    - english: to correct, to amend
+      kana: ただす
+      type: (u-v)
+      vocab: 正す
+    - english: natural shape, one's true character
+      kana: しょうたい
+      type: (n)
+      vocab: 正体
+    - english: the right path, path of righteousness
+      kana: せいどう
+      type: (n)
+      vocab: 正道
+  歩:
+    english: walk, counter for steps
+    kanji: 歩
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to walk
+      kana: あるく
+      type: (u-v)
+      vocab: 歩く
+    - english: to progress, to develop
+      kana: しんぽ
+      type: (n, p-suru)
+      vocab: 進歩
+    - english: snail's pace, slow progress
+      kana: ぎゅうほ
+      type: (n)
+      vocab: 牛歩
+    - english: rudiments, elements, ABC's of...
+      kana: しょほ
+      type: (n)
+      vocab: 初歩
+  死:
+    english: death, die
+    kanji: 死
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to die
+      kana: しぬ
+      type: (u-v)
+      vocab: 死ぬ
+    - english: corpse, dead person
+      kana: しにん
+      type: (n)
+      vocab: 死人
+    - english: dead language, obsolete word
+      kana: しご
+      type: (n)
+      vocab: 死語
+    - english: natural death
+      kana: びょうし
+      type: (n, p-suru)
+      vocab: 病死
+    - english: euthanasia
+      kana: あんらくし
+      type: (n)
+      vocab: 安楽死
+  民:
+    english: people, nation, subjects
+    kanji: 民
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: nation, people
+      kana: たみ
+      type: (n)
+      vocab: 民
+    - english: private, unofficial, civilian
+      kana: みんかん
+      type: (no-adj, n)
+      vocab: 民間
+    - english: people, race, nation
+      kana: みんぞく
+      type: (n)
+      vocab: 民族
+    - english: private house
+      kana: みんか
+      type: (n)
+      vocab: 民家
+    - english: democratic, head of nation
+      kana: みんしゅ
+      type: (n)
+      vocab: 民主
+  池:
+    english: pond, pool, reservoir
+    kanji: 池
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: pond
+      kana: いけ
+      type: (n)
+      vocab: 池
+    - english: battery
+      kana: でんち
+      type: (n)
+      vocab: 電池
+  注:
+    english: pour, concentrate
+    kanji: 注
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to pour, to fill, to feed (a fire)
+      kana: そそぐ
+      type: (u-v)
+      vocab: 注ぐ
+    - english: order, request
+      kana: ちゅうもん
+      type: (n, p-suru)
+      vocab: 注文
+    - english: attention, being careful
+      kana: ちゅうい
+      type: (n, p-suru)
+      vocab: 注意
+    - english: information
+      kana: ちゅうしん
+      type: (n, p-suru)
+      vocab: 注進
+  洋:
+    english: ocean, western style
+    kanji: 洋
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: ocean
+      kana: かいよう
+      type: (n)
+      vocab: 海洋
+    - english: west, western countries
+      kana: せいよう
+      type: (n)
+      vocab: 西洋
+    - english: western style
+      kana: ようふう
+      type: (na-adj)
+      vocab: 洋風
+    - english: western style meal
+      kana: ようしょく
+      type: (n)
+      vocab: 洋食
+  洗:
+    english: wash
+    kanji: 洗
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to wash
+      kana: あらう
+      type: (u-v)
+      vocab: 洗う
+    - english: washing, laundry
+      kana: せんたく
+      type: (n)
+      vocab: 洗濯
+    - english: washroom, lavatory
+      kana: てあらい
+      type: (n)
+      vocab: 手洗い
+    - english: car wash
+      kana: せんしゃ
+      type: (n)
+      vocab: 洗車
+  海:
+    english: sea, ocean
+    kanji: 海
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: sea, beach
+      kana: うみ
+      type: (n)
+      vocab: 海
+    - english: overseas, abroad
+      kana: かいがい
+      type: (n)
+      vocab: 海外
+    - english: sea bird
+      kana: うみどり
+      type: (n)
+      vocab: 海鳥
+    - english: hokkaido (most northern of 4 main islands of Japan)
+      kana: ほっかいどう
+      type: (place)
+      vocab: 北海道
+  漢:
+    english: china
+    kanji: 漢
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: chinese character
+      kana: かんじ
+      type: (n)
+      vocab: 漢字
+  牛:
+    english: cow
+    kanji: 牛
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: cow
+      kana: うし
+      type: (n)
+      vocab: 牛
+    - english: beef
+      kana: ぎゅうにく
+      type: (n)
+      vocab: 牛肉
+    - english: snail's pace
+      kana: ぎゅうほ
+      type: (n)
+      vocab: 牛歩
+    - english: Japanese beef cow
+      kana: わぎゅう
+      type: (n)
+      vocab: 和牛
+    - english: water buffalo
+      kana: すいぎゅう
+      type: (n)
+      vocab: 水牛
+  物:
+    english: thing, object, matter
+    kanji: 物
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: thing, object
+      kana: もの
+      type: (n)
+      vocab: 物
+    - english: building
+      kana: たてもの
+      type: (n)
+      vocab: 建物
+    - english: tale, legend, story
+      kana: ものがたり
+      type: (n)
+      vocab: 物語
+    - english: shopping
+      kana: かいもの
+      type: (n, p-suru)
+      vocab: 買い物
+    - english: animal
+      kana: どうぶつ
+      type: (n)
+      vocab: 動物
+  特:
+    english: special
+    kanji: 特
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: special
+      kana: とくべつ
+      type: (na-adj, adv)
+      vocab: 特別
+    - english: particularly, especially
+      kana: とくに
+      type: (adv)
+      vocab: 特に
+    - english: special feature, special edition
+      kana: とくしゅう
+      type: (n)
+      vocab: 特集
+    - english: limited express train
+      kana: とっきゅう
+      type: (n)
+      vocab: 特急
+  犬:
+    english: dog
+    kanji: 犬
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: dog
+      kana: いぬ
+      type: (n)
+      vocab: 犬
+    - english: stray dog
+      kana: やけん
+      type: (n)
+      vocab: 野犬
+  理:
+    english: logic, reason, justice
+    kanji: 理
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: reason
+      kana: り
+      type: (n)
+      vocab: 理
+    - english: cooking, cuisine
+      kana: りょうり
+      type: (n, p-suru)
+      vocab: 料理
+    - english: physics
+      kana: ぶつり
+      type: (n)
+      vocab: 物理
+    - english: geography
+      kana: ちり
+      type: (n)
+      vocab: 地理
+    - english: truth
+      kana: しんり
+      type: (n)
+      vocab: 真理
+  産:
+    english: products, give birth
+    kanji: 産
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: industry
+      kana: さんぎょう
+      type: (n)
+      vocab: 産業
+    - english: real estate
+      kana: ふどうさん
+      type: (n)
+      vocab: 不動産
+    - english: to give birth, to produce
+      kana: うむ
+      type: (u-v)
+      vocab: 産む
+  用:
+    english: use, employ, utilise
+    kanji: 用
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: task, business, use
+      kana: よう
+      type: (n)
+      vocab: 用
+    - english: confidence
+      kana: しんよう
+      type: ~
+      vocab: 信用
+    - english: appointment, promotion
+      kana: きよう
+      type: (n)
+      vocab: 起用
+    - english: site
+      kana: ようち
+      type: (n)
+      vocab: 用地
+    - english: blank form
+      kana: ようし
+      type: (n)
+      vocab: 用紙
+  田:
+    english: rice field, rice paddy
+    kanji: 田
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: rice field
+      kana: た
+      type: (n)
+      vocab: 田
+    - english: a new rice field
+      kana: しんでん
+      type: (n)
+      vocab: 新田
+  町:
+    english: town, village, town
+    kanji: 町
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: town, street, road
+      kana: まち
+      type: (n)
+      vocab: 町
+    - english: downtown
+      kana: まちなか
+      type: (n)
+      vocab: 町中
+  画:
+    english: brush stroke, picture
+    kanji: 画
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: movie, film
+      kana: えいが
+      type: (n)
+      vocab: 映画
+    - english: plan, schedule
+      kana: けいかく
+      type: (n)
+      vocab: 計画
+    - english: painter, artist
+      kana: がか
+      type: (n)
+      vocab: 画家
+    - english: cinema, movie theatre
+      kana: えいがかん
+      type: (n)
+      vocab: 映画館
+    - english: division, section
+      kana: くかく
+      type: (n)
+      vocab: 区画
+  界:
+    english: world
+    kanji: 界
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: world
+      kana: せかい
+      type: (n)
+      vocab: 世界
+    - english: academic world
+      kana: がっかい
+      type: (n)
+      vocab: 学界
+    - english: physical world, the externals
+      kana: がいかい
+      type: (n)
+      vocab: 外界
+  病:
+    english: ill, sick
+    kanji: 病
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: hospital
+      kana: びょういん
+      type: (n)
+      vocab: 病院
+    - english: sick
+      kana: びょうき
+      type: (n)
+      vocab: 病気
+    - english: (dying a) natural death
+      kana: びょうし
+      type: (n,p-suru)
+      vocab: 病死
+    - english: sick person
+      kana: びょうにん
+      type: (n)
+      vocab: 病人
+  発:
+    english: departure, emit, disclose
+    kanji: 発
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: announcement, publication
+      kana: はっぴょう
+      type: (n,p-suru)
+      vocab: 発表
+    - english: proposal, speech
+      kana: はつげん
+      type: (n)
+      vocab: 発言
+    - english: counter for gunshots
+      kana: はつ
+      type: (n-suf)
+      vocab: 発
+    - english: departure
+      kana: しゅっぱつ
+      type: (n,p-suru)
+      vocab: 出発
+    - english: discovery, detection
+      kana: はっけん
+      type: (n,p-suru)
+      vocab: 発見
+  県:
+    english: prefecture
+    kanji: 県
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: prefecture
+      kana: けん
+      type: (n)
+      vocab: 県
+    - english: within the prefecture
+      kana: けんない
+      type: (n)
+      vocab: 県内
+    - english: outside the prefecture
+      kana: けんがい
+      type: (n)
+      vocab: 県外
+  真:
+    english: true, reality
+    kanji: 真
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: photograph
+      kana: しゃしん
+      type: (n)
+      vocab: 写真
+    - english: centre, mid-way
+      kana: まんなか
+      type: (n)
+      vocab: 真中
+    - english: truth
+      kana: しんり
+      type: (n)
+      vocab: 真理
+    - english: pure white
+      kana: まっしろ
+      type: (na-adj,n)
+      vocab: 真っ白
+  着:
+    english: arrive, wear
+    kanji: 着
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to wear
+      kana: きる
+      type: (ru-v)
+      vocab: 着る
+    - english: to arrive
+      kana: つく
+      type: (u-v)
+      vocab: 着く
+    - english: kimono (Japanese-style dress)
+      kana: きもの
+      type: (n)
+      vocab: 着物
+    - english: underwear
+      kana: したぎ
+      type: (n)
+      vocab: 下着
+  知:
+    english: know, wisdom
+    kanji: 知
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to know
+      kana: しる
+      type: (ru-v)
+      vocab: 知る
+    - english: wisdom, wit
+      kana: ちえ
+      type: ~
+      vocab: 知恵
+    - english: to notice, to advise
+      kana: しらせる
+      type: (ru-v)
+      vocab: 知らせる
+    - english: notice
+      kana: しらせ
+      type: (n)
+      vocab: 知らせ
+    - english: shyness
+      kana: ひとみしり
+      type: (n)
+      vocab: 人見知り
+  短:
+    english: short, fault, defect
+    kanji: 短
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: short
+      kana: みじかい
+      type: (adj)
+      vocab: 短い
+    - english: short temper
+      kana: たんき
+      type: (n)
+      vocab: 短気
+  研:
+    english: polish, sharpen, study
+    kanji: 研
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: research
+      kana: けんきゅう
+      type: (n,p-suru)
+      vocab: 研究
+    - english: researcher
+      kana: けんきゅうしゃ
+      type: (n)
+      vocab: 研究者
+    - english: to sharpen, to grind
+      kana: とぐ
+      type: (u-v)
+      vocab: 研ぐ
+  私:
+    english: private, I, me
+    kanji: 私
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: Me, I
+      kana: わたし
+      type: (n)
+      vocab: 私
+    - english: private school
+      kana: しがく
+      type: (n)
+      vocab: 私学
+    - english: plain clothes
+      kana: しふく
+      type: (n)
+      vocab: 私服
+    - english: personal opinion
+      kana: しけん
+      type: (n)
+      vocab: 私見
+  秋:
+    english: autumn
+    kanji: 秋
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: autumn
+      kana: あき
+      type: (n)
+      vocab: 秋
+    - english: autumn breeze
+      kana: あきかぜ
+      type: (n)
+      vocab: 秋風
+    - english: spring and autumn
+      kana: しゅんじゅう
+      type: (n)
+      vocab: 春秋
+  究:
+    english: research, study
+    kanji: 究
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: research, study
+      kana: けんきゅう
+      type: (n, p-suru)
+      vocab: 研究
+    - english: scholar
+      kana: がっきゅう
+      type: (n)
+      vocab: 学究
+    - english: scientific investigation
+      kana: きゅうめい
+      type: (n)
+      vocab: 究明
+    - english: researcher
+      kana: けんきゅういん
+      type: (n)
+      vocab: 研究員
+  答:
+    english: solution, answer
+    kanji: 答
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: answer
+      kana: こたえ
+      type: (n)
+      vocab: 答え
+    - english: questions and answers
+      kana: もんどう
+      type: (n)
+      vocab: 問答
+    - english: retort
+      kana: くちごたえ
+      type: (n,p-suru)
+      vocab: 口答え
+  紙:
+    english: paper
+    kanji: 紙
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: paper
+      kana: かみ
+      type: (n)
+      vocab: 紙
+    - english: letter
+      kana: てがみ
+      type: (n)
+      vocab: 手紙
+    - english: blank form, answer sheet
+      kana: ようし
+      type: (n)
+      vocab: 用紙
+  終:
+    english: end, finish
+    kanji: 終
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to finish, to close
+      kana: おわる
+      type: (n)
+      vocab: 終わる
+    - english: the end
+      kana: おわり
+      type: (n)
+      vocab: 終わり
+    - english: from beginning to end
+      kana: しじゅう
+      type: (n)
+      vocab: 始終
+  習:
+    english: learn
+    kanji: 習
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to learn
+      kana: ならう
+      type: (u-v)
+      vocab: 習う
+    - english: training, instruction
+      kana: きょうしゅう
+      type: (n)
+      vocab: 教習
+    - english: to follow another's example
+      kana: みならう
+      type: (u-v)
+      vocab: 見習う
+  考:
+    english: consider, think over
+    kanji: 考
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to think, to consider
+      kana: かんがえる
+      type: (u-v)
+      vocab: 考える
+    - english: thought, idea
+      kana: かんがえ
+      type: (n)
+      vocab: 考え
+    - english: way of thinking
+      kana: かんがえかた
+      type: (n)
+      vocab: 考え方
+  者:
+    english: somone, person
+    kanji: 者
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: person
+      kana: もの
+      type: (n)
+      vocab: 者
+    - english: trader, merchant
+      kana: ぎょうしゃ
+      type: (n)
+      vocab: 業者
+    - english: casualty, deceased (person)
+      kana: ししゃ
+      type: (n)
+      vocab: 死者
+    - english: doctor
+      kana: いしゃ
+      type: (n)
+      vocab: 医者
+    - english: scientist
+      kana: かがくしゃ
+      type: (n)
+      vocab: 科学者
+  肉:
+    english: meat
+    kanji: 肉
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: meat
+      kana: にく
+      type: (n)
+      vocab: 肉
+    - english: beef
+      kana: ぎゅうにく
+      type: (n)
+      vocab: 牛肉
+    - english: blood relative
+      kana: にくしん
+      type: (n)
+      vocab: 肉親
+    - english: butcher
+      kana: にくや
+      type: (n)
+      vocab: 肉屋
+  自:
+    english: oneself
+    kanji: 自
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: oneself
+      kana: じぶん
+      type: (n)
+      vocab: 自分
+    - english: automatic
+      kana: じどう
+      type: (na-adj, n)
+      vocab: 自動
+    - english: bicycle
+      kana: じてんしゃ
+      type: (n)
+      vocab: 自転車
+    - english: one's home country
+      kana: じこく
+      type: (n)
+      vocab: 自国
+  色:
+    english: colour
+    kanji: 色
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: colour
+      kana: いろ
+      type: (n)
+      vocab: 色
+    - english: characteristic
+      kana: とくしょく
+      type: (n)
+      vocab: 特色
+    - english: yellow
+      kana: きいろ
+      type: (na-adj,n)
+      vocab: 黄色
+    - english: various
+      kana: いろいろ
+      type: (na-adj,n,adv)
+      vocab: 色々
+  英:
+    english: England, english
+    kanji: 英
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: the English language
+      kana: えいご
+      type: (n)
+      vocab: 英語
+    - english: sentence in English
+      kana: えいぶん
+      type: (n)
+      vocab: 英文
+    - english: intelligent, wise, bright
+      kana: えいめい
+      type: (na-adj,n)
+      vocab: 英明
+    - english: intelligence
+      kana: えいち
+      type: (n)
+      vocab: 英知
+  茶:
+    english: tea
+    kanji: 茶
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: (green) tea
+      kana: おちゃ
+      type: (n)
+      vocab: お茶
+    - english: brown
+      kana: ちゃいろ
+      type: (n)
+      vocab: 茶色
+    - english: Tea Ceremony
+      kana: さどう
+      type: ~
+      vocab: 茶道
+  菜:
+    english: vegetable, greens
+    kanji: 菜
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: vegetables
+      kana: やさい
+      type: (n)
+      vocab: 野菜
+    - english: Chinese cabbage, white rape
+      kana: はくさい
+      type: (n)
+      vocab: 白菜
+    - english: vegetable diet
+      kana: さいしょく
+      type: (n)
+      vocab: 菜食
+  薬:
+    english: medicine
+    kanji: 薬
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: medicine, pharmaceuticals
+      kana: くすり
+      type: (n)
+      vocab: 薬
+    - english: gun powder
+      kana: かやく
+      type: (n)
+      vocab: 火薬
+    - english: study of pharmacy
+      kana: やくがく
+      type: (n)
+      vocab: 薬学
+  親:
+    english: parent, relative, intimacy
+    kanji: 親
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: parents
+      kana: おや
+      type: (n)
+      vocab: 親
+    - english: parents
+      kana: りょうしん
+      type: (n)
+      vocab: 両親
+    - english: intimate, close (eg friend)
+      kana: したしい
+      type: (adj)
+      vocab: 親しい
+    - english: kindness, gentleness
+      kana: しんせつ
+      type: (na-adj,n)
+      vocab: 親切
+    - english: close friend
+      kana: しんゆう
+      type: (n)
+      vocab: 親友
+  計:
+    english: plot, plan, scheme, measure
+    kanji: 計
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: plan, project, program
+      kana: けいかく
+      type: (n)
+      vocab: 計画
+    - english: watch, clock
+      kana: とけい
+      type: (n)
+      vocab: 時計
+    - english: to measure
+      kana: はかる
+      type: (u-v)
+      vocab: 計る
+    - english: immeasurable, inestimable
+      kana: はかりしれない
+      type: (adj,expr)
+      vocab: 計り知れない
+  試:
+    english: test, try, attempt
+    kanji: 試
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: match
+      kana: しあい
+      type: (n)
+      vocab: 試合
+    - english: exam, test
+      kana: しけん
+      type: (n)
+      vocab: 試験
+    - english: trial, experiment
+      kana: こころみ
+      type: (n)
+      vocab: 試み
+    - english: sampling food
+      kana: ししょく
+      type: (n)
+      vocab: 試食
+  説:
+    english: rumour, opinion, theory
+    kanji: 説
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: explanation
+      kana: せつめい
+      type: (n,p-suru)
+      vocab: 説明
+    - english: novel, short story
+      kana: しょうせつ
+      type: (n)
+      vocab: 小説
+    - english: theory
+      kana: せつ
+      type: (n,n-suf)
+      vocab: 説
+    - english: theory
+      kana: がくせつ
+      type: (n)
+      vocab: 学説
+  貸:
+    english: lend
+    kanji: 貸
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to lend
+      kana: かす
+      type: (u-v)
+      vocab: 貸す
+    - english: loan
+      kana: かし
+      type: ~
+      vocab: 貸し
+  質:
+    english: substance, quality, matter
+    kanji: 質
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: quality
+      kana: しつ
+      type: (n)
+      vocab: 質
+    - english: question, inquiry
+      kana: しつもん
+      type: (n)
+      vocab: 質問
+    - english: water quality
+      kana: すいしつ
+      type: (n)
+      vocab: 水質
+    - english: bad quality, malignant
+      kana: あくしつ
+      type: (na-adj,n)
+      vocab: 悪質
+  赤:
+    english: red
+    kanji: 赤
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: red
+      kana: あかい
+      type: (n)
+      vocab: 赤い
+    - english: baby
+      kana: あかちゃん
+      type: (n)
+      vocab: 赤ちゃん
+    - english: equator
+      kana: せきどう
+      type: (n)
+      vocab: 赤道
+  走:
+    english: run
+    kanji: 走
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to run
+      kana: はしる
+      type: (u-v)
+      vocab: 走る
+    - english: scribble
+      kana: はしりがき
+      type: (n)
+      vocab: 走り書き
+  起:
+    english: wake, get up
+    kanji: 起
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to wake up
+      kana: おきる
+      type: (ru-v)
+      vocab: 起きる
+    - english: to occur, to happen
+      kana: おこる
+      type: (u-v)
+      vocab: 起こる
+  転:
+    english: revolve, turn around, change
+    kanji: 転
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to turn, to shift
+      kana: てんじる
+      type: (ru-v)
+      vocab: 転じる
+    - english: bicycle
+      kana: じてんしゃ
+      type: (n)
+      vocab: 自転車
+    - english: to fall down, to fall over
+      kana: ころぶ
+      type: (u-v)
+      vocab: 転ぶ
+    - english: resale
+      kana: てんばい
+      type: (n)
+      vocab: 転売
+  軽:
+    english: light, unimportant
+    kanji: 軽
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: light, non-serious
+      kana: かるい
+      type: (adj)
+      vocab: 軽い
+    - english: easy, simple, informal
+      kana: てがる
+      type: (na-adj, n)
+      vocab: 手軽
+    - english: cheerful, lighthearted
+      kana: きがる
+      type: (na-adj, n)
+      vocab: 気軽
+    - english: lightly, easily
+      kana: かるがる
+      type: (adv)
+      vocab: 軽々
+    - english: talkative, loose-lipped
+      kana: かるくち
+      type: (na-adj, n)
+      vocab: 軽口
+  近:
+    english: near
+    kanji: 近
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: near, close by
+      kana: ちかい
+      type: (adj)
+      vocab: 近い
+    - english: neighbourhood
+      kana: きんじょ
+      type: (n)
+      vocab: 近所
+    - english: shortcut, short way
+      kana: ちかみち
+      type: (n)
+      vocab: 近道
+  送:
+    english: send
+    kanji: 送
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to send, to see off (person)
+      kana: おくる
+      type: (u-v)
+      vocab: 送る
+    - english: postpone
+      kana: さきおくり
+      type: (n)
+      vocab: 先送り
+    - english: electric supply
+      kana: そうでん
+      type: (n)
+      vocab: 送電
+    - english: farewell, send off
+      kana: そうべつ
+      type: (n)
+      vocab: 送別
+  通:
+    english: pass through, commute
+    kanji: 通
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to commute, to go back and forth
+      kana: かよう
+      type: (u-v)
+      vocab: 通う
+    - english: to pass by, to walk along
+      kana: とおる
+      type: (u-v)
+      vocab: 通る
+    - english: coming and going, commuting
+      kana: かよい
+      type: (n)
+      vocab: 通い
+    - english: to let pass, to overlook
+      kana: とおす
+      type: (u-v)
+      vocab: 通す
+    - english: newsagency
+      kana: つうしんしゃ
+      type: (n)
+      vocab: 通信社
+  進:
+    english: advance, proceed, progress
+    kanji: 進
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to make progress
+      kana: すすむ
+      type: (u-v)
+      vocab: 進む
+    - english: progress, development
+      kana: しんぽ
+      type: (n, p-suru)
+      vocab: 進歩
+  運:
+    english: transport, progress, luck, fate
+    kanji: 運
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: fortune, luck, (運がいい=to have good luck)
+      kana: うん
+      type: (n)
+      vocab: 運
+    - english: to transport
+      kana: はこぶ
+      type: (u-v)
+      vocab: 運ぶ
+    - english: exercise
+      kana: うんどう
+      type: (n, p-suru)
+      vocab: 運動
+    - english: driving, motion
+      kana: うんてん
+      type: (n, p-suru)
+      vocab: 運転
+  遠:
+    english: distant, far
+    kanji: 遠
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: far, distant
+      kana: とおい
+      type: (adj)
+      vocab: 遠い
+    - english: trip, hike, picnic
+      kana: えんそく
+      type: (n)
+      vocab: 遠足
+    - english: indirect (roundabout) expression
+      kana: とおまわし
+      type: (na-adj)
+      vocab: 遠まわし
+    - english: centrifugal force
+      kana: えんしんりょく
+      type: (n)
+      vocab: 遠心力
+  都:
+    english: metropolis, capital
+    kanji: 都
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: capital
+      kana: みやこ
+      type: (n)
+      vocab: 都
+    - english: Kyoto (city)
+      kana: きょうと
+      type: (n)
+      vocab: 京都
+    - english: city
+      kana: とかい
+      type: (n)
+      vocab: 都会
+  重:
+    english: heavy, pile up
+    kanji: 重
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: heavy
+      kana: おもい
+      type: (adj)
+      vocab: 重い
+    - english: to pile up, to heap
+      kana: かさねる
+      type: (u-v)
+      vocab: 重ねる
+    - english: serious, important, grave
+      kana: じゅうだい
+      type: (na-adj,n)
+      vocab: 重大
+    - english: one's body weight
+      kana: たいじゅう
+      type: (n)
+      vocab: 体重
+    - english: weight
+      kana: おもさ
+      type: (n)
+      vocab: 重さ
+  野:
+    english: plains, field, civilian life
+    kanji: 野
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: vegetable
+      kana: やさい
+      type: (n)
+      vocab: 野菜
+    - english: wild
+      kana: やせい
+      type: (n)
+      vocab: 野生
+    - english: (wild) bird
+      kana: やちょう
+      type: ~
+      vocab: 野鳥
+    - english: suburbs, outskirts
+      kana: やがい
+      type: (n)
+      vocab: 野外
+  銀:
+    english: silver
+    kanji: 銀
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: bank
+      kana: ぎんこう
+      type: (n)
+      vocab: 銀行
+    - english: silver
+      kana: ぎんいろ
+      type: (n)
+      vocab: 銀色
+    - english: mercury
+      kana: すいぎん
+      type: (n)
+      vocab: 水銀
+  門:
+    english: gates
+    kanji: 門
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: gate
+      kana: もん
+      type: (n)
+      vocab: 門
+    - english: one's pupil or follower
+      kana: もんか
+      type: (n)
+      vocab: 門下
+    - english: amateur, outsider, layman
+      kana: もんがいかん
+      type: (n)
+      vocab: 門外漢
+    - english: primer, manual
+      kana: にゅうもん
+      type: (n)
+      vocab: 入門
+  開:
+    english: open, unseal
+    kanji: 開
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to open
+      kana: あく
+      type: (u-v)
+      vocab: 開く
+  院:
+    english: institution, school
+    kanji: 院
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: hospital
+      kana: びょういん
+      type: (n)
+      vocab: 病院
+    - english: institute, academy
+      kana: がくいん
+      type: (n)
+      vocab: 学院
+    - english: graduate school
+      kana: だいがくいん
+      type: (n)
+      vocab: 大学院
+    - english: hospital admission
+      kana: にゅういん
+      type: (n,p-suru)
+      vocab: 入院
+  集:
+    english: gather, meet, congregate
+    kanji: 集
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: to gather, to assemble
+      kana: あつめる
+      type: (ru-v, trans-verb)
+      vocab: 集める
+    - english: to gather, to assemble
+      kana: あつまる
+      type: (u-v, intrans-verb)
+      vocab: 集まる
+    - english: concentration
+      kana: しゅうちゅう
+      type: (n, p-suru)
+      vocab: 集中
+    - english: collection
+      kana: しゅう
+      type: (n)
+      vocab: 集
+  青:
+    english: blue, green
+    kanji: 青
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: blue
+      kana: あお
+      type: (n)
+      vocab: 青
+    - english: blue sky
+      kana: あおぞら
+      type: (n)
+      vocab: 青空
+  音:
+    english: sound, noise
+    kanji: 音
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: music
+      kana: おんがく
+      type: (n)
+      vocab: 音楽
+    - english: sound
+      kana: おと
+      type: (n)
+      vocab: 音
+    - english: tone quality
+      kana: おんしつ
+      type: (n)
+      vocab: 音質
+    - english: sound of footsteps
+      kana: あしおと
+      type: (n)
+      vocab: 足音
+    - english: sounds
+      kana: ものおと
+      type: (n)
+      vocab: 物音
+  頭:
+    english: head, chief, top
+    kanji: 頭
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: head
+      kana: あたま
+      type: (n)
+      vocab: 頭
+  題:
+    english: topic, subject
+    kanji: 題
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: problem, question
+      kana: もんだい
+      type: (n)
+      vocab: 問題
+    - english: homework
+      kana: しゅくだい
+      type: (n)
+      vocab: 宿題
+  顔:
+    english: face, expression
+    kanji: 顔
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: face (person)
+      kana: かお
+      type: (n)
+      vocab: 顔
+    - english: smiling face
+      kana: えがお
+      type: (n)
+      vocab: 笑顔
+    - english: complexion, expression
+      kana: かおいろ
+      type: (n)
+      vocab: 顔色
+    - english: newcomer, new face
+      kana: しんがお
+      type: (n)
+      vocab: 新顔
+  風:
+    english: wind, manner
+    kanji: 風
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: wind
+      kana: かぜ
+      type: (n)
+      vocab: 風
+    - english: typhoon
+      kana: たいふう
+      type: (n)
+      vocab: 台風
+    - english: western style
+      kana: ようふう
+      type: (na-adj)
+      vocab: 洋風
+    - english: custom
+      kana: ふうしゅう
+      type: (n)
+      vocab: 風習
+  飯:
+    english: food
+    kanji: 飯
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: red rice
+      kana: せきはん
+      type: (n)
+      vocab: 赤飯
+    - english: evening meal
+      kana: ゆうはん
+      type: (n)
+      vocab: 夕飯
+    - english: meal, rice
+      kana: ごはん
+      type: (n)
+      vocab: ご飯
+    - english: breakfast
+      kana: あさごはん
+      type: (n)
+      vocab: 朝ご飯
+  館:
+    english: large building, palace
+    kanji: 館
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: library
+      kana: としょかん
+      type: (n)
+      vocab: 図書館
+    - english: Japanese-style inn
+      kana: りょかん
+      type: (n)
+      vocab: 旅館
+    - english: cinema, movie theatre
+      kana: えいがかん
+      type: (n)
+      vocab: 映画館
+    - english: main building
+      kana: ほんかん
+      type: (n)
+      vocab: 本館
+  首:
+    english: neck
+    kanji: 首
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: neck
+      kana: くび
+      type: (n)
+      vocab: 首
+    - english: ankle
+      kana: あしくび
+      type: (n)
+      vocab: 足首
+    - english: wrist
+      kana: てくび
+      type: (n)
+      vocab: 手首
+    - english: to surrender, to give oneself up
+      kana: じしゅ
+      type: (n,p-suru)
+      vocab: 自首
+  験:
+    english: verify, test
+    kanji: 験
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: test, exam
+      kana: しけん
+      type: (n)
+      vocab: 試験
+    - english: personal experience
+      kana: たいけん
+      type: (n,p-suru)
+      vocab: 体験
+  鳥:
+    english: bird
+    kanji: 鳥
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: bird
+      kana: とり
+      type: (n)
+      vocab: 鳥
+    - english: small bird
+      kana: ことり
+      type: (n)
+      vocab: 小鳥
+    - english: wild bird
+      kana: やちょう
+      type: (n)
+      vocab: 野鳥
+    - english: two birds with one stone
+      kana: いっせきにちょう
+      type: (expr)
+      vocab: 一石二鳥
+  黒:
+    english: black
+    kanji: 黒
+    kun_count: 0
+    kun_yomi: []
+    on_count: 0
+    on_yomi: []
+    other_readings: []
+    reading_count: 0
+    stroke_count: ~
+    vocab:
+    - english: black
+      kana: くろ
+      type: (n)
+      vocab: 黒
+    - english: to be in the black
+      kana: くろじ
+      type: (n)
+      vocab: 黒字
+    - english: black and white
+      kana: しろくろ
+      type: (n)
+      vocab: 白黒
+    - english: dark, blackish
+      kana: くろっぽい
+      type: (adj)
+      vocab: 黒っぽい
+level: 4

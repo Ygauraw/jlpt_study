@@ -1,0 +1,1298 @@
+---
+kanji:
+  一:
+    english: one
+    id: '3366'
+    kanji: 一
+    kun_count: 1
+    kun_yomi:
+    - ひと-
+    on_count: 3
+    on_yomi:
+    - イチ
+    - イツ
+    - ヒト.
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  七:
+    english: seven
+    id: '3405'
+    kanji: 七
+    kun_count: 2
+    kun_yomi:
+    - なな
+    - なな.つ
+    on_count: 2
+    on_yomi:
+    - シチ
+    - ナ
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  万:
+    english: ten thousand
+    id: '3431'
+    kanji: 万
+    kun_count: 0
+    kun_yomi: []
+    on_count: 3
+    on_yomi:
+    - マン
+    - バン
+    - ヨロ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  三:
+    english: three
+    id: '3377'
+    kanji: 三
+    kun_count: 2
+    kun_yomi:
+    - み
+    - み.つ
+    on_count: 3
+    on_yomi:
+    - サン
+    - ゾウ
+    - ミッ.
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  上:
+    english: above, up
+    id: '3387'
+    kanji: 上
+    kun_count: 13
+    kun_yomi:
+    - うえ
+    - -うえ
+    - うわ-
+    - かみ
+    - あ.げる
+    - -あ.げる
+    - あ.がる
+    - -あ.がる
+    - あ.がり
+    - -あ.がり
+    - のぼ.る
+    - のぼ.り
+    - のぼ.
+    on_count: 4
+    on_yomi:
+    - ジョウ
+    - ショウ
+    - シャン
+    - ヨ.
+    other_readings: []
+    reading_count: 17
+    stroke_count: ~
+    vocab: []
+  下:
+    english: below, down, descend, give, low, inferior
+    id: '3401'
+    kanji: 下
+    kun_count: 11
+    kun_yomi:
+    - した
+    - しも
+    - もと
+    - さ.げる
+    - さ.がる
+    - くだ.る
+    - くだ.り
+    - くだ.す
+    - -くだ.す
+    - くだ.さる
+    - お.ろす
+    on_count: 3
+    on_yomi:
+    - カ
+    - ゲ
+    - オ.リ
+    other_readings: []
+    reading_count: 14
+    stroke_count: ~
+    vocab: []
+  中:
+    english: in, inside, middle, mean, center
+    id: '3374'
+    kanji: 中
+    kun_count: 2
+    kun_yomi:
+    - なか
+    - うち
+    on_count: 2
+    on_yomi:
+    - チュウ
+    - アタ.
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  九:
+    english: nine
+    id: '3392'
+    kanji: 九
+    kun_count: 1
+    kun_yomi:
+    - ここの
+    on_count: 3
+    on_yomi:
+    - キュウ
+    - ク
+    - ココノ.
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  二:
+    english: two
+    id: '3372'
+    kanji: 二
+    kun_count: 2
+    kun_yomi:
+    - ふた
+    - ふた.つ
+    on_count: 3
+    on_yomi:
+    - ニ
+    - ジ
+    - フタタ.
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  五:
+    english: five
+    id: '3385'
+    kanji: 五
+    kun_count: 1
+    kun_yomi:
+    - いつ
+    on_count: 2
+    on_yomi:
+    - ゴ
+    - イツ.
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  人:
+    english: person
+    id: '3368'
+    kanji: 人
+    kun_count: 2
+    kun_yomi:
+    - ひと
+    - -り
+    on_count: 3
+    on_yomi:
+    - ジン
+    - ニン
+    - '-'
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  今:
+    english: now
+    id: '3390'
+    kanji: 今
+    kun_count: 0
+    kun_yomi: []
+    on_count: 3
+    on_yomi:
+    - コン
+    - キン
+    - イ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  休:
+    english: rest, day off, retire, sleep
+    id: '3441'
+    kanji: 休
+    kun_count: 3
+    kun_yomi:
+    - やす.む
+    - やす.まる
+    - やす.める
+    on_count: 1
+    on_yomi:
+    - キュウ
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  何:
+    english: what
+    id: '3429'
+    kanji: 何
+    kun_count: 4
+    kun_yomi:
+    - なに
+    - なん
+    - なに-
+    - なん
+    on_count: 1
+    on_yomi:
+    - カ
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  先:
+    english: before, ahead, previous, future, precedence
+    id: '3413'
+    kanji: 先
+    kun_count: 1
+    kun_yomi:
+    - さき
+    on_count: 2
+    on_yomi:
+    - セン
+    - マ.
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  入:
+    english: enter, insert
+    id: '3393'
+    kanji: 入
+    kun_count: 5
+    kun_yomi:
+    - い.る
+    - -い.る
+    - -い.り
+    - い.れる
+    - -い.れ
+    on_count: 3
+    on_yomi:
+    - ニュウ
+    - ジュ
+    - ハイ.
+    other_readings: []
+    reading_count: 8
+    stroke_count: ~
+    vocab: []
+  八:
+    english: eight
+    id: '3399'
+    kanji: 八
+    kun_count: 3
+    kun_yomi:
+    - や
+    - や.つ
+    - やっ.つ
+    on_count: 2
+    on_yomi:
+    - ハチ
+    - ヨ
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  六:
+    english: six
+    id: '3400'
+    kanji: 六
+    kun_count: 3
+    kun_yomi:
+    - む
+    - む.つ
+    - むっ.つ
+    on_count: 3
+    on_yomi:
+    - ロク
+    - リク
+    - ム
+    other_readings: []
+    reading_count: 6
+    stroke_count: ~
+    vocab: []
+  円:
+    english: circle, yen, round
+    id: '3396'
+    kanji: 円
+    kun_count: 4
+    kun_yomi:
+    - まる.い
+    - まる
+    - まど
+    - まど.か
+    on_count: 2
+    on_yomi:
+    - エン
+    - マロ.ヤ
+    other_readings: []
+    reading_count: 6
+    stroke_count: ~
+    vocab: []
+  出:
+    english: exit, leave
+    id: '3376'
+    kanji: 出
+    kun_count: 5
+    kun_yomi:
+    - で.る
+    - -で
+    - だ.す
+    - -だ.す
+    - い.でる
+    on_count: 3
+    on_yomi:
+    - シュツ
+    - スイ
+    - イ.ダ
+    other_readings: []
+    reading_count: 8
+    stroke_count: ~
+    vocab: []
+  前:
+    english: in front, before
+    id: '3383'
+    kanji: 前
+    kun_count: 1
+    kun_yomi:
+    - まえ
+    on_count: 2
+    on_yomi:
+    - ゼン
+    - -マ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  北:
+    english: north
+    id: '3409'
+    kanji: 北
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - ホク
+    - キ
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  十:
+    english: ten
+    id: '3371'
+    kanji: 十
+    kun_count: 1
+    kun_yomi:
+    - とお
+    on_count: 3
+    on_yomi:
+    - ジュウ
+    - ジッ
+    - ジュッ
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  千:
+    english: thousand
+    id: '3416'
+    kanji: 千
+    kun_count: 0
+    kun_yomi: []
+    on_count: 1
+    on_yomi:
+    - セン
+    other_readings: []
+    reading_count: 1
+    stroke_count: ~
+    vocab: []
+  午:
+    english: noon, sign of the horse, 11AM-1PM, seventh sign of Chinese zodiac
+    id: '3410'
+    kanji: 午
+    kun_count: 1
+    kun_yomi:
+    - うま
+    on_count: 1
+    on_yomi:
+    - ゴ
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  半:
+    english: half, middle, odd number, semi-, part-
+    id: '3418'
+    kanji: 半
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - ハン
+    - ナカ.
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  南:
+    english: south
+    id: '3430'
+    kanji: 南
+    kun_count: 0
+    kun_yomi: []
+    on_count: 3
+    on_yomi:
+    - ナン
+    - ナ
+    - ミナ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  友:
+    english: friend
+    id: '3439'
+    kanji: 友
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - ユウ
+    - ト
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  右:
+    english: right
+    id: '3437'
+    kanji: 右
+    kun_count: 0
+    kun_yomi: []
+    on_count: 3
+    on_yomi:
+    - ウ
+    - ユウ
+    - ミ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  名:
+    english: name, noted, distinguished, reputation
+    id: '3414'
+    kanji: 名
+    kun_count: 1
+    kun_yomi:
+    - な
+    on_count: 3
+    on_yomi:
+    - メイ
+    - ミョウ
+    - '-'
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  四:
+    english: four
+    id: '3389'
+    kanji: 四
+    kun_count: 3
+    kun_yomi:
+    - よ
+    - よ.つ
+    - よっ.つ
+    on_count: 2
+    on_yomi:
+    - シ
+    - ヨ
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  国:
+    english: country
+    id: '3367'
+    kanji: 国
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - コク
+    - ク
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  土:
+    english: soil, earth, ground, Turkey
+    id: '3424'
+    kanji: 土
+    kun_count: 0
+    kun_yomi: []
+    on_count: 3
+    on_yomi:
+    - ド
+    - ト
+    - ツ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  外:
+    english: outside
+    id: '3398'
+    kanji: 外
+    kun_count: 5
+    kun_yomi:
+    - そと
+    - ほか
+    - はず.す
+    - はず.れる
+    - と
+    on_count: 2
+    on_yomi:
+    - ガイ
+    - ゲ
+    other_readings: []
+    reading_count: 7
+    stroke_count: ~
+    vocab: []
+  大:
+    english: large, big
+    id: '3370'
+    kanji: 大
+    kun_count: 2
+    kun_yomi:
+    - おお-
+    - おお.きい
+    on_count: 3
+    on_yomi:
+    - ダイ
+    - タイ
+    - -オオ.イ
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  天:
+    english: heavens, sky, imperial
+    id: '3434'
+    kanji: 天
+    kun_count: 3
+    kun_yomi:
+    - あまつ
+    - あめ
+    - あま
+    on_count: 1
+    on_yomi:
+    - テン
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  女:
+    english: woman, female
+    id: '3408'
+    kanji: 女
+    kun_count: 1
+    kun_yomi:
+    - おんな
+    on_count: 3
+    on_yomi:
+    - ジョ
+    - ニョ
+    - ニョウ
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  子:
+    english: child, sign of the rat, 11PM-1AM, first sign of Chinese zodiac
+    id: '3397'
+    kanji: 子
+    kun_count: 2
+    kun_yomi:
+    - こ
+    - -こ
+    on_count: 3
+    on_yomi:
+    - シ
+    - ス
+    - ツ
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  学:
+    english: study, learning, science
+    id: '3394'
+    kanji: 学
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - ガク
+    - マナ.
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  小:
+    english: little, small
+    id: '3404'
+    kanji: 小
+    kun_count: 4
+    kun_yomi:
+    - ちい.さい
+    - こ-
+    - お-
+    - さ
+    on_count: 1
+    on_yomi:
+    - ショウ
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  山:
+    english: mountain
+    id: '3406'
+    kanji: 山
+    kun_count: 0
+    kun_yomi: []
+    on_count: 3
+    on_yomi:
+    - サン
+    - セン
+    - ヤ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  川:
+    english: stream, river
+    id: '3415'
+    kanji: 川
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - セン
+    - カ
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  左:
+    english: left
+    id: '3440'
+    kanji: 左
+    kun_count: 0
+    kun_yomi: []
+    on_count: 3
+    on_yomi:
+    - サ
+    - シャ
+    - ヒダ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  年:
+    english: year
+    id: '3369'
+    kanji: 年
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - ネン
+    - ト
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  後:
+    english: behind, back, later
+    id: '3382'
+    kanji: 後
+    kun_count: 4
+    kun_yomi:
+    - のち
+    - うし.ろ
+    - うしろ
+    - あと
+    on_count: 3
+    on_yomi:
+    - ゴ
+    - コウ
+    - オク.レ
+    other_readings: []
+    reading_count: 7
+    stroke_count: ~
+    vocab: []
+  日:
+    english: day, sun, Japan
+    id: '3365'
+    kanji: 日
+    kun_count: 2
+    kun_yomi:
+    - ひ
+    - -び
+    on_count: 3
+    on_yomi:
+    - ニチ
+    - ジツ
+    - '-'
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  時:
+    english: time, hour
+    id: '3378'
+    kanji: 時
+    kun_count: 1
+    kun_yomi:
+    - とき
+    on_count: 2
+    on_yomi:
+    - ジ
+    - -ド
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  書:
+    english: write
+    id: '3412'
+    kanji: 書
+    kun_count: 2
+    kun_yomi:
+    - か.く
+    - -が.き
+    on_count: 2
+    on_yomi:
+    - ショ
+    - -ガ
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  月:
+    english: month, moon
+    id: '3381'
+    kanji: 月
+    kun_count: 0
+    kun_yomi: []
+    on_count: 3
+    on_yomi:
+    - ゲツ
+    - ガツ
+    - ツ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  木:
+    english: tree, wood
+    id: '3425'
+    kanji: 木
+    kun_count: 2
+    kun_yomi:
+    - き
+    - こ
+    on_count: 2
+    on_yomi:
+    - ボク
+    - モク
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  本:
+    english: book, present, main, true, real, counter for long things
+    id: '3373'
+    kanji: 本
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - ホン
+    - モ
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  来:
+    english: come, due, next, cause, become
+    id: '3402'
+    kanji: 来
+    kun_count: 6
+    kun_yomi:
+    - く.る
+    - きた.る
+    - きた.す
+    - き.たす
+    - き.たる
+    - き
+    on_count: 2
+    on_yomi:
+    - ライ
+    - タイ
+    other_readings: []
+    reading_count: 8
+    stroke_count: ~
+    vocab: []
+  東:
+    english: east
+    id: '3388'
+    kanji: 東
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - トウ
+    - ヒガ
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  校:
+    english: exam, school, printing, proof, correction
+    id: '3422'
+    kanji: 校
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - コウ
+    - キョ
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  母:
+    english: mama, mother
+    id: '3435'
+    kanji: 母
+    kun_count: 2
+    kun_yomi:
+    - はは
+    - も
+    on_count: 1
+    on_yomi:
+    - ボ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  毎:
+    english: every
+    id: '3432'
+    kanji: 毎
+    kun_count: 1
+    kun_yomi:
+    - ごと
+    on_count: 2
+    on_yomi:
+    - マイ
+    - -ゴト.
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  気:
+    english: spirit, mind
+    id: '3403'
+    kanji: 気
+    kun_count: 1
+    kun_yomi:
+    - いき
+    on_count: 2
+    on_yomi:
+    - キ
+    - ケ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  水:
+    english: water
+    id: '3417'
+    kanji: 水
+    kun_count: 2
+    kun_yomi:
+    - みず
+    - みず
+    on_count: 1
+    on_yomi:
+    - スイ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  火:
+    english: fire
+    id: '3436'
+    kanji: 火
+    kun_count: 3
+    kun_yomi:
+    - ひ
+    - -び
+    - ほ-
+    on_count: 1
+    on_yomi:
+    - カ
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  父:
+    english: father
+    id: '3442'
+    kanji: 父
+    kun_count: 1
+    kun_yomi:
+    - ちち
+    on_count: 1
+    on_yomi:
+    - フ
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  生:
+    english: life, genuine, birth
+    id: '3384'
+    kanji: 生
+    kun_count: 14
+    kun_yomi:
+    - い.きる
+    - い.かす
+    - い.ける
+    - う.まれる
+    - う.まれ
+    - うまれ
+    - う.む
+    - お.う
+    - は.える
+    - は.やす
+    - き
+    - なま
+    - なま-
+    - な.る
+    on_count: 3
+    on_yomi:
+    - セイ
+    - ショウ
+    - '-'
+    other_readings: []
+    reading_count: 17
+    stroke_count: ~
+    vocab: []
+  男:
+    english: male
+    id: '3419'
+    kanji: 男
+    kun_count: 1
+    kun_yomi:
+    - おとこ
+    on_count: 2
+    on_yomi:
+    - ダン
+    - ナン
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  白:
+    english: white
+    id: '3433'
+    kanji: 白
+    kun_count: 2
+    kun_yomi:
+    - しろ
+    - しら-
+    on_count: 3
+    on_yomi:
+    - ハク
+    - ビャク
+    - シロ.
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  百:
+    english: hundred
+    id: '3411'
+    kanji: 百
+    kun_count: 0
+    kun_yomi: []
+    on_count: 3
+    on_yomi:
+    - ヒャク
+    - ビャク
+    - モ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  聞:
+    english: hear, ask, listen
+    id: '3426'
+    kanji: 聞
+    kun_count: 2
+    kun_yomi:
+    - き.く
+    - き.こえる
+    on_count: 2
+    on_yomi:
+    - ブン
+    - モン
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  行:
+    english: going, journey
+    id: '3379'
+    kanji: 行
+    kun_count: 7
+    kun_yomi:
+    - い.く
+    - ゆ.く
+    - -ゆ.き
+    - -ゆき
+    - -い.き
+    - -いき
+    - おこな.う
+    on_count: 4
+    on_yomi:
+    - コウ
+    - ギョウ
+    - アン
+    - オコ.ナ
+    other_readings: []
+    reading_count: 11
+    stroke_count: ~
+    vocab: []
+  西:
+    english: west, Spain
+    id: '3420'
+    kanji: 西
+    kun_count: 0
+    kun_yomi: []
+    on_count: 4
+    on_yomi:
+    - セイ
+    - サイ
+    - ス
+    - ニ
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  見:
+    english: see, hopes, chances, idea, opinion, look at, visible
+    id: '3380'
+    kanji: 見
+    kun_count: 3
+    kun_yomi:
+    - み.る
+    - み.える
+    - み.せる
+    on_count: 1
+    on_yomi:
+    - ケン
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  話:
+    english: tale, talk
+    id: '3407'
+    kanji: 話
+    kun_count: 2
+    kun_yomi:
+    - はな.す
+    - はなし
+    on_count: 1
+    on_yomi:
+    - ワ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  語:
+    english: word, speech, language
+    id: '3423'
+    kanji: 語
+    kun_count: 2
+    kun_yomi:
+    - かた.る
+    - かた.らう
+    on_count: 1
+    on_yomi:
+    - ゴ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  読:
+    english: read
+    id: '3438'
+    kanji: 読
+    kun_count: 1
+    kun_yomi:
+    - よ.む
+    on_count: 4
+    on_yomi:
+    - ドク
+    - トク
+    - トウ
+    - -ヨ.
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  車:
+    english: car
+    id: '3428'
+    kanji: 車
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - シャ
+    - クル
+    other_readings: []
+    reading_count: 2
+    stroke_count: ~
+    vocab: []
+  金:
+    english: gold
+    id: '3391'
+    kanji: 金
+    kun_count: 2
+    kun_yomi:
+    - かね
+    - かな-
+    on_count: 4
+    on_yomi:
+    - キン
+    - コン
+    - ゴン
+    - -ガ
+    other_readings: []
+    reading_count: 6
+    stroke_count: ~
+    vocab: []
+  長:
+    english: long, leader
+    id: '3375'
+    kanji: 長
+    kun_count: 1
+    kun_yomi:
+    - なが.い
+    on_count: 2
+    on_yomi:
+    - チョウ
+    - オ
+    other_readings: []
+    reading_count: 3
+    stroke_count: ~
+    vocab: []
+  間:
+    english: interval, space
+    id: '3386'
+    kanji: 間
+    kun_count: 3
+    kun_yomi:
+    - あいだ
+    - ま
+    - あい
+    on_count: 2
+    on_yomi:
+    - カン
+    - ケン
+    other_readings: []
+    reading_count: 5
+    stroke_count: ~
+    vocab: []
+  雨:
+    english: rain
+    id: '3443'
+    kanji: 雨
+    kun_count: 3
+    kun_yomi:
+    - あめ
+    - あま-
+    - -さめ
+    on_count: 1
+    on_yomi:
+    - ウ
+    other_readings: []
+    reading_count: 4
+    stroke_count: ~
+    vocab: []
+  電:
+    english: electricity
+    id: '3421'
+    kanji: 電
+    kun_count: 0
+    kun_yomi: []
+    on_count: 1
+    on_yomi:
+    - デン
+    other_readings: []
+    reading_count: 1
+    stroke_count: ~
+    vocab: []
+  食:
+    english: eat, food
+    id: '3427'
+    kanji: 食
+    kun_count: 3
+    kun_yomi:
+    - く.う
+    - く.らう
+    - た.べる
+    on_count: 3
+    on_yomi:
+    - ショク
+    - ジキ
+    - ハ.
+    other_readings: []
+    reading_count: 6
+    stroke_count: ~
+    vocab: []
+  高:
+    english: tall, high, expensive
+    id: '3395'
+    kanji: 高
+    kun_count: 4
+    kun_yomi:
+    - たか.い
+    - たか
+    - -だか
+    - たか.まる
+    on_count: 2
+    on_yomi:
+    - コウ
+    - タカ.メ
+    other_readings: []
+    reading_count: 6
+    stroke_count: ~
+    vocab: []
+level: 5

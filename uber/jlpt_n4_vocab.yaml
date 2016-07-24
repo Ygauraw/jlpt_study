@@ -1,0 +1,3407 @@
+---
+- level: 4
+- english: Ah
+  id: '1'
+  kana: あ
+  regular: ''
+  type: int
+- english: like that,that way
+  id: '2'
+  kana: ああ
+  regular: ''
+  type: int
+- english: greeting
+  id: '3'
+  kana: あいさつ・する
+  regular: ''
+  type: n,vs
+- english: space,interval
+  id: '4'
+  kana: あいだ
+  regular: 間
+  type: n
+- english: to fit,to match
+  id: '5'
+  kana: あう
+  regular: 合う
+  type: u-v
+- english: baby,infant
+  id: '6'
+  kana: あかちゃん
+  regular: ''
+  type: n
+- english: to rise,to go up
+  id: '7'
+  kana: あがる
+  regular: 上がる
+  type: u-v
+- english: baby
+  id: '8'
+  kana: あかんぼう
+  regular: 赤ん坊
+  type: n
+- english: to open,to become empty
+  id: '9'
+  kana: あく
+  regular: 空く
+  type: u-v,vi
+- english: accessory
+  id: '10'
+  kana: アクセサリー
+  regular: ''
+  type: n
+- english: to give
+  id: '11'
+  kana: あげる
+  regular: ''
+  type: ru-v
+- english: shallow,superficial
+  id: '12'
+  kana: あさい
+  regular: 浅い
+  type: adj
+- english: flavor,taste
+  id: '13'
+  kana: あじ
+  regular: 味
+  type: adj-na,n
+- english: Asia
+  id: '14'
+  kana: アジア
+  regular: ''
+  type: n
+- english: tomorrow
+  id: '15'
+  kana: あす
+  regular: 明日
+  type: n-t
+- english: play
+  id: '16'
+  kana: あそび
+  regular: 遊び
+  type: n,n-suf
+- english: to gather,to collect
+  id: '17'
+  kana: あつまる
+  regular: 集る
+  type: u-v
+- english: to collect,to assemble
+  id: '18'
+  kana: あつめる
+  regular: 集める
+  type: ru-v,vt
+- english: announcer
+  id: '19'
+  kana: アナウンサー
+  regular: ''
+  type: n
+- english: Africa
+  id: '20'
+  kana: アフリカ
+  regular: ''
+  type: n
+- english: America
+  id: '21'
+  kana: アメリカ
+  regular: ''
+  type: n
+- english: to apologize
+  id: '22'
+  kana: あやまる
+  regular: 謝る
+  type: u-v
+- english: alcohol
+  id: '23'
+  kana: アルコール
+  regular: ''
+  type: n
+- english: part-time job
+  id: '24'
+  kana: アルバイト
+  regular: ''
+  type: n
+- english: peace of mind,relief
+  id: '25'
+  kana: あんしん
+  regular: 安心
+  type: adj-na,n, vs
+- english: safety,security
+  id: '26'
+  kana: あんぜん
+  regular: 安全
+  type: adj-na,n
+- english: such,like that
+  id: '27'
+  kana: あんな
+  regular: ''
+  type: adj-na,adj-pn
+- english: information,guidance
+  id: '28'
+  kana: あんない・する
+  regular: 案内
+  type: n,vs
+- english: less than,below
+  id: '29'
+  kana: いか
+  regular: 以下
+  type: n
+- english: with the exception of,excepting
+  id: '30'
+  kana: いがい
+  regular: 以外
+  type: n
+- english: medical science
+  id: '31'
+  kana: いがく
+  regular: 医学
+  type: n
+- english: to live,to exist
+  id: '32'
+  kana: いきる
+  regular: 生きる
+  type: ru-v
+- english: ~
+  id: '33'
+  kana: いくら～ても
+  regular: ''
+  type: '33'
+- english: opinion,view
+  id: '34'
+  kana: いけん
+  regular: 意見
+  type: n
+- english: stone
+  id: '35'
+  kana: いし
+  regular: 石
+  type: n
+- english: to tease,to torment
+  id: '36'
+  kana: いじめる
+  regular: ''
+  type: ru-v
+- english: more than,this is all
+  id: '37'
+  kana: いじょう
+  regular: 以上
+  type: n-adv,n-t
+- english: to hurry,to rush
+  id: '38'
+  kana: いそぐ
+  regular: 急ぐ
+  type: u-v
+- english: (hum) to do
+  id: '39'
+  kana: いたす
+  regular: 致す
+  type: u-v
+- english: to receive,to take food or drink (hum)
+  id: '40'
+  kana: いただく
+  regular: ''
+  type: u-v
+- english: once,one time
+  id: '41'
+  kana: いちど
+  regular: 一度
+  type: n-adv
+- english: as well as one can,with utmost effort
+  id: '42'
+  kana: いっしょうけんめい
+  regular: 一生懸命
+  type: adj-na,n-adv,n
+- english: full,to the utmost
+  id: '43'
+  kana: いっぱい
+  regular: ''
+  type: adv
+- english: thread
+  id: '44'
+  kana: いと
+  regular: 糸
+  type: n,n-suf
+- english: within,inside of
+  id: '45'
+  kana: いない
+  regular: 以内
+  type: n,n-suf
+- english: rural,countryside
+  id: '46'
+  kana: いなか
+  regular: 田舎
+  type: giku n
+- english: to pray,to wish
+  id: '47'
+  kana: いのる
+  regular: 祈る
+  type: u-v,vi
+- english: (hon) to be,to come,to go
+  id: '48'
+  kana: いらっしゃる
+  regular: ''
+  type: aru-v
+- english: member of ～
+  id: '49'
+  kana: ～いん
+  regular: ～員
+  type: n-suf
+- english: to plant,to grow
+  id: '50'
+  kana: うえる
+  regular: 植える
+  type: ru-v
+- english: to visit
+  id: '51'
+  kana: うかがう
+  regular: ''
+  type: u-v,vi,vt
+- english: to ask
+  id: '52'
+  kana: うかがう
+  regular: ''
+  type: u-v,vi,vt
+- english: reception (desk),information ガス
+  id: '53'
+  kana: うけつけ
+  regular: 受付
+  type: n
+- english: to take (lesson, test),to undergo
+  id: '54'
+  kana: うける
+  regular: 受ける
+  type: ru-v
+- english: to move
+  id: '55'
+  kana: うごく
+  regular: 動く
+  type: u-v,vi
+- english: lie
+  id: '56'
+  kana: うそ
+  regular: ''
+  type: n
+- english: within
+  id: '57'
+  kana: うち
+  regular: ''
+  type: n
+- english: to hit,to strike
+  id: '58'
+  kana: うつ
+  regular: 打つ
+  type: u-v
+- english: beautiful,lovely
+  id: '59'
+  kana: うつくしい
+  regular: 美しい
+  type: adj
+- english: copy,to photograph,to film
+  id: '60'
+  kana: うつす
+  regular: 写す
+  type: u-v
+- english: to move (house),to transfer (department)
+  id: '61'
+  kana: うつる
+  regular: 移る
+  type: u-v
+- english: arm
+  id: '62'
+  kana: うで
+  regular: 腕
+  type: n
+- english: delicious
+  id: '63'
+  kana: うまい
+  regular: ''
+  type: adj
+- english: reverse side,wrong side,back
+  id: '64'
+  kana: うら
+  regular: 裏
+  type: n
+- english: place where things are sold
+  id: '65'
+  kana: うりば
+  regular: 売り場
+  type: adj-no,n
+- english: happy,glad
+  id: '66'
+  kana: うれしい
+  regular: ''
+  type: adj
+- english: yes (informal),alright
+  id: '67'
+  kana: うん
+  regular: ''
+  type: n
+- english: driver,chauffeur
+  id: '68'
+  kana: うんてんしゅ
+  regular: 運転手
+  type: n
+- english: driving
+  id: '69'
+  kana: うんてん・する
+  regular: 運転
+  type: n,vs
+- english: exercise
+  id: '70'
+  kana: うんどう・する
+  regular: 運動
+  type: n,vs
+- english: escalator
+  id: '71'
+  kana: エスカレーター
+  regular: ''
+  type: n
+- english: branch,twig
+  id: '72'
+  kana: えだ
+  regular: 枝
+  type: n
+- english: to choose,to select
+  id: '73'
+  kana: えらぶ
+  regular: 選ぶ
+  type: v5b
+- english: restraint,reserve
+  id: '74'
+  kana: えんりょ・する
+  regular: 遠慮
+  type: adj-na,n,vs
+- english: (hon)to be
+  id: '75'
+  kana: おいでになる
+  regular: ''
+  type: u-v
+- english: congratulation,celebration
+  id: '76'
+  kana: おいわい
+  regular: お祝い
+  type: n
+- english: 'motorcycle (lit: auto-bi(ke))'
+  id: '77'
+  kana: オートバイ
+  regular: ''
+  type: n
+- english: overcoat
+  id: '78'
+  kana: オーバー
+  regular: ''
+  type: adj-na,n,vs
+- english: thanks or owing to
+  id: '79'
+  kana: おかげ
+  regular: ''
+  type: n
+- english: strange,funny
+  id: '80'
+  kana: おかしい
+  regular: ''
+  type: adj
+- english: ~
+  id: '81'
+  kana: ～おき
+  regular: ''
+  type: '81'
+- english: 100,000,000,hundred million
+  id: '82'
+  kana: おく
+  regular: 億
+  type: num
+- english: rooftop
+  id: '83'
+  kana: おくじょう
+  regular: 屋上
+  type: n
+- english: present,gift
+  id: '84'
+  kana: おくりもの
+  regular: 贈り物
+  type: n
+- english: to send (a thing),to dispatch
+  id: '85'
+  kana: おくる
+  regular: 送る
+  type: u-v
+- english: to be late,to be delayed
+  id: '86'
+  kana: おくれる
+  regular: 遅れる
+  type: ru-v
+- english: (someone else's) child
+  id: '87'
+  kana: おこさん
+  regular: お子さん
+  type: n
+- english: to wake someone
+  id: '88'
+  kana: おこす
+  regular: 起こす
+  type: u-v
+- english: to perform, to do, to carry out
+  id: '89'
+  kana: おこなう
+  regular: 行う
+  type: u-v
+- english: to get angry,to be angry
+  id: '90'
+  kana: おこる
+  regular: 怒る
+  type: u-v
+- english: closet
+  id: '91'
+  kana: おしいれ
+  regular: 押し入れ
+  type: n
+- english: (1) (hon) daughter,(2) young lady
+  id: '92'
+  kana: おじょうさん
+  regular: お嬢さん
+  type: n
+- english: (pol) your house,your home
+  id: '93'
+  kana: おたく
+  regular: お宅
+  type: n
+- english: to fall,to drop
+  id: '94'
+  kana: おちる
+  regular: 落ちる
+  type: ru-v
+- english: (hon) to say,to speak
+  id: '95'
+  kana: おっしゃる
+  regular: ''
+  type: aru-v
+- english: husband
+  id: '96'
+  kana: おっと
+  regular: 夫
+  type: n
+- english: change (money),balance
+  id: '97'
+  kana: おつり
+  regular: ''
+  type: n
+- english: sound,note
+  id: '98'
+  kana: おと
+  regular: 音
+  type: n,n-suf
+- english: to drop,to lose
+  id: '99'
+  kana: おとす
+  regular: 落す
+  type: u-v
+- english: dance
+  id: '100'
+  kana: おどり
+  regular: 踊り
+  type: n
+- english: to dance
+  id: '101'
+  kana: おどる
+  regular: 踊る
+  type: u-v
+- english: to be surprised,to be astonished
+  id: '102'
+  kana: おどろく
+  regular: 驚く
+  type: u-v
+- english: ~
+  id: '103'
+  kana: おまつり
+  regular: お祭り
+  type: '103'
+- english: calling on someone who is ill,enquiry
+  id: '104'
+  kana: おみまい
+  regular: お見舞い
+  type: n
+- english: souvenir
+  id: '105'
+  kana: おみやげ
+  regular: お土産
+  type: n
+- english: to recall,to remember
+  id: '106'
+  kana: おもいだす
+  regular: 思い出す
+  type: u-v
+- english: to think,to feel
+  id: '107'
+  kana: おもう
+  regular: 思う
+  type: u-v
+- english: toy
+  id: '108'
+  kana: おもちゃ
+  regular: ''
+  type: n
+- english: the front,surface,exterior
+  id: '109'
+  kana: おもて
+  regular: 表
+  type: n,n-suf
+- english: parents
+  id: '110'
+  kana: おや
+  regular: 親
+  type: n
+- english: 'to descend a mountain,to (descend) go down stairs '
+  id: '111'
+  kana: おりる
+  regular: 下りる
+  type: ru-v
+- english: to be (polite version of いる)
+  id: '112'
+  kana: おる
+  regular: ''
+  type: u-v
+- english: to break,to fold,to pick a flower
+  id: '113'
+  kana: おる
+  regular: 折る
+  type: u-v
+- english: thanking,expression of gratitude
+  id: '114'
+  kana: おれい
+  regular: お礼
+  type: n
+- english: to break,to be folded,to give in,to turn (a corner)
+  id: '115'
+  kana: おれる
+  regular: 折れる
+  type: ru-v,vi,vt
+- english: the end
+  id: '116'
+  kana: おわり
+  regular: 終わり
+  type: n
+- english: end of ～
+  id: '117'
+  kana: ～おわる
+  regular: ''
+  type: suf
+- english: ~
+  id: '118'
+  kana: ～か
+  regular: ～家
+  type: '118'
+- english: curtain
+  id: '119'
+  kana: カーテン
+  regular: ''
+  type: n
+- english: ~
+  id: '120'
+  kana: ～かい
+  regular: ～会
+  type: '120'
+- english: coast,beach
+  id: '121'
+  kana: かいがん
+  regular: 海岸
+  type: n
+- english: meeting,conference
+  id: '122'
+  kana: かいぎ
+  regular: 会議
+  type: n
+- english: conference room
+  id: '123'
+  kana: かいぎしつ
+  regular: 会議室
+  type: n
+- english: assembly hall,meeting place,the grounds
+  id: '124'
+  kana: かいじょう
+  regular: 会場
+  type: n
+- english: conversation
+  id: '125'
+  kana: かいわ
+  regular: 会話
+  type: n
+- english: return,coming back
+  id: '126'
+  kana: かえり
+  regular: 帰り
+  type: n
+- english: to change,to alter,to vary
+  id: '127'
+  kana: かえる
+  regular: 変える
+  type: ru-v,vt
+- english: science
+  id: '128'
+  kana: かがく
+  regular: 科学
+  type: n
+- english: mirror
+  id: '129'
+  kana: かがみ
+  regular: 鏡
+  type: n
+- english: ~
+  id: '130'
+  kana: ～がくぶ
+  regular: ～学部
+  type: '130'
+- english: ~
+  id: '131'
+  kana: かける
+  regular: 掛ける
+  type: '131'
+- english: ~
+  id: '132'
+  kana: かける
+  regular: ''
+  type: '132'
+- english: ~
+  id: '133'
+  kana: かける
+  regular: ''
+  type: '133'
+- english: to decorate,to ornament,to adorn
+  id: '134'
+  kana: かざる
+  regular: 飾る
+  type: u-v
+- english: fire
+  id: '135'
+  kana: かじ
+  regular: 火事
+  type: n
+- english: gas
+  id: '136'
+  kana: ガス
+  regular: ''
+  type: n
+- english: gasoline,petrol
+  id: '137'
+  kana: ガソリン
+  regular: ''
+  type: n
+- english: gasoline stand,gas station,petrol station
+  id: '138'
+  kana: ガソリンスタンド
+  regular: ''
+  type: n
+- english: way of doing
+  id: '139'
+  kana: かた
+  regular: 方
+  type: n-suf
+- english: solid,hard,firm
+  id: '140'
+  kana: かたい
+  regular: 堅/硬/固い
+  type: adj
+- english: shape
+  id: '141'
+  kana: かたち
+  regular: 形
+  type: n
+- english: to tidy up,to put in order,to put away
+  id: '142'
+  kana: かたづける
+  regular: 片付ける
+  type: ru-v
+- english: section manager
+  id: '143'
+  kana: かちょう
+  regular: 課長
+  type: n
+- english: to win,to gain victory
+  id: '144'
+  kana: かつ
+  regular: 勝つ
+  type: u-v
+- english: appearance,manner
+  id: '145'
+  kana: かっこう
+  regular: ''
+  type: no--adj, na-adj
+- english: housewife
+  id: '146'
+  kana: かない
+  regular: 家内
+  type: n
+- english: sad,sorrowful
+  id: '147'
+  kana: かなしい
+  regular: 悲しい
+  type: adj
+- english: certainly,necessarily,invariably
+  id: '148'
+  kana: かならず
+  regular: 必ず
+  type: adv
+- english: rich man
+  id: '149'
+  kana: かねもち/おかねもち
+  regular: お・金持ち
+  type: n
+- english: she,girl-friend
+  id: '150'
+  kana: かのじょ
+  regular: 彼女
+  type: n
+- english: wall
+  id: '151'
+  kana: かべ
+  regular: 壁
+  type: n
+- english: to mind,to care about
+  id: '152'
+  kana: かまう
+  regular: ''
+  type: u-v
+- english: hair
+  id: '153'
+  kana: かみ
+  regular: 髪
+  type: n
+- english: to bite,to chew
+  id: '154'
+  kana: かむ
+  regular: 噛む
+  type: u-v
+- english: (1) to go back and forth,(2) to commute
+  id: '155'
+  kana: かよう
+  regular: 通う
+  type: u-v
+- english: glass,pane
+  id: '156'
+  kana: ガラス
+  regular: ''
+  type: n
+- english: he,boyfriend
+  id: '157'
+  kana: かれ
+  regular: 彼
+  type: n
+- english: they (usually male)
+  id: '158'
+  kana: かれら
+  regular: 彼ら
+  type: n
+- english: to get dry
+  id: '159'
+  kana: かわく
+  regular: 乾く
+  type: u-v,vi
+- english: substitute,alternate
+  id: '160'
+  kana: かわり
+  regular: 代わり
+  type: n
+- english: to change,to be transformed,to vary
+  id: '161'
+  kana: かわる
+  regular: 変わる
+  type: u-v,vi
+- english: to consider
+  id: '162'
+  kana: かんがえる
+  regular: 考える
+  type: ru-v
+- english: relation,connection
+  id: '163'
+  kana: かんけい
+  regular: 関係
+  type: n,vs
+- english: (female) nurse
+  id: '164'
+  kana: かんごふ
+  regular: 看護婦
+  type: n
+- english: simple
+  id: '165'
+  kana: かんたん
+  regular: 簡単
+  type: adj-na,n
+- english: to try one's best,to persist
+  id: '166'
+  kana: がんばる
+  regular: 頑張る
+  type: u-v
+- english: spirit,mood
+  id: '167'
+  kana: き
+  regular: 気
+  type: n
+- english: chance,opportunity
+  id: '168'
+  kana: きかい
+  regular: 機会
+  type: n
+- english: danger,peril,hazard
+  id: '169'
+  kana: きけん
+  regular: 危険
+  type: adj-na,n
+- english: to be heard,to be audible
+  id: '170'
+  kana: きこえる
+  regular: 聞こえる
+  type: ru-v
+- english: train (steam)
+  id: '171'
+  kana: きしゃ
+  regular: 汽車
+  type: n
+- english: art,technique,technology,skill
+  id: '172'
+  kana: ぎじゅつ
+  regular: 技術
+  type: n
+- english: season
+  id: '173'
+  kana: きせつ
+  regular: 季節
+  type: n
+- english: rule,regulations
+  id: '174'
+  kana: きそく
+  regular: 規則
+  type: n
+- english: surely,definitely
+  id: '175'
+  kana: きっと
+  regular: ''
+  type: adv,n
+- english: silk
+  id: '176'
+  kana: きぬ
+  regular: 絹
+  type: n
+- english: strict
+  id: '177'
+  kana: きびしい
+  regular: 厳しい
+  type: adj
+- english: feeling,mood
+  id: '178'
+  kana: きぶん
+  regular: 気分
+  type: n
+- english: to be decided,to be settled
+  id: '179'
+  kana: きまる
+  regular: 決る
+  type: u-v
+- english: You (masculine term for female)
+  id: '180'
+  kana: きみ
+  regular: 君
+  type: n,suf
+- english: to decide
+  id: '181'
+  kana: きめる
+  regular: 決める
+  type: ru-v
+- english: feeling,sensation,mood
+  id: '182'
+  kana: きもち
+  regular: 気持ち
+  type: n
+- english: kimono
+  id: '183'
+  kana: きもの
+  regular: 着物
+  type: n
+- english: guest,customer
+  id: '184'
+  kana: きゃく
+  regular: 客
+  type: n
+- english: (1) urgent,sudden,(2) steep
+  id: '185'
+  kana: きゅう
+  regular: 急
+  type: adj-na,n
+- english: express (eg train that bypasses stations)
+  id: '186'
+  kana: きゅうこう
+  regular: 急行
+  type: n
+- english: training,education
+  id: '187'
+  kana: きょういく
+  regular: 教育
+  type: adj-no,n,vs
+- english: church
+  id: '188'
+  kana: きょうかい
+  regular: 教会
+  type: n
+- english: competition,contest
+  id: '189'
+  kana: きょうそう
+  regular: 競争
+  type: n,vs
+- english: interest (in something)
+  id: '190'
+  kana: きょうみ
+  regular: 興味
+  type: n
+- english: neighbourhood
+  id: '191'
+  kana: きんじょ
+  regular: 近所
+  type: n
+- english: district ～
+  id: '192'
+  kana: ～く
+  regular: ～区
+  type: n
+- english: condition,state,health
+  id: '193'
+  kana: ぐあい
+  regular: 具合
+  type: n
+- english: air,atmosphere
+  id: '194'
+  kana: くうき
+  regular: 空気
+  type: n
+- english: airport
+  id: '195'
+  kana: くうこう
+  regular: 空港
+  type: n
+- english: grass
+  id: '196'
+  kana: くさ
+  regular: 草
+  type: n
+- english: (hon) to give,to confer
+  id: '197'
+  kana: くださる
+  regular: ''
+  type: aru-v
+- english: neck
+  id: '198'
+  kana: くび
+  regular: 首
+  type: n
+- english: cloud
+  id: '199'
+  kana: くも
+  regular: 雲
+  type: n
+- english: to compare
+  id: '200'
+  kana: くらべる
+  regular: 比べる
+  type: ru-v
+- english: to give,to do for
+  id: '201'
+  kana: くれる
+  regular: ''
+  type: ru-v
+- english: to get dark,to come to an end
+  id: '202'
+  kana: くれる
+  regular: 暮れる
+  type: ru-v
+- english: Mr (junior) ～,master ～
+  id: '203'
+  kana: ～くん
+  regular: ～君
+  type: n-suf
+- english: hair
+  id: '204'
+  kana: け
+  regular: 毛
+  type: n
+- english: fur
+  id: '205'
+  kana: け
+  regular: 毛
+  type: n
+- english: plan,project,schedule
+  id: '206'
+  kana: けいかく・する
+  regular: 計画
+  type: n,vs
+- english: experience
+  id: '207'
+  kana: けいけん・する
+  regular: 経験
+  type: n,vs
+- english: economics,finance,economy
+  id: '208'
+  kana: けいざい
+  regular: 経済
+  type: n
+- english: police
+  id: '209'
+  kana: けいさつ
+  regular: 警察
+  type: n
+- english: injury (to animate object),hurt
+  id: '210'
+  kana: けが・する
+  regular: ''
+  type: n,vs
+- english: cake
+  id: '211'
+  kana: ケーキ
+  regular: ''
+  type: n
+- english: scenery,scene,landscape
+  id: '212'
+  kana: けしき
+  regular: 景色
+  type: n
+- english: eraser
+  id: '213'
+  kana: けしゴム
+  regular: 消しゴム
+  type: n
+- english: boarding,lodging,boarding house
+  id: '214'
+  kana: げしゅく
+  regular: 下宿
+  type: n,vs
+- english: never
+  id: '215'
+  kana: けっして
+  regular: 決して
+  type: adv
+- english: but,however
+  id: '216'
+  kana: けれど/けれども
+  regular: ''
+  type: conj
+- english: ~
+  id: '217'
+  kana: ～けん
+  regular: ～軒
+  type: '217'
+- english: cause,origin,source
+  id: '218'
+  kana: げんいん
+  regular: 原因
+  type: n
+- english: quarrel
+  id: '219'
+  kana: けんか・する
+  regular: ''
+  type: n
+- english: entrance way (in Japanese house)
+  id: '220'
+  kana: げんかん
+  regular: 玄関
+  type: n
+- english: study,research,investigation
+  id: '221'
+  kana: けんきゅう
+  regular: 研究
+  type: n,vs
+- english: study room,laboratory
+  id: '222'
+  kana: けんきゅうしつ
+  regular: 研究室
+  type: n
+- english: a sight,an attraction
+  id: '223'
+  kana: けんぶつ
+  regular: 見物
+  type: n
+- english: child
+  id: '224'
+  kana: こ
+  regular: 子
+  type: n
+- english: honourable ～
+  id: '225'
+  kana: ご～
+  regular: 御～
+  type: prefix
+- english: like this,this way
+  id: '226'
+  kana: こう
+  regular: ''
+  type: adv,int-n
+- english: suburb,outskirts
+  id: '227'
+  kana: こうがい
+  regular: 郊外
+  type: n
+- english: lecture
+  id: '228'
+  kana: こうぎ
+  regular: 講義
+  type: n,vs
+- english: (manufacturing) industry
+  id: '229'
+  kana: こうぎょう
+  regular: 工業
+  type: n
+- english: high school/senior high school
+  id: '230'
+  kana: こうこう/こうとうがっこう
+  regular: 高校/高等学校
+  type: n
+- english: high school student
+  id: '231'
+  kana: こうこうせい
+  regular: 高校生
+  type: n
+- english: factory
+  id: '232'
+  kana: こうじょう
+  regular: 工場
+  type: n
+- english: principal,headmaster
+  id: '233'
+  kana: こうちょう
+  regular: 校長
+  type: n
+- english: traffic,transportation
+  id: '234'
+  kana: こうつう
+  regular: 交通
+  type: n
+- english: auditorium
+  id: '235'
+  kana: こうどう
+  regular: 講堂
+  type: n
+- english: government worker,public servant
+  id: '236'
+  kana: こうむいん
+  regular: 公務員
+  type: n
+- english: international
+  id: '237'
+  kana: こくさい
+  regular: 国際
+  type: n
+- english: core,heart
+  id: '238'
+  kana: こころ
+  regular: 心
+  type: n
+- english: to be (polite),to exist
+  id: '239'
+  kana: ～ございます
+  regular: ''
+  type: expr
+- english: your husband,her husband
+  id: '240'
+  kana: ごしゅじん
+  regular: ご主人
+  type: n
+- english: break-down
+  id: '241'
+  kana: こしょう・する
+  regular: 故障
+  type: n,vs
+- english: knowing,acquaintance
+  id: '242'
+  kana: ごぞんじ
+  regular: ご存じ
+  type: n
+- english: answer,response
+  id: '243'
+  kana: こたえ
+  regular: 答
+  type: n
+- english: feast,treating (someone)
+  id: '244'
+  kana: ごちそう
+  regular: ''
+  type: n,vs
+- english: (1) this person,(2) this direction,(3) this side,(4) thereafter
+  id: '245'
+  kana: こっち
+  regular: ''
+  type: n
+- english: thing,matter,fact
+  id: '246'
+  kana: こと
+  regular: ''
+  type: n
+- english: small bird
+  id: '247'
+  kana: ことり
+  regular: 小鳥
+  type: n
+- english: the other day,recently
+  id: '248'
+  kana: このあいだ
+  regular: ''
+  type: n-adv
+- english: ~
+  id: '249'
+  kana: このごろ
+  regular: ''
+  type: '249'
+- english: (1) small,(2) fine,minute
+  id: '250'
+  kana: こまかい
+  regular: 細かい
+  type: adj
+- english: rubbish,trash,garbage
+  id: '251'
+  kana: ごみ
+  regular: ''
+  type: n
+- english: to be crowded
+  id: '252'
+  kana: こむ
+  regular: 込む
+  type: u-v
+- english: uncooked rice
+  id: '253'
+  kana: こめ
+  regular: 米
+  type: n
+- english: ~
+  id: '254'
+  kana: ごらんになる
+  regular: ''
+  type: '254'
+- english: after this
+  id: '255'
+  kana: これから
+  regular: ''
+  type: n-t
+- english: scary,frightening
+  id: '256'
+  kana: こわい
+  regular: 怖い
+  type: adj
+- english: to break,to break down
+  id: '257'
+  kana: こわす
+  regular: 壊す
+  type: u-v,vt
+- english: to be broken,to break
+  id: '258'
+  kana: こわれる
+  regular: 壊れる
+  type: ru-v,vi
+- english: concert
+  id: '259'
+  kana: コンサート
+  regular: ''
+  type: n
+- english: now,next time
+  id: '260'
+  kana: こんど
+  regular: 今度
+  type: n-adv,n-t
+- english: computer
+  id: '261'
+  kana: コンピュータ/コンピューター
+  regular: ''
+  type: n
+- english: this evening,tonight
+  id: '262'
+  kana: こんや
+  regular: 今夜
+  type: n-adv,n-t
+- english: latest,most recent,nowadays
+  id: '263'
+  kana: さいきん
+  regular: 最近
+  type: adj-no,n-adv,n-t
+- english: last,end,conclusion
+  id: '264'
+  kana: さいご
+  regular: 最後
+  type: n
+- english: beginning,first
+  id: '265'
+  kana: さいしょ
+  regular: 最初
+  type: adj-no,n-adv,n-t
+- english: slope,hill
+  id: '266'
+  kana: さか
+  regular: 坂
+  type: n
+- english: to search,to seek,to look for
+  id: '267'
+  kana: さがす
+  regular: 探す
+  type: u-v
+- english: to get down,to descend
+  id: '268'
+  kana: さがる
+  regular: 下る
+  type: u-v
+- english: popularity,prosperous
+  id: '269'
+  kana: さかん
+  regular: 盛ん
+  type: adj-na,n
+- english: to hang,to lower,to move back
+  id: '270'
+  kana: さげる
+  regular: 下げる
+  type: ru-v
+- english: (polite) to give,to offer
+  id: '271'
+  kana: さしあげる
+  regular: 差し上げる
+  type: ru-v
+- english: some time ago
+  id: '272'
+  kana: さっき
+  regular: ''
+  type: n
+- english: lonely,lonesome
+  id: '273'
+  kana: さびしい
+  regular: 寂しい
+  type: adj
+- english: Mr or Mrs ～
+  id: '274'
+  kana: ～さま
+  regular: ～様
+  type: n-suf
+- english: ~
+  id: '275'
+  kana: さらいげつ
+  regular: さ来月
+  type: '275'
+- english: the week after next
+  id: '276'
+  kana: さらいしゅう
+  regular: さ来週
+  type: n-adv,n-t
+- english: salad
+  id: '277'
+  kana: サラダ
+  regular: ''
+  type: n
+- english: to make noise,to clamor,to be excited
+  id: '278'
+  kana: さわぐ
+  regular: 騒ぐ
+  type: u-v
+- english: to touch,to feel
+  id: '279'
+  kana: さわる
+  regular: 触る
+  type: u-v
+- english: industry
+  id: '280'
+  kana: さんぎょう
+  regular: 産業
+  type: n
+- english: sandal
+  id: '281'
+  kana: サンダル
+  regular: ''
+  type: n
+- english: sandwich
+  id: '282'
+  kana: サンドイッチ
+  regular: ''
+  type: n
+- english: bad luck,disappointment
+  id: '283'
+  kana: ざんねん
+  regular: 残念
+  type: adj-na,n
+- english: city
+  id: '284'
+  kana: し
+  regular: 市
+  type: n
+- english: character,hand-writing
+  id: '285'
+  kana: じ
+  regular: 字
+  type: n
+- english: match,game,contest
+  id: '286'
+  kana: しあい
+  regular: 試合
+  type: n
+- english: way,method
+  id: '287'
+  kana: しかた
+  regular: 仕方
+  type: n
+- english: to scold
+  id: '288'
+  kana: しかる
+  regular: ''
+  type: u-v
+- english: ~
+  id: '289'
+  kana: ～しき
+  regular: ～式
+  type: '289'
+- english: examination,test,study
+  id: '290'
+  kana: しけん
+  regular: 試験
+  type: n,vs
+- english: accident
+  id: '291'
+  kana: じこ
+  regular: 事故
+  type: n
+- english: earthquake
+  id: '292'
+  kana: じしん
+  regular: 地震
+  type: n
+- english: period,epoch,era
+  id: '293'
+  kana: じだい
+  regular: 時代
+  type: n-t
+- english: underwear
+  id: '294'
+  kana: したぎ
+  regular: 下着
+  type: n
+- english: preparation
+  id: '295'
+  kana: したく・する
+  regular: 支度
+  type: n,vs
+- english: firmly,tightly,steady
+  id: '296'
+  kana: しっかり
+  regular: ''
+  type: adj-na,adv,n
+- english: failure,mistake,blunder
+  id: '297'
+  kana: しっぱい
+  regular: 失敗
+  type: adj-no,n,vs
+- english: (1) discourtesy,impoliteness,(2) Excuse me,Goodbye
+  id: '298'
+  kana: しつれい
+  regular: 失礼
+  type: adj-na,int,n,vs,exp
+- english: dictionary
+  id: '299'
+  kana: じてん
+  regular: 辞典
+  type: n
+- english: goods
+  id: '300'
+  kana: しなもの
+  regular: 品物
+  type: n
+- english: little while
+  id: '301'
+  kana: しばらく
+  regular: ''
+  type: adv,int
+- english: island
+  id: '302'
+  kana: しま
+  regular: 島
+  type: n
+- english: to end up ～
+  id: '303'
+  kana: （～て）しまう
+  regular: ''
+  type: u-v
+- english: citizen
+  id: '304'
+  kana: しみん
+  regular: 市民
+  type: n
+- english: office
+  id: '305'
+  kana: じむしょ
+  regular: 事務所
+  type: n
+- english: society,public
+  id: '306'
+  kana: しゃかい
+  regular: 社会
+  type: n
+- english: company president,manager,director
+  id: '307'
+  kana: しゃちょう
+  regular: 社長
+  type: n
+- english: hindrance,intrusion
+  id: '308'
+  kana: じゃま
+  regular: ''
+  type: adj-na,n,vs
+- english: jam
+  id: '309'
+  kana: ジャム
+  regular: ''
+  type: n
+- english: freedom
+  id: '310'
+  kana: じゆう
+  regular: 自由
+  type: adj-na,exp,n
+- english: custom,habit,manners
+  id: '311'
+  kana: しゅうかん
+  regular: 習慣
+  type: n
+- english: address (eg of house),residence,domicile
+  id: '312'
+  kana: じゅうしょ
+  regular: 住所
+  type: n
+- english: judo
+  id: '313'
+  kana: じゅうどう
+  regular: 柔道
+  type: n
+- english: ~
+  id: '314'
+  kana: じゅうぶん
+  regular: 十分
+  type: '314'
+- english: attendance,presence
+  id: '315'
+  kana: しゅっせき・する
+  regular: 出席
+  type: n,vs
+- english: departure
+  id: '316'
+  kana: しゅっぱつ・する
+  regular: 出発
+  type: n,vs
+- english: hobby
+  id: '317'
+  kana: しゅみ
+  regular: 趣味
+  type: n
+- english: prepare
+  id: '318'
+  kana: じゅんび・する
+  regular: 準備
+  type: n
+- english: introduction
+  id: '319'
+  kana: しょうかい
+  regular: 紹介
+  type: n,vs
+- english: New Year,New Year's Day
+  id: '320'
+  kana: しょうがつ
+  regular: 正月
+  type: n
+- english: primary school,elementary school
+  id: '321'
+  kana: しょうがっこう
+  regular: 小学校
+  type: n
+- english: novel,story
+  id: '322'
+  kana: しょうせつ
+  regular: 小説
+  type: n
+- english: invitation
+  id: '323'
+  kana: しょうたい・する
+  regular: 招待
+  type: n,vs
+- english: consent,acceptance
+  id: '324'
+  kana: しょうち・する
+  regular: 承知
+  type: n,vs
+- english: future,prospects
+  id: '325'
+  kana: しょうらい
+  regular: 将来
+  type: n-adv,n-t
+- english: meal
+  id: '326'
+  kana: しょくじ・する
+  regular: 食事
+  type: n,vs
+- english: foodstuff,groceries
+  id: '327'
+  kana: しょくりょうひん
+  regular: 食料品
+  type: n
+- english: woman
+  id: '328'
+  kana: じょせい
+  regular: 女性
+  type: n
+- english: to notify,to advise
+  id: '329'
+  kana: しらせる
+  regular: 知らせる
+  type: ru-v
+- english: to investigate,to check up
+  id: '330'
+  kana: しらべる
+  regular: 調べる
+  type: ru-v,vt
+- english: population
+  id: '331'
+  kana: じんこう
+  regular: 人口
+  type: n
+- english: Shinto shrine
+  id: '332'
+  kana: じんじゃ
+  regular: 神社
+  type: n
+- english: kindness,gentleness
+  id: '333'
+  kana: しんせつ
+  regular: 親切
+  type: adj-na,n
+- english: worry,concern
+  id: '334'
+  kana: しんぱい・する
+  regular: 心配
+  type: adj-na,n,vs
+- english: newspaper company
+  id: '335'
+  kana: しんぶんしゃ
+  regular: 新聞社
+  type: n
+- english: swimming
+  id: '336'
+  kana: すいえい
+  regular: 水泳
+  type: n,vs
+- english: water service,water supply
+  id: '337'
+  kana: すいどう
+  regular: 水道
+  type: n
+- english: extremely
+  id: '338'
+  kana: ずいぶん
+  regular: ''
+  type: adj-na,n-adv
+- english: mathematics,arithmetic
+  id: '339'
+  kana: すうがく
+  regular: 数学
+  type: n
+- english: suit
+  id: '340'
+  kana: スーツ
+  regular: ''
+  type: n
+- english: suitcase
+  id: '341'
+  kana: スーツケース
+  regular: ''
+  type: n
+- english: super (market)
+  id: '342'
+  kana: スーパー（マーケット）
+  regular: ''
+  type: n
+- english: to exceed,to go beyond
+  id: '343'
+  kana: すぎる
+  regular: 過ぎる
+  type: ru-v,vi
+- english: to become empty
+  id: '344'
+  kana: すく
+  regular: ''
+  type: u-v,vi
+- english: to be less crowded
+  id: '345'
+  kana: すく
+  regular: ''
+  type: u-v,vi
+- english: screen
+  id: '346'
+  kana: スクリーン
+  regular: ''
+  type: n
+- english: terrific,amazing,to a great extent
+  id: '347'
+  kana: すごい
+  regular: 凄い
+  type: adj
+- english: to make progress,to advance,to proceed
+  id: '348'
+  kana: すすむ
+  regular: 進む
+  type: u-v
+- english: all,completely,thoroughly
+  id: '349'
+  kana: すっかり
+  regular: ''
+  type: adv
+- english: straight,quickly,all of a sudden
+  id: '350'
+  kana: ずっと
+  regular: ''
+  type: adv,n
+- english: steak
+  id: '351'
+  kana: ステーキ
+  regular: ''
+  type: n
+- english: stereo
+  id: '352'
+  kana: ステレオ
+  regular: ''
+  type: n
+- english: to throw away
+  id: '353'
+  kana: すてる
+  regular: 捨てる
+  type: ru-v
+- english: sand
+  id: '354'
+  kana: すな
+  regular: 砂
+  type: n
+- english: wonderful,splendid
+  id: '355'
+  kana: すばらしい
+  regular: ''
+  type: adj
+- english: to slide,to slip
+  id: '356'
+  kana: すべる
+  regular: 滑る
+  type: u-v
+- english: corner,nook
+  id: '357'
+  kana: すみ
+  regular: 隅
+  type: n,n-suf
+- english: to finish,to end
+  id: '358'
+  kana: すむ
+  regular: 済む
+  type: u-v
+- english: pickpocket
+  id: '359'
+  kana: すり
+  regular: ''
+  type: n
+- english: and,then
+  id: '360'
+  kana: すると
+  regular: ''
+  type: conj
+- english: ~
+  id: '361'
+  kana: ～せい
+  regular: ～製
+  type: '361'
+- english: living,life (one's daily existence),livelihood
+  id: '362'
+  kana: せいかつ・する
+  regular: 生活
+  type: n,vs
+- english: production,manufacture
+  id: '363'
+  kana: せいさん・する
+  regular: 生産
+  type: ru-v,vi
+- english: politics,government
+  id: '364'
+  kana: せいじ
+  regular: 政治
+  type: n
+- english: the west,Western countries
+  id: '365'
+  kana: せいよう
+  regular: 西洋
+  type: n
+- english: the world
+  id: '366'
+  kana: せかい
+  regular: 世界
+  type: n
+- english: seat
+  id: '367'
+  kana: せき
+  regular: 席
+  type: n
+- english: explanation
+  id: '368'
+  kana: せつめい
+  regular: 説明
+  type: n,vs
+- english: back (of body)
+  id: '369'
+  kana: せなか
+  regular: 背中
+  type: n
+- english: certainly,without fail
+  id: '370'
+  kana: ぜひ
+  regular: ''
+  type: adv,n
+- english: looking after,help
+  id: '371'
+  kana: せわ・する
+  regular: 世話
+  type: n,vs
+- english: line,wire
+  id: '372'
+  kana: せん
+  regular: 線
+  type: n,n-suf
+- english: wholly,entirely
+  id: '373'
+  kana: ぜんぜん
+  regular: ''
+  type: adv
+- english: war
+  id: '374'
+  kana: せんそう
+  regular: 戦争
+  type: n,vs
+- english: senior,superior,elder
+  id: '375'
+  kana: せんぱい
+  regular: 先輩
+  type: n
+- english: speciality,study major
+  id: '376'
+  kana: せんもん
+  regular: 専門
+  type: n
+- english: really
+  id: '377'
+  kana: そう
+  regular: ''
+  type: adv
+- english: consultation,discussion
+  id: '378'
+  kana: そうだん・する
+  regular: 相談
+  type: n,vs
+- english: to raise,to rear,to bring up
+  id: '379'
+  kana: そだてる
+  regular: 育てる
+  type: ru-v,vt
+- english: graduation
+  id: '380'
+  kana: そつぎょう
+  regular: 卒業
+  type: n,vs
+- english: grandfather
+  id: '381'
+  kana: そふ
+  regular: 祖父
+  type: n
+- english: soft
+  id: '382'
+  kana: ソフト
+  regular: ''
+  type: n
+- english: grandmother
+  id: '383'
+  kana: そぼ
+  regular: 祖母
+  type: n
+- english: and,thereupon,because of that
+  id: '384'
+  kana: それで
+  regular: ''
+  type: conj
+- english: besides,moreover
+  id: '385'
+  kana: それに
+  regular: ''
+  type: conj
+- english: to that degree,extent
+  id: '386'
+  kana: それほど
+  regular: ''
+  type: adv
+- english: gradually,steadily,soon
+  id: '387'
+  kana: そろそろ
+  regular: ''
+  type: n
+- english: such,like that,that sort of
+  id: '388'
+  kana: そんな
+  regular: ''
+  type: adj-na,adj-pn,adv,n
+- english: so much,like that
+  id: '389'
+  kana: そんなに
+  regular: ''
+  type: uk
+- english: ~
+  id: '390'
+  kana: ～だい
+  regular: ～代
+  type: '390'
+- english: leaving hospital
+  id: '391'
+  kana: たいいん・する
+  regular: 退院
+  type: n,vs
+- english: college student,university student
+  id: '392'
+  kana: だいがくせい
+  regular: 大学生
+  type: n
+- english: important,valuable,serious matter
+  id: '393'
+  kana: だいじ
+  regular: 大事
+  type: adj-na,n
+- english: generally,substantially
+  id: '394'
+  kana: だいたい
+  regular: 大体
+  type: n
+- english: generally,usually
+  id: '395'
+  kana: たいてい
+  regular: ''
+  type: adj-na,adv,n
+- english: type,style
+  id: '396'
+  kana: タイプ
+  regular: ''
+  type: n
+- english: considerably,greatly,a lot
+  id: '397'
+  kana: だいぶ
+  regular: 大分
+  type: adv
+- english: typhoon
+  id: '398'
+  kana: たいふう
+  regular: 台風
+  type: n
+- english: to collapse,to break down
+  id: '399'
+  kana: たおれる
+  regular: 倒れる
+  type: ru-v,vi
+- english: so,therefore
+  id: '400'
+  kana: だから
+  regular: ''
+  type: conj,n
+- english: certain,sure,definite
+  id: '401'
+  kana: たしか
+  regular: 確か
+  type: adj-na,adv,exp,n
+- english: to add (numbers),to do (eg. one's business)
+  id: '402'
+  kana: たす
+  regular: 足す
+  type: u-v
+- english: ~
+  id: '403'
+  kana: ～だす
+  regular: ''
+  type: '403'
+- english: to visit
+  id: '404'
+  kana: たずねる
+  regular: 訪ねる
+  type: ru-v
+- english: to ask
+  id: '405'
+  kana: たずねる
+  regular: 尋ねる
+  type: ru-v
+- english: right,just,correct
+  id: '406'
+  kana: ただしい
+  regular: 正しい
+  type: adj
+- english: tatami mat (Japanese straw mat)
+  id: '407'
+  kana: たたみ
+  regular: 畳
+  type: n
+- english: two storied,separate housing
+  id: '408'
+  kana: ～だて
+  regular: 建て
+  type: n
+- english: to stand (something) up,to erect (something)
+  id: '409'
+  kana: たてる
+  regular: 立てる
+  type: ru-v
+- english: to build,to construct
+  id: '410'
+  kana: たてる
+  regular: 建てる
+  type: ru-v
+- english: for example,eg.
+  id: '411'
+  kana: たとえば
+  regular: 例えば
+  type: adv
+- english: shelves,rack
+  id: '412'
+  kana: たな
+  regular: 棚
+  type: n
+- english: to enjoy oneself
+  id: '413'
+  kana: たのしむ
+  regular: 楽む
+  type: u-v
+- english: pleasure,joy
+  id: '414'
+  kana: たのしみ
+  regular: 楽しみ
+  type: n
+- english: occasionally,once in a while
+  id: '415'
+  kana: たまに
+  regular: ''
+  type: adv,suf
+- english: good,advantage,in order to
+  id: '416'
+  kana: ため
+  regular: 為
+  type: n
+- english: useless,no good,hopeless
+  id: '417'
+  kana: だめ
+  regular: ''
+  type: adj-na,n
+- english: to be sufficient,to be enough
+  id: '418'
+  kana: たりる
+  regular: 足りる
+  type: ru-v
+- english: male,man
+  id: '419'
+  kana: だんせい
+  regular: 男性
+  type: n
+- english: heating
+  id: '420'
+  kana: だんぼう
+  regular: 暖房
+  type: n
+- english: blood
+  id: '421'
+  kana: ち
+  regular: 血
+  type: n
+- english: check
+  id: '422'
+  kana: チェック・する
+  regular: ''
+  type: n
+- english: strength,power
+  id: '423'
+  kana: ちから
+  regular: 力
+  type: n-suf
+- english: not at all (neg. verb)
+  id: '424'
+  kana: ちっとも
+  regular: ''
+  type: adv
+- english: suffix for familiar (female) person
+  id: '425'
+  kana: ～ちゃん
+  regular: ''
+  type: n
+- english: caution,being careful,attention (heed)
+  id: '426'
+  kana: ちゅうい
+  regular: 注意
+  type: n,vs
+- english: junior high school,middle school pupil
+  id: '427'
+  kana: ちゅうがっこう
+  regular: 中学校
+  type: n
+- english: injection
+  id: '428'
+  kana: ちゅうしゃ
+  regular: 注射
+  type: n,vs
+- english: parking lot,parking place
+  id: '429'
+  kana: ちゅうしゃじょう
+  regular: 駐車場
+  type: n
+- english: ～ of the town
+  id: '430'
+  kana: ～ちょう
+  regular: ～町
+  type: n
+- english: geography
+  id: '431'
+  kana: ちり
+  regular: 地理
+  type: n
+- english: about,concerning,regarding
+  id: '432'
+  kana: ～（に）ついて
+  regular: ''
+  type: expr
+- english: to catch,to arrest,to seize
+  id: '433'
+  kana: つかまえる
+  regular: 捕まえる
+  type: ru-v
+- english: moon
+  id: '434'
+  kana: つき
+  regular: ''
+  type: n-suf
+- english: month
+  id: '435'
+  kana: ～つき
+  regular: ～月
+  type: n-temp
+- english: to be started,to be switched on
+  id: '436'
+  kana: つく
+  regular: 点く
+  type: u-v, intrans-verb
+- english: to take
+  id: '437'
+  kana: つける
+  regular: ''
+  type: ru-v
+- english: to soak,to moisten,to pickle
+  id: '438'
+  kana: つける
+  regular: 漬ける
+  type: ru-v
+- english: circumstances,condition,convenience
+  id: '439'
+  kana: つごう
+  regular: 都合
+  type: adv,n
+- english: to tell,to report
+  id: '440'
+  kana: つたえる
+  regular: 伝える
+  type: ru-v
+- english: to be continued
+  id: '441'
+  kana: つづく
+  regular: 続く
+  type: u-v,vi
+- english: to continue doing ～
+  id: '442'
+  kana: ～つづける
+  regular: ～続ける
+  type: ru-v,vt
+- english: to continue,to keep up,to keep on
+  id: '443'
+  kana: つづける
+  regular: 続ける
+  type: ru-v,vt
+- english: wrap,pack
+  id: '444'
+  kana: つつむ
+  regular: 包む
+  type: u-v
+- english: (hum) wife
+  id: '445'
+  kana: つま
+  regular: 妻
+  type: n
+- english: intention,plan
+  id: '446'
+  kana: つもり
+  regular: ''
+  type: n
+- english: to fish
+  id: '447'
+  kana: つる
+  regular: 釣る
+  type: u-v
+- english: to lead,to take (a person)
+  id: '448'
+  kana: つれる
+  regular: 連れる
+  type: ru-v
+- english: polite,courteous
+  id: '449'
+  kana: ていねい
+  regular: 丁寧
+  type: adj-na,n
+- english: (1)text,(2)text book
+  id: '450'
+  kana: テキスト
+  regular: ''
+  type: n
+- english: fitness,suitability
+  id: '451'
+  kana: てきとう
+  regular: 適当
+  type: adj-na,n
+- english: to be able to do
+  id: '452'
+  kana: できる
+  regular: ''
+  type: ru-v
+- english: ~
+  id: '453'
+  kana: できるだけ
+  regular: ''
+  type: '453'
+- english: to help,to assist,to take part in
+  id: '454'
+  kana: てつだう
+  regular: 手伝う
+  type: u-v
+- english: tennis
+  id: '455'
+  kana: テニス
+  regular: ''
+  type: n
+- english: glove
+  id: '456'
+  kana: てぶくろ
+  regular: 手袋
+  type: n
+- english: temple
+  id: '457'
+  kana: てら
+  regular: 寺
+  type: n
+- english: spot,mark,point,dot
+  id: '458'
+  kana: てん
+  regular: 点
+  type: n,n-suf
+- english: shop assistant,employee,clerk,salesperson
+  id: '459'
+  kana: てんいん
+  regular: 店員
+  type: n
+- english: ~
+  id: '460'
+  kana: てんきよほう
+  regular: 天気予報
+  type: '460'
+- english: electric light
+  id: '461'
+  kana: でんとう
+  regular: 電灯
+  type: n
+- english: telegram
+  id: '462'
+  kana: でんぽう
+  regular: 電報
+  type: n
+- english: exhibition
+  id: '463'
+  kana: てんらんかい
+  regular: 展覧会
+  type: n
+- english: metroplitan,municipal
+  id: '464'
+  kana: と
+  regular: 都
+  type: n
+- english: tool,means
+  id: '465'
+  kana: どうぐ
+  regular: 道具
+  type: n
+- english: ~
+  id: '466'
+  kana: とうとう
+  regular: ''
+  type: '466'
+- english: zoo
+  id: '467'
+  kana: どうぶつえん
+  regular: 動物園
+  type: n
+- english: far away,distant
+  id: '468'
+  kana: とおく
+  regular: 遠く
+  type: adj-no,n-adv,n
+- english: ～ Street,～ Avenue
+  id: '469'
+  kana: とおり
+  regular: 通り
+  type: n-suf
+- english: to pass (by),to go through
+  id: '470'
+  kana: とおる
+  regular: 通る
+  type: u-v
+- english: particularly,especially
+  id: '471'
+  kana: とくに
+  regular: 特に
+  type: adv
+- english: special
+  id: '472'
+  kana: とくべつ
+  regular: 特別
+  type: adj-na,adv,n
+- english: barber
+  id: '473'
+  kana: とこや
+  regular: ''
+  type: n
+- english: on the way,en route,midway
+  id: '474'
+  kana: とちゅう
+  regular: 途中
+  type: n-adv,n-t
+- english: limited express (train, faster than an express)
+  id: '475'
+  kana: とっきゅう
+  regular: 特急
+  type: n
+- english: to reach
+  id: '476'
+  kana: とどける
+  regular: 届ける
+  type: ru-v
+- english: to stay at (eg. hotel)
+  id: '477'
+  kana: とまる
+  regular: 泊まる
+  type: u-v
+- english: to stop (something)
+  id: '478'
+  kana: とめる
+  regular: 止める
+  type: ru-v,vt
+- english: to exchange,to replace
+  id: '479'
+  kana: とりかえる
+  regular: 取り替える
+  type: ru-v
+- english: thief,burglar,robber
+  id: '480'
+  kana: どろぼう
+  regular: 泥棒
+  type: n,vs
+- english: steadily,little by little
+  id: '481'
+  kana: どんどん
+  regular: ''
+  type: adv
+- english: to fix,to repair
+  id: '482'
+  kana: なおす
+  regular: 直す
+  type: u-v,vt
+- english: to be fixed,to be repaired
+  id: '483'
+  kana: なおる
+  regular: 直る
+  type: u-v,vi
+- english: to be cured,to heal
+  id: '484'
+  kana: なおる
+  regular: 治る
+  type: u-v,vi
+- english: very,considerably,quite
+  id: '485'
+  kana: なかなか
+  regular: 中々
+  type: adv
+- english: to cry,to weep
+  id: '486'
+  kana: なく
+  regular: 泣く
+  type: u-v
+- english: to disappear,to get lost
+  id: '487'
+  kana: なくなる
+  regular: 無くなる
+  type: u-v
+- english: to die
+  id: '488'
+  kana: なくなる
+  regular: 亡くなる
+  type: u-v
+- english: to throw,to cast away
+  id: '489'
+  kana: なげる
+  regular: 投げる
+  type: ru-v
+- english: (hon) to do
+  id: '490'
+  kana: なさる
+  regular: ''
+  type: aru-v
+- english: to sound,to ring,to resound
+  id: '491'
+  kana: なる
+  regular: 鳴る
+  type: u-v
+- english: as much as possible
+  id: '492'
+  kana: なるべく
+  regular: ''
+  type: adv
+- english: I see,now I understand
+  id: '493'
+  kana: なるほど
+  regular: ''
+  type: adv,exp
+- english: to grow accustomed to
+  id: '494'
+  kana: なれる
+  regular: 慣れる
+  type: ru-v
+- english: odour,scent,smell
+  id: '495'
+  kana: におい
+  regular: ''
+  type: ru-v
+- english: bitter
+  id: '496'
+  kana: にがい
+  regular: 苦い
+  type: adj
+- english: difficult to do ～
+  id: '497'
+  kana: ～にくい
+  regular: ''
+  type: suf
+- english: to escape,to run away
+  id: '498'
+  kana: にげる
+  regular: 逃げる
+  type: ru-v
+- english: diary,journal
+  id: '499'
+  kana: にっき
+  regular: 日記
+  type: n
+- english: hospitalization
+  id: '500'
+  kana: にゅういん・する
+  regular: 入院
+  type: n,vs
+- english: entry to school or university,matriculation
+  id: '501'
+  kana: にゅうがく・する
+  regular: 入学
+  type: n
+- english: to resemble,to be similar
+  id: '502'
+  kana: にる
+  regular: 似る
+  type: ru-v
+- english: doll,puppet,figure
+  id: '503'
+  kana: にんぎょう
+  regular: 人形
+  type: n
+- english: to steal
+  id: '504'
+  kana: ぬすむ
+  regular: 盗む
+  type: u-v
+- english: to paint,to plaster
+  id: '505'
+  kana: ぬる
+  regular: 塗る
+  type: u-v
+- english: to get wet
+  id: '506'
+  kana: ぬれる
+  regular: ''
+  type: ru-v
+- english: price,cost
+  id: '507'
+  kana: ねだん
+  regular: ''
+  type: n
+- english: fever,temperature
+  id: '508'
+  kana: ねつ
+  regular: 熱
+  type: n,n-suf
+- english: zeal,enthusiasm
+  id: '509'
+  kana: ねっしん
+  regular: ''
+  type: adj-na,n
+- english: sleeping in late
+  id: '510'
+  kana: ねぼう
+  regular: 寝坊
+  type: n,vs
+- english: sleepy,drowsy
+  id: '511'
+  kana: ねむい
+  regular: 眠い
+  type: adj
+- english: to sleep
+  id: '512'
+  kana: ねむる
+  regular: 眠る
+  type: u-v
+- english: to remain,to be left
+  id: '513'
+  kana: のこる
+  regular: 残る
+  type: u-v
+- english: throat
+  id: '514'
+  kana: のど
+  regular: ''
+  type: n
+- english: to transfer (trains),to change (bus, train)
+  id: '515'
+  kana: のりかえる
+  regular: 乗り換える
+  type: ru-v
+- english: vehicle
+  id: '516'
+  kana: のりもの
+  regular: 乗り物
+  type: n
+- english: leaf
+  id: '517'
+  kana: は
+  regular: 葉
+  type: n
+- english: case,situation
+  id: '518'
+  kana: ばあい
+  regular: 場合
+  type: n-adv,n
+- english: part time (esp female part time employees)
+  id: '519'
+  kana: パート（タイム）
+  regular: ''
+  type: n-adv,n
+- english: twice,double
+  id: '520'
+  kana: ばい
+  regular: 倍
+  type: n,vi,vs,vt
+- english: (hum) (pol) seeing,look at
+  id: '521'
+  kana: はいけん・する
+  regular: 拝見
+  type: n,vs
+- english: dentist
+  id: '522'
+  kana: はいしゃ
+  regular: 歯医者
+  type: n
+- english: just did ～,only
+  id: '523'
+  kana: ～ばかり
+  regular: ''
+  type: suf
+- english: to transport,to carry
+  id: '524'
+  kana: はこぶ
+  regular: 運ぶ
+  type: v5b
+- english: to start doing　～,the beginning of ～
+  id: '525'
+  kana: ～はじめる
+  regular: ～始める
+  type: ru-v,vt
+- english: to start,to begin
+  id: '526'
+  kana: はじめる
+  regular: 始める
+  type: ru-v,vt
+- english: place,location
+  id: '527'
+  kana: ばしょ
+  regular: 場所
+  type: n
+- english: it should be so
+  id: '528'
+  kana: はず
+  regular: ''
+  type: n
+- english: shy,ashamed,embarrassed
+  id: '529'
+  kana: はずかしい
+  regular: 恥ずかしい
+  type: adj
+- english: (personal) computer
+  id: '530'
+  kana: パソコン
+  regular: ''
+  type: n
+- english: pronunciation
+  id: '531'
+  kana: はつおん
+  regular: 発音
+  type: n,vs
+- english: clearly,plainly,distinctly
+  id: '532'
+  kana: はっきり
+  regular: ''
+  type: adv,n
+- english: cherry-blossom viewing,flower viewing
+  id: '533'
+  kana: はなみ
+  regular: 花見
+  type: n,vs
+- english: papa,father
+  id: '534'
+  kana: パパ
+  regular: ''
+  type: n
+- english: woods,forester
+  id: '535'
+  kana: はやし
+  regular: 林
+  type: n
+- english: to pay
+  id: '536'
+  kana: はらう
+  regular: 払う
+  type: u-v
+- english: program (eg. TV)
+  id: '537'
+  kana: ばんぐみ
+  regular: 番組
+  type: n
+- english: oppose,opposition,resistance
+  id: '538'
+  kana: はんたい
+  regular: 反対
+  type: adj-na,n,vs
+- english: hamburger (meat, no bun)
+  id: '539'
+  kana: ハンバーグ
+  regular: ''
+  type: n
+- english: sun,sunshine,day
+  id: '540'
+  kana: ひ
+  regular: 日
+  type: n-adv,n-t
+- english: fire,flame,blaze
+  id: '541'
+  kana: ひ
+  regular: 火
+  type: n,n-suf
+- english: piano
+  id: '542'
+  kana: ピアノ
+  regular: ''
+  type: n
+- english: to grow cold,to get chilly,to cool down
+  id: '543'
+  kana: ひえる
+  regular: 冷える
+  type: ru-v,vi
+- english: to shine,to glitter
+  id: '544'
+  kana: ひかる
+  regular: 光る
+  type: ru-v,vi
+- english: light
+  id: '545'
+  kana: ひかり
+  regular: 光
+  type: n
+- english: drawer,drawing out
+  id: '546'
+  kana: ひきだし
+  regular: 引き出し
+  type: n
+- english: beard
+  id: '547'
+  kana: ひげ
+  regular: ''
+  type: n
+- english: airport
+  id: '548'
+  kana: ひこうじょう
+  regular: 飛行場
+  type: n
+- english: after a long time
+  id: '549'
+  kana: ひさしぶり
+  regular: 久しぶり
+  type: exp
+- english: art gallery,art museum
+  id: '550'
+  kana: びじゅつかん
+  regular: 美術館
+  type: n
+- english: very,extremely,exceedingly
+  id: '551'
+  kana: ひじょうに
+  regular: 非常に
+  type: adv
+- english: to be surprised
+  id: '552'
+  kana: びっくりする
+  regular: ''
+  type: vs
+- english: to move,to change residence
+  id: '553'
+  kana: ひっこす
+  regular: 引っ越す
+  type: u-v
+- english: necessary,essential
+  id: '554'
+  kana: ひつよう
+  regular: 必要
+  type: adj-na,n
+- english: cruel,awful
+  id: '555'
+  kana: ひどい
+  regular: ''
+  type: adj
+- english: to open (eg. a festival)
+  id: '556'
+  kana: ひらく
+  regular: 開く
+  type: u-v
+- english: (abbr) building,bill
+  id: '557'
+  kana: ビル
+  regular: ''
+  type: n
+- english: daytime,during the day
+  id: '558'
+  kana: ひるま
+  regular: 昼間
+  type: n-adv,n-t
+- english: lunch break,noon recess,noon rest period
+  id: '559'
+  kana: ひるやすみ
+  regular: 昼休み
+  type: n-adv,n-t
+- english: to pick up,to find,to gather
+  id: '560'
+  kana: ひろう
+  regular: 拾う
+  type: u-v
+- english: fax
+  id: '561'
+  kana: ファックス
+  regular: ''
+  type: ru-v,vi
+- english: to increase,to multiply
+  id: '562'
+  kana: ふえる
+  regular: 増える
+  type: ru-v,vi
+- english: deep,profound,thick
+  id: '563'
+  kana: ふかい
+  regular: 深い
+  type: adj
+- english: complexity,complication
+  id: '564'
+  kana: ふくざつ
+  regular: 複雑
+  type: adj-na,n
+- english: review,revision
+  id: '565'
+  kana: ふくしゅう
+  regular: 復習
+  type: n,vs
+- english: head of a section
+  id: '566'
+  kana: ぶちょう
+  regular: 部長
+  type: adjn
+- english: (1) generally,ordinarily,usually,(2) train that stops at every station
+  id: '567'
+  kana: ふつう
+  regular: 普通
+  type: adj-na,adj-no,adv,n
+- english: grapes
+  id: '568'
+  kana: ぶどう
+  regular: ''
+  type: n
+- english: to grow fat (stout, plump),to become fat
+  id: '569'
+  kana: ふとる
+  regular: 太る
+  type: u-v
+- english: bedding (Japanese style),futon
+  id: '570'
+  kana: ふとん
+  regular: 布団
+  type: n
+- english: ship,boat
+  id: '571'
+  kana: ふね
+  regular: 舟
+  type: n
+- english: inconvenience
+  id: '572'
+  kana: ふべん
+  regular: 不便
+  type: adj-na,n
+- english: to step on,to tread on
+  id: '573'
+  kana: ふむ
+  regular: 踏む
+  type: u-v
+- english: present,gift
+  id: '574'
+  kana: プレゼント
+  regular: ''
+  type: n
+- english: culture,civilization
+  id: '575'
+  kana: ぶんか
+  regular: 文化
+  type: n
+- english: literature
+  id: '576'
+  kana: ぶんがく
+  regular: 文学
+  type: n
+- english: grammar
+  id: '577'
+  kana: ぶんぽう
+  regular: 文法
+  type: n
+- english: distinction,different
+  id: '578'
+  kana: べつ
+  regular: 別
+  type: adj-na,n,n-suf
+- english: bell
+  id: '579'
+  kana: ベル
+  regular: ''
+  type: n
+- english: strange,odd,peculiar
+  id: '580'
+  kana: へん
+  regular: 変
+  type: adj-na,n
+- english: reply,answer
+  id: '581'
+  kana: へんじ
+  regular: 返事
+  type: n,vs
+- english: trade (foreign)
+  id: '582'
+  kana: ぼうえき
+  regular: 貿易
+  type: n
+- english: broadcast,broadcasting
+  id: '583'
+  kana: ほうそう・する
+  regular: 放送
+  type: n,vs
+- english: law
+  id: '584'
+  kana: ほうりつ
+  regular: 法律
+  type: n
+- english: (male) I,manservant
+  id: '585'
+  kana: ぼく
+  regular: 僕
+  type: n
+- english: star
+  id: '586'
+  kana: ほし
+  regular: 星
+  type: n
+- english: degree,extent
+  id: '587'
+  kana: ほど
+  regular: ''
+  type: n
+- english: mostly,almost
+  id: '588'
+  kana: ほとんど
+  regular: ''
+  type: n-adv,n-t
+- english: to praise
+  id: '589'
+  kana: ほめる
+  regular: ''
+  type: ru-v
+- english: translation (written)
+  id: '590'
+  kana: ほんやく
+  regular: 翻訳
+  type: n,vs
+- english: (1) (hum) to go,to come
+  id: '591'
+  kana: まいる
+  regular: 参る
+  type: u-v
+- english: to lose,to be defeated
+  id: '592'
+  kana: まける
+  regular: 負ける
+  type: ru-v
+- english: diligent,serious
+  id: '593'
+  kana: まじめ
+  regular: ''
+  type: adj-na,n
+- english: first (of all),to start with
+  id: '594'
+  kana: まず
+  regular: ''
+  type: adv
+- english: or,otherwise
+  id: '595'
+  kana: または
+  regular: ''
+  type: conj,exp
+- english: to err,to make a mistake
+  id: '596'
+  kana: まちがえる
+  regular: 間違える
+  type: ru-v
+- english: (1) to be in time for
+  id: '597'
+  kana: まにあう
+  regular: 間に合う
+  type: u-v
+- english: as it is
+  id: '598'
+  kana: ～まま
+  regular: ''
+  type: n
+- english: surroundings,circulation
+  id: '599'
+  kana: まわり
+  regular: 周り
+  type: n,n-suf
+- english: to go around,to revolve
+  id: '600'
+  kana: まわる
+  regular: 回る
+  type: u-v
+- english: comic,cartoon
+  id: '601'
+  kana: まんが
+  regular: 漫画
+  type: n
+- english: middle,centre
+  id: '602'
+  kana: まんなか
+  regular: 真中
+  type: n
+- english: to be seen,to be in sight
+  id: '603'
+  kana: みえる
+  regular: 見える
+  type: ru-v
+- english: lake
+  id: '604'
+  kana: みずうみ
+  regular: 湖
+  type: n
+- english: miso,bean paste
+  id: '605'
+  kana: みそ
+  regular: 味噌
+  type: n
+- english: (uk) to be found,to be discovered
+  id: '606'
+  kana: みつかる
+  regular: 見つかる
+  type: u-v
+- english: to discover,to find
+  id: '607'
+  kana: みつける
+  regular: 見つける
+  type: ru-v
+- english: everyone,everybody
+  id: '608'
+  kana: みな
+  regular: 皆
+  type: adv,n
+- english: harbour,port
+  id: '609'
+  kana: みなと
+  regular: 港
+  type: n
+- english: to go out to meet
+  id: '610'
+  kana: むかえる
+  regular: 迎える
+  type: u-v
+- english: to face,to go towards
+  id: '611'
+  kana: むかう
+  regular: 向かう
+  type: u-v
+- english: olden days,former
+  id: '612'
+  kana: むかし
+  regular: 昔
+  type: adj-no,n-adv,n-t
+- english: insect
+  id: '613'
+  kana: むし
+  regular: 虫
+  type: n
+- english: (hum) son
+  id: '614'
+  kana: むすこ
+  regular: 息子
+  type: n
+- english: (hum) daughter
+  id: '615'
+  kana: むすめ
+  regular: 娘
+  type: n
+- english: unreasonable,impossible
+  id: '616'
+  kana: むり
+  regular: 無理
+  type: adj-na,n,vs
+- english: number ～ sequence,～nd/th
+  id: '617'
+  kana: ～め
+  regular: ～目
+  type: suf
+- english: (pol) to eat
+  id: '618'
+  kana: めしあがる
+  regular: 召し上がる
+  type: u-v
+- english: unusual,rare
+  id: '619'
+  kana: めずらしい
+  regular: 珍しい
+  type: adj
+- english: to say,to tell
+  id: '620'
+  kana: もうしあげる
+  regular: 申し上げる
+  type: ru-v
+- english: (hum) to be called,to say
+  id: '621'
+  kana: もうす
+  regular: 申す
+  type: u-v
+- english: soon, very soon
+  id: '622'
+  kana: もうすぐ
+  regular: ''
+  type: expr
+- english: if
+  id: '623'
+  kana: もし
+  regular: ''
+  type: adv
+- english: certainly,of course
+  id: '624'
+  kana: もちろん
+  regular: ''
+  type: adv
+- english: most,extremely
+  id: '625'
+  kana: もっとも
+  regular: ''
+  type: adv
+- english: to turn back,to return
+  id: '626'
+  kana: もどる
+  regular: 戻る
+  type: u-v
+- english: cotton
+  id: '627'
+  kana: もめん
+  regular: 木綿
+  type: n
+- english: to receive
+  id: '628'
+  kana: もらう
+  regular: ''
+  type: u-v
+- english: forest
+  id: '629'
+  kana: もり
+  regular: 森
+  type: n
+- english: to bake,to grill
+  id: '630'
+  kana: やく
+  regular: 焼く
+  type: u-v
+- english: to be helpful,to be useful
+  id: '631'
+  kana: やくにたつ
+  regular: 役に立つ
+  type: u-v
+- english: arrangement,promise
+  id: '632'
+  kana: やくそく
+  regular: 約束
+  type: n,vs
+- english: to burn,to be roasted,to be sunburnt
+  id: '633'
+  kana: やける
+  regular: 焼ける
+  type: ru-v,vi
+- english: kind,gentle
+  id: '634'
+  kana: やさしい
+  regular: 優しい
+  type: adj
+- english: ~
+  id: '635'
+  kana: ～やすい
+  regular: ''
+  type: '635'
+- english: to become thin,to lose weight
+  id: '636'
+  kana: やせる
+  regular: ''
+  type: ru-v
+- english: at last,at length
+  id: '637'
+  kana: やっと
+  regular: ''
+  type: adv
+- english: as I thought,absolutely
+  id: '638'
+  kana: やはり/やっぱり
+  regular: ''
+  type: adv,exp
+- english: to cease,to stop
+  id: '639'
+  kana: やむ
+  regular: ''
+  type: u-v,vi
+- english: to end,to stop,to resign
+  id: '640'
+  kana: やめる
+  regular: 止める
+  type: ru-v
+- english: (col)to do
+  id: '641'
+  kana: やる
+  regular: ''
+  type: u-v
+- english: soft,tender
+  id: '642'
+  kana: やわらかい
+  regular: 柔らかい
+  type: adj
+- english: hot water
+  id: '643'
+  kana: ゆ
+  regular: 湯
+  type: n
+- english: evening meal
+  id: '644'
+  kana: ゆうはん
+  regular: 夕飯
+  type: n
+- english: export
+  id: '645'
+  kana: ゆしゅつ・する
+  regular: 輸出
+  type: n,vs
+- english: import
+  id: '646'
+  kana: ゆにゅう・する
+  regular: 輸入
+  type: n,vs
+- english: finger
+  id: '647'
+  kana: ゆび
+  regular: 指
+  type: n
+- english: (finger) ring
+  id: '648'
+  kana: ゆびわ
+  regular: 指輪
+  type: n
+- english: dream
+  id: '649'
+  kana: ゆめ
+  regular: 夢
+  type: n
+- english: to shake,to sway
+  id: '650'
+  kana: ゆれる
+  regular: 揺れる
+  type: ru-v
+- english: way,manner,kind
+  id: '651'
+  kana: よう
+  regular: 様
+  type: adj-na
+- english: task,business,use
+  id: '652'
+  kana: よう
+  regular: 用
+  type: n,n-suf
+- english: preparation
+  id: '653'
+  kana: ようい
+  regular: 用意
+  type: n,vs
+- english: tasks,chores
+  id: '654'
+  kana: ようじ
+  regular: 用事
+  type: n
+- english: to get dirty,to become dirty
+  id: '655'
+  kana: よごれる
+  regular: 汚れる
+  type: ru-v
+- english: preparation for a lesson
+  id: '656'
+  kana: よしゅう
+  regular: 予習
+  type: n,vs
+- english: plans,arrangement,schedule
+  id: '657'
+  kana: よてい
+  regular: 予定
+  type: n,vs
+- english: reservation,booking
+  id: '658'
+  kana: よやく
+  regular: 予約
+  type: n,vs
+- english: to visit,to drop in
+  id: '659'
+  kana: よる
+  regular: 寄る
+  type: u-v
+- english: ~
+  id: '660'
+  kana: （～に）よると
+  regular: ''
+  type: '660'
+- english: to be delighted,to be glad
+  id: '661'
+  kana: よろこぶ
+  regular: 喜ぶ
+  type: v5b
+- english: (hon) good,OK,all right
+  id: '662'
+  kana: よろしい
+  regular: ''
+  type: adj
+- english: reason,pretext,motive
+  id: '663'
+  kana: りゆう
+  regular: 理由
+  type: n
+- english: use,utilization
+  id: '664'
+  kana: りよう
+  regular: 利用
+  type: n,vs
+- english: both sides,both parties
+  id: '665'
+  kana: りょうほう
+  regular: 両方
+  type: n
+- english: Japanese hotel,inn
+  id: '666'
+  kana: りょかん
+  regular: 旅館
+  type: n
+- english: absence,being away from home
+  id: '667'
+  kana: るす
+  regular: 留守
+  type: n
+- english: cooling,air conditioning
+  id: '668'
+  kana: れいぼう
+  regular: 冷房
+  type: n
+- english: history
+  id: '669'
+  kana: れきし
+  regular: 歴史
+  type: n
+- english: register
+  id: '670'
+  kana: レジ
+  regular: ''
+  type: n
+- english: report,essay,assignment (aus)
+  id: '671'
+  kana: レポート/リポート
+  regular: ''
+  type: n
+- english: communication,contact,connection
+  id: '672'
+  kana: れんらく
+  regular: 連絡
+  type: n,vs
+- english: word processor
+  id: '673'
+  kana: ワープロ
+  regular: ''
+  type: n
+- english: to boil,to heat
+  id: '674'
+  kana: わかす
+  regular: 沸かす
+  type: u-v,vt
+- english: to be divided,to part from,to separate
+  id: '675'
+  kana: わかれる
+  regular: 別れる
+  type: ru-v
+- english: to boil,to grow hot,to get excited
+  id: '676'
+  kana: わく
+  regular: 沸く
+  type: u-v
+- english: meaning,reason
+  id: '677'
+  kana: わけ
+  regular: 訳
+  type: n
+- english: lost article,something forgotten
+  id: '678'
+  kana: わすれもの
+  regular: 忘れ物
+  type: n
+- english: to laugh,to smile
+  id: '679'
+  kana: わらう
+  regular: 笑う
+  type: u-v
+- english: rate,ratio,percentage
+  id: '680'
+  kana: わりあい
+  regular: 割合
+  type: adv,n
+- english: to break
+  id: '681'
+  kana: われる
+  regular: 割れる
+  type: ru-v,vi

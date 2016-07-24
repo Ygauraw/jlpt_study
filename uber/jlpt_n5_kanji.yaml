@@ -1,0 +1,3559 @@
+---
+kanji:
+  一:
+    english: one, one radical (no.1)
+    kanji: 一
+    kun_count: 2
+    kun_yomi:
+    - ひと-
+    - ひと.つ
+    on_count: 2
+    on_yomi:
+    - イチ
+    - イツ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '1'
+    vocab:
+    - english: one
+      kana: ひと
+      type: (numeric, prefix, suffix)
+      vocab: 一
+    - english: one, for one thing, only, even
+      kana: ひとつ
+      type: (n, n-adv)
+      vocab: 一
+    - english: handful, small handful
+      kana: ひとにぎり
+      type: (n, adj-no)
+      vocab: 一握り
+    - english: person, member
+      kana: いちいん
+      type: (n)
+      vocab: 一員
+    - english: whole district, one yen, throughout
+      kana: いちえん
+      type: (adv, n)
+      vocab: 一円
+  七:
+    english: seven
+    kanji: 七
+    kun_count: 3
+    kun_yomi:
+    - なな
+    - なな.つ
+    - なの
+    on_count: 1
+    on_yomi:
+    - シチ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '2'
+    vocab:
+    - english: seven
+      kana: な
+      type: (numeric)
+      vocab: 七
+  万:
+    english: ten thousand
+    kanji: 万
+    kun_count: 1
+    kun_yomi:
+    - よろず
+    on_count: 2
+    on_yomi:
+    - マン
+    - バン
+    other_readings: []
+    reading_count: 3
+    stroke_count: '3'
+    vocab:
+    - english: by some chance, by some possibility, 10,000 to 1 odds
+      kana: まんいつ
+      type: (adv, n)
+      vocab: 万一
+    - english: shoplifting, shoplifter
+      kana: まんびき
+      type: (n, vs)
+      vocab: 万引き
+    - english: all, everything
+      kana: ばんじ
+      type: (n)
+      vocab: 万事
+    - english: fountain pen
+      kana: まんねんひつ
+      type: (n)
+      vocab: 万年筆
+    - english: all people, everybody, ten thousand people
+      kana: まんにん
+      type: (n)
+      vocab: 万人
+  三:
+    english: three
+    kanji: 三
+    kun_count: 3
+    kun_yomi:
+    - み
+    - み.つ
+    - みっ.つ
+    on_count: 2
+    on_yomi:
+    - サン
+    - ゾウ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '3'
+    vocab:
+    - english: again and again, repeatedly
+      kana: さいさん
+      type: (adv, n)
+      vocab: 再三
+    - english: triangle, triangular
+      kana: さんかく
+      type: (n)
+      vocab: 三角
+    - english: new moon, crescent moon
+      kana: みかずき
+      type: (n)
+      vocab: 三日月
+    - english: 3rd rate
+      kana: さんりゅう
+      type: (n)
+      vocab: 三流
+    - english: three
+      kana: み
+      type: (numeric)
+      vocab: 三
+  上:
+    english: above, up
+    kanji: 上
+    kun_count: 15
+    kun_yomi:
+    - うえ
+    - -うえ
+    - うわ-
+    - かみ
+    - あ.げる
+    - -あ.げる
+    - あ.がる
+    - -あ.がる
+    - あ.がり
+    - -あ.がり
+    - のぼ.る
+    - のぼ.り
+    - のぼ.せる
+    - のぼ.す
+    - よ.す
+    on_count: 3
+    on_yomi:
+    - ジョウ
+    - ショウ
+    - シャン
+    other_readings: []
+    reading_count: 18
+    stroke_count: '3'
+    vocab:
+    - english: not less than, ... and more, beyond
+      kana: いじょう
+      type: (n-adv, n-t)
+      vocab: 已上
+    - english: rooftop
+      kana: おくじょう
+      type: (n)
+      vocab: 屋上
+    - english: (by, at, on) sea, maritime, marine
+      kana: かいじょう
+      type: (adj-no)
+      vocab: 海上
+    - english: to look up at, to raise one's eyes, to admire
+      kana: みあげる
+      type: (Ichidan verb, vt)
+      vocab: 見上げる
+    - english: elevation, rise, improvement, advancement, progress
+      kana: こうじょう
+      type: (n, vs)
+      vocab: 向上
+  下:
+    english: below, down, descend, give, low, inferior
+    kanji: 下
+    kun_count: 12
+    kun_yomi:
+    - した
+    - しも
+    - もと
+    - さ.げる
+    - さ.がる
+    - くだ.る
+    - くだ.り
+    - くだ.す
+    - -くだ.す
+    - くだ.さる
+    - お.ろす
+    - お.りる
+    on_count: 2
+    on_yomi:
+    - カ
+    - ゲ
+    other_readings: []
+    reading_count: 14
+    stroke_count: '3'
+    vocab:
+    - english: not exceeding, and downward
+      kana: いげ
+      type: (n)
+      vocab: 已下
+    - english: to hang down, to abate, to retire, to fall, to step back
+      kana: さがる
+      type: (v5r, intransitive verb)
+      vocab: 下る
+    - english: to hang, to lower, to move back, to wear, to dismiss, to grant
+      kana: さげる
+      type: (Ichidan verb, vt)
+      vocab: 下げる
+    - english: to give, to confer
+      kana: くださる
+      type: (Godan verb - -aru special class)
+      vocab: 下さる
+    - english: down-train (going away from Tokyo)
+      kana: くだり
+      type: (n, n-suf)
+      vocab: 下り
+  中:
+    english: in, inside, middle, mean, center
+    kanji: 中
+    kun_count: 3
+    kun_yomi:
+    - なか
+    - うち
+    - あた.る
+    on_count: 1
+    on_yomi:
+    - チュウ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '4'
+    vocab:
+    - english: sky, air
+      kana: くうちゅう
+      type: (n)
+      vocab: 空中
+    - english: concentration, convergence, centralization, integration, gathering
+        together
+      kana: しゅうちゅう
+      type: (n, vs)
+      vocab: 集中
+    - english: double suicide, lovers suicide
+      kana: しんじゅう
+      type: (n, vs)
+      vocab: 心中
+    - english: midst, middle of, height of
+      kana: まっさいちゅう
+      type: (n-adv, n)
+      vocab: 真最中
+    - english: dead of night, midnight
+      kana: まよなか
+      type: (n-adv, n-t)
+      vocab: 真夜中
+  九:
+    english: nine
+    kanji: 九
+    kun_count: 2
+    kun_yomi:
+    - ここの
+    - ここの.つ
+    on_count: 2
+    on_yomi:
+    - キュウ
+    - ク
+    other_readings: []
+    reading_count: 4
+    stroke_count: '2'
+    vocab:
+    - english: nine
+      kana: ここ
+      type: (numeric)
+      vocab: 九
+  二:
+    english: two, two radical (no.2)
+    kanji: 二
+    kun_count: 3
+    kun_yomi:
+    - ふた
+    - ふた.つ
+    - ふたた.び
+    on_count: 2
+    on_yomi:
+    - ニ
+    - ジ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '2'
+    vocab:
+    - english: second son
+      kana: じなん
+      type: (n)
+      vocab: 二男
+    - english: twins, a twin
+      kana: ふたご
+      type: (n)
+      vocab: 二子
+    - english: two
+      kana: ふう
+      type: (numeric)
+      vocab: 二
+    - english: second floor, upstairs
+      kana: にかい
+      type: (n)
+      vocab: 二階
+    - english: double, two-fold, two layers, duplex
+      kana: ふたえ
+      type: (n, adj-no)
+      vocab: 二重
+  五:
+    english: five
+    kanji: 五
+    kun_count: 2
+    kun_yomi:
+    - いつ
+    - いつ.つ
+    on_count: 1
+    on_yomi:
+    - ゴ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '4'
+    vocab:
+    - english: five
+      kana: い
+      type: (numeric)
+      vocab: 五
+    - english: the Japanese syllabary
+      kana: ごじゅうおん
+      type: (n)
+      vocab: 五十音
+    - english: half, 50%, tie, evenness, 5 parts, 5%
+      kana: ごぶ
+      type: (n-adv, n)
+      vocab: 五分
+    - english: rounding up (esp. fractions)
+      kana: ししゃごにゅう
+      type: (n, vs)
+      vocab: 四捨五入
+  人:
+    english: person
+    kanji: 人
+    kun_count: 3
+    kun_yomi:
+    - ひと
+    - -り
+    - -と
+    on_count: 2
+    on_yomi:
+    - ジン
+    - ニン
+    other_readings: []
+    reading_count: 5
+    stroke_count: '2'
+    vocab:
+    - english: bad man, villain
+      kana: あくにん
+      type: (n)
+      vocab: 悪人
+    - english: great man
+      kana: いじん
+      type: (n)
+      vocab: 偉人
+    - english: adult, full manhood or womanhood, one helping, one portion
+      kana: ひとりまえ
+      type: (n)
+      vocab: 一人前
+    - english: benefactor, patron
+      kana: おんじん
+      type: (n)
+      vocab: 恩人
+    - english: foreigner
+      kana: がいこくじん
+      type: (n)
+      vocab: 外国人
+  今:
+    english: now
+    kanji: 今
+    kun_count: 1
+    kun_yomi:
+    - いま
+    on_count: 2
+    on_yomi:
+    - コン
+    - キン
+    other_readings: []
+    reading_count: 3
+    stroke_count: '4'
+    vocab:
+    - english: now, the present time, just now, soon, immediately, (one) more
+      kana: いま
+      type: (n-adv, n)
+      vocab: 今
+    - english: before long, even now
+      kana: いまに
+      type: (adv)
+      vocab: 今に
+    - english: now, this time, lately
+      kana: こんかい
+      type: (n-adv, n-t)
+      vocab: 今回
+    - english: this month
+      kana: こんげつ
+      type: (n-adv, n-t)
+      vocab: 今月
+    - english: from now on, hereafter
+      kana: こんご
+      type: (n-adv, n-t)
+      vocab: 今後
+  休:
+    english: rest, day off, retire, sleep
+    kanji: 休
+    kun_count: 3
+    kun_yomi:
+    - やす.む
+    - やす.まる
+    - やす.める
+    on_count: 1
+    on_yomi:
+    - キュウ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '6'
+    vocab:
+    - english: service suspended (eg trains)
+      kana: うんきゅう
+      type: (n, vs)
+      vocab: 運休
+    - english: summer vacation, summer holiday
+      kana: なつやすみ
+      type: (n)
+      vocab: 夏休み
+    - english: rest, vacation, holiday, absence
+      kana: やすみ
+      type: (n)
+      vocab: 休み
+    - english: to be absent, to take a day off, to rest, to have a break
+      kana: やすむ
+      type: (v5m, intransitive verb)
+      vocab: 休む
+    - english: holiday, day off, furlough
+      kana: きゅうか
+      type: (n)
+      vocab: 休暇
+  会:
+    english: meeting, meet, party, association, interview, join
+    kanji: 会
+    kun_count: 3
+    kun_yomi:
+    - あ.う
+    - あ.わせる
+    - あつ.まる
+    on_count: 2
+    on_yomi:
+    - カイ
+    - エ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '6'
+    vocab:
+    - english: committee meeting, committee
+      kana: いいんかい
+      type: (n)
+      vocab: 委員会
+    - english: athletic meet
+      kana: うんどうかい
+      type: (n)
+      vocab: 運動会
+    - english: party, banquet
+      kana: えんかい
+      type: (n)
+      vocab: 宴会
+    - english: member, the membership
+      kana: かいいん
+      type: (n)
+      vocab: 会員
+    - english: meeting, conference
+      kana: かいぎ
+      type: (n, vs)
+      vocab: 会議
+  何:
+    english: what
+    kanji: 何
+    kun_count: 4
+    kun_yomi:
+    - なに
+    - なん
+    - なに-
+    - なん-
+    on_count: 1
+    on_yomi:
+    - カ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '7'
+    vocab:
+    - english: something
+      kana: なんか
+      type: (exp)
+      vocab: 何か
+    - english: at any rate, anyhow, anyway, in any case
+      kana: なにしろ
+      type: (adv, conjunction)
+      vocab: 何しろ
+    - english: (a) little, somewhat, somehow
+      kana: なんだか
+      type: (adv)
+      vocab: 何だか
+    - english: how ..!, what ..!, what (questioning)
+      kana: なんて
+      type: (adj-f, adv)
+      vocab: 何て
+    - english: what, how, whatever
+      kana: なんと
+      type: (adv)
+      vocab: 何と
+  先:
+    english: before, ahead, previous, future, precedence
+    kanji: 先
+    kun_count: 2
+    kun_yomi:
+    - さき
+    - ま.ず
+    on_count: 1
+    on_yomi:
+    - セン
+    other_readings: []
+    reading_count: 3
+    stroke_count: '6'
+    vocab:
+    - english: place of work
+      kana: つとめさき
+      type: (n)
+      vocab: 勤め先
+    - english: lip service, mere words, professions, lips, mouth, snout, proboscis
+      kana: くちさき
+      type: (n)
+      vocab: 口先
+    - english: leading edge, at the forefront, ultra-fine
+      kana: さいせんたん
+      type: (n, adj-no)
+      vocab: 最先端
+    - english: the head, the foremost, beginning
+      kana: まっさき
+      type: (n)
+      vocab: 真っ先
+    - english: previous decision, deciding in advance
+      kana: せんけつ
+      type: (n, vs)
+      vocab: 先決
+  入:
+    english: enter, insert
+    kanji: 入
+    kun_count: 6
+    kun_yomi:
+    - い.る
+    - -い.る
+    - -い.り
+    - い.れる
+    - -い.れ
+    - はい.る
+    on_count: 2
+    on_yomi:
+    - ニュウ
+    - ジュ
+    other_readings: []
+    reading_count: 8
+    stroke_count: '2'
+    vocab:
+    - english: becoming a member, joining, entry, admission, subscription, affiliation,
+        adherence, signing
+      kana: かにゅう
+      type: (n, vs)
+      vocab: 加入
+    - english: to fall, to trap, to cave in, to collapse
+      kana: おちいる
+      type: (v5r, intransitive verb)
+      vocab: 落ち入る
+    - english: to be pleased with, to suit
+      kana: きにいる
+      type: (v5r)
+      vocab: 気に入る
+    - english: entry, filling in of forms
+      kana: きにゅう
+      type: (n, vs)
+      vocab: 記入
+    - english: purchase, buy
+      kana: こうにゅう
+      type: (n, vs)
+      vocab: 購入
+  八:
+    english: eight, eight radical (no. 12)
+    kanji: 八
+    kun_count: 4
+    kun_yomi:
+    - や
+    - や.つ
+    - やっ.つ
+    - よう
+    on_count: 1
+    on_yomi:
+    - ハチ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '2'
+    vocab:
+    - english: outburst of anger
+      kana: やつあたり
+      type: (n)
+      vocab: 八つあたり
+    - english: greengrocer
+      kana: やおや
+      type: (n)
+      vocab: 八百屋
+    - english: eight
+      kana: や
+      type: (numeric)
+      vocab: 八
+  六:
+    english: six
+    kanji: 六
+    kun_count: 4
+    kun_yomi:
+    - む
+    - む.つ
+    - むっ.つ
+    - むい
+    on_count: 2
+    on_yomi:
+    - ロク
+    - リク
+    other_readings: []
+    reading_count: 6
+    stroke_count: '4'
+    vocab:
+    - english: six
+      kana: むう
+      type: (numeric)
+      vocab: 六
+  円:
+    english: circle, yen, round
+    kanji: 円
+    kun_count: 5
+    kun_yomi:
+    - まる.い
+    - まる
+    - まど
+    - まど.か
+    - まろ.やか
+    on_count: 1
+    on_yomi:
+    - エン
+    other_readings: []
+    reading_count: 6
+    stroke_count: '4'
+    vocab:
+    - english: whole district, one yen, throughout
+      kana: いちえん
+      type: (adv, n)
+      vocab: 一円
+    - english: Yen, money, circle
+      kana: まる
+      type: (n, n)
+      vocab: 円
+    - english: cheap yen
+      kana: えんやす
+      type: (n)
+      vocab: 円安
+    - english: high-valued yen, exchange in favor (favour) of the yen
+      kana: えんだか
+      type: (n)
+      vocab: 円高
+    - english: disk, discus, platter, flying saucer
+      kana: えんばん
+      type: (n)
+      vocab: 円盤
+  出:
+    english: exit, leave
+    kanji: 出
+    kun_count: 6
+    kun_yomi:
+    - で.る
+    - -で
+    - だ.す
+    - -だ.す
+    - い.でる
+    - い.だす
+    on_count: 2
+    on_yomi:
+    - シュツ
+    - スイ
+    other_readings: []
+    reading_count: 8
+    stroke_count: '5'
+    vocab:
+    - english: production (eg play), direction
+      kana: えんしゅつ
+      type: (n, vs)
+      vocab: 演出
+    - english: running away from home, leaving home
+      kana: いえで
+      type: (n, vs)
+      vocab: 家出
+    - english: outing, trip, going out
+      kana: そとで
+      type: (n, vs)
+      vocab: 外出
+    - english: to calculate, to compute, to infer
+      kana: わりだす
+      type: (v5s, vt)
+      vocab: 割出す
+    - english: heading, caption, subtitle, index
+      kana: みだし
+      type: (n)
+      vocab: 見出し
+  分:
+    english: part, minute of time, segment, share, degree, one's lot, duty, understand,
+      know, rate, 1%, chances, shaku/100
+    kanji: 分
+    kun_count: 5
+    kun_yomi:
+    - わ.ける
+    - わ.け
+    - わ.かれる
+    - わ.かる
+    - わ.かつ
+    on_count: 3
+    on_yomi:
+    - ブン
+    - フン
+    - ブ
+    other_readings: []
+    reading_count: 8
+    stroke_count: '4'
+    vocab:
+    - english: part, portion, section
+      kana: いちぶぶん
+      type: (n)
+      vocab: 一部分
+    - english: draw (in competition), tie game
+      kana: ひきわけ
+      type: (n)
+      vocab: 引分け
+    - english: salt, salt content
+      kana: えんぶん
+      type: (n)
+      vocab: 塩分
+    - english: anyway, please
+      kana: なにぶん
+      type: (adv, n)
+      vocab: 何分
+    - english: somewhat, to some extent
+      kana: いくぶん
+      type: (adv, n, n)
+      vocab: 幾分
+  前:
+    english: in front, before
+    kanji: 前
+    kun_count: 2
+    kun_yomi:
+    - まえ
+    - -まえ
+    on_count: 1
+    on_yomi:
+    - ゼン
+    other_readings: []
+    reading_count: 3
+    stroke_count: '9'
+    vocab:
+    - english: you (masc) (formerly honorific, now sometimes derog. term referring
+        to an equal or inferior)
+      kana: おめえ
+      type: (n)
+      vocab: 御前
+    - english: ago, since, before, previous
+      kana: いぜん
+      type: (n-adv, n-t)
+      vocab: 已前
+    - english: adult, full manhood or womanhood, one helping, one portion
+      kana: ひとりまえ
+      type: (n)
+      vocab: 一人前
+    - english: in front of station
+      kana: えきまえ
+      type: (n)
+      vocab: 駅前
+    - english: generosity
+      kana: きまえ
+      type: (n)
+      vocab: 気前
+  北:
+    english: north
+    kanji: 北
+    kun_count: 1
+    kun_yomi:
+    - きた
+    on_count: 1
+    on_yomi:
+    - ホク
+    other_readings: []
+    reading_count: 2
+    stroke_count: '5'
+    vocab:
+    - english: south and north
+      kana: なんぼく
+      type: (n)
+      vocab: 南北
+    - english: defeat (as a verb it means 'to be defeated')
+      kana: はいぼく
+      type: (n, vs)
+      vocab: 敗北
+    - english: North
+      kana: きた
+      type: (n)
+      vocab: 北
+    - english: North Pole
+      kana: ほっきょく
+      type: (n)
+      vocab: 北極
+    - english: northwest
+      kana: ほくせい
+      type: (n)
+      vocab: 北西
+  十:
+    english: ten
+    kanji: 十
+    kun_count: 2
+    kun_yomi:
+    - とお
+    - と
+    on_count: 3
+    on_yomi:
+    - ジュウ
+    - ジッ
+    - ジュッ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '2'
+    vocab:
+    - english: the Japanese syllabary
+      kana: ごじゅうおん
+      type: (n)
+      vocab: 五十音
+    - english: cross, the Cross (of Christ)
+      kana: じゅうじか
+      type: (n)
+      vocab: 十字架
+    - english: crossroads
+      kana: じゅうじろ
+      type: (n)
+      vocab: 十字路
+    - english: insufficient, inadequate, imperfect, shortage
+      kana: ふじゅうぶん
+      type: (adj-na, n)
+      vocab: 不十分
+    - english: 10, ten
+      kana: とお
+      type: (numeric)
+      vocab: 十
+  千:
+    english: thousand
+    kanji: 千
+    kun_count: 1
+    kun_yomi:
+    - ち
+    on_count: 1
+    on_yomi:
+    - セン
+    other_readings: []
+    reading_count: 2
+    stroke_count: '3'
+    vocab:
+    - english: many thousands
+      kana: なんぜん
+      type: (n)
+      vocab: 何千
+    - english: 1,000, thousand
+      kana: ち
+      type: (numeric)
+      vocab: 千
+  午:
+    english: noon, sign of the horse, 11AM-1PM, seventh sign of Chinese zodiac
+    kanji: 午
+    kun_count: 1
+    kun_yomi:
+    - うま
+    on_count: 1
+    on_yomi:
+    - ゴ
+    other_readings: []
+    reading_count: 2
+    stroke_count: '4'
+    vocab:
+    - english: afternoon, p.m.
+      kana: ごご
+      type: (n-adv, n-t)
+      vocab: 午後
+    - english: morning, a.m.
+      kana: ごぜん
+      type: (n-adv, n-t)
+      vocab: 午前
+    - english: noon, mid-day
+      kana: しょうご
+      type: (n-adv, n-t)
+      vocab: 正午
+    - english: noon, midday, daytime, lunch
+      kana: ひる
+      type: (n-adv, n-t)
+      vocab: 午
+  半:
+    english: half, middle, odd number, semi-, part-
+    kanji: 半
+    kun_count: 1
+    kun_yomi:
+    - なか.ば
+    on_count: 1
+    on_yomi:
+    - ハン
+    other_readings: []
+    reading_count: 2
+    stroke_count: '5'
+    vocab:
+    - english: majority
+      kana: かはんすう
+      type: (n)
+      vocab: 過半数
+    - english: second half, latter half
+      kana: こうはん
+      type: (n-adv, n)
+      vocab: 後半
+    - english: upper half of body, bust
+      kana: じょうはんしん
+      type: (n)
+      vocab: 上半身
+    - english: majority, mostly, generally
+      kana: たいはん
+      type: (n)
+      vocab: 大半
+    - english: half
+      kana: はん
+      type: (n, n-adv, n-suf, n-pref)
+      vocab: 半
+  南:
+    english: south
+    kanji: 南
+    kun_count: 1
+    kun_yomi:
+    - みなみ
+    on_count: 2
+    on_yomi:
+    - ナン
+    - ナ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '9'
+    vocab:
+    - english: south
+      kana: みなみ
+      type: (n)
+      vocab: 南
+    - english: south pole, Antarctic
+      kana: なんきょく
+      type: (n)
+      vocab: 南極
+    - english: southern part
+      kana: なんぶ
+      type: (n)
+      vocab: 南部
+    - english: south and north
+      kana: なんぼく
+      type: (n)
+      vocab: 南北
+    - english: southwest
+      kana: みなみにし
+      type: (n)
+      vocab: 南西
+  友:
+    english: friend
+    kanji: 友
+    kun_count: 1
+    kun_yomi:
+    - とも
+    on_count: 1
+    on_yomi:
+    - ユウ
+    other_readings: []
+    reading_count: 2
+    stroke_count: '4'
+    vocab:
+    - english: close friend, bosom (old, intimate) friend, buddy, crony, chum
+      kana: しんゆう
+      type: (n)
+      vocab: 親友
+    - english: friendship
+      kana: ゆうこう
+      type: (n)
+      vocab: 友好
+    - english: friendship, fellowship
+      kana: ゆうじょう
+      type: (n)
+      vocab: 友情
+    - english: friend
+      kana: ゆうじん
+      type: (n)
+      vocab: 友人
+    - english: friend, companion
+      kana: ともだち
+      type: (n)
+      vocab: 友だち
+  口:
+    english: mouth
+    kanji: 口
+    kun_count: 1
+    kun_yomi:
+    - くち
+    on_count: 2
+    on_yomi:
+    - コウ
+    - ク
+    other_readings: []
+    reading_count: 3
+    stroke_count: '3'
+    vocab:
+    - english: mouthful, bite, sip, draft, draught, one word
+      kana: ひとくち
+      type: (n)
+      vocab: ひと口
+    - english: mouth, opening, hole, gap
+      kana: くち
+      type: (n, suffix, counter)
+      vocab: 口
+    - english: spoken language, literary style based on (modern) spoken language
+      kana: こうご
+      type: (n)
+      vocab: 口語
+    - english: lipstick
+      kana: くちべに
+      type: (n)
+      vocab: 口紅
+    - english: forbidding to speak, muzzling (a person)
+      kana: くちどめ
+      type: (n, vs)
+      vocab: 口止め
+  古:
+    english: old
+    kanji: 古
+    kun_count: 3
+    kun_yomi:
+    - ふる.い
+    - ふる-
+    - -ふる.す
+    on_count: 1
+    on_yomi:
+    - コ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '5'
+    vocab:
+    - english: practice, practise, training, study
+      kana: けいこ
+      type: (n, vs)
+      vocab: 稽古
+    - english: ancient times
+      kana: こだい
+      type: (adj-na, n-adv, n-t)
+      vocab: 古代
+    - english: old book, classics, classic
+      kana: こてん
+      type: (n)
+      vocab: 古典
+    - english: used, second-hand, old, Middle Ages
+      kana: ちゅうぶる
+      type: (n-t, n)
+      vocab: 中古
+    - english: secondhand book, ancient book, antiquarian books
+      kana: こほん
+      type: (n, n)
+      vocab: 古本
+  右:
+    english: right
+    kanji: 右
+    kun_count: 1
+    kun_yomi:
+    - みぎ
+    on_count: 2
+    on_yomi:
+    - ウ
+    - ユウ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '5'
+    vocab:
+    - english: right, right hand side
+      kana: みぎ
+      type: (n)
+      vocab: 右
+    - english: right hand
+      kana: みぎて
+      type: (n)
+      vocab: 右手
+    - english: right-wing
+      kana: うよく
+      type: (n)
+      vocab: 右翼
+    - english: left and right, influence, control, domination
+      kana: さゆう
+      type: (n, vs)
+      vocab: 左右
+    - english: right side, right hand
+      kana: うそく
+      type: (n)
+      vocab: 右側
+  名:
+    english: name, noted, distinguished, reputation
+    kanji: 名
+    kun_count: 2
+    kun_yomi:
+    - な
+    - -な
+    on_count: 2
+    on_yomi:
+    - メイ
+    - ミョウ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '6'
+    vocab:
+    - english: country name
+      kana: こくめい
+      type: (n)
+      vocab: 国名
+    - english: full name, identity
+      kana: しめい
+      type: (n)
+      vocab: 氏名
+    - english: real name
+      kana: じつめい
+      type: (n)
+      vocab: 実名
+    - english: signature
+      kana: しょめい
+      type: (n, vs)
+      vocab: 署名
+    - english: person's name
+      kana: じんめい
+      type: (n)
+      vocab: 人名
+  四:
+    english: four
+    kanji: 四
+    kun_count: 4
+    kun_yomi:
+    - よ
+    - よ.つ
+    - よっ.つ
+    - よん
+    on_count: 1
+    on_yomi:
+    - シ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '5'
+    vocab:
+    - english: square
+      kana: しかく
+      type: (adj-na, n)
+      vocab: 四角
+    - english: square, rectangular
+      kana: しかくい
+      type: (adj)
+      vocab: 四角い
+    - english: four seasons
+      kana: しき
+      type: (n)
+      vocab: 四季
+    - english: rounding up (esp. fractions)
+      kana: ししゃごにゅう
+      type: (n, vs)
+      vocab: 四捨五入
+    - english: every direction
+      kana: よも
+      type: (n)
+      vocab: 四方
+  国:
+    english: country
+    kanji: 国
+    kun_count: 1
+    kun_yomi:
+    - くに
+    on_count: 1
+    on_yomi:
+    - コク
+    other_readings: []
+    reading_count: 2
+    stroke_count: '8'
+    vocab:
+    - english: kingdom, monarchy
+      kana: おうこく
+      type: (n)
+      vocab: 王国
+    - english: foreign country
+      kana: がいこく
+      type: (n)
+      vocab: 外国
+    - english: foreign language
+      kana: がいこくご
+      type: (n)
+      vocab: 外国語
+    - english: foreigner
+      kana: がいこくじん
+      type: (n)
+      vocab: 外国人
+    - english: return to one's country
+      kana: きこく
+      type: (n, vs)
+      vocab: 帰国
+  土:
+    english: soil, earth, ground, Turkey
+    kanji: 土
+    kun_count: 1
+    kun_yomi:
+    - つち
+    on_count: 2
+    on_yomi:
+    - ド
+    - ト
+    other_readings: []
+    reading_count: 3
+    stroke_count: '3'
+    vocab:
+    - english: country, territory, domain, realm
+      kana: こくど
+      type: (n)
+      vocab: 国土
+    - english: watch, clock, timepiece
+      kana: ときはかり
+      type: (n)
+      vocab: 土圭
+    - english: earth, soil
+      kana: つち
+      type: (n)
+      vocab: 土
+    - english: dirt floor
+      kana: どま
+      type: (n)
+      vocab: 土間
+    - english: present, souvenir
+      kana: みやげ
+      type: (n)
+      vocab: 土産
+  外:
+    english: outside
+    kanji: 外
+    kun_count: 5
+    kun_yomi:
+    - そと
+    - ほか
+    - はず.す
+    - はず.れる
+    - と-
+    on_count: 2
+    on_yomi:
+    - ガイ
+    - ゲ
+    other_readings: []
+    reading_count: 7
+    stroke_count: '5'
+    vocab:
+    - english: unexpectedly
+      kana: あんがい
+      type: (adj-na, n-adv)
+      vocab: 案外
+    - english: with the exception of, excepting
+      kana: いがい
+      type: (n-adv)
+      vocab: 以外
+    - english: unexpected, surprising
+      kana: いがい
+      type: (adj-na, adverb taking the `to' particle, n)
+      vocab: 意外
+    - english: outdoors
+      kana: おくがい
+      type: (n)
+      vocab: 屋外
+    - english: foreign, abroad, overseas
+      kana: かいがい
+      type: (n)
+      vocab: 海外
+  多:
+    english: many, frequent, much
+    kanji: 多
+    kun_count: 3
+    kun_yomi:
+    - おお.い
+    - まさ.に
+    - まさ.る
+    on_count: 1
+    on_yomi:
+    - タ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '6'
+    vocab:
+    - english: many, numerous
+      kana: おおい
+      type: (adj)
+      vocab: 多い
+    - english: high humidity
+      kana: たしつ
+      type: (adj-na, n)
+      vocab: 多湿
+    - english: more or less, somewhat, a little, some
+      kana: たしょう
+      type: (adj-no, adv, n)
+      vocab: 多少
+    - english: great number, countless, majority
+      kana: たすう
+      type: (n-adv, n, adj-no)
+      vocab: 多数
+    - english: heavy, much
+      kana: ただい
+      type: (adj-na, n)
+      vocab: 多大
+  大:
+    english: large, big
+    kanji: 大
+    kun_count: 3
+    kun_yomi:
+    - おお-
+    - おお.きい
+    - -おお.いに
+    on_count: 2
+    on_yomi:
+    - ダイ
+    - タイ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '3'
+    vocab:
+    - english: greatness
+      kana: いだい
+      type: (adj-na, n)
+      vocab: 偉大
+    - english: magnification, enlargement, expansion
+      kana: かくだい
+      type: (n, vs)
+      vocab: 拡大
+    - english: tolerance, liberality, leniency
+      kana: かんだい
+      type: (adj-na, n)
+      vocab: 寛大
+    - english: huge, gigantic, enormous
+      kana: きょだい
+      type: (adj-na, n)
+      vocab: 巨大
+    - english: huge, very large, vast, extensive, magnificent, grand
+      kana: こうだい
+      type: (adj-na)
+      vocab: 弘大
+  天:
+    english: heavens, sky, imperial
+    kanji: 天
+    kun_count: 3
+    kun_yomi:
+    - あまつ
+    - あめ
+    - あま-
+    on_count: 1
+    on_yomi:
+    - テン
+    other_readings: []
+    reading_count: 4
+    stroke_count: '4'
+    vocab:
+    - english: rainy weather
+      kana: うてん
+      type: (n)
+      vocab: 雨天
+    - english: optimistic
+      kana: らくてんてき
+      type: (adj-na, n)
+      vocab: 楽天的
+    - english: fine weather
+      kana: せいてん
+      type: (n)
+      vocab: 晴天
+    - english: a priori, inborn, innate, inherent
+      kana: せんてんてき
+      type: (adj-na, n)
+      vocab: 先天的
+    - english: sky, heaven
+      kana: あま
+      type: (n)
+      vocab: 天
+  女:
+    english: woman, female
+    kanji: 女
+    kun_count: 2
+    kun_yomi:
+    - おんな
+    - め
+    on_count: 3
+    on_yomi:
+    - ジョ
+    - ニョ
+    - ニョウ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '3'
+    vocab:
+    - english: wicked or ugly woman
+      kana: あくじょ
+      type: (n)
+      vocab: 悪女
+    - english: princess
+      kana: おうじょ
+      type: (n)
+      vocab: 王女
+    - english: virgin, maiden
+      kana: しょじょ
+      type: (n)
+      vocab: 処女
+    - english: woman
+      kana: おんな
+      type: (n)
+      vocab: 女
+    - english: girl
+      kana: おんなのコ
+      type: (n)
+      vocab: 女の児
+  子:
+    english: child, sign of the rat, 11PM-1AM, first sign of Chinese zodiac
+    kanji: 子
+    kun_count: 3
+    kun_yomi:
+    - こ
+    - -こ
+    - ね
+    on_count: 3
+    on_yomi:
+    - シ
+    - ス
+    - ツ
+    other_readings: []
+    reading_count: 6
+    stroke_count: '3'
+    vocab:
+    - english: chair, post, office, position
+      kana: いす
+      type: (n)
+      vocab: 倚子
+    - english: feather, plume, wing, blade (fan, propeller, etc.)
+      kana: はね
+      type: (n, n)
+      vocab: 羽子
+    - english: prince
+      kana: おうじ
+      type: (n)
+      vocab: 王子
+    - english: (crystal) lattice, grid pattern
+      kana: こうし
+      type: (n)
+      vocab: 格子
+    - english: atom
+      kana: げんし
+      type: (n)
+      vocab: 原子
+  学:
+    english: study, learning, science
+    kanji: 学
+    kun_count: 1
+    kun_yomi:
+    - まな.ぶ
+    on_count: 1
+    on_yomi:
+    - ガク
+    other_readings: []
+    reading_count: 2
+    stroke_count: '8'
+    vocab:
+    - english: medical science, medicine
+      kana: いがく
+      type: (n)
+      vocab: 医学
+    - english: chemistry, chemical (company)
+      kana: ばけがく
+      type: (n)
+      vocab: 化学
+    - english: science
+      kana: かがく
+      type: (n)
+      vocab: 科学
+    - english: scientist
+      kana: かがくしゃ
+      type: (n)
+      vocab: 科学者
+    - english: (university) degree
+      kana: がくい
+      type: (n)
+      vocab: 学位
+  安:
+    english: relax, cheap, low, quiet, rested, contented, peaceful
+    kanji: 安
+    kun_count: 4
+    kun_yomi:
+    - やす.い
+    - やす.まる
+    - やす
+    - やす.らか
+    on_count: 1
+    on_yomi:
+    - アン
+    other_readings: []
+    reading_count: 5
+    stroke_count: '6'
+    vocab:
+    - english: easy, simple, easy-going
+      kana: あんい
+      type: (adj-na, n)
+      vocab: 安易
+    - english: relief, peace of mind
+      kana: あんしん
+      type: (adj-na, n, vs)
+      vocab: 安神
+    - english: rest
+      kana: あんせい
+      type: (adj-na, n)
+      vocab: 安静
+    - english: safety, security
+      kana: あんぜん
+      type: (adj-na, n)
+      vocab: 安全
+    - english: stability, equilibrium
+      kana: あんてい
+      type: (adj-na, n, vs)
+      vocab: 安定
+  小:
+    english: little, small
+    kanji: 小
+    kun_count: 4
+    kun_yomi:
+    - ちい.さい
+    - こ-
+    - お-
+    - さ-
+    on_count: 1
+    on_yomi:
+    - ショウ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '3'
+    vocab:
+    - english: smallest, least
+      kana: さいしょう
+      type: (n)
+      vocab: 最小
+    - english: minimum, lowest
+      kana: さいしょうげん
+      type: (n)
+      vocab: 最小限
+    - english: reduction, curtailment
+      kana: しゅくしょう
+      type: (n, vs)
+      vocab: 縮小
+    - english: small, little, tiny
+      kana: ちいさい
+      type: (adj)
+      vocab: 小さい
+    - english: light rain, drizzle
+      kana: こあめ
+      type: (n)
+      vocab: 小雨
+  少:
+    english: few, little
+    kanji: 少
+    kun_count: 2
+    kun_yomi:
+    - すく.ない
+    - すこ.し
+    on_count: 1
+    on_yomi:
+    - ショウ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '4'
+    vocab:
+    - english: decrease, reduction, decline
+      kana: げんしょう
+      type: (n, vs)
+      vocab: 減少
+    - english: decimal point, radix point
+      kana: しょうすうてん
+      type: (n)
+      vocab: 少数点
+    - english: small quantity, little, few, something, little while, short distance
+      kana: すこし
+      type: (adv, n)
+      vocab: 少し
+    - english: minority, few
+      kana: しょうすう
+      type: (n)
+      vocab: 少数
+    - english: boys, juveniles
+      kana: しょうねん
+      type: (n)
+      vocab: 少年
+  山:
+    english: mountain
+    kanji: 山
+    kun_count: 1
+    kun_yomi:
+    - やま
+    on_count: 2
+    on_yomi:
+    - サン
+    - セン
+    other_readings: []
+    reading_count: 3
+    stroke_count: '3'
+    vocab:
+    - english: volcano
+      kana: かざん
+      type: (n)
+      vocab: 火山
+    - english: mine (ore)
+      kana: こうざん
+      type: (n)
+      vocab: 鉱山
+    - english: mountain, pile, heap
+      kana: やま
+      type: (n)
+      vocab: 山
+    - english: mountain climbing, mountaineering
+      kana: やまのぼり
+      type: (n)
+      vocab: 山登り
+    - english: mountain range
+      kana: やまなみ
+      type: (n)
+      vocab: 山脈
+  川:
+    english: stream, river, river or 3-stroke river radical (no. 47)
+    kanji: 川
+    kun_count: 1
+    kun_yomi:
+    - かわ
+    on_count: 1
+    on_yomi:
+    - セン
+    other_readings: []
+    reading_count: 2
+    stroke_count: '3'
+    vocab:
+    - english: rivers
+      kana: かせん
+      type: (n)
+      vocab: 河川
+    - english: streamlet, brook
+      kana: おがわ
+      type: (n)
+      vocab: 小川
+    - english: mouth of river, estuary
+      kana: かわぐち
+      type: (n)
+      vocab: 川口
+    - english: dry river bed, river beach
+      kana: かわはら
+      type: (n)
+      vocab: 川原
+  左:
+    english: left
+    kanji: 左
+    kun_count: 1
+    kun_yomi:
+    - ひだり
+    on_count: 2
+    on_yomi:
+    - サ
+    - シャ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '5'
+    vocab:
+    - english: left, left hand side
+      kana: ひだり
+      type: (n)
+      vocab: 左
+    - english: left and right, influence, control, domination
+      kana: さゆう
+      type: (n, vs)
+      vocab: 左右
+    - english: left hand
+      kana: ひだりて
+      type: (n)
+      vocab: 左手
+    - english: demotion, degradation
+      kana: させん
+      type: (n, vs)
+      vocab: 左遷
+    - english: left wing
+      kana: さよく
+      type: (n)
+      vocab: 左翼
+  年:
+    english: year, counter for years
+    kanji: 年
+    kun_count: 1
+    kun_yomi:
+    - とし
+    on_count: 1
+    on_yomi:
+    - ネン
+    other_readings: []
+    reading_count: 2
+    stroke_count: '6'
+    vocab:
+    - english: year in school, grade in school
+      kana: がくねん
+      type: (n)
+      vocab: 学年
+    - english: last year
+      kana: こぞ
+      type: (n-adv, n-t)
+      vocab: 去年
+    - english: New Year's gift
+      kana: おとしだま
+      type: (n)
+      vocab: 御年玉
+    - english: year after next
+      kana: さらいねん
+      type: (n-adv, n-t)
+      vocab: 再来年
+    - english: last year
+      kana: さくねん
+      type: (n-adv, n-t)
+      vocab: 昨年
+  店:
+    english: store, shop
+    kanji: 店
+    kun_count: 2
+    kun_yomi:
+    - みせ
+    - たな
+    on_count: 1
+    on_yomi:
+    - テン
+    other_readings: []
+    reading_count: 3
+    stroke_count: '8'
+    vocab:
+    - english: (grand) opening of shop
+      kana: かいてん
+      type: (n, vs)
+      vocab: 開店
+    - english: coffee lounge, coffee shop, (rather formal) cafe
+      kana: きっさてん
+      type: (n)
+      vocab: 喫茶店
+    - english: branch store (office)
+      kana: してん
+      type: (n)
+      vocab: 支店
+    - english: bookshop, bookstore
+      kana: しょてん
+      type: (n)
+      vocab: 書店
+    - english: shop, business firm
+      kana: しょうてん
+      type: (n)
+      vocab: 商店
+  後:
+    english: behind, back, later
+    kanji: 後
+    kun_count: 5
+    kun_yomi:
+    - のち
+    - うし.ろ
+    - うしろ
+    - あと
+    - おく.れる
+    on_count: 2
+    on_yomi:
+    - ゴ
+    - コウ
+    other_readings: []
+    reading_count: 7
+    stroke_count: '9'
+    vocab:
+    - english: after this, from now on, hereafter, thereafter
+      kana: いご
+      type: (n-adv, n-t)
+      vocab: 以後
+    - english: behind, rear, after, later
+      kana: あと
+      type: (n, adj-no, n-adv)
+      vocab: 後
+    - english: back, behind, rear
+      kana: うしろ
+      type: (n)
+      vocab: 後
+    - english: support, backing
+      kana: こうえん
+      type: (n, vs)
+      vocab: 後援
+    - english: putting off, postponing
+      kana: あとまわし
+      type: (n)
+      vocab: 後回し
+  手:
+    english: hand
+    kanji: 手
+    kun_count: 4
+    kun_yomi:
+    - て
+    - て-
+    - -て
+    - た-
+    on_count: 2
+    on_yomi:
+    - シュ
+    - ズ
+    other_readings: []
+    reading_count: 6
+    stroke_count: '4'
+    vocab:
+    - english: handshake
+      kana: あくしゅ
+      type: (n, vs)
+      vocab: 握手
+    - english: right hand
+      kana: みぎて
+      type: (n)
+      vocab: 右手
+    - english: driver, chauffeur
+      kana: うんてんしゅ
+      type: (n)
+      vocab: 運転手
+    - english: unskillful, poor, awkward, imprudent, untactful
+      kana: へた
+      type: (adj-na, n)
+      vocab: 下手
+    - english: singer
+      kana: かしゅ
+      type: (n)
+      vocab: 歌手
+  新:
+    english: new
+    kanji: 新
+    kun_count: 4
+    kun_yomi:
+    - あたら.しい
+    - あら.た
+    - あら-
+    - にい-
+    on_count: 1
+    on_yomi:
+    - シン
+    other_readings: []
+    reading_count: 5
+    stroke_count: '13'
+    vocab:
+    - english: restoration (eg Meiji)
+      kana: いしん
+      type: (n)
+      vocab: 維新
+    - english: reform, innovation
+      kana: かくしん
+      type: (n, vs)
+      vocab: 革新
+    - english: new
+      kana: あたらしい
+      type: (adj)
+      vocab: 新しい
+    - english: new, fresh, novel, newly, freshly, re-
+      kana: あらた
+      type: (adj-na, n, adv)
+      vocab: 新た
+    - english: new book, new publication
+      kana: しんかん
+      type: (n)
+      vocab: 新刊
+  日:
+    english: day, sun, Japan, counter for days
+    kanji: 日
+    kun_count: 3
+    kun_yomi:
+    - ひ
+    - -び
+    - -か
+    on_count: 2
+    on_yomi:
+    - ニチ
+    - ジツ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '4'
+    vocab:
+    - english: Tuesday
+      kana: かようび
+      type: (n-adv, n-t)
+      vocab: 火曜日
+    - english: fixed date, settlement date
+      kana: ごじつ
+      type: (n)
+      vocab: 期日
+    - english: holiday, anniversary, memorial day
+      kana: きねんび
+      type: (n)
+      vocab: 記念日
+    - english: holiday, day off
+      kana: きゅうじつ
+      type: (n-adv, n)
+      vocab: 休日
+    - english: time, years, days
+      kana: つきひ
+      type: (n)
+      vocab: 月日
+  時:
+    english: time, hour
+    kanji: 時
+    kun_count: 2
+    kun_yomi:
+    - とき
+    - -どき
+    on_count: 1
+    on_yomi:
+    - ジ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '10'
+    vocab:
+    - english: when, how soon
+      kana: いつ
+      type: (n-adv)
+      vocab: 何時
+    - english: time, hour, occasion, moment
+      kana: とき
+      type: (n-adv, n)
+      vocab: 時
+    - english: drizzle, shower in late autumn (fall) or early winter
+      kana: しぐれ
+      type: (n)
+      vocab: 時雨
+    - english: time, hours
+      kana: じかん
+      type: (n-adv, n, counter)
+      vocab: 時間
+    - english: timetable, schedule
+      kana: じかんわり
+      type: (n)
+      vocab: 時間割り
+  書:
+    english: write
+    kanji: 書
+    kun_count: 3
+    kun_yomi:
+    - か.く
+    - -が.き
+    - -がき
+    on_count: 1
+    on_yomi:
+    - ショ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '10'
+    vocab:
+    - english: writing horizontally
+      kana: よこがき
+      type: (n)
+      vocab: 横書き
+    - english: rough copy, draft, draught
+      kana: したがき
+      type: (n, vs)
+      vocab: 下書き
+    - english: written application or petition
+      kana: がんしょ
+      type: (n)
+      vocab: 願書
+    - english: textbook, text book
+      kana: きょうかしょ
+      type: (n)
+      vocab: 教科書
+    - english: original document
+      kana: げんしょ
+      type: (n)
+      vocab: 原書
+  月:
+    english: month, moon
+    kanji: 月
+    kun_count: 1
+    kun_yomi:
+    - つき
+    on_count: 2
+    on_yomi:
+    - ゲツ
+    - ガツ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '4'
+    vocab:
+    - english: monthly publication
+      kana: げっかん
+      type: (n)
+      vocab: 月刊
+    - english: monthly salary
+      kana: げっきゅう
+      type: (n)
+      vocab: 月給
+    - english: viewing the moon
+      kana: つきみ
+      type: (n)
+      vocab: 月見
+    - english: moonlight, moonbeam
+      kana: げっこう
+      type: (n)
+      vocab: 月光
+    - english: monthly tuition fee
+      kana: げっしゃ
+      type: (n)
+      vocab: 月謝
+  木:
+    english: tree, wood
+    kanji: 木
+    kun_count: 2
+    kun_yomi:
+    - き
+    - こ-
+    on_count: 2
+    on_yomi:
+    - ボク
+    - モク
+    other_readings: []
+    reading_count: 4
+    stroke_count: '4'
+    vocab:
+    - english: lumber, timber
+      kana: ざいもく
+      type: (n)
+      vocab: 材木
+    - english: trees and shrubs, arbour, arbor
+      kana: じゅもく
+      type: (n)
+      vocab: 樹木
+    - english: foliage, leaves of trees
+      kana: きのは
+      type: (n)
+      vocab: 木ノ葉
+    - english: lumber, timber, wood
+      kana: もくざい
+      type: (n)
+      vocab: 木材
+    - english: wooden, made of wood
+      kana: もくぞう
+      type: (adj-no, n)
+      vocab: 木造
+  本:
+    english: book, present, main, true, real, counter for long cylindrical things
+    kanji: 本
+    kun_count: 1
+    kun_yomi:
+    - もと
+    on_count: 1
+    on_yomi:
+    - ホン
+    other_readings: []
+    reading_count: 2
+    stroke_count: '5'
+    vocab:
+    - english: mere, only, just
+      kana: ほんの
+      type: (adj-pn)
+      vocab: 本の
+    - english: picture book
+      kana: えほん
+      type: (n)
+      vocab: 絵本
+    - english: foundation, basis, standard
+      kana: きほん
+      type: (n, adj-no)
+      vocab: 基本
+    - english: script, screenplay, scenario
+      kana: きゃくほん
+      type: (n)
+      vocab: 脚本
+    - english: sample
+      kana: みほん
+      type: (n)
+      vocab: 見本
+  来:
+    english: come, due, next, cause, become
+    kanji: 来
+    kun_count: 7
+    kun_yomi:
+    - く.る
+    - きた.る
+    - きた.す
+    - き.たす
+    - き.たる
+    - き
+    - こ
+    on_count: 2
+    on_yomi:
+    - ライ
+    - タイ
+    other_readings: []
+    reading_count: 9
+    stroke_count: '7'
+    vocab:
+    - english: since, henceforth
+      kana: いらい
+      type: (n-adv, n-t)
+      vocab: 以来
+    - english: borrowed word, foreign origin word
+      kana: がいらいご
+      type: (n)
+      vocab: 外来語
+    - english: originally, primarily, essentially, logically, naturally
+      kana: がんらい
+      type: (n-adv)
+      vocab: 元来
+    - english: year after next
+      kana: さらいねん
+      type: (n-adv, n-t)
+      vocab: 再来年
+    - english: up to now, so far, traditional, existing (eg equipment)
+      kana: じゅうらい
+      type: (n-adv, n-t, adj-no)
+      vocab: 従来
+  東:
+    english: east
+    kanji: 東
+    kun_count: 1
+    kun_yomi:
+    - ひがし
+    on_count: 1
+    on_yomi:
+    - トウ
+    other_readings: []
+    reading_count: 2
+    stroke_count: '8'
+    vocab:
+    - english: east
+      kana: ひがし
+      type: (n)
+      vocab: 東
+    - english: Eastern Europe
+      kana: とうおう
+      type: (n)
+      vocab: 東欧
+    - english: East and West, whole country, Western and Eastern
+      kana: とうざい
+      type: (n)
+      vocab: 東西
+    - english: eastern part
+      kana: とうぶ
+      type: (n)
+      vocab: 東部
+    - english: Orient
+      kana: とうよう
+      type: (n)
+      vocab: 東洋
+  校:
+    english: exam, school, printing, proof, correction
+    kanji: 校
+    kun_count: 0
+    kun_yomi: []
+    on_count: 2
+    on_yomi:
+    - コウ
+    - キョウ
+    other_readings: []
+    reading_count: 2
+    stroke_count: '10'
+    vocab:
+    - english: school
+      kana: がっこう
+      type: (n)
+      vocab: 学校
+    - english: closing school (temporarily), dropping one's studies
+      kana: きゅうこう
+      type: (n, vs)
+      vocab: 休校
+    - english: school building
+      kana: こうしゃ
+      type: (n)
+      vocab: 校舎
+    - english: school regulations
+      kana: こうそく
+      type: (n)
+      vocab: 校則
+    - english: principal, headmaster
+      kana: こうちょう
+      type: (n)
+      vocab: 校長
+  母:
+    english: mama, mother
+    kanji: 母
+    kun_count: 2
+    kun_yomi:
+    - はは
+    - も
+    on_count: 1
+    on_yomi:
+    - ボ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '5'
+    vocab:
+    - english: mother
+      kana: おかあさん
+      type: (n)
+      vocab: 御母さん
+    - english: mother-in-law, foster mother, step mother
+      kana: ぎぼ
+      type: (n)
+      vocab: 義母
+    - english: grandmother
+      kana: うば
+      type: (n)
+      vocab: 祖母
+    - english: father and mother, parents
+      kana: ちちはは
+      type: (n)
+      vocab: 父母
+    - english: denominator
+      kana: ぶんぼ
+      type: (n)
+      vocab: 分母
+  毎:
+    english: every
+    kanji: 毎
+    kun_count: 2
+    kun_yomi:
+    - ごと
+    - -ごと.に
+    on_count: 1
+    on_yomi:
+    - マイ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '6'
+    vocab:
+    - english: every week
+      kana: まいしゅう
+      type: (n-adv, n-t)
+      vocab: 毎週
+    - english: every morning
+      kana: まいちょう
+      type: (n-adv, n-t)
+      vocab: 毎朝
+    - english: each time, thank you for your continued patronage
+      kana: まいど
+      type: (n-adv, n-t)
+      vocab: 毎度
+    - english: every day
+      kana: まいにち
+      type: (n-adv, n-t)
+      vocab: 毎日
+    - english: every night
+      kana: まいばん
+      type: (n-adv, n-t)
+      vocab: 毎晩
+  気:
+    english: spirit, mind, air, atmosphere, mood
+    kanji: 気
+    kun_count: 1
+    kun_yomi:
+    - いき
+    on_count: 2
+    on_yomi:
+    - キ
+    - ケ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '6'
+    vocab:
+    - english: self-respect, self-confidence, guts, backbone
+      kana: いきじ
+      type: (n)
+      vocab: 意気地
+    - english: gloom, melancholy
+      kana: いんき
+      type: (adj-na, n)
+      vocab: 陰気
+    - english: open air
+      kana: がいき
+      type: (n)
+      vocab: 外気
+    - english: energy, liveliness
+      kana: かっき
+      type: (n)
+      vocab: 活気
+    - english: chill, the shivers, shivering fit, cold, coldness, cold air
+      kana: かんき
+      type: (n)
+      vocab: 寒気
+  水:
+    english: water
+    kanji: 水
+    kun_count: 2
+    kun_yomi:
+    - みず
+    - みず-
+    on_count: 1
+    on_yomi:
+    - スイ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '4'
+    vocab:
+    - english: drainage, ditch, gutter, sewerage, sewage, black water
+      kana: げすい
+      type: (n)
+      vocab: 下水
+    - english: ocean water
+      kana: かいすい
+      type: (n)
+      vocab: 海水
+    - english: sea bathing, seawater bath
+      kana: かいすいよく
+      type: (n)
+      vocab: 海水浴
+    - english: flood
+      kana: こうずい
+      type: (n)
+      vocab: 洪水
+    - english: rainfall, precipitation
+      kana: こうすい
+      type: (n)
+      vocab: 降水
+  火:
+    english: fire
+    kanji: 火
+    kun_count: 3
+    kun_yomi:
+    - ひ
+    - -び
+    - ほ-
+    on_count: 1
+    on_yomi:
+    - カ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '4'
+    vocab:
+    - english: fire, flame, blaze
+      kana: ひ
+      type: (n, n-suf)
+      vocab: 火
+    - english: spark
+      kana: ひばな
+      type: (n)
+      vocab: 火花
+    - english: conflagration, fire
+      kana: かさい
+      type: (n)
+      vocab: 火災
+    - english: volcano
+      kana: かざん
+      type: (n)
+      vocab: 火山
+    - english: fire, conflagration
+      kana: かじ
+      type: (n)
+      vocab: 火事
+  父:
+    english: father
+    kanji: 父
+    kun_count: 1
+    kun_yomi:
+    - ちち
+    on_count: 1
+    on_yomi:
+    - フ
+    other_readings: []
+    reading_count: 2
+    stroke_count: '4'
+    vocab:
+    - english: father
+      kana: おとうさん
+      type: (n)
+      vocab: 御父さん
+    - english: father-in-law, foster father, stepfather
+      kana: ぎふ
+      type: (n)
+      vocab: 義父
+    - english: Catholic priest, abbe
+      kana: しんぷ
+      type: (n)
+      vocab: 神父
+    - english: grandfather, old man
+      kana: そぶ
+      type: (n)
+      vocab: 祖父
+    - english: father
+      kana: ちち
+      type: (n)
+      vocab: 父
+  生:
+    english: life, genuine, birth
+    kanji: 生
+    kun_count: 17
+    kun_yomi:
+    - い.きる
+    - い.かす
+    - い.ける
+    - う.まれる
+    - う.まれ
+    - うまれ
+    - う.む
+    - お.う
+    - は.える
+    - は.やす
+    - き
+    - なま
+    - なま-
+    - な.る
+    - な.す
+    - む.す
+    - -う
+    on_count: 2
+    on_yomi:
+    - セイ
+    - ショウ
+    other_readings: []
+    reading_count: 19
+    stroke_count: '5'
+    vocab:
+    - english: to build up, to establish, to form, to become (a state), to accomplish
+      kana: なす
+      type: (v5s, vt, auxiliary verb)
+      vocab: 生す
+    - english: very hard, with utmost effort
+      kana: いっしょうけんめい
+      type: (adj-na, n-adv, n)
+      vocab: 一生けん命
+    - english: health, hygiene, sanitation, medical
+      kana: えいせい
+      type: (n)
+      vocab: 衛生
+    - english: death, passing to the next life
+      kana: おうじょう
+      type: (n, vs)
+      vocab: 往生
+    - english: student (esp. a university student)
+      kana: がくせい
+      type: (n)
+      vocab: 学生
+  男:
+    english: male
+    kanji: 男
+    kun_count: 2
+    kun_yomi:
+    - おとこ
+    - お
+    on_count: 2
+    on_yomi:
+    - ダン
+    - ナン
+    other_readings: []
+    reading_count: 4
+    stroke_count: '7'
+    vocab:
+    - english: second son
+      kana: じなん
+      type: (n)
+      vocab: 二男
+    - english: man
+      kana: おとこ
+      type: (n)
+      vocab: 男
+    - english: boy, male child, baby boy
+      kana: おとこのコ
+      type: (n)
+      vocab: 男の児
+    - english: manly
+      kana: おとこらしい
+      type: (adj)
+      vocab: 男らしい
+    - english: youth, young man
+      kana: だんし
+      type: (n)
+      vocab: 男子
+  白:
+    english: white
+    kanji: 白
+    kun_count: 3
+    kun_yomi:
+    - しろ
+    - しら-
+    - しろ.い
+    on_count: 2
+    on_yomi:
+    - ハク
+    - ビャク
+    other_readings: []
+    reading_count: 5
+    stroke_count: '5'
+    vocab:
+    - english: obvious, overt, cleat, plain, frank
+      kana: あからさま
+      type: (adj-na, n)
+      vocab: 明白
+    - english: blank space, vacuum, space, null (NUL)
+      kana: くうはく
+      type: (adj-na, n)
+      vocab: 空白
+    - english: innocence (i.e. not guilty), purity, uprightness
+      kana: けっぱく
+      type: (adj-na, n)
+      vocab: 潔白
+    - english: red and white, colours for festive or auspicious occasions (colors)
+      kana: こうはく
+      type: (n)
+      vocab: 紅白
+    - english: confession, acknowledgement, acknowledgment, profession of love, confession
+        of sins (eg the confessional)
+      kana: こくはく
+      type: (n, vs)
+      vocab: 告白
+  百:
+    english: hundred
+    kanji: 百
+    kun_count: 1
+    kun_yomi:
+    - もも
+    on_count: 2
+    on_yomi:
+    - ヒャク
+    - ビャク
+    other_readings: []
+    reading_count: 3
+    stroke_count: '6'
+    vocab:
+    - english: hundreds
+      kana: なんびゃく
+      type: (n)
+      vocab: 何百
+    - english: greengrocer
+      kana: やおや
+      type: (n)
+      vocab: 八百屋
+    - english: 100, hundred
+      kana: もも
+      type: (numeric)
+      vocab: 百
+    - english: (department) store(s)
+      kana: ひゃっかてん
+      type: (n)
+      vocab: 百貨店
+    - english: farmer, peasant, country bumpkin, farming, the common people
+      kana: ひゃくしょう
+      type: (n, vs)
+      vocab: 百姓
+  目:
+    english: eye, class, look, insight, experience, care, favor
+    kanji: 目
+    kun_count: 3
+    kun_yomi:
+    - め
+    - -め
+    - ま-
+    on_count: 2
+    on_yomi:
+    - モク
+    - ボク
+    other_readings: []
+    reading_count: 5
+    stroke_count: '5'
+    vocab:
+    - english: (a) glance, (a) look, (a) glimpse, bird's-eye view
+      kana: いちもく
+      type: (n-adv, n-t, n, n)
+      vocab: ひと目
+    - english: weakness, drawing back
+      kana: ひけめ
+      type: (n)
+      vocab: 引け目
+    - english: item, data item
+      kana: こうもく
+      type: (n)
+      vocab: 項目
+    - english: miserable, wretched, unhappy, sad, pitiable
+      kana: みじめ
+      type: (adj-na)
+      vocab: 不見目
+    - english: event, item of business
+      kana: しゅもく
+      type: (n)
+      vocab: 種目
+  社:
+    english: company, firm, office, association, shrine
+    kanji: 社
+    kun_count: 1
+    kun_yomi:
+    - やしろ
+    on_count: 1
+    on_yomi:
+    - シャ
+    other_readings: []
+    reading_count: 2
+    stroke_count: '7'
+    vocab:
+    - english: company, corporation
+      kana: かいしゃ
+      type: (n)
+      vocab: 会社
+    - english: branch office
+      kana: ししゃ
+      type: (n)
+      vocab: 支社
+    - english: company employee, members of a corporation
+      kana: しゃいん
+      type: (n)
+      vocab: 社員
+    - english: society, public
+      kana: しゃかい
+      type: (n)
+      vocab: 社会
+    - english: social science
+      kana: しゃかいかがく
+      type: (n)
+      vocab: 社会科学
+  空:
+    english: empty, sky, void, vacant, vacuum
+    kanji: 空
+    kun_count: 8
+    kun_yomi:
+    - そら
+    - あ.く
+    - あ.き
+    - あ.ける
+    - から
+    - す.く
+    - す.かす
+    - むな.しい
+    on_count: 1
+    on_yomi:
+    - クウ
+    other_readings: []
+    reading_count: 9
+    stroke_count: '8'
+    vocab:
+    - english: aerial, overhead, fiction, fanciful
+      kana: かくう
+      type: (adj-na, n, adj-no)
+      vocab: 架空
+    - english: emptiness, vacuum, blank
+      kana: から
+      type: (n, adj-no)
+      vocab: 空
+    - english: vacant land
+      kana: くうち
+      type: (n)
+      vocab: 空地
+    - english: empty, vacant, hollow
+      kana: からっぽ
+      type: (adj-no, adj-na, n)
+      vocab: 空っぽ
+    - english: space, room, airspace
+      kana: くうかん
+      type: (n)
+      vocab: 空間
+  立:
+    english: stand up
+    kanji: 立
+    kun_count: 10
+    kun_yomi:
+    - た.つ
+    - -た.つ
+    - た.ち-
+    - た.てる
+    - -た.てる
+    - た.て-
+    - たて-
+    - -た.て
+    - -だ.て
+    - -だ.てる
+    on_count: 3
+    on_yomi:
+    - リツ
+    - リュウ
+    - リットル
+    other_readings: []
+    reading_count: 13
+    stroke_count: '5'
+    vocab:
+    - english: establishment
+      kana: かくりつ
+      type: (n, vs)
+      vocab: 確立
+    - english: looks, features
+      kana: かおだち
+      type: (n)
+      vocab: 顔立ち
+    - english: standing up
+      kana: きりつ
+      type: (n, vs)
+      vocab: 起立
+    - english: handstand, headstand
+      kana: さかだち
+      type: (n, vs)
+      vocab: 逆立ち
+    - english: menu, program, programme, schedule
+      kana: こんだて
+      type: (n)
+      vocab: 献立
+  耳:
+    english: ear
+    kanji: 耳
+    kun_count: 1
+    kun_yomi:
+    - みみ
+    on_count: 1
+    on_yomi:
+    - ジ
+    other_readings: []
+    reading_count: 2
+    stroke_count: '6'
+    vocab:
+    - english: ear, hearing, edge, crust, selvedge (non-fray machined edge of fabrics),
+        selvage
+      kana: みみ
+      type: (n)
+      vocab: 耳
+    - english: hurting one's ears
+      kana: みみざわり
+      type: (adj-na, n)
+      vocab: 耳障り
+    - english: otolaryngology, concerning the ear, nose, and throat
+      kana: じびか
+      type: (n)
+      vocab: 耳鼻科
+    - english: close to the ear
+      kana: みみもと
+      type: (n)
+      vocab: 耳許
+  聞:
+    english: hear, ask, listen
+    kanji: 聞
+    kun_count: 2
+    kun_yomi:
+    - き.く
+    - き.こえる
+    on_count: 2
+    on_yomi:
+    - ブン
+    - モン
+    other_readings: []
+    reading_count: 4
+    stroke_count: '14'
+    vocab:
+    - english: information, observation
+      kana: けんもん
+      type: (n, vs)
+      vocab: 見聞
+    - english: newspaper
+      kana: しんぶん
+      type: (n)
+      vocab: 新聞
+    - english: newspaper company
+      kana: しんぶんしゃ
+      type: (n)
+      vocab: 新聞社
+    - english: to inform about, to read to, to sing for
+      kana: きかす
+      type: (v5s, vt)
+      vocab: 聞かす
+    - english: listening comprehension
+      kana: ききとり
+      type: (n)
+      vocab: 聞き取り
+  花:
+    english: flower
+    kanji: 花
+    kun_count: 1
+    kun_yomi:
+    - はな
+    on_count: 2
+    on_yomi:
+    - カ
+    - ケ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '7'
+    vocab:
+    - english: spark
+      kana: ひばな
+      type: (n)
+      vocab: 火花
+    - english: (flower) petal
+      kana: かべん
+      type: (n)
+      vocab: 花瓣
+    - english: bride
+      kana: はなよめ
+      type: (n)
+      vocab: 花嫁
+    - english: cherry blossom viewing, flower viewing
+      kana: はなみ
+      type: (n, vs)
+      vocab: 花見
+    - english: bunch of flowers, bouquet
+      kana: はなたば
+      type: (n)
+      vocab: 花束
+  行:
+    english: going, journey
+    kanji: 行
+    kun_count: 8
+    kun_yomi:
+    - い.く
+    - ゆ.く
+    - -ゆ.き
+    - -ゆき
+    - -い.き
+    - -いき
+    - おこな.う
+    - おこ.なう
+    on_count: 3
+    on_yomi:
+    - コウ
+    - ギョウ
+    - アン
+    other_readings: []
+    reading_count: 11
+    stroke_count: '6'
+    vocab:
+    - english: motion, revolution
+      kana: うんこう
+      type: (n, vs)
+      vocab: 運行
+    - english: depth, length
+      kana: おくゆき
+      type: (n)
+      vocab: 奥行
+    - english: publication, issue
+      kana: かんこう
+      type: (n, vs)
+      vocab: 刊行
+    - english: express (eg train that bypasses many stations)
+      kana: きゅうこう
+      type: (n, vs)
+      vocab: 急行
+    - english: forcing, enforcement, forced, enforced
+      kana: きょうこう
+      type: (n, vs, adj-na)
+      vocab: 強行
+  西:
+    english: west, Spain
+    kanji: 西
+    kun_count: 1
+    kun_yomi:
+    - にし
+    on_count: 3
+    on_yomi:
+    - セイ
+    - サイ
+    - ス
+    other_readings: []
+    reading_count: 4
+    stroke_count: '6'
+    vocab:
+    - english: west
+      kana: にし
+      type: (n)
+      vocab: 西
+    - english: Western Europe
+      kana: せいおう
+      type: (n)
+      vocab: 西欧
+    - english: the west, western part, the West
+      kana: せいぶ
+      type: (n)
+      vocab: 西部
+    - english: the west, Western countries
+      kana: せいよう
+      type: (n)
+      vocab: 西洋
+    - english: Western people
+      kana: せいようじん
+      type: (n)
+      vocab: 西洋人
+  見:
+    english: see, hopes, chances, idea, opinion, look at, visible
+    kanji: 見
+    kun_count: 3
+    kun_yomi:
+    - み.る
+    - み.える
+    - み.せる
+    on_count: 1
+    on_yomi:
+    - ケン
+    other_readings: []
+    reading_count: 4
+    stroke_count: '7'
+    vocab:
+    - english: opinion, view
+      kana: いけん
+      type: (n, vs)
+      vocab: 意見
+    - english: look, glimpse, glance, to glance, to glimpse, first meeting, apparently,
+        seemingly
+      kana: いっけん
+      type: (n, vs, vs, adv)
+      vocab: 一見
+    - english: preview, preliminary inspection, siding (on a house)
+      kana: したみ
+      type: (n, vs)
+      vocab: 下見
+    - english: cherry blossom viewing, flower viewing
+      kana: はなみ
+      type: (n, vs)
+      vocab: 花見
+    - english: interview, audience
+      kana: かいけん
+      type: (n, vs)
+      vocab: 会見
+  言:
+    english: say
+    kanji: 言
+    kun_count: 2
+    kun_yomi:
+    - い.う
+    - こと
+    on_count: 2
+    on_yomi:
+    - ゲン
+    - ゴン
+    other_readings: []
+    reading_count: 4
+    stroke_count: '7'
+    vocab:
+    - english: will, testament, last request
+      kana: いげん
+      type: (n, vs)
+      vocab: 遺言
+    - english: expression, phraseology
+      kana: いいまわし
+      type: (n)
+      vocab: 言回し
+    - english: to start talking, to speak, to tell
+      kana: いいだす
+      type: (v5s, vt)
+      vocab: 言出す
+    - english: to repeat, to talk back, to answer back
+      kana: いいかえす
+      type: (v5s, vt)
+      vocab: 言返す
+    - english: speaking style
+      kana: いいかた
+      type: (n)
+      vocab: 言方
+  話:
+    english: tale, talk
+    kanji: 話
+    kun_count: 2
+    kun_yomi:
+    - はな.す
+    - はなし
+    on_count: 1
+    on_yomi:
+    - ワ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '13'
+    vocab:
+    - english: conversation
+      kana: かいわ
+      type: (n, vs)
+      vocab: 会話
+    - english: true story
+      kana: じつわ
+      type: (n)
+      vocab: 実話
+    - english: (telephone) receiver
+      kana: じゅわき
+      type: (n)
+      vocab: 受話器
+    - english: myth, legend
+      kana: しんわ
+      type: (n)
+      vocab: 神話
+    - english: looking after, help, aid, assistance
+      kana: せわ
+      type: (n, vs)
+      vocab: 世話
+  語:
+    english: word, speech, language
+    kanji: 語
+    kun_count: 2
+    kun_yomi:
+    - かた.る
+    - かた.らう
+    on_count: 1
+    on_yomi:
+    - ゴ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '14'
+    vocab:
+    - english: English (language)
+      kana: えいご
+      type: (n)
+      vocab: 英語
+    - english: foreign language
+      kana: がいこくご
+      type: (n)
+      vocab: 外国語
+    - english: borrowed word, foreign origin word
+      kana: がいらいご
+      type: (n)
+      vocab: 外来語
+    - english: Chinese word, Sino-Japanese word
+      kana: かんご
+      type: (n)
+      vocab: 漢語
+    - english: seasonal word (in haiku)
+      kana: きご
+      type: (n)
+      vocab: 季語
+  読:
+    english: read
+    kanji: 読
+    kun_count: 2
+    kun_yomi:
+    - よ.む
+    - -よ.み
+    on_count: 3
+    on_yomi:
+    - ドク
+    - トク
+    - トウ
+    other_readings: []
+    reading_count: 5
+    stroke_count: '14'
+    vocab:
+    - english: reading with pleasure
+      kana: あいどく
+      type: (n, vs)
+      vocab: 愛読
+    - english: punctuation mark(s)
+      kana: くとうてん
+      type: (n)
+      vocab: 句読点
+    - english: reading
+      kana: よみ
+      type: (n)
+      vocab: 読み
+    - english: reading and writing
+      kana: よみかき
+      type: (n)
+      vocab: 読み書き
+    - english: way of reading, how to read
+      kana: よみかた
+      type: (n)
+      vocab: 読み方
+  買:
+    english: buy
+    kanji: 買
+    kun_count: 1
+    kun_yomi:
+    - か.う
+    on_count: 1
+    on_yomi:
+    - バイ
+    other_readings: []
+    reading_count: 2
+    stroke_count: '12'
+    vocab:
+    - english: purchase, buy
+      kana: こうばい
+      type: (n, vs)
+      vocab: 購買
+    - english: brokerage
+      kana: なかがい
+      type: (n)
+      vocab: 仲買
+    - english: to buy, to value, to have a high opinion, to stir, to provoke
+      kana: かう
+      type: (v5s, vt)
+      vocab: 買う
+    - english: buying, purchase, corruption, bribery
+      kana: ばいしゅう
+      type: (n, vs)
+      vocab: 買収
+    - english: trade, buying and selling
+      kana: ばいばい
+      type: (n, vs)
+      vocab: 売買
+  足:
+    english: leg, foot, be sufficient, counter for pairs of footwear
+    kanji: 足
+    kun_count: 4
+    kun_yomi:
+    - あし
+    - た.りる
+    - た.る
+    - た.す
+    on_count: 1
+    on_yomi:
+    - ソク
+    other_readings: []
+    reading_count: 5
+    stroke_count: '7'
+    vocab:
+    - english: excursion, outing, trip
+      kana: えんそく
+      type: (n, vs)
+      vocab: 遠足
+    - english: running fast, double time, galloping, doing things in a hurry
+      kana: かけあし
+      type: (n)
+      vocab: 駈け足
+    - english: one's hands and feet, limbs
+      kana: てあし
+      type: (n)
+      vocab: 手足
+    - english: addition
+      kana: たしざん
+      type: (n)
+      vocab: 足し算
+    - english: to add (numbers), to add (something), to top up (with something)
+      kana: たす
+      type: (v5s, vt)
+      vocab: 足す
+  車:
+    english: car
+    kanji: 車
+    kun_count: 1
+    kun_yomi:
+    - くるま
+    on_count: 1
+    on_yomi:
+    - シャ
+    other_readings: []
+    reading_count: 2
+    stroke_count: '7'
+    vocab:
+    - english: alighting (from train, bus, etc.), getting off
+      kana: げしゃ
+      type: (n, vs)
+      vocab: 下車
+    - english: freight car, van
+      kana: かしゃ
+      type: (n)
+      vocab: 貨車
+    - english: foreign automobile
+      kana: がいしゃ
+      type: (n)
+      vocab: 外車
+    - english: locomotive, engine
+      kana: きかんしゃ
+      type: (n)
+      vocab: 機関車
+    - english: train (steam)
+      kana: きしゃ
+      type: (n)
+      vocab: 汽車
+  週:
+    english: week
+    kanji: 週
+    kun_count: 0
+    kun_yomi: []
+    on_count: 1
+    on_yomi:
+    - シュウ
+    other_readings: []
+    reading_count: 1
+    stroke_count: '11'
+    vocab:
+    - english: this week
+      kana: こんしゅう
+      type: (n-adv, n-t)
+      vocab: 今週
+    - english: week
+      kana: しゅう
+      type: (n, n-suf)
+      vocab: 週
+    - english: published weekly
+      kana: しゅうかん
+      type: (n)
+      vocab: 週刊
+    - english: week, weekly
+      kana: しゅうかん
+      type: (n)
+      vocab: 週間
+    - english: weekend
+      kana: しゅうまつ
+      type: (n-adv, n)
+      vocab: 週末
+  道:
+    english: road-way, street, district, journey, course, moral, teachings
+    kanji: 道
+    kun_count: 1
+    kun_yomi:
+    - みち
+    on_count: 2
+    on_yomi:
+    - ドウ
+    - トウ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '12'
+    vocab:
+    - english: pedestrian crossing
+      kana: おうだんほどう
+      type: (n)
+      vocab: 横断歩道
+    - english: byway, side street, cross street, wrong way, digression
+      kana: よこみち
+      type: (n)
+      vocab: 横道
+    - english: detour, diversion
+      kana: まわりみち
+      type: (n, vs)
+      vocab: 回り道
+    - english: highway (esp. one existing from the Edo period), main road
+      kana: かいどう
+      type: (n)
+      vocab: 街道
+    - english: dropping in on the way
+      kana: よりみち
+      type: (n, vs)
+      vocab: 寄り道
+  金:
+    english: gold
+    kanji: 金
+    kun_count: 3
+    kun_yomi:
+    - かね
+    - かな-
+    - -がね
+    on_count: 3
+    on_yomi:
+    - キン
+    - コン
+    - ゴン
+    other_readings: []
+    reading_count: 6
+    stroke_count: '8'
+    vocab:
+    - english: money
+      kana: おかね
+      type: (n)
+      vocab: 御金
+    - english: gold
+      kana: くがね
+      type: (n, adj-no)
+      vocab: 金
+    - english: amount of money
+      kana: きんがく
+      type: (n)
+      vocab: 金額
+    - english: goldfish
+      kana: きんぎょ
+      type: (n)
+      vocab: 金魚
+    - english: safe, vault, treasury, provider of funds
+      kana: かねぐら
+      type: (n)
+      vocab: 金庫
+  長:
+    english: long, leader
+    kanji: 長
+    kun_count: 2
+    kun_yomi:
+    - なが.い
+    - おさ
+    on_count: 1
+    on_yomi:
+    - チョウ
+    other_readings: []
+    reading_count: 3
+    stroke_count: '8'
+    vocab:
+    - english: station master
+      kana: えきちょう
+      type: (n)
+      vocab: 駅長
+    - english: extension, elongation, prolongation, lengthening
+      kana: えんちょう
+      type: (n, vs, n)
+      vocab: 延長
+    - english: section manager, section chief
+      kana: かちょう
+      type: (n)
+      vocab: 課長
+    - english: president (of a society), chairman
+      kana: かいちょう
+      type: (n)
+      vocab: 会長
+    - english: university president
+      kana: がくちょう
+      type: (n)
+      vocab: 学長
+  間:
+    english: interval, space
+    kanji: 間
+    kun_count: 3
+    kun_yomi:
+    - あいだ
+    - ま
+    - あい
+    on_count: 2
+    on_yomi:
+    - カン
+    - ケン
+    other_readings: []
+    reading_count: 5
+    stroke_count: '12'
+    vocab:
+    - english: space, interval
+      kana: あいだ
+      type: (n-adv, n-t)
+      vocab: 間
+    - english: to be in time for
+      kana: まにあう
+      type: (v5s)
+      vocab: 間に合う
+    - english: soon, before long
+      kana: まもなく
+      type: (adv)
+      vocab: 間も無く
+    - english: mistake
+      kana: まちがい
+      type: (n)
+      vocab: 間違い
+    - english: to make a mistake, to mistake something for something else
+      kana: まちがえる
+      type: (Ichidan verb, vt)
+      vocab: 間違える
+  雨:
+    english: rain
+    kanji: 雨
+    kun_count: 3
+    kun_yomi:
+    - あめ
+    - あま-
+    - -さめ
+    on_count: 1
+    on_yomi:
+    - ウ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '8'
+    vocab:
+    - english: rain
+      kana: あめ
+      type: (n)
+      vocab: 雨
+    - english: rain gear
+      kana: あまぐ
+      type: (n)
+      vocab: 雨具
+    - english: sliding storm door
+      kana: あまど
+      type: (n)
+      vocab: 雨戸
+    - english: rainy weather
+      kana: うてん
+      type: (n)
+      vocab: 雨天
+    - english: roof leak
+      kana: あまもり
+      type: (n, vs)
+      vocab: 雨漏り
+  電:
+    english: electricity
+    kanji: 電
+    kun_count: 0
+    kun_yomi: []
+    on_count: 1
+    on_yomi:
+    - デン
+    other_readings: []
+    reading_count: 1
+    stroke_count: '13'
+    vocab:
+    - english: (flash of) lightning
+      kana: いなづま
+      type: (n)
+      vocab: 電
+    - english: dry cell, battery
+      kana: かんでんち
+      type: (n)
+      vocab: 乾電池
+    - english: last train
+      kana: しゅうでん
+      type: (n)
+      vocab: 終電
+    - english: congratulatory telegram
+      kana: しゅくでん
+      type: (n)
+      vocab: 祝電
+    - english: power outage, electricity outage, blackout
+      kana: ていでん
+      type: (n, vs)
+      vocab: 停電
+  食:
+    english: eat, food
+    kanji: 食
+    kun_count: 4
+    kun_yomi:
+    - く.う
+    - く.らう
+    - た.べる
+    - は.む
+    on_count: 2
+    on_yomi:
+    - ショク
+    - ジキ
+    other_readings: []
+    reading_count: 6
+    stroke_count: '9'
+    vocab:
+    - english: to eat
+      kana: たべる
+      type: (ru-v)
+      vocab: 食べる
+    - english: dining together, mess
+      kana: かいしょく
+      type: (n, vs)
+      vocab: 会食
+    - english: eating out
+      kana: がいしょく
+      type: (n, vs)
+      vocab: 外食
+    - english: eating between meals, snacking
+      kana: かんしょく
+      type: (n, vs)
+      vocab: 間食
+    - english: school lunch, providing a meal
+      kana: きゅうしょく
+      type: (n, vs)
+      vocab: 給食
+  飲:
+    english: drink, smoke, take
+    kanji: 飲
+    kun_count: 2
+    kun_yomi:
+    - の.む
+    - -の.み
+    on_count: 2
+    on_yomi:
+    - イン
+    - オン
+    other_readings: []
+    reading_count: 4
+    stroke_count: '12'
+    vocab:
+    - english: to drink
+      kana: のむ
+      type: (u-v)
+      vocab: 飲む
+    - english: drinking water
+      kana: のみみず
+      type: (n)
+      vocab: 飲水
+    - english: drink, beverage
+      kana: のみもの
+      type: (n)
+      vocab: 飲物
+  駅:
+    english: station
+    kanji: 駅
+    kun_count: 0
+    kun_yomi: []
+    on_count: 1
+    on_yomi:
+    - エキ
+    other_readings: []
+    reading_count: 1
+    stroke_count: '14'
+    vocab:
+    - english: station
+      kana: えき
+      type: (n)
+      vocab: 駅
+    - english: station attendant
+      kana: えきいん
+      type: (n)
+      vocab: 駅員
+    - english: in front of station
+      kana: えきまえ
+      type: (n)
+      vocab: 駅前
+    - english: station master
+      kana: えきちょう
+      type: (n)
+      vocab: 駅長
+    - english: boxed lunch bought at a station (often a local specialty)
+      kana: えきべん
+      type: (n)
+      vocab: 駅弁
+  高:
+    english: tall, high, expensive
+    kanji: 高
+    kun_count: 5
+    kun_yomi:
+    - たか.い
+    - たか
+    - -だか
+    - たか.まる
+    - たか.める
+    on_count: 1
+    on_yomi:
+    - コウ
+    other_readings: []
+    reading_count: 6
+    stroke_count: '10'
+    vocab:
+    - english: high-valued yen, exchange in favor (favour) of the yen
+      kana: えんだか
+      type: (n)
+      vocab: 円高
+    - english: high, tall, expensive
+      kana: たかい
+      type: (adj)
+      vocab: 高い
+    - english: height
+      kana: たかさ
+      type: (n)
+      vocab: 高さ
+    - english: to rise, to swell, to be promoted
+      kana: たかまる
+      type: (v5r, intransitive verb)
+      vocab: 高まる
+    - english: to raise, to lift, to boost, to enhance
+      kana: たかめる
+      type: (Ichidan verb, vt)
+      vocab: 高める
+  魚:
+    english: fish
+    kanji: 魚
+    kun_count: 3
+    kun_yomi:
+    - うお
+    - さかな
+    - -ざかな
+    on_count: 1
+    on_yomi:
+    - ギョ
+    other_readings: []
+    reading_count: 4
+    stroke_count: '11'
+    vocab:
+    - english: goldfish
+      kana: きんぎょ
+      type: (n)
+      vocab: 金魚
+    - english: fish
+      kana: うお
+      type: (n)
+      vocab: 魚
+level: 5
