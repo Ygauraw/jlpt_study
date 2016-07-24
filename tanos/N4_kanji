@@ -1,0 +1,453 @@
+<br />
+<b>Deprecated</b>:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in <b>/home/tanoslive/tanos.co.uk/site_base/functions.php</b> on line <b>373</b><br />
+<br />
+<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /home/tanoslive/tanos.co.uk/site_base/functions.php:373) in <b>/home/tanoslive/tanos.co.uk/site_base/pageheader.php</b> on line <b>2</b><br />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta property="og:image" content="http://www.tanos.co.uk/site_base/images/facebook/jlpt.jpg"/>
+<meta property="og:site_name" content="JLPT Resources"/>
+	<meta name="Author" content="Jonathan WALLER" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow" />
+	<link rel="bitcoin" href="http://bitcoin.jonwaller.net/" />
+	<link rel="stylesheet" type="text/css" href="/site_base/css/wholesite_purple.css" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="top" href="/" />
+
+<title>JLPT N4 kanji list</title>
+<style>
+.nounderline {text-decoration:none}
+</style>
+</head>
+<body>
+<div id="header">
+
+	<span class="hidden">
+
+		<a name="top"></a>	
+		
+					<a href="#topnavjump">Skip to site navigation</a><br />
+							<a href="#leftnavjump">Skip to section navigation</a><br />
+						<a href="#contentjump">Skip to content</a><br />
+		
+					
+	</span>
+	
+	<div id="headerpart1">
+	
+		<div id="langbutton">
+			<a href="http://www.tanos.jp/">トップページ：日本語 (Japanese)</a>
+		</div>
+
+		<div id="searchbox">
+			<!-- SiteSearch Google -->
+			<form method="get" action="http://www.google.com/search">
+				<div id="searchboxinner">
+					<input type="hidden" name="ie" value="UTF-8" />
+					<input type="hidden" name="oe" value="UTF-8" />
+					<input type="text" id="q" name="q" size="20" maxlength="255" value="" />
+					<input type="submit" class="submit" id="btnG" name="btnG" value="Search" />
+					<input type="hidden" name="domains" value="www.tanos.co.uk" />
+					<input type="hidden" name="sitesearch" value="www.tanos.co.uk" />
+					<div class="smalltext">Search site with Google</div>
+				</div>
+			</form>
+			<!-- SiteSearch Google -->
+		</div>
+		
+		<div class="floatclear" ></div>
+
+	</div><!--headerpart1-->
+	
+	<div id="headerpart2">
+		<div id="menu">
+			<a name="topnavjump"></a>
+						
+			<div class="menu">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					
+					<li><a href="/contact/">CONTACT</a></li>
+					<li><a href="/cv/">RESUME</a></li>
+										<li><a href="/languages/">LANGUAGES&#x25BE;</a>
+						<ul>
+							<li class="selected"><a href="/jlpt/" class="selected">Japanese (JLPT)</a></li>
+							<li><a href="/hsk/">Mandarin Chinese (HSK)</a></li>
+						</ul>
+					</li>
+					<li><a href="/writing/">WRITING</a></li>
+					<li><a href="/sitemap/">SITEMAP</a></li>
+				</ul>
+				
+			</div>
+		</div>
+	</div><!--headerpart2-->
+	
+	<div class="floatclear" ></div>
+			
+</div><!--header-->
+
+		<div class="tabbase"><br /></div>
+					<div id="contentcontainer" class="hasleftnav">
+				
+			<a name="leftnavjump"></a><div id="leftnavcontainer">
+<ul id="leftnav">
+<li style="margin-bottom:1em"><b><a href="/jlpt/">JAPANESE</a></b></li>
+<div id="newslettersignupform">
+		
+<!-- Begin MailChimp Signup Form -->
+<script type="text/javascript">
+// delete this script tag and use a "div.mce_inline_error{ XXX !important}" selector
+// or fill this in and it will be inlined when errors are generated
+var mc_custom_error_style = '';
+</script>
+<div id="mc_embed_signup">
+<form action="http://tanos.us1.list-manage.com/subscribe/post?u=3c94de9170c742d7437bcf600&amp;id=54036308d5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+	<fieldset>
+		<legend>Monthly newsletter</legend>
+		<div class="mc-field-group">
+			<script>
+			function onFocusEmail(element){
+				element.value="";
+				element.style.color="#000000";
+			}
+			</script>
+			<input type="text" style="width:60%;color:#aaaaaa" value="me@example.com" name="EMAIL" class="required email" id="mce-EMAIL" OnFocus="onFocusEmail(this)">
+			<input type="submit" style="width:35%" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">
+		</div>
+		<center>
+			<small>
+			<script type="text/javascript" language="JavaScript" src="http://tanos.us1.list-manage1.com/subscriber-count?b=00&u=4e2da90b-663b-4471-bb55-dbcb980075ac&id=54036308d5"></script> subscribers
+	 - <a href="http://tanos.us1.list-manage.com/unsubscribe?u=3c94de9170c742d7437bcf600&id=54036308d5">Unsubscribe</a>
+			</small>
+		</center>
+	</fieldset>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+		
+		</div>
+<li><a href="/jlpt/shop/"><img src="/site_base/images/cart_16.png" width="16" height="16" alt="" />  Shop (Audio and books) </a></li>
+<li><a href="/jlpt/aboutjlpt/">About JLPT </a></li>
+<li><a href="/jlpt/jlpt1/"><img src="/site_base/images/5bar/bar100.png" width="36" height="12" alt="" />  JLPT N1 </a></li>
+<li><a href="/jlpt/jlpt2/"><img src="/site_base/images/5bar/bar80.png" width="36" height="12" alt="" />  JLPT N2 </a></li>
+<li><a href="/jlpt/jlpt3/"><img src="/site_base/images/5bar/bar60.png" width="36" height="12" alt="" />  JLPT N3 </a></li>
+<li class="selected"><a href="/jlpt/jlpt4/" class="selected"><img src="/site_base/images/5bar/bar40.png" width="36" height="12" alt="" />  JLPT N4 </a></li>
+<li><a href="/jlpt/jlpt5/"><img src="/site_base/images/5bar/bar20.png" width="36" height="12" alt="" />  JLPT N5 </a></li>
+<li><a href="/jlpt/skills/"><img src="/site_base/images/rainbow16.png" width="16" height="16" alt="" />  Skills </a></li>
+<li><a href="/jlpt/tools/"><img src="/site_base/images/wrench16.png" width="16" height="16" alt="" />  Tools </a></li>
+<li><a href="/jlpt/extras/"><img src="/site_base/images/add16.png" width="16" height="16" alt="" />  Extras </a></li>
+<li><a href="/jlpt/sharing/">Use my data! </a></li>
+</ul>
+		<center>
+		<a name="fb_share" type="button" href="http://www.facebook.com/sharer.php">Share this page</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+		</center><br />
+		<iframe src="http://www.facebook.com/plugins/recommendations.php?site=http%3A%2F%2Fwww.tanos.co.uk%2F&amp;width=230&amp;height=380&amp;header=true&amp;colorscheme=light" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:230px; height:380px;" allowTransparency="true"></iframe>		<br/><br/>
+		<iframe src="http://www.facebook.com/plugins/likebox.php?id=134610416570900&amp;width=230&amp;connections=10&amp;stream=true&amp;header=false&amp;height=587" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:230px; height:587px;" allowTransparency="true"></iframe><br/><br/>		<center>
+			<small>
+				<a href="http://www.facebook.com/pages/JLPT-Resources/134610416570900"><img src="/site_base/images/facebook_32.png" align="absmiddle"></a> <a href="http://www.facebook.com/pages/JLPT-Resources/134610416570900">Facebook</a>
+				&nbsp;&nbsp;&nbsp;
+				<a href="http://twitter.com/JLPTResources"><img src="/site_base/images/twitter_32.png" align="absmiddle"></a> <a href="http://twitter.com/JLPTResources">Twitter</a>
+			</small>
+		</center>
+		</div>
+
+			<div id="likebutton">
+				<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.tanos.co.uk/jlpt/jlpt4/kanji/&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=23" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:23px;" allowTransparency="true"></iframe>			</div>
+			
+			<div id="starbar">
+				
+				<script src="/site_base/starbar/starbar.js" type="text/javascript">
+				</script>
+
+				<div id="starbarcontainer">
+					<span id="starbarcontainertext">Rate and suggest improvements:</span> 
+					<a id="star1link" href="http://software.tanos.co.uk/remote/scripts/starbar/referrer/rate/1/" onclick="mouseClick(this);return false;"><img id="star1" alt="" title="Rate this page 1 out of 5" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" src="/site_base/starbar/greystar.gif" /></a><a id="star2link" href="http://software.tanos.co.uk/remote/scripts/starbar/referrer/rate/2/" onclick="mouseClick(this);return false;"><img id="star2" alt="" title="Rate this page 2 out of 5" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" src="/site_base/starbar/greystar.gif" /></a><a id="star3link" href="http://software.tanos.co.uk/remote/scripts/starbar/referrer/rate/3/" onclick="mouseClick(this);return false;"><img id="star3" alt="" title="Rate this page 3 out of 5" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" src="/site_base/starbar/greystar.gif" /></a><a id="star4link" href="http://software.tanos.co.uk/remote/scripts/starbar/referrer/rate/4/" onclick="mouseClick(this);return false;"><img id="star4" alt="" title="Rate this page 4 out of 5" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" src="/site_base/starbar/greystar.gif" /></a><a id="star5link" href="http://software.tanos.co.uk/remote/scripts/starbar/referrer/rate/5/" onclick="mouseClick(this);return false;"><img id="star5" alt="" title="Rate this page 5 out of 5" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" src="/site_base/starbar/greystar.gif" /></a>
+					<img height="0" width="0" alt="" src="/site_base/starbar/star.gif" />
+				</div>
+
+				<div id="feedbackpanel">
+					<form method="post" action="">
+						<div>
+						<b>Feedback (optional):</b><br />
+						<!--[if IE]>
+						<br/>
+						<![endif]-->
+						<input id="numStars" name="numStars" type="hidden" value="-1" />
+						<div class="right"><textarea id="feedbackText" name="feedbackText" rows="5" cols="17"></textarea><br />
+						<input type="submit" value="Send"/></div>
+						</div>
+					</form>
+				</div>				
+		
+			</div>
+
+						
+			<br/>
+			<!--[if IE]>
+			<br/><br/>
+			<![endif]-->
+
+			<div id="contentright"><br /><div style="text-align:center" class="light"><a href="http://getsatisfaction.com/jonwaller/">Found a bug? Have an idea? Help me improve this site.</a></div><a name="contentjump"></a>
+<h1>JLPT N4 kanji list</h1>
+
+
+
+<div class="light">This is not a cumulative list. (It doesn't contain the kanji needed by JLPT N5). <a href="combined/">Click here for a cumulative list</a>.</div><br />
+<table width="100%">
+	<tr>
+		<td>
+		<img height="16" width="16" src="/site_base/images/filetype/doc.png" /> <a href="KanjiList.N4.doc">KanjiList.N4.doc</a> (284.5 KB)<br />
+		<img height="16" width="16" src="/site_base/images/filetype/pdf.png" /> <a href="KanjiList.N4.pdf">KanjiList.N4.pdf</a> (369.5 KB)		</td>
+					<td style="text-align:left">
+									<img height="16" width="16" src="/site_base/images/filetype/mem.png" /> <a href="n4-kanji-char-eng.mem">n4-kanji-char-eng.mem</a> (36.4 KB)<br />
+											</td>
+							<td style="text-align:left">
+									<img height="16" width="16" src="/site_base/images/filetype/anki.png" /> <a href="n4-kanji-char-eng.anki">n4-kanji-char-eng.anki</a> (316 KB)<br />
+					<img height="16" width="16" src="/site_base/images/filetype/anki.png" /> n4-kanji-char-eng-hiragana.anki (File not found.)<br />
+											</td>
+			</tr>
+</table>
+
+
+	
+<table width="100%" border="1"><tr><th>Kanji</th><th>Onyomi</th><th>Kunyomi</th><th>English</th></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3199">会 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3199"> カイ エ アツ.マ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3199"> あ.う あ.わせる </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3199"> meeting, meet, party, association, interview, join</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3200">同 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3200"> ドウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3200"> おな.じ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3200"> same, agree, equal</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3201">事 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3201"> ジ ズ ツカ.エ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3201"> こと つか.う </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3201"> matter, thing, fact, business, reason, possibly</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3202">自 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3202"> ジ シ オノ.ズ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3202"> みずか.ら おの.ずから </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3202"> oneself</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3203">社 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3203"> シャ ヤシ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3203">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3203"> company, firm, office, association, shrine</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3204">発 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3204"> ハツ ホツ ハナ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3204"> た.つ あば.く おこ.る つか.わす </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3204"> discharge, departure, publish, emit, start from, disclose</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3205">者 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3205"> シャ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3205"> もの </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3205"> someone, person</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3206">地 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3206"> チ  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3206">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3206"> ground, earth</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3207">業 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3207"> ギョウ ゴウ ワ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3207">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3207"> business, vocation, arts, performance</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3208">方 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3208"> ホウ -ガ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3208"> かた -かた </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3208"> direction, person, alternative</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3209">新 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3209"> シン </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3209"> あたら.しい あら.た あら- にい </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3209"> new</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3210">場 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3210"> ジョウ チョウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3210"> ば </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3210"> location, place</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3211">員 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3211"> イ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3211">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3211"> employee, member, number, the one in charge</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3212">立 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3212"> リツ リュウ リットル -ダ.テ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3212"> た.つ -た.つ た.ち- た.てる -た.てる た.て- たて- -た.て -だ.て </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3212"> stand up</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3213">開 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3213"> カイ ア.ケ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3213"> ひら.く ひら.き -びら.き ひら.ける あ.く </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3213"> open, unfold, unseal</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3214">手 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3214"> シュ ズ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3214"> て て- -て た- </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3214"> hand</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3215">力 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3215"> リョク リキ リイ チカ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3215">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3215"> power, strong, strain, bear up, exert</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3216">問 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3216"> モン ト </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3216"> と.う と.い </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3216"> question, ask, problem</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3217">代 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3217"> ダイ タイ シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3217"> か.わる かわ.る かわ.り -がわ.り か.える よ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3217"> substitute, change, convert, replace, period, age, generation, charge, rate, fee</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3218">明 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3218"> メイ ミョウ ミン ア.カ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3218"> あ.かり あか.るい あか.るむ あか.らむ あき.らか あ.ける -あ.け あ.く あ.くる </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3218"> bright, light</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3219">動 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3219"> ドウ ウゴ.カ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3219"> うご.く </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3219"> move, motion, change, confusion, shift, shake</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3220">京 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3220"> キョウ ケイ キン ミヤ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3220">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3220"> capital, 10**16</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3221">目 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3221"> モク ボク </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3221"> め -め ま </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3221"> eye, class, look, insight, experience, care, favor</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3222">通 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3222"> ツウ ツ カヨ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3222"> とお.る とお.り -とお.り -どお.り とお.す とお.し -どお.し </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3222"> traffic, pass through, avenue, commute, counter for letters</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3223">言 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3223"> ゲン ゴン コ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3223"> い.う </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3223"> say</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3224">理 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3224"> リ コトワ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3224">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3224"> logic, arrangement, reason, justice, truth</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3225">体 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3225"> タイ テイ カタ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3225"> からだ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3225"> body, substance, object, reality, counter for images</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3226">田 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3226"> デン  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3226">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3226"> rice field, rice paddy</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3227">主 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3227"> シュ ス シュウ アル </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3227"> ぬし おも </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3227"> lord, chief, master, main thing, principal</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3228">題 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3228"> ダイ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3228">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3228"> topic, subject</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3229">意 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3229">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3229">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3229"> idea, mind, heart, taste, thought, desire, care, liking</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3230">不 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3230"> フ ブ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3230">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3230"> negative, non-, bad, ugly, clumsy</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3231">作 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3231"> サク サ -ヅク. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3231"> つく.る つく.り </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3231"> make, production, prepare, build</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3232">用 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3232"> ヨウ モチ.イ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3232">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3232"> utilize, business, service, use, employ</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3233">度 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3233"> ド ト タク -タ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3233"> たび </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3233"> degrees, occurrence, time, counter for occurrences</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3234">強 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3234"> キョウ ゴウ コワ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3234"> つよ.い つよ.まる つよ.める し.いる </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3234"> strong</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3235">公 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3235"> コウ ク オオヤ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3235">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3235"> public, prince, official, governmental</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3236">持 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3236"> ジ モ.テ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3236"> も.つ -も.ち </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3236"> hold, have</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3237">野 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3237"> ヤ ショ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3237"> の の </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3237"> plains, field, rustic, civilian life</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3238">以 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3238"> イ モッ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3238">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3238"> by means of, because, in view of, compared with</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3239">思 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3239"> シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3239"> おも.う おもえら.く おぼ.す </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3239"> think</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3240">家 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3240"> カ ケ ウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3240"> いえ や </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3240"> house, home</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3241">世 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3241"> セイ セ ソウ サンジュ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3241"> よ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3241"> generation, world, society, public</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3242">多 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3242"> タ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3242"> おお.い まさ.に まさ.る </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3242"> many, frequent, much</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3243">正 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3243"> セイ ショウ マサ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3243"> ただ.しい ただ.す まさ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3243"> correct, justice, righteous, 10**40</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3244">安 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3244"> アン ヤス.ラ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3244"> やす.い やす.まる やす </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3244"> relax, cheap, low, quiet, rested, contented, peaceful</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3245">院 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3245"> イン </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3245">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3245"> Inst., institution, temple, mansion, school</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3246">心 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3246">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3246"> りっしんべん </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3246"> heart, mind, spirit</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3247">界 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3247"> カイ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3247">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3247"> world</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3248">教 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3248"> キョウ オソ.ワ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3248"> おし.える </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3248"> teach, faith, doctrine</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3249">文 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3249"> ブン モン ア </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3249"> ふみ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3249"> sentence, literature, style, art, decoration, figures, plan</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3250">元 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3250"> ゲン ガン モ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3250">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3250"> beginning, former time, origin</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3251">重 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3251"> ジュウ チョウ オ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3251"> え おも.い おも.り おも.なう かさ.ねる かさ.なる </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3251"> heavy, heap up, pile up, nest of boxes, -fold</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3252">近 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3252"> キン コン チカ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3252">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3252"> near, early, akin, tantamount</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3253">考 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3253"> コウ カンガ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3253"> かんが.える </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3253"> consider, think over</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3254">画 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3254"> ガ カク エ カイ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3254"> えが.く かく.する かぎ.る はかりごと はか.る </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3254"> brush-stroke, picture</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3255">海 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3255"> カイ ウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3255">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3255"> sea, ocean</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3256">売 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3256"> バイ ウ.レ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3256"> う.る </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3256"> sell</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3257">知 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3257"> チ シ.ラセ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3257"> し.る </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3257"> know, wisdom</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3258">道 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3258"> ドウ トウ ミ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3258">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3258"> road-way, street, district, journey, course, moral, teachings</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3259">集 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3259"> シュウ ツド. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3259"> あつ.まる あつ.める </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3259"> gather, meet, congregate, swarm, flock</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3260">別 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3260"> ベツ ワ.ケ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3260"> わか.れる </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3260"> separate, branch off, diverge, fork, another, extra, specially</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3261">物 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3261"> ブツ モツ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3261"> もの もの- </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3261"> thing, object, matter</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3262">使 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3262"> シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3262"> つか.う つか.い -つか.い -づか.い </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3262"> use</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3263">品 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3263"> ヒン ホン </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3263"> しな </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3263"> goods, refinement, dignity, article, counter for meal courses</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3264">計 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3264"> ケイ ハカ.ラ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3264"> はか.る </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3264"> plot, plan, scheme, measure</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3265">死 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3265"> シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3265"> し.ぬ し.に- </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3265"> death, die</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3266">特 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3266"> トク </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3266">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3266"> special</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3267">私 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3267"> シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3267"> わたくし わたし </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3267"> private, I, me</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3268">始 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3268"> シ ハジ.マ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3268"> はじ.める -はじ.める </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3268"> commence, begin</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3269">朝 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3269"> チョウ ア </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3269">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3269"> morning, dynasty, regime, epoch, period, (North) Korea</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3270">運 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3270"> ウン </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3270"> はこ.ぶ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3270"> carry, luck, destiny, fate, lot, transport, progress, advance</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3271">終 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3271"> シュウ ツイ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3271"> お.わる -お.わる おわ.る お.える つい </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3271"> end, finish</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3272">台 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3272"> ダイ タイ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3272"> うてな われ つかさ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3272"> pedestal, a stand, counter for machines and vehicles</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3273">広 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3273"> コウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3273"> ひろ.い ひろ.まる ひろ.める ひろ.がる ひろ.げる </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3273"> wide, broad, spacious</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3274">住 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3274"> ジュウ ヂュウ チュウ -ズ.マ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3274"> す.む す.まう </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3274"> dwell, reside, live, inhabit</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3275">真 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3275"> シン マコ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3275"> ま ま- </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3275"> true, reality, Buddhist sect</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3276">有 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3276"> ユウ ウ ア. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3276">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3276"> possess, have, exist, happen, occur, approx</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3277">口 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3277"> コウ ク </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3277"> くち </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3277"> mouth</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3278">少 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3278"> ショウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3278"> すく.ない すこ.し </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3278"> few, little</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3279">町 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3279"> チョウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3279"> まち </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3279"> village, town, block, street</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3280">料 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3280"> リョウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3280">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3280"> fee, materials</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3281">工 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3281"> コウ ク  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3281">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3281"> craft, construction</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3282">建 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3282"> ケン コン タ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3282"> た.てる た.て -だ.て </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3282"> build</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3283">空 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3283"> クウ ムナ.シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3283"> そら あ.く あ.き あ.ける から す.く す.かす </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3283"> empty, sky, void, vacant, vacuum</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3284">急 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3284"> キュウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3284"> いそ.ぐ いそ.ぎ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3284"> hurry, emergency, sudden, steep</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3285">止 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3285"> シ -サ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3285"> と.まる -ど.まり と.める -と.める -ど.め とど.める とど.め とど.まる や.める や.む -や.む よ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3285"> stop, halt</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3286">送 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3286"> ソウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3286"> おく.る </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3286"> escort, send</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3287">切 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3287"> セツ サイ -ギ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3287"> き.る -き.る き.り -き.り -ぎ.り き.れる -き.れる き.れ -き.れ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3287"> cut, cutoff, be sharp</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3288">転 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3288"> テン </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3288"> ころ.がる ころ.げる ころ.がす ころ.ぶ まろ.ぶ うたた うつ.る </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3288"> revolve, turn around, change</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3289">研 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3289"> ケン ト. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3289">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3289"> polish, study of, sharpen</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3290">足 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3290"> ソク タ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3290"> あし た.りる た.る </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3290"> leg, foot, be sufficient, counter for pairs of footwear</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3291">究 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3291"> キュウ ク キワ.メ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3291">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3291"> research, study</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3292">楽 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3292"> ガク ラク ゴウ コノ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3292"> たの.しい たの.しむ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3292"> music, comfort, ease</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3293">起 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3293"> キ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3293"> お.きる お.こる お.こす おこ.す た.つ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3293"> rouse, wake up, get up</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3294">着 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3294"> チャク ジャク </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3294"> き.る -ぎ き.せる -き.せ つ.く つ.ける </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3294"> don, arrive, wear, counter for suits of clothing</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3295">店 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3295"> テン </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3295"> みせ たな </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3295"> store, shop</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3296">病 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3296"> ビョウ ヘイ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3296"> や.む -や.み やまい </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3296"> ill, sick</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3297">質 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3297"> シツ シチ チ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3297"> たち ただ.す もと わりふ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3297"> substance, quality, matter, temperament</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3298">待 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3298"> タイ -マ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3298"> ま.つ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3298"> wait, depend on</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3299">試 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3299"> シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3299"> こころ.みる ため.す </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3299"> test, try, attempt, experiment, ordeal</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3300">族 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3300"> ゾ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3300">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3300"> tribe, family</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3301">銀 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3301"> ギン シロガ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3301">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3301"> silver</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3302">早 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3302"> ソウ サッ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3302"> はや.い はや はや- はや.まる はや.める さ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3302"> early, fast</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3303">映 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3303"> エイ -バ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3303"> うつ.る うつ.す は.える </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3303"> reflect, reflection, projection</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3304">親 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3304"> シン シタ.シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3304"> おや おや- した.しい </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3304"> parent, intimacy, relative, familiarity, dealer (cards)</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3305">験 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3305"> ケン ゲン </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3305"> あかし しるし ため.す ためし </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3305"> verification, effect, testing</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3306">英 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3306"> エイ ハナブ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3306">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3306"> England, English</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3307">医 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3307"> イ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3307"> い.やす い.する くすし </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3307"> doctor, medicine</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3308">仕 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3308"> シ ジ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3308"> つか.える </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3308"> attend, doing, official, serve</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3309">去 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3309"> キョ コ -サ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3309"> さ.る </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3309"> gone, past, quit, leave, elapse, eliminate, divorce</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3310">味 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3310"> ミ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3310"> あじ あじ.わう </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3310"> flavor, taste</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3311">写 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3311"> シャ ジャ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3311"> うつ.す うつ.る うつ- うつ.し </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3311"> copy, be photographed, describe</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3312">字 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3312"> ジ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3312"> あざ あざな -な </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3312"> character, letter, word, section of village</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3313">答 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3313"> トウ コタ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3313"> こた.える </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3313"> solution, answer</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3314">夜 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3314"> ヤ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3314"> よ よる </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3314"> night, evening</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3315">音 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3315"> オン イン -ノン  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3315"> おと </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3315"> sound, noise</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3316">注 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3316"> チュウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3316"> そそ.ぐ さ.す つ.ぐ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3316"> pour, irrigate, shed (tears), flow into, concentrate on, notes, comment, annotate</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3317">帰 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3317"> キ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3317"> かえ.る かえ.す おく.る とつ.ぐ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3317"> homecoming, arrive at, lead to, result in</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3318">古 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3318"> コ -フル. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3318"> ふる.い ふる- </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3318"> old</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3319">歌 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3319"> カ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3319"> うた うた.う </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3319"> song, sing</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3320">買 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3320"> バイ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3320"> か.う </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3320"> buy</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3321">悪 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3321"> アク オ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3321"> わる.い わる- あ.し にく.い -にく.い ああ いずくに いずくんぞ にく.む </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3321"> bad, vice, rascal, false, evil, wrong</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3322">図 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3322"> ズ ト ハカ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3322"> え </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3322"> map, drawing, plan, unexpected, accidentally</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3323">週 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3323"> シュウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3323">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3323"> week</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3324">室 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3324"> シツ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3324"> むろ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3324"> room, apartment, chamber, greenhouse, cellar</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3325">歩 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3325"> ホ ブ フ アユ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3325"> ある.く </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3325"> walk, counter for steps</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3326">風 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3326"> フウ フ -カ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3326"> かぜ かざ- </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3326"> wind, air, style, manner</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3327">紙 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3327"> シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3327"> かみ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3327"> paper</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3328">黒 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3328"> コク </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3328"> くろ くろ.ずむ くろ.い </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3328"> black</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3329">花 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3329"> カ ケ ハ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3329">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3329"> flower</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3330">春 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3330"> シュン ハ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3330">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3330"> springtime, spring (season)</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3331">赤 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3331"> セキ シャク アカ.ラメ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3331"> あか あか- あか.い あか.らむ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3331"> red</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3332">青 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3332"> セイ ショウ アオ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3332"> あお あお- </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3332"> blue, green</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3333">館 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3333"> カン タ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3333"> やかた </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3333"> building, mansion, large building, palace</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3334">屋 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3334"> オク  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3334">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3334"> roof, house, shop, dealer, seller</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3335">色 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3335"> ショク シキ イ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3335">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3335"> color</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3336">走 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3336"> ソウ ハシ. </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3336">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3336"> run</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3337">秋 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3337"> シュウ ト </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3337"> あき </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3337"> autumn</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3338">夏 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3338"> カ ガ ゲ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3338"> なつ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3338"> summer</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3339">習 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3339"> シュウ ジュ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3339"> なら.う なら.い </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3339"> learn</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3340">駅 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3340"> エキ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3340">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3340"> station</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3341">洋 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3341"> ヨ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3341">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3341"> ocean, western style</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3342">旅 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3342"> リョ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3342"> たび </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3342"> trip, travel</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3343">服 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3343"> フ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3343">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3343"> clothing, admit, obey, discharge</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3344">夕 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3344"> セキ ユ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3344">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3344"> evening</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3345">借 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3345"> シャク </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3345"> か.りる </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3345"> borrow, rent</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3346">曜 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3346"> ヨ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3346">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3346"> weekday</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3347">飲 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3347"> イン オン </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3347"> の.む -の.み </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3347"> drink, smoke, take</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3348">肉 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3348"> ニク </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3348">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3348"> meat</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3349">貸 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3349"> タイ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3349"> か.す か.し- かし- </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3349"> lend</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3350">堂 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3350"> ドウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3350">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3350"> public chamber, hall</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3351">鳥 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3351"> チョウ ト </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3351">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3351"> bird, chicken</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3352">飯 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3352"> ハン メ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3352">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3352"> meal, boiled rice</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3353">勉 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3353"> ベン ツト.メ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3353">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3353"> exertion</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3354">冬 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3354"> トウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3354"> ふゆ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3354"> winter</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3355">昼 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3355"> チュウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3355"> ひる </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3355"> daytime, noon</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3356">茶 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3356"> チャ  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3356">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3356"> tea</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3357">弟 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3357"> テイ ダイ デ オトウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3357">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3357"> younger brother, faithful service to elders</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3358">牛 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3358"> ギュウ ウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3358">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3358"> cow</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3359">魚 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3359"> ギョ -ザカ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3359"> うお さかな </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3359"> fish</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3360">兄 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3360"> ケイ キョウ ア </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3360">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3360"> elder brother, big brother</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3361">犬 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3361"> ケン </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3361"> いぬ いぬ- </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3361"> dog</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3362">妹 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3362"> マイ イモウ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3362">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3362"> younger sister</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3363">姉 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3363"> シ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3363"> あね はは </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3363"> elder sister</a></td></tr>
+<tr><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3364">漢 </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3364"> カ </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3364">  </a></td><td><a class="nounderline" href="/jlpt/skills/kanji/sentences/?kanjiid=3364"> Sino-, China</a></td></tr>
+</table>
+
+	
+		</div> <!--content (or contentright)-->
+
+		<div class="floatclear"></div>
+	
+	</div> <!--contentcontainer-->
+
+	<div class="floatclear" ></div>
+	
+	<div id="footer">
+		
+		<div id="footerleft" class="smalltext">
+			
+			<a href="/sitemap/">Site Map</a> | 
+			<a href="/contact/">Contact Jonathan</a>
+			
+			<br /><br />
+			
+			<a 
+			href="http://www.addthis.com/bookmark.php" 
+			onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" 
+			onmouseout="addthis_close()" 
+			onclick="return addthis_sendto()">
+				<img src="http://s7.addthis.com/static/btn/lg-bookmark-en.gif" width="125" height="16" border="0" alt="" />
+			</a>
+			<script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
+			
+		</div><!--footerleft-->                               
+	
+		<div id="footerright">
+	
+			<a href="/contact/" title="Contact Jonathan Waller" ><img src="http://www.gravatar.com/avatar/b41d581bbab946486d0c193b83b95756?s=32&d=mm&r=g" align="right" height="32" width="32" style="padding:2px 2px 2px 4px" alt="Photograph of Jonathan Waller" title="Contact Jonathan Waller"/></a>
+			
+			&copy; <a href="/contact/">Jonathan Waller</a><br />Updated: November 21, 2010		
+		</div><!--footerright-->
+		
+		<div class="floatclear" ></div>
+		
+	</div><!--footer-->
+	
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-1371814-1");
+	pageTracker._initData();
+	pageTracker._trackPageview();
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";  
+  feedback_widget_options.company = "jonwaller";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#222";
+  feedback_widget_options.style = "idea";
+  
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script></body>
+</html>
