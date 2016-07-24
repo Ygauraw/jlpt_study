@@ -1,0 +1,4502 @@
+---
+items:
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JW02640A.mp3
+      text: ご存知
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 1
+      sentences:
+      - difficulty: 14863
+        id: 276935
+        item_id: 2959709
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JS02640A.mp3
+        text: 彼の名前を<b>ご存知</b>ですか。
+        translations:
+        - difficulty: 85
+          id: 276936
+          language: en
+          text: Do you know his name?
+          uri: http://iknow.jp/sentences/276936
+        transliterations:
+        - text: かれ の なまえ を <b>ごぞんじ</b> です か 。
+          type: Hira
+        - text: かれ の なまえ を <b>ごぞんじ</b> です か 。
+          type: Hrkt
+        - text: kare no namae wo <b>gozonji</b> desu ka .
+          type: Latn
+        uri: http://iknow.jp/sentences/276935
+      transliterations:
+      - text: ごぞんじ
+        type: Hira
+      - text: ごぞんじ
+        type: Hrkt
+      - text: gozonji
+        type: Latn
+    type: text
+  id: 2959709
+  response:
+    content:
+      text: know (honorific)
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2959709
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JW03029A.mp3
+      text: 雀
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 2
+      sentences:
+      - difficulty: 16276
+        id: 277366
+        item_id: 299290
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JS03029A.mp3
+        text: 朝は<b>雀</b>の声で目が覚めます。
+        translations:
+        - difficulty: 548
+          id: 277367
+          language: en
+          text: I wake up to the sound of sparrows in the morning.
+          uri: http://iknow.jp/sentences/277367
+        transliterations:
+        - text: あさ は <b>すずめ</b> の こえ で め が さめます。
+          type: Hira
+        - text: あさ は <b>すずめ</b> の こえ で め が さめます。
+          type: Hrkt
+        - text: asa ha <b>suzume</b> no koe de me ga samemasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/277366
+      transliterations:
+      - text: すずめ
+        type: Hira
+      - text: すずめ
+        type: Hrkt
+      - text: suzume
+        type: Latn
+    type: text
+  id: 299290
+  response:
+    content:
+      text: sparrow
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/299290
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JW01180A.mp3
+      text: 適当
+    related:
+      language: ja
+      part_of_speech: Adjectival Noun
+      position: 3
+      sentences:
+      - difficulty: 24754
+        id: 302878
+        item_id: 440336
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JS01180A.mp3
+        text: その質問の<b>適当</b>な答えが見つかりません。
+        translations:
+        - difficulty: 976
+          id: 1594585
+          language: en
+          text: I can't find an appropriate answer to the question.
+          uri: http://iknow.jp/sentences/1594585
+        transliterations:
+        - text: その しつもん の <b>てきとう</b> な こたえ が みつかりません。
+          type: Hira
+        - text: その しつもん の <b>てきとう</b> な こたえ が みつかりません。
+          type: Hrkt
+        - text: sono shitsumon no <b>tekitou</b> na kotae ga mitsukarimasen.
+          type: Latn
+        uri: http://iknow.jp/sentences/302878
+      transliterations:
+      - text: てきとう
+        type: Hira
+      - text: てきとう
+        type: Hrkt
+      - text: tekitou
+        type: Latn
+    type: text
+  id: 440336
+  response:
+    content:
+      text: suitable, appropriate
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/440336
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JW00937A.mp3
+      text: 残り
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 4
+      sentences:
+      - difficulty: 14863
+        id: 298728
+        item_id: 440108
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JS00937A.mp3
+        text: 仕事の<b>残り</b>は家でします。
+        translations:
+        - difficulty: 243
+          id: 298729
+          language: en
+          text: I'll do the rest of the work at home.
+          uri: http://iknow.jp/sentences/298729
+        transliterations:
+        - text: しごと の <b>のこり</b> は いえ で します。
+          type: Hira
+        - text: しごと の <b>のこり</b> は いえ で します。
+          type: Hrkt
+        - text: shigoto no <b>nokori</b> ha ie de shimasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/298728
+      transliterations:
+      - text: のこり
+        type: Hira
+      - text: のこり
+        type: Hrkt
+      - text: nokori
+        type: Latn
+    type: text
+  id: 440108
+  response:
+    content:
+      text: rest, leftover
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/440108
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JW00896A.mp3
+      text: 戻す
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 5
+      sentences:
+      - difficulty: 10624
+        id: 298698
+        item_id: 440097
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JS00896A.mp3
+        text: 話を<b>戻しましょう</b>。
+        translations:
+        - difficulty: 662
+          id: 1594592
+          language: en
+          text: Let's get back to what we were talking about.
+          uri: http://iknow.jp/sentences/1594592
+        transliterations:
+        - text: はなし を <b>もどしましょう</b>。
+          type: Hira
+        - text: はなし を <b>もどしましょう</b>。
+          type: Hrkt
+        - text: hanashi wo <b>modoshimashou</b>.
+          type: Latn
+        uri: http://iknow.jp/sentences/298698
+      transliterations:
+      - text: もどす
+        type: Hira
+      - text: もどす
+        type: Hrkt
+      - text: modosu
+        type: Latn
+    type: text
+  id: 440097
+  response:
+    content:
+      text: put (something) back
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/440097
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JW01290A.mp3
+      text: 体重
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 6
+      sentences:
+      - difficulty: 17689
+        id: 303027
+        item_id: 440787
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JS01290A.mp3
+        text: 私は毎朝<b>体重</b>を測っています。
+        translations:
+        - difficulty: 839
+          id: 303028
+          language: en
+          text: I weigh myself every morning.
+          uri: http://iknow.jp/sentences/303028
+        transliterations:
+        - text: わたし は まいあさ <b>たいじゅう</b> を はかって います。
+          type: Hira
+        - text: わたし は まいあさ <b>たいじゅう</b> を はかって います。
+          type: Hrkt
+        - text: watashi ha maiasa <b>taijuu</b> wo hakatte imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/303027
+      transliterations:
+      - text: たいじゅう
+        type: Hira
+      - text: たいじゅう
+        type: Hrkt
+      - text: taijuu
+        type: Latn
+    type: text
+  id: 440787
+  response:
+    content:
+      text: body weight
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/440787
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JW01945A.mp3
+      text: どうせ
+    related:
+      language: ja
+      part_of_speech: Adverb
+      position: 7
+      sentences:
+      - difficulty: 24754
+        id: 304368
+        item_id: 200063
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JS01945A.mp3
+        text: <b>どうせ</b>間に合わないならゆっくり行こう。
+        translations:
+        - difficulty: 591
+          id: 1594597
+          language: en
+          text: Let's go slowly as we won't make it on time anyway.
+          uri: http://iknow.jp/sentences/1594597
+        transliterations:
+        - text: <b>どうせ</b> まにあわない なら ゆっくり いこう。
+          type: Hira
+        - text: <b>どうせ</b> まにあわない なら ゆっくり いこう。
+          type: Hrkt
+        - text: <b>douse</b> maniawanai nara yukkuri ikou.
+          type: Latn
+        uri: http://iknow.jp/sentences/304368
+      transliterations:
+      - text: どうせ
+        type: Hira
+      - text: どうせ
+        type: Hrkt
+      - text: douse
+        type: Latn
+    type: text
+  id: 200063
+  response:
+    content:
+      text: anyway
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/200063
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JW01933A.mp3
+      text: あれこれ
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 7
+      sentences:
+      - difficulty: 20515
+        id: 276213
+        item_id: 438803
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JS01933A.mp3
+        text: 服を買うのに<b>あれこれ</b>迷いました。
+        translations:
+        - difficulty: 764
+          id: 1594600
+          language: en
+          text: I couldn't decide what clothes to buy.
+          uri: http://iknow.jp/sentences/1594600
+        transliterations:
+        - text: ふく を かう の に <b>あれこれ</b> まよいました。
+          type: Hira
+        - text: ふく を かう の に <b>あれこれ</b> まよいました。
+          type: Hrkt
+        - text: fuku wo kau no ni <b>arekore</b> mayoimashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/276213
+      transliterations:
+      - text: あれこれ
+        type: Hira
+      - text: あれこれ
+        type: Hrkt
+      - text: arekore
+        type: Latn
+    type: text
+  id: 438803
+  response:
+    content:
+      text: this and that, one thing or another
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/438803
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JW03901A.mp3
+      text: 湖
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 8
+      sentences:
+      - difficulty: 17689
+        id: 306509
+        item_id: 251626
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JS03901A.mp3
+        text: <b>湖</b>にボートが浮かんでいます。
+        translations:
+        - difficulty: 293
+          id: 1594601
+          language: en
+          text: A boat is floating in the lake.
+          uri: http://iknow.jp/sentences/1594601
+        transliterations:
+        - text: <b>みずうみ</b> に ぼーと が うかんで います。
+          type: Hira
+        - text: <b>みずうみ</b> に ボート が うかんで います。
+          type: Hrkt
+        - text: <b>mizuumi</b> ni bo-to ga ukande imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/306509
+      transliterations:
+      - text: みずうみ
+        type: Hira
+      - text: みずうみ
+        type: Hrkt
+      - text: mizuumi
+        type: Latn
+    type: text
+  id: 251626
+  response:
+    content:
+      text: lake
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/251626
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JW02455A.mp3
+      text: とうとう
+    related:
+      language: ja
+      part_of_speech: Adverb
+      position: 9
+      sentences:
+      - difficulty: 20515
+        id: 304977
+        item_id: 441283
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JS02455A.mp3
+        text: <b>とうとう</b>引っ越しの日がきました。
+        translations:
+        - difficulty: 426
+          id: 1594605
+          language: en
+          text: At last, our moving day has come.
+          uri: http://iknow.jp/sentences/1594605
+        transliterations:
+        - text: <b>とうとう</b> ひっこし の ひ が きました。
+          type: Hira
+        - text: <b>とうとう</b> ひっこし の ひ が きました。
+          type: Hrkt
+        - text: <b>toutou</b> hikkoshi no hi ga kimashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/304977
+      transliterations:
+      - text: とうとう
+        type: Hira
+      - text: とうとう
+        type: Hrkt
+      - text: toutou
+        type: Latn
+    type: text
+  id: 441283
+  response:
+    content:
+      text: at last, finally
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/441283
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JW02162A.mp3
+      text: 負け
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 10
+      sentences:
+      - difficulty: 17689
+        id: 304667
+        item_id: 440738
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JS02162A.mp3
+        text: この勝負はあなたの<b>負け</b>です。
+        translations:
+        - difficulty: 765
+          id: 1594608
+          language: en
+          text: You've lost this match.
+          uri: http://iknow.jp/sentences/1594608
+        transliterations:
+        - text: この しょうぶ は あなた の <b>まけ</b> です。
+          type: Hira
+        - text: この しょうぶ は あなた の <b>まけ</b> です。
+          type: Hrkt
+        - text: kono shoubu ha anata no <b>make</b> desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/304667
+      transliterations:
+      - text: まけ
+        type: Hira
+      - text: まけ
+        type: Hrkt
+      - text: make
+        type: Latn
+    type: text
+  id: 440738
+  response:
+    content:
+      text: defeat, loss
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/440738
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JW02861A.mp3
+      text: 悔しい
+    related:
+      language: ja
+      part_of_speech: Adjective
+      position: 11
+      sentences:
+      - difficulty: 16276
+        id: 277194
+        item_id: 2959691
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JS02861A.mp3
+        text: 試合に負けてとても<b>悔しい</b>。
+        translations:
+        - difficulty: 789
+          id: 1594610
+          language: en
+          text: I'm so frustrated because we lost the game.
+          uri: http://iknow.jp/sentences/1594610
+        transliterations:
+        - text: しあい に まけて とても <b>くやしい</b> 。
+          type: Hira
+        - text: しあい に まけて とても <b>くやしい</b> 。
+          type: Hrkt
+        - text: shiai ni makete totemo <b>kuyashii</b> .
+          type: Latn
+        uri: http://iknow.jp/sentences/277194
+      transliterations:
+      - text: くやしい
+        type: Hira
+      - text: くやしい
+        type: Hrkt
+      - text: kuyashii
+        type: Latn
+    type: text
+  id: 2959691
+  response:
+    content:
+      text: frustrating, regrettable
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2959691
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JW03221A.mp3
+      text: 姉妹
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 12
+      sentences:
+      - difficulty: 11095
+        id: 277547
+        item_id: 269317
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JS03221A.mp3
+        text: うちは3人<b>姉妹</b>です。
+        translations:
+        - difficulty: 530
+          id: 1594613
+          language: en
+          text: We are three sisters.
+          uri: http://iknow.jp/sentences/1594613
+        transliterations:
+        - text: うち は 3 にん <b>しまい</b> です。
+          type: Hira
+        - text: うち は 3 にん <b>しまい</b> です。
+          type: Hrkt
+        - text: uchi ha 3 nin <b>shimai</b> desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/277547
+      transliterations:
+      - text: しまい
+        type: Hira
+      - text: しまい
+        type: Hrkt
+      - text: shimai
+        type: Latn
+    type: text
+  id: 269317
+  response:
+    content:
+      text: sisters
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/269317
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JW01907A.mp3
+      text: 助かる
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 13
+      sentences:
+      - difficulty: 28993
+        id: 304313
+        item_id: 441095
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JS01907A.mp3
+        text: 彼はシートベルトをしていたので<b>助かった</b>んだ。
+        translations:
+        - difficulty: 965
+          id: 1594615
+          language: en
+          text: He survived because he was wearing a seatbelt.
+          uri: http://iknow.jp/sentences/1594615
+        transliterations:
+        - text: かれ は しーとべると を して いた ので <b>たすかった</b> んだ。
+          type: Hira
+        - text: かれ は シートベルト を して いた ので <b>たすかった</b> んだ。
+          type: Hrkt
+        - text: kare ha shi-toberuto wo shite ita node <b>tasukatta</b> nda.
+          type: Latn
+        uri: http://iknow.jp/sentences/304313
+      transliterations:
+      - text: たすかる
+        type: Hira
+      - text: たすかる
+        type: Hrkt
+      - text: tasukaru
+        type: Latn
+    type: text
+  id: 441095
+  response:
+    content:
+      text: be helped, be rescued
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/441095
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JW01535A.mp3
+      text: 手前
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 14
+      sentences:
+      - difficulty: 17689
+        id: 1264785
+        item_id: 440998
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JS01535A.mp3
+        text: 駅の<b>手前</b>に郵便局があります。
+        translations:
+        - difficulty: 966
+          id: 1264784
+          language: en
+          text: There's a post office before the station.
+          uri: http://iknow.jp/sentences/1264784
+        transliterations:
+        - text: えき の <b>てまえ</b> に ゆうびんきょく が あります。
+          type: Hira
+        - text: えき の <b>てまえ</b> に ゆうびんきょく が あります。
+          type: Hrkt
+        - text: eki no <b>temae</b> ni yuubinkyoku ga arimasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/1264785
+      transliterations:
+      - text: てまえ
+        type: Hira
+      - text: てまえ
+        type: Hrkt
+      - text: temae
+        type: Latn
+    type: text
+  id: 440998
+  response:
+    content:
+      text: in front
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/440998
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JW01880A.mp3
+      text: さっぱり
+    related:
+      language: ja
+      part_of_speech: Adverb
+      position: 15
+      sentences:
+      - difficulty: 28993
+        id: 276161
+        item_id: 438778
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JS01880A.mp3
+        text: 彼女の言っていることが<b>さっぱり</b>分からないの。
+        translations:
+        - difficulty: 1168
+          id: 1696419
+          language: en
+          text: I completely don't understand what she says.
+          uri: http://iknow.jp/sentences/1696419
+        transliterations:
+        - text: かのじょ の いって いる こと が <b>さっぱり</b> わからない の。
+          type: Hira
+        - text: かのじょ の いって いる こと が <b>さっぱり</b> わからない の。
+          type: Hrkt
+        - text: kanojo no itte iru koto ga <b>sappari</b> wakaranai no.
+          type: Latn
+        uri: http://iknow.jp/sentences/276161
+      transliterations:
+      - text: さっぱり
+        type: Hira
+      - text: さっぱり
+        type: Hrkt
+      - text: sappari
+        type: Latn
+    type: text
+  id: 438778
+  response:
+    content:
+      text: completely not
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/438778
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JW02573A.mp3
+      text: ついで
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 16
+      sentences:
+      - difficulty: 16276
+        id: 305089
+        item_id: 441331
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/Int/JS02573A.mp3
+        text: <b>ついで</b>だから彼も呼ぼうよ。
+        translations:
+        - difficulty: 612
+          id: 305090
+          language: en
+          text: Let's use this chance to invite him too.
+          uri: http://iknow.jp/sentences/305090
+        transliterations:
+        - text: <b>ついで</b> だから かれ も よぼう よ。
+          type: Hira
+        - text: <b>ついで</b> だから かれ も よぼう よ。
+          type: Hrkt
+        - text: <b>tsuide</b> dakara kare mo yobou yo.
+          type: Latn
+        uri: http://iknow.jp/sentences/305089
+      transliterations:
+      - text: ついで
+        type: Hira
+      - text: ついで
+        type: Hrkt
+      - text: tsuide
+        type: Latn
+    type: text
+  id: 441331
+  response:
+    content:
+      text: on the way, to take the opportunity
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/441331
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/Int/JW02688A.mp3
+      text: すっきり
+    related:
+      language: ja
+      part_of_speech: Adverb
+      position: 17
+      sentences:
+      - difficulty: 20515
+        id: 276995
+        item_id: 439080
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/Int/JS02688A.mp3
+        text: よく眠ったら気分が<b>すっきり</b>した。
+        translations:
+        - difficulty: 629
+          id: 1348353
+          language: en
+          text: I felt refreshed after a good sleep.
+          uri: http://iknow.jp/sentences/1348353
+        transliterations:
+        - text: よく ねむったら きぶん が <b>すっきり</b> した。
+          type: Hira
+        - text: よく ねむったら きぶん が <b>すっきり</b> した。
+          type: Hrkt
+        - text: yoku nemuttara kibun ga <b>sukkiri</b> shita.
+          type: Latn
+        uri: http://iknow.jp/sentences/276995
+      transliterations:
+      - text: すっきり
+        type: Hira
+      - text: すっきり
+        type: Hrkt
+      - text: sukkiri
+        type: Latn
+    type: text
+  id: 439080
+  response:
+    content:
+      text: refreshed
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/439080
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JW02456A.mp3
+      text: とんでもない
+    related:
+      language: ja
+      part_of_speech: Adjective
+      position: 18
+      sentences:
+      - difficulty: 20515
+        id: 304979
+        item_id: 441284
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JS02456A.mp3
+        text: 仕事中に帰るなんて<b>とんでもない</b>。
+        translations:
+        - difficulty: 712
+          id: 304980
+          language: en
+          text: It's unthinkable to go home in the middle of work.
+          uri: http://iknow.jp/sentences/304980
+        transliterations:
+        - text: しごと ちゅう に かえる なんて <b>とんでもない</b>。
+          type: Hira
+        - text: しごと ちゅう に かえる なんて <b>とんでもない</b>。
+          type: Hrkt
+        - text: shigoto chuu ni kaeru nante <b>tondemonai</b>.
+          type: Latn
+        uri: http://iknow.jp/sentences/304979
+      transliterations:
+      - text: とんでもない
+        type: Hira
+      - text: とんでもない
+        type: Hrkt
+      - text: tondemonai
+        type: Latn
+    type: text
+  id: 441284
+  response:
+    content:
+      text: unthinkable, outrageous
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/441284
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JW02066A.mp3
+      text: 坂
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 19
+      sentences:
+      - difficulty: 20515
+        id: 276341
+        item_id: 469542
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JS02066A.mp3
+        text: この<b>坂</b>を上るのはすごくきついね。
+        translations:
+        - difficulty: 426
+          id: 276342
+          language: en
+          text: Going up this slope is very hard.
+          uri: http://iknow.jp/sentences/276342
+        transliterations:
+        - text: この <b>さか</b> を のぼる の は すごく きつい ね。
+          type: Hira
+        - text: この <b>さか</b> を のぼる の は すごく きつい ね。
+          type: Hrkt
+        - text: kono <b>saka</b> wo noboru no ha sugoku kitsui ne.
+          type: Latn
+        uri: http://iknow.jp/sentences/276341
+      transliterations:
+      - text: さか
+        type: Hira
+      - text: さか
+        type: Hrkt
+      - text: saka
+        type: Latn
+    type: text
+  id: 469542
+  response:
+    content:
+      text: slope, hill
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/469542
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JW03778A.mp3
+      text: 飛び込む
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 20
+      sentences:
+      - difficulty: 16276
+        id: 306271
+        item_id: 352536
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/Int/JS03778A.mp3
+        text: カエルが池に<b>飛び込んだ</b>ね。
+        translations:
+        - difficulty: 355
+          id: 1594618
+          language: en
+          text: A frog jumped into the pond.
+          uri: http://iknow.jp/sentences/1594618
+        transliterations:
+        - text: かえる が いけ に <b>とびこんだ</b> ね。
+          type: Hira
+        - text: カエル が いけ に <b>とびこんだ</b> ね。
+          type: Hrkt
+        - text: kaeru ga ike ni <b>tobikonda</b> ne.
+          type: Latn
+        uri: http://iknow.jp/sentences/306271
+      transliterations:
+      - text: とびこむ
+        type: Hira
+      - text: とびこむ
+        type: Hrkt
+      - text: tobikomu
+        type: Latn
+    type: text
+  id: 352536
+  response:
+    content:
+      text: dive into, jump into
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/352536
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/users/Smart.fm/al8n26dv1l0k0.mp3
+      text: コメント
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 21
+      sentences:
+      - difficulty: 26167
+        id: 1202748
+        item_id: 401212
+        language: ja
+        sound: http://assets3.iknow.jp/assets/users/Smart.fm/2l7n762vahgrk.mp3
+        text: 今日はユーザーからの<b>コメント</b>はなかった。
+        translations:
+        - difficulty: 764
+          id: 1202747
+          language: en
+          text: There was no comment from users today.
+          uri: http://iknow.jp/sentences/1202747
+        transliterations:
+        - text: きょう は ゆーざー から の <b>こめんと</b> は なかった。
+          type: Hira
+        - text: きょう は ユーザー から の <b>コメント</b> は なかった。
+          type: Hrkt
+        - text: kyou ha yu-za- kara no <b>komento</b> ha nakatta.
+          type: Latn
+        uri: http://iknow.jp/sentences/1202748
+      transliterations:
+      - text: こめんと
+        type: Hira
+      - text: コメント
+        type: Hrkt
+      - text: komento
+        type: Latn
+    type: text
+  id: 401212
+  response:
+    content:
+      text: comment
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/401212
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW01479A.mp3
+      text: 書き直す
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 22
+      sentences:
+      - difficulty: 19102
+        id: 247521
+        item_id: 285528
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS01479A.mp3
+        text: この書類を<b>書き直して</b>ください。
+        translations:
+        - difficulty: 1472
+          id: 247522
+          language: en
+          text: Please rewrite this document.
+          uri: http://iknow.jp/sentences/247522
+        transliterations:
+        - text: この しょるい を <b>かきなおして</b> ください。
+          type: Hira
+        - text: この しょるい を <b>かきなおして</b> ください。
+          type: Hrkt
+        - text: kono shorui wo <b>kakinaoshite</b> kudasai.
+          type: Latn
+        uri: http://iknow.jp/sentences/247521
+      transliterations:
+      - text: かきなおす
+        type: Hira
+      - text: かきなおす
+        type: Hrkt
+      - text: kakinaosu
+        type: Latn
+    type: text
+  id: 285528
+  response:
+    content:
+      text: rewrite
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/285528
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW01902A.mp3
+      text: 看護婦
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 23
+      sentences:
+      - difficulty: 9211
+        id: 248917
+        item_id: 228378
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS01902A.mp3
+        text: 母は<b>看護婦</b>です。
+        translations:
+        - difficulty: 412
+          id: 248918
+          language: en
+          text: My mother's a nurse.
+          uri: http://iknow.jp/sentences/248918
+        transliterations:
+        - text: はは は <b>かんごふ</b> です。
+          type: Hira
+        - text: はは は <b>かんごふ</b> です。
+          type: Hrkt
+        - text: haha ha <b>kangofu</b> desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248917
+      transliterations:
+      - text: かんごふ
+        type: Hira
+      - text: かんごふ
+        type: Hrkt
+      - text: kangofu
+        type: Latn
+    type: text
+  id: 228378
+  response:
+    content:
+      text: female nurse
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/228378
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW03980A.mp3
+      text: 就職
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 24
+      sentences:
+      - difficulty: 28993
+        id: 1226978
+        item_id: 280762
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS03980A.mp3
+        text: 最近、若い人たちの<b>就職</b>が難しくなっています。
+        translations:
+        - difficulty: 806
+          id: 1594619
+          language: en
+          text: Young people find it harder to find jobs these days.
+          uri: http://iknow.jp/sentences/1594619
+        transliterations:
+        - text: さいきん、わかい ひとたち の <b>しゅうしょく</b> が むずかしく なって います。
+          type: Hira
+        - text: さいきん、わかい ひとたち の <b>しゅうしょく</b> が むずかしく なって います。
+          type: Hrkt
+        - text: saikin,wakai hitotachi no <b>shuushoku</b> ga muzukashiku natte imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/1226978
+      transliterations:
+      - text: しゅうしょく
+        type: Hira
+      - text: しゅうしょく
+        type: Hrkt
+      - text: shuushoku
+        type: Latn
+    type: text
+  id: 280762
+  response:
+    content:
+      text: finding a job, getting a job
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/280762
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW00549A.mp3
+      text: 糸
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 25
+      sentences:
+      - difficulty: 12037
+        id: 249221
+        item_id: 436758
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS00549A.mp3
+        text: 母は<b>糸</b>を針に通した。
+        translations:
+        - difficulty: 745
+          id: 1594620
+          language: en
+          text: My mother threaded a needle.
+          uri: http://iknow.jp/sentences/1594620
+        transliterations:
+        - text: はは は <b>いと</b> を はり に とおした。
+          type: Hira
+        - text: はは は <b>いと</b> を はり に とおした。
+          type: Hrkt
+        - text: haha ha <b>ito</b> wo hari ni tooshita.
+          type: Latn
+        uri: http://iknow.jp/sentences/249221
+      transliterations:
+      - text: いと
+        type: Hira
+      - text: いと
+        type: Hrkt
+      - text: ito
+        type: Latn
+    type: text
+  id: 436758
+  response:
+    content:
+      text: thread, yarn
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436758
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW00793A.mp3
+      text: 売り場
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 26
+      sentences:
+      - difficulty: 14863
+        id: 1212035
+        item_id: 2833307
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS00793A.mp3
+        text: くつ<b>売り場</b>はどこですか。
+        translations:
+        - difficulty: 839
+          id: 249296
+          language: en
+          text: Where is the shoe department?
+          uri: http://iknow.jp/sentences/249296
+        transliterations:
+        - text: くつ <b>うりば</b> は どこ です か。
+          type: Hira
+        - text: くつ <b>うりば</b> は どこ です か。
+          type: Hrkt
+        - text: kutsu <b>uriba</b> ha doko desu ka.
+          type: Latn
+        uri: http://iknow.jp/sentences/1212035
+      transliterations:
+      - text: うりば
+        type: Hira
+      - text: うりば
+        type: Hrkt
+      - text: uriba
+        type: Latn
+    type: text
+  id: 2833307
+  response:
+    content:
+      text: sales floor, department
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2833307
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW02950A.mp3
+      text: 校長
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 27
+      sentences:
+      - difficulty: 13450
+        id: 249015
+        item_id: 436679
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS02950A.mp3
+        text: あの人は高校の<b>校長</b>だ。
+        translations:
+        - difficulty: 831
+          id: 249016
+          language: en
+          text: That person is a high school principal.
+          uri: http://iknow.jp/sentences/249016
+        transliterations:
+        - text: あの ひと は こうこう の <b>こうちょう</b> だ。
+          type: Hira
+        - text: あの ひと は こうこう の <b>こうちょう</b> だ。
+          type: Hrkt
+        - text: ano hito ha koukou no <b>kouchou</b> da.
+          type: Latn
+        uri: http://iknow.jp/sentences/249015
+      transliterations:
+      - text: こうちょう
+        type: Hira
+      - text: こうちょう
+        type: Hrkt
+      - text: kouchou
+        type: Latn
+    type: text
+  id: 436679
+  response:
+    content:
+      text: principal, schoolmaster
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436679
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW02746A.mp3
+      text: 見学
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 28
+      sentences:
+      - difficulty: 19102
+        id: 1212062
+        item_id: 436767
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS02746A.mp3
+        text: 今日、工場の<b>見学</b>に行きました。
+        translations:
+        - difficulty: 382
+          id: 249244
+          language: en
+          text: We went on a field trip to a factory today.
+          uri: http://iknow.jp/sentences/249244
+        transliterations:
+        - text: きょう、こうじょう の <b>けんがく</b> に いきました。
+          type: Hira
+        - text: きょう、こうじょう の <b>けんがく</b> に いきました。
+          type: Hrkt
+        - text: kyou,koujou no <b>kengaku</b> ni ikimashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/1212062
+      transliterations:
+      - text: けんがく
+        type: Hira
+      - text: けんがく
+        type: Hrkt
+      - text: kengaku
+        type: Latn
+    type: text
+  id: 436767
+  response:
+    content:
+      text: field trip
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436767
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW04362A.mp3
+      text: 進学
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 29
+      sentences:
+      - difficulty: 17689
+        id: 1212075
+        item_id: 296074
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS04362A.mp3
+        text: 彼女は来年、大学に<b>進学</b>する。
+        translations:
+        - difficulty: 1027
+          id: 249128
+          language: en
+          text: She'll enter college next year.
+          uri: http://iknow.jp/sentences/249128
+        transliterations:
+        - text: かのじょ は らいねん、だいがく に <b>しんがく</b> する。
+          type: Hira
+        - text: かのじょ は らいねん、だいがく に <b>しんがく</b> する。
+          type: Hrkt
+        - text: kanojo ha rainen,daigaku ni <b>shingaku</b> suru.
+          type: Latn
+        uri: http://iknow.jp/sentences/1212075
+      transliterations:
+      - text: しんがく
+        type: Hira
+      - text: しんがく
+        type: Hrkt
+      - text: shingaku
+        type: Latn
+    type: text
+  id: 296074
+  response:
+    content:
+      text: enter school
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/296074
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW05154A.mp3
+      text: 退院
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 30
+      sentences:
+      - difficulty: 12037
+        id: 249207
+        item_id: 317693
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS05154A.mp3
+        text: 母が今日<b>退院</b>します。
+        translations:
+        - difficulty: 1201
+          id: 1594627
+          language: en
+          text: My mother is being discharged from hospital today.
+          uri: http://iknow.jp/sentences/1594627
+        transliterations:
+        - text: はは が きょう <b>たいいん</b> します。
+          type: Hira
+        - text: はは が きょう <b>たいいん</b> します。
+          type: Hrkt
+        - text: haha ga kyou <b>taiin</b> shimasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/249207
+      transliterations:
+      - text: たいいん
+        type: Hira
+      - text: たいいん
+        type: Hrkt
+      - text: taiin
+        type: Latn
+    type: text
+  id: 317693
+  response:
+    content:
+      text: discharge from hospital
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/317693
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW06173A.mp3
+      text: テント
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 31
+      sentences:
+      - difficulty: 17689
+        id: 1212085
+        item_id: 411086
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS06173A.mp3
+        text: みんなで<b>テント</b>を張りました。
+        translations:
+        - difficulty: 355
+          id: 1594628
+          language: en
+          text: We set up the tent together.
+          uri: http://iknow.jp/sentences/1594628
+        transliterations:
+        - text: みんな で <b>てんと</b> を はりました。
+          type: Hira
+        - text: みんな で <b>テント</b> を はりました。
+          type: Hrkt
+        - text: minna de <b>tento</b> wo harimashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/1212085
+      transliterations:
+      - text: てんと
+        type: Hira
+      - text: テント
+        type: Hrkt
+      - text: tento
+        type: Latn
+    type: text
+  id: 411086
+  response:
+    content:
+      text: tent
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/411086
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW01152A.mp3
+      text: 踊り
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 32
+      sentences:
+      - difficulty: 14863
+        id: 249551
+        item_id: 436888
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS01152A.mp3
+        text: この<b>踊り</b>は易しいですよ。
+        translations:
+        - difficulty: 294
+          id: 249552
+          language: en
+          text: This dance is easy.
+          uri: http://iknow.jp/sentences/249552
+        transliterations:
+        - text: この <b>おどり</b> は やさしい です よ。
+          type: Hira
+        - text: この <b>おどり</b> は やさしい です よ。
+          type: Hrkt
+        - text: kono <b>odori</b> ha yasashii desu yo.
+          type: Latn
+        uri: http://iknow.jp/sentences/249551
+      transliterations:
+      - text: おどり
+        type: Hira
+      - text: おどり
+        type: Hrkt
+      - text: odori
+        type: Latn
+    type: text
+  id: 436888
+  response:
+    content:
+      text: dance, dancing
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436888
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW00656A.mp3
+      text: 植える
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 33
+      sentences:
+      - difficulty: 13450
+        id: 1212135
+        item_id: 291300
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS00656A.mp3
+        text: 庭にバラを<b>植えました</b>。
+        translations:
+        - difficulty: 562
+          id: 1594643
+          language: en
+          text: I planted some roses in the garden.
+          uri: http://iknow.jp/sentences/1594643
+        transliterations:
+        - text: にわ に ばら を <b>うえました</b>。
+          type: Hira
+        - text: にわ に バラ を <b>うえました</b>。
+          type: Hrkt
+        - text: niwa ni bara wo <b>uemashita</b>.
+          type: Latn
+        uri: http://iknow.jp/sentences/1212135
+      transliterations:
+      - text: うえる
+        type: Hira
+      - text: うえる
+        type: Hrkt
+      - text: ueru
+        type: Latn
+    type: text
+  id: 291300
+  response:
+    content:
+      text: plant
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/291300
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW09622A.mp3
+      text: 幼稚園
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 34
+      sentences:
+      - difficulty: 16276
+        id: 249669
+        item_id: 378050
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS09622A.mp3
+        text: 娘は<b>幼稚園</b>に通っています。
+        translations:
+        - difficulty: 1216
+          id: 249670
+          language: en
+          text: My daughter goes to kindergarten.
+          uri: http://iknow.jp/sentences/249670
+        transliterations:
+        - text: むすめ は <b>ようちえん</b> に かよって います。
+          type: Hira
+        - text: むすめ は <b>ようちえん</b> に かよって います。
+          type: Hrkt
+        - text: musume ha <b>youchien</b> ni kayotte imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/249669
+      transliterations:
+      - text: ようちえん
+        type: Hira
+      - text: ようちえん
+        type: Hrkt
+      - text: youchien
+        type: Latn
+    type: text
+  id: 378050
+  response:
+    content:
+      text: kindergarten
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/378050
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW00834A.mp3
+      text: エアメール
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 35
+      sentences:
+      - difficulty: 17689
+        id: 1212278
+        item_id: 393466
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS00834A.mp3
+        text: 彼に<b>エアメール</b>を送りました。
+        translations:
+        - difficulty: 293
+          id: 250542
+          language: en
+          text: I sent him a letter by airmail.
+          uri: http://iknow.jp/sentences/250542
+        transliterations:
+        - text: かれ に <b>えあめーる</b> を おくりました。
+          type: Hira
+        - text: かれ に <b>エアメール</b> を おくりました。
+          type: Hrkt
+        - text: kare ni <b>eame-ru</b> wo okurimashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/1212278
+      transliterations:
+      - text: えあめーる
+        type: Hira
+      - text: エアメール
+        type: Hrkt
+      - text: eame-ru
+        type: Latn
+    type: text
+  id: 393466
+  response:
+    content:
+      text: airmail (loanword)
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/393466
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW03622A.mp3
+      text: 四季
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 36
+      sentences:
+      - difficulty: 12037
+        id: 249825
+        item_id: 268965
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS03622A.mp3
+        text: 日本には<b>四季</b>がある。
+        translations:
+        - difficulty: 512
+          id: 249826
+          language: en
+          text: We have four seasons in Japan.
+          uri: http://iknow.jp/sentences/249826
+        transliterations:
+        - text: にほん には <b>しき</b> が ある。
+          type: Hira
+        - text: にほん には <b>しき</b> が ある。
+          type: Hrkt
+        - text: nihon niha <b>shiki</b> ga aru.
+          type: Latn
+        uri: http://iknow.jp/sentences/249825
+      transliterations:
+      - text: しき
+        type: Hira
+      - text: しき
+        type: Hrkt
+      - text: shiki
+        type: Latn
+    type: text
+  id: 268965
+  response:
+    content:
+      text: the four seasons
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/268965
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW06616A.mp3
+      text: ナイロン
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 37
+      sentences:
+      - difficulty: 26167
+        id: 1212308
+        item_id: 413731
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS06616A.mp3
+        text: このジャケットは<b>ナイロン</b>でできています。
+        translations:
+        - difficulty: 433
+          id: 249832
+          language: en
+          text: This jacket is made of nylon.
+          uri: http://iknow.jp/sentences/249832
+        transliterations:
+        - text: この じゃけっと は <b>ないろん</b> で できて います。
+          type: Hira
+        - text: この ジャケット は <b>ナイロン</b> で できて います。
+          type: Hrkt
+        - text: kono jaketto ha <b>nairon</b> de dekite imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/1212308
+      transliterations:
+      - text: ないろん
+        type: Hira
+      - text: ナイロン
+        type: Hrkt
+      - text: nairon
+        type: Latn
+    type: text
+  id: 413731
+  response:
+    content:
+      text: nylon
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/413731
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW04235A.mp3
+      text: 消防車
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 38
+      sentences:
+      - difficulty: 11095
+        id: 1212313
+        item_id: 288443
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS04235A.mp3
+        text: <b>消防車</b>が4台も来た。
+        translations:
+        - difficulty: 765
+          id: 249848
+          language: en
+          text: Four fire engines came.
+          uri: http://iknow.jp/sentences/249848
+        transliterations:
+        - text: <b>しょうぼうしゃ</b> が 4 だい も きた。
+          type: Hira
+        - text: <b>しょうぼうしゃ</b> が 4 だい も きた。
+          type: Hrkt
+        - text: <b>shoubousha</b> ga 4 dai mo kita.
+          type: Latn
+        uri: http://iknow.jp/sentences/1212313
+      transliterations:
+      - text: しょうぼうしゃ
+        type: Hira
+      - text: しょうぼうしゃ
+        type: Hrkt
+      - text: shoubousha
+        type: Latn
+    type: text
+  id: 288443
+  response:
+    content:
+      text: fire engine
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/288443
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW07569A.mp3
+      text: ハンドバッグ
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 39
+      sentences:
+      - difficulty: 16276
+        id: 1212393
+        item_id: 415892
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS07569A.mp3
+        text: <b>ハンドバッグ</b>を忘れました。
+        translations:
+        - difficulty: 412
+          id: 249996
+          language: en
+          text: I forgot my handbag.
+          uri: http://iknow.jp/sentences/249996
+        transliterations:
+        - text: <b>はんどばっぐ</b> を わすれました。
+          type: Hira
+        - text: <b>ハンドバッグ</b> を わすれました。
+          type: Hrkt
+        - text: <b>handobaggu</b> wo wasuremashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/1212393
+      transliterations:
+      - text: はんどばっぐ
+        type: Hira
+      - text: ハンドバッグ
+        type: Hrkt
+      - text: handobaggu
+        type: Latn
+    type: text
+  id: 415892
+  response:
+    content:
+      text: handbag
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/415892
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW07056A.mp3
+      text: 農業
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 40
+      sentences:
+      - difficulty: 16276
+        id: 248557
+        item_id: 345242
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS07056A.mp3
+        text: 私は<b>農業</b>を勉強しています。
+        translations:
+        - difficulty: 1932
+          id: 248558
+          language: en
+          text: I'm studying agriculture.
+          uri: http://iknow.jp/sentences/248558
+        transliterations:
+        - text: わたし は <b>のうぎょう</b> を べんきょうして います。
+          type: Hira
+        - text: わたし は <b>のうぎょう</b> を べんきょうして います。
+          type: Hrkt
+        - text: watashi ha <b>nougyou</b> wo benkyoushite imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248557
+      transliterations:
+      - text: のうぎょう
+        type: Hira
+      - text: のうぎょう
+        type: Hrkt
+      - text: nougyou
+        type: Latn
+    type: text
+  id: 345242
+  response:
+    content:
+      text: agriculture
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/345242
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW00026A.mp3
+      text: アイロン
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 41
+      sentences:
+      - difficulty: 20515
+        id: 1214099
+        item_id: 389123
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS00026A.mp3
+        text: 彼女はシャツに<b>アイロン</b>をかけた。
+        translations:
+        - difficulty: 530
+          id: 250252
+          language: en
+          text: She ironed the shirt.
+          uri: http://iknow.jp/sentences/250252
+        transliterations:
+        - text: かのじょ は しゃつ に <b>あいろん</b> を かけた。
+          type: Hira
+        - text: かのじょ は シャツ に <b>アイロン</b> を かけた。
+          type: Hrkt
+        - text: kanojo ha shatsu ni <b>airon</b> wo kaketa.
+          type: Latn
+        uri: http://iknow.jp/sentences/1214099
+      transliterations:
+      - text: あいろん
+        type: Hira
+      - text: アイロン
+        type: Hrkt
+      - text: airon
+        type: Latn
+    type: text
+  id: 389123
+  response:
+    content:
+      text: iron
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/389123
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW09783A.mp3
+      text: ラッシュアワー
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 42
+      sentences:
+      - difficulty: 23341
+        id: 250333
+        item_id: 429704
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS09783A.mp3
+        text: 私は<b>ラッシュアワー</b>の電車が嫌いです。
+        translations:
+        - difficulty: 368
+          id: 250334
+          language: en
+          text: I hate rush hour trains.
+          uri: http://iknow.jp/sentences/250334
+        transliterations:
+        - text: わたし は <b>らっしゅあわー</b> の でんしゃ が きらい です。
+          type: Hira
+        - text: わたし は <b>ラッシュアワー</b> の でんしゃ が きらい です。
+          type: Hrkt
+        - text: watashi ha <b>rasshuawa-</b> no densha ga kirai desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/250333
+      transliterations:
+      - text: らっしゅあわー
+        type: Hira
+      - text: ラッシュアワー
+        type: Hrkt
+      - text: rasshuawa-
+        type: Latn
+    type: text
+  id: 429704
+  response:
+    content:
+      text: rush hour
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/429704
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW05038A.mp3
+      text: 速達
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 43
+      sentences:
+      - difficulty: 19102
+        id: 250419
+        item_id: 437232
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS05038A.mp3
+        text: これを<b>速達</b>で送りたいのですが。
+        translations:
+        - difficulty: 377
+          id: 1578658
+          language: en
+          text: I want to send this by express mail.
+          uri: http://iknow.jp/sentences/1578658
+        transliterations:
+        - text: これ を <b>そくたつ</b> で おくりたい の です が。
+          type: Hira
+        - text: これ を <b>そくたつ</b> で おくりたい の です が。
+          type: Hrkt
+        - text: kore wo <b>sokutatsu</b> de okuritai no desu ga.
+          type: Latn
+        uri: http://iknow.jp/sentences/250419
+      transliterations:
+      - text: そくたつ
+        type: Hira
+      - text: そくたつ
+        type: Hrkt
+      - text: sokutatsu
+        type: Latn
+    type: text
+  id: 437232
+  response:
+    content:
+      text: special delivery, express mail
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/437232
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW09682A.mp3
+      text: 予習
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 44
+      sentences:
+      - difficulty: 14863
+        id: 250431
+        item_id: 437236
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS09682A.mp3
+        text: 明日の<b>予習</b>をしましょう。
+        translations:
+        - difficulty: 1236
+          id: 250432
+          language: en
+          text: Let's prepare for tomorrow.
+          uri: http://iknow.jp/sentences/250432
+        transliterations:
+        - text: あした の <b>よしゅう</b> を しましょう。
+          type: Hira
+        - text: あした の <b>よしゅう</b> を しましょう。
+          type: Hrkt
+        - text: ashita no <b>yoshuu</b> wo shimashou.
+          type: Latn
+        uri: http://iknow.jp/sentences/250431
+      transliterations:
+      - text: よしゅう
+        type: Hira
+      - text: よしゅう
+        type: Hrkt
+      - text: yoshuu
+        type: Latn
+    type: text
+  id: 437236
+  response:
+    content:
+      text: preparation, previewing (a lesson)
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/437236
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW01476A.mp3
+      text: 書留
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 45
+      sentences:
+      - difficulty: 19102
+        id: 250495
+        item_id: 285674
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS01476A.mp3
+        text: これを<b>書留</b>で送りたいのですが。
+        translations:
+        - difficulty: 553
+          id: 250496
+          language: en
+          text: I want to send this by registered mail.
+          uri: http://iknow.jp/sentences/250496
+        transliterations:
+        - text: これ を <b>かきとめ</b> で おくりたい のです が。
+          type: Hira
+        - text: これ を <b>かきとめ</b> で おくりたい のです が。
+          type: Hrkt
+        - text: kore wo <b>kakitome</b> de okuritai nodesu ga.
+          type: Latn
+        uri: http://iknow.jp/sentences/250495
+      transliterations:
+      - text: かきとめ
+        type: Hira
+      - text: かきとめ
+        type: Hrkt
+      - text: kakitome
+        type: Latn
+    type: text
+  id: 285674
+  response:
+    content:
+      text: registered mail
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/285674
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW07982A.mp3
+      text: 深さ
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 46
+      sentences:
+      - difficulty: 20986
+        id: 1214395
+        item_id: 437272
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS07982A.mp3
+        text: このプールの<b>深さ</b>は2メートルです。
+        translations:
+        - difficulty: 433
+          id: 250524
+          language: en
+          text: This pool is two meters deep.
+          uri: http://iknow.jp/sentences/250524
+        transliterations:
+        - text: この ぷーる の <b>ふかさ</b> は 2 めーとる です。
+          type: Hira
+        - text: この プール の <b>ふかさ</b> は 2 メートル です。
+          type: Hrkt
+        - text: kono pu-ru no <b>fukasa</b> ha 2 me-toru desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/1214395
+      transliterations:
+      - text: ふかさ
+        type: Hira
+      - text: ふかさ
+        type: Hrkt
+      - text: fukasa
+        type: Latn
+    type: text
+  id: 437272
+  response:
+    content:
+      text: depth, profundity
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/437272
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW00647A.mp3
+      text: ウィスキー
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 47
+      sentences:
+      - difficulty: 14863
+        id: 1214403
+        item_id: 437280
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS00647A.mp3
+        text: この<b>ウィスキー</b>は強いよ。
+        translations:
+        - difficulty: 648
+          id: 250540
+          language: en
+          text: This whisky is strong.
+          uri: http://iknow.jp/sentences/250540
+        transliterations:
+        - text: この <b>うぃすきー</b> は つよい よ。
+          type: Hira
+        - text: この <b>ウィスキー</b> は つよい よ。
+          type: Hrkt
+        - text: kono <b>wisuki-</b> ha tsuyoi yo.
+          type: Latn
+        uri: http://iknow.jp/sentences/1214403
+      transliterations:
+      - text: うぃすきー
+        type: Hira
+      - text: ウィスキー
+        type: Hrkt
+      - text: wisuki-
+        type: Latn
+    type: text
+  id: 437280
+  response:
+    content:
+      text: whisky
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/437280
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW03893A.mp3
+      text: シャープペンシル
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 48
+      sentences:
+      - difficulty: 21928
+        id: 1214405
+        item_id: 403267
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS03893A.mp3
+        text: 私の<b>シャープペンシル</b>がありません。
+        translations:
+        - difficulty: 1121
+          id: 250550
+          language: en
+          text: My mechanical pencil is missing.
+          uri: http://iknow.jp/sentences/250550
+        transliterations:
+        - text: わたし の <b>しゃーぷぺんしる</b> が ありません。
+          type: Hira
+        - text: わたし の <b>シャープペンシル</b> が ありません。
+          type: Hrkt
+        - text: watashi no <b>sha-pupenshiru</b> ga arimasen.
+          type: Latn
+        uri: http://iknow.jp/sentences/1214405
+      transliterations:
+      - text: しゃーぷぺんしる
+        type: Hira
+      - text: シャープペンシル
+        type: Hrkt
+      - text: sha-pupenshiru
+        type: Latn
+    type: text
+  id: 403267
+  response:
+    content:
+      text: mechanical pencil
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/403267
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW06559A.mp3
+      text: 取引
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 49
+      sentences:
+      - difficulty: 23341
+        id: 248303
+        item_id: 436397
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS06559A.mp3
+        text: 私たちは中国の会社と<b>取引</b>しています。
+        translations:
+        - difficulty: 1062
+          id: 248304
+          language: en
+          text: We're dealing with a Chinese company.
+          uri: http://iknow.jp/sentences/248304
+        transliterations:
+        - text: わたしたち は ちゅうごく の かいしゃ と <b>とりひき</b> して います。
+          type: Hira
+        - text: わたしたち は ちゅうごく の かいしゃ と <b>とりひき</b> して います。
+          type: Hrkt
+        - text: watashitachi ha chuugoku no kaisha to <b>torihiki</b> shite imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248303
+      transliterations:
+      - text: とりひき
+        type: Hira
+      - text: とりひき
+        type: Hrkt
+      - text: torihiki
+        type: Latn
+    type: text
+  id: 436397
+  response:
+    content:
+      text: transaction, deal
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436397
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW09237A.mp3
+      text: 設ける
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 50
+      sentences:
+      - difficulty: 21928
+        id: 248387
+        item_id: 436437
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS09237A.mp3
+        text: 授業の終わりに復習の時間を<b>設けた</b>。
+        translations:
+        - difficulty: 462
+          id: 1594647
+          language: en
+          text: I set aside time for review at the end of class.
+          uri: http://iknow.jp/sentences/1594647
+        transliterations:
+        - text: じゅぎょう の おわり に ふくしゅう の じかん を <b>もうけた</b>。
+          type: Hira
+        - text: じゅぎょう の おわり に ふくしゅう の じかん を <b>もうけた</b>。
+          type: Hrkt
+        - text: jugyou no owari ni fukushuu no jikan wo <b>mouketa</b>.
+          type: Latn
+        uri: http://iknow.jp/sentences/248387
+      transliterations:
+      - text: もうける
+        type: Hira
+      - text: もうける
+        type: Hrkt
+      - text: moukeru
+        type: Latn
+    type: text
+  id: 436437
+  response:
+    content:
+      text: set up, establish
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436437
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW00532A.mp3
+      text: 一定
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 51
+      sentences:
+      - difficulty: 19102
+        id: 248343
+        item_id: 2959700
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS00532A.mp3
+        text: 申し込むには<b>一定</b>の資格が要る。
+        translations:
+        - difficulty: 1375
+          id: 248344
+          language: en
+          text: You need certain qualifications to apply.
+          uri: http://iknow.jp/sentences/248344
+        transliterations:
+        - text: もうしこむ には <b>いってい</b> の しかく が いる。
+          type: Hira
+        - text: もうしこむ には <b>いってい</b> の しかく が いる。
+          type: Hrkt
+        - text: moushikomu niha <b>ittei</b> no shikaku ga iru.
+          type: Latn
+        uri: http://iknow.jp/sentences/248343
+      transliterations:
+      - text: いってい
+        type: Hira
+      - text: いってい
+        type: Hrkt
+      - text: ittei
+        type: Latn
+    type: text
+  id: 2959700
+  response:
+    content:
+      text: fixed, certain
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2959700
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW02056A.mp3
+      text: 記者
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 52
+      sentences:
+      - difficulty: 10624
+        id: 248167
+        item_id: 436339
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS02056A.mp3
+        text: 彼は新聞<b>記者</b>です。
+        translations:
+        - difficulty: 1354
+          id: 248168
+          language: en
+          text: He's a newspaper journalist.
+          uri: http://iknow.jp/sentences/248168
+        transliterations:
+        - text: かれ は しんぶん <b>きしゃ</b> です。
+          type: Hira
+        - text: かれ は しんぶん <b>きしゃ</b> です。
+          type: Hrkt
+        - text: kare ha shinbun <b>kisha</b> desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248167
+      transliterations:
+      - text: きしゃ
+        type: Hira
+      - text: きしゃ
+        type: Hrkt
+      - text: kisha
+        type: Latn
+    type: text
+  id: 436339
+  response:
+    content:
+      text: journalist, reporter
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436339
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW02059A.mp3
+      text: 基準
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 53
+      sentences:
+      - difficulty: 13450
+        id: 248431
+        item_id: 436453
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS02059A.mp3
+        text: 判断の<b>基準</b>が示された。
+        translations:
+        - difficulty: 1235
+          id: 1594659
+          language: en
+          text: The standards of judgment have been outlined.
+          uri: http://iknow.jp/sentences/1594659
+        transliterations:
+        - text: はんだん の <b>きじゅん</b> が しめされた。
+          type: Hira
+        - text: はんだん の <b>きじゅん</b> が しめされた。
+          type: Hrkt
+        - text: handan no <b>kijun</b> ga shimesareta.
+          type: Latn
+        uri: http://iknow.jp/sentences/248431
+      transliterations:
+      - text: きじゅん
+        type: Hira
+      - text: きじゅん
+        type: Hrkt
+      - text: kijun
+        type: Latn
+    type: text
+  id: 436453
+  response:
+    content:
+      text: standard, criterion
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436453
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW02608A.mp3
+      text: 傾向
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 54
+      sentences:
+      - difficulty: 27580
+        id: 248329
+        item_id: 436409
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS02608A.mp3
+        text: 最近の若者は難しい本を読まない<b>傾向</b>がある。
+        translations:
+        - difficulty: 1042
+          id: 248330
+          language: en
+          text: Young people these days tend not to read difficult books.
+          uri: http://iknow.jp/sentences/248330
+        transliterations:
+        - text: さいきん の わかもの は むずかしい ほん を よまない <b>けいこう</b> が ある。
+          type: Hira
+        - text: さいきん の わかもの は むずかしい ほん を よまない <b>けいこう</b> が ある。
+          type: Hrkt
+        - text: saikin no wakamono ha muzukashii hon wo yomanai <b>keikou</b> ga aru.
+          type: Latn
+        uri: http://iknow.jp/sentences/248329
+      transliterations:
+      - text: けいこう
+        type: Hira
+      - text: けいこう
+        type: Hrkt
+      - text: keikou
+        type: Latn
+    type: text
+  id: 436409
+  response:
+    content:
+      text: tendency, disposition
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436409
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW02643A.mp3
+      text: 契約
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 55
+      sentences:
+      - difficulty: 21928
+        id: 1214429
+        item_id: 436432
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS02643A.mp3
+        text: その選手は新しいチームと<b>契約</b>した。
+        translations:
+        - difficulty: 662
+          id: 1594663
+          language: en
+          text: The player signed a contract with a new team.
+          uri: http://iknow.jp/sentences/1594663
+        transliterations:
+        - text: その せんしゅ は あたらしい ちーむ と <b>けいやく</b> した。
+          type: Hira
+        - text: その せんしゅ は あたらしい チーム と <b>けいやく</b> した。
+          type: Hrkt
+        - text: sono senshu ha atarashii chi-mu to <b>keiyaku</b> shita.
+          type: Latn
+        uri: http://iknow.jp/sentences/1214429
+      transliterations:
+      - text: けいやく
+        type: Hira
+      - text: けいやく
+        type: Hrkt
+      - text: keiyaku
+        type: Latn
+    type: text
+  id: 436432
+  response:
+    content:
+      text: contract, agreement
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436432
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW03531A.mp3
+      text: 産業
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 56
+      sentences:
+      - difficulty: 21928
+        id: 248197
+        item_id: 267602
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS03531A.mp3
+        text: 日本の自動車<b>産業</b>は世界的に有名だ。
+        translations:
+        - difficulty: 1369
+          id: 248198
+          language: en
+          text: The Japanese auto industry is famous worldwide.
+          uri: http://iknow.jp/sentences/248198
+        transliterations:
+        - text: にほん の じどうしゃ <b>さんぎょう</b> は せかいてきに ゆうめい だ。
+          type: Hira
+        - text: にほん の じどうしゃ <b>さんぎょう</b> は せかいてきに ゆうめい だ。
+          type: Hrkt
+        - text: nihon no jidousha <b>sangyou</b> ha sekaitekini yuumei da.
+          type: Latn
+        uri: http://iknow.jp/sentences/248197
+      transliterations:
+      - text: さんぎょう
+        type: Hira
+      - text: さんぎょう
+        type: Hrkt
+      - text: sangyou
+        type: Latn
+    type: text
+  id: 267602
+  response:
+    content:
+      text: industry
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/267602
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW03689A.mp3
+      text: 事情
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 57
+      sentences:
+      - difficulty: 20515
+        id: 248325
+        item_id: 436407
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS03689A.mp3
+        text: あなたの<b>事情</b>はよく分かりました。
+        translations:
+        - difficulty: 1216
+          id: 248326
+          language: en
+          text: I understand your situation well.
+          uri: http://iknow.jp/sentences/248326
+        transliterations:
+        - text: あなた の <b>じじょう</b> は よく わかりました。
+          type: Hira
+        - text: あなた の <b>じじょう</b> は よく わかりました。
+          type: Hrkt
+        - text: anata no <b>jijou</b> ha yoku wakarimashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/248325
+      transliterations:
+      - text: じじょう
+        type: Hira
+      - text: じじょう
+        type: Hrkt
+      - text: jijou
+        type: Latn
+    type: text
+  id: 436407
+  response:
+    content:
+      text: circumstances, conditions
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436407
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW03760A.mp3
+      text: 実行
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 58
+      sentences:
+      - difficulty: 14863
+        id: 248213
+        item_id: 436360
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS03760A.mp3
+        text: 彼はその計画を<b>実行</b>した。
+        translations:
+        - difficulty: 530
+          id: 248214
+          language: en
+          text: He executed the plan.
+          uri: http://iknow.jp/sentences/248214
+        transliterations:
+        - text: かれ は その けいかく を <b>じっこう</b> した。
+          type: Hira
+        - text: かれ は その けいかく を <b>じっこう</b> した。
+          type: Hrkt
+        - text: kare ha sono keikaku wo <b>jikkou</b> shita.
+          type: Latn
+        uri: http://iknow.jp/sentences/248213
+      transliterations:
+      - text: じっこう
+        type: Hira
+      - text: じっこう
+        type: Hrkt
+      - text: jikkou
+        type: Latn
+    type: text
+  id: 436360
+  response:
+    content:
+      text: practice, execution
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436360
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW05051A.mp3
+      text: 組織
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 59
+      sentences:
+      - difficulty: 16276
+        id: 1214442
+        item_id: 436362
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS05051A.mp3
+        text: 彼はある<b>組織</b>のリーダーだ。
+        translations:
+        - difficulty: 1033
+          id: 248218
+          language: en
+          text: He's the leader of a certain organization.
+          uri: http://iknow.jp/sentences/248218
+        transliterations:
+        - text: かれ は ある <b>そしき</b> の りーだー だ。
+          type: Hira
+        - text: かれ は ある <b>そしき</b> の リーダー だ。
+          type: Hrkt
+        - text: kare ha aru <b>soshiki</b> no ri-da- da.
+          type: Latn
+        uri: http://iknow.jp/sentences/1214442
+      transliterations:
+      - text: そしき
+        type: Hira
+      - text: そしき
+        type: Hrkt
+      - text: soshiki
+        type: Latn
+    type: text
+  id: 436362
+  response:
+    content:
+      text: organization, structure
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436362
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW05259A.mp3
+      text: 逮捕
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 60
+      sentences:
+      - difficulty: 20515
+        id: 248447
+        item_id: 436461
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS05259A.mp3
+        text: 逃げていた犯人が<b>逮捕</b>されました。
+        translations:
+        - difficulty: 1218
+          id: 1594667
+          language: en
+          text: The runaway criminal has been arrested.
+          uri: http://iknow.jp/sentences/1594667
+        transliterations:
+        - text: にげて いた はんにん が <b>たいほ</b> されました。
+          type: Hira
+        - text: にげて いた はんにん が <b>たいほ</b> されました。
+          type: Hrkt
+        - text: nigete ita hannin ga <b>taiho</b> saremashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/248447
+      transliterations:
+      - text: たいほ
+        type: Hira
+      - text: たいほ
+        type: Hrkt
+      - text: taiho
+        type: Latn
+    type: text
+  id: 436461
+  response:
+    content:
+      text: arrest, capture
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436461
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW06016A.mp3
+      text: 程度
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 61
+      sentences:
+      - difficulty: 19102
+        id: 248319
+        item_id: 436404
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS06016A.mp3
+        text: この<b>程度</b>の怪我なら大丈夫です。
+        translations:
+        - difficulty: 762
+          id: 1594668
+          language: en
+          text: With an injury of this degree, you're going to be fine.
+          uri: http://iknow.jp/sentences/1594668
+        transliterations:
+        - text: この <b>ていど</b> の けが なら だいじょうぶ です。
+          type: Hira
+        - text: この <b>ていど</b> の けが なら だいじょうぶ です。
+          type: Hrkt
+        - text: kono <b>teido</b> no kega nara daijoubu desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248319
+      transliterations:
+      - text: ていど
+        type: Hira
+      - text: ていど
+        type: Hrkt
+      - text: teido
+        type: Latn
+    type: text
+  id: 436404
+  response:
+    content:
+      text: degree, extent
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436404
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW06326A.mp3
+      text: 同様
+    related:
+      language: ja
+      part_of_speech: Adjectival Noun
+      position: 62
+      sentences:
+      - difficulty: 21928
+        id: 248317
+        item_id: 436403
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS06326A.mp3
+        text: 私たちは彼を家族<b>同様</b>に思っている。
+        translations:
+        - difficulty: 296
+          id: 1594671
+          language: en
+          text: We think of him as part of our family.
+          uri: http://iknow.jp/sentences/1594671
+        transliterations:
+        - text: わたしたち は かれ を かぞく <b>どうよう</b> に おもって いる。
+          type: Hira
+        - text: わたしたち は かれ を かぞく <b>どうよう</b> に おもって いる。
+          type: Hrkt
+        - text: watashitachi ha kare wo kazoku <b>douyou</b> ni omotte iru.
+          type: Latn
+        uri: http://iknow.jp/sentences/248317
+      transliterations:
+      - text: どうよう
+        type: Hira
+      - text: どうよう
+        type: Hrkt
+      - text: douyou
+        type: Latn
+    type: text
+  id: 436403
+  response:
+    content:
+      text: similar, the same as
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436403
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW09586A.mp3
+      text: 要求
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 63
+      sentences:
+      - difficulty: 14863
+        id: 248203
+        item_id: 436356
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS09586A.mp3
+        text: 彼は私の<b>要求</b>にこたえた。
+        translations:
+        - difficulty: 648
+          id: 1594675
+          language: en
+          text: He fulfilled my needs.
+          uri: http://iknow.jp/sentences/1594675
+        transliterations:
+        - text: かれ は わたし の <b>ようきゅう</b> に こたえた。
+          type: Hira
+        - text: かれ は わたし の <b>ようきゅう</b> に こたえた。
+          type: Hrkt
+        - text: kare ha watashi no <b>youkyuu</b> ni kotaeta.
+          type: Latn
+        uri: http://iknow.jp/sentences/248203
+      transliterations:
+      - text: ようきゅう
+        type: Hira
+      - text: ようきゅう
+        type: Hrkt
+      - text: youkyuu
+        type: Latn
+    type: text
+  id: 436356
+  response:
+    content:
+      text: need, demand
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436356
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW08392A.mp3
+      text: 貿易
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 64
+      sentences:
+      - difficulty: 17689
+        id: 248451
+        item_id: 2959804
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS08392A.mp3
+        text: 父は<b>貿易</b>の仕事をしています。
+        translations:
+        - difficulty: 898
+          id: 248452
+          language: en
+          text: My father works in the trading business.
+          uri: http://iknow.jp/sentences/248452
+        transliterations:
+        - text: ちち は <b>ぼうえき</b> の しごと を して います。
+          type: Hira
+        - text: ちち は <b>ぼうえき</b> の しごと を して います。
+          type: Hrkt
+        - text: chichi ha <b>boueki</b> no shigoto wo shite imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248451
+      transliterations:
+      - text: ぼうえき
+        type: Hira
+      - text: ぼうえき
+        type: Hrkt
+      - text: boueki
+        type: Latn
+    type: text
+  id: 2959804
+  response:
+    content:
+      text: (export and import) trade
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2959804
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW09539A.mp3
+      text: 輸出
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 65
+      sentences:
+      - difficulty: 19102
+        id: 248219
+        item_id: 375582
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS09539A.mp3
+        text: 彼の会社は車を<b>輸出</b>しています。
+        translations:
+        - difficulty: 1001
+          id: 248220
+          language: en
+          text: His company exports cars.
+          uri: http://iknow.jp/sentences/248220
+        transliterations:
+        - text: かれ の かいしゃ は くるま を <b>ゆしゅつ</b> して います。
+          type: Hira
+        - text: かれ の かいしゃ は くるま を <b>ゆしゅつ</b> して います。
+          type: Hrkt
+        - text: kare no kaisha ha kuruma wo <b>yushutsu</b> shite imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248219
+      transliterations:
+      - text: ゆしゅつ
+        type: Hira
+      - text: ゆしゅつ
+        type: Hrkt
+      - text: yushutsu
+        type: Latn
+    type: text
+  id: 375582
+  response:
+    content:
+      text: export
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/375582
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW04152A.mp3
+      text: 商業
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 66
+      sentences:
+      - difficulty: 14863
+        id: 249213
+        item_id: 436754
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS04152A.mp3
+        text: この町では<b>商業</b>が盛んだ。
+        translations:
+        - difficulty: 1235
+          id: 1594677
+          language: en
+          text: Commercial business is thriving in this city.
+          uri: http://iknow.jp/sentences/1594677
+        transliterations:
+        - text: この まち では <b>しょうぎょう</b> が さかん だ。
+          type: Hira
+        - text: この まち では <b>しょうぎょう</b> が さかん だ。
+          type: Hrkt
+        - text: kono machi deha <b>shougyou</b> ga sakan da.
+          type: Latn
+        uri: http://iknow.jp/sentences/249213
+      transliterations:
+      - text: しょうぎょう
+        type: Hira
+      - text: しょうぎょう
+        type: Hrkt
+      - text: shougyou
+        type: Latn
+    type: text
+  id: 436754
+  response:
+    content:
+      text: commerce, trade
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436754
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW08134A.mp3
+      text: 船便
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 67
+      sentences:
+      - difficulty: 20515
+        id: 1214497
+        item_id: 437398
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS08134A.mp3
+        text: アメリカの友人から<b>船便</b>が届いた。
+        translations:
+        - difficulty: 1183
+          id: 1594681
+          language: en
+          text: Something arrived by surface mail from my friend in America.
+          uri: http://iknow.jp/sentences/1594681
+        transliterations:
+        - text: あめりか の ゆうじん から <b>ふなびん</b> が とどいた。
+          type: Hira
+        - text: アメリカ の ゆうじん から <b>ふなびん</b> が とどいた。
+          type: Hrkt
+        - text: amerika no yuujin kara <b>funabin</b> ga todoita.
+          type: Latn
+        uri: http://iknow.jp/sentences/1214497
+      transliterations:
+      - text: ふなびん
+        type: Hira
+      - text: ふなびん
+        type: Hrkt
+      - text: funabin
+        type: Latn
+    type: text
+  id: 437398
+  response:
+    content:
+      text: surface mail, shipping service
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/437398
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW04865A.mp3
+      text: 選挙
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 68
+      sentences:
+      - difficulty: 14863
+        id: 248005
+        item_id: 308757
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS04865A.mp3
+        text: 彼は<b>選挙</b>に出るつもりだ。
+        translations:
+        - difficulty: 360
+          id: 1594682
+          language: en
+          text: He is going to run for election.
+          uri: http://iknow.jp/sentences/1594682
+        transliterations:
+        - text: かれ は <b>せんきょ</b> に でる つもり だ。
+          type: Hira
+        - text: かれ は <b>せんきょ</b> に でる つもり だ。
+          type: Hrkt
+        - text: kare ha <b>senkyo</b> ni deru tsumori da.
+          type: Latn
+        uri: http://iknow.jp/sentences/248005
+      transliterations:
+      - text: せんきょ
+        type: Hira
+      - text: せんきょ
+        type: Hrkt
+      - text: senkyo
+        type: Latn
+    type: text
+  id: 308757
+  response:
+    content:
+      text: election
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/308757
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW04015A.mp3
+      text: 住民
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 69
+      sentences:
+      - difficulty: 21928
+        id: 248345
+        item_id: 436417
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS04015A.mp3
+        text: 地域の<b>住民</b>が集まって話合いをした。
+        translations:
+        - difficulty: 819
+          id: 1594683
+          language: en
+          text: The local residents got together and had a talk.
+          uri: http://iknow.jp/sentences/1594683
+        transliterations:
+        - text: ちいき の <b>じゅうみん</b> が あつまって はなしあい を した。
+          type: Hira
+        - text: ちいき の <b>じゅうみん</b> が あつまって はなしあい を した。
+          type: Hrkt
+        - text: chiiki no <b>juumin</b> ga atsumatte hanashiai wo shita.
+          type: Latn
+        uri: http://iknow.jp/sentences/248345
+      transliterations:
+      - text: じゅうみん
+        type: Hira
+      - text: じゅうみん
+        type: Hrkt
+      - text: juumin
+        type: Latn
+    type: text
+  id: 436417
+  response:
+    content:
+      text: resident
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436417
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW04072A.mp3
+      text: 出席
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 70
+      sentences:
+      - difficulty: 14863
+        id: 248497
+        item_id: 436479
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS04072A.mp3
+        text: 午後は会議に<b>出席</b>します。
+        translations:
+        - difficulty: 831
+          id: 248498
+          language: en
+          text: I'll attend a meeting in the afternoon.
+          uri: http://iknow.jp/sentences/248498
+        transliterations:
+        - text: ごご は かいぎ に <b>しゅっせき</b> します。
+          type: Hira
+        - text: ごご は かいぎ に <b>しゅっせき</b> します。
+          type: Hrkt
+        - text: gogo ha kaigi ni <b>shusseki</b> shimasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248497
+      transliterations:
+      - text: しゅっせき
+        type: Hira
+      - text: しゅっせき
+        type: Hrkt
+      - text: shusseki
+        type: Latn
+    type: text
+  id: 436479
+  response:
+    content:
+      text: attendance, presence
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436479
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW07369A.mp3
+      text: 発言
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 71
+      sentences:
+      - difficulty: 13450
+        id: 248327
+        item_id: 2414287
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS07369A.mp3
+        text: 会議で全員が<b>発言</b>した。
+        translations:
+        - difficulty: 933
+          id: 1594728
+          language: en
+          text: Everyone spoke at the meeting.
+          uri: http://iknow.jp/sentences/1594728
+        transliterations:
+        - text: かいぎ で ぜんいん が <b>はつげん</b> した。
+          type: Hira
+        - text: かいぎ で ぜんいん が <b>はつげん</b> した。
+          type: Hrkt
+        - text: kaigi de zenin ga <b>hatsugen</b> shita.
+          type: Latn
+        uri: http://iknow.jp/sentences/248327
+      transliterations:
+      - text: はつげん
+        type: Hira
+      - text: はつげん
+        type: Hrkt
+      - text: hatsugen
+        type: Latn
+    type: text
+  id: 2414287
+  response:
+    content:
+      text: utterance, remark
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2414287
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW06518A.mp3
+      text: 伴う
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 72
+      sentences:
+      - difficulty: 13450
+        id: 248119
+        item_id: 436320
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS06518A.mp3
+        text: その仕事は危険を<b>伴う</b>。
+        translations:
+        - difficulty: 765
+          id: 1594729
+          language: en
+          text: The job entails danger.
+          uri: http://iknow.jp/sentences/1594729
+        transliterations:
+        - text: その しごと は きけん を <b>ともなう</b>。
+          type: Hira
+        - text: その しごと は きけん を <b>ともなう</b>。
+          type: Hrkt
+        - text: sono shigoto ha kiken wo <b>tomonau</b>.
+          type: Latn
+        uri: http://iknow.jp/sentences/248119
+      transliterations:
+      - text: ともなう
+        type: Hira
+      - text: ともなう
+        type: Hrkt
+      - text: tomonau
+        type: Latn
+    type: text
+  id: 436320
+  response:
+    content:
+      text: accompany, entail
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436320
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW03344A.mp3
+      text: 採用
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 73
+      sentences:
+      - difficulty: 21928
+        id: 248139
+        item_id: 2842069
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS03344A.mp3
+        text: その会社は女性を多く<b>採用</b>している。
+        translations:
+        - difficulty: 1027
+          id: 1594732
+          language: en
+          text: The company employs many women.
+          uri: http://iknow.jp/sentences/1594732
+        transliterations:
+        - text: その かいしゃ は じょせい を おおく <b>さいよう</b> して いる。
+          type: Hira
+        - text: その かいしゃ は じょせい を おおく <b>さいよう</b> して いる。
+          type: Hrkt
+        - text: sono kaisha ha josei wo ooku <b>saiyou</b> shite iru.
+          type: Latn
+        uri: http://iknow.jp/sentences/248139
+      transliterations:
+      - text: さいよう
+        type: Hira
+      - text: さいよう
+        type: Hrkt
+      - text: saiyou
+        type: Latn
+    type: text
+  id: 2842069
+  response:
+    content:
+      text: employment, adoption
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2842069
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW04322A.mp3
+      text: 処理
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 74
+      sentences:
+      - difficulty: 19573
+        id: 1119640
+        item_id: 2842077
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS04322A.mp3
+        text: 事務的な<b>処理</b>に1週間かかります。
+        translations:
+        - difficulty: 1689
+          id: 247872
+          language: en
+          text: The administrative processing takes one week.
+          uri: http://iknow.jp/sentences/247872
+        transliterations:
+        - text: じむてき な <b>しょり</b> に 1 しゅうかん かかります。
+          type: Hira
+        - text: じむてき な <b>しょり</b> に 1 しゅうかん かかります。
+          type: Hrkt
+        - text: jimuteki na <b>shori</b> ni 1 shuukan kakarimasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/1119640
+      transliterations:
+      - text: しょり
+        type: Hira
+      - text: しょり
+        type: Hrkt
+      - text: shori
+        type: Latn
+    type: text
+  id: 2842077
+  response:
+    content:
+      text: handling, processing
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2842077
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW01342A.mp3
+      text: 解決
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 75
+      sentences:
+      - difficulty: 16276
+        id: 1119652
+        item_id: 436218
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS01342A.mp3
+        text: トラブルがやっと<b>解決</b>した。
+        translations:
+        - difficulty: 983
+          id: 247880
+          language: en
+          text: The problem has finally been solved.
+          uri: http://iknow.jp/sentences/247880
+        transliterations:
+        - text: とらぶる が やっと <b>かいけつ</b> した。
+          type: Hira
+        - text: トラブル が やっと <b>かいけつ</b> した。
+          type: Hrkt
+        - text: toraburu ga yatto <b>kaiketsu</b> shita.
+          type: Latn
+        uri: http://iknow.jp/sentences/1119652
+      transliterations:
+      - text: かいけつ
+        type: Hira
+      - text: かいけつ
+        type: Hrkt
+      - text: kaiketsu
+        type: Latn
+    type: text
+  id: 436218
+  response:
+    content:
+      text: solution, settlement
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436218
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW04874A.mp3
+      text: 全国
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 76
+      sentences:
+      - difficulty: 13450
+        id: 247913
+        item_id: 436233
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS04874A.mp3
+        text: 次は<b>全国</b>のお天気です。
+        translations:
+        - difficulty: 748
+          id: 247914
+          language: en
+          text: And now for the nation's weather.
+          uri: http://iknow.jp/sentences/247914
+        transliterations:
+        - text: つぎ は <b>ぜんこく</b> の おてんき です。
+          type: Hira
+        - text: つぎ は <b>ぜんこく</b> の おてんき です。
+          type: Hrkt
+        - text: tsugi ha <b>zenkoku</b> no otenki desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/247913
+      transliterations:
+      - text: ぜんこく
+        type: Hira
+      - text: ぜんこく
+        type: Hrkt
+      - text: zenkoku
+        type: Latn
+    type: text
+  id: 436233
+  response:
+    content:
+      text: the whole country
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436233
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW03377A.mp3
+      text: 作業
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 77
+      sentences:
+      - difficulty: 26167
+        id: 1120643
+        item_id: 436245
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS03377A.mp3
+        text: <b>作業</b>するにはもっと広いスペースが必要だ。
+        translations:
+        - difficulty: 225
+          id: 247944
+          language: en
+          text: I need a bigger space to work.
+          uri: http://iknow.jp/sentences/247944
+        transliterations:
+        - text: <b>さぎょう</b> する には もっと ひろい すぺーす が ひつよう だ。
+          type: Hira
+        - text: <b>さぎょう</b> する には もっと ひろい スペース が ひつよう だ。
+          type: Hrkt
+        - text: <b>sagyou</b> suru niha motto hiroi supe-su ga hitsuyou da.
+          type: Latn
+        uri: http://iknow.jp/sentences/1120643
+      transliterations:
+      - text: さぎょう
+        type: Hira
+      - text: さぎょう
+        type: Hrkt
+      - text: sagyou
+        type: Latn
+    type: text
+  id: 436245
+  response:
+    content:
+      text: work, operation
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436245
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW04694A.mp3
+      text: 生産
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 78
+      sentences:
+      - difficulty: 20515
+        id: 1215610
+        item_id: 301835
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS04694A.mp3
+        text: ボルドーはワインの<b>生産</b>で有名だ。
+        translations:
+        - difficulty: 1218
+          id: 1527372
+          language: en
+          text: Bordeaux is famous for wine production.
+          uri: http://iknow.jp/sentences/1527372
+        transliterations:
+        - text: ぼるどー は わいん の <b>せいさん</b> で ゆうめい だ。
+          type: Hira
+        - text: ボルドー は ワイン の <b>せいさん</b> で ゆうめい だ。
+          type: Hrkt
+        - text: borudo- ha wain no <b>seisan</b> de yuumei da.
+          type: Latn
+        uri: http://iknow.jp/sentences/1215610
+      transliterations:
+      - text: せいさん
+        type: Hira
+      - text: せいさん
+        type: Hrkt
+      - text: seisan
+        type: Latn
+    type: text
+  id: 301835
+  response:
+    content:
+      text: production
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/301835
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW01972A.mp3
+      text: 管理
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 79
+      sentences:
+      - difficulty: 24754
+        id: 1215622
+        item_id: 436272
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS01972A.mp3
+        text: 彼女が私のスケジュールを<b>管理</b>している。
+        translations:
+        - difficulty: 883
+          id: 248014
+          language: en
+          text: She manages my schedule.
+          uri: http://iknow.jp/sentences/248014
+        transliterations:
+        - text: かのじょ が わたし の すけじゅーる を <b>かんり</b> して いる。
+          type: Hira
+        - text: かのじょ が わたし の スケジュール を <b>かんり</b> して いる。
+          type: Hrkt
+        - text: kanojo ga watashi no sukeju-ru wo <b>kanri</b> shite iru.
+          type: Latn
+        uri: http://iknow.jp/sentences/1215622
+      transliterations:
+      - text: かんり
+        type: Hira
+      - text: かんり
+        type: Hrkt
+      - text: kanri
+        type: Latn
+    type: text
+  id: 436272
+  response:
+    content:
+      text: management, administration
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436272
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW04963A.mp3
+      text: 増加
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 80
+      sentences:
+      - difficulty: 19102
+        id: 1128023
+        item_id: 2959822
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS04963A.mp3
+        text: 島の人口は年々<b>増加</b>しています。
+        translations:
+        - difficulty: 1133
+          id: 1594733
+          language: en
+          text: The population of the island is increasing every year.
+          uri: http://iknow.jp/sentences/1594733
+        transliterations:
+        - text: しま の じんこう は ねんねん <b>ぞうか</b> して います。
+          type: Hira
+        - text: しま の じんこう は ねんねん <b>ぞうか</b> して います。
+          type: Hrkt
+        - text: shima no jinkou ha nennen <b>zouka</b> shite imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/1128023
+      transliterations:
+      - text: ぞうか
+        type: Hira
+      - text: ぞうか
+        type: Hrkt
+      - text: zouka
+        type: Latn
+    type: text
+  id: 2959822
+  response:
+    content:
+      text: increase, rise
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2959822
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW06394A.mp3
+      text: 特徴
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 81
+      sentences:
+      - difficulty: 17689
+        id: 248033
+        item_id: 436282
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS06394A.mp3
+        text: この曲線がこの車の<b>特徴</b>です。
+        translations:
+        - difficulty: 714
+          id: 248034
+          language: en
+          text: These curves are a unique feature of this car.
+          uri: http://iknow.jp/sentences/248034
+        transliterations:
+        - text: この きょくせん が この くるま の <b>とくちょう</b> です。
+          type: Hira
+        - text: この きょくせん が この くるま の <b>とくちょう</b> です。
+          type: Hrkt
+        - text: kono kyokusen ga kono kuruma no <b>tokuchou</b> desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248033
+      transliterations:
+      - text: とくちょう
+        type: Hira
+      - text: とくちょう
+        type: Hrkt
+      - text: tokuchou
+        type: Latn
+    type: text
+  id: 436282
+  response:
+    content:
+      text: distinctive feature, characteristic
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436282
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW02270A.mp3
+      text: 強調
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 82
+      sentences:
+      - difficulty: 19102
+        id: 248037
+        item_id: 436284
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS02270A.mp3
+        text: 彼は良いところだけを<b>強調</b>した。
+        translations:
+        - difficulty: 1027
+          id: 1594734
+          language: en
+          text: He only emphasized good points.
+          uri: http://iknow.jp/sentences/1594734
+        transliterations:
+        - text: かれ は よい ところ だけ を <b>きょうちょう</b> した。
+          type: Hira
+        - text: かれ は よい ところ だけ を <b>きょうちょう</b> した。
+          type: Hrkt
+        - text: kare ha yoi tokoro dake wo <b>kyouchou</b> shita.
+          type: Latn
+        uri: http://iknow.jp/sentences/248037
+      transliterations:
+      - text: きょうちょう
+        type: Hira
+      - text: きょうちょう
+        type: Hrkt
+      - text: kyouchou
+        type: Latn
+    type: text
+  id: 436284
+  response:
+    content:
+      text: emphasis, stress
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436284
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW04736A.mp3
+      text: 制度
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 83
+      sentences:
+      - difficulty: 20515
+        id: 248039
+        item_id: 299789
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS04736A.mp3
+        text: 来年から新しい<b>制度</b>が始まります。
+        translations:
+        - difficulty: 553
+          id: 248040
+          language: en
+          text: A new system will start from next year.
+          uri: http://iknow.jp/sentences/248040
+        transliterations:
+        - text: らいねん から あたらしい <b>せいど</b> が はじまります。
+          type: Hira
+        - text: らいねん から あたらしい <b>せいど</b> が はじまります。
+          type: Hrkt
+        - text: rainen kara atarashii <b>seido</b> ga hajimarimasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248039
+      transliterations:
+      - text: せいど
+        type: Hira
+      - text: せいど
+        type: Hrkt
+      - text: seido
+        type: Latn
+    type: text
+  id: 299789
+  response:
+    content:
+      text: system
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/299789
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW01749A.mp3
+      text: 株
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 84
+      sentences:
+      - difficulty: 12037
+        id: 248073
+        item_id: 436299
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS01749A.mp3
+        text: 最近<b>株</b>を始めました。
+        translations:
+        - difficulty: 1218
+          id: 248074
+          language: en
+          text: I recently started investing in stocks.
+          uri: http://iknow.jp/sentences/248074
+        transliterations:
+        - text: さいきん <b>かぶ</b> を はじめました。
+          type: Hira
+        - text: さいきん <b>かぶ</b> を はじめました。
+          type: Hrkt
+        - text: saikin <b>kabu</b> wo hajimemashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/248073
+      transliterations:
+      - text: かぶ
+        type: Hira
+      - text: かぶ
+        type: Hrkt
+      - text: kabu
+        type: Latn
+    type: text
+  id: 436299
+  response:
+    content:
+      text: stock, share
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436299
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW02567A.mp3
+      text: 加える
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 85
+      sentences:
+      - difficulty: 19102
+        id: 1215630
+        item_id: 217866
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS02567A.mp3
+        text: 塩、コショウを<b>加えて</b>ください。
+        translations:
+        - difficulty: 650
+          id: 1594735
+          language: en
+          text: Please add salt and pepper.
+          uri: http://iknow.jp/sentences/1594735
+        transliterations:
+        - text: しお、こしょう を <b>くわえて</b> ください。
+          type: Hira
+        - text: しお、コショウ を <b>くわえて</b> ください。
+          type: Hrkt
+        - text: shio,koshou wo <b>kuwaete</b> kudasai.
+          type: Latn
+        uri: http://iknow.jp/sentences/1215630
+      transliterations:
+      - text: くわえる
+        type: Hira
+      - text: くわえる
+        type: Hrkt
+      - text: kuwaeru
+        type: Latn
+    type: text
+  id: 217866
+  response:
+    content:
+      text: add (things of the same or different kinds)
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/217866
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW02240A.mp3
+      text: 強化
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 86
+      sentences:
+      - difficulty: 19102
+        id: 248115
+        item_id: 237820
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS02240A.mp3
+        text: 国は国語教育を<b>強化</b>しています。
+        translations:
+        - difficulty: 1907
+          id: 1594736
+          language: en
+          text: The government is strengthening its native language education.
+          uri: http://iknow.jp/sentences/1594736
+        transliterations:
+        - text: くに は こくご きょういく を <b>きょうか</b> して います。
+          type: Hira
+        - text: くに は こくご きょういく を <b>きょうか</b> して います。
+          type: Hrkt
+        - text: kuni ha kokugo kyouiku wo <b>kyouka</b> shite imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248115
+      transliterations:
+      - text: きょうか
+        type: Hira
+      - text: きょうか
+        type: Hrkt
+      - text: kyouka
+        type: Latn
+    type: text
+  id: 237820
+  response:
+    content:
+      text: strengthening
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/237820
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW04803A.mp3
+      text: 設計
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 87
+      sentences:
+      - difficulty: 16276
+        id: 248127
+        item_id: 436323
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS04803A.mp3
+        text: 兄は船の<b>設計</b>をしています。
+        translations:
+        - difficulty: 562
+          id: 248128
+          language: en
+          text: My big brother is designing a ship.
+          uri: http://iknow.jp/sentences/248128
+        transliterations:
+        - text: あに は ふね の <b>せっけい</b> を して います。
+          type: Hira
+        - text: あに は ふね の <b>せっけい</b> を して います。
+          type: Hrkt
+        - text: ani ha fune no <b>sekkei</b> wo shite imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/248127
+      transliterations:
+      - text: せっけい
+        type: Hira
+      - text: せっけい
+        type: Hrkt
+      - text: sekkei
+        type: Latn
+    type: text
+  id: 436323
+  response:
+    content:
+      text: design, plan
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436323
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW05501A.mp3
+      text: 段階
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 88
+      sentences:
+      - difficulty: 23341
+        id: 248143
+        item_id: 322360
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS05501A.mp3
+        text: この<b>段階</b>では、決断するのはまだ早い。
+        translations:
+        - difficulty: 557
+          id: 248144
+          language: en
+          text: At this stage, it is still early to decide.
+          uri: http://iknow.jp/sentences/248144
+        transliterations:
+        - text: この <b>だんかい</b> では、けつだんする の は まだ はやい。
+          type: Hira
+        - text: この <b>だんかい</b> では、けつだんする の は まだ はやい。
+          type: Hrkt
+        - text: kono <b>dankai</b> deha,ketsudansuru no ha mada hayai.
+          type: Latn
+        uri: http://iknow.jp/sentences/248143
+      transliterations:
+      - text: だんかい
+        type: Hira
+      - text: だんかい
+        type: Hrkt
+      - text: dankai
+        type: Latn
+    type: text
+  id: 322360
+  response:
+    content:
+      text: stage
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/322360
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW01053A.mp3
+      text: 行う
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 89
+      sentences:
+      - difficulty: 23341
+        id: 1215633
+        item_id: 436168
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS01053A.mp3
+        text: その会社は来月、キャンペーンを<b>行う</b>。
+        translations:
+        - difficulty: 712
+          id: 1594737
+          language: en
+          text: The company is going to run a campaign next month.
+          uri: http://iknow.jp/sentences/1594737
+        transliterations:
+        - text: その かいしゃ は らいげつ、きゃんぺーん を <b>おこなう</b>。
+          type: Hira
+        - text: その かいしゃ は らいげつ、キャンペーン を <b>おこなう</b>。
+          type: Hrkt
+        - text: sono kaisha ha raigetsu,kyanpe-n wo <b>okonau</b>.
+          type: Latn
+        uri: http://iknow.jp/sentences/1215633
+      transliterations:
+      - text: おこなう
+        type: Hira
+      - text: おこなう
+        type: Hrkt
+      - text: okonau
+        type: Latn
+    type: text
+  id: 436168
+  response:
+    content:
+      text: do, carry out
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436168
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW02612A.mp3
+      text: 経済
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 90
+      sentences:
+      - difficulty: 16276
+        id: 247843
+        item_id: 436202
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS02612A.mp3
+        text: 大学で<b>経済</b>を勉強しました。
+        translations:
+        - difficulty: 1027
+          id: 247844
+          language: en
+          text: I studied economics in college.
+          uri: http://iknow.jp/sentences/247844
+        transliterations:
+        - text: だいがく で <b>けいざい</b> を べんきょうしました。
+          type: Hira
+        - text: だいがく で <b>けいざい</b> を べんきょうしました。
+          type: Hrkt
+        - text: daigaku de <b>keizai</b> wo benkyoushimashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/247843
+      transliterations:
+      - text: けいざい
+        type: Hira
+      - text: けいざい
+        type: Hrkt
+      - text: keizai
+        type: Latn
+    type: text
+  id: 436202
+  response:
+    content:
+      text: economy, economics
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436202
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW02925A.mp3
+      text: 工場
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 91
+      sentences:
+      - difficulty: 17689
+        id: 247949
+        item_id: 436247
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS02975A.mp3
+        text: 彼は食品<b>工場</b>で働いています。
+        translations:
+        - difficulty: 277
+          id: 1594741
+          language: en
+          text: He works at a food factory.
+          uri: http://iknow.jp/sentences/1594741
+        transliterations:
+        - text: かれ は しょくひん <b>こうじょう</b> で はたらいて います。
+          type: Hira
+        - text: かれ は しょくひん <b>こうじょう</b> で はたらいて います。
+          type: Hrkt
+        - text: kare ha shokuhin <b>koujou</b> de hataraite imasu.
+          type: Latn
+        uri: http://iknow.jp/sentences/247949
+      transliterations:
+      - text: こうじょう
+        type: Hira
+      - text: こうじょう
+        type: Hrkt
+      - text: koujou
+        type: Latn
+    type: text
+  id: 436247
+  response:
+    content:
+      text: factory, plant
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436247
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW02058A.mp3
+      text: 技術
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 92
+      sentences:
+      - difficulty: 20515
+        id: 247957
+        item_id: 436251
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS02058A.mp3
+        text: 彼は非常に高い<b>技術</b>を持っている。
+        translations:
+        - difficulty: 745
+          id: 247958
+          language: en
+          text: He has very advanced skills.
+          uri: http://iknow.jp/sentences/247958
+        transliterations:
+        - text: かれ は ひじょうに たかい <b>ぎじゅつ</b> を もって いる。
+          type: Hira
+        - text: かれ は ひじょうに たかい <b>ぎじゅつ</b> を もって いる。
+          type: Hrkt
+        - text: kare ha hijouni takai <b>gijutsu</b> wo motte iru.
+          type: Latn
+        uri: http://iknow.jp/sentences/247957
+      transliterations:
+      - text: ぎじゅつ
+        type: Hira
+      - text: ぎじゅつ
+        type: Hrkt
+      - text: gijutsu
+        type: Latn
+    type: text
+  id: 436251
+  response:
+    content:
+      text: skill, technology
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436251
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW03703A.mp3
+      text: 施設
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 93
+      sentences:
+      - difficulty: 27580
+        id: 1177931
+        item_id: 436386
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS03703A.mp3
+        text: そのホテルにはレジャー<b>施設</b>がたくさんある。
+        translations:
+        - difficulty: 759
+          id: 248278
+          language: en
+          text: There are a lot of leisure facilities in the hotel.
+          uri: http://iknow.jp/sentences/248278
+        transliterations:
+        - text: その ほてる には れじゃー <b>しせつ</b> が たくさん ある。
+          type: Hira
+        - text: その ホテル には レジャー <b>しせつ</b> が たくさん ある。
+          type: Hrkt
+        - text: sono hoteru niha reja- <b>shisetsu</b> ga takusan aru.
+          type: Latn
+        uri: http://iknow.jp/sentences/1177931
+      transliterations:
+      - text: しせつ
+        type: Hira
+      - text: しせつ
+        type: Hrkt
+      - text: shisetsu
+        type: Latn
+    type: text
+  id: 436386
+  response:
+    content:
+      text: facilities, institution
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/436386
+- cue:
+    content:
+      sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JW01767A.mp3
+      text: 神
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 94
+      sentences:
+      - difficulty: 12037
+        id: 247435
+        item_id: 295174
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JS01767A.mp3
+        text: 彼は<b>神</b>を信じている。
+        translations:
+        - difficulty: 294
+          id: 247436
+          language: en
+          text: He believes in God.
+          uri: http://iknow.jp/sentences/247436
+        transliterations:
+        - text: かれ は <b>かみ</b> を しんじて いる。
+          type: Hira
+        - text: かれ は <b>かみ</b> を しんじて いる。
+          type: Hrkt
+        - text: kare ha <b>kami</b> wo shinjite iru.
+          type: Latn
+        uri: http://iknow.jp/sentences/247435
+      transliterations:
+      - text: かみ
+        type: Hira
+      - text: かみ
+        type: Hrkt
+      - text: kami
+        type: Latn
+    type: text
+  id: 295174
+  response:
+    content:
+      text: god
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/295174
+- cue:
+    content:
+      sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JW04380A.mp3
+      text: 人口
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 95
+      sentences:
+      - difficulty: 20515
+        id: 248427
+        item_id: 296549
+        language: ja
+        sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JS04380A.mp3
+        text: その国の<b>人口</b>はどのくらいですか。
+        translations:
+        - difficulty: 1062
+          id: 1594742
+          language: en
+          text: What's the population of the country?
+          uri: http://iknow.jp/sentences/1594742
+        transliterations:
+        - text: その くに の <b>じんこう</b> は どのくらい です か。
+          type: Hira
+        - text: その くに の <b>じんこう</b> は どのくらい です か。
+          type: Hrkt
+        - text: sono kuni no <b>jinkou</b> ha donokurai desu ka.
+          type: Latn
+        uri: http://iknow.jp/sentences/248427
+      transliterations:
+      - text: じんこう
+        type: Hira
+      - text: じんこう
+        type: Hrkt
+      - text: jinkou
+        type: Latn
+    type: text
+  id: 296549
+  response:
+    content:
+      text: population
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/296549
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/JW06207A.mp3
+      text: 党
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 96
+      sentences:
+      - difficulty: 17689
+        id: 247907
+        item_id: 334812
+        language: ja
+        sound: http://assets2.iknow.jp/assets/legacy/JLL/audio/JS06207A.mp3
+        text: <b>党</b>の代表が質問に答えました。
+        translations:
+        - difficulty: 1454
+          id: 247908
+          language: en
+          text: The party spokesman answered the question.
+          uri: http://iknow.jp/sentences/247908
+        transliterations:
+        - text: <b>とう</b> の だいひょう が しつもん に こたえました。
+          type: Hira
+        - text: <b>とう</b> の だいひょう が しつもん に こたえました。
+          type: Hrkt
+        - text: <b>tou</b> no daihyou ga shitsumon ni kotaemashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/247907
+      transliterations:
+      - text: とう
+        type: Hira
+      - text: とう
+        type: Hrkt
+      - text: tou
+        type: Latn
+    type: text
+  id: 334812
+  response:
+    content:
+      text: political party
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/334812
+- cue:
+    content:
+      sound: http://assets0.iknow.jp/assets/legacy/JLL/audio/JW09551A.mp3
+      text: 輸入
+    related:
+      language: ja
+      part_of_speech: Verbal Noun
+      position: 97
+      sentences:
+      - difficulty: 21928
+        id: 1215619
+        item_id: 375672
+        language: ja
+        sound: http://assets1.iknow.jp/assets/legacy/JLL/audio/JS09551A.mp3
+        text: これはイタリアから<b>輸入</b>した服です。
+        translations:
+        - difficulty: 1140
+          id: 247986
+          language: en
+          text: These clothes are imported from Italy.
+          uri: http://iknow.jp/sentences/247986
+        transliterations:
+        - text: これ は いたりあ から <b>ゆにゅう</b> した ふく です。
+          type: Hira
+        - text: これ は イタリア から <b>ゆにゅう</b> した ふく です。
+          type: Hrkt
+        - text: kore ha itaria kara <b>yunyuu</b> shita fuku desu.
+          type: Latn
+        uri: http://iknow.jp/sentences/1215619
+      transliterations:
+      - text: ゆにゅう
+        type: Hira
+      - text: ゆにゅう
+        type: Hrkt
+      - text: yunyuu
+        type: Latn
+    type: text
+  id: 375672
+  response:
+    content:
+      text: import
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/375672
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JW02695A.mp3
+      text: 煮る
+    related:
+      language: ja
+      part_of_speech: Verb
+      position: 98
+      sentences:
+      - difficulty: 9211
+        id: 305203
+        item_id: 2961901
+        language: ja
+        sound: http://assets3.iknow.jp/assets/legacy/JLL/audio/Int/JS02695A.mp3
+        text: 何から<b>煮よう</b>か。
+        translations:
+        - difficulty: 368
+          id: 305204
+          language: en
+          text: What shall I cook first?
+          uri: http://iknow.jp/sentences/305204
+        transliterations:
+        - text: なに から <b>によう</b> か。
+          type: Hira
+        - text: なに から <b>によう</b> か。
+          type: Hrkt
+        - text: nani kara <b>niyou</b> ka.
+          type: Latn
+        uri: http://iknow.jp/sentences/305203
+      transliterations:
+      - text: にる
+        type: Hira
+      - text: にる
+        type: Hrkt
+      - text: niru
+        type: Latn
+    type: text
+  id: 2961901
+  response:
+    content:
+      text: simmer, cook
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/2961901
+- cue:
+    content:
+      sound: http://assets3.iknow.jp/assets/users/Smart.fm/8lakb46106n1o.mp3
+      text: コンサート
+    related:
+      language: ja
+      part_of_speech: Noun
+      position: 99
+      sentences:
+      - difficulty: 24754
+        id: 278297
+        item_id: 401494
+        language: ja
+        sound: http://assets3.iknow.jp/assets/users/Smart.fm/5l5e7e8b7fv90.mp3
+        text: 友達とジャズの<b>コンサート</b>に行きました。
+        translations:
+        - difficulty: 400
+          id: 1594743
+          language: en
+          text: I went to a jazz concert with my friend.
+          uri: http://iknow.jp/sentences/1594743
+        transliterations:
+        - text: ともだち と じゃず の <b>こんさーと</b> に いきました。
+          type: Hira
+        - text: ともだち と ジャズ の <b>コンサート</b> に いきました。
+          type: Hrkt
+        - text: tomodachi to jazu no <b>konsa-to</b> ni ikimashita.
+          type: Latn
+        uri: http://iknow.jp/sentences/278297
+      transliterations:
+      - text: こんさーと
+        type: Hira
+      - text: コンサート
+        type: Hrkt
+      - text: konsa-to
+        type: Latn
+    type: text
+  id: 401494
+  response:
+    content:
+      text: concert
+    related:
+      language: en
+    type: meaning
+  uri: http://iknow.jp/items/401494
