@@ -1,0 +1,46 @@
+@import url("../css/jlpt_master.css");
+
+body {
+	color: black;
+	/*background: #FFFEFD;*/
+	background: #FBFCE9;
+}
+
+a:hover {
+	background-color: #f7f744;
+}
+
+th {
+	background-color: #F7FFBE
+}
+
+/* for ie only - since it doesn't support alternate row css */
+.row0 {
+	background-color: #fdfcef
+}
+.row1 {
+	background-color: #fffffe
+}
+
+table#listing tr:nth-child(odd) {
+  background-color: #fdfcef;
+}
+table#listing tr:nth-child(even) {
+  background-color: #fffffe;
+}
+
+table#listing {
+	background-color: #B1B01B;
+}
+
+.LineHighlight {
+	background-color: #FdFFBE;
+}
+
+.lisQuestion {
+	background-color: #FAFBD8;	
+}
+
+.menuHeading {
+	background-color: #EFF7BD;
+}

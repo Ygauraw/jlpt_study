@@ -1,0 +1,165 @@
+
+@font-face {
+  font-family: "KanjiChart";
+  src: url(http://www.users.on.net/~spurry/fonts/EpsonThickRoundGothic.ttf) format("truetype");
+}
+
+.kanjiListWindow {
+	margin-left: 5px;
+	margin-right: 35px;
+	margin-top:-50px;
+}
+
+.kanjiListBox {
+	margin: 10px;
+	font-family:"KanjiChart";
+}
+
+/* compound */
+.cmp {
+	clear: both;
+	font-size: 14px;
+	display: block;
+	margin-left: 5px;
+	margin-top: 2px;
+}
+
+/* compounds */
+.cmps {
+	clear: both;
+	display: inline; /* IE needs this to prevent margin bug */
+	float: left;
+	margin-top: 7px;
+	margin-bottom: 10px;
+	margin-left: 0;
+	border: 2px solid #ddcc00;
+	padding: 5px;
+	background-color: #fffeee;
+	min-width: 85%;
+	min-height: 140px;
+}
+
+@font-face {
+  font-family: "compoundFont";
+	src: url(http://mplus-fonts.sourceforge.jp/webfonts/mplus-1m-regular.ttf) format("truetype");
+}
+
+/* compound char */
+.c_ch {
+	display: inline;
+	font-size: 20px;
+	font-family:"Meiryo", "compoundFont";
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	border:2px;
+	padding: 2px;
+}
+
+/* compound kana */
+.c_kn {
+	display: inline;
+	margin-left: 5px;
+	font-size: 120%;
+	font-family:"Meiryo","compoundFont";
+}
+
+/* compound type*/
+.c_ty {
+	display: inline;
+	font-size: 70%;
+	margin-left: 5px;
+}
+
+/* compound translation */
+.c_tr {
+	display: inline;
+	margin-left: 5px;
+	font-size: 100%;
+}
+
+/* compound header */
+.c_hd {
+	font-size: 13px;
+	margin-left: 0;
+	margin-top: 13px;
+	font-weight: bold;
+	/*background-color: #FFFFF2;*/
+}
+
+/* kanji id */
+.k_id {
+	float: right;
+	font-size: 120%;
+	margin-right: 5px;
+}
+
+.logoLevels a:hover {
+	background-color: transparent;
+}
+
+.kanjiListBox a:link {
+	color: black;
+	text-decoration: none;
+}
+
+.kanjiListBox a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+.k_box {
+	float: left;
+	border: 2px groove;
+	padding: 2px;
+	margin: 2px;
+	font-size: 42px;
+}
+
+/*kanji meaning*/
+.k_m {
+	vertical-align: top;
+	font-size: 18px;
+	display: inline;
+	background-color: white;
+	margin-left: 0;
+	margin-top: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/*kanji char*/
+.k_ch {
+	background-color: #FFFFF2;
+	font-size: 64px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family:"KanjiChart";
+}
+
+.k0 {
+	background-color: #FFFFFE;
+}
+
+.k1 {
+	background-color: #FFFFEF;
+}
+
+.readings {
+	font-size: 110%;
+	margin-top: 5px;
+	letter-spacing: 1px;
+	font-family:"Meiryo","compoundFont";
+}
+
+.readingBox {
+	clear: both;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+.kanjiListWindow td {
+	vertical-align: top;
+	text-align: left;
+}

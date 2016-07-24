@@ -1,0 +1,104 @@
+@import url("../css/jlpt_master.css");
+
+/* Level N4 Style Sheet */
+
+.heading {
+	background-color: #C0FF97;
+}
+
+.highlight {
+	background-color: #C0FF97
+}
+
+/*used in cooltree*/
+.menuHeading {
+	background-color: #BDF4CB;
+}
+
+body {
+	background-color: #F2FFEA;
+	color: black;
+}
+
+th {
+	background-color: #C0FF97
+}
+
+.pos {
+	background-color: #C0FF97
+}
+
+/* for ie only - since it doesn't support alternate row css */
+.row0 {
+	background-color: #FAFFF7
+}
+
+.row1 {
+	background-color: #E8FFD9
+}
+
+table#listing tr:nth-child(odd) {
+  background-color: #FAFFF7;
+}
+table#listing tr:nth-child(even) {
+  background-color: #E8FFD9;
+}
+
+table#listing {
+	background-color: #176516;
+}
+
+/* kanji list colours only */
+.cmps {
+	border-color: #339966;
+	background-color: #E8FFD9;
+}
+
+.c_ch {
+	background-color: #DDFED1;
+}
+
+.c_kn {
+	background-color: #CAFEB8;
+}
+
+.k_ch {
+	background-color: #E8FFD9;
+}
+
+.c_hd {
+	background-color: #BDF4CB;
+}
+
+.k0 {
+	background-color: #ffffff;
+}
+
+.k1 {
+	background-color: #CAFEB8;
+}
+
+.lisAnswers {
+	background-color: #F2FFEA;
+}
+
+.lisStatement {
+	background-color: #FAFFF7;
+}
+
+.lisQuestion {
+	background-color: #E8FFD9;
+}
+
+.LineHighlight {
+	background-color: #FAFFF7;
+}
+
+a:hover {
+	background-color: #7CEB98;
+}
+
+.grammarLink a {color:#2200C1;}
+.grammarLink a:hover {background-color:#CAFEB8;}
+.grammarLink  a:visited {color:#2200C1;}
+.grammarLink  a:active {color:#2200C1; }

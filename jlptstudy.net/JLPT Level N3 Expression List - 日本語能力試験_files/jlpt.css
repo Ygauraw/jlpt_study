@@ -1,0 +1,96 @@
+@import url("../css/jlpt_master.css");
+
+/* N3 css */
+
+body {
+	color: black;
+	background: #FFF4EA;
+}
+
+.heading {
+	background-color: #FFD9B7;
+}
+
+/*used in cooltree*/
+.menuHeading {
+/* General Menu Heading colour - override just back color, keep other properties */
+	background-color: #FFD9B7;
+}
+
+.pos {
+	background-color: #FFD9B7
+}
+
+th {
+	background-color: #FFD9B7
+}
+
+/* table horiz back color */
+.highlight {
+	background-color: #FFD9B7
+}
+
+/* pinkish rows for Level 2 */
+/* for ie only - since it doesn't support alternate row css */
+.row0 {
+	background-color: #FFF4EA
+}
+
+.row1 {
+	background-color: #fffffe
+}
+
+table#listing tr:nth-child(odd) {
+  background-color: #FFF4EA;
+}
+table#listing tr:nth-child(even) {
+  background-color: #fffffe;
+}
+
+table#listing {
+	background-color: #CB7A2B;
+}
+
+.k0 {
+	background-color: #ffffff;
+}
+
+.k1 {
+	background-color: #FFE1C6;
+}
+
+/* link/url colours */
+a:hover {
+	background-color: #FFC48E;
+}
+
+.cmps {
+	border-color: #FF9331;
+	background-color: #FFF2D9;
+}
+
+.k_ch {
+	background-color: #ffffff;
+}
+
+.c_hd {
+	background-color: #FFF2D9;
+}
+
+/* kanji colour - override only */
+.c_ch{
+	background-color: #FFE1C6;
+}
+
+.c_kn {
+	background-color: #FFF7E6;
+}
+
+.LineHighlight {
+	background-color: #eedddd;
+}
+
+.readingBox {
+	background-color: #FFF9EA;
+}
+

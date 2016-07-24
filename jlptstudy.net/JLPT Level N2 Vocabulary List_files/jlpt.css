@@ -1,0 +1,87 @@
+@import url("../css/jlpt_master.css");
+
+/* level 2 css */
+
+.heading {
+	background-color: #fecbdc;
+}
+
+/*used in cooltree*/
+.menuHeading {
+/* General Menu Heading colour - override just back color, keep other properties */
+	background-color: #ffdbef;
+}
+
+th {
+	background-color: #fecbdc
+}
+
+/* table horiz back color */
+.highlight {
+	background-color: #fecbdc
+}
+
+/* pinkish rows for Level 2 */
+.row0 {
+	background-color: #ffefef
+}
+
+.row1 {
+	background-color: #fffffe
+}
+
+table#listing tr:nth-child(odd) {
+  background-color: #ffefef;
+}
+table#listing tr:nth-child(even) {
+  background-color: #fffffe;
+}
+
+table#listing {
+	background-color: #77246B;
+}
+
+/* pinkish kanji boxes */
+.k0 {
+	background-color: #ffffff;
+}
+
+.k1 {
+	background-color: #fbefff;
+}
+
+body {
+	color: black;
+}
+
+/* link/url colours */
+a:hover {
+	background-color: #ffcbdc;
+}
+
+/* change colours only for compounds to pinkish */
+.cmps {
+	border-color: #fecbdc;
+	background-color: #fbefff;
+}
+
+.k_ch {
+	background-color: #ffffff;
+}
+
+/* kanji colour - override only */
+.c_ch  {
+	background-color: #FCE7F2;
+}
+
+.c_kn {
+	/*background-color: #ffefef;*/
+}
+
+.LineHighlight {
+	background-color: #eedddd;
+}
+
+.lisQuestion {
+	background-color:#F5ECF5;
+}
