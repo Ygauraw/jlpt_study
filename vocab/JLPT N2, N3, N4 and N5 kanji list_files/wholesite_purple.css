@@ -1,0 +1,531 @@
+/*
+IE processes commented CSS!!!
+*/
+
+body, td {
+	font-family: Arial, sans-serif;
+	background-color:#ffffff;
+	color:#000000;
+	margin:0px;
+	font-size:0.95em;
+}
+
+img {border:0}
+
+.hidden{display: none}
+.left{text-align:left}
+.right{text-align:right}
+.center{text-align:center}
+
+#contentcontainer{
+	width:100%;
+}
+
+#contentcontainer.hasleftnav{
+	text-align:center;
+	background: url(/site_base/images/greybg_leftnav_260.gif) repeat-y;
+	float:right;
+	min-width:932px;
+}
+
+#contentfull{padding: 0px 50px 30px 50px}
+
+#contentright{
+	padding:0px 0px 30px 0px;
+	margin-left:280px;
+	width:70%;
+	text-align:left;
+}
+
+table{
+	border-collapse:collapse;
+}
+
+table td{ 
+	text-align:left;
+	padding:10px;
+}
+table.tableallcontentcentre td{text-align:center}
+
+.warning {
+	color: #FF0000;
+	font-weight:bold;
+}
+
+.smalltext{
+	font-size:0.6em;
+}
+
+.center600 {
+	margin:0 auto;
+	text-align:left;
+	width:600px
+} 
+
+
+#jahelpmebox{
+	background-color:#dddddd;
+	border:2px solid #eeeeee;
+	padding:10px;
+}
+
+#langbutton {
+	float:left;
+	padding:5px;
+}
+
+#langbutton a { 
+	color: #FFFFFF;
+	text-decoration:none;
+}
+
+#langbutton a:hover{ 
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.levelsummary{
+	width:100%;
+	padding:10px;	
+	background-color:#eeeeee;
+	font-size:1.5em;
+}
+
+.levelsummary td{
+	background-color:#eeeeee;
+}
+
+.clickeffect {
+	background:#F5D4FF;
+	color:#999999;
+}
+
+#searchbox{
+	float:right;
+	margin:5px;
+}
+
+#starbar {
+	float:right;
+	padding:5px;
+	z-index:2;
+}
+
+#likebutton {
+	float:left;
+	padding:5px;
+	z-index:2;
+}
+
+#loginbar {
+	float:right;
+	padding:0 15px 0 0;
+	font-size:0.80em;
+}
+
+.langtabs a{
+	font-size:2em;
+	background-color:#dddddd;
+	width:20%;
+	text-align:center;
+	padding:10px;
+	line-height:70px;
+	color:black;
+	text-decoration:none;
+}
+.langtabs a:hover{
+	background-color:#eeeeee;
+}
+
+h1 {
+text-align:center
+}
+
+h2 {
+border-style: solid;
+border-width: 0px 0px 1px 0px;
+border-color:#000000;
+}
+
+h2 a{
+text-decoration:none;
+color:black;
+}
+
+#header{
+color:#FFFFFF;
+background-color:#000000;
+padding:0px; /*7px*/
+}
+
+.topnav {
+margin: 0; 
+padding: 0;
+}
+
+.topnav a{
+text-decoration:none;
+text-align:center;
+color:#FFFFFF;
+background:#554488 url(/site_base/images/barheader.jpg);
+padding: 7px;
+margin: 3px;
+}
+
+.topnav li{
+display:inline;
+}
+
+.topnav a:visited {
+color:#FFFFFF;
+background:#554488 url(/site_base/images/barheader.jpg);
+}
+
+.topnav a:active{
+color:#FFFFFF;
+background:#554488 url(/site_base/images/barheader.jpg);
+}
+
+.topnav a:hover{
+color:#000000;
+background:#FFFFFF url(/site_base/images/barselect.jpg);
+}
+
+#menu a.selected{
+color:#000000;
+background:#FFFFFF url(/site_base/images/barselect.jpg);
+}
+
+.topnav ul{
+list-style:none; 
+vertical-align:middle;
+float:left;
+padding:10px; 
+margin:0px;
+}
+
+#footer {
+background:#554488 url(/site_base/images/barheader.jpg);
+color:white;
+border-style: solid;
+border-width: 6px 0px 0px 0px; 
+border-color:#000000;
+padding: 3px 6px 3px 6px;
+}
+
+#footer a {
+color:#FFFFFF;
+}
+
+#footerleft  {
+float:left;
+}
+
+#footerright  {
+float:right;
+text-align:right;
+width:50%;
+}
+
+.floatclear { clear:both; }
+
+.tabbase { 
+background:#554488 url(/site_base/images/barfooter.jpg);
+clear:both; 
+border-style: solid;
+border-width: 0px 0px 0px 0px; 
+border-color:#000000;
+}
+
+form input.submit
+{
+color:#FFFFFF;
+background:#554488 url(/site_base/images/barheader.jpg);
+padding:2px;
+border:none;
+}
+
+form input.submit:hover
+{
+color:#000000;
+background:#FFFFFF url(/site_base/images/barselect.jpg);
+}
+
+.dark{
+color:#FFFFFF;
+background:#554488 url(/site_base/images/barheader.jpg);
+padding:0.6em;
+}
+
+.light{
+background-color:#eeeeee;
+padding:0.6em;
+}
+
+.older{
+background-color:#f8f8f8;
+padding:0.6em;
+}
+
+#leftnavcontainer
+{
+background: #eeeeee;
+width: 260px;
+margin: 0 auto;
+padding: 1em 0;
+text-align: center;
+float:left;
+
+}
+
+ul#leftnav
+{
+text-align: left;
+list-style: none;
+padding: 0px 5px;
+margin-left: 6px;
+width: 90%;
+}
+
+ul#leftnav li
+{
+display: block;
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+ul#leftnav li a
+{
+display: block;
+width: 100%;
+padding: 0.5em 0 0.5em 1em;
+border-width: 1px;
+border-color: #ffe #aaab9c #ccc #fff;
+border-style: solid;
+color: #000;
+text-decoration: none;
+background: #dddddd;
+color:#000000;
+}
+
+#leftnavcontainer>ul#leftnav li a { width: auto; }
+
+ul#leftnav li.selected a
+{
+background: #f0e7d7;
+color: #000000;
+background:#FFFFFF url(/site_base/images/barselect.jpg);
+}
+
+/*Needed for IE*/
+ul#leftnav li.selected li a
+{
+background: #AAAAAA;
+color: #000000;
+background:#dddddd;
+
+}
+
+ul#leftnav li.selected li.selected a
+{
+background: #f0e7d7;
+color: #000000;
+background:#FFFFFF url(/site_base/images/barselectpurple.jpg);
+list-style-type: none;
+}
+
+ul#leftnav li a:hover, ul#leftnav li.selected a:hover
+{
+color: #000000;
+border-color: #aaab9c #fff #fff #ccc;
+background:transparent url(/site_base/images/barselectpurple.jpg);
+}
+
+/* Starbar CSS*/
+
+#starbarcontainer img{
+	padding:2px;
+}
+#starbarcontainertext{
+	font-size:0.80em;
+	vertical-align:top;
+}
+#feedbackpanel{
+	padding: 5px;
+	text-align:left;
+	background-color:#eeeeee;
+	border:1px black solid;
+	display:none;
+	position:absolute;
+	width:170px;	
+	right:5px;
+}
+
+div.img-dropshadow {
+background: url('/site_base/images/dropshadow.gif') no-repeat bottom right;
+margin: 10px 5px;
+padding: 0;
+position: relative;
+}
+ 
+div.img-dropshadow img {
+background-color: #fff;
+border: 1px solid #a9a9a9;
+margin: -5px 5px 5px -5px;
+padding: 4px;
+position: relative;
+vertical-align: bottom;
+}
+
+/*Rules for Ruby annotation by Kitamura Akatsuki ak@tsuki.104.net */
+
+     ruby {
+      text-align:center;
+      white-space:nowrap;
+      text-indent:0;
+      margin:0 -0.2em;
+      vertical-align:0%;
+     }
+
+     ruby>rb,ruby>rbc {
+      display:table-row-group;
+      line-height:90%;
+     }
+
+     ruby>rt,ruby>rbc+rtc {
+      display:table-header-group;
+      font-size:60%;
+      line-height:140%;
+      letter-spacing:0;
+     }
+
+     ruby>rbc+rtc+rtc {
+      display:table-footer-group;
+      font-size:60%;
+      line-height:140%;
+      letter-spacing:0;
+     }
+
+     rbc>rb,rtc>rt {
+      display:table-cell;
+      letter-spacing:0;
+     }
+
+     rtc>rt[rbspan] {
+      display:table-caption;
+     }
+
+     rp {
+      display:none;
+     }
+
+/*End Ruby CSS*/
+
+.menu {
+	width:900px;/*800*/
+	height:32px; 
+	/*font-size:12px;*/ 
+	position:relative; 
+	z-index:100;}
+/* hack to correct IE5.5 faulty box model */
+* html .menu {
+	width:100%;
+	width:900px;
+ }
+/* remove all the bullets, borders and padding from the default list styling */
+.menu ul {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+.menu li {
+	float:left;
+	position:relative;
+}
+/* style the links for the top level */
+.menu a, .menu a:visited {
+	display:block;
+	/*font-size:11px;*/
+	text-decoration:none;
+	color:#fff;
+	height:30px;
+	border:1px solid #000; 
+	border-width:1px 1px 1px 1px; 
+	background:#554488 url(/site_base/images/barheader.jpg);
+	padding:0 5px 0 5px;
+	margin:0 5px 0 5px;
+	line-height:29px;
+}
+/* a hack so that IE5.5 faulty box model is corrected */
+* html .menu a, * html .menu a:visited {
+	width:70px;
+ }
+
+/* style the second level background */
+.menu ul ul a.drop, .menu ul ul a.drop:visited {
+	background:#000;
+}
+/* style the second level hover */
+.menu ul ul a.drop:hover{
+	background:000;
+}
+/* hide the sub levels and give them a positon absolute so that they take up no room */
+.menu ul ul {
+	visibility:hidden;
+	position:absolute;
+	height:0;
+	top:31px;
+	left:0; 
+}
+/* another hack for IE5.5 */
+* html .menu ul ul {
+	top:30px;
+}
+
+
+/* style the table so that it takes no ppart in the layout - required for IE to work */
+.menu table {
+	position:absolute;
+	top:0;
+	left:0; 
+	border-collapse:collapse;
+}
+
+/* style the second level links */
+.menu ul ul a, .menu ul ul a:visited {
+	background:#666666;
+	color:#fff;
+	height:auto;
+	line-height:1em;
+	padding:5px 5px 5px 5px;
+	margin:0px 0px 0px 5px;
+	width:280px;
+	border-width:1px 1px 1px 1px;}
+/* yet another hack for IE5.5 */
+* html .menu ul ul a, * html .menu ul ul a:visited {width:90px;}
+ 
+ * html .menu a:hover, .menu ul ul a:hover{
+color:#000;
+background:#CCCCCC;}
+
+/* style the top level hover */
+.menu a:hover, .menu ul ul a:hover{
+color:#000;
+ background:#FFFFFF url(/site_base/images/barselect.jpg);}
+ * html .menu a:hover{
+color:#000;
+ background:#FFFFFF url(/site_base/images/barselect.jpg);}
+/*
+
+.menu :hover > a, .menu ul ul :hover > a {
+color:#000;
+background-image:url(/site_base/images/barselect.jpg);
+}
+
+ make the second level visible when hover on first level list OR link */
+.menu ul li:hover ul, .menu ul a:hover ul{visibility:visible; }
+/* keep the third level hidden when you hover on first level list OR link */
+.menu ul :hover ul ul{visibility:hidden;}
+/* make the third level visible when you hover over second level list OR link */
+.menu ul :hover ul :hover ul{ visibility:visible;}
