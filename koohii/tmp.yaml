@@ -1,0 +1,97 @@
+---
+frame_index:
+- undef
+- expire_date: ~
+  fail_count: ~
+  frame_num: ~
+  kanji: ~
+  keyword: ~
+  keyword_def: ~
+  last_review: ~
+  leitner_box: ~
+  pass_count: ~
+  story: ~
+  story_date: ~
+  story_pub: ~
+- &1
+  expire_date: 2016-08-04
+  fail_count: '0'
+  frame_num: 1
+  kanji: 一
+  keyword: one
+  keyword_def: ~
+  last_review: 2016-07-02 10:30:56
+  leitner_box: '5'
+  pass_count: '4'
+  story: ~
+  story_date: ~
+  story_pub: ~
+- &2
+  expire_date: 2016-07-27
+  fail_count: '0'
+  frame_num: 2
+  kanji: 二
+  keyword: two
+  keyword_def: ~
+  last_review: 2016-07-02 10:23:18
+  leitner_box: '5'
+  pass_count: '4'
+  story: ~
+  story_date: ~
+  story_pub: ~
+- &3
+  expire_date: 2016-08-13
+  fail_count: '0'
+  frame_num: 3
+  kanji: 三
+  keyword: three
+  keyword_def: ~
+  last_review: 2016-07-12 09:52:00
+  leitner_box: '5'
+  pass_count: '4'
+  story: ~
+  story_date: ~
+  story_pub: ~
+- &4
+  expire_date: 2016-08-04
+  fail_count: '0'
+  frame_num: 4
+  kanji: 四
+  keyword: four
+  keyword_def: ~
+  last_review: 2016-07-01 09:56:22
+  leitner_box: '5'
+  pass_count: '4'
+  story: ~
+  story_date: ~
+  story_pub: ~
+- &5
+  expire_date: 2016-08-03
+  fail_count: '0'
+  frame_num: 5
+  kanji: 五
+  keyword: five
+  keyword_def: ~
+  last_review: 2016-07-01 10:57:31
+  leitner_box: '5'
+  pass_count: '4'
+  story: ~
+  story_date: ~
+  story_pub: ~
+kanji_index:
+  一: *1
+  三: *3
+  二: *2
+  五: *5
+  四: *4
+keyword_index:
+  five: *5
+  four: *4
+  one: *1
+  three: *3
+  two: *2
+meta:
+  file_times:
+    flashcards: 1468943191
+    stories: 1468943133
+    yaml_time: 1468949097
