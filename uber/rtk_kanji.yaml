@@ -1,0 +1,13207 @@
+---
+by_frame:
+- frame: 0
+  kanji: ~
+  keyword: ~
+- &1
+  frame: '1'
+  kanji: 一
+  keyword: one
+- &2
+  frame: '2'
+  kanji: 二
+  keyword: two
+- &3
+  frame: '3'
+  kanji: 三
+  keyword: three
+- &4
+  frame: '4'
+  kanji: 四
+  keyword: four
+- &5
+  frame: '5'
+  kanji: 五
+  keyword: five
+- &6
+  frame: '6'
+  kanji: 六
+  keyword: six
+- &7
+  frame: '7'
+  kanji: 七
+  keyword: seven
+- &8
+  frame: '8'
+  kanji: 八
+  keyword: eight
+- &9
+  frame: '9'
+  kanji: 九
+  keyword: nine
+- &10
+  frame: '10'
+  kanji: 十
+  keyword: ten
+- &11
+  frame: '11'
+  kanji: 口
+  keyword: mouth
+- &12
+  frame: '12'
+  kanji: 日
+  keyword: day
+- &13
+  frame: '13'
+  kanji: 月
+  keyword: month
+- &14
+  frame: '14'
+  kanji: 田
+  keyword: rice field
+- &15
+  frame: '15'
+  kanji: 目
+  keyword: eye
+- &16
+  frame: '16'
+  kanji: 古
+  keyword: old
+- &17
+  frame: '17'
+  kanji: 吾
+  keyword: I
+- &18
+  frame: '18'
+  kanji: 冒
+  keyword: risk
+- &19
+  frame: '19'
+  kanji: 朋
+  keyword: companion
+- &20
+  frame: '20'
+  kanji: 明
+  keyword: bright
+- &21
+  frame: '21'
+  kanji: 唱
+  keyword: chant
+- &22
+  frame: '22'
+  kanji: 晶
+  keyword: sparkle
+- &23
+  frame: '23'
+  kanji: 品
+  keyword: goods
+- &24
+  frame: '24'
+  kanji: 呂
+  keyword: spine
+- &25
+  frame: '25'
+  kanji: 昌
+  keyword: prosperous
+- &26
+  frame: '26'
+  kanji: 早
+  keyword: early
+- &27
+  frame: '27'
+  kanji: 旭
+  keyword: rising sun
+- &28
+  frame: '28'
+  kanji: 世
+  keyword: generation
+- &29
+  frame: '29'
+  kanji: 胃
+  keyword: stomach
+- &30
+  frame: '30'
+  kanji: 旦
+  keyword: nightbreak
+- &31
+  frame: '31'
+  kanji: 胆
+  keyword: gall bladder
+- &32
+  frame: '32'
+  kanji: 亘
+  keyword: span
+- &33
+  frame: '33'
+  kanji: 凹
+  keyword: concave
+- &34
+  frame: '34'
+  kanji: 凸
+  keyword: convex
+- &35
+  frame: '35'
+  kanji: 旧
+  keyword: olden times
+- &36
+  frame: '36'
+  kanji: 自
+  keyword: oneself
+- &37
+  frame: '37'
+  kanji: 白
+  keyword: white
+- &38
+  frame: '38'
+  kanji: 百
+  keyword: hundred
+- &39
+  frame: '39'
+  kanji: 中
+  keyword: in
+- &40
+  frame: '40'
+  kanji: 千
+  keyword: thousand
+- &41
+  frame: '41'
+  kanji: 舌
+  keyword: tongue
+- &42
+  frame: '42'
+  kanji: 升
+  keyword: measuring box
+- &43
+  frame: '43'
+  kanji: 昇
+  keyword: rise up
+- &44
+  frame: '44'
+  kanji: 丸
+  keyword: round
+- &45
+  frame: '45'
+  kanji: 寸
+  keyword: measurement
+- &46
+  frame: '46'
+  kanji: 肘
+  keyword: elbow
+- &47
+  frame: '47'
+  kanji: 専
+  keyword: specialty
+- &48
+  frame: '48'
+  kanji: 博
+  keyword: Dr.
+- &49
+  frame: '49'
+  kanji: 占
+  keyword: fortune-telling
+- &50
+  frame: '50'
+  kanji: 上
+  keyword: above
+- &51
+  frame: '51'
+  kanji: 下
+  keyword: below
+- &52
+  frame: '52'
+  kanji: 卓
+  keyword: eminent
+- &53
+  frame: '53'
+  kanji: 朝
+  keyword: morning
+- &54
+  frame: '54'
+  kanji: 嘲
+  keyword: derision
+- &55
+  frame: '55'
+  kanji: 只
+  keyword: only
+- &56
+  frame: '56'
+  kanji: 貝
+  keyword: shellfish
+- &57
+  frame: '57'
+  kanji: 唄
+  keyword: pop song
+- &58
+  frame: '58'
+  kanji: 貞
+  keyword: upright
+- &59
+  frame: '59'
+  kanji: 員
+  keyword: employee
+- &60
+  frame: '60'
+  kanji: 貼
+  keyword: post a bill
+- &61
+  frame: '61'
+  kanji: 見
+  keyword: see
+- &62
+  frame: '62'
+  kanji: 児
+  keyword: newborn babe
+- &63
+  frame: '63'
+  kanji: 元
+  keyword: beginning
+- &64
+  frame: '64'
+  kanji: 頁
+  keyword: page
+- &65
+  frame: '65'
+  kanji: 頑
+  keyword: stubborn
+- &66
+  frame: '66'
+  kanji: 凡
+  keyword: mediocre
+- &67
+  frame: '67'
+  kanji: 負
+  keyword: defeat
+- &68
+  frame: '68'
+  kanji: 万
+  keyword: ten thousand
+- &69
+  frame: '69'
+  kanji: 句
+  keyword: phrase
+- &70
+  frame: '70'
+  kanji: 肌
+  keyword: texture
+- &71
+  frame: '71'
+  kanji: 旬
+  keyword: decameron
+- &72
+  frame: '72'
+  kanji: 勺
+  keyword: ladle
+- &73
+  frame: '73'
+  kanji: 的
+  keyword: bull's eye
+- &74
+  frame: '74'
+  kanji: 首
+  keyword: neck
+- &75
+  frame: '75'
+  kanji: 乙
+  keyword: fish guts
+- &76
+  frame: '76'
+  kanji: 乱
+  keyword: riot
+- &77
+  frame: '77'
+  kanji: 直
+  keyword: straightaway
+- &78
+  frame: '78'
+  kanji: 具
+  keyword: tool
+- &79
+  frame: '79'
+  kanji: 真
+  keyword: 'true'
+- &80
+  frame: '80'
+  kanji: 工
+  keyword: craft
+- &81
+  frame: '81'
+  kanji: 左
+  keyword: left
+- &82
+  frame: '82'
+  kanji: 右
+  keyword: right
+- &83
+  frame: '83'
+  kanji: 有
+  keyword: possess
+- &84
+  frame: '84'
+  kanji: 賄
+  keyword: bribe
+- &85
+  frame: '85'
+  kanji: 貢
+  keyword: tribute
+- &86
+  frame: '86'
+  kanji: 項
+  keyword: paragraph
+- &87
+  frame: '87'
+  kanji: 刀
+  keyword: sword
+- &88
+  frame: '88'
+  kanji: 刃
+  keyword: blade
+- &89
+  frame: '89'
+  kanji: 切
+  keyword: cut
+- &90
+  frame: '90'
+  kanji: 召
+  keyword: seduce
+- &91
+  frame: '91'
+  kanji: 昭
+  keyword: shining
+- &92
+  frame: '92'
+  kanji: 則
+  keyword: rule
+- &93
+  frame: '93'
+  kanji: 副
+  keyword: vice-
+- &94
+  frame: '94'
+  kanji: 別
+  keyword: separate
+- &95
+  frame: '95'
+  kanji: 丁
+  keyword: street
+- &96
+  frame: '96'
+  kanji: 町
+  keyword: village
+- &97
+  frame: '97'
+  kanji: 可
+  keyword: can
+- &98
+  frame: '98'
+  kanji: 頂
+  keyword: place on the head
+- &99
+  frame: '99'
+  kanji: 子
+  keyword: child
+- &100
+  frame: '100'
+  kanji: 孔
+  keyword: cavity
+- &101
+  frame: '101'
+  kanji: 了
+  keyword: complete
+- &102
+  frame: '102'
+  kanji: 女
+  keyword: woman
+- &103
+  frame: '103'
+  kanji: 好
+  keyword: fond
+- &104
+  frame: '104'
+  kanji: 如
+  keyword: likeness
+- &105
+  frame: '105'
+  kanji: 母
+  keyword: mama
+- &106
+  frame: '106'
+  kanji: 貫
+  keyword: pierce
+- &107
+  frame: '107'
+  kanji: 兄
+  keyword: elder brother
+- &108
+  frame: '108'
+  kanji: 呪
+  keyword: curse
+- &109
+  frame: '109'
+  kanji: 克
+  keyword: overcome
+- &110
+  frame: '110'
+  kanji: 小
+  keyword: little
+- &111
+  frame: '111'
+  kanji: 少
+  keyword: few
+- &112
+  frame: '112'
+  kanji: 大
+  keyword: large
+- &113
+  frame: '113'
+  kanji: 多
+  keyword: many
+- &114
+  frame: '114'
+  kanji: 夕
+  keyword: evening
+- &115
+  frame: '115'
+  kanji: 汐
+  keyword: eventide
+- &116
+  frame: '116'
+  kanji: 外
+  keyword: outside
+- &117
+  frame: '117'
+  kanji: 名
+  keyword: name
+- &118
+  frame: '118'
+  kanji: 石
+  keyword: stone
+- &119
+  frame: '119'
+  kanji: 肖
+  keyword: resemblance
+- &120
+  frame: '120'
+  kanji: 硝
+  keyword: nitrate
+- &121
+  frame: '121'
+  kanji: 砕
+  keyword: smash
+- &122
+  frame: '122'
+  kanji: 砂
+  keyword: sand
+- &123
+  frame: '123'
+  kanji: 妬
+  keyword: jealous
+- &124
+  frame: '124'
+  kanji: 削
+  keyword: plane
+- &125
+  frame: '125'
+  kanji: 光
+  keyword: ray
+- &126
+  frame: '126'
+  kanji: 太
+  keyword: plump
+- &127
+  frame: '127'
+  kanji: 器
+  keyword: utensil
+- &128
+  frame: '128'
+  kanji: 臭
+  keyword: stinking
+- &129
+  frame: '129'
+  kanji: 嗅
+  keyword: sniff
+- &130
+  frame: '130'
+  kanji: 妙
+  keyword: exquisite
+- &131
+  frame: '131'
+  kanji: 省
+  keyword: focus
+- &132
+  frame: '132'
+  kanji: 厚
+  keyword: thick
+- &133
+  frame: '133'
+  kanji: 奇
+  keyword: strange
+- &134
+  frame: '134'
+  kanji: 川
+  keyword: stream
+- &135
+  frame: '135'
+  kanji: 州
+  keyword: state
+- &136
+  frame: '136'
+  kanji: 順
+  keyword: obey
+- &137
+  frame: '137'
+  kanji: 水
+  keyword: water
+- &138
+  frame: '138'
+  kanji: 氷
+  keyword: icicle
+- &139
+  frame: '139'
+  kanji: 永
+  keyword: eternity
+- &140
+  frame: '140'
+  kanji: 泉
+  keyword: spring
+- &141
+  frame: '141'
+  kanji: 腺
+  keyword: gland
+- &142
+  frame: '142'
+  kanji: 原
+  keyword: meadow
+- &143
+  frame: '143'
+  kanji: 願
+  keyword: petition
+- &144
+  frame: '144'
+  kanji: 泳
+  keyword: swim
+- &145
+  frame: '145'
+  kanji: 沼
+  keyword: marsh
+- &146
+  frame: '146'
+  kanji: 沖
+  keyword: open sea
+- &147
+  frame: '147'
+  kanji: 汎
+  keyword: pan-
+- &148
+  frame: '148'
+  kanji: 江
+  keyword: creek
+- &149
+  frame: '149'
+  kanji: 汰
+  keyword: cleanse
+- &150
+  frame: '150'
+  kanji: 汁
+  keyword: soup
+- &151
+  frame: '151'
+  kanji: 沙
+  keyword: grains of sand
+- &152
+  frame: '152'
+  kanji: 潮
+  keyword: tide
+- &153
+  frame: '153'
+  kanji: 源
+  keyword: source
+- &154
+  frame: '154'
+  kanji: 活
+  keyword: lively
+- &155
+  frame: '155'
+  kanji: 消
+  keyword: extinguish
+- &156
+  frame: '156'
+  kanji: 況
+  keyword: but of course
+- &157
+  frame: '157'
+  kanji: 河
+  keyword: river
+- &158
+  frame: '158'
+  kanji: 泊
+  keyword: overnight
+- &159
+  frame: '159'
+  kanji: 湖
+  keyword: lake
+- &160
+  frame: '160'
+  kanji: 測
+  keyword: fathom
+- &161
+  frame: '161'
+  kanji: 土
+  keyword: soil
+- &162
+  frame: '162'
+  kanji: 吐
+  keyword: spit
+- &163
+  frame: '163'
+  kanji: 圧
+  keyword: pressure
+- &164
+  frame: '164'
+  kanji: 埼
+  keyword: cape
+- &165
+  frame: '165'
+  kanji: 垣
+  keyword: hedge
+- &166
+  frame: '166'
+  kanji: 填
+  keyword: inlay
+- &167
+  frame: '167'
+  kanji: 圭
+  keyword: squared jewel
+- &168
+  frame: '168'
+  kanji: 封
+  keyword: seal
+- &169
+  frame: '169'
+  kanji: 涯
+  keyword: horizon
+- &170
+  frame: '170'
+  kanji: 寺
+  keyword: Buddhist temple
+- &171
+  frame: '171'
+  kanji: 時
+  keyword: time
+- &172
+  frame: '172'
+  kanji: 均
+  keyword: level
+- &173
+  frame: '173'
+  kanji: 火
+  keyword: fire
+- &174
+  frame: '174'
+  kanji: 炎
+  keyword: inflammation
+- &175
+  frame: '175'
+  kanji: 煩
+  keyword: anxiety
+- &176
+  frame: '176'
+  kanji: 淡
+  keyword: thin
+- &177
+  frame: '177'
+  kanji: 灯
+  keyword: lamp
+- &178
+  frame: '178'
+  kanji: 畑
+  keyword: farm
+- &179
+  frame: '179'
+  kanji: 災
+  keyword: disaster
+- &180
+  frame: '180'
+  kanji: 灰
+  keyword: ashes
+- &181
+  frame: '181'
+  kanji: 点
+  keyword: spot
+- &182
+  frame: '182'
+  kanji: 照
+  keyword: illuminate
+- &183
+  frame: '183'
+  kanji: 魚
+  keyword: fish
+- &184
+  frame: '184'
+  kanji: 漁
+  keyword: fishing
+- &185
+  frame: '185'
+  kanji: 里
+  keyword: ri
+- &186
+  frame: '186'
+  kanji: 黒
+  keyword: black
+- &187
+  frame: '187'
+  kanji: 墨
+  keyword: black ink
+- &188
+  frame: '188'
+  kanji: 鯉
+  keyword: carp
+- &189
+  frame: '189'
+  kanji: 量
+  keyword: quantity
+- &190
+  frame: '190'
+  kanji: 厘
+  keyword: rin
+- &191
+  frame: '191'
+  kanji: 埋
+  keyword: bury
+- &192
+  frame: '192'
+  kanji: 同
+  keyword: same
+- &193
+  frame: '193'
+  kanji: 洞
+  keyword: den
+- &194
+  frame: '194'
+  kanji: 胴
+  keyword: trunk
+- &195
+  frame: '195'
+  kanji: 向
+  keyword: yonder
+- &196
+  frame: '196'
+  kanji: 尚
+  keyword: esteem
+- &197
+  frame: '197'
+  kanji: 字
+  keyword: character
+- &198
+  frame: '198'
+  kanji: 守
+  keyword: guard
+- &199
+  frame: '199'
+  kanji: 完
+  keyword: perfect
+- &200
+  frame: '200'
+  kanji: 宣
+  keyword: proclaim
+- &201
+  frame: '201'
+  kanji: 宵
+  keyword: wee hours
+- &202
+  frame: '202'
+  kanji: 安
+  keyword: relax
+- &203
+  frame: '203'
+  kanji: 宴
+  keyword: banquet
+- &204
+  frame: '204'
+  kanji: 寄
+  keyword: draw near
+- &205
+  frame: '205'
+  kanji: 富
+  keyword: wealth
+- &206
+  frame: '206'
+  kanji: 貯
+  keyword: savings
+- &207
+  frame: '207'
+  kanji: 木
+  keyword: tree
+- &208
+  frame: '208'
+  kanji: 林
+  keyword: grove
+- &209
+  frame: '209'
+  kanji: 森
+  keyword: forest
+- &210
+  frame: '210'
+  kanji: 桂
+  keyword: Japanese Judas-tree
+- &211
+  frame: '211'
+  kanji: 柏
+  keyword: oak
+- &212
+  frame: '212'
+  kanji: 枠
+  keyword: frame
+- &213
+  frame: '213'
+  kanji: 梢
+  keyword: treetops
+- &214
+  frame: '214'
+  kanji: 棚
+  keyword: shelf
+- &215
+  frame: '215'
+  kanji: 杏
+  keyword: apricot
+- &216
+  frame: '216'
+  kanji: 桐
+  keyword: paulownia
+- &217
+  frame: '217'
+  kanji: 植
+  keyword: plant
+- &218
+  frame: '218'
+  kanji: 椅
+  keyword: chair
+- &219
+  frame: '219'
+  kanji: 枯
+  keyword: wither
+- &220
+  frame: '220'
+  kanji: 朴
+  keyword: crude
+- &221
+  frame: '221'
+  kanji: 村
+  keyword: town
+- &222
+  frame: '222'
+  kanji: 相
+  keyword: inter-
+- &223
+  frame: '223'
+  kanji: 机
+  keyword: desk
+- &224
+  frame: '224'
+  kanji: 本
+  keyword: book
+- &225
+  frame: '225'
+  kanji: 札
+  keyword: tag
+- &226
+  frame: '226'
+  kanji: 暦
+  keyword: calendar
+- &227
+  frame: '227'
+  kanji: 案
+  keyword: plan
+- &228
+  frame: '228'
+  kanji: 燥
+  keyword: parch
+- &229
+  frame: '229'
+  kanji: 未
+  keyword: not yet
+- &230
+  frame: '230'
+  kanji: 末
+  keyword: extremity
+- &231
+  frame: '231'
+  kanji: 昧
+  keyword: obscure
+- &232
+  frame: '232'
+  kanji: 沫
+  keyword: splash
+- &233
+  frame: '233'
+  kanji: 味
+  keyword: flavor
+- &234
+  frame: '234'
+  kanji: 妹
+  keyword: younger sister
+- &235
+  frame: '235'
+  kanji: 朱
+  keyword: vermilion
+- &236
+  frame: '236'
+  kanji: 株
+  keyword: stocks
+- &237
+  frame: '237'
+  kanji: 若
+  keyword: young
+- &238
+  frame: '238'
+  kanji: 草
+  keyword: grass
+- &239
+  frame: '239'
+  kanji: 苦
+  keyword: suffering
+- &240
+  frame: '240'
+  kanji: 苛
+  keyword: bullying
+- &241
+  frame: '241'
+  kanji: 寛
+  keyword: tolerant
+- &242
+  frame: '242'
+  kanji: 薄
+  keyword: dilute
+- &243
+  frame: '243'
+  kanji: 葉
+  keyword: leaf
+- &244
+  frame: '244'
+  kanji: 模
+  keyword: imitation
+- &245
+  frame: '245'
+  kanji: 漠
+  keyword: vague
+- &246
+  frame: '246'
+  kanji: 墓
+  keyword: grave
+- &247
+  frame: '247'
+  kanji: 暮
+  keyword: livelihood
+- &248
+  frame: '248'
+  kanji: 膜
+  keyword: membrane
+- &249
+  frame: '249'
+  kanji: 苗
+  keyword: seedling
+- &250
+  frame: '250'
+  kanji: 兆
+  keyword: portent
+- &251
+  frame: '251'
+  kanji: 桃
+  keyword: peach tree
+- &252
+  frame: '252'
+  kanji: 眺
+  keyword: stare
+- &253
+  frame: '253'
+  kanji: 犬
+  keyword: dog
+- &254
+  frame: '254'
+  kanji: 状
+  keyword: status quo
+- &255
+  frame: '255'
+  kanji: 黙
+  keyword: silence
+- &256
+  frame: '256'
+  kanji: 然
+  keyword: sort of thing
+- &257
+  frame: '257'
+  kanji: 荻
+  keyword: reed
+- &258
+  frame: '258'
+  kanji: 狩
+  keyword: hunt
+- &259
+  frame: '259'
+  kanji: 猫
+  keyword: cat
+- &260
+  frame: '260'
+  kanji: 牛
+  keyword: cow
+- &261
+  frame: '261'
+  kanji: 特
+  keyword: special
+- &262
+  frame: '262'
+  kanji: 告
+  keyword: revelation
+- &263
+  frame: '263'
+  kanji: 先
+  keyword: before
+- &264
+  frame: '264'
+  kanji: 洗
+  keyword: wash
+- &265
+  frame: '265'
+  kanji: 介
+  keyword: jammed in
+- &266
+  frame: '266'
+  kanji: 界
+  keyword: world
+- &267
+  frame: '267'
+  kanji: 茶
+  keyword: tea
+- &268
+  frame: '268'
+  kanji: 脊
+  keyword: spinal column
+- &269
+  frame: '269'
+  kanji: 合
+  keyword: fit
+- &270
+  frame: '270'
+  kanji: 塔
+  keyword: pagoda
+- &271
+  frame: '271'
+  kanji: 王
+  keyword: king
+- &272
+  frame: '272'
+  kanji: 玉
+  keyword: jewel
+- &273
+  frame: '273'
+  kanji: 宝
+  keyword: treasure
+- &274
+  frame: '274'
+  kanji: 珠
+  keyword: pearl
+- &275
+  frame: '275'
+  kanji: 現
+  keyword: present
+- &276
+  frame: '276'
+  kanji: 玩
+  keyword: toy
+- &277
+  frame: '277'
+  kanji: 狂
+  keyword: lunatic
+- &278
+  frame: '278'
+  kanji: 旺
+  keyword: effulgent
+- &279
+  frame: '279'
+  kanji: 皇
+  keyword: emperor
+- &280
+  frame: '280'
+  kanji: 呈
+  keyword: display
+- &281
+  frame: '281'
+  kanji: 全
+  keyword: whole
+- &282
+  frame: '282'
+  kanji: 栓
+  keyword: plug
+- &283
+  frame: '283'
+  kanji: 理
+  keyword: logic
+- &284
+  frame: '284'
+  kanji: 主
+  keyword: lord
+- &285
+  frame: '285'
+  kanji: 注
+  keyword: pour
+- &286
+  frame: '286'
+  kanji: 柱
+  keyword: pillar
+- &287
+  frame: '287'
+  kanji: 金
+  keyword: gold
+- &288
+  frame: '288'
+  kanji: 銑
+  keyword: pig iron
+- &289
+  frame: '289'
+  kanji: 鉢
+  keyword: bowl
+- &290
+  frame: '290'
+  kanji: 銅
+  keyword: copper
+- &291
+  frame: '291'
+  kanji: 釣
+  keyword: angling
+- &292
+  frame: '292'
+  kanji: 針
+  keyword: needle
+- &293
+  frame: '293'
+  kanji: 銘
+  keyword: inscription
+- &294
+  frame: '294'
+  kanji: 鎮
+  keyword: tranquillize
+- &295
+  frame: '295'
+  kanji: 道
+  keyword: road-way
+- &296
+  frame: '296'
+  kanji: 導
+  keyword: guidance
+- &297
+  frame: '297'
+  kanji: 辻
+  keyword: crossing
+- &298
+  frame: '298'
+  kanji: 迅
+  keyword: swift
+- &299
+  frame: '299'
+  kanji: 造
+  keyword: create
+- &300
+  frame: '300'
+  kanji: 迫
+  keyword: urge
+- &301
+  frame: '301'
+  kanji: 逃
+  keyword: escape
+- &302
+  frame: '302'
+  kanji: 辺
+  keyword: environs
+- &303
+  frame: '303'
+  kanji: 巡
+  keyword: patrol
+- &304
+  frame: '304'
+  kanji: 車
+  keyword: car
+- &305
+  frame: '305'
+  kanji: 連
+  keyword: take along
+- &306
+  frame: '306'
+  kanji: 軌
+  keyword: rut
+- &307
+  frame: '307'
+  kanji: 輸
+  keyword: transport
+- &308
+  frame: '308'
+  kanji: 喩
+  keyword: metaphor
+- &309
+  frame: '309'
+  kanji: 前
+  keyword: in front
+- &310
+  frame: '310'
+  kanji: 煎
+  keyword: roast
+- &311
+  frame: '311'
+  kanji: 各
+  keyword: each
+- &312
+  frame: '312'
+  kanji: 格
+  keyword: status
+- &313
+  frame: '313'
+  kanji: 賂
+  keyword: graft
+- &314
+  frame: '314'
+  kanji: 略
+  keyword: abbreviation
+- &315
+  frame: '315'
+  kanji: 客
+  keyword: guest
+- &316
+  frame: '316'
+  kanji: 額
+  keyword: forehead
+- &317
+  frame: '317'
+  kanji: 夏
+  keyword: summer
+- &318
+  frame: '318'
+  kanji: 処
+  keyword: dispose
+- &319
+  frame: '319'
+  kanji: 条
+  keyword: twig
+- &320
+  frame: '320'
+  kanji: 落
+  keyword: fall
+- &321
+  frame: '321'
+  kanji: 冗
+  keyword: superfluous
+- &322
+  frame: '322'
+  kanji: 冥
+  keyword: Hades
+- &323
+  frame: '323'
+  kanji: 軍
+  keyword: army
+- &324
+  frame: '324'
+  kanji: 輝
+  keyword: radiance
+- &325
+  frame: '325'
+  kanji: 運
+  keyword: carry
+- &326
+  frame: '326'
+  kanji: 冠
+  keyword: crown
+- &327
+  frame: '327'
+  kanji: 夢
+  keyword: dream
+- &328
+  frame: '328'
+  kanji: 坑
+  keyword: pit
+- &329
+  frame: '329'
+  kanji: 高
+  keyword: tall
+- &330
+  frame: '330'
+  kanji: 享
+  keyword: receive
+- &331
+  frame: '331'
+  kanji: 塾
+  keyword: cram school
+- &332
+  frame: '332'
+  kanji: 熟
+  keyword: mellow
+- &333
+  frame: '333'
+  kanji: 亭
+  keyword: pavilion
+- &334
+  frame: '334'
+  kanji: 京
+  keyword: capital
+- &335
+  frame: '335'
+  kanji: 涼
+  keyword: refreshing
+- &336
+  frame: '336'
+  kanji: 景
+  keyword: scenery
+- &337
+  frame: '337'
+  kanji: 鯨
+  keyword: whale
+- &338
+  frame: '338'
+  kanji: 舎
+  keyword: cottage
+- &339
+  frame: '339'
+  kanji: 周
+  keyword: circumference
+- &340
+  frame: '340'
+  kanji: 週
+  keyword: week
+- &341
+  frame: '341'
+  kanji: 士
+  keyword: gentleman
+- &342
+  frame: '342'
+  kanji: 吉
+  keyword: good luck
+- &343
+  frame: '343'
+  kanji: 壮
+  keyword: robust
+- &344
+  frame: '344'
+  kanji: 荘
+  keyword: villa
+- &345
+  frame: '345'
+  kanji: 売
+  keyword: sell
+- &346
+  frame: '346'
+  kanji: 学
+  keyword: study
+- &347
+  frame: '347'
+  kanji: 覚
+  keyword: memorize
+- &348
+  frame: '348'
+  kanji: 栄
+  keyword: flourish
+- &349
+  frame: '349'
+  kanji: 書
+  keyword: write
+- &350
+  frame: '350'
+  kanji: 津
+  keyword: haven
+- &351
+  frame: '351'
+  kanji: 牧
+  keyword: breed
+- &352
+  frame: '352'
+  kanji: 攻
+  keyword: aggression
+- &353
+  frame: '353'
+  kanji: 敗
+  keyword: failure
+- &354
+  frame: '354'
+  kanji: 枚
+  keyword: a sheet of
+- &355
+  frame: '355'
+  kanji: 故
+  keyword: happenstance
+- &356
+  frame: '356'
+  kanji: 敬
+  keyword: awe
+- &357
+  frame: '357'
+  kanji: 言
+  keyword: say
+- &358
+  frame: '358'
+  kanji: 警
+  keyword: admonish
+- &359
+  frame: '359'
+  kanji: 計
+  keyword: plot
+- &360
+  frame: '360'
+  kanji: 詮
+  keyword: elucidate
+- &361
+  frame: '361'
+  kanji: 獄
+  keyword: prison
+- &362
+  frame: '362'
+  kanji: 訂
+  keyword: revise
+- &363
+  frame: '363'
+  kanji: 訃
+  keyword: obituary
+- &364
+  frame: '364'
+  kanji: 討
+  keyword: chastise
+- &365
+  frame: '365'
+  kanji: 訓
+  keyword: instruction
+- &366
+  frame: '366'
+  kanji: 詔
+  keyword: imperial edict
+- &367
+  frame: '367'
+  kanji: 詰
+  keyword: packed
+- &368
+  frame: '368'
+  kanji: 話
+  keyword: tale
+- &369
+  frame: '369'
+  kanji: 詠
+  keyword: recitation
+- &370
+  frame: '370'
+  kanji: 詩
+  keyword: poem
+- &371
+  frame: '371'
+  kanji: 語
+  keyword: word
+- &372
+  frame: '372'
+  kanji: 読
+  keyword: read
+- &373
+  frame: '373'
+  kanji: 調
+  keyword: tune
+- &374
+  frame: '374'
+  kanji: 談
+  keyword: discuss
+- &375
+  frame: '375'
+  kanji: 諾
+  keyword: consent
+- &376
+  frame: '376'
+  kanji: 諭
+  keyword: rebuke
+- &377
+  frame: '377'
+  kanji: 式
+  keyword: style
+- &378
+  frame: '378'
+  kanji: 試
+  keyword: test
+- &379
+  frame: '379'
+  kanji: 弐
+  keyword: II (two)
+- &380
+  frame: '380'
+  kanji: 域
+  keyword: range
+- &381
+  frame: '381'
+  kanji: 賊
+  keyword: burglar
+- &382
+  frame: '382'
+  kanji: 栽
+  keyword: plantation
+- &383
+  frame: '383'
+  kanji: 載
+  keyword: load
+- &384
+  frame: '384'
+  kanji: 茂
+  keyword: overgrown
+- &385
+  frame: '385'
+  kanji: 戚
+  keyword: relatives
+- &386
+  frame: '386'
+  kanji: 成
+  keyword: turn into
+- &387
+  frame: '387'
+  kanji: 城
+  keyword: castle
+- &388
+  frame: '388'
+  kanji: 誠
+  keyword: sincerity
+- &389
+  frame: '389'
+  kanji: 威
+  keyword: intimidate
+- &390
+  frame: '390'
+  kanji: 滅
+  keyword: destroy
+- &391
+  frame: '391'
+  kanji: 減
+  keyword: dwindle
+- &392
+  frame: '392'
+  kanji: 蔑
+  keyword: revile
+- &393
+  frame: '393'
+  kanji: 桟
+  keyword: scaffold
+- &394
+  frame: '394'
+  kanji: 銭
+  keyword: coin
+- &395
+  frame: '395'
+  kanji: 浅
+  keyword: shallow
+- &396
+  frame: '396'
+  kanji: 止
+  keyword: stop
+- &397
+  frame: '397'
+  kanji: 歩
+  keyword: walk
+- &398
+  frame: '398'
+  kanji: 渉
+  keyword: ford
+- &399
+  frame: '399'
+  kanji: 頻
+  keyword: repeatedly
+- &400
+  frame: '400'
+  kanji: 肯
+  keyword: agreement
+- &401
+  frame: '401'
+  kanji: 企
+  keyword: undertake
+- &402
+  frame: '402'
+  kanji: 歴
+  keyword: curriculum
+- &403
+  frame: '403'
+  kanji: 武
+  keyword: warrior
+- &404
+  frame: '404'
+  kanji: 賦
+  keyword: levy
+- &405
+  frame: '405'
+  kanji: 正
+  keyword: correct
+- &406
+  frame: '406'
+  kanji: 証
+  keyword: evidence
+- &407
+  frame: '407'
+  kanji: 政
+  keyword: politics
+- &408
+  frame: '408'
+  kanji: 定
+  keyword: determine
+- &409
+  frame: '409'
+  kanji: 錠
+  keyword: lock
+- &410
+  frame: '410'
+  kanji: 走
+  keyword: run
+- &411
+  frame: '411'
+  kanji: 超
+  keyword: transcend
+- &412
+  frame: '412'
+  kanji: 赴
+  keyword: proceed
+- &413
+  frame: '413'
+  kanji: 越
+  keyword: surpass
+- &414
+  frame: '414'
+  kanji: 是
+  keyword: just so
+- &415
+  frame: '415'
+  kanji: 題
+  keyword: topic
+- &416
+  frame: '416'
+  kanji: 堤
+  keyword: dike
+- &417
+  frame: '417'
+  kanji: 建
+  keyword: build
+- &418
+  frame: '418'
+  kanji: 鍵
+  keyword: key
+- &419
+  frame: '419'
+  kanji: 延
+  keyword: prolong
+- &420
+  frame: '420'
+  kanji: 誕
+  keyword: nativity
+- &421
+  frame: '421'
+  kanji: 礎
+  keyword: cornerstone
+- &422
+  frame: '422'
+  kanji: 婿
+  keyword: bridegroom
+- &423
+  frame: '423'
+  kanji: 衣
+  keyword: garment
+- &424
+  frame: '424'
+  kanji: 裁
+  keyword: tailor
+- &425
+  frame: '425'
+  kanji: 装
+  keyword: attire
+- &426
+  frame: '426'
+  kanji: 裏
+  keyword: back
+- &427
+  frame: '427'
+  kanji: 壊
+  keyword: demolition
+- &428
+  frame: '428'
+  kanji: 哀
+  keyword: pathetic
+- &429
+  frame: '429'
+  kanji: 遠
+  keyword: distant
+- &430
+  frame: '430'
+  kanji: 猿
+  keyword: monkey
+- &431
+  frame: '431'
+  kanji: 初
+  keyword: first time
+- &432
+  frame: '432'
+  kanji: 巾
+  keyword: towel
+- &433
+  frame: '433'
+  kanji: 布
+  keyword: linen
+- &434
+  frame: '434'
+  kanji: 帆
+  keyword: sail
+- &435
+  frame: '435'
+  kanji: 幅
+  keyword: hanging scroll
+- &436
+  frame: '436'
+  kanji: 帽
+  keyword: cap
+- &437
+  frame: '437'
+  kanji: 幕
+  keyword: curtain
+- &438
+  frame: '438'
+  kanji: 幌
+  keyword: canopy
+- &439
+  frame: '439'
+  kanji: 錦
+  keyword: brocade
+- &440
+  frame: '440'
+  kanji: 市
+  keyword: market
+- &441
+  frame: '441'
+  kanji: 柿
+  keyword: persimmon
+- &442
+  frame: '442'
+  kanji: 姉
+  keyword: elder sister
+- &443
+  frame: '443'
+  kanji: 肺
+  keyword: lungs
+- &444
+  frame: '444'
+  kanji: 帯
+  keyword: sash
+- &445
+  frame: '445'
+  kanji: 滞
+  keyword: stagnate
+- &446
+  frame: '446'
+  kanji: 刺
+  keyword: thorn
+- &447
+  frame: '447'
+  kanji: 制
+  keyword: system
+- &448
+  frame: '448'
+  kanji: 製
+  keyword: made in...
+- &449
+  frame: '449'
+  kanji: 転
+  keyword: revolve
+- &450
+  frame: '450'
+  kanji: 芸
+  keyword: technique
+- &451
+  frame: '451'
+  kanji: 雨
+  keyword: rain
+- &452
+  frame: '452'
+  kanji: 雲
+  keyword: cloud
+- &453
+  frame: '453'
+  kanji: 曇
+  keyword: cloudy weather
+- &454
+  frame: '454'
+  kanji: 雷
+  keyword: thunder
+- &455
+  frame: '455'
+  kanji: 霜
+  keyword: frost
+- &456
+  frame: '456'
+  kanji: 冬
+  keyword: winter
+- &457
+  frame: '457'
+  kanji: 天
+  keyword: heavens
+- &458
+  frame: '458'
+  kanji: 妖
+  keyword: bewitched
+- &459
+  frame: '459'
+  kanji: 沃
+  keyword: irrigate
+- &460
+  frame: '460'
+  kanji: 橋
+  keyword: bridge
+- &461
+  frame: '461'
+  kanji: 嬌
+  keyword: attractive
+- &462
+  frame: '462'
+  kanji: 立
+  keyword: stand up
+- &463
+  frame: '463'
+  kanji: 泣
+  keyword: cry
+- &464
+  frame: '464'
+  kanji: 章
+  keyword: badge
+- &465
+  frame: '465'
+  kanji: 競
+  keyword: vie
+- &466
+  frame: '466'
+  kanji: 帝
+  keyword: sovereign
+- &467
+  frame: '467'
+  kanji: 諦
+  keyword: renunciation
+- &468
+  frame: '468'
+  kanji: 童
+  keyword: juvenile
+- &469
+  frame: '469'
+  kanji: 瞳
+  keyword: pupil
+- &470
+  frame: '470'
+  kanji: 鐘
+  keyword: bell
+- &471
+  frame: '471'
+  kanji: 商
+  keyword: make a deal
+- &472
+  frame: '472'
+  kanji: 嫡
+  keyword: legitimate wife
+- &473
+  frame: '473'
+  kanji: 適
+  keyword: suitable
+- &474
+  frame: '474'
+  kanji: 滴
+  keyword: drip
+- &475
+  frame: '475'
+  kanji: 敵
+  keyword: enemy
+- &476
+  frame: '476'
+  kanji: 匕
+  keyword: spoon
+- &477
+  frame: '477'
+  kanji: 叱
+  keyword: scold
+- &478
+  frame: '478'
+  kanji: 匂
+  keyword: aroma
+- &479
+  frame: '479'
+  kanji: 頃
+  keyword: about that time
+- &480
+  frame: '480'
+  kanji: 北
+  keyword: north
+- &481
+  frame: '481'
+  kanji: 背
+  keyword: stature
+- &482
+  frame: '482'
+  kanji: 比
+  keyword: compare
+- &483
+  frame: '483'
+  kanji: 昆
+  keyword: descendants
+- &484
+  frame: '484'
+  kanji: 皆
+  keyword: all
+- &485
+  frame: '485'
+  kanji: 楷
+  keyword: block letters
+- &486
+  frame: '486'
+  kanji: 諧
+  keyword: orderliness
+- &487
+  frame: '487'
+  kanji: 混
+  keyword: mix
+- &488
+  frame: '488'
+  kanji: 渇
+  keyword: thirst
+- &489
+  frame: '489'
+  kanji: 謁
+  keyword: audience
+- &490
+  frame: '490'
+  kanji: 褐
+  keyword: brown
+- &491
+  frame: '491'
+  kanji: 喝
+  keyword: hoarse
+- &492
+  frame: '492'
+  kanji: 葛
+  keyword: kudzu
+- &493
+  frame: '493'
+  kanji: 旨
+  keyword: delicious
+- &494
+  frame: '494'
+  kanji: 脂
+  keyword: fat
+- &495
+  frame: '495'
+  kanji: 詣
+  keyword: visit a shrine
+- &496
+  frame: '496'
+  kanji: 壱
+  keyword: I (one)
+- &497
+  frame: '497'
+  kanji: 毎
+  keyword: every
+- &498
+  frame: '498'
+  kanji: 敏
+  keyword: cleverness
+- &499
+  frame: '499'
+  kanji: 梅
+  keyword: plum
+- &500
+  frame: '500'
+  kanji: 海
+  keyword: sea
+- &501
+  frame: '501'
+  kanji: 乞
+  keyword: beg
+- &502
+  frame: '502'
+  kanji: 乾
+  keyword: drought
+- &503
+  frame: '503'
+  kanji: 腹
+  keyword: abdomen
+- &504
+  frame: '504'
+  kanji: 複
+  keyword: duplicate
+- &505
+  frame: '505'
+  kanji: 欠
+  keyword: lack
+- &506
+  frame: '506'
+  kanji: 吹
+  keyword: blow
+- &507
+  frame: '507'
+  kanji: 炊
+  keyword: cook
+- &508
+  frame: '508'
+  kanji: 歌
+  keyword: song
+- &509
+  frame: '509'
+  kanji: 軟
+  keyword: soft
+- &510
+  frame: '510'
+  kanji: 次
+  keyword: next
+- &511
+  frame: '511'
+  kanji: 茨
+  keyword: briar
+- &512
+  frame: '512'
+  kanji: 資
+  keyword: assets
+- &513
+  frame: '513'
+  kanji: 姿
+  keyword: figure
+- &514
+  frame: '514'
+  kanji: 諮
+  keyword: consult with
+- &515
+  frame: '515'
+  kanji: 賠
+  keyword: compensation
+- &516
+  frame: '516'
+  kanji: 培
+  keyword: cultivate
+- &517
+  frame: '517'
+  kanji: 剖
+  keyword: divide
+- &518
+  frame: '518'
+  kanji: 音
+  keyword: sound
+- &519
+  frame: '519'
+  kanji: 暗
+  keyword: darkness
+- &520
+  frame: '520'
+  kanji: 韻
+  keyword: rhyme
+- &521
+  frame: '521'
+  kanji: 識
+  keyword: discriminating
+- &522
+  frame: '522'
+  kanji: 鏡
+  keyword: mirror
+- &523
+  frame: '523'
+  kanji: 境
+  keyword: boundary
+- &524
+  frame: '524'
+  kanji: 亡
+  keyword: deceased
+- &525
+  frame: '525'
+  kanji: 盲
+  keyword: blind
+- &526
+  frame: '526'
+  kanji: 妄
+  keyword: delusion
+- &527
+  frame: '527'
+  kanji: 荒
+  keyword: laid waste
+- &528
+  frame: '528'
+  kanji: 望
+  keyword: ambition
+- &529
+  frame: '529'
+  kanji: 方
+  keyword: direction
+- &530
+  frame: '530'
+  kanji: 妨
+  keyword: disturb
+- &531
+  frame: '531'
+  kanji: 坊
+  keyword: boy
+- &532
+  frame: '532'
+  kanji: 芳
+  keyword: perfumed
+- &533
+  frame: '533'
+  kanji: 肪
+  keyword: obese
+- &534
+  frame: '534'
+  kanji: 訪
+  keyword: call on
+- &535
+  frame: '535'
+  kanji: 放
+  keyword: set free
+- &536
+  frame: '536'
+  kanji: 激
+  keyword: violent
+- &537
+  frame: '537'
+  kanji: 脱
+  keyword: undress
+- &538
+  frame: '538'
+  kanji: 説
+  keyword: explanation
+- &539
+  frame: '539'
+  kanji: 鋭
+  keyword: pointed
+- &540
+  frame: '540'
+  kanji: 曽
+  keyword: formerly
+- &541
+  frame: '541'
+  kanji: 増
+  keyword: increase
+- &542
+  frame: '542'
+  kanji: 贈
+  keyword: presents
+- &543
+  frame: '543'
+  kanji: 東
+  keyword: east
+- &544
+  frame: '544'
+  kanji: 棟
+  keyword: ridgepole
+- &545
+  frame: '545'
+  kanji: 凍
+  keyword: frozen
+- &546
+  frame: '546'
+  kanji: 妊
+  keyword: pregnancy
+- &547
+  frame: '547'
+  kanji: 廷
+  keyword: courts
+- &548
+  frame: '548'
+  kanji: 染
+  keyword: dye
+- &549
+  frame: '549'
+  kanji: 燃
+  keyword: burn
+- &550
+  frame: '550'
+  kanji: 賓
+  keyword: V.I.P.
+- &551
+  frame: '551'
+  kanji: 歳
+  keyword: year-end
+- &552
+  frame: '552'
+  kanji: 県
+  keyword: prefecture
+- &553
+  frame: '553'
+  kanji: 栃
+  keyword: horse chestnut
+- &554
+  frame: '554'
+  kanji: 地
+  keyword: ground
+- &555
+  frame: '555'
+  kanji: 池
+  keyword: pond
+- &556
+  frame: '556'
+  kanji: 虫
+  keyword: insect
+- &557
+  frame: '557'
+  kanji: 蛍
+  keyword: lightning bug
+- &558
+  frame: '558'
+  kanji: 蛇
+  keyword: snake
+- &559
+  frame: '559'
+  kanji: 虹
+  keyword: rainbow
+- &560
+  frame: '560'
+  kanji: 蝶
+  keyword: butterfly
+- &561
+  frame: '561'
+  kanji: 独
+  keyword: single
+- &562
+  frame: '562'
+  kanji: 蚕
+  keyword: silkworm
+- &563
+  frame: '563'
+  kanji: 風
+  keyword: wind
+- &564
+  frame: '564'
+  kanji: 己
+  keyword: self
+- &565
+  frame: '565'
+  kanji: 起
+  keyword: rouse
+- &566
+  frame: '566'
+  kanji: 妃
+  keyword: queen
+- &567
+  frame: '567'
+  kanji: 改
+  keyword: reformation
+- &568
+  frame: '568'
+  kanji: 記
+  keyword: scribe
+- &569
+  frame: '569'
+  kanji: 包
+  keyword: wrap
+- &570
+  frame: '570'
+  kanji: 胞
+  keyword: placenta
+- &571
+  frame: '571'
+  kanji: 砲
+  keyword: cannon
+- &572
+  frame: '572'
+  kanji: 泡
+  keyword: bubble
+- &573
+  frame: '573'
+  kanji: 亀
+  keyword: tortoise
+- &574
+  frame: '574'
+  kanji: 電
+  keyword: electricity
+- &575
+  frame: '575'
+  kanji: 竜
+  keyword: dragon
+- &576
+  frame: '576'
+  kanji: 滝
+  keyword: waterfall
+- &577
+  frame: '577'
+  kanji: 豚
+  keyword: pork
+- &578
+  frame: '578'
+  kanji: 逐
+  keyword: pursue
+- &579
+  frame: '579'
+  kanji: 遂
+  keyword: consummate
+- &580
+  frame: '580'
+  kanji: 家
+  keyword: house
+- &581
+  frame: '581'
+  kanji: 嫁
+  keyword: marry into
+- &582
+  frame: '582'
+  kanji: 豪
+  keyword: overpowering
+- &583
+  frame: '583'
+  kanji: 腸
+  keyword: intestines
+- &584
+  frame: '584'
+  kanji: 場
+  keyword: location
+- &585
+  frame: '585'
+  kanji: 湯
+  keyword: hot water
+- &586
+  frame: '586'
+  kanji: 羊
+  keyword: sheep
+- &587
+  frame: '587'
+  kanji: 美
+  keyword: beauty
+- &588
+  frame: '588'
+  kanji: 洋
+  keyword: ocean
+- &589
+  frame: '589'
+  kanji: 詳
+  keyword: detailed
+- &590
+  frame: '590'
+  kanji: 鮮
+  keyword: fresh
+- &591
+  frame: '591'
+  kanji: 達
+  keyword: accomplished
+- &592
+  frame: '592'
+  kanji: 羨
+  keyword: envious
+- &593
+  frame: '593'
+  kanji: 差
+  keyword: distinction
+- &594
+  frame: '594'
+  kanji: 着
+  keyword: don
+- &595
+  frame: '595'
+  kanji: 唯
+  keyword: solely
+- &596
+  frame: '596'
+  kanji: 堆
+  keyword: piled high
+- &597
+  frame: '597'
+  kanji: 椎
+  keyword: sweet oak
+- &598
+  frame: '598'
+  kanji: 誰
+  keyword: who?
+- &599
+  frame: '599'
+  kanji: 焦
+  keyword: char
+- &600
+  frame: '600'
+  kanji: 礁
+  keyword: reef
+- &601
+  frame: '601'
+  kanji: 集
+  keyword: gather
+- &602
+  frame: '602'
+  kanji: 准
+  keyword: quasi-
+- &603
+  frame: '603'
+  kanji: 進
+  keyword: advance
+- &604
+  frame: '604'
+  kanji: 雑
+  keyword: miscellaneous
+- &605
+  frame: '605'
+  kanji: 雌
+  keyword: female
+- &606
+  frame: '606'
+  kanji: 準
+  keyword: semi-
+- &607
+  frame: '607'
+  kanji: 奮
+  keyword: stirred up
+- &608
+  frame: '608'
+  kanji: 奪
+  keyword: rob
+- &609
+  frame: '609'
+  kanji: 確
+  keyword: assurance
+- &610
+  frame: '610'
+  kanji: 午
+  keyword: noon
+- &611
+  frame: '611'
+  kanji: 許
+  keyword: permit
+- &612
+  frame: '612'
+  kanji: 歓
+  keyword: delight
+- &613
+  frame: '613'
+  kanji: 権
+  keyword: authority
+- &614
+  frame: '614'
+  kanji: 観
+  keyword: outlook
+- &615
+  frame: '615'
+  kanji: 羽
+  keyword: feathers
+- &616
+  frame: '616'
+  kanji: 習
+  keyword: learn
+- &617
+  frame: '617'
+  kanji: 翌
+  keyword: the following
+- &618
+  frame: '618'
+  kanji: 曜
+  keyword: weekday
+- &619
+  frame: '619'
+  kanji: 濯
+  keyword: laundry
+- &620
+  frame: '620'
+  kanji: 曰
+  keyword: sayeth
+- &621
+  frame: '621'
+  kanji: 困
+  keyword: quandary
+- &622
+  frame: '622'
+  kanji: 固
+  keyword: harden
+- &623
+  frame: '623'
+  kanji: 錮
+  keyword: weld
+- &624
+  frame: '624'
+  kanji: 国
+  keyword: country
+- &625
+  frame: '625'
+  kanji: 団
+  keyword: group
+- &626
+  frame: '626'
+  kanji: 因
+  keyword: cause
+- &627
+  frame: '627'
+  kanji: 姻
+  keyword: matrimony
+- &628
+  frame: '628'
+  kanji: 咽
+  keyword: windpipe
+- &629
+  frame: '629'
+  kanji: 園
+  keyword: park
+- &630
+  frame: '630'
+  kanji: 回
+  keyword: -times
+- &631
+  frame: '631'
+  kanji: 壇
+  keyword: podium
+- &632
+  frame: '632'
+  kanji: 店
+  keyword: store
+- &633
+  frame: '633'
+  kanji: 庫
+  keyword: warehouse
+- &634
+  frame: '634'
+  kanji: 庭
+  keyword: courtyard
+- &635
+  frame: '635'
+  kanji: 庁
+  keyword: government office
+- &636
+  frame: '636'
+  kanji: 床
+  keyword: bed
+- &637
+  frame: '637'
+  kanji: 麻
+  keyword: hemp
+- &638
+  frame: '638'
+  kanji: 磨
+  keyword: grind
+- &639
+  frame: '639'
+  kanji: 心
+  keyword: heart
+- &640
+  frame: '640'
+  kanji: 忘
+  keyword: forget
+- &641
+  frame: '641'
+  kanji: 恣
+  keyword: selfish
+- &642
+  frame: '642'
+  kanji: 忍
+  keyword: endure
+- &643
+  frame: '643'
+  kanji: 認
+  keyword: acknowledge
+- &644
+  frame: '644'
+  kanji: 忌
+  keyword: mourning
+- &645
+  frame: '645'
+  kanji: 志
+  keyword: intention
+- &646
+  frame: '646'
+  kanji: 誌
+  keyword: document
+- &647
+  frame: '647'
+  kanji: 芯
+  keyword: wick
+- &648
+  frame: '648'
+  kanji: 忠
+  keyword: loyalty
+- &649
+  frame: '649'
+  kanji: 串
+  keyword: shish kebab
+- &650
+  frame: '650'
+  kanji: 患
+  keyword: afflicted
+- &651
+  frame: '651'
+  kanji: 思
+  keyword: think
+- &652
+  frame: '652'
+  kanji: 恩
+  keyword: grace
+- &653
+  frame: '653'
+  kanji: 応
+  keyword: apply
+- &654
+  frame: '654'
+  kanji: 意
+  keyword: idea
+- &655
+  frame: '655'
+  kanji: 臆
+  keyword: cowardice
+- &656
+  frame: '656'
+  kanji: 想
+  keyword: concept
+- &657
+  frame: '657'
+  kanji: 息
+  keyword: breath
+- &658
+  frame: '658'
+  kanji: 憩
+  keyword: recess
+- &659
+  frame: '659'
+  kanji: 恵
+  keyword: favor
+- &660
+  frame: '660'
+  kanji: 恐
+  keyword: fear
+- &661
+  frame: '661'
+  kanji: 惑
+  keyword: beguile
+- &662
+  frame: '662'
+  kanji: 感
+  keyword: emotion
+- &663
+  frame: '663'
+  kanji: 憂
+  keyword: melancholy
+- &664
+  frame: '664'
+  kanji: 寡
+  keyword: widow
+- &665
+  frame: '665'
+  kanji: 忙
+  keyword: busy
+- &666
+  frame: '666'
+  kanji: 悦
+  keyword: ecstasy
+- &667
+  frame: '667'
+  kanji: 恒
+  keyword: constancy
+- &668
+  frame: '668'
+  kanji: 悼
+  keyword: lament
+- &669
+  frame: '669'
+  kanji: 悟
+  keyword: enlightenment
+- &670
+  frame: '670'
+  kanji: 怖
+  keyword: dreadful
+- &671
+  frame: '671'
+  kanji: 慌
+  keyword: disconcerted
+- &672
+  frame: '672'
+  kanji: 悔
+  keyword: repent
+- &673
+  frame: '673'
+  kanji: 憎
+  keyword: hate
+- &674
+  frame: '674'
+  kanji: 慣
+  keyword: accustomed
+- &675
+  frame: '675'
+  kanji: 愉
+  keyword: pleasure
+- &676
+  frame: '676'
+  kanji: 惰
+  keyword: lazy
+- &677
+  frame: '677'
+  kanji: 慎
+  keyword: humility
+- &678
+  frame: '678'
+  kanji: 憾
+  keyword: remorse
+- &679
+  frame: '679'
+  kanji: 憶
+  keyword: recollection
+- &680
+  frame: '680'
+  kanji: 惧
+  keyword: disquieting
+- &681
+  frame: '681'
+  kanji: 憧
+  keyword: yearn
+- &682
+  frame: '682'
+  kanji: 憬
+  keyword: hanker
+- &683
+  frame: '683'
+  kanji: 慕
+  keyword: pining
+- &684
+  frame: '684'
+  kanji: 添
+  keyword: annexed
+- &685
+  frame: '685'
+  kanji: 必
+  keyword: invariably
+- &686
+  frame: '686'
+  kanji: 泌
+  keyword: ooze
+- &687
+  frame: '687'
+  kanji: 手
+  keyword: hand
+- &688
+  frame: '688'
+  kanji: 看
+  keyword: watch over
+- &689
+  frame: '689'
+  kanji: 摩
+  keyword: chafe
+- &690
+  frame: '690'
+  kanji: 我
+  keyword: ego
+- &691
+  frame: '691'
+  kanji: 義
+  keyword: righteousness
+- &692
+  frame: '692'
+  kanji: 議
+  keyword: deliberation
+- &693
+  frame: '693'
+  kanji: 犠
+  keyword: sacrifice
+- &694
+  frame: '694'
+  kanji: 抹
+  keyword: rub
+- &695
+  frame: '695'
+  kanji: 拭
+  keyword: wipe
+- &696
+  frame: '696'
+  kanji: 拉
+  keyword: yank
+- &697
+  frame: '697'
+  kanji: 抱
+  keyword: embrace
+- &698
+  frame: '698'
+  kanji: 搭
+  keyword: board
+- &699
+  frame: '699'
+  kanji: 抄
+  keyword: extract
+- &700
+  frame: '700'
+  kanji: 抗
+  keyword: confront
+- &701
+  frame: '701'
+  kanji: 批
+  keyword: criticism
+- &702
+  frame: '702'
+  kanji: 招
+  keyword: beckon
+- &703
+  frame: '703'
+  kanji: 拓
+  keyword: clear the land
+- &704
+  frame: '704'
+  kanji: 拍
+  keyword: clap
+- &705
+  frame: '705'
+  kanji: 打
+  keyword: strike
+- &706
+  frame: '706'
+  kanji: 拘
+  keyword: arrest
+- &707
+  frame: '707'
+  kanji: 捨
+  keyword: discard
+- &708
+  frame: '708'
+  kanji: 拐
+  keyword: kidnap
+- &709
+  frame: '709'
+  kanji: 摘
+  keyword: pinch
+- &710
+  frame: '710'
+  kanji: 挑
+  keyword: challenge
+- &711
+  frame: '711'
+  kanji: 指
+  keyword: finger
+- &712
+  frame: '712'
+  kanji: 持
+  keyword: hold
+- &713
+  frame: '713'
+  kanji: 拶
+  keyword: imminent
+- &714
+  frame: '714'
+  kanji: 括
+  keyword: fasten
+- &715
+  frame: '715'
+  kanji: 揮
+  keyword: brandish
+- &716
+  frame: '716'
+  kanji: 推
+  keyword: conjecture
+- &717
+  frame: '717'
+  kanji: 揚
+  keyword: hoist
+- &718
+  frame: '718'
+  kanji: 提
+  keyword: propose
+- &719
+  frame: '719'
+  kanji: 損
+  keyword: damage
+- &720
+  frame: '720'
+  kanji: 拾
+  keyword: pick up
+- &721
+  frame: '721'
+  kanji: 担
+  keyword: shouldering
+- &722
+  frame: '722'
+  kanji: 拠
+  keyword: foothold
+- &723
+  frame: '723'
+  kanji: 描
+  keyword: sketch
+- &724
+  frame: '724'
+  kanji: 操
+  keyword: maneuver
+- &725
+  frame: '725'
+  kanji: 接
+  keyword: touch
+- &726
+  frame: '726'
+  kanji: 掲
+  keyword: put up a notice
+- &727
+  frame: '727'
+  kanji: 掛
+  keyword: hang
+- &728
+  frame: '728'
+  kanji: 捗
+  keyword: make headway
+- &729
+  frame: '729'
+  kanji: 研
+  keyword: polish
+- &730
+  frame: '730'
+  kanji: 戒
+  keyword: commandment
+- &731
+  frame: '731'
+  kanji: 弄
+  keyword: tinker with
+- &732
+  frame: '732'
+  kanji: 械
+  keyword: contraption
+- &733
+  frame: '733'
+  kanji: 鼻
+  keyword: nose
+- &734
+  frame: '734'
+  kanji: 刑
+  keyword: punish
+- &735
+  frame: '735'
+  kanji: 型
+  keyword: mould
+- &736
+  frame: '736'
+  kanji: 才
+  keyword: genius
+- &737
+  frame: '737'
+  kanji: 財
+  keyword: property
+- &738
+  frame: '738'
+  kanji: 材
+  keyword: lumber
+- &739
+  frame: '739'
+  kanji: 存
+  keyword: suppose
+- &740
+  frame: '740'
+  kanji: 在
+  keyword: exist
+- &741
+  frame: '741'
+  kanji: 乃
+  keyword: from
+- &742
+  frame: '742'
+  kanji: 携
+  keyword: portable
+- &743
+  frame: '743'
+  kanji: 及
+  keyword: reach out
+- &744
+  frame: '744'
+  kanji: 吸
+  keyword: suck
+- &745
+  frame: '745'
+  kanji: 扱
+  keyword: handle
+- &746
+  frame: '746'
+  kanji: 丈
+  keyword: length
+- &747
+  frame: '747'
+  kanji: 史
+  keyword: history
+- &748
+  frame: '748'
+  kanji: 吏
+  keyword: officer
+- &749
+  frame: '749'
+  kanji: 更
+  keyword: grow late
+- &750
+  frame: '750'
+  kanji: 硬
+  keyword: stiff
+- &751
+  frame: '751'
+  kanji: 梗
+  keyword: spiny
+- &752
+  frame: '752'
+  kanji: 又
+  keyword: or again
+- &753
+  frame: '753'
+  kanji: 双
+  keyword: pair
+- &754
+  frame: '754'
+  kanji: 桑
+  keyword: mulberry
+- &755
+  frame: '755'
+  kanji: 隻
+  keyword: vessels
+- &756
+  frame: '756'
+  kanji: 護
+  keyword: safeguard
+- &757
+  frame: '757'
+  kanji: 獲
+  keyword: seize
+- &758
+  frame: '758'
+  kanji: 奴
+  keyword: guy
+- &759
+  frame: '759'
+  kanji: 怒
+  keyword: angry
+- &760
+  frame: '760'
+  kanji: 友
+  keyword: friend
+- &761
+  frame: '761'
+  kanji: 抜
+  keyword: slip out
+- &762
+  frame: '762'
+  kanji: 投
+  keyword: throw
+- &763
+  frame: '763'
+  kanji: 没
+  keyword: drown
+- &764
+  frame: '764'
+  kanji: 股
+  keyword: thigh
+- &765
+  frame: '765'
+  kanji: 設
+  keyword: establishment
+- &766
+  frame: '766'
+  kanji: 撃
+  keyword: beat
+- &767
+  frame: '767'
+  kanji: 殻
+  keyword: husk
+- &768
+  frame: '768'
+  kanji: 支
+  keyword: branch
+- &769
+  frame: '769'
+  kanji: 技
+  keyword: skill
+- &770
+  frame: '770'
+  kanji: 枝
+  keyword: bough
+- &771
+  frame: '771'
+  kanji: 肢
+  keyword: limb
+- &772
+  frame: '772'
+  kanji: 茎
+  keyword: stalk
+- &773
+  frame: '773'
+  kanji: 怪
+  keyword: suspicious
+- &774
+  frame: '774'
+  kanji: 軽
+  keyword: lightly
+- &775
+  frame: '775'
+  kanji: 叔
+  keyword: uncle
+- &776
+  frame: '776'
+  kanji: 督
+  keyword: coach
+- &777
+  frame: '777'
+  kanji: 寂
+  keyword: loneliness
+- &778
+  frame: '778'
+  kanji: 淑
+  keyword: graceful
+- &779
+  frame: '779'
+  kanji: 反
+  keyword: anti-
+- &780
+  frame: '780'
+  kanji: 坂
+  keyword: slope
+- &781
+  frame: '781'
+  kanji: 板
+  keyword: plank
+- &782
+  frame: '782'
+  kanji: 返
+  keyword: return
+- &783
+  frame: '783'
+  kanji: 販
+  keyword: marketing
+- &784
+  frame: '784'
+  kanji: 爪
+  keyword: claw
+- &785
+  frame: '785'
+  kanji: 妥
+  keyword: gentle
+- &786
+  frame: '786'
+  kanji: 乳
+  keyword: milk
+- &787
+  frame: '787'
+  kanji: 浮
+  keyword: floating
+- &788
+  frame: '788'
+  kanji: 淫
+  keyword: lewd
+- &789
+  frame: '789'
+  kanji: 将
+  keyword: leader
+- &790
+  frame: '790'
+  kanji: 奨
+  keyword: exhort
+- &791
+  frame: '791'
+  kanji: 采
+  keyword: grab
+- &792
+  frame: '792'
+  kanji: 採
+  keyword: pick
+- &793
+  frame: '793'
+  kanji: 菜
+  keyword: vegetable
+- &794
+  frame: '794'
+  kanji: 受
+  keyword: accept
+- &795
+  frame: '795'
+  kanji: 授
+  keyword: impart
+- &796
+  frame: '796'
+  kanji: 愛
+  keyword: love
+- &797
+  frame: '797'
+  kanji: 曖
+  keyword: unclear
+- &798
+  frame: '798'
+  kanji: 払
+  keyword: pay
+- &799
+  frame: '799'
+  kanji: 広
+  keyword: wide
+- &800
+  frame: '800'
+  kanji: 勾
+  keyword: hooked
+- &801
+  frame: '801'
+  kanji: 拡
+  keyword: broaden
+- &802
+  frame: '802'
+  kanji: 鉱
+  keyword: mineral
+- &803
+  frame: '803'
+  kanji: 弁
+  keyword: valve
+- &804
+  frame: '804'
+  kanji: 雄
+  keyword: male
+- &805
+  frame: '805'
+  kanji: 台
+  keyword: pedestal
+- &806
+  frame: '806'
+  kanji: 怠
+  keyword: neglect
+- &807
+  frame: '807'
+  kanji: 治
+  keyword: reign
+- &808
+  frame: '808'
+  kanji: 冶
+  keyword: metallurgy
+- &809
+  frame: '809'
+  kanji: 始
+  keyword: commence
+- &810
+  frame: '810'
+  kanji: 胎
+  keyword: womb
+- &811
+  frame: '811'
+  kanji: 窓
+  keyword: window
+- &812
+  frame: '812'
+  kanji: 去
+  keyword: gone
+- &813
+  frame: '813'
+  kanji: 法
+  keyword: method
+- &814
+  frame: '814'
+  kanji: 会
+  keyword: meeting
+- &815
+  frame: '815'
+  kanji: 至
+  keyword: climax
+- &816
+  frame: '816'
+  kanji: 室
+  keyword: room
+- &817
+  frame: '817'
+  kanji: 到
+  keyword: arrival
+- &818
+  frame: '818'
+  kanji: 致
+  keyword: doth
+- &819
+  frame: '819'
+  kanji: 互
+  keyword: mutually
+- &820
+  frame: '820'
+  kanji: 棄
+  keyword: abandon
+- &821
+  frame: '821'
+  kanji: 育
+  keyword: bring up
+- &822
+  frame: '822'
+  kanji: 撤
+  keyword: remove
+- &823
+  frame: '823'
+  kanji: 充
+  keyword: allot
+- &824
+  frame: '824'
+  kanji: 銃
+  keyword: gun
+- &825
+  frame: '825'
+  kanji: 硫
+  keyword: sulfur
+- &826
+  frame: '826'
+  kanji: 流
+  keyword: current
+- &827
+  frame: '827'
+  kanji: 允
+  keyword: license
+- &828
+  frame: '828'
+  kanji: 唆
+  keyword: tempt
+- &829
+  frame: '829'
+  kanji: 出
+  keyword: exit
+- &830
+  frame: '830'
+  kanji: 山
+  keyword: mountain
+- &831
+  frame: '831'
+  kanji: 拙
+  keyword: bungling
+- &832
+  frame: '832'
+  kanji: 岩
+  keyword: boulder
+- &833
+  frame: '833'
+  kanji: 炭
+  keyword: charcoal
+- &834
+  frame: '834'
+  kanji: 岐
+  keyword: branch off
+- &835
+  frame: '835'
+  kanji: 峠
+  keyword: mountain pass
+- &836
+  frame: '836'
+  kanji: 崩
+  keyword: crumble
+- &837
+  frame: '837'
+  kanji: 密
+  keyword: secrecy
+- &838
+  frame: '838'
+  kanji: 蜜
+  keyword: honey
+- &839
+  frame: '839'
+  kanji: 嵐
+  keyword: storm
+- &840
+  frame: '840'
+  kanji: 崎
+  keyword: promontory
+- &841
+  frame: '841'
+  kanji: 崖
+  keyword: bluffs
+- &842
+  frame: '842'
+  kanji: 入
+  keyword: enter
+- &843
+  frame: '843'
+  kanji: 込
+  keyword: crowded
+- &844
+  frame: '844'
+  kanji: 分
+  keyword: part
+- &845
+  frame: '845'
+  kanji: 貧
+  keyword: poverty
+- &846
+  frame: '846'
+  kanji: 頒
+  keyword: partition
+- &847
+  frame: '847'
+  kanji: 公
+  keyword: public
+- &848
+  frame: '848'
+  kanji: 松
+  keyword: pine tree
+- &849
+  frame: '849'
+  kanji: 翁
+  keyword: venerable old man
+- &850
+  frame: '850'
+  kanji: 訟
+  keyword: sue
+- &851
+  frame: '851'
+  kanji: 谷
+  keyword: valley
+- &852
+  frame: '852'
+  kanji: 浴
+  keyword: bathe
+- &853
+  frame: '853'
+  kanji: 容
+  keyword: contain
+- &854
+  frame: '854'
+  kanji: 溶
+  keyword: melt
+- &855
+  frame: '855'
+  kanji: 欲
+  keyword: longing
+- &856
+  frame: '856'
+  kanji: 裕
+  keyword: abundant
+- &857
+  frame: '857'
+  kanji: 鉛
+  keyword: lead (metal)
+- &858
+  frame: '858'
+  kanji: 沿
+  keyword: run alongside
+- &859
+  frame: '859'
+  kanji: 賞
+  keyword: prize
+- &860
+  frame: '860'
+  kanji: 党
+  keyword: party
+- &861
+  frame: '861'
+  kanji: 堂
+  keyword: hall
+- &862
+  frame: '862'
+  kanji: 常
+  keyword: usual
+- &863
+  frame: '863'
+  kanji: 裳
+  keyword: skirt
+- &864
+  frame: '864'
+  kanji: 掌
+  keyword: manipulate
+- &865
+  frame: '865'
+  kanji: 皮
+  keyword: pelt
+- &866
+  frame: '866'
+  kanji: 波
+  keyword: waves
+- &867
+  frame: '867'
+  kanji: 婆
+  keyword: old woman
+- &868
+  frame: '868'
+  kanji: 披
+  keyword: expose
+- &869
+  frame: '869'
+  kanji: 破
+  keyword: rend
+- &870
+  frame: '870'
+  kanji: 被
+  keyword: incur
+- &871
+  frame: '871'
+  kanji: 残
+  keyword: remainder
+- &872
+  frame: '872'
+  kanji: 殉
+  keyword: martyrdom
+- &873
+  frame: '873'
+  kanji: 殊
+  keyword: particularly
+- &874
+  frame: '874'
+  kanji: 殖
+  keyword: augment
+- &875
+  frame: '875'
+  kanji: 列
+  keyword: file
+- &876
+  frame: '876'
+  kanji: 裂
+  keyword: split
+- &877
+  frame: '877'
+  kanji: 烈
+  keyword: ardent
+- &878
+  frame: '878'
+  kanji: 死
+  keyword: death
+- &879
+  frame: '879'
+  kanji: 葬
+  keyword: interment
+- &880
+  frame: '880'
+  kanji: 瞬
+  keyword: wink
+- &881
+  frame: '881'
+  kanji: 耳
+  keyword: ear
+- &882
+  frame: '882'
+  kanji: 取
+  keyword: take
+- &883
+  frame: '883'
+  kanji: 趣
+  keyword: gist
+- &884
+  frame: '884'
+  kanji: 最
+  keyword: utmost
+- &885
+  frame: '885'
+  kanji: 撮
+  keyword: snapshot
+- &886
+  frame: '886'
+  kanji: 恥
+  keyword: shame
+- &887
+  frame: '887'
+  kanji: 職
+  keyword: post
+- &888
+  frame: '888'
+  kanji: 聖
+  keyword: holy
+- &889
+  frame: '889'
+  kanji: 敢
+  keyword: daring
+- &890
+  frame: '890'
+  kanji: 聴
+  keyword: listen
+- &891
+  frame: '891'
+  kanji: 懐
+  keyword: pocket
+- &892
+  frame: '892'
+  kanji: 慢
+  keyword: ridicule
+- &893
+  frame: '893'
+  kanji: 漫
+  keyword: loose
+- &894
+  frame: '894'
+  kanji: 買
+  keyword: buy
+- &895
+  frame: '895'
+  kanji: 置
+  keyword: placement
+- &896
+  frame: '896'
+  kanji: 罰
+  keyword: penalty
+- &897
+  frame: '897'
+  kanji: 寧
+  keyword: rather
+- &898
+  frame: '898'
+  kanji: 濁
+  keyword: voiced
+- &899
+  frame: '899'
+  kanji: 環
+  keyword: ring
+- &900
+  frame: '900'
+  kanji: 還
+  keyword: send back
+- &901
+  frame: '901'
+  kanji: 夫
+  keyword: husband
+- &902
+  frame: '902'
+  kanji: 扶
+  keyword: aid
+- &903
+  frame: '903'
+  kanji: 渓
+  keyword: mountain stream
+- &904
+  frame: '904'
+  kanji: 規
+  keyword: standard
+- &905
+  frame: '905'
+  kanji: 替
+  keyword: exchange
+- &906
+  frame: '906'
+  kanji: 賛
+  keyword: approve
+- &907
+  frame: '907'
+  kanji: 潜
+  keyword: submerge
+- &908
+  frame: '908'
+  kanji: 失
+  keyword: lose
+- &909
+  frame: '909'
+  kanji: 鉄
+  keyword: iron
+- &910
+  frame: '910'
+  kanji: 迭
+  keyword: alternate
+- &911
+  frame: '911'
+  kanji: 臣
+  keyword: retainer
+- &912
+  frame: '912'
+  kanji: 姫
+  keyword: princess
+- &913
+  frame: '913'
+  kanji: 蔵
+  keyword: storehouse
+- &914
+  frame: '914'
+  kanji: 臓
+  keyword: entrails
+- &915
+  frame: '915'
+  kanji: 賢
+  keyword: intelligent
+- &916
+  frame: '916'
+  kanji: 腎
+  keyword: kidney
+- &917
+  frame: '917'
+  kanji: 堅
+  keyword: strict
+- &918
+  frame: '918'
+  kanji: 臨
+  keyword: look to
+- &919
+  frame: '919'
+  kanji: 覧
+  keyword: perusal
+- &920
+  frame: '920'
+  kanji: 巨
+  keyword: gigantic
+- &921
+  frame: '921'
+  kanji: 拒
+  keyword: repel
+- &922
+  frame: '922'
+  kanji: 力
+  keyword: power
+- &923
+  frame: '923'
+  kanji: 男
+  keyword: man
+- &924
+  frame: '924'
+  kanji: 労
+  keyword: labor
+- &925
+  frame: '925'
+  kanji: 募
+  keyword: recruit
+- &926
+  frame: '926'
+  kanji: 劣
+  keyword: inferiority
+- &927
+  frame: '927'
+  kanji: 功
+  keyword: achievement
+- &928
+  frame: '928'
+  kanji: 勧
+  keyword: persuade
+- &929
+  frame: '929'
+  kanji: 努
+  keyword: toil
+- &930
+  frame: '930'
+  kanji: 勃
+  keyword: uprising
+- &931
+  frame: '931'
+  kanji: 励
+  keyword: encourage
+- &932
+  frame: '932'
+  kanji: 加
+  keyword: add
+- &933
+  frame: '933'
+  kanji: 賀
+  keyword: congratulations
+- &934
+  frame: '934'
+  kanji: 架
+  keyword: erect
+- &935
+  frame: '935'
+  kanji: 脇
+  keyword: armpit
+- &936
+  frame: '936'
+  kanji: 脅
+  keyword: threaten
+- &937
+  frame: '937'
+  kanji: 協
+  keyword: co-
+- &938
+  frame: '938'
+  kanji: 行
+  keyword: going
+- &939
+  frame: '939'
+  kanji: 律
+  keyword: rhythm
+- &940
+  frame: '940'
+  kanji: 復
+  keyword: restore
+- &941
+  frame: '941'
+  kanji: 得
+  keyword: gain
+- &942
+  frame: '942'
+  kanji: 従
+  keyword: accompany
+- &943
+  frame: '943'
+  kanji: 徒
+  keyword: junior
+- &944
+  frame: '944'
+  kanji: 待
+  keyword: wait
+- &945
+  frame: '945'
+  kanji: 往
+  keyword: journey
+- &946
+  frame: '946'
+  kanji: 征
+  keyword: subjugate
+- &947
+  frame: '947'
+  kanji: 径
+  keyword: diameter
+- &948
+  frame: '948'
+  kanji: 彼
+  keyword: he
+- &949
+  frame: '949'
+  kanji: 役
+  keyword: duty
+- &950
+  frame: '950'
+  kanji: 徳
+  keyword: benevolence
+- &951
+  frame: '951'
+  kanji: 徹
+  keyword: penetrate
+- &952
+  frame: '952'
+  kanji: 徴
+  keyword: indications
+- &953
+  frame: '953'
+  kanji: 懲
+  keyword: penal
+- &954
+  frame: '954'
+  kanji: 微
+  keyword: delicate
+- &955
+  frame: '955'
+  kanji: 街
+  keyword: boulevard
+- &956
+  frame: '956'
+  kanji: 桁
+  keyword: girder
+- &957
+  frame: '957'
+  kanji: 衡
+  keyword: equilibrium
+- &958
+  frame: '958'
+  kanji: 稿
+  keyword: draft
+- &959
+  frame: '959'
+  kanji: 稼
+  keyword: earnings
+- &960
+  frame: '960'
+  kanji: 程
+  keyword: extent
+- &961
+  frame: '961'
+  kanji: 税
+  keyword: tax
+- &962
+  frame: '962'
+  kanji: 稚
+  keyword: immature
+- &963
+  frame: '963'
+  kanji: 和
+  keyword: harmony
+- &964
+  frame: '964'
+  kanji: 移
+  keyword: shift
+- &965
+  frame: '965'
+  kanji: 秒
+  keyword: second
+- &966
+  frame: '966'
+  kanji: 秋
+  keyword: autumn
+- &967
+  frame: '967'
+  kanji: 愁
+  keyword: distress
+- &968
+  frame: '968'
+  kanji: 私
+  keyword: private
+- &969
+  frame: '969'
+  kanji: 秩
+  keyword: regularity
+- &970
+  frame: '970'
+  kanji: 秘
+  keyword: secret
+- &971
+  frame: '971'
+  kanji: 称
+  keyword: appellation
+- &972
+  frame: '972'
+  kanji: 利
+  keyword: profit
+- &973
+  frame: '973'
+  kanji: 梨
+  keyword: pear tree
+- &974
+  frame: '974'
+  kanji: 穫
+  keyword: harvest
+- &975
+  frame: '975'
+  kanji: 穂
+  keyword: ear of a plant
+- &976
+  frame: '976'
+  kanji: 稲
+  keyword: rice plant
+- &977
+  frame: '977'
+  kanji: 香
+  keyword: incense
+- &978
+  frame: '978'
+  kanji: 季
+  keyword: seasons
+- &979
+  frame: '979'
+  kanji: 委
+  keyword: committee
+- &980
+  frame: '980'
+  kanji: 秀
+  keyword: excel
+- &981
+  frame: '981'
+  kanji: 透
+  keyword: transparent
+- &982
+  frame: '982'
+  kanji: 誘
+  keyword: entice
+- &983
+  frame: '983'
+  kanji: 稽
+  keyword: training
+- &984
+  frame: '984'
+  kanji: 穀
+  keyword: cereals
+- &985
+  frame: '985'
+  kanji: 菌
+  keyword: germ
+- &986
+  frame: '986'
+  kanji: 萎
+  keyword: numb
+- &987
+  frame: '987'
+  kanji: 米
+  keyword: rice
+- &988
+  frame: '988'
+  kanji: 粉
+  keyword: flour
+- &989
+  frame: '989'
+  kanji: 粘
+  keyword: sticky
+- &990
+  frame: '990'
+  kanji: 粒
+  keyword: grains
+- &991
+  frame: '991'
+  kanji: 粧
+  keyword: cosmetics
+- &992
+  frame: '992'
+  kanji: 迷
+  keyword: astray
+- &993
+  frame: '993'
+  kanji: 粋
+  keyword: chic
+- &994
+  frame: '994'
+  kanji: 謎
+  keyword: riddle
+- &995
+  frame: '995'
+  kanji: 糧
+  keyword: provisions
+- &996
+  frame: '996'
+  kanji: 菊
+  keyword: chrysanthemum
+- &997
+  frame: '997'
+  kanji: 奥
+  keyword: core
+- &998
+  frame: '998'
+  kanji: 数
+  keyword: number
+- &999
+  frame: '999'
+  kanji: 楼
+  keyword: watchtower
+- &1000
+  frame: '1000'
+  kanji: 類
+  keyword: sort
+- &1001
+  frame: '1001'
+  kanji: 漆
+  keyword: lacquer
+- &1002
+  frame: '1002'
+  kanji: 膝
+  keyword: knee
+- &1003
+  frame: '1003'
+  kanji: 様
+  keyword: Esq.
+- &1004
+  frame: '1004'
+  kanji: 求
+  keyword: request
+- &1005
+  frame: '1005'
+  kanji: 球
+  keyword: ball
+- &1006
+  frame: '1006'
+  kanji: 救
+  keyword: salvation
+- &1007
+  frame: '1007'
+  kanji: 竹
+  keyword: bamboo
+- &1008
+  frame: '1008'
+  kanji: 笑
+  keyword: laugh
+- &1009
+  frame: '1009'
+  kanji: 笠
+  keyword: bamboo hat
+- &1010
+  frame: '1010'
+  kanji: 笹
+  keyword: bamboo grass
+- &1011
+  frame: '1011'
+  kanji: 箋
+  keyword: stationery
+- &1012
+  frame: '1012'
+  kanji: 筋
+  keyword: muscle
+- &1013
+  frame: '1013'
+  kanji: 箱
+  keyword: box
+- &1014
+  frame: '1014'
+  kanji: 筆
+  keyword: writing brush
+- &1015
+  frame: '1015'
+  kanji: 筒
+  keyword: cylinder
+- &1016
+  frame: '1016'
+  kanji: 等
+  keyword: etc.
+- &1017
+  frame: '1017'
+  kanji: 算
+  keyword: calculate
+- &1018
+  frame: '1018'
+  kanji: 答
+  keyword: solution
+- &1019
+  frame: '1019'
+  kanji: 策
+  keyword: scheme
+- &1020
+  frame: '1020'
+  kanji: 簿
+  keyword: register
+- &1021
+  frame: '1021'
+  kanji: 築
+  keyword: fabricate
+- &1022
+  frame: '1022'
+  kanji: 篭
+  keyword: basket
+- &1023
+  frame: '1023'
+  kanji: 人
+  keyword: person
+- &1024
+  frame: '1024'
+  kanji: 佐
+  keyword: assistant
+- &1025
+  frame: '1025'
+  kanji: 侶
+  keyword: partner
+- &1026
+  frame: '1026'
+  kanji: 但
+  keyword: however
+- &1027
+  frame: '1027'
+  kanji: 住
+  keyword: dwell
+- &1028
+  frame: '1028'
+  kanji: 位
+  keyword: rank
+- &1029
+  frame: '1029'
+  kanji: 仲
+  keyword: go-between
+- &1030
+  frame: '1030'
+  kanji: 体
+  keyword: body
+- &1031
+  frame: '1031'
+  kanji: 悠
+  keyword: remote
+- &1032
+  frame: '1032'
+  kanji: 件
+  keyword: affair
+- &1033
+  frame: '1033'
+  kanji: 仕
+  keyword: attend
+- &1034
+  frame: '1034'
+  kanji: 他
+  keyword: other
+- &1035
+  frame: '1035'
+  kanji: 伏
+  keyword: prostrated
+- &1036
+  frame: '1036'
+  kanji: 伝
+  keyword: transmit
+- &1037
+  frame: '1037'
+  kanji: 仏
+  keyword: Buddha
+- &1038
+  frame: '1038'
+  kanji: 休
+  keyword: rest
+- &1039
+  frame: '1039'
+  kanji: 仮
+  keyword: provisional
+- &1040
+  frame: '1040'
+  kanji: 伎
+  keyword: performing artist
+- &1041
+  frame: '1041'
+  kanji: 伯
+  keyword: chief
+- &1042
+  frame: '1042'
+  kanji: 俗
+  keyword: vulgar
+- &1043
+  frame: '1043'
+  kanji: 信
+  keyword: faith
+- &1044
+  frame: '1044'
+  kanji: 佳
+  keyword: excellent
+- &1045
+  frame: '1045'
+  kanji: 依
+  keyword: reliant
+- &1046
+  frame: '1046'
+  kanji: 例
+  keyword: example
+- &1047
+  frame: '1047'
+  kanji: 個
+  keyword: individual
+- &1048
+  frame: '1048'
+  kanji: 健
+  keyword: healthy
+- &1049
+  frame: '1049'
+  kanji: 側
+  keyword: side
+- &1050
+  frame: '1050'
+  kanji: 侍
+  keyword: waiter
+- &1051
+  frame: '1051'
+  kanji: 停
+  keyword: halt
+- &1052
+  frame: '1052'
+  kanji: 値
+  keyword: price
+- &1053
+  frame: '1053'
+  kanji: 倣
+  keyword: emulate
+- &1054
+  frame: '1054'
+  kanji: 傲
+  keyword: arrogance
+- &1055
+  frame: '1055'
+  kanji: 倒
+  keyword: overthrow
+- &1056
+  frame: '1056'
+  kanji: 偵
+  keyword: spy
+- &1057
+  frame: '1057'
+  kanji: 僧
+  keyword: Buddhist priest
+- &1058
+  frame: '1058'
+  kanji: 億
+  keyword: hundred million
+- &1059
+  frame: '1059'
+  kanji: 儀
+  keyword: ceremony
+- &1060
+  frame: '1060'
+  kanji: 償
+  keyword: reparation
+- &1061
+  frame: '1061'
+  kanji: 仙
+  keyword: hermit
+- &1062
+  frame: '1062'
+  kanji: 催
+  keyword: sponsor
+- &1063
+  frame: '1063'
+  kanji: 仁
+  keyword: humanity
+- &1064
+  frame: '1064'
+  kanji: 侮
+  keyword: scorn
+- &1065
+  frame: '1065'
+  kanji: 使
+  keyword: use
+- &1066
+  frame: '1066'
+  kanji: 便
+  keyword: convenience
+- &1067
+  frame: '1067'
+  kanji: 倍
+  keyword: double
+- &1068
+  frame: '1068'
+  kanji: 優
+  keyword: tenderness
+- &1069
+  frame: '1069'
+  kanji: 伐
+  keyword: fell
+- &1070
+  frame: '1070'
+  kanji: 宿
+  keyword: inn
+- &1071
+  frame: '1071'
+  kanji: 傷
+  keyword: wound
+- &1072
+  frame: '1072'
+  kanji: 保
+  keyword: protect
+- &1073
+  frame: '1073'
+  kanji: 褒
+  keyword: praise
+- &1074
+  frame: '1074'
+  kanji: 傑
+  keyword: greatness
+- &1075
+  frame: '1075'
+  kanji: 付
+  keyword: adhere
+- &1076
+  frame: '1076'
+  kanji: 符
+  keyword: token
+- &1077
+  frame: '1077'
+  kanji: 府
+  keyword: municipality
+- &1078
+  frame: '1078'
+  kanji: 任
+  keyword: responsibility
+- &1079
+  frame: '1079'
+  kanji: 賃
+  keyword: fare
+- &1080
+  frame: '1080'
+  kanji: 代
+  keyword: substitute
+- &1081
+  frame: '1081'
+  kanji: 袋
+  keyword: sack
+- &1082
+  frame: '1082'
+  kanji: 貸
+  keyword: lend
+- &1083
+  frame: '1083'
+  kanji: 化
+  keyword: change
+- &1084
+  frame: '1084'
+  kanji: 花
+  keyword: flower
+- &1085
+  frame: '1085'
+  kanji: 貨
+  keyword: freight
+- &1086
+  frame: '1086'
+  kanji: 傾
+  keyword: lean
+- &1087
+  frame: '1087'
+  kanji: 何
+  keyword: what
+- &1088
+  frame: '1088'
+  kanji: 荷
+  keyword: baggage
+- &1089
+  frame: '1089'
+  kanji: 俊
+  keyword: sagacious
+- &1090
+  frame: '1090'
+  kanji: 傍
+  keyword: bystander
+- &1091
+  frame: '1091'
+  kanji: 俺
+  keyword: myself
+- &1092
+  frame: '1092'
+  kanji: 久
+  keyword: long time
+- &1093
+  frame: '1093'
+  kanji: 畝
+  keyword: furrow
+- &1094
+  frame: '1094'
+  kanji: 囚
+  keyword: captured
+- &1095
+  frame: '1095'
+  kanji: 内
+  keyword: inside
+- &1096
+  frame: '1096'
+  kanji: 丙
+  keyword: third class
+- &1097
+  frame: '1097'
+  kanji: 柄
+  keyword: design
+- &1098
+  frame: '1098'
+  kanji: 肉
+  keyword: meat
+- &1099
+  frame: '1099'
+  kanji: 腐
+  keyword: rot
+- &1100
+  frame: '1100'
+  kanji: 座
+  keyword: sit
+- &1101
+  frame: '1101'
+  kanji: 挫
+  keyword: sprain
+- &1102
+  frame: '1102'
+  kanji: 卒
+  keyword: graduate
+- &1103
+  frame: '1103'
+  kanji: 傘
+  keyword: umbrella
+- &1104
+  frame: '1104'
+  kanji: 匁
+  keyword: monme
+- &1105
+  frame: '1105'
+  kanji: 以
+  keyword: by means of
+- &1106
+  frame: '1106'
+  kanji: 似
+  keyword: similar
+- &1107
+  frame: '1107'
+  kanji: 併
+  keyword: join
+- &1108
+  frame: '1108'
+  kanji: 瓦
+  keyword: tile
+- &1109
+  frame: '1109'
+  kanji: 瓶
+  keyword: flower pot
+- &1110
+  frame: '1110'
+  kanji: 宮
+  keyword: Shinto shrine
+- &1111
+  frame: '1111'
+  kanji: 営
+  keyword: occupation
+- &1112
+  frame: '1112'
+  kanji: 善
+  keyword: virtuous
+- &1113
+  frame: '1113'
+  kanji: 膳
+  keyword: dining tray
+- &1114
+  frame: '1114'
+  kanji: 年
+  keyword: year
+- &1115
+  frame: '1115'
+  kanji: 夜
+  keyword: night
+- &1116
+  frame: '1116'
+  kanji: 液
+  keyword: fluid
+- &1117
+  frame: '1117'
+  kanji: 塚
+  keyword: hillock
+- &1118
+  frame: '1118'
+  kanji: 幣
+  keyword: cash
+- &1119
+  frame: '1119'
+  kanji: 蔽
+  keyword: cover over
+- &1120
+  frame: '1120'
+  kanji: 弊
+  keyword: abuse
+- &1121
+  frame: '1121'
+  kanji: 喚
+  keyword: yell
+- &1122
+  frame: '1122'
+  kanji: 換
+  keyword: interchange
+- &1123
+  frame: '1123'
+  kanji: 融
+  keyword: dissolve
+- &1124
+  frame: '1124'
+  kanji: 施
+  keyword: alms
+- &1125
+  frame: '1125'
+  kanji: 旋
+  keyword: rotation
+- &1126
+  frame: '1126'
+  kanji: 遊
+  keyword: play
+- &1127
+  frame: '1127'
+  kanji: 旅
+  keyword: trip
+- &1128
+  frame: '1128'
+  kanji: 勿
+  keyword: not
+- &1129
+  frame: '1129'
+  kanji: 物
+  keyword: thing
+- &1130
+  frame: '1130'
+  kanji: 易
+  keyword: easy
+- &1131
+  frame: '1131'
+  kanji: 賜
+  keyword: grant
+- &1132
+  frame: '1132'
+  kanji: 尿
+  keyword: urine
+- &1133
+  frame: '1133'
+  kanji: 尼
+  keyword: nun
+- &1134
+  frame: '1134'
+  kanji: 尻
+  keyword: buttocks
+- &1135
+  frame: '1135'
+  kanji: 泥
+  keyword: mud
+- &1136
+  frame: '1136'
+  kanji: 塀
+  keyword: fence
+- &1137
+  frame: '1137'
+  kanji: 履
+  keyword: footgear
+- &1138
+  frame: '1138'
+  kanji: 屋
+  keyword: roof
+- &1139
+  frame: '1139'
+  kanji: 握
+  keyword: grip
+- &1140
+  frame: '1140'
+  kanji: 屈
+  keyword: yield
+- &1141
+  frame: '1141'
+  kanji: 掘
+  keyword: dig
+- &1142
+  frame: '1142'
+  kanji: 堀
+  keyword: ditch
+- &1143
+  frame: '1143'
+  kanji: 居
+  keyword: reside
+- &1144
+  frame: '1144'
+  kanji: 据
+  keyword: set
+- &1145
+  frame: '1145'
+  kanji: 裾
+  keyword: hem
+- &1146
+  frame: '1146'
+  kanji: 層
+  keyword: stratum
+- &1147
+  frame: '1147'
+  kanji: 局
+  keyword: bureau
+- &1148
+  frame: '1148'
+  kanji: 遅
+  keyword: slow
+- &1149
+  frame: '1149'
+  kanji: 漏
+  keyword: leak
+- &1150
+  frame: '1150'
+  kanji: 刷
+  keyword: printing
+- &1151
+  frame: '1151'
+  kanji: 尺
+  keyword: shaku
+- &1152
+  frame: '1152'
+  kanji: 尽
+  keyword: exhaust
+- &1153
+  frame: '1153'
+  kanji: 沢
+  keyword: swamp
+- &1154
+  frame: '1154'
+  kanji: 訳
+  keyword: translate
+- &1155
+  frame: '1155'
+  kanji: 択
+  keyword: choose
+- &1156
+  frame: '1156'
+  kanji: 昼
+  keyword: daytime
+- &1157
+  frame: '1157'
+  kanji: 戸
+  keyword: door
+- &1158
+  frame: '1158'
+  kanji: 肩
+  keyword: shoulder
+- &1159
+  frame: '1159'
+  kanji: 房
+  keyword: tassel
+- &1160
+  frame: '1160'
+  kanji: 扇
+  keyword: fan
+- &1161
+  frame: '1161'
+  kanji: 炉
+  keyword: hearth
+- &1162
+  frame: '1162'
+  kanji: 戻
+  keyword: re-
+- &1163
+  frame: '1163'
+  kanji: 涙
+  keyword: tears
+- &1164
+  frame: '1164'
+  kanji: 雇
+  keyword: employ
+- &1165
+  frame: '1165'
+  kanji: 顧
+  keyword: look back
+- &1166
+  frame: '1166'
+  kanji: 啓
+  keyword: disclose
+- &1167
+  frame: '1167'
+  kanji: 示
+  keyword: show
+- &1168
+  frame: '1168'
+  kanji: 礼
+  keyword: salutation
+- &1169
+  frame: '1169'
+  kanji: 祥
+  keyword: auspicious
+- &1170
+  frame: '1170'
+  kanji: 祝
+  keyword: celebrate
+- &1171
+  frame: '1171'
+  kanji: 福
+  keyword: blessing
+- &1172
+  frame: '1172'
+  kanji: 祉
+  keyword: welfare
+- &1173
+  frame: '1173'
+  kanji: 社
+  keyword: company
+- &1174
+  frame: '1174'
+  kanji: 視
+  keyword: inspection
+- &1175
+  frame: '1175'
+  kanji: 奈
+  keyword: Nara
+- &1176
+  frame: '1176'
+  kanji: 尉
+  keyword: military officer
+- &1177
+  frame: '1177'
+  kanji: 慰
+  keyword: consolation
+- &1178
+  frame: '1178'
+  kanji: 款
+  keyword: goodwill
+- &1179
+  frame: '1179'
+  kanji: 禁
+  keyword: prohibition
+- &1180
+  frame: '1180'
+  kanji: 襟
+  keyword: collar
+- &1181
+  frame: '1181'
+  kanji: 宗
+  keyword: religion
+- &1182
+  frame: '1182'
+  kanji: 崇
+  keyword: adore
+- &1183
+  frame: '1183'
+  kanji: 祭
+  keyword: ritual
+- &1184
+  frame: '1184'
+  kanji: 察
+  keyword: guess
+- &1185
+  frame: '1185'
+  kanji: 擦
+  keyword: grate
+- &1186
+  frame: '1186'
+  kanji: 由
+  keyword: wherefore
+- &1187
+  frame: '1187'
+  kanji: 抽
+  keyword: pluck
+- &1188
+  frame: '1188'
+  kanji: 油
+  keyword: oil
+- &1189
+  frame: '1189'
+  kanji: 袖
+  keyword: sleeve
+- &1190
+  frame: '1190'
+  kanji: 宙
+  keyword: mid-air
+- &1191
+  frame: '1191'
+  kanji: 届
+  keyword: deliver
+- &1192
+  frame: '1192'
+  kanji: 笛
+  keyword: flute
+- &1193
+  frame: '1193'
+  kanji: 軸
+  keyword: axis
+- &1194
+  frame: '1194'
+  kanji: 甲
+  keyword: armor
+- &1195
+  frame: '1195'
+  kanji: 押
+  keyword: push
+- &1196
+  frame: '1196'
+  kanji: 岬
+  keyword: headland
+- &1197
+  frame: '1197'
+  kanji: 挿
+  keyword: insert
+- &1198
+  frame: '1198'
+  kanji: 申
+  keyword: speaketh
+- &1199
+  frame: '1199'
+  kanji: 伸
+  keyword: expand
+- &1200
+  frame: '1200'
+  kanji: 神
+  keyword: gods
+- &1201
+  frame: '1201'
+  kanji: 捜
+  keyword: search
+- &1202
+  frame: '1202'
+  kanji: 果
+  keyword: fruit
+- &1203
+  frame: '1203'
+  kanji: 菓
+  keyword: confectionary
+- &1204
+  frame: '1204'
+  kanji: 課
+  keyword: chapter
+- &1205
+  frame: '1205'
+  kanji: 裸
+  keyword: naked
+- &1206
+  frame: '1206'
+  kanji: 斤
+  keyword: ax
+- &1207
+  frame: '1207'
+  kanji: 析
+  keyword: chop
+- &1208
+  frame: '1208'
+  kanji: 所
+  keyword: place
+- &1209
+  frame: '1209'
+  kanji: 祈
+  keyword: pray
+- &1210
+  frame: '1210'
+  kanji: 近
+  keyword: near
+- &1211
+  frame: '1211'
+  kanji: 折
+  keyword: fold
+- &1212
+  frame: '1212'
+  kanji: 哲
+  keyword: philosophy
+- &1213
+  frame: '1213'
+  kanji: 逝
+  keyword: departed
+- &1214
+  frame: '1214'
+  kanji: 誓
+  keyword: vow
+- &1215
+  frame: '1215'
+  kanji: 斬
+  keyword: chop off
+- &1216
+  frame: '1216'
+  kanji: 暫
+  keyword: temporarily
+- &1217
+  frame: '1217'
+  kanji: 漸
+  keyword: steadily
+- &1218
+  frame: '1218'
+  kanji: 断
+  keyword: severance
+- &1219
+  frame: '1219'
+  kanji: 質
+  keyword: substance
+- &1220
+  frame: '1220'
+  kanji: 斥
+  keyword: reject
+- &1221
+  frame: '1221'
+  kanji: 訴
+  keyword: accusation
+- &1222
+  frame: '1222'
+  kanji: 昨
+  keyword: yesterday
+- &1223
+  frame: '1223'
+  kanji: 詐
+  keyword: lie
+- &1224
+  frame: '1224'
+  kanji: 作
+  keyword: make
+- &1225
+  frame: '1225'
+  kanji: 雪
+  keyword: snow
+- &1226
+  frame: '1226'
+  kanji: 録
+  keyword: record
+- &1227
+  frame: '1227'
+  kanji: 剥
+  keyword: peel off
+- &1228
+  frame: '1228'
+  kanji: 尋
+  keyword: inquire
+- &1229
+  frame: '1229'
+  kanji: 急
+  keyword: hurry
+- &1230
+  frame: '1230'
+  kanji: 穏
+  keyword: calm
+- &1231
+  frame: '1231'
+  kanji: 侵
+  keyword: encroach
+- &1232
+  frame: '1232'
+  kanji: 浸
+  keyword: immersed
+- &1233
+  frame: '1233'
+  kanji: 寝
+  keyword: lie down
+- &1234
+  frame: '1234'
+  kanji: 婦
+  keyword: lady
+- &1235
+  frame: '1235'
+  kanji: 掃
+  keyword: sweep
+- &1236
+  frame: '1236'
+  kanji: 当
+  keyword: hit
+- &1237
+  frame: '1237'
+  kanji: 彙
+  keyword: glossary
+- &1238
+  frame: '1238'
+  kanji: 争
+  keyword: contend
+- &1239
+  frame: '1239'
+  kanji: 浄
+  keyword: clean
+- &1240
+  frame: '1240'
+  kanji: 事
+  keyword: matter
+- &1241
+  frame: '1241'
+  kanji: 唐
+  keyword: T'ang
+- &1242
+  frame: '1242'
+  kanji: 糖
+  keyword: sugar
+- &1243
+  frame: '1243'
+  kanji: 康
+  keyword: sane
+- &1244
+  frame: '1244'
+  kanji: 逮
+  keyword: apprehend
+- &1245
+  frame: '1245'
+  kanji: 伊
+  keyword: Italy
+- &1246
+  frame: '1246'
+  kanji: 君
+  keyword: old boy
+- &1247
+  frame: '1247'
+  kanji: 群
+  keyword: flock
+- &1248
+  frame: '1248'
+  kanji: 耐
+  keyword: -proof
+- &1249
+  frame: '1249'
+  kanji: 需
+  keyword: demand
+- &1250
+  frame: '1250'
+  kanji: 儒
+  keyword: Confucian
+- &1251
+  frame: '1251'
+  kanji: 端
+  keyword: edge
+- &1252
+  frame: '1252'
+  kanji: 両
+  keyword: both
+- &1253
+  frame: '1253'
+  kanji: 満
+  keyword: full
+- &1254
+  frame: '1254'
+  kanji: 画
+  keyword: brush-stroke
+- &1255
+  frame: '1255'
+  kanji: 歯
+  keyword: tooth
+- &1256
+  frame: '1256'
+  kanji: 曲
+  keyword: bend
+- &1257
+  frame: '1257'
+  kanji: 曹
+  keyword: cadet
+- &1258
+  frame: '1258'
+  kanji: 遭
+  keyword: encounter
+- &1259
+  frame: '1259'
+  kanji: 漕
+  keyword: rowing
+- &1260
+  frame: '1260'
+  kanji: 槽
+  keyword: vat
+- &1261
+  frame: '1261'
+  kanji: 斗
+  keyword: Big Dipper
+- &1262
+  frame: '1262'
+  kanji: 料
+  keyword: fee
+- &1263
+  frame: '1263'
+  kanji: 科
+  keyword: department
+- &1264
+  frame: '1264'
+  kanji: 図
+  keyword: map
+- &1265
+  frame: '1265'
+  kanji: 用
+  keyword: utilize
+- &1266
+  frame: '1266'
+  kanji: 庸
+  keyword: comfortable
+- &1267
+  frame: '1267'
+  kanji: 備
+  keyword: equip
+- &1268
+  frame: '1268'
+  kanji: 昔
+  keyword: once upon a time
+- &1269
+  frame: '1269'
+  kanji: 錯
+  keyword: confused
+- &1270
+  frame: '1270'
+  kanji: 借
+  keyword: borrow
+- &1271
+  frame: '1271'
+  kanji: 惜
+  keyword: pity
+- &1272
+  frame: '1272'
+  kanji: 措
+  keyword: set aside
+- &1273
+  frame: '1273'
+  kanji: 散
+  keyword: scatter
+- &1274
+  frame: '1274'
+  kanji: 廿
+  keyword: twenty
+- &1275
+  frame: '1275'
+  kanji: 庶
+  keyword: commoner
+- &1276
+  frame: '1276'
+  kanji: 遮
+  keyword: intercept
+- &1277
+  frame: '1277'
+  kanji: 席
+  keyword: seat
+- &1278
+  frame: '1278'
+  kanji: 度
+  keyword: degrees
+- &1279
+  frame: '1279'
+  kanji: 渡
+  keyword: transit
+- &1280
+  frame: '1280'
+  kanji: 奔
+  keyword: bustle
+- &1281
+  frame: '1281'
+  kanji: 噴
+  keyword: erupt
+- &1282
+  frame: '1282'
+  kanji: 墳
+  keyword: tomb
+- &1283
+  frame: '1283'
+  kanji: 憤
+  keyword: aroused
+- &1284
+  frame: '1284'
+  kanji: 焼
+  keyword: bake
+- &1285
+  frame: '1285'
+  kanji: 暁
+  keyword: daybreak
+- &1286
+  frame: '1286'
+  kanji: 半
+  keyword: half
+- &1287
+  frame: '1287'
+  kanji: 伴
+  keyword: consort
+- &1288
+  frame: '1288'
+  kanji: 畔
+  keyword: paddy ridge
+- &1289
+  frame: '1289'
+  kanji: 判
+  keyword: judgment
+- &1290
+  frame: '1290'
+  kanji: 拳
+  keyword: fist
+- &1291
+  frame: '1291'
+  kanji: 券
+  keyword: ticket
+- &1292
+  frame: '1292'
+  kanji: 巻
+  keyword: scroll
+- &1293
+  frame: '1293'
+  kanji: 圏
+  keyword: sphere
+- &1294
+  frame: '1294'
+  kanji: 勝
+  keyword: victory
+- &1295
+  frame: '1295'
+  kanji: 藤
+  keyword: wisteria
+- &1296
+  frame: '1296'
+  kanji: 謄
+  keyword: facsimilie
+- &1297
+  frame: '1297'
+  kanji: 片
+  keyword: one-sided
+- &1298
+  frame: '1298'
+  kanji: 版
+  keyword: printing block
+- &1299
+  frame: '1299'
+  kanji: 之
+  keyword: of
+- &1300
+  frame: '1300'
+  kanji: 乏
+  keyword: destitution
+- &1301
+  frame: '1301'
+  kanji: 芝
+  keyword: turf
+- &1302
+  frame: '1302'
+  kanji: 不
+  keyword: negative
+- &1303
+  frame: '1303'
+  kanji: 否
+  keyword: negate
+- &1304
+  frame: '1304'
+  kanji: 杯
+  keyword: cupfuls
+- &1305
+  frame: '1305'
+  kanji: 矢
+  keyword: dart
+- &1306
+  frame: '1306'
+  kanji: 矯
+  keyword: rectify
+- &1307
+  frame: '1307'
+  kanji: 族
+  keyword: tribe
+- &1308
+  frame: '1308'
+  kanji: 知
+  keyword: know
+- &1309
+  frame: '1309'
+  kanji: 智
+  keyword: wisdom
+- &1310
+  frame: '1310'
+  kanji: 挨
+  keyword: shove
+- &1311
+  frame: '1311'
+  kanji: 矛
+  keyword: halberd
+- &1312
+  frame: '1312'
+  kanji: 柔
+  keyword: tender
+- &1313
+  frame: '1313'
+  kanji: 務
+  keyword: task
+- &1314
+  frame: '1314'
+  kanji: 霧
+  keyword: fog
+- &1315
+  frame: '1315'
+  kanji: 班
+  keyword: squad
+- &1316
+  frame: '1316'
+  kanji: 帰
+  keyword: homecoming
+- &1317
+  frame: '1317'
+  kanji: 弓
+  keyword: bow
+- &1318
+  frame: '1318'
+  kanji: 引
+  keyword: pull
+- &1319
+  frame: '1319'
+  kanji: 弔
+  keyword: condolences
+- &1320
+  frame: '1320'
+  kanji: 弘
+  keyword: vast
+- &1321
+  frame: '1321'
+  kanji: 強
+  keyword: strong
+- &1322
+  frame: '1322'
+  kanji: 弥
+  keyword: more and more
+- &1323
+  frame: '1323'
+  kanji: 弱
+  keyword: weak
+- &1324
+  frame: '1324'
+  kanji: 溺
+  keyword: drowning
+- &1325
+  frame: '1325'
+  kanji: 沸
+  keyword: seethe
+- &1326
+  frame: '1326'
+  kanji: 費
+  keyword: expense
+- &1327
+  frame: '1327'
+  kanji: 第
+  keyword: No.
+- &1328
+  frame: '1328'
+  kanji: 弟
+  keyword: younger brother
+- &1329
+  frame: '1329'
+  kanji: 巧
+  keyword: adroit
+- &1330
+  frame: '1330'
+  kanji: 号
+  keyword: nickname
+- &1331
+  frame: '1331'
+  kanji: 朽
+  keyword: decay
+- &1332
+  frame: '1332'
+  kanji: 誇
+  keyword: boast
+- &1333
+  frame: '1333'
+  kanji: 顎
+  keyword: chin
+- &1334
+  frame: '1334'
+  kanji: 汚
+  keyword: dirty
+- &1335
+  frame: '1335'
+  kanji: 与
+  keyword: bestow
+- &1336
+  frame: '1336'
+  kanji: 写
+  keyword: copy
+- &1337
+  frame: '1337'
+  kanji: 身
+  keyword: somebody
+- &1338
+  frame: '1338'
+  kanji: 射
+  keyword: shoot
+- &1339
+  frame: '1339'
+  kanji: 謝
+  keyword: apologize
+- &1340
+  frame: '1340'
+  kanji: 老
+  keyword: old man
+- &1341
+  frame: '1341'
+  kanji: 考
+  keyword: consider
+- &1342
+  frame: '1342'
+  kanji: 孝
+  keyword: filial piety
+- &1343
+  frame: '1343'
+  kanji: 教
+  keyword: teach
+- &1344
+  frame: '1344'
+  kanji: 拷
+  keyword: torture
+- &1345
+  frame: '1345'
+  kanji: 者
+  keyword: someone
+- &1346
+  frame: '1346'
+  kanji: 煮
+  keyword: boil
+- &1347
+  frame: '1347'
+  kanji: 著
+  keyword: renowned
+- &1348
+  frame: '1348'
+  kanji: 箸
+  keyword: chopsticks
+- &1349
+  frame: '1349'
+  kanji: 署
+  keyword: signature
+- &1350
+  frame: '1350'
+  kanji: 暑
+  keyword: sultry
+- &1351
+  frame: '1351'
+  kanji: 諸
+  keyword: various
+- &1352
+  frame: '1352'
+  kanji: 猪
+  keyword: boar
+- &1353
+  frame: '1353'
+  kanji: 渚
+  keyword: strand
+- &1354
+  frame: '1354'
+  kanji: 賭
+  keyword: gamble
+- &1355
+  frame: '1355'
+  kanji: 峡
+  keyword: gorge
+- &1356
+  frame: '1356'
+  kanji: 狭
+  keyword: cramped
+- &1357
+  frame: '1357'
+  kanji: 挟
+  keyword: sandwiched
+- &1358
+  frame: '1358'
+  kanji: 頬
+  keyword: cheek
+- &1359
+  frame: '1359'
+  kanji: 追
+  keyword: chase
+- &1360
+  frame: '1360'
+  kanji: 阜
+  keyword: large hill
+- &1361
+  frame: '1361'
+  kanji: 師
+  keyword: expert
+- &1362
+  frame: '1362'
+  kanji: 帥
+  keyword: commander
+- &1363
+  frame: '1363'
+  kanji: 官
+  keyword: bureaucrat
+- &1364
+  frame: '1364'
+  kanji: 棺
+  keyword: coffin
+- &1365
+  frame: '1365'
+  kanji: 管
+  keyword: pipe
+- &1366
+  frame: '1366'
+  kanji: 父
+  keyword: father
+- &1367
+  frame: '1367'
+  kanji: 釜
+  keyword: cauldron
+- &1368
+  frame: '1368'
+  kanji: 交
+  keyword: mingle
+- &1369
+  frame: '1369'
+  kanji: 効
+  keyword: merit
+- &1370
+  frame: '1370'
+  kanji: 較
+  keyword: contrast
+- &1371
+  frame: '1371'
+  kanji: 校
+  keyword: exam
+- &1372
+  frame: '1372'
+  kanji: 足
+  keyword: leg
+- &1373
+  frame: '1373'
+  kanji: 促
+  keyword: stimulate
+- &1374
+  frame: '1374'
+  kanji: 捉
+  keyword: nab
+- &1375
+  frame: '1375'
+  kanji: 距
+  keyword: long-distance
+- &1376
+  frame: '1376'
+  kanji: 路
+  keyword: path
+- &1377
+  frame: '1377'
+  kanji: 露
+  keyword: dew
+- &1378
+  frame: '1378'
+  kanji: 跳
+  keyword: hop
+- &1379
+  frame: '1379'
+  kanji: 躍
+  keyword: leap
+- &1380
+  frame: '1380'
+  kanji: 践
+  keyword: tread
+- &1381
+  frame: '1381'
+  kanji: 踏
+  keyword: step
+- &1382
+  frame: '1382'
+  kanji: 踪
+  keyword: trail
+- &1383
+  frame: '1383'
+  kanji: 骨
+  keyword: skeleton
+- &1384
+  frame: '1384'
+  kanji: 滑
+  keyword: slippery
+- &1385
+  frame: '1385'
+  kanji: 髄
+  keyword: marrow
+- &1386
+  frame: '1386'
+  kanji: 禍
+  keyword: calamity
+- &1387
+  frame: '1387'
+  kanji: 渦
+  keyword: whirlpool
+- &1388
+  frame: '1388'
+  kanji: 鍋
+  keyword: pot
+- &1389
+  frame: '1389'
+  kanji: 過
+  keyword: overdo
+- &1390
+  frame: '1390'
+  kanji: 阪
+  keyword: Heights
+- &1391
+  frame: '1391'
+  kanji: 阿
+  keyword: Africa
+- &1392
+  frame: '1392'
+  kanji: 際
+  keyword: occasion
+- &1393
+  frame: '1393'
+  kanji: 障
+  keyword: hinder
+- &1394
+  frame: '1394'
+  kanji: 隙
+  keyword: chink
+- &1395
+  frame: '1395'
+  kanji: 随
+  keyword: follow
+- &1396
+  frame: '1396'
+  kanji: 陪
+  keyword: auxiliary
+- &1397
+  frame: '1397'
+  kanji: 陽
+  keyword: sunshine
+- &1398
+  frame: '1398'
+  kanji: 陳
+  keyword: line up
+- &1399
+  frame: '1399'
+  kanji: 防
+  keyword: ward off
+- &1400
+  frame: '1400'
+  kanji: 附
+  keyword: affixed
+- &1401
+  frame: '1401'
+  kanji: 院
+  keyword: Inst.
+- &1402
+  frame: '1402'
+  kanji: 陣
+  keyword: camp
+- &1403
+  frame: '1403'
+  kanji: 隊
+  keyword: regiment
+- &1404
+  frame: '1404'
+  kanji: 墜
+  keyword: crash
+- &1405
+  frame: '1405'
+  kanji: 降
+  keyword: descend
+- &1406
+  frame: '1406'
+  kanji: 階
+  keyword: storey
+- &1407
+  frame: '1407'
+  kanji: 陛
+  keyword: highness
+- &1408
+  frame: '1408'
+  kanji: 隣
+  keyword: neighboring
+- &1409
+  frame: '1409'
+  kanji: 隔
+  keyword: isolate
+- &1410
+  frame: '1410'
+  kanji: 隠
+  keyword: conceal
+- &1411
+  frame: '1411'
+  kanji: 堕
+  keyword: degenerate
+- &1412
+  frame: '1412'
+  kanji: 陥
+  keyword: collapse
+- &1413
+  frame: '1413'
+  kanji: 穴
+  keyword: hole
+- &1414
+  frame: '1414'
+  kanji: 空
+  keyword: empty
+- &1415
+  frame: '1415'
+  kanji: 控
+  keyword: withdraw
+- &1416
+  frame: '1416'
+  kanji: 突
+  keyword: stab
+- &1417
+  frame: '1417'
+  kanji: 究
+  keyword: research
+- &1418
+  frame: '1418'
+  kanji: 窒
+  keyword: plug up
+- &1419
+  frame: '1419'
+  kanji: 窃
+  keyword: stealth
+- &1420
+  frame: '1420'
+  kanji: 窟
+  keyword: cavern
+- &1421
+  frame: '1421'
+  kanji: 窪
+  keyword: depression
+- &1422
+  frame: '1422'
+  kanji: 搾
+  keyword: squeeze
+- &1423
+  frame: '1423'
+  kanji: 窯
+  keyword: kiln
+- &1424
+  frame: '1424'
+  kanji: 窮
+  keyword: hard up
+- &1425
+  frame: '1425'
+  kanji: 探
+  keyword: grope
+- &1426
+  frame: '1426'
+  kanji: 深
+  keyword: deep
+- &1427
+  frame: '1427'
+  kanji: 丘
+  keyword: hill
+- &1428
+  frame: '1428'
+  kanji: 岳
+  keyword: Point
+- &1429
+  frame: '1429'
+  kanji: 兵
+  keyword: soldier
+- &1430
+  frame: '1430'
+  kanji: 浜
+  keyword: seacoast
+- &1431
+  frame: '1431'
+  kanji: 糸
+  keyword: thread
+- &1432
+  frame: '1432'
+  kanji: 織
+  keyword: weave
+- &1433
+  frame: '1433'
+  kanji: 繕
+  keyword: darning
+- &1434
+  frame: '1434'
+  kanji: 縮
+  keyword: shrink
+- &1435
+  frame: '1435'
+  kanji: 繁
+  keyword: luxuriant
+- &1436
+  frame: '1436'
+  kanji: 縦
+  keyword: vertical
+- &1437
+  frame: '1437'
+  kanji: 緻
+  keyword: fine
+- &1438
+  frame: '1438'
+  kanji: 線
+  keyword: line
+- &1439
+  frame: '1439'
+  kanji: 綻
+  keyword: come apart at the seams
+- &1440
+  frame: '1440'
+  kanji: 締
+  keyword: tighten
+- &1441
+  frame: '1441'
+  kanji: 維
+  keyword: fibre
+- &1442
+  frame: '1442'
+  kanji: 羅
+  keyword: gauze
+- &1443
+  frame: '1443'
+  kanji: 練
+  keyword: practice
+- &1444
+  frame: '1444'
+  kanji: 緒
+  keyword: thong
+- &1445
+  frame: '1445'
+  kanji: 続
+  keyword: continue
+- &1446
+  frame: '1446'
+  kanji: 絵
+  keyword: picture
+- &1447
+  frame: '1447'
+  kanji: 統
+  keyword: overall
+- &1448
+  frame: '1448'
+  kanji: 絞
+  keyword: strangle
+- &1449
+  frame: '1449'
+  kanji: 給
+  keyword: salary
+- &1450
+  frame: '1450'
+  kanji: 絡
+  keyword: entwine
+- &1451
+  frame: '1451'
+  kanji: 結
+  keyword: tie
+- &1452
+  frame: '1452'
+  kanji: 終
+  keyword: end
+- &1453
+  frame: '1453'
+  kanji: 級
+  keyword: class
+- &1454
+  frame: '1454'
+  kanji: 紀
+  keyword: chronicle
+- &1455
+  frame: '1455'
+  kanji: 紅
+  keyword: crimson
+- &1456
+  frame: '1456'
+  kanji: 納
+  keyword: settlement
+- &1457
+  frame: '1457'
+  kanji: 紡
+  keyword: spinning
+- &1458
+  frame: '1458'
+  kanji: 紛
+  keyword: distract
+- &1459
+  frame: '1459'
+  kanji: 紹
+  keyword: introduce
+- &1460
+  frame: '1460'
+  kanji: 経
+  keyword: sutra
+- &1461
+  frame: '1461'
+  kanji: 紳
+  keyword: sire
+- &1462
+  frame: '1462'
+  kanji: 約
+  keyword: promise
+- &1463
+  frame: '1463'
+  kanji: 細
+  keyword: dainty
+- &1464
+  frame: '1464'
+  kanji: 累
+  keyword: accumulate
+- &1465
+  frame: '1465'
+  kanji: 索
+  keyword: cord
+- &1466
+  frame: '1466'
+  kanji: 総
+  keyword: general
+- &1467
+  frame: '1467'
+  kanji: 綿
+  keyword: cotton
+- &1468
+  frame: '1468'
+  kanji: 絹
+  keyword: silk
+- &1469
+  frame: '1469'
+  kanji: 繰
+  keyword: winding
+- &1470
+  frame: '1470'
+  kanji: 継
+  keyword: inherit
+- &1471
+  frame: '1471'
+  kanji: 緑
+  keyword: green
+- &1472
+  frame: '1472'
+  kanji: 縁
+  keyword: affinity
+- &1473
+  frame: '1473'
+  kanji: 網
+  keyword: netting
+- &1474
+  frame: '1474'
+  kanji: 緊
+  keyword: tense
+- &1475
+  frame: '1475'
+  kanji: 紫
+  keyword: purple
+- &1476
+  frame: '1476'
+  kanji: 縛
+  keyword: truss
+- &1477
+  frame: '1477'
+  kanji: 縄
+  keyword: straw rope
+- &1478
+  frame: '1478'
+  kanji: 幼
+  keyword: infancy
+- &1479
+  frame: '1479'
+  kanji: 後
+  keyword: behind
+- &1480
+  frame: '1480'
+  kanji: 幽
+  keyword: faint
+- &1481
+  frame: '1481'
+  kanji: 幾
+  keyword: how many
+- &1482
+  frame: '1482'
+  kanji: 機
+  keyword: mechanism
+- &1483
+  frame: '1483'
+  kanji: 畿
+  keyword: capital suburbs
+- &1484
+  frame: '1484'
+  kanji: 玄
+  keyword: mysterious
+- &1485
+  frame: '1485'
+  kanji: 畜
+  keyword: livestock
+- &1486
+  frame: '1486'
+  kanji: 蓄
+  keyword: amass
+- &1487
+  frame: '1487'
+  kanji: 弦
+  keyword: bowstring
+- &1488
+  frame: '1488'
+  kanji: 擁
+  keyword: hug
+- &1489
+  frame: '1489'
+  kanji: 滋
+  keyword: nourishing
+- &1490
+  frame: '1490'
+  kanji: 慈
+  keyword: mercy
+- &1491
+  frame: '1491'
+  kanji: 磁
+  keyword: magnet
+- &1492
+  frame: '1492'
+  kanji: 系
+  keyword: lineage
+- &1493
+  frame: '1493'
+  kanji: 係
+  keyword: person in charge
+- &1494
+  frame: '1494'
+  kanji: 孫
+  keyword: grandchild
+- &1495
+  frame: '1495'
+  kanji: 懸
+  keyword: suspend
+- &1496
+  frame: '1496'
+  kanji: 遜
+  keyword: modest
+- &1497
+  frame: '1497'
+  kanji: 却
+  keyword: instead
+- &1498
+  frame: '1498'
+  kanji: 脚
+  keyword: shins
+- &1499
+  frame: '1499'
+  kanji: 卸
+  keyword: wholesale
+- &1500
+  frame: '1500'
+  kanji: 御
+  keyword: honorable
+- &1501
+  frame: '1501'
+  kanji: 服
+  keyword: clothing
+- &1502
+  frame: '1502'
+  kanji: 命
+  keyword: fate
+- &1503
+  frame: '1503'
+  kanji: 令
+  keyword: orders
+- &1504
+  frame: '1504'
+  kanji: 零
+  keyword: zero
+- &1505
+  frame: '1505'
+  kanji: 齢
+  keyword: age
+- &1506
+  frame: '1506'
+  kanji: 冷
+  keyword: cool
+- &1507
+  frame: '1507'
+  kanji: 領
+  keyword: jurisdiction
+- &1508
+  frame: '1508'
+  kanji: 鈴
+  keyword: small bell
+- &1509
+  frame: '1509'
+  kanji: 勇
+  keyword: courage
+- &1510
+  frame: '1510'
+  kanji: 湧
+  keyword: bubble up
+- &1511
+  frame: '1511'
+  kanji: 通
+  keyword: traffic
+- &1512
+  frame: '1512'
+  kanji: 踊
+  keyword: jump
+- &1513
+  frame: '1513'
+  kanji: 疑
+  keyword: doubt
+- &1514
+  frame: '1514'
+  kanji: 擬
+  keyword: mimic
+- &1515
+  frame: '1515'
+  kanji: 凝
+  keyword: congeal
+- &1516
+  frame: '1516'
+  kanji: 範
+  keyword: pattern
+- &1517
+  frame: '1517'
+  kanji: 犯
+  keyword: crime
+- &1518
+  frame: '1518'
+  kanji: 氾
+  keyword: widespread
+- &1519
+  frame: '1519'
+  kanji: 厄
+  keyword: unlucky
+- &1520
+  frame: '1520'
+  kanji: 危
+  keyword: dangerous
+- &1521
+  frame: '1521'
+  kanji: 宛
+  keyword: address
+- &1522
+  frame: '1522'
+  kanji: 腕
+  keyword: arm
+- &1523
+  frame: '1523'
+  kanji: 苑
+  keyword: garden
+- &1524
+  frame: '1524'
+  kanji: 怨
+  keyword: grudge
+- &1525
+  frame: '1525'
+  kanji: 柳
+  keyword: willow
+- &1526
+  frame: '1526'
+  kanji: 卵
+  keyword: egg
+- &1527
+  frame: '1527'
+  kanji: 留
+  keyword: detain
+- &1528
+  frame: '1528'
+  kanji: 瑠
+  keyword: ultramarine
+- &1529
+  frame: '1529'
+  kanji: 貿
+  keyword: trade
+- &1530
+  frame: '1530'
+  kanji: 印
+  keyword: stamp
+- &1531
+  frame: '1531'
+  kanji: 臼
+  keyword: mortar
+- &1532
+  frame: '1532'
+  kanji: 毀
+  keyword: break
+- &1533
+  frame: '1533'
+  kanji: 興
+  keyword: entertain
+- &1534
+  frame: '1534'
+  kanji: 酉
+  keyword: sign of the bird
+- &1535
+  frame: '1535'
+  kanji: 酒
+  keyword: sake
+- &1536
+  frame: '1536'
+  kanji: 酌
+  keyword: bartending
+- &1537
+  frame: '1537'
+  kanji: 酎
+  keyword: hooch
+- &1538
+  frame: '1538'
+  kanji: 酵
+  keyword: fermentation
+- &1539
+  frame: '1539'
+  kanji: 酷
+  keyword: cruel
+- &1540
+  frame: '1540'
+  kanji: 酬
+  keyword: repay
+- &1541
+  frame: '1541'
+  kanji: 酪
+  keyword: dairy products
+- &1542
+  frame: '1542'
+  kanji: 酢
+  keyword: vinegar
+- &1543
+  frame: '1543'
+  kanji: 酔
+  keyword: drunk
+- &1544
+  frame: '1544'
+  kanji: 配
+  keyword: distribute
+- &1545
+  frame: '1545'
+  kanji: 酸
+  keyword: acid
+- &1546
+  frame: '1546'
+  kanji: 猶
+  keyword: waver
+- &1547
+  frame: '1547'
+  kanji: 尊
+  keyword: revered
+- &1548
+  frame: '1548'
+  kanji: 豆
+  keyword: beans
+- &1549
+  frame: '1549'
+  kanji: 頭
+  keyword: head
+- &1550
+  frame: '1550'
+  kanji: 短
+  keyword: short
+- &1551
+  frame: '1551'
+  kanji: 豊
+  keyword: bountiful
+- &1552
+  frame: '1552'
+  kanji: 鼓
+  keyword: drum
+- &1553
+  frame: '1553'
+  kanji: 喜
+  keyword: rejoice
+- &1554
+  frame: '1554'
+  kanji: 樹
+  keyword: timber-trees
+- &1555
+  frame: '1555'
+  kanji: 皿
+  keyword: dish
+- &1556
+  frame: '1556'
+  kanji: 血
+  keyword: blood
+- &1557
+  frame: '1557'
+  kanji: 盆
+  keyword: basin
+- &1558
+  frame: '1558'
+  kanji: 盟
+  keyword: alliance
+- &1559
+  frame: '1559'
+  kanji: 盗
+  keyword: steal
+- &1560
+  frame: '1560'
+  kanji: 温
+  keyword: warm
+- &1561
+  frame: '1561'
+  kanji: 蓋
+  keyword: lid
+- &1562
+  frame: '1562'
+  kanji: 監
+  keyword: oversee
+- &1563
+  frame: '1563'
+  kanji: 濫
+  keyword: overflow
+- &1564
+  frame: '1564'
+  kanji: 鑑
+  keyword: specimen
+- &1565
+  frame: '1565'
+  kanji: 藍
+  keyword: indigo
+- &1566
+  frame: '1566'
+  kanji: 猛
+  keyword: fierce
+- &1567
+  frame: '1567'
+  kanji: 盛
+  keyword: boom
+- &1568
+  frame: '1568'
+  kanji: 塩
+  keyword: salt
+- &1569
+  frame: '1569'
+  kanji: 銀
+  keyword: silver
+- &1570
+  frame: '1570'
+  kanji: 恨
+  keyword: resentment
+- &1571
+  frame: '1571'
+  kanji: 根
+  keyword: root
+- &1572
+  frame: '1572'
+  kanji: 即
+  keyword: instant
+- &1573
+  frame: '1573'
+  kanji: 爵
+  keyword: baron
+- &1574
+  frame: '1574'
+  kanji: 節
+  keyword: node
+- &1575
+  frame: '1575'
+  kanji: 退
+  keyword: retreat
+- &1576
+  frame: '1576'
+  kanji: 限
+  keyword: limit
+- &1577
+  frame: '1577'
+  kanji: 眼
+  keyword: eyeball
+- &1578
+  frame: '1578'
+  kanji: 良
+  keyword: good
+- &1579
+  frame: '1579'
+  kanji: 朗
+  keyword: melodious
+- &1580
+  frame: '1580'
+  kanji: 浪
+  keyword: wandering
+- &1581
+  frame: '1581'
+  kanji: 娘
+  keyword: daughter
+- &1582
+  frame: '1582'
+  kanji: 食
+  keyword: eat
+- &1583
+  frame: '1583'
+  kanji: 飯
+  keyword: meal
+- &1584
+  frame: '1584'
+  kanji: 飲
+  keyword: drink
+- &1585
+  frame: '1585'
+  kanji: 飢
+  keyword: hungry
+- &1586
+  frame: '1586'
+  kanji: 餓
+  keyword: starve
+- &1587
+  frame: '1587'
+  kanji: 飾
+  keyword: decorate
+- &1588
+  frame: '1588'
+  kanji: 餌
+  keyword: feed
+- &1589
+  frame: '1589'
+  kanji: 館
+  keyword: Bldg.
+- &1590
+  frame: '1590'
+  kanji: 餅
+  keyword: mochi
+- &1591
+  frame: '1591'
+  kanji: 養
+  keyword: foster
+- &1592
+  frame: '1592'
+  kanji: 飽
+  keyword: sated
+- &1593
+  frame: '1593'
+  kanji: 既
+  keyword: previously
+- &1594
+  frame: '1594'
+  kanji: 概
+  keyword: outline
+- &1595
+  frame: '1595'
+  kanji: 慨
+  keyword: rue
+- &1596
+  frame: '1596'
+  kanji: 平
+  keyword: even
+- &1597
+  frame: '1597'
+  kanji: 呼
+  keyword: call
+- &1598
+  frame: '1598'
+  kanji: 坪
+  keyword: two-mat area
+- &1599
+  frame: '1599'
+  kanji: 評
+  keyword: evaluate
+- &1600
+  frame: '1600'
+  kanji: 刈
+  keyword: reap
+- &1601
+  frame: '1601'
+  kanji: 刹
+  keyword: moment
+- &1602
+  frame: '1602'
+  kanji: 希
+  keyword: hope
+- &1603
+  frame: '1603'
+  kanji: 凶
+  keyword: villain
+- &1604
+  frame: '1604'
+  kanji: 胸
+  keyword: bosom
+- &1605
+  frame: '1605'
+  kanji: 離
+  keyword: detach
+- &1606
+  frame: '1606'
+  kanji: 璃
+  keyword: crystal
+- &1607
+  frame: '1607'
+  kanji: 殺
+  keyword: kill
+- &1608
+  frame: '1608'
+  kanji: 爽
+  keyword: bracing
+- &1609
+  frame: '1609'
+  kanji: 純
+  keyword: genuine
+- &1610
+  frame: '1610'
+  kanji: 頓
+  keyword: immediate
+- &1611
+  frame: '1611'
+  kanji: 鈍
+  keyword: dull
+- &1612
+  frame: '1612'
+  kanji: 辛
+  keyword: spicy
+- &1613
+  frame: '1613'
+  kanji: 辞
+  keyword: resign
+- &1614
+  frame: '1614'
+  kanji: 梓
+  keyword: catalpa
+- &1615
+  frame: '1615'
+  kanji: 宰
+  keyword: superintend
+- &1616
+  frame: '1616'
+  kanji: 壁
+  keyword: wall
+- &1617
+  frame: '1617'
+  kanji: 璧
+  keyword: holed gem
+- &1618
+  frame: '1618'
+  kanji: 避
+  keyword: evade
+- &1619
+  frame: '1619'
+  kanji: 新
+  keyword: new
+- &1620
+  frame: '1620'
+  kanji: 薪
+  keyword: firewood
+- &1621
+  frame: '1621'
+  kanji: 親
+  keyword: parent
+- &1622
+  frame: '1622'
+  kanji: 幸
+  keyword: happiness
+- &1623
+  frame: '1623'
+  kanji: 執
+  keyword: tenacious
+- &1624
+  frame: '1624'
+  kanji: 摯
+  keyword: clasp
+- &1625
+  frame: '1625'
+  kanji: 報
+  keyword: report
+- &1626
+  frame: '1626'
+  kanji: 叫
+  keyword: shout
+- &1627
+  frame: '1627'
+  kanji: 糾
+  keyword: twist
+- &1628
+  frame: '1628'
+  kanji: 収
+  keyword: income
+- &1629
+  frame: '1629'
+  kanji: 卑
+  keyword: lowly
+- &1630
+  frame: '1630'
+  kanji: 碑
+  keyword: tombstone
+- &1631
+  frame: '1631'
+  kanji: 陸
+  keyword: land
+- &1632
+  frame: '1632'
+  kanji: 睦
+  keyword: intimate
+- &1633
+  frame: '1633'
+  kanji: 勢
+  keyword: forces
+- &1634
+  frame: '1634'
+  kanji: 熱
+  keyword: heat
+- &1635
+  frame: '1635'
+  kanji: 菱
+  keyword: diamond
+- &1636
+  frame: '1636'
+  kanji: 陵
+  keyword: mausoleum
+- &1637
+  frame: '1637'
+  kanji: 亥
+  keyword: sign of the hog
+- &1638
+  frame: '1638'
+  kanji: 核
+  keyword: nucleus
+- &1639
+  frame: '1639'
+  kanji: 刻
+  keyword: engrave
+- &1640
+  frame: '1640'
+  kanji: 該
+  keyword: above-stated
+- &1641
+  frame: '1641'
+  kanji: 骸
+  keyword: remains
+- &1642
+  frame: '1642'
+  kanji: 劾
+  keyword: censure
+- &1643
+  frame: '1643'
+  kanji: 述
+  keyword: mention
+- &1644
+  frame: '1644'
+  kanji: 術
+  keyword: art
+- &1645
+  frame: '1645'
+  kanji: 寒
+  keyword: cold
+- &1646
+  frame: '1646'
+  kanji: 塞
+  keyword: block up
+- &1647
+  frame: '1647'
+  kanji: 醸
+  keyword: brew
+- &1648
+  frame: '1648'
+  kanji: 譲
+  keyword: defer
+- &1649
+  frame: '1649'
+  kanji: 壌
+  keyword: lot
+- &1650
+  frame: '1650'
+  kanji: 嬢
+  keyword: lass
+- &1651
+  frame: '1651'
+  kanji: 毒
+  keyword: poison
+- &1652
+  frame: '1652'
+  kanji: 素
+  keyword: elementary
+- &1653
+  frame: '1653'
+  kanji: 麦
+  keyword: barley
+- &1654
+  frame: '1654'
+  kanji: 青
+  keyword: blue
+- &1655
+  frame: '1655'
+  kanji: 精
+  keyword: refined
+- &1656
+  frame: '1656'
+  kanji: 請
+  keyword: solicit
+- &1657
+  frame: '1657'
+  kanji: 情
+  keyword: feelings
+- &1658
+  frame: '1658'
+  kanji: 晴
+  keyword: clear up
+- &1659
+  frame: '1659'
+  kanji: 清
+  keyword: pure
+- &1660
+  frame: '1660'
+  kanji: 静
+  keyword: quiet
+- &1661
+  frame: '1661'
+  kanji: 責
+  keyword: blame
+- &1662
+  frame: '1662'
+  kanji: 績
+  keyword: exploits
+- &1663
+  frame: '1663'
+  kanji: 積
+  keyword: volume
+- &1664
+  frame: '1664'
+  kanji: 債
+  keyword: bond
+- &1665
+  frame: '1665'
+  kanji: 漬
+  keyword: pickling
+- &1666
+  frame: '1666'
+  kanji: 表
+  keyword: surface
+- &1667
+  frame: '1667'
+  kanji: 俵
+  keyword: bag
+- &1668
+  frame: '1668'
+  kanji: 潔
+  keyword: undefiled
+- &1669
+  frame: '1669'
+  kanji: 契
+  keyword: pledge
+- &1670
+  frame: '1670'
+  kanji: 喫
+  keyword: consume
+- &1671
+  frame: '1671'
+  kanji: 害
+  keyword: harm
+- &1672
+  frame: '1672'
+  kanji: 轄
+  keyword: control
+- &1673
+  frame: '1673'
+  kanji: 割
+  keyword: proportion
+- &1674
+  frame: '1674'
+  kanji: 憲
+  keyword: constitution
+- &1675
+  frame: '1675'
+  kanji: 生
+  keyword: life
+- &1676
+  frame: '1676'
+  kanji: 星
+  keyword: star
+- &1677
+  frame: '1677'
+  kanji: 醒
+  keyword: awakening
+- &1678
+  frame: '1678'
+  kanji: 姓
+  keyword: surname
+- &1679
+  frame: '1679'
+  kanji: 性
+  keyword: sex
+- &1680
+  frame: '1680'
+  kanji: 牲
+  keyword: animal sacrifice
+- &1681
+  frame: '1681'
+  kanji: 産
+  keyword: products
+- &1682
+  frame: '1682'
+  kanji: 隆
+  keyword: hump
+- &1683
+  frame: '1683'
+  kanji: 峰
+  keyword: summit
+- &1684
+  frame: '1684'
+  kanji: 蜂
+  keyword: bee
+- &1685
+  frame: '1685'
+  kanji: 縫
+  keyword: sew
+- &1686
+  frame: '1686'
+  kanji: 拝
+  keyword: worship
+- &1687
+  frame: '1687'
+  kanji: 寿
+  keyword: longevity
+- &1688
+  frame: '1688'
+  kanji: 鋳
+  keyword: casting
+- &1689
+  frame: '1689'
+  kanji: 籍
+  keyword: enrol
+- &1690
+  frame: '1690'
+  kanji: 春
+  keyword: springtime
+- &1691
+  frame: '1691'
+  kanji: 椿
+  keyword: camellia
+- &1692
+  frame: '1692'
+  kanji: 泰
+  keyword: peaceful
+- &1693
+  frame: '1693'
+  kanji: 奏
+  keyword: play music
+- &1694
+  frame: '1694'
+  kanji: 実
+  keyword: reality
+- &1695
+  frame: '1695'
+  kanji: 奉
+  keyword: dedicate
+- &1696
+  frame: '1696'
+  kanji: 俸
+  keyword: stipend
+- &1697
+  frame: '1697'
+  kanji: 棒
+  keyword: rod
+- &1698
+  frame: '1698'
+  kanji: 謹
+  keyword: discreet
+- &1699
+  frame: '1699'
+  kanji: 僅
+  keyword: trifle
+- &1700
+  frame: '1700'
+  kanji: 勤
+  keyword: diligence
+- &1701
+  frame: '1701'
+  kanji: 漢
+  keyword: Sino-
+- &1702
+  frame: '1702'
+  kanji: 嘆
+  keyword: sigh
+- &1703
+  frame: '1703'
+  kanji: 難
+  keyword: difficult
+- &1704
+  frame: '1704'
+  kanji: 華
+  keyword: splendour
+- &1705
+  frame: '1705'
+  kanji: 垂
+  keyword: droop
+- &1706
+  frame: '1706'
+  kanji: 唾
+  keyword: saliva
+- &1707
+  frame: '1707'
+  kanji: 睡
+  keyword: drowsy
+- &1708
+  frame: '1708'
+  kanji: 錘
+  keyword: spindle
+- &1709
+  frame: '1709'
+  kanji: 乗
+  keyword: ride
+- &1710
+  frame: '1710'
+  kanji: 剰
+  keyword: surplus
+- &1711
+  frame: '1711'
+  kanji: 今
+  keyword: now
+- &1712
+  frame: '1712'
+  kanji: 含
+  keyword: include
+- &1713
+  frame: '1713'
+  kanji: 貪
+  keyword: covet
+- &1714
+  frame: '1714'
+  kanji: 吟
+  keyword: versify
+- &1715
+  frame: '1715'
+  kanji: 念
+  keyword: wish
+- &1716
+  frame: '1716'
+  kanji: 捻
+  keyword: wrench
+- &1717
+  frame: '1717'
+  kanji: 琴
+  keyword: harp
+- &1718
+  frame: '1718'
+  kanji: 陰
+  keyword: shade
+- &1719
+  frame: '1719'
+  kanji: 予
+  keyword: beforehand
+- &1720
+  frame: '1720'
+  kanji: 序
+  keyword: preface
+- &1721
+  frame: '1721'
+  kanji: 預
+  keyword: deposit
+- &1722
+  frame: '1722'
+  kanji: 野
+  keyword: plains
+- &1723
+  frame: '1723'
+  kanji: 兼
+  keyword: concurrently
+- &1724
+  frame: '1724'
+  kanji: 嫌
+  keyword: dislike
+- &1725
+  frame: '1725'
+  kanji: 鎌
+  keyword: sickle
+- &1726
+  frame: '1726'
+  kanji: 謙
+  keyword: self-effacing
+- &1727
+  frame: '1727'
+  kanji: 廉
+  keyword: bargain
+- &1728
+  frame: '1728'
+  kanji: 西
+  keyword: west
+- &1729
+  frame: '1729'
+  kanji: 価
+  keyword: value
+- &1730
+  frame: '1730'
+  kanji: 要
+  keyword: need
+- &1731
+  frame: '1731'
+  kanji: 腰
+  keyword: loins
+- &1732
+  frame: '1732'
+  kanji: 票
+  keyword: ballot
+- &1733
+  frame: '1733'
+  kanji: 漂
+  keyword: drift
+- &1734
+  frame: '1734'
+  kanji: 標
+  keyword: signpost
+- &1735
+  frame: '1735'
+  kanji: 栗
+  keyword: chestnut
+- &1736
+  frame: '1736'
+  kanji: 慄
+  keyword: shudder
+- &1737
+  frame: '1737'
+  kanji: 遷
+  keyword: transition
+- &1738
+  frame: '1738'
+  kanji: 覆
+  keyword: capsize
+- &1739
+  frame: '1739'
+  kanji: 煙
+  keyword: smoke
+- &1740
+  frame: '1740'
+  kanji: 南
+  keyword: south
+- &1741
+  frame: '1741'
+  kanji: 楠
+  keyword: camphor tree
+- &1742
+  frame: '1742'
+  kanji: 献
+  keyword: offering
+- &1743
+  frame: '1743'
+  kanji: 門
+  keyword: gates
+- &1744
+  frame: '1744'
+  kanji: 問
+  keyword: question
+- &1745
+  frame: '1745'
+  kanji: 閲
+  keyword: review
+- &1746
+  frame: '1746'
+  kanji: 閥
+  keyword: clique
+- &1747
+  frame: '1747'
+  kanji: 間
+  keyword: interval
+- &1748
+  frame: '1748'
+  kanji: 闇
+  keyword: pitch dark
+- &1749
+  frame: '1749'
+  kanji: 簡
+  keyword: simplicity
+- &1750
+  frame: '1750'
+  kanji: 開
+  keyword: open
+- &1751
+  frame: '1751'
+  kanji: 閉
+  keyword: closed
+- &1752
+  frame: '1752'
+  kanji: 閣
+  keyword: tower
+- &1753
+  frame: '1753'
+  kanji: 閑
+  keyword: leisure
+- &1754
+  frame: '1754'
+  kanji: 聞
+  keyword: hear
+- &1755
+  frame: '1755'
+  kanji: 潤
+  keyword: wet
+- &1756
+  frame: '1756'
+  kanji: 欄
+  keyword: column
+- &1757
+  frame: '1757'
+  kanji: 闘
+  keyword: fight
+- &1758
+  frame: '1758'
+  kanji: 倉
+  keyword: godown
+- &1759
+  frame: '1759'
+  kanji: 創
+  keyword: genesis
+- &1760
+  frame: '1760'
+  kanji: 非
+  keyword: un-
+- &1761
+  frame: '1761'
+  kanji: 俳
+  keyword: haiku
+- &1762
+  frame: '1762'
+  kanji: 排
+  keyword: repudiate
+- &1763
+  frame: '1763'
+  kanji: 悲
+  keyword: sad
+- &1764
+  frame: '1764'
+  kanji: 罪
+  keyword: guilt
+- &1765
+  frame: '1765'
+  kanji: 輩
+  keyword: comrade
+- &1766
+  frame: '1766'
+  kanji: 扉
+  keyword: front door
+- &1767
+  frame: '1767'
+  kanji: 侯
+  keyword: marquis
+- &1768
+  frame: '1768'
+  kanji: 喉
+  keyword: throat
+- &1769
+  frame: '1769'
+  kanji: 候
+  keyword: climate
+- &1770
+  frame: '1770'
+  kanji: 決
+  keyword: decide
+- &1771
+  frame: '1771'
+  kanji: 快
+  keyword: cheerful
+- &1772
+  frame: '1772'
+  kanji: 偉
+  keyword: admirable
+- &1773
+  frame: '1773'
+  kanji: 違
+  keyword: difference
+- &1774
+  frame: '1774'
+  kanji: 緯
+  keyword: horizontal
+- &1775
+  frame: '1775'
+  kanji: 衛
+  keyword: defence
+- &1776
+  frame: '1776'
+  kanji: 韓
+  keyword: Korea
+- &1777
+  frame: '1777'
+  kanji: 干
+  keyword: dry
+- &1778
+  frame: '1778'
+  kanji: 肝
+  keyword: liver
+- &1779
+  frame: '1779'
+  kanji: 刊
+  keyword: publish
+- &1780
+  frame: '1780'
+  kanji: 汗
+  keyword: sweat
+- &1781
+  frame: '1781'
+  kanji: 軒
+  keyword: flats
+- &1782
+  frame: '1782'
+  kanji: 岸
+  keyword: beach
+- &1783
+  frame: '1783'
+  kanji: 幹
+  keyword: tree trunk
+- &1784
+  frame: '1784'
+  kanji: 芋
+  keyword: potato
+- &1785
+  frame: '1785'
+  kanji: 宇
+  keyword: eaves
+- &1786
+  frame: '1786'
+  kanji: 余
+  keyword: too much
+- &1787
+  frame: '1787'
+  kanji: 除
+  keyword: exclude
+- &1788
+  frame: '1788'
+  kanji: 徐
+  keyword: gradually
+- &1789
+  frame: '1789'
+  kanji: 叙
+  keyword: confer
+- &1790
+  frame: '1790'
+  kanji: 途
+  keyword: route
+- &1791
+  frame: '1791'
+  kanji: 斜
+  keyword: diagonal
+- &1792
+  frame: '1792'
+  kanji: 塗
+  keyword: paint
+- &1793
+  frame: '1793'
+  kanji: 束
+  keyword: bundle
+- &1794
+  frame: '1794'
+  kanji: 頼
+  keyword: trust
+- &1795
+  frame: '1795'
+  kanji: 瀬
+  keyword: rapids
+- &1796
+  frame: '1796'
+  kanji: 勅
+  keyword: imperial order
+- &1797
+  frame: '1797'
+  kanji: 疎
+  keyword: alienate
+- &1798
+  frame: '1798'
+  kanji: 辣
+  keyword: bitter
+- &1799
+  frame: '1799'
+  kanji: 速
+  keyword: quick
+- &1800
+  frame: '1800'
+  kanji: 整
+  keyword: organize
+- &1801
+  frame: '1801'
+  kanji: 剣
+  keyword: saber
+- &1802
+  frame: '1802'
+  kanji: 険
+  keyword: precipitous
+- &1803
+  frame: '1803'
+  kanji: 検
+  keyword: examination
+- &1804
+  frame: '1804'
+  kanji: 倹
+  keyword: frugal
+- &1805
+  frame: '1805'
+  kanji: 重
+  keyword: heavy
+- &1806
+  frame: '1806'
+  kanji: 動
+  keyword: move
+- &1807
+  frame: '1807'
+  kanji: 腫
+  keyword: tumor
+- &1808
+  frame: '1808'
+  kanji: 勲
+  keyword: meritorious deed
+- &1809
+  frame: '1809'
+  kanji: 働
+  keyword: work
+- &1810
+  frame: '1810'
+  kanji: 種
+  keyword: species
+- &1811
+  frame: '1811'
+  kanji: 衝
+  keyword: collide
+- &1812
+  frame: '1812'
+  kanji: 薫
+  keyword: fragrant
+- &1813
+  frame: '1813'
+  kanji: 病
+  keyword: ill
+- &1814
+  frame: '1814'
+  kanji: 痴
+  keyword: stupid
+- &1815
+  frame: '1815'
+  kanji: 痘
+  keyword: pox
+- &1816
+  frame: '1816'
+  kanji: 症
+  keyword: symptoms
+- &1817
+  frame: '1817'
+  kanji: 瘍
+  keyword: carbuncle
+- &1818
+  frame: '1818'
+  kanji: 痩
+  keyword: lose weight
+- &1819
+  frame: '1819'
+  kanji: 疾
+  keyword: rapidly
+- &1820
+  frame: '1820'
+  kanji: 嫉
+  keyword: envy
+- &1821
+  frame: '1821'
+  kanji: 痢
+  keyword: diarrhea
+- &1822
+  frame: '1822'
+  kanji: 痕
+  keyword: scar
+- &1823
+  frame: '1823'
+  kanji: 疲
+  keyword: tired
+- &1824
+  frame: '1824'
+  kanji: 疫
+  keyword: epidemic
+- &1825
+  frame: '1825'
+  kanji: 痛
+  keyword: pain
+- &1826
+  frame: '1826'
+  kanji: 癖
+  keyword: mannerism
+- &1827
+  frame: '1827'
+  kanji: 匿
+  keyword: hide
+- &1828
+  frame: '1828'
+  kanji: 匠
+  keyword: artisan
+- &1829
+  frame: '1829'
+  kanji: 医
+  keyword: doctor
+- &1830
+  frame: '1830'
+  kanji: 匹
+  keyword: equal
+- &1831
+  frame: '1831'
+  kanji: 区
+  keyword: ward
+- &1832
+  frame: '1832'
+  kanji: 枢
+  keyword: hinge
+- &1833
+  frame: '1833'
+  kanji: 殴
+  keyword: assault
+- &1834
+  frame: '1834'
+  kanji: 欧
+  keyword: Europe
+- &1835
+  frame: '1835'
+  kanji: 抑
+  keyword: repress
+- &1836
+  frame: '1836'
+  kanji: 仰
+  keyword: faceup
+- &1837
+  frame: '1837'
+  kanji: 迎
+  keyword: welcome
+- &1838
+  frame: '1838'
+  kanji: 登
+  keyword: ascend
+- &1839
+  frame: '1839'
+  kanji: 澄
+  keyword: lucidity
+- &1840
+  frame: '1840'
+  kanji: 発
+  keyword: discharge
+- &1841
+  frame: '1841'
+  kanji: 廃
+  keyword: abolish
+- &1842
+  frame: '1842'
+  kanji: 僚
+  keyword: colleague
+- &1843
+  frame: '1843'
+  kanji: 瞭
+  keyword: obvious
+- &1844
+  frame: '1844'
+  kanji: 寮
+  keyword: dormitory
+- &1845
+  frame: '1845'
+  kanji: 療
+  keyword: heal
+- &1846
+  frame: '1846'
+  kanji: 彫
+  keyword: carve
+- &1847
+  frame: '1847'
+  kanji: 形
+  keyword: shape
+- &1848
+  frame: '1848'
+  kanji: 影
+  keyword: shadow
+- &1849
+  frame: '1849'
+  kanji: 杉
+  keyword: cedar
+- &1850
+  frame: '1850'
+  kanji: 彩
+  keyword: coloring
+- &1851
+  frame: '1851'
+  kanji: 彰
+  keyword: patent
+- &1852
+  frame: '1852'
+  kanji: 彦
+  keyword: lad
+- &1853
+  frame: '1853'
+  kanji: 顔
+  keyword: face
+- &1854
+  frame: '1854'
+  kanji: 須
+  keyword: ought
+- &1855
+  frame: '1855'
+  kanji: 膨
+  keyword: swell
+- &1856
+  frame: '1856'
+  kanji: 参
+  keyword: visit
+- &1857
+  frame: '1857'
+  kanji: 惨
+  keyword: wretched
+- &1858
+  frame: '1858'
+  kanji: 修
+  keyword: discipline
+- &1859
+  frame: '1859'
+  kanji: 珍
+  keyword: rare
+- &1860
+  frame: '1860'
+  kanji: 診
+  keyword: checkup
+- &1861
+  frame: '1861'
+  kanji: 文
+  keyword: sentence
+- &1862
+  frame: '1862'
+  kanji: 対
+  keyword: vis-a-vis
+- &1863
+  frame: '1863'
+  kanji: 紋
+  keyword: family crest
+- &1864
+  frame: '1864'
+  kanji: 蚊
+  keyword: mosquito
+- &1865
+  frame: '1865'
+  kanji: 斑
+  keyword: speckled
+- &1866
+  frame: '1866'
+  kanji: 斉
+  keyword: adjusted
+- &1867
+  frame: '1867'
+  kanji: 剤
+  keyword: dose
+- &1868
+  frame: '1868'
+  kanji: 済
+  keyword: finish
+- &1869
+  frame: '1869'
+  kanji: 斎
+  keyword: purification
+- &1870
+  frame: '1870'
+  kanji: 粛
+  keyword: solemn
+- &1871
+  frame: '1871'
+  kanji: 塁
+  keyword: bases
+- &1872
+  frame: '1872'
+  kanji: 楽
+  keyword: music
+- &1873
+  frame: '1873'
+  kanji: 薬
+  keyword: medicine
+- &1874
+  frame: '1874'
+  kanji: 率
+  keyword: ratio
+- &1875
+  frame: '1875'
+  kanji: 渋
+  keyword: astringent
+- &1876
+  frame: '1876'
+  kanji: 摂
+  keyword: vicarious
+- &1877
+  frame: '1877'
+  kanji: 央
+  keyword: center
+- &1878
+  frame: '1878'
+  kanji: 英
+  keyword: England
+- &1879
+  frame: '1879'
+  kanji: 映
+  keyword: reflect
+- &1880
+  frame: '1880'
+  kanji: 赤
+  keyword: red
+- &1881
+  frame: '1881'
+  kanji: 赦
+  keyword: pardon
+- &1882
+  frame: '1882'
+  kanji: 変
+  keyword: unusual
+- &1883
+  frame: '1883'
+  kanji: 跡
+  keyword: tracks
+- &1884
+  frame: '1884'
+  kanji: 蛮
+  keyword: barbarian
+- &1885
+  frame: '1885'
+  kanji: 恋
+  keyword: romance
+- &1886
+  frame: '1886'
+  kanji: 湾
+  keyword: gulf
+- &1887
+  frame: '1887'
+  kanji: 黄
+  keyword: yellow
+- &1888
+  frame: '1888'
+  kanji: 横
+  keyword: sideways
+- &1889
+  frame: '1889'
+  kanji: 把
+  keyword: grasp
+- &1890
+  frame: '1890'
+  kanji: 色
+  keyword: color
+- &1891
+  frame: '1891'
+  kanji: 絶
+  keyword: discontinue
+- &1892
+  frame: '1892'
+  kanji: 艶
+  keyword: glossy
+- &1893
+  frame: '1893'
+  kanji: 肥
+  keyword: fertilizer
+- &1894
+  frame: '1894'
+  kanji: 甘
+  keyword: sweet
+- &1895
+  frame: '1895'
+  kanji: 紺
+  keyword: navy blue
+- &1896
+  frame: '1896'
+  kanji: 某
+  keyword: so-and-so
+- &1897
+  frame: '1897'
+  kanji: 謀
+  keyword: conspire
+- &1898
+  frame: '1898'
+  kanji: 媒
+  keyword: mediator
+- &1899
+  frame: '1899'
+  kanji: 欺
+  keyword: deceit
+- &1900
+  frame: '1900'
+  kanji: 棋
+  keyword: chess piece
+- &1901
+  frame: '1901'
+  kanji: 旗
+  keyword: national flag
+- &1902
+  frame: '1902'
+  kanji: 期
+  keyword: period
+- &1903
+  frame: '1903'
+  kanji: 碁
+  keyword: Go
+- &1904
+  frame: '1904'
+  kanji: 基
+  keyword: fundamentals
+- &1905
+  frame: '1905'
+  kanji: 甚
+  keyword: tremendously
+- &1906
+  frame: '1906'
+  kanji: 勘
+  keyword: intuition
+- &1907
+  frame: '1907'
+  kanji: 堪
+  keyword: withstand
+- &1908
+  frame: '1908'
+  kanji: 貴
+  keyword: precious
+- &1909
+  frame: '1909'
+  kanji: 遺
+  keyword: bequeath
+- &1910
+  frame: '1910'
+  kanji: 遣
+  keyword: dispatch
+- &1911
+  frame: '1911'
+  kanji: 潰
+  keyword: defile
+- &1912
+  frame: '1912'
+  kanji: 舞
+  keyword: dance
+- &1913
+  frame: '1913'
+  kanji: 無
+  keyword: nothingness
+- &1914
+  frame: '1914'
+  kanji: 組
+  keyword: association
+- &1915
+  frame: '1915'
+  kanji: 粗
+  keyword: coarse
+- &1916
+  frame: '1916'
+  kanji: 租
+  keyword: tariff
+- &1917
+  frame: '1917'
+  kanji: 狙
+  keyword: aim at
+- &1918
+  frame: '1918'
+  kanji: 祖
+  keyword: ancestor
+- &1919
+  frame: '1919'
+  kanji: 阻
+  keyword: thwart
+- &1920
+  frame: '1920'
+  kanji: 査
+  keyword: investigate
+- &1921
+  frame: '1921'
+  kanji: 助
+  keyword: help
+- &1922
+  frame: '1922'
+  kanji: 宜
+  keyword: best regards
+- &1923
+  frame: '1923'
+  kanji: 畳
+  keyword: tatami mat
+- &1924
+  frame: '1924'
+  kanji: 並
+  keyword: row
+- &1925
+  frame: '1925'
+  kanji: 普
+  keyword: universal
+- &1926
+  frame: '1926'
+  kanji: 譜
+  keyword: musical score
+- &1927
+  frame: '1927'
+  kanji: 湿
+  keyword: damp
+- &1928
+  frame: '1928'
+  kanji: 顕
+  keyword: appear
+- &1929
+  frame: '1929'
+  kanji: 繊
+  keyword: slender
+- &1930
+  frame: '1930'
+  kanji: 霊
+  keyword: spirits
+- &1931
+  frame: '1931'
+  kanji: 業
+  keyword: profession
+- &1932
+  frame: '1932'
+  kanji: 撲
+  keyword: slap
+- &1933
+  frame: '1933'
+  kanji: 僕
+  keyword: me
+- &1934
+  frame: '1934'
+  kanji: 共
+  keyword: together
+- &1935
+  frame: '1935'
+  kanji: 供
+  keyword: submit
+- &1936
+  frame: '1936'
+  kanji: 異
+  keyword: uncommon
+- &1937
+  frame: '1937'
+  kanji: 翼
+  keyword: wing
+- &1938
+  frame: '1938'
+  kanji: 戴
+  keyword: accept humbly
+- &1939
+  frame: '1939'
+  kanji: 洪
+  keyword: deluge
+- &1940
+  frame: '1940'
+  kanji: 港
+  keyword: harbor
+- &1941
+  frame: '1941'
+  kanji: 暴
+  keyword: outburst
+- &1942
+  frame: '1942'
+  kanji: 爆
+  keyword: bomb
+- &1943
+  frame: '1943'
+  kanji: 恭
+  keyword: respect
+- &1944
+  frame: '1944'
+  kanji: 選
+  keyword: elect
+- &1945
+  frame: '1945'
+  kanji: 殿
+  keyword: Mr.
+- &1946
+  frame: '1946'
+  kanji: 井
+  keyword: well
+- &1947
+  frame: '1947'
+  kanji: 丼
+  keyword: donburi
+- &1948
+  frame: '1948'
+  kanji: 囲
+  keyword: surround
+- &1949
+  frame: '1949'
+  kanji: 耕
+  keyword: till
+- &1950
+  frame: '1950'
+  kanji: 亜
+  keyword: Asia
+- &1951
+  frame: '1951'
+  kanji: 悪
+  keyword: bad
+- &1952
+  frame: '1952'
+  kanji: 円
+  keyword: circle
+- &1953
+  frame: '1953'
+  kanji: 角
+  keyword: angle
+- &1954
+  frame: '1954'
+  kanji: 触
+  keyword: contact
+- &1955
+  frame: '1955'
+  kanji: 解
+  keyword: unravel
+- &1956
+  frame: '1956'
+  kanji: 再
+  keyword: again
+- &1957
+  frame: '1957'
+  kanji: 講
+  keyword: lecture
+- &1958
+  frame: '1958'
+  kanji: 購
+  keyword: subscription
+- &1959
+  frame: '1959'
+  kanji: 構
+  keyword: posture
+- &1960
+  frame: '1960'
+  kanji: 溝
+  keyword: gutter
+- &1961
+  frame: '1961'
+  kanji: 論
+  keyword: argument
+- &1962
+  frame: '1962'
+  kanji: 倫
+  keyword: ethics
+- &1963
+  frame: '1963'
+  kanji: 輪
+  keyword: wheel
+- &1964
+  frame: '1964'
+  kanji: 偏
+  keyword: partial
+- &1965
+  frame: '1965'
+  kanji: 遍
+  keyword: everywhere
+- &1966
+  frame: '1966'
+  kanji: 編
+  keyword: compilation
+- &1967
+  frame: '1967'
+  kanji: 冊
+  keyword: tome
+- &1968
+  frame: '1968'
+  kanji: 柵
+  keyword: palisade
+- &1969
+  frame: '1969'
+  kanji: 典
+  keyword: code
+- &1970
+  frame: '1970'
+  kanji: 氏
+  keyword: family name
+- &1971
+  frame: '1971'
+  kanji: 紙
+  keyword: paper
+- &1972
+  frame: '1972'
+  kanji: 婚
+  keyword: marriage
+- &1973
+  frame: '1973'
+  kanji: 低
+  keyword: lower
+- &1974
+  frame: '1974'
+  kanji: 抵
+  keyword: resist
+- &1975
+  frame: '1975'
+  kanji: 底
+  keyword: bottom
+- &1976
+  frame: '1976'
+  kanji: 民
+  keyword: people
+- &1977
+  frame: '1977'
+  kanji: 眠
+  keyword: sleep
+- &1978
+  frame: '1978'
+  kanji: 捕
+  keyword: catch
+- &1979
+  frame: '1979'
+  kanji: 哺
+  keyword: suckle
+- &1980
+  frame: '1980'
+  kanji: 浦
+  keyword: bay
+- &1981
+  frame: '1981'
+  kanji: 蒲
+  keyword: bullrush
+- &1982
+  frame: '1982'
+  kanji: 舗
+  keyword: shop
+- &1983
+  frame: '1983'
+  kanji: 補
+  keyword: supplement
+- &1984
+  frame: '1984'
+  kanji: 邸
+  keyword: residence
+- &1985
+  frame: '1985'
+  kanji: 郭
+  keyword: enclosure
+- &1986
+  frame: '1986'
+  kanji: 郡
+  keyword: county
+- &1987
+  frame: '1987'
+  kanji: 郊
+  keyword: outskirts
+- &1988
+  frame: '1988'
+  kanji: 部
+  keyword: section
+- &1989
+  frame: '1989'
+  kanji: 都
+  keyword: metropolis
+- &1990
+  frame: '1990'
+  kanji: 郵
+  keyword: mail
+- &1991
+  frame: '1991'
+  kanji: 邦
+  keyword: home country
+- &1992
+  frame: '1992'
+  kanji: 那
+  keyword: interrogative
+- &1993
+  frame: '1993'
+  kanji: 郷
+  keyword: hometown
+- &1994
+  frame: '1994'
+  kanji: 響
+  keyword: echo
+- &1995
+  frame: '1995'
+  kanji: 郎
+  keyword: son
+- &1996
+  frame: '1996'
+  kanji: 廊
+  keyword: corridor
+- &1997
+  frame: '1997'
+  kanji: 盾
+  keyword: shield
+- &1998
+  frame: '1998'
+  kanji: 循
+  keyword: sequential
+- &1999
+  frame: '1999'
+  kanji: 派
+  keyword: faction
+- &2000
+  frame: '2000'
+  kanji: 脈
+  keyword: vein
+- &2001
+  frame: '2001'
+  kanji: 衆
+  keyword: masses
+- &2002
+  frame: '2002'
+  kanji: 逓
+  keyword: parcel post
+- &2003
+  frame: '2003'
+  kanji: 段
+  keyword: grade
+- &2004
+  frame: '2004'
+  kanji: 鍛
+  keyword: forge
+- &2005
+  frame: '2005'
+  kanji: 后
+  keyword: empress
+- &2006
+  frame: '2006'
+  kanji: 幻
+  keyword: phantasm
+- &2007
+  frame: '2007'
+  kanji: 司
+  keyword: director
+- &2008
+  frame: '2008'
+  kanji: 伺
+  keyword: pay respects
+- &2009
+  frame: '2009'
+  kanji: 詞
+  keyword: parts of speech
+- &2010
+  frame: '2010'
+  kanji: 飼
+  keyword: domesticate
+- &2011
+  frame: '2011'
+  kanji: 嗣
+  keyword: heir
+- &2012
+  frame: '2012'
+  kanji: 舟
+  keyword: boat
+- &2013
+  frame: '2013'
+  kanji: 舶
+  keyword: liner
+- &2014
+  frame: '2014'
+  kanji: 航
+  keyword: navigate
+- &2015
+  frame: '2015'
+  kanji: 舷
+  keyword: gunwale
+- &2016
+  frame: '2016'
+  kanji: 般
+  keyword: carrier
+- &2017
+  frame: '2017'
+  kanji: 盤
+  keyword: tray
+- &2018
+  frame: '2018'
+  kanji: 搬
+  keyword: conveyor
+- &2019
+  frame: '2019'
+  kanji: 船
+  keyword: ship
+- &2020
+  frame: '2020'
+  kanji: 艦
+  keyword: warship
+- &2021
+  frame: '2021'
+  kanji: 艇
+  keyword: rowboat
+- &2022
+  frame: '2022'
+  kanji: 瓜
+  keyword: melon
+- &2023
+  frame: '2023'
+  kanji: 弧
+  keyword: arc
+- &2024
+  frame: '2024'
+  kanji: 孤
+  keyword: orphan
+- &2025
+  frame: '2025'
+  kanji: 繭
+  keyword: cocoon
+- &2026
+  frame: '2026'
+  kanji: 益
+  keyword: benefit
+- &2027
+  frame: '2027'
+  kanji: 暇
+  keyword: spare time
+- &2028
+  frame: '2028'
+  kanji: 敷
+  keyword: spread
+- &2029
+  frame: '2029'
+  kanji: 来
+  keyword: come
+- &2030
+  frame: '2030'
+  kanji: 気
+  keyword: spirit
+- &2031
+  frame: '2031'
+  kanji: 汽
+  keyword: vapor
+- &2032
+  frame: '2032'
+  kanji: 飛
+  keyword: fly
+- &2033
+  frame: '2033'
+  kanji: 沈
+  keyword: sink
+- &2034
+  frame: '2034'
+  kanji: 枕
+  keyword: pillow
+- &2035
+  frame: '2035'
+  kanji: 妻
+  keyword: wife
+- &2036
+  frame: '2036'
+  kanji: 凄
+  keyword: nifty
+- &2037
+  frame: '2037'
+  kanji: 衰
+  keyword: decline
+- &2038
+  frame: '2038'
+  kanji: 衷
+  keyword: inmost
+- &2039
+  frame: '2039'
+  kanji: 面
+  keyword: mask
+- &2040
+  frame: '2040'
+  kanji: 麺
+  keyword: noodles
+- &2041
+  frame: '2041'
+  kanji: 革
+  keyword: leather
+- &2042
+  frame: '2042'
+  kanji: 靴
+  keyword: shoes
+- &2043
+  frame: '2043'
+  kanji: 覇
+  keyword: hegemony
+- &2044
+  frame: '2044'
+  kanji: 声
+  keyword: voice
+- &2045
+  frame: '2045'
+  kanji: 眉
+  keyword: eyebrow
+- &2046
+  frame: '2046'
+  kanji: 呉
+  keyword: give
+- &2047
+  frame: '2047'
+  kanji: 娯
+  keyword: recreation
+- &2048
+  frame: '2048'
+  kanji: 誤
+  keyword: mistake
+- &2049
+  frame: '2049'
+  kanji: 蒸
+  keyword: steam
+- &2050
+  frame: '2050'
+  kanji: 承
+  keyword: acquiesce
+- &2051
+  frame: '2051'
+  kanji: 函
+  keyword: bin
+- &2052
+  frame: '2052'
+  kanji: 極
+  keyword: poles
+- &2053
+  frame: '2053'
+  kanji: 牙
+  keyword: tusk
+- &2054
+  frame: '2054'
+  kanji: 芽
+  keyword: bud
+- &2055
+  frame: '2055'
+  kanji: 邪
+  keyword: wicked
+- &2056
+  frame: '2056'
+  kanji: 雅
+  keyword: gracious
+- &2057
+  frame: '2057'
+  kanji: 釈
+  keyword: interpretation
+- &2058
+  frame: '2058'
+  kanji: 番
+  keyword: turn
+- &2059
+  frame: '2059'
+  kanji: 審
+  keyword: hearing
+- &2060
+  frame: '2060'
+  kanji: 翻
+  keyword: flip
+- &2061
+  frame: '2061'
+  kanji: 藩
+  keyword: clan
+- &2062
+  frame: '2062'
+  kanji: 毛
+  keyword: fur
+- &2063
+  frame: '2063'
+  kanji: 耗
+  keyword: decrease
+- &2064
+  frame: '2064'
+  kanji: 尾
+  keyword: tail
+- &2065
+  frame: '2065'
+  kanji: 宅
+  keyword: home
+- &2066
+  frame: '2066'
+  kanji: 託
+  keyword: consign
+- &2067
+  frame: '2067'
+  kanji: 為
+  keyword: do
+- &2068
+  frame: '2068'
+  kanji: 偽
+  keyword: falsehood
+- &2069
+  frame: '2069'
+  kanji: 畏
+  keyword: apprehensive
+- &2070
+  frame: '2070'
+  kanji: 長
+  keyword: long
+- &2071
+  frame: '2071'
+  kanji: 張
+  keyword: lengthen
+- &2072
+  frame: '2072'
+  kanji: 帳
+  keyword: notebook
+- &2073
+  frame: '2073'
+  kanji: 脹
+  keyword: dilate
+- &2074
+  frame: '2074'
+  kanji: 髪
+  keyword: hair of the head
+- &2075
+  frame: '2075'
+  kanji: 展
+  keyword: unfold
+- &2076
+  frame: '2076'
+  kanji: 喪
+  keyword: miss
+- &2077
+  frame: '2077'
+  kanji: 巣
+  keyword: nest
+- &2078
+  frame: '2078'
+  kanji: 単
+  keyword: simple
+- &2079
+  frame: '2079'
+  kanji: 戦
+  keyword: war
+- &2080
+  frame: '2080'
+  kanji: 禅
+  keyword: Zen
+- &2081
+  frame: '2081'
+  kanji: 弾
+  keyword: bullet
+- &2082
+  frame: '2082'
+  kanji: 桜
+  keyword: cherry tree
+- &2083
+  frame: '2083'
+  kanji: 獣
+  keyword: animal
+- &2084
+  frame: '2084'
+  kanji: 脳
+  keyword: brain
+- &2085
+  frame: '2085'
+  kanji: 悩
+  keyword: trouble
+- &2086
+  frame: '2086'
+  kanji: 厳
+  keyword: stern
+- &2087
+  frame: '2087'
+  kanji: 鎖
+  keyword: chain
+- &2088
+  frame: '2088'
+  kanji: 挙
+  keyword: raise
+- &2089
+  frame: '2089'
+  kanji: 誉
+  keyword: reputation
+- &2090
+  frame: '2090'
+  kanji: 猟
+  keyword: game hunting
+- &2091
+  frame: '2091'
+  kanji: 鳥
+  keyword: bird
+- &2092
+  frame: '2092'
+  kanji: 鳴
+  keyword: chirp
+- &2093
+  frame: '2093'
+  kanji: 鶴
+  keyword: crane
+- &2094
+  frame: '2094'
+  kanji: 烏
+  keyword: crow
+- &2095
+  frame: '2095'
+  kanji: 蔦
+  keyword: vine
+- &2096
+  frame: '2096'
+  kanji: 鳩
+  keyword: pigeon
+- &2097
+  frame: '2097'
+  kanji: 鶏
+  keyword: chicken
+- &2098
+  frame: '2098'
+  kanji: 島
+  keyword: island
+- &2099
+  frame: '2099'
+  kanji: 暖
+  keyword: warmth
+- &2100
+  frame: '2100'
+  kanji: 媛
+  keyword: beautiful woman
+- &2101
+  frame: '2101'
+  kanji: 援
+  keyword: abet
+- &2102
+  frame: '2102'
+  kanji: 緩
+  keyword: slacken
+- &2103
+  frame: '2103'
+  kanji: 属
+  keyword: belong
+- &2104
+  frame: '2104'
+  kanji: 嘱
+  keyword: entrust
+- &2105
+  frame: '2105'
+  kanji: 偶
+  keyword: accidentally
+- &2106
+  frame: '2106'
+  kanji: 遇
+  keyword: interview
+- &2107
+  frame: '2107'
+  kanji: 愚
+  keyword: foolish
+- &2108
+  frame: '2108'
+  kanji: 隅
+  keyword: corner
+- &2109
+  frame: '2109'
+  kanji: 逆
+  keyword: inverted
+- &2110
+  frame: '2110'
+  kanji: 塑
+  keyword: model
+- &2111
+  frame: '2111'
+  kanji: 遡
+  keyword: go upstream
+- &2112
+  frame: '2112'
+  kanji: 岡
+  keyword: Mount
+- &2113
+  frame: '2113'
+  kanji: 鋼
+  keyword: steel
+- &2114
+  frame: '2114'
+  kanji: 綱
+  keyword: hawser
+- &2115
+  frame: '2115'
+  kanji: 剛
+  keyword: sturdy
+- &2116
+  frame: '2116'
+  kanji: 缶
+  keyword: tin can
+- &2117
+  frame: '2117'
+  kanji: 陶
+  keyword: pottery
+- &2118
+  frame: '2118'
+  kanji: 揺
+  keyword: swing
+- &2119
+  frame: '2119'
+  kanji: 謡
+  keyword: Noh chanting
+- &2120
+  frame: '2120'
+  kanji: 鬱
+  keyword: gloom
+- &2121
+  frame: '2121'
+  kanji: 就
+  keyword: concerning
+- &2122
+  frame: '2122'
+  kanji: 蹴
+  keyword: kick
+- &2123
+  frame: '2123'
+  kanji: 懇
+  keyword: sociable
+- &2124
+  frame: '2124'
+  kanji: 墾
+  keyword: groundbreaking
+- &2125
+  frame: '2125'
+  kanji: 貌
+  keyword: countenance
+- &2126
+  frame: '2126'
+  kanji: 免
+  keyword: excuse
+- &2127
+  frame: '2127'
+  kanji: 逸
+  keyword: elude
+- &2128
+  frame: '2128'
+  kanji: 晩
+  keyword: nightfall
+- &2129
+  frame: '2129'
+  kanji: 勉
+  keyword: exertion
+- &2130
+  frame: '2130'
+  kanji: 象
+  keyword: elephant
+- &2131
+  frame: '2131'
+  kanji: 像
+  keyword: statue
+- &2132
+  frame: '2132'
+  kanji: 馬
+  keyword: horse
+- &2133
+  frame: '2133'
+  kanji: 駒
+  keyword: pony
+- &2134
+  frame: '2134'
+  kanji: 験
+  keyword: verification
+- &2135
+  frame: '2135'
+  kanji: 騎
+  keyword: equestrian
+- &2136
+  frame: '2136'
+  kanji: 駐
+  keyword: parking
+- &2137
+  frame: '2137'
+  kanji: 駆
+  keyword: drive
+- &2138
+  frame: '2138'
+  kanji: 駅
+  keyword: station
+- &2139
+  frame: '2139'
+  kanji: 騒
+  keyword: boisterous
+- &2140
+  frame: '2140'
+  kanji: 駄
+  keyword: burdensome
+- &2141
+  frame: '2141'
+  kanji: 驚
+  keyword: wonder
+- &2142
+  frame: '2142'
+  kanji: 篤
+  keyword: fervent
+- &2143
+  frame: '2143'
+  kanji: 罵
+  keyword: insult
+- &2144
+  frame: '2144'
+  kanji: 騰
+  keyword: inflation
+- &2145
+  frame: '2145'
+  kanji: 虎
+  keyword: tiger
+- &2146
+  frame: '2146'
+  kanji: 虜
+  keyword: captive
+- &2147
+  frame: '2147'
+  kanji: 膚
+  keyword: skin
+- &2148
+  frame: '2148'
+  kanji: 虚
+  keyword: void
+- &2149
+  frame: '2149'
+  kanji: 戯
+  keyword: frolic
+- &2150
+  frame: '2150'
+  kanji: 虞
+  keyword: uneasiness
+- &2151
+  frame: '2151'
+  kanji: 慮
+  keyword: prudence
+- &2152
+  frame: '2152'
+  kanji: 劇
+  keyword: drama
+- &2153
+  frame: '2153'
+  kanji: 虐
+  keyword: tyrannize
+- &2154
+  frame: '2154'
+  kanji: 鹿
+  keyword: deer
+- &2155
+  frame: '2155'
+  kanji: 麓
+  keyword: foot of a mountain
+- &2156
+  frame: '2156'
+  kanji: 薦
+  keyword: recommend
+- &2157
+  frame: '2157'
+  kanji: 慶
+  keyword: jubilation
+- &2158
+  frame: '2158'
+  kanji: 麗
+  keyword: lovely
+- &2159
+  frame: '2159'
+  kanji: 熊
+  keyword: bear
+- &2160
+  frame: '2160'
+  kanji: 能
+  keyword: ability
+- &2161
+  frame: '2161'
+  kanji: 態
+  keyword: attitude
+- &2162
+  frame: '2162'
+  kanji: 寅
+  keyword: sign of the tiger
+- &2163
+  frame: '2163'
+  kanji: 演
+  keyword: performance
+- &2164
+  frame: '2164'
+  kanji: 辰
+  keyword: sign of the dragon
+- &2165
+  frame: '2165'
+  kanji: 辱
+  keyword: embarrass
+- &2166
+  frame: '2166'
+  kanji: 震
+  keyword: quake
+- &2167
+  frame: '2167'
+  kanji: 振
+  keyword: shake
+- &2168
+  frame: '2168'
+  kanji: 娠
+  keyword: with child
+- &2169
+  frame: '2169'
+  kanji: 唇
+  keyword: lips
+- &2170
+  frame: '2170'
+  kanji: 農
+  keyword: agriculture
+- &2171
+  frame: '2171'
+  kanji: 濃
+  keyword: concentrated
+- &2172
+  frame: '2172'
+  kanji: 送
+  keyword: send off
+- &2173
+  frame: '2173'
+  kanji: 関
+  keyword: connection
+- &2174
+  frame: '2174'
+  kanji: 咲
+  keyword: blossom
+- &2175
+  frame: '2175'
+  kanji: 鬼
+  keyword: ogre
+- &2176
+  frame: '2176'
+  kanji: 醜
+  keyword: ugly
+- &2177
+  frame: '2177'
+  kanji: 魂
+  keyword: soul
+- &2178
+  frame: '2178'
+  kanji: 魔
+  keyword: fiend
+- &2179
+  frame: '2179'
+  kanji: 魅
+  keyword: fascination
+- &2180
+  frame: '2180'
+  kanji: 塊
+  keyword: clod
+- &2181
+  frame: '2181'
+  kanji: 襲
+  keyword: attack
+- &2182
+  frame: '2182'
+  kanji: 嚇
+  keyword: upbraid
+- &2183
+  frame: '2183'
+  kanji: 朕
+  keyword: majestic plural
+- &2184
+  frame: '2184'
+  kanji: 雰
+  keyword: atmosphere
+- &2185
+  frame: '2185'
+  kanji: 箇
+  keyword: item
+- &2186
+  frame: '2186'
+  kanji: 錬
+  keyword: tempering
+- &2187
+  frame: '2187'
+  kanji: 遵
+  keyword: abide by
+- &2188
+  frame: '2188'
+  kanji: 罷
+  keyword: quit
+- &2189
+  frame: '2189'
+  kanji: 屯
+  keyword: barracks
+- &2190
+  frame: '2190'
+  kanji: 且
+  keyword: moreover
+- &2191
+  frame: '2191'
+  kanji: 藻
+  keyword: seaweed
+- &2192
+  frame: '2192'
+  kanji: 隷
+  keyword: slave
+- &2193
+  frame: '2193'
+  kanji: 癒
+  keyword: healing
+- &2194
+  frame: '2194'
+  kanji: 璽
+  keyword: imperial seal
+- &2195
+  frame: '2195'
+  kanji: 潟
+  keyword: lagoon
+- &2196
+  frame: '2196'
+  kanji: 丹
+  keyword: cinnabar
+- &2197
+  frame: '2197'
+  kanji: 丑
+  keyword: sign of the cow
+- &2198
+  frame: '2198'
+  kanji: 羞
+  keyword: humiliate
+- &2199
+  frame: '2199'
+  kanji: 卯
+  keyword: sign of the hare
+- &2200
+  frame: '2200'
+  kanji: 巳
+  keyword: sign of the snake
+by_kanji:
+  一: *1
+  丁: *95
+  七: *7
+  万: *68
+  丈: *746
+  三: *3
+  上: *50
+  下: *51
+  不: *1302
+  与: *1335
+  丑: *2197
+  且: *2190
+  世: *28
+  丘: *1427
+  丙: *1096
+  両: *1252
+  並: *1924
+  中: *39
+  串: *649
+  丸: *44
+  丹: *2196
+  主: *284
+  丼: *1947
+  乃: *741
+  久: *1092
+  之: *1299
+  乏: *1300
+  乗: *1709
+  乙: *75
+  九: *9
+  乞: *501
+  乱: *76
+  乳: *786
+  乾: *502
+  亀: *573
+  了: *101
+  予: *1719
+  争: *1238
+  事: *1240
+  二: *2
+  互: *819
+  五: *5
+  井: *1946
+  亘: *32
+  亜: *1950
+  亡: *524
+  交: *1368
+  亥: *1637
+  享: *330
+  京: *334
+  亭: *333
+  人: *1023
+  仁: *1063
+  今: *1711
+  介: *265
+  仏: *1037
+  仕: *1033
+  他: *1034
+  付: *1075
+  仙: *1061
+  代: *1080
+  令: *1503
+  以: *1105
+  仮: *1039
+  仰: *1836
+  仲: *1029
+  件: *1032
+  任: *1078
+  企: *401
+  伊: *1245
+  伎: *1040
+  伏: *1035
+  伐: *1069
+  休: *1038
+  会: *814
+  伝: *1036
+  伯: *1041
+  伴: *1287
+  伸: *1199
+  伺: *2008
+  似: *1106
+  但: *1026
+  位: *1028
+  低: *1973
+  住: *1027
+  佐: *1024
+  体: *1030
+  何: *1087
+  余: *1786
+  作: *1224
+  佳: *1044
+  併: *1107
+  使: *1065
+  例: *1046
+  侍: *1050
+  供: *1935
+  依: *1045
+  価: *1729
+  侮: *1064
+  侯: *1767
+  侵: *1231
+  侶: *1025
+  便: *1066
+  係: *1493
+  促: *1373
+  俊: *1089
+  俗: *1042
+  保: *1072
+  信: *1043
+  修: *1858
+  俳: *1761
+  俵: *1667
+  俸: *1696
+  俺: *1091
+  倉: *1758
+  個: *1047
+  倍: *1067
+  倒: *1055
+  候: *1769
+  借: *1270
+  倣: *1053
+  値: *1052
+  倫: *1962
+  倹: *1804
+  偉: *1772
+  偏: *1964
+  停: *1051
+  健: *1048
+  側: *1049
+  偵: *1056
+  偶: *2105
+  偽: *2068
+  傍: *1090
+  傑: *1074
+  傘: *1103
+  備: *1267
+  催: *1062
+  傲: *1054
+  債: *1664
+  傷: *1071
+  傾: *1086
+  僅: *1699
+  働: *1809
+  像: *2131
+  僕: *1933
+  僚: *1842
+  僧: *1057
+  儀: *1059
+  億: *1058
+  儒: *1250
+  償: *1060
+  優: *1068
+  允: *827
+  元: *63
+  兄: *107
+  充: *823
+  兆: *250
+  先: *263
+  光: *125
+  克: *109
+  免: *2126
+  児: *62
+  党: *860
+  入: *842
+  全: *281
+  八: *8
+  公: *847
+  六: *6
+  共: *1934
+  兵: *1429
+  具: *78
+  典: *1969
+  兼: *1723
+  内: *1095
+  円: *1952
+  冊: *1967
+  再: *1956
+  冒: *18
+  冗: *321
+  写: *1336
+  冠: *326
+  冥: *322
+  冬: *456
+  冶: *808
+  冷: *1506
+  凄: *2036
+  准: *602
+  凍: *545
+  凝: *1515
+  凡: *66
+  処: *318
+  凶: *1603
+  凸: *34
+  凹: *33
+  出: *829
+  函: *2051
+  刀: *87
+  刃: *88
+  分: *844
+  切: *89
+  刈: *1600
+  刊: *1779
+  刑: *734
+  列: *875
+  初: *431
+  判: *1289
+  別: *94
+  利: *972
+  到: *817
+  制: *447
+  刷: *1150
+  券: *1291
+  刹: *1601
+  刺: *446
+  刻: *1639
+  則: *92
+  削: *124
+  前: *309
+  剖: *517
+  剛: *2115
+  剣: *1801
+  剤: *1867
+  剥: *1227
+  副: *93
+  剰: *1710
+  割: *1673
+  創: *1759
+  劇: *2152
+  力: *922
+  功: *927
+  加: *932
+  劣: *926
+  助: *1921
+  努: *929
+  励: *931
+  労: *924
+  効: *1369
+  劾: *1642
+  勃: *930
+  勅: *1796
+  勇: *1509
+  勉: *2129
+  動: *1806
+  勘: *1906
+  務: *1313
+  勝: *1294
+  募: *925
+  勢: *1633
+  勤: *1700
+  勧: *928
+  勲: *1808
+  勺: *72
+  勾: *800
+  勿: *1128
+  匁: *1104
+  匂: *478
+  包: *569
+  匕: *476
+  化: *1083
+  北: *480
+  匠: *1828
+  匹: *1830
+  区: *1831
+  医: *1829
+  匿: *1827
+  十: *10
+  千: *40
+  升: *42
+  午: *610
+  半: *1286
+  卑: *1629
+  卒: *1102
+  卓: *52
+  協: *937
+  南: *1740
+  単: *2078
+  博: *48
+  占: *49
+  卯: *2199
+  印: *1530
+  危: *1520
+  即: *1572
+  却: *1497
+  卵: *1526
+  卸: *1499
+  厄: *1519
+  厘: *190
+  厚: *132
+  原: *142
+  厳: *2086
+  去: *812
+  参: *1856
+  又: *752
+  及: *743
+  友: *760
+  双: *753
+  反: *779
+  収: *1628
+  叔: *775
+  取: *882
+  受: *794
+  叙: *1789
+  口: *11
+  古: *16
+  句: *69
+  只: *55
+  叫: *1626
+  召: *90
+  可: *97
+  台: *805
+  叱: *477
+  史: *747
+  右: *82
+  号: *1330
+  司: *2007
+  各: *311
+  合: *269
+  吉: *342
+  同: *192
+  名: *117
+  后: *2005
+  吏: *748
+  吐: *162
+  向: *195
+  君: *1246
+  吟: *1714
+  否: *1303
+  含: *1712
+  吸: *744
+  吹: *506
+  吾: *17
+  呂: *24
+  呈: *280
+  呉: *2046
+  告: *262
+  周: *339
+  呪: *108
+  味: *233
+  呼: *1597
+  命: *1502
+  和: *963
+  咲: *2174
+  咽: *628
+  哀: *428
+  品: *23
+  員: *59
+  哲: *1212
+  哺: *1979
+  唄: *57
+  唆: *828
+  唇: *2169
+  唐: *1241
+  唯: *595
+  唱: *21
+  唾: *1706
+  商: *471
+  問: *1744
+  啓: *1166
+  善: *1112
+  喉: *1768
+  喚: *1121
+  喜: *1553
+  喝: *491
+  喩: *308
+  喪: *2076
+  喫: *1670
+  営: *1111
+  嗅: *129
+  嗣: *2011
+  嘆: *1702
+  嘱: *2104
+  嘲: *54
+  器: *127
+  噴: *1281
+  嚇: *2182
+  囚: *1094
+  四: *4
+  回: *630
+  因: *626
+  団: *625
+  困: *621
+  囲: *1948
+  図: *1264
+  固: *622
+  国: *624
+  圏: *1293
+  園: *629
+  土: *161
+  圧: *163
+  在: *740
+  圭: *167
+  地: *554
+  坂: *780
+  均: *172
+  坊: *531
+  坑: *328
+  坪: *1598
+  垂: *1705
+  型: *735
+  垣: *165
+  埋: *191
+  城: *387
+  域: *380
+  執: *1623
+  培: *516
+  基: *1904
+  埼: *164
+  堀: *1142
+  堂: *861
+  堅: *917
+  堆: *596
+  堕: *1411
+  堤: *416
+  堪: *1907
+  報: *1625
+  場: *584
+  塀: *1136
+  塁: *1871
+  塊: *2180
+  塑: *2110
+  塔: *270
+  塗: *1792
+  塚: *1117
+  塞: *1646
+  塩: *1568
+  填: *166
+  塾: *331
+  境: *523
+  墓: *246
+  増: *541
+  墜: *1404
+  墨: *187
+  墳: *1282
+  墾: *2124
+  壁: *1616
+  壇: *631
+  壊: *427
+  壌: *1649
+  士: *341
+  壮: *343
+  声: *2044
+  壱: *496
+  売: *345
+  変: *1882
+  夏: *317
+  夕: *114
+  外: *116
+  多: *113
+  夜: *1115
+  夢: *327
+  大: *112
+  天: *457
+  太: *126
+  夫: *901
+  央: *1877
+  失: *908
+  奇: *133
+  奈: *1175
+  奉: *1695
+  奏: *1693
+  契: *1669
+  奔: *1280
+  奥: *997
+  奨: *790
+  奪: *608
+  奮: *607
+  女: *102
+  奴: *758
+  好: *103
+  如: *104
+  妃: *566
+  妄: *526
+  妊: *546
+  妖: *458
+  妙: *130
+  妥: *785
+  妨: *530
+  妬: *123
+  妹: *234
+  妻: *2035
+  姉: *442
+  始: *809
+  姓: *1678
+  委: *979
+  姫: *912
+  姻: *627
+  姿: *513
+  威: *389
+  娘: *1581
+  娠: *2168
+  娯: *2047
+  婆: *867
+  婚: *1972
+  婦: *1234
+  婿: *422
+  媒: *1898
+  媛: *2100
+  嫁: *581
+  嫉: *1820
+  嫌: *1724
+  嫡: *472
+  嬌: *461
+  嬢: *1650
+  子: *99
+  孔: *100
+  字: *197
+  存: *739
+  孝: *1342
+  季: *978
+  孤: *2024
+  学: *346
+  孫: *1494
+  宅: *2065
+  宇: *1785
+  守: *198
+  安: *202
+  完: *199
+  宗: *1181
+  官: *1363
+  宙: *1190
+  定: *408
+  宛: *1521
+  宜: *1922
+  宝: *273
+  実: *1694
+  客: *315
+  宣: *200
+  室: *816
+  宮: *1110
+  宰: *1615
+  害: *1671
+  宴: *203
+  宵: *201
+  家: *580
+  容: *853
+  宿: *1070
+  寂: *777
+  寄: *204
+  寅: *2162
+  密: *837
+  富: *205
+  寒: *1645
+  寛: *241
+  寝: *1233
+  察: *1184
+  寡: *664
+  寧: *897
+  審: *2059
+  寮: *1844
+  寸: *45
+  寺: *170
+  対: *1862
+  寿: *1687
+  封: *168
+  専: *47
+  射: *1338
+  将: *789
+  尉: *1176
+  尊: *1547
+  尋: *1228
+  導: *296
+  小: *110
+  少: *111
+  尚: *196
+  就: *2121
+  尺: *1151
+  尻: *1134
+  尼: *1133
+  尽: *1152
+  尾: *2064
+  尿: *1132
+  局: *1147
+  居: *1143
+  屈: *1140
+  届: *1191
+  屋: *1138
+  展: *2075
+  属: *2103
+  層: *1146
+  履: *1137
+  屯: *2189
+  山: *830
+  岐: *834
+  岡: *2112
+  岩: *832
+  岬: *1196
+  岳: *1428
+  岸: *1782
+  峠: *835
+  峡: *1355
+  峰: *1683
+  島: *2098
+  崇: *1182
+  崎: *840
+  崖: *841
+  崩: *836
+  嵐: *839
+  川: *134
+  州: *135
+  巡: *303
+  巣: *2077
+  工: *80
+  左: *81
+  巧: *1329
+  巨: *920
+  差: *593
+  己: *564
+  巳: *2200
+  巻: *1292
+  巾: *432
+  市: *440
+  布: *433
+  帆: *434
+  希: *1602
+  帝: *466
+  帥: *1362
+  師: *1361
+  席: *1277
+  帯: *444
+  帰: *1316
+  帳: *2072
+  常: *862
+  帽: *436
+  幅: *435
+  幌: *438
+  幕: *437
+  幣: *1118
+  干: *1777
+  平: *1596
+  年: *1114
+  幸: *1622
+  幹: *1783
+  幻: *2006
+  幼: *1478
+  幽: *1480
+  幾: *1481
+  庁: *635
+  広: *799
+  床: *636
+  序: *1720
+  底: *1975
+  店: *632
+  府: *1077
+  度: *1278
+  座: *1100
+  庫: *633
+  庭: *634
+  庶: *1275
+  康: *1243
+  庸: *1266
+  廃: *1841
+  廉: *1727
+  廊: *1996
+  延: *419
+  廷: *547
+  建: *417
+  廿: *1274
+  弁: *803
+  弄: *731
+  弊: *1120
+  式: *377
+  弐: *379
+  弓: *1317
+  弔: *1319
+  引: *1318
+  弘: *1320
+  弟: *1328
+  弥: *1322
+  弦: *1487
+  弧: *2023
+  弱: *1323
+  張: *2071
+  強: *1321
+  弾: *2081
+  当: *1236
+  彙: *1237
+  形: *1847
+  彦: *1852
+  彩: *1850
+  彫: *1846
+  彰: *1851
+  影: *1848
+  役: *949
+  彼: *948
+  往: *945
+  征: *946
+  径: *947
+  待: *944
+  律: *939
+  後: *1479
+  徐: *1788
+  徒: *943
+  従: *942
+  得: *941
+  御: *1500
+  復: *940
+  循: *1998
+  微: *954
+  徳: *950
+  徴: *952
+  徹: *951
+  心: *639
+  必: *685
+  忌: *644
+  忍: *642
+  志: *645
+  忘: *640
+  忙: *665
+  応: *653
+  忠: *648
+  快: *1771
+  念: *1715
+  怒: *759
+  怖: *670
+  思: *651
+  怠: *806
+  急: *1229
+  性: *1679
+  怨: *1524
+  怪: *773
+  恋: *1885
+  恐: *660
+  恒: *667
+  恣: *641
+  恥: *886
+  恨: *1570
+  恩: *652
+  恭: *1943
+  息: *657
+  恵: *659
+  悔: *672
+  悟: *669
+  悠: *1031
+  患: *650
+  悦: *666
+  悩: *2085
+  悪: *1951
+  悲: *1763
+  悼: *668
+  情: *1657
+  惑: *661
+  惜: *1271
+  惧: *680
+  惨: *1857
+  惰: *676
+  想: *656
+  愁: *967
+  愉: *675
+  意: *654
+  愚: *2107
+  愛: *796
+  感: *662
+  慄: *1736
+  慈: *1490
+  態: *2161
+  慌: *671
+  慎: *677
+  慕: *683
+  慢: *892
+  慣: *674
+  慨: *1595
+  慮: *2151
+  慰: *1177
+  慶: *2157
+  憂: *663
+  憎: *673
+  憤: *1283
+  憧: *681
+  憩: *658
+  憬: *682
+  憲: *1674
+  憶: *679
+  憾: *678
+  懇: *2123
+  懐: *891
+  懲: *953
+  懸: *1495
+  成: *386
+  我: *690
+  戒: *730
+  戚: *385
+  戦: *2079
+  戯: *2149
+  戴: *1938
+  戸: *1157
+  戻: *1162
+  房: *1159
+  所: *1208
+  扇: *1160
+  扉: *1766
+  手: *687
+  才: *736
+  打: *705
+  払: *798
+  扱: *745
+  扶: *902
+  批: *701
+  承: *2050
+  技: *769
+  抄: *699
+  把: *1889
+  抑: *1835
+  投: *762
+  抗: *700
+  折: *1211
+  抜: *761
+  択: *1155
+  披: *868
+  抱: *697
+  抵: *1974
+  抹: *694
+  押: *1195
+  抽: *1187
+  担: *721
+  拉: *696
+  拍: *704
+  拐: *708
+  拒: *921
+  拓: *703
+  拘: *706
+  拙: *831
+  招: *702
+  拝: *1686
+  拠: *722
+  拡: *801
+  括: *714
+  拭: *695
+  拳: *1290
+  拶: *713
+  拷: *1344
+  拾: *720
+  持: *712
+  指: *711
+  挑: *710
+  挙: *2088
+  挟: *1357
+  挨: *1310
+  挫: *1101
+  振: *2167
+  挿: *1197
+  捉: *1374
+  捕: *1978
+  捗: *728
+  捜: *1201
+  捨: *707
+  据: *1144
+  捻: *1716
+  掃: *1235
+  授: *795
+  掌: *864
+  排: *1762
+  掘: *1141
+  掛: *727
+  採: *792
+  探: *1425
+  接: *725
+  控: *1415
+  推: *716
+  措: *1272
+  掲: *726
+  描: *723
+  提: *718
+  揚: *717
+  換: *1122
+  握: *1139
+  揮: *715
+  援: *2101
+  揺: *2118
+  損: *719
+  搬: *2018
+  搭: *698
+  携: *742
+  搾: *1422
+  摂: *1876
+  摘: *709
+  摩: *689
+  摯: *1624
+  撃: *766
+  撤: *822
+  撮: *885
+  撲: *1932
+  擁: *1488
+  操: *724
+  擦: *1185
+  擬: *1514
+  支: *768
+  改: *567
+  攻: *352
+  放: *535
+  政: *407
+  故: *355
+  敏: *498
+  救: *1006
+  敗: *353
+  教: *1343
+  敢: *889
+  散: *1273
+  敬: *356
+  数: *998
+  整: *1800
+  敵: *475
+  敷: *2028
+  文: *1861
+  斉: *1866
+  斎: *1869
+  斑: *1865
+  斗: *1261
+  料: *1262
+  斜: *1791
+  斤: *1206
+  斥: *1220
+  斬: *1215
+  断: *1218
+  新: *1619
+  方: *529
+  施: *1124
+  旅: *1127
+  旋: *1125
+  族: *1307
+  旗: *1901
+  既: *1593
+  日: *12
+  旦: *30
+  旧: *35
+  旨: *493
+  早: *26
+  旬: *71
+  旭: *27
+  旺: *278
+  昆: *483
+  昇: *43
+  昌: *25
+  明: *20
+  易: *1130
+  昔: *1268
+  星: *1676
+  映: *1879
+  春: *1690
+  昧: *231
+  昨: *1222
+  昭: *91
+  是: *414
+  昼: *1156
+  時: *171
+  晩: *2128
+  普: *1925
+  景: *336
+  晴: *1658
+  晶: *22
+  智: *1309
+  暁: *1285
+  暇: *2027
+  暑: *1350
+  暖: *2099
+  暗: *519
+  暦: *226
+  暫: *1216
+  暮: *247
+  暴: *1941
+  曇: *453
+  曖: *797
+  曜: *618
+  曰: *620
+  曲: *1256
+  更: *749
+  書: *349
+  曹: *1257
+  曽: *540
+  替: *905
+  最: *884
+  月: *13
+  有: *83
+  朋: *19
+  服: *1501
+  朕: *2183
+  朗: *1579
+  望: *528
+  朝: *53
+  期: *1902
+  木: *207
+  未: *229
+  末: *230
+  本: *224
+  札: *225
+  朱: *235
+  朴: *220
+  机: *223
+  朽: *1331
+  杉: *1849
+  杏: *215
+  材: *738
+  村: *221
+  束: *1793
+  条: *319
+  来: *2029
+  杯: *1304
+  東: *543
+  松: *848
+  板: *781
+  析: *1207
+  枕: *2034
+  林: *208
+  枚: *354
+  果: *1202
+  枝: *770
+  枠: *212
+  枢: *1832
+  枯: *219
+  架: *934
+  柄: *1097
+  柏: *211
+  某: *1896
+  染: *548
+  柔: *1312
+  柱: *286
+  柳: *1525
+  柵: *1968
+  査: *1920
+  柿: *441
+  栃: *553
+  栄: *348
+  栓: *282
+  栗: *1735
+  校: *1371
+  株: *236
+  核: *1638
+  根: *1571
+  格: *312
+  栽: *382
+  桁: *956
+  桂: *210
+  桃: *251
+  案: *227
+  桐: *216
+  桑: *754
+  桜: *2082
+  桟: *393
+  梅: *499
+  梓: *1614
+  梗: *751
+  梢: *213
+  梨: *973
+  械: *732
+  棄: *820
+  棋: *1900
+  棒: *1697
+  棚: *214
+  棟: *544
+  森: *209
+  棺: *1364
+  椅: *218
+  植: *217
+  椎: *597
+  検: *1803
+  椿: *1691
+  楠: *1741
+  業: *1931
+  極: *2052
+  楷: *485
+  楼: *999
+  楽: *1872
+  概: *1594
+  構: *1959
+  様: *1003
+  槽: *1260
+  標: *1734
+  模: *244
+  権: *613
+  横: *1888
+  樹: *1554
+  橋: *460
+  機: *1482
+  欄: *1756
+  欠: *505
+  次: *510
+  欧: *1834
+  欲: *855
+  欺: *1899
+  款: *1178
+  歌: *508
+  歓: *612
+  止: *396
+  正: *405
+  武: *403
+  歩: *397
+  歯: *1255
+  歳: *551
+  歴: *402
+  死: *878
+  殉: *872
+  殊: *873
+  残: *871
+  殖: *874
+  殴: *1833
+  段: *2003
+  殺: *1607
+  殻: *767
+  殿: *1945
+  毀: *1532
+  母: *105
+  毎: *497
+  毒: *1651
+  比: *482
+  毛: *2062
+  氏: *1970
+  民: *1976
+  気: *2030
+  水: *137
+  氷: *138
+  永: *139
+  氾: *1518
+  汁: *150
+  求: *1004
+  汎: *147
+  汐: *115
+  汗: *1780
+  汚: *1334
+  江: *148
+  池: *555
+  汰: *149
+  決: *1770
+  汽: *2031
+  沃: *459
+  沈: *2033
+  沖: *146
+  沙: *151
+  没: *763
+  沢: *1153
+  沫: *232
+  河: *157
+  沸: *1325
+  油: *1188
+  治: *807
+  沼: *145
+  沿: *858
+  況: *156
+  泉: *140
+  泊: *158
+  泌: *686
+  法: *813
+  泡: *572
+  波: *866
+  泣: *463
+  泥: *1135
+  注: *285
+  泰: *1692
+  泳: *144
+  洋: *588
+  洗: *264
+  洞: *193
+  津: *350
+  洪: *1939
+  活: *154
+  派: *1999
+  流: *826
+  浄: *1239
+  浅: *395
+  浜: *1430
+  浦: *1980
+  浪: *1580
+  浮: *787
+  浴: *852
+  海: *500
+  浸: *1232
+  消: *155
+  涙: *1163
+  涯: *169
+  液: *1116
+  涼: *335
+  淑: *778
+  淡: *176
+  淫: *788
+  深: *1426
+  混: *487
+  添: *684
+  清: *1659
+  渇: *488
+  済: *1868
+  渉: *398
+  渋: *1875
+  渓: *903
+  渚: *1353
+  減: *391
+  渡: *1279
+  渦: *1387
+  温: *1560
+  測: *160
+  港: *1940
+  湖: *159
+  湧: *1510
+  湯: *585
+  湾: *1886
+  湿: *1927
+  満: *1253
+  源: *153
+  準: *606
+  溝: *1960
+  溶: *854
+  溺: *1324
+  滅: *390
+  滋: *1489
+  滑: *1384
+  滝: *576
+  滞: *445
+  滴: *474
+  漁: *184
+  漂: *1733
+  漆: *1001
+  漏: *1149
+  演: *2163
+  漕: *1259
+  漠: *245
+  漢: *1701
+  漫: *893
+  漬: *1665
+  漸: *1217
+  潔: *1668
+  潜: *907
+  潟: *2195
+  潤: *1755
+  潮: *152
+  潰: *1911
+  澄: *1839
+  激: *536
+  濁: *898
+  濃: *2171
+  濫: *1563
+  濯: *619
+  瀬: *1795
+  火: *173
+  灯: *177
+  灰: *180
+  災: *179
+  炉: *1161
+  炊: *507
+  炎: *174
+  炭: *833
+  点: *181
+  為: *2067
+  烈: *877
+  烏: *2094
+  無: *1913
+  焦: *599
+  然: *256
+  焼: *1284
+  煎: *310
+  煙: *1739
+  照: *182
+  煩: *175
+  煮: *1346
+  熊: *2159
+  熟: *332
+  熱: *1634
+  燃: *549
+  燥: *228
+  爆: *1942
+  爪: *784
+  爵: *1573
+  父: *1366
+  爽: *1608
+  片: *1297
+  版: *1298
+  牙: *2053
+  牛: *260
+  牧: *351
+  物: *1129
+  牲: *1680
+  特: *261
+  犠: *693
+  犬: *253
+  犯: *1517
+  状: *254
+  狂: *277
+  狙: *1917
+  狩: *258
+  独: *561
+  狭: *1356
+  猛: *1566
+  猟: *2090
+  猪: *1352
+  猫: *259
+  献: *1742
+  猶: *1546
+  猿: *430
+  獄: *361
+  獣: *2083
+  獲: *757
+  玄: *1484
+  率: *1874
+  玉: *272
+  王: *271
+  玩: *276
+  珍: *1859
+  珠: *274
+  班: *1315
+  現: *275
+  球: *1005
+  理: *283
+  琴: *1717
+  瑠: *1528
+  璃: *1606
+  璧: *1617
+  環: *899
+  璽: *2194
+  瓜: *2022
+  瓦: *1108
+  瓶: *1109
+  甘: *1894
+  甚: *1905
+  生: *1675
+  産: *1681
+  用: *1265
+  田: *14
+  由: *1186
+  甲: *1194
+  申: *1198
+  男: *923
+  町: *96
+  画: *1254
+  界: *266
+  畏: *2069
+  畑: *178
+  畔: *1288
+  留: *1527
+  畜: *1485
+  畝: *1093
+  略: *314
+  番: *2058
+  異: *1936
+  畳: *1923
+  畿: *1483
+  疎: *1797
+  疑: *1513
+  疫: *1824
+  疲: *1823
+  疾: *1819
+  病: *1813
+  症: *1816
+  痕: *1822
+  痘: *1815
+  痛: *1825
+  痢: *1821
+  痩: *1818
+  痴: *1814
+  瘍: *1817
+  療: *1845
+  癒: *2193
+  癖: *1826
+  発: *1840
+  登: *1838
+  白: *37
+  百: *38
+  的: *73
+  皆: *484
+  皇: *279
+  皮: *865
+  皿: *1555
+  盆: *1557
+  益: *2026
+  盗: *1559
+  盛: *1567
+  盟: *1558
+  監: *1562
+  盤: *2017
+  目: *15
+  盲: *525
+  直: *77
+  相: *222
+  盾: *1997
+  省: *131
+  眉: *2045
+  看: *688
+  県: *552
+  真: *79
+  眠: *1977
+  眺: *252
+  眼: *1577
+  着: *594
+  睡: *1707
+  督: *776
+  睦: *1632
+  瞬: *880
+  瞭: *1843
+  瞳: *469
+  矛: *1311
+  矢: *1305
+  知: *1308
+  短: *1550
+  矯: *1306
+  石: *118
+  砂: *122
+  研: *729
+  砕: *121
+  砲: *571
+  破: *869
+  硝: *120
+  硫: *825
+  硬: *750
+  碁: *1903
+  碑: *1630
+  確: *609
+  磁: *1491
+  磨: *638
+  礁: *600
+  礎: *421
+  示: *1167
+  礼: *1168
+  社: *1173
+  祈: *1209
+  祉: *1172
+  祖: *1918
+  祝: *1170
+  神: *1200
+  祥: *1169
+  票: *1732
+  祭: *1183
+  禁: *1179
+  禅: *2080
+  禍: *1386
+  福: *1171
+  秀: *980
+  私: *968
+  秋: *966
+  科: *1263
+  秒: *965
+  秘: *970
+  租: *1916
+  秩: *969
+  称: *971
+  移: *964
+  程: *960
+  税: *961
+  稚: *962
+  種: *1810
+  稲: *976
+  稼: *959
+  稽: *983
+  稿: *958
+  穀: *984
+  穂: *975
+  積: *1663
+  穏: *1230
+  穫: *974
+  穴: *1413
+  究: *1417
+  空: *1414
+  突: *1416
+  窃: *1419
+  窒: *1418
+  窓: *811
+  窟: *1420
+  窪: *1421
+  窮: *1424
+  窯: *1423
+  立: *462
+  竜: *575
+  章: *464
+  童: *468
+  端: *1251
+  競: *465
+  竹: *1007
+  笑: *1008
+  笛: *1192
+  笠: *1009
+  符: *1076
+  第: *1327
+  笹: *1010
+  筆: *1014
+  等: *1016
+  筋: *1012
+  筒: *1015
+  答: *1018
+  策: *1019
+  箇: *2185
+  箋: *1011
+  算: *1017
+  管: *1365
+  箱: *1013
+  箸: *1348
+  節: *1574
+  範: *1516
+  築: *1021
+  篤: *2142
+  篭: *1022
+  簡: *1749
+  簿: *1020
+  籍: *1689
+  米: *987
+  粉: *988
+  粋: *993
+  粒: *990
+  粗: *1915
+  粘: *989
+  粛: *1870
+  粧: *991
+  精: *1655
+  糖: *1242
+  糧: *995
+  糸: *1431
+  系: *1492
+  糾: *1627
+  紀: *1454
+  約: *1462
+  紅: *1455
+  紋: *1863
+  納: *1456
+  純: *1609
+  紙: *1971
+  級: *1453
+  紛: *1458
+  素: *1652
+  紡: *1457
+  索: *1465
+  紫: *1475
+  累: *1464
+  細: *1463
+  紳: *1461
+  紹: *1459
+  紺: *1895
+  終: *1452
+  組: *1914
+  経: *1460
+  結: *1451
+  絞: *1448
+  絡: *1450
+  給: *1449
+  統: *1447
+  絵: *1446
+  絶: *1891
+  絹: *1468
+  継: *1470
+  続: *1445
+  維: *1441
+  綱: *2114
+  網: *1473
+  綻: *1439
+  綿: *1467
+  緊: *1474
+  総: *1466
+  緑: *1471
+  緒: *1444
+  線: *1438
+  締: *1440
+  編: *1966
+  緩: *2102
+  緯: *1774
+  練: *1443
+  緻: *1437
+  縁: *1472
+  縄: *1477
+  縛: *1476
+  縦: *1436
+  縫: *1685
+  縮: *1434
+  績: *1662
+  繁: *1435
+  繊: *1929
+  織: *1432
+  繕: *1433
+  繭: *2025
+  繰: *1469
+  缶: *2116
+  罪: *1764
+  置: *895
+  罰: *896
+  署: *1349
+  罵: *2143
+  罷: *2188
+  羅: *1442
+  羊: *586
+  美: *587
+  羞: *2198
+  群: *1247
+  羨: *592
+  義: *691
+  羽: *615
+  翁: *849
+  翌: *617
+  習: *616
+  翻: *2060
+  翼: *1937
+  老: *1340
+  考: *1341
+  者: *1345
+  耐: *1248
+  耕: *1949
+  耗: *2063
+  耳: *881
+  聖: *888
+  聞: *1754
+  聴: *890
+  職: *887
+  肉: *1098
+  肌: *70
+  肖: *119
+  肘: *46
+  肝: *1778
+  股: *764
+  肢: *771
+  肥: *1893
+  肩: *1158
+  肪: *533
+  肯: *400
+  育: *821
+  肺: *443
+  胃: *29
+  胆: *31
+  背: *481
+  胎: *810
+  胞: *570
+  胴: *194
+  胸: *1604
+  能: *2160
+  脂: *494
+  脅: *936
+  脇: *935
+  脈: *2000
+  脊: *268
+  脚: *1498
+  脱: *537
+  脳: *2084
+  脹: *2073
+  腎: *916
+  腐: *1099
+  腕: *1522
+  腫: *1807
+  腰: *1731
+  腸: *583
+  腹: *503
+  腺: *141
+  膚: *2147
+  膜: *248
+  膝: *1002
+  膨: *1855
+  膳: *1113
+  臆: *655
+  臓: *914
+  臣: *911
+  臨: *918
+  自: *36
+  臭: *128
+  至: *815
+  致: *818
+  臼: *1531
+  興: *1533
+  舌: *41
+  舎: *338
+  舗: *1982
+  舞: *1912
+  舟: *2012
+  航: *2014
+  般: *2016
+  舶: *2013
+  舷: *2015
+  船: *2019
+  艇: *2021
+  艦: *2020
+  良: *1578
+  色: *1890
+  艶: *1892
+  芋: *1784
+  芝: *1301
+  芯: *647
+  花: *1084
+  芳: *532
+  芸: *450
+  芽: *2054
+  苑: *1523
+  苗: *249
+  苛: *240
+  若: *237
+  苦: *239
+  英: *1878
+  茂: *384
+  茎: *772
+  茨: *511
+  茶: *267
+  草: *238
+  荒: *527
+  荘: *344
+  荷: *1088
+  荻: *257
+  菊: *996
+  菌: *985
+  菓: *1203
+  菜: *793
+  華: *1704
+  菱: *1635
+  萎: *986
+  落: *320
+  葉: *243
+  著: *1347
+  葛: *492
+  葬: *879
+  蒲: *1981
+  蒸: *2049
+  蓄: *1486
+  蓋: *1561
+  蔑: *392
+  蔦: *2095
+  蔵: *913
+  蔽: *1119
+  薄: *242
+  薦: *2156
+  薪: *1620
+  薫: *1812
+  薬: *1873
+  藍: *1565
+  藤: *1295
+  藩: *2061
+  藻: *2191
+  虎: *2145
+  虐: *2153
+  虚: *2148
+  虜: *2146
+  虞: *2150
+  虫: *556
+  虹: *559
+  蚊: *1864
+  蚕: *562
+  蛇: *558
+  蛍: *557
+  蛮: *1884
+  蜂: *1684
+  蜜: *838
+  蝶: *560
+  融: *1123
+  血: *1556
+  衆: *2001
+  行: *938
+  術: *1644
+  街: *955
+  衛: *1775
+  衝: *1811
+  衡: *957
+  衣: *423
+  表: *1666
+  衰: *2037
+  衷: *2038
+  袋: *1081
+  袖: *1189
+  被: *870
+  裁: *424
+  裂: *876
+  装: *425
+  裏: *426
+  裕: *856
+  補: *1983
+  裳: *863
+  裸: *1205
+  製: *448
+  裾: *1145
+  複: *504
+  褐: *490
+  褒: *1073
+  襟: *1180
+  襲: *2181
+  西: *1728
+  要: *1730
+  覆: *1738
+  覇: *2043
+  見: *61
+  規: *904
+  視: *1174
+  覚: *347
+  覧: *919
+  親: *1621
+  観: *614
+  角: *1953
+  解: *1955
+  触: *1954
+  言: *357
+  訂: *362
+  訃: *363
+  計: *359
+  討: *364
+  訓: *365
+  託: *2066
+  記: *568
+  訟: *850
+  訪: *534
+  設: *765
+  許: *611
+  訳: *1154
+  訴: *1221
+  診: *1860
+  証: *406
+  詐: *1223
+  詔: *366
+  評: *1599
+  詞: *2009
+  詠: *369
+  詣: *495
+  試: *378
+  詩: *370
+  詮: *360
+  詰: *367
+  話: *368
+  該: *1640
+  詳: *589
+  誇: *1332
+  誉: *2089
+  誌: *646
+  認: *643
+  誓: *1214
+  誕: *420
+  誘: *982
+  語: *371
+  誠: *388
+  誤: *2048
+  説: *538
+  読: *372
+  誰: *598
+  課: *1204
+  調: *373
+  談: *374
+  請: *1656
+  論: *1961
+  諦: *467
+  諧: *486
+  諭: *376
+  諮: *514
+  諸: *1351
+  諾: *375
+  謀: *1897
+  謁: *489
+  謄: *1296
+  謎: *994
+  謙: *1726
+  講: *1957
+  謝: *1339
+  謡: *2119
+  謹: *1698
+  識: *521
+  譜: *1926
+  警: *358
+  議: *692
+  譲: *1648
+  護: *756
+  谷: *851
+  豆: *1548
+  豊: *1551
+  豚: *577
+  象: *2130
+  豪: *582
+  貌: *2125
+  貝: *56
+  貞: *58
+  負: *67
+  財: *737
+  貢: *85
+  貧: *845
+  貨: *1085
+  販: *783
+  貪: *1713
+  貫: *106
+  責: *1661
+  貯: *206
+  貴: *1908
+  買: *894
+  貸: *1082
+  費: *1326
+  貼: *60
+  貿: *1529
+  賀: *933
+  賂: *313
+  賃: *1079
+  賄: *84
+  資: *512
+  賊: *381
+  賓: *550
+  賛: *906
+  賜: *1131
+  賞: *859
+  賠: *515
+  賢: *915
+  賦: *404
+  質: *1219
+  賭: *1354
+  購: *1958
+  贈: *542
+  赤: *1880
+  赦: *1881
+  走: *410
+  赴: *412
+  起: *565
+  超: *411
+  越: *413
+  趣: *883
+  足: *1372
+  距: *1375
+  跡: *1883
+  路: *1376
+  跳: *1378
+  践: *1380
+  踊: *1512
+  踏: *1381
+  踪: *1382
+  蹴: *2122
+  躍: *1379
+  身: *1337
+  車: *304
+  軌: *306
+  軍: *323
+  軒: *1781
+  軟: *509
+  転: *449
+  軸: *1193
+  軽: *774
+  較: *1370
+  載: *383
+  輝: *324
+  輩: *1765
+  輪: *1963
+  輸: *307
+  轄: *1672
+  辛: *1612
+  辞: *1613
+  辣: *1798
+  辰: *2164
+  辱: *2165
+  農: *2170
+  辺: *302
+  辻: *297
+  込: *843
+  迅: *298
+  迎: *1837
+  近: *1210
+  返: *782
+  迫: *300
+  迭: *910
+  述: *1643
+  迷: *992
+  追: *1359
+  退: *1575
+  送: *2172
+  逃: *301
+  逆: *2109
+  透: *981
+  逐: *578
+  逓: *2002
+  途: *1790
+  通: *1511
+  逝: *1213
+  速: *1799
+  造: *299
+  連: *305
+  逮: *1244
+  週: *340
+  進: *603
+  逸: *2127
+  遂: *579
+  遅: *1148
+  遇: *2106
+  遊: *1126
+  運: *325
+  遍: *1965
+  過: *1389
+  道: *295
+  達: *591
+  違: *1773
+  遜: *1496
+  遠: *429
+  遡: *2111
+  遣: *1910
+  適: *473
+  遭: *1258
+  遮: *1276
+  遵: *2187
+  遷: *1737
+  選: *1944
+  遺: *1909
+  避: *1618
+  還: *900
+  那: *1992
+  邦: *1991
+  邪: *2055
+  邸: *1984
+  郊: *1987
+  郎: *1995
+  郡: *1986
+  部: *1988
+  郭: *1985
+  郵: *1990
+  郷: *1993
+  都: *1989
+  酉: *1534
+  酌: *1536
+  配: *1544
+  酎: *1537
+  酒: *1535
+  酔: *1543
+  酢: *1542
+  酪: *1541
+  酬: *1540
+  酵: *1538
+  酷: *1539
+  酸: *1545
+  醒: *1677
+  醜: *2176
+  醸: *1647
+  采: *791
+  釈: *2057
+  里: *185
+  重: *1805
+  野: *1722
+  量: *189
+  金: *287
+  釜: *1367
+  針: *292
+  釣: *291
+  鈍: *1611
+  鈴: *1508
+  鉄: *909
+  鉛: *857
+  鉢: *289
+  鉱: *802
+  銀: *1569
+  銃: *824
+  銅: *290
+  銑: *288
+  銘: *293
+  銭: *394
+  鋭: *539
+  鋳: *1688
+  鋼: *2113
+  錘: *1708
+  錠: *409
+  錦: *439
+  錬: *2186
+  錮: *623
+  錯: *1269
+  録: *1226
+  鍋: *1388
+  鍛: *2004
+  鍵: *418
+  鎌: *1725
+  鎖: *2087
+  鎮: *294
+  鏡: *522
+  鐘: *470
+  鑑: *1564
+  長: *2070
+  門: *1743
+  閉: *1751
+  開: *1750
+  閑: *1753
+  間: *1747
+  関: *2173
+  閣: *1752
+  閥: *1746
+  閲: *1745
+  闇: *1748
+  闘: *1757
+  阜: *1360
+  阪: *1390
+  防: *1399
+  阻: *1919
+  阿: *1391
+  附: *1400
+  降: *1405
+  限: *1576
+  陛: *1407
+  院: *1401
+  陣: *1402
+  除: *1787
+  陥: *1412
+  陪: *1396
+  陰: *1718
+  陳: *1398
+  陵: *1636
+  陶: *2117
+  陸: *1631
+  険: *1802
+  陽: *1397
+  隅: *2108
+  隆: *1682
+  隊: *1403
+  階: *1406
+  随: *1395
+  隔: *1409
+  隙: *1394
+  際: *1392
+  障: *1393
+  隠: *1410
+  隣: *1408
+  隷: *2192
+  隻: *755
+  雄: *804
+  雅: *2056
+  集: *601
+  雇: *1164
+  雌: *605
+  雑: *604
+  離: *1605
+  難: *1703
+  雨: *451
+  雪: *1225
+  雰: *2184
+  雲: *452
+  零: *1504
+  雷: *454
+  電: *574
+  需: *1249
+  震: *2166
+  霊: *1930
+  霜: *455
+  霧: *1314
+  露: *1377
+  青: *1654
+  静: *1660
+  非: *1760
+  面: *2039
+  革: *2041
+  靴: *2042
+  韓: *1776
+  音: *518
+  韻: *520
+  響: *1994
+  頁: *64
+  頂: *98
+  頃: *479
+  項: *86
+  順: *136
+  須: *1854
+  預: *1721
+  頑: *65
+  頒: *846
+  頓: *1610
+  領: *1507
+  頬: *1358
+  頭: *1549
+  頻: *399
+  頼: *1794
+  題: *415
+  額: *316
+  顎: *1333
+  顔: *1853
+  顕: *1928
+  願: *143
+  類: *1000
+  顧: *1165
+  風: *563
+  飛: *2032
+  食: *1582
+  飢: *1585
+  飯: *1583
+  飲: *1584
+  飼: *2010
+  飽: *1592
+  飾: *1587
+  餅: *1590
+  養: *1591
+  餌: *1588
+  餓: *1586
+  館: *1589
+  首: *74
+  香: *977
+  馬: *2132
+  駄: *2140
+  駅: *2138
+  駆: *2137
+  駐: *2136
+  駒: *2133
+  騎: *2135
+  騒: *2139
+  験: *2134
+  騰: *2144
+  驚: *2141
+  骨: *1383
+  骸: *1641
+  髄: *1385
+  高: *329
+  髪: *2074
+  鬱: *2120
+  鬼: *2175
+  魂: *2177
+  魅: *2179
+  魔: *2178
+  魚: *183
+  鮮: *590
+  鯉: *188
+  鯨: *337
+  鳥: *2091
+  鳩: *2096
+  鳴: *2092
+  鶏: *2097
+  鶴: *2093
+  鹿: *2154
+  麓: *2155
+  麗: *2158
+  麦: *1653
+  麺: *2040
+  麻: *637
+  黄: *1887
+  黒: *186
+  黙: *255
+  鼓: *1552
+  鼻: *733
+  齢: *1505
+by_keyword:
+  -proof: *1248
+  -times: *630
+  Africa: *1391
+  Asia: *1950
+  Big Dipper: *1261
+  Bldg.: *1589
+  Buddha: *1037
+  Buddhist priest: *1057
+  Buddhist temple: *170
+  Confucian: *1250
+  Dr.: *48
+  England: *1878
+  Esq.: *1003
+  Europe: *1834
+  Go: *1903
+  Hades: *322
+  Heights: *1390
+  I: *17
+  I (one): *496
+  II (two): *379
+  Inst.: *1401
+  Italy: *1245
+  Japanese Judas-tree: *210
+  Korea: *1776
+  Mount: *2112
+  Mr.: *1945
+  Nara: *1175
+  No.: *1327
+  Noh chanting: *2119
+  Point: *1428
+  Shinto shrine: *1110
+  Sino-: *1701
+  T'ang: *1241
+  V.I.P.: *550
+  Zen: *2080
+  a sheet of: *354
+  abandon: *820
+  abbreviation: *314
+  abdomen: *503
+  abet: *2101
+  abide by: *2187
+  ability: *2160
+  abolish: *1841
+  about that time: *479
+  above: *50
+  above-stated: *1640
+  abundant: *856
+  abuse: *1120
+  accept: *794
+  accept humbly: *1938
+  accidentally: *2105
+  accompany: *942
+  accomplished: *591
+  accumulate: *1464
+  accusation: *1221
+  accustomed: *674
+  achievement: *927
+  acid: *1545
+  acknowledge: *643
+  acquiesce: *2050
+  add: *932
+  address: *1521
+  adhere: *1075
+  adjusted: *1866
+  admirable: *1772
+  admonish: *358
+  adore: *1182
+  adroit: *1329
+  advance: *603
+  affair: *1032
+  affinity: *1472
+  affixed: *1400
+  afflicted: *650
+  again: *1956
+  age: *1505
+  aggression: *352
+  agreement: *400
+  agriculture: *2170
+  aid: *902
+  aim at: *1917
+  alienate: *1797
+  all: *484
+  alliance: *1558
+  allot: *823
+  alms: *1124
+  alternate: *910
+  amass: *1486
+  ambition: *528
+  ancestor: *1918
+  angle: *1953
+  angling: *291
+  angry: *759
+  animal: *2083
+  animal sacrifice: *1680
+  annexed: *684
+  anti-: *779
+  anxiety: *175
+  apologize: *1339
+  appear: *1928
+  appellation: *971
+  apply: *653
+  apprehend: *1244
+  apprehensive: *2069
+  approve: *906
+  apricot: *215
+  arc: *2023
+  ardent: *877
+  argument: *1961
+  arm: *1522
+  armor: *1194
+  armpit: *935
+  army: *323
+  aroma: *478
+  aroused: *1283
+  arrest: *706
+  arrival: *817
+  arrogance: *1054
+  art: *1644
+  artisan: *1828
+  ascend: *1838
+  ashes: *180
+  assault: *1833
+  assets: *512
+  assistant: *1024
+  association: *1914
+  assurance: *609
+  astray: *992
+  astringent: *1875
+  atmosphere: *2184
+  attack: *2181
+  attend: *1033
+  attire: *425
+  attitude: *2161
+  attractive: *461
+  audience: *489
+  augment: *874
+  auspicious: *1169
+  authority: *613
+  autumn: *966
+  auxiliary: *1396
+  awakening: *1677
+  awe: *356
+  ax: *1206
+  axis: *1193
+  back: *426
+  bad: *1951
+  badge: *464
+  bag: *1667
+  baggage: *1088
+  bake: *1284
+  ball: *1005
+  ballot: *1732
+  bamboo: *1007
+  bamboo grass: *1010
+  bamboo hat: *1009
+  banquet: *203
+  barbarian: *1884
+  bargain: *1727
+  barley: *1653
+  baron: *1573
+  barracks: *2189
+  bartending: *1536
+  bases: *1871
+  basin: *1557
+  basket: *1022
+  bathe: *852
+  bay: *1980
+  beach: *1782
+  beans: *1548
+  bear: *2159
+  beat: *766
+  beautiful woman: *2100
+  beauty: *587
+  beckon: *702
+  bed: *636
+  bee: *1684
+  before: *263
+  beforehand: *1719
+  beg: *501
+  beginning: *63
+  beguile: *661
+  behind: *1479
+  bell: *470
+  belong: *2103
+  below: *51
+  bend: *1256
+  benefit: *2026
+  benevolence: *950
+  bequeath: *1909
+  best regards: *1922
+  bestow: *1335
+  bewitched: *458
+  bin: *2051
+  bird: *2091
+  bitter: *1798
+  black: *186
+  black ink: *187
+  blade: *88
+  blame: *1661
+  blessing: *1171
+  blind: *525
+  block letters: *485
+  block up: *1646
+  blood: *1556
+  blossom: *2174
+  blow: *506
+  blue: *1654
+  bluffs: *841
+  boar: *1352
+  board: *698
+  boast: *1332
+  boat: *2012
+  body: *1030
+  boil: *1346
+  boisterous: *2139
+  bomb: *1942
+  bond: *1664
+  book: *224
+  boom: *1567
+  borrow: *1270
+  bosom: *1604
+  both: *1252
+  bottom: *1975
+  bough: *770
+  boulder: *832
+  boulevard: *955
+  boundary: *523
+  bountiful: *1551
+  bow: *1317
+  bowl: *289
+  bowstring: *1487
+  box: *1013
+  boy: *531
+  bracing: *1608
+  brain: *2084
+  branch: *768
+  branch off: *834
+  brandish: *715
+  break: *1532
+  breath: *657
+  breed: *351
+  brew: *1647
+  briar: *511
+  bribe: *84
+  bridegroom: *422
+  bridge: *460
+  bright: *20
+  bring up: *821
+  broaden: *801
+  brocade: *439
+  brown: *490
+  brush-stroke: *1254
+  bubble: *572
+  bubble up: *1510
+  bud: *2054
+  build: *417
+  bull's eye: *73
+  bullet: *2081
+  bullrush: *1981
+  bullying: *240
+  bundle: *1793
+  bungling: *831
+  burdensome: *2140
+  bureau: *1147
+  bureaucrat: *1363
+  burglar: *381
+  burn: *549
+  bury: *191
+  bustle: *1280
+  busy: *665
+  but of course: *156
+  butterfly: *560
+  buttocks: *1134
+  buy: *894
+  by means of: *1105
+  bystander: *1090
+  cadet: *1257
+  calamity: *1386
+  calculate: *1017
+  calendar: *226
+  call: *1597
+  call on: *534
+  calm: *1230
+  camellia: *1691
+  camp: *1402
+  camphor tree: *1741
+  can: *97
+  cannon: *571
+  canopy: *438
+  cap: *436
+  cape: *164
+  capital: *334
+  capital suburbs: *1483
+  capsize: *1738
+  captive: *2146
+  captured: *1094
+  car: *304
+  carbuncle: *1817
+  carp: *188
+  carrier: *2016
+  carry: *325
+  carve: *1846
+  cash: *1118
+  casting: *1688
+  castle: *387
+  cat: *259
+  catalpa: *1614
+  catch: *1978
+  cauldron: *1367
+  cause: *626
+  cavern: *1420
+  cavity: *100
+  cedar: *1849
+  celebrate: *1170
+  censure: *1642
+  center: *1877
+  cereals: *984
+  ceremony: *1059
+  chafe: *689
+  chain: *2087
+  chair: *218
+  challenge: *710
+  change: *1083
+  chant: *21
+  chapter: *1204
+  char: *599
+  character: *197
+  charcoal: *833
+  chase: *1359
+  chastise: *364
+  checkup: *1860
+  cheek: *1358
+  cheerful: *1771
+  cherry tree: *2082
+  chess piece: *1900
+  chestnut: *1735
+  chic: *993
+  chicken: *2097
+  chief: *1041
+  child: *99
+  chin: *1333
+  chink: *1394
+  chirp: *2092
+  choose: *1155
+  chop: *1207
+  chop off: *1215
+  chopsticks: *1348
+  chronicle: *1454
+  chrysanthemum: *996
+  cinnabar: *2196
+  circle: *1952
+  circumference: *339
+  clan: *2061
+  clap: *704
+  clasp: *1624
+  class: *1453
+  claw: *784
+  clean: *1239
+  cleanse: *149
+  clear the land: *703
+  clear up: *1658
+  cleverness: *498
+  climate: *1769
+  climax: *815
+  clique: *1746
+  clod: *2180
+  closed: *1751
+  clothing: *1501
+  cloud: *452
+  cloudy weather: *453
+  co-: *937
+  coach: *776
+  coarse: *1915
+  cocoon: *2025
+  code: *1969
+  coffin: *1364
+  coin: *394
+  cold: *1645
+  collapse: *1412
+  collar: *1180
+  colleague: *1842
+  collide: *1811
+  color: *1890
+  coloring: *1850
+  column: *1756
+  come: *2029
+  come apart at the seams: *1439
+  comfortable: *1266
+  commander: *1362
+  commandment: *730
+  commence: *809
+  committee: *979
+  commoner: *1275
+  companion: *19
+  company: *1173
+  compare: *482
+  compensation: *515
+  compilation: *1966
+  complete: *101
+  comrade: *1765
+  concave: *33
+  conceal: *1410
+  concentrated: *2171
+  concept: *656
+  concerning: *2121
+  concurrently: *1723
+  condolences: *1319
+  confectionary: *1203
+  confer: *1789
+  confront: *700
+  confused: *1269
+  congeal: *1515
+  congratulations: *933
+  conjecture: *716
+  connection: *2173
+  consent: *375
+  consider: *1341
+  consign: *2066
+  consolation: *1177
+  consort: *1287
+  conspire: *1897
+  constancy: *667
+  constitution: *1674
+  consult with: *514
+  consume: *1670
+  consummate: *579
+  contact: *1954
+  contain: *853
+  contend: *1238
+  continue: *1445
+  contraption: *732
+  contrast: *1370
+  control: *1672
+  convenience: *1066
+  convex: *34
+  conveyor: *2018
+  cook: *507
+  cool: *1506
+  copper: *290
+  copy: *1336
+  cord: *1465
+  core: *997
+  corner: *2108
+  cornerstone: *421
+  correct: *405
+  corridor: *1996
+  cosmetics: *991
+  cottage: *338
+  cotton: *1467
+  countenance: *2125
+  country: *624
+  county: *1986
+  courage: *1509
+  courts: *547
+  courtyard: *634
+  cover over: *1119
+  covet: *1713
+  cow: *260
+  cowardice: *655
+  craft: *80
+  cram school: *331
+  cramped: *1356
+  crane: *2093
+  crash: *1404
+  create: *299
+  creek: *148
+  crime: *1517
+  crimson: *1455
+  criticism: *701
+  crossing: *297
+  crow: *2094
+  crowded: *843
+  crown: *326
+  crude: *220
+  cruel: *1539
+  crumble: *836
+  cry: *463
+  crystal: *1606
+  cultivate: *516
+  cupfuls: *1304
+  current: *826
+  curriculum: *402
+  curse: *108
+  curtain: *437
+  cut: *89
+  cylinder: *1015
+  dainty: *1463
+  dairy products: *1541
+  damage: *719
+  damp: *1927
+  dance: *1912
+  dangerous: *1520
+  daring: *889
+  darkness: *519
+  darning: *1433
+  dart: *1305
+  daughter: *1581
+  day: *12
+  daybreak: *1285
+  daytime: *1156
+  death: *878
+  decameron: *71
+  decay: *1331
+  deceased: *524
+  deceit: *1899
+  decide: *1770
+  decline: *2037
+  decorate: *1587
+  decrease: *2063
+  dedicate: *1695
+  deep: *1426
+  deer: *2154
+  defeat: *67
+  defence: *1775
+  defer: *1648
+  defile: *1911
+  degenerate: *1411
+  degrees: *1278
+  deliberation: *692
+  delicate: *954
+  delicious: *493
+  delight: *612
+  deliver: *1191
+  deluge: *1939
+  delusion: *526
+  demand: *1249
+  demolition: *427
+  den: *193
+  departed: *1213
+  department: *1263
+  deposit: *1721
+  depression: *1421
+  derision: *54
+  descend: *1405
+  descendants: *483
+  design: *1097
+  desk: *223
+  destitution: *1300
+  destroy: *390
+  detach: *1605
+  detailed: *589
+  detain: *1527
+  determine: *408
+  dew: *1377
+  diagonal: *1791
+  diameter: *947
+  diamond: *1635
+  diarrhea: *1821
+  difference: *1773
+  difficult: *1703
+  dig: *1141
+  dike: *416
+  dilate: *2073
+  diligence: *1700
+  dilute: *242
+  dining tray: *1113
+  direction: *529
+  director: *2007
+  dirty: *1334
+  disaster: *179
+  discard: *707
+  discharge: *1840
+  discipline: *1858
+  disclose: *1166
+  disconcerted: *671
+  discontinue: *1891
+  discreet: *1698
+  discriminating: *521
+  discuss: *374
+  dish: *1555
+  dislike: *1724
+  dispatch: *1910
+  display: *280
+  dispose: *318
+  disquieting: *680
+  dissolve: *1123
+  distant: *429
+  distinction: *593
+  distract: *1458
+  distress: *967
+  distribute: *1544
+  disturb: *530
+  ditch: *1142
+  divide: *517
+  do: *2067
+  doctor: *1829
+  document: *646
+  dog: *253
+  domesticate: *2010
+  don: *594
+  donburi: *1947
+  door: *1157
+  dormitory: *1844
+  dose: *1867
+  doth: *818
+  double: *1067
+  doubt: *1513
+  draft: *958
+  dragon: *575
+  drama: *2152
+  draw near: *204
+  dreadful: *670
+  dream: *327
+  drift: *1733
+  drink: *1584
+  drip: *474
+  drive: *2137
+  droop: *1705
+  drought: *502
+  drown: *763
+  drowning: *1324
+  drowsy: *1707
+  drum: *1552
+  drunk: *1543
+  dry: *1777
+  dull: *1611
+  duplicate: *504
+  duty: *949
+  dwell: *1027
+  dwindle: *391
+  dye: *548
+  each: *311
+  ear: *881
+  ear of a plant: *975
+  early: *26
+  earnings: *959
+  east: *543
+  easy: *1130
+  eat: *1582
+  eaves: *1785
+  echo: *1994
+  ecstasy: *666
+  edge: *1251
+  effulgent: *278
+  egg: *1526
+  ego: *690
+  eight: *8
+  elbow: *46
+  elder brother: *107
+  elder sister: *442
+  elect: *1944
+  electricity: *574
+  elementary: *1652
+  elephant: *2130
+  elucidate: *360
+  elude: *2127
+  embarrass: *2165
+  embrace: *697
+  eminent: *52
+  emotion: *662
+  emperor: *279
+  employ: *1164
+  employee: *59
+  empress: *2005
+  empty: *1414
+  emulate: *1053
+  enclosure: *1985
+  encounter: *1258
+  encourage: *931
+  encroach: *1231
+  end: *1452
+  endure: *642
+  enemy: *475
+  engrave: *1639
+  enlightenment: *669
+  enrol: *1689
+  enter: *842
+  entertain: *1533
+  entice: *982
+  entrails: *914
+  entrust: *2104
+  entwine: *1450
+  envious: *592
+  environs: *302
+  envy: *1820
+  epidemic: *1824
+  equal: *1830
+  equestrian: *2135
+  equilibrium: *957
+  equip: *1267
+  erect: *934
+  erupt: *1281
+  escape: *301
+  establishment: *765
+  esteem: *196
+  etc.: *1016
+  eternity: *139
+  ethics: *1962
+  evade: *1618
+  evaluate: *1599
+  even: *1596
+  evening: *114
+  eventide: *115
+  every: *497
+  everywhere: *1965
+  evidence: *406
+  exam: *1371
+  examination: *1803
+  example: *1046
+  excel: *980
+  excellent: *1044
+  exchange: *905
+  exclude: *1787
+  excuse: *2126
+  exertion: *2129
+  exhaust: *1152
+  exhort: *790
+  exist: *740
+  exit: *829
+  expand: *1199
+  expense: *1326
+  expert: *1361
+  explanation: *538
+  exploits: *1662
+  expose: *868
+  exquisite: *130
+  extent: *960
+  extinguish: *155
+  extract: *699
+  extremity: *230
+  eye: *15
+  eyeball: *1577
+  eyebrow: *2045
+  fabricate: *1021
+  face: *1853
+  faceup: *1836
+  facsimilie: *1296
+  faction: *1999
+  failure: *353
+  faint: *1480
+  faith: *1043
+  fall: *320
+  falsehood: *2068
+  family crest: *1863
+  family name: *1970
+  fan: *1160
+  fare: *1079
+  farm: *178
+  fascination: *2179
+  fasten: *714
+  fat: *494
+  fate: *1502
+  father: *1366
+  fathom: *160
+  favor: *659
+  fear: *660
+  feathers: *615
+  fee: *1262
+  feed: *1588
+  feelings: *1657
+  fell: *1069
+  female: *605
+  fence: *1136
+  fermentation: *1538
+  fertilizer: *1893
+  fervent: *2142
+  few: *111
+  fibre: *1441
+  fiend: *2178
+  fierce: *1566
+  fight: *1757
+  figure: *513
+  file: *875
+  filial piety: *1342
+  fine: *1437
+  finger: *711
+  finish: *1868
+  fire: *173
+  firewood: *1620
+  first time: *431
+  fish: *183
+  fish guts: *75
+  fishing: *184
+  fist: *1290
+  fit: *269
+  five: *5
+  flats: *1781
+  flavor: *233
+  flip: *2060
+  floating: *787
+  flock: *1247
+  flour: *988
+  flourish: *348
+  flower: *1084
+  flower pot: *1109
+  fluid: *1116
+  flute: *1192
+  fly: *2032
+  focus: *131
+  fog: *1314
+  fold: *1211
+  follow: *1395
+  fond: *103
+  foolish: *2107
+  foot of a mountain: *2155
+  footgear: *1137
+  foothold: *722
+  forces: *1633
+  ford: *398
+  forehead: *316
+  forest: *209
+  forge: *2004
+  forget: *640
+  formerly: *540
+  fortune-telling: *49
+  foster: *1591
+  four: *4
+  fragrant: *1812
+  frame: *212
+  freight: *1085
+  fresh: *590
+  friend: *760
+  frolic: *2149
+  from: *741
+  front door: *1766
+  frost: *455
+  frozen: *545
+  frugal: *1804
+  fruit: *1202
+  full: *1253
+  fundamentals: *1904
+  fur: *2062
+  furrow: *1093
+  gain: *941
+  gall bladder: *31
+  gamble: *1354
+  game hunting: *2090
+  garden: *1523
+  garment: *423
+  gates: *1743
+  gather: *601
+  gauze: *1442
+  general: *1466
+  generation: *28
+  genesis: *1759
+  genius: *736
+  gentle: *785
+  gentleman: *341
+  genuine: *1609
+  germ: *985
+  gigantic: *920
+  girder: *956
+  gist: *883
+  give: *2046
+  gland: *141
+  gloom: *2120
+  glossary: *1237
+  glossy: *1892
+  go upstream: *2111
+  go-between: *1029
+  godown: *1758
+  gods: *1200
+  going: *938
+  gold: *287
+  gone: *812
+  good: *1578
+  good luck: *342
+  goods: *23
+  goodwill: *1178
+  gorge: *1355
+  government office: *635
+  grab: *791
+  grace: *652
+  graceful: *778
+  gracious: *2056
+  grade: *2003
+  gradually: *1788
+  graduate: *1102
+  graft: *313
+  grains: *990
+  grains of sand: *151
+  grandchild: *1494
+  grant: *1131
+  grasp: *1889
+  grass: *238
+  grate: *1185
+  grave: *246
+  greatness: *1074
+  green: *1471
+  grind: *638
+  grip: *1139
+  grope: *1425
+  ground: *554
+  groundbreaking: *2124
+  group: *625
+  grove: *208
+  grow late: *749
+  grudge: *1524
+  guard: *198
+  guess: *1184
+  guest: *315
+  guidance: *296
+  guilt: *1764
+  gulf: *1886
+  gun: *824
+  gunwale: *2015
+  gutter: *1960
+  guy: *758
+  haiku: *1761
+  hair of the head: *2074
+  halberd: *1311
+  half: *1286
+  hall: *861
+  halt: *1051
+  hand: *687
+  handle: *745
+  hang: *727
+  hanging scroll: *435
+  hanker: *682
+  happenstance: *355
+  happiness: *1622
+  harbor: *1940
+  hard up: *1424
+  harden: *622
+  harm: *1671
+  harmony: *963
+  harp: *1717
+  harvest: *974
+  hate: *673
+  haven: *350
+  hawser: *2114
+  he: *948
+  head: *1549
+  headland: *1196
+  heal: *1845
+  healing: *2193
+  healthy: *1048
+  hear: *1754
+  hearing: *2059
+  heart: *639
+  hearth: *1161
+  heat: *1634
+  heavens: *457
+  heavy: *1805
+  hedge: *165
+  hegemony: *2043
+  heir: *2011
+  help: *1921
+  hem: *1145
+  hemp: *637
+  hermit: *1061
+  hide: *1827
+  highness: *1407
+  hill: *1427
+  hillock: *1117
+  hinder: *1393
+  hinge: *1832
+  history: *747
+  hit: *1236
+  hoarse: *491
+  hoist: *717
+  hold: *712
+  hole: *1413
+  holed gem: *1617
+  holy: *888
+  home: *2065
+  home country: *1991
+  homecoming: *1316
+  hometown: *1993
+  honey: *838
+  honorable: *1500
+  hooch: *1537
+  hooked: *800
+  hop: *1378
+  hope: *1602
+  horizon: *169
+  horizontal: *1774
+  horse: *2132
+  horse chestnut: *553
+  hot water: *585
+  house: *580
+  how many: *1481
+  however: *1026
+  hug: *1488
+  humanity: *1063
+  humiliate: *2198
+  humility: *677
+  hump: *1682
+  hundred: *38
+  hundred million: *1058
+  hungry: *1585
+  hunt: *258
+  hurry: *1229
+  husband: *901
+  husk: *767
+  icicle: *138
+  idea: *654
+  ill: *1813
+  illuminate: *182
+  imitation: *244
+  immature: *962
+  immediate: *1610
+  immersed: *1232
+  imminent: *713
+  impart: *795
+  imperial edict: *366
+  imperial order: *1796
+  imperial seal: *2194
+  in: *39
+  in front: *309
+  incense: *977
+  include: *1712
+  income: *1628
+  increase: *541
+  incur: *870
+  indications: *952
+  indigo: *1565
+  individual: *1047
+  infancy: *1478
+  inferiority: *926
+  inflammation: *174
+  inflation: *2144
+  inherit: *1470
+  inlay: *166
+  inmost: *2038
+  inn: *1070
+  inquire: *1228
+  inscription: *293
+  insect: *556
+  insert: *1197
+  inside: *1095
+  inspection: *1174
+  instant: *1572
+  instead: *1497
+  instruction: *365
+  insult: *2143
+  intelligent: *915
+  intention: *645
+  inter-: *222
+  intercept: *1276
+  interchange: *1122
+  interment: *879
+  interpretation: *2057
+  interrogative: *1992
+  interval: *1747
+  interview: *2106
+  intestines: *583
+  intimate: *1632
+  intimidate: *389
+  introduce: *1459
+  intuition: *1906
+  invariably: *685
+  inverted: *2109
+  investigate: *1920
+  iron: *909
+  irrigate: *459
+  island: *2098
+  isolate: *1409
+  item: *2185
+  jammed in: *265
+  jealous: *123
+  jewel: *272
+  join: *1107
+  journey: *945
+  jubilation: *2157
+  judgment: *1289
+  jump: *1512
+  junior: *943
+  jurisdiction: *1507
+  just so: *414
+  juvenile: *468
+  key: *418
+  kick: *2122
+  kidnap: *708
+  kidney: *916
+  kill: *1607
+  kiln: *1423
+  king: *271
+  knee: *1002
+  know: *1308
+  kudzu: *492
+  labor: *924
+  lack: *505
+  lacquer: *1001
+  lad: *1852
+  ladle: *72
+  lady: *1234
+  lagoon: *2195
+  laid waste: *527
+  lake: *159
+  lament: *668
+  lamp: *177
+  land: *1631
+  large: *112
+  large hill: *1360
+  lass: *1650
+  laugh: *1008
+  laundry: *619
+  lazy: *676
+  lead (metal): *857
+  leader: *789
+  leaf: *243
+  leak: *1149
+  lean: *1086
+  leap: *1379
+  learn: *616
+  leather: *2041
+  lecture: *1957
+  left: *81
+  leg: *1372
+  legitimate wife: *472
+  leisure: *1753
+  lend: *1082
+  length: *746
+  lengthen: *2071
+  level: *172
+  levy: *404
+  lewd: *788
+  license: *827
+  lid: *1561
+  lie: *1223
+  lie down: *1233
+  life: *1675
+  lightly: *774
+  lightning bug: *557
+  likeness: *104
+  limb: *771
+  limit: *1576
+  line: *1438
+  line up: *1398
+  lineage: *1492
+  linen: *433
+  liner: *2013
+  lips: *2169
+  listen: *890
+  little: *110
+  livelihood: *247
+  lively: *154
+  liver: *1778
+  livestock: *1485
+  load: *383
+  location: *584
+  lock: *409
+  logic: *283
+  loins: *1731
+  loneliness: *777
+  long: *2070
+  long time: *1092
+  long-distance: *1375
+  longevity: *1687
+  longing: *855
+  look back: *1165
+  look to: *918
+  loose: *893
+  lord: *284
+  lose: *908
+  lose weight: *1818
+  lot: *1649
+  love: *796
+  lovely: *2158
+  lower: *1973
+  lowly: *1629
+  loyalty: *648
+  lucidity: *1839
+  lumber: *738
+  lunatic: *277
+  lungs: *443
+  luxuriant: *1435
+  made in...: *448
+  magnet: *1491
+  mail: *1990
+  majestic plural: *2183
+  make: *1224
+  make a deal: *471
+  make headway: *728
+  male: *804
+  mama: *105
+  man: *923
+  maneuver: *724
+  manipulate: *864
+  mannerism: *1826
+  many: *113
+  map: *1264
+  market: *440
+  marketing: *783
+  marquis: *1767
+  marriage: *1972
+  marrow: *1385
+  marry into: *581
+  marsh: *145
+  martyrdom: *872
+  mask: *2039
+  masses: *2001
+  matrimony: *627
+  matter: *1240
+  mausoleum: *1636
+  me: *1933
+  meadow: *142
+  meal: *1583
+  measurement: *45
+  measuring box: *42
+  meat: *1098
+  mechanism: *1482
+  mediator: *1898
+  medicine: *1873
+  mediocre: *66
+  meeting: *814
+  melancholy: *663
+  mellow: *332
+  melodious: *1579
+  melon: *2022
+  melt: *854
+  membrane: *248
+  memorize: *347
+  mention: *1643
+  mercy: *1490
+  merit: *1369
+  meritorious deed: *1808
+  metallurgy: *808
+  metaphor: *308
+  method: *813
+  metropolis: *1989
+  mid-air: *1190
+  military officer: *1176
+  milk: *786
+  mimic: *1514
+  mineral: *802
+  mingle: *1368
+  mirror: *522
+  miscellaneous: *604
+  miss: *2076
+  mistake: *2048
+  mix: *487
+  mochi: *1590
+  model: *2110
+  modest: *1496
+  moment: *1601
+  monkey: *430
+  monme: *1104
+  month: *13
+  more and more: *1322
+  moreover: *2190
+  morning: *53
+  mortar: *1531
+  mosquito: *1864
+  mould: *735
+  mountain: *830
+  mountain pass: *835
+  mountain stream: *903
+  mourning: *644
+  mouth: *11
+  move: *1806
+  mud: *1135
+  mulberry: *754
+  municipality: *1077
+  muscle: *1012
+  music: *1872
+  musical score: *1926
+  mutually: *819
+  myself: *1091
+  mysterious: *1484
+  nab: *1374
+  naked: *1205
+  name: *117
+  national flag: *1901
+  nativity: *420
+  navigate: *2014
+  navy blue: *1895
+  near: *1210
+  neck: *74
+  need: *1730
+  needle: *292
+  negate: *1303
+  negative: *1302
+  neglect: *806
+  neighboring: *1408
+  nest: *2077
+  netting: *1473
+  new: *1619
+  newborn babe: *62
+  next: *510
+  nickname: *1330
+  nifty: *2036
+  night: *1115
+  nightbreak: *30
+  nightfall: *2128
+  nine: *9
+  nitrate: *120
+  node: *1574
+  noodles: *2040
+  noon: *610
+  north: *480
+  nose: *733
+  not: *1128
+  not yet: *229
+  notebook: *2072
+  nothingness: *1913
+  nourishing: *1489
+  now: *1711
+  nucleus: *1638
+  numb: *986
+  number: *998
+  nun: *1133
+  oak: *211
+  obese: *533
+  obey: *136
+  obituary: *363
+  obscure: *231
+  obvious: *1843
+  occasion: *1392
+  occupation: *1111
+  ocean: *588
+  of: *1299
+  offering: *1742
+  officer: *748
+  ogre: *2175
+  oil: *1188
+  old: *16
+  old boy: *1246
+  old man: *1340
+  old woman: *867
+  olden times: *35
+  once upon a time: *1268
+  one: *1
+  one-sided: *1297
+  oneself: *36
+  only: *55
+  ooze: *686
+  open: *1750
+  open sea: *146
+  or again: *752
+  orderliness: *486
+  orders: *1503
+  organize: *1800
+  orphan: *2024
+  other: *1034
+  ought: *1854
+  outburst: *1941
+  outline: *1594
+  outlook: *614
+  outside: *116
+  outskirts: *1987
+  overall: *1447
+  overcome: *109
+  overdo: *1389
+  overflow: *1563
+  overgrown: *384
+  overnight: *158
+  overpowering: *582
+  oversee: *1562
+  overthrow: *1055
+  packed: *367
+  paddy ridge: *1288
+  page: *64
+  pagoda: *270
+  pain: *1825
+  paint: *1792
+  pair: *753
+  palisade: *1968
+  pan-: *147
+  paper: *1971
+  paragraph: *86
+  parcel post: *2002
+  parch: *228
+  pardon: *1881
+  parent: *1621
+  park: *629
+  parking: *2136
+  part: *844
+  partial: *1964
+  particularly: *873
+  partition: *846
+  partner: *1025
+  parts of speech: *2009
+  party: *860
+  patent: *1851
+  path: *1376
+  pathetic: *428
+  patrol: *303
+  pattern: *1516
+  paulownia: *216
+  pavilion: *333
+  pay: *798
+  pay respects: *2008
+  peaceful: *1692
+  peach tree: *251
+  pear tree: *973
+  pearl: *274
+  pedestal: *805
+  peel off: *1227
+  pelt: *865
+  penal: *953
+  penalty: *896
+  penetrate: *951
+  people: *1976
+  perfect: *199
+  performance: *2163
+  performing artist: *1040
+  perfumed: *532
+  period: *1902
+  permit: *611
+  persimmon: *441
+  person: *1023
+  person in charge: *1493
+  persuade: *928
+  perusal: *919
+  petition: *143
+  phantasm: *2006
+  philosophy: *1212
+  phrase: *69
+  pick: *792
+  pick up: *720
+  pickling: *1665
+  picture: *1446
+  pierce: *106
+  pig iron: *288
+  pigeon: *2096
+  piled high: *596
+  pillar: *286
+  pillow: *2034
+  pinch: *709
+  pine tree: *848
+  pining: *683
+  pipe: *1365
+  pit: *328
+  pitch dark: *1748
+  pity: *1271
+  place: *1208
+  place on the head: *98
+  placement: *895
+  placenta: *570
+  plains: *1722
+  plan: *227
+  plane: *124
+  plank: *781
+  plant: *217
+  plantation: *382
+  play: *1126
+  play music: *1693
+  pleasure: *675
+  pledge: *1669
+  plot: *359
+  pluck: *1187
+  plug: *282
+  plug up: *1418
+  plum: *499
+  plump: *126
+  pocket: *891
+  podium: *631
+  poem: *370
+  pointed: *539
+  poison: *1651
+  poles: *2052
+  polish: *729
+  politics: *407
+  pond: *555
+  pony: *2133
+  pop song: *57
+  pork: *577
+  portable: *742
+  portent: *250
+  possess: *83
+  post: *887
+  post a bill: *60
+  posture: *1959
+  pot: *1388
+  potato: *1784
+  pottery: *2117
+  pour: *285
+  poverty: *845
+  power: *922
+  pox: *1815
+  practice: *1443
+  praise: *1073
+  pray: *1209
+  precious: *1908
+  precipitous: *1802
+  preface: *1720
+  prefecture: *552
+  pregnancy: *546
+  present: *275
+  presents: *542
+  pressure: *163
+  previously: *1593
+  price: *1052
+  princess: *912
+  printing: *1150
+  printing block: *1298
+  prison: *361
+  private: *968
+  prize: *859
+  proceed: *412
+  proclaim: *200
+  products: *1681
+  profession: *1931
+  profit: *972
+  prohibition: *1179
+  prolong: *419
+  promise: *1462
+  promontory: *840
+  property: *737
+  proportion: *1673
+  propose: *718
+  prosperous: *25
+  prostrated: *1035
+  protect: *1072
+  provisional: *1039
+  provisions: *995
+  prudence: *2151
+  public: *847
+  publish: *1779
+  pull: *1318
+  punish: *734
+  pupil: *469
+  pure: *1659
+  purification: *1869
+  purple: *1475
+  pursue: *578
+  push: *1195
+  put up a notice: *726
+  quake: *2166
+  quandary: *621
+  quantity: *189
+  quasi-: *602
+  queen: *566
+  question: *1744
+  quick: *1799
+  quiet: *1660
+  quit: *2188
+  radiance: *324
+  rain: *451
+  rainbow: *559
+  raise: *2088
+  range: *380
+  rank: *1028
+  rapidly: *1819
+  rapids: *1795
+  rare: *1859
+  rather: *897
+  ratio: *1874
+  ray: *125
+  re-: *1162
+  reach out: *743
+  read: *372
+  reality: *1694
+  reap: *1600
+  rebuke: *376
+  receive: *330
+  recess: *658
+  recitation: *369
+  recollection: *679
+  recommend: *2156
+  record: *1226
+  recreation: *2047
+  recruit: *925
+  rectify: *1306
+  red: *1880
+  reed: *257
+  reef: *600
+  refined: *1655
+  reflect: *1879
+  reformation: *567
+  refreshing: *335
+  regiment: *1403
+  register: *1020
+  regularity: *969
+  reign: *807
+  reject: *1220
+  rejoice: *1553
+  relatives: *385
+  relax: *202
+  reliant: *1045
+  religion: *1181
+  remainder: *871
+  remains: *1641
+  remorse: *678
+  remote: *1031
+  remove: *822
+  rend: *869
+  renowned: *1347
+  renunciation: *467
+  reparation: *1060
+  repay: *1540
+  repeatedly: *399
+  repel: *921
+  repent: *672
+  report: *1625
+  repress: *1835
+  repudiate: *1762
+  reputation: *2089
+  request: *1004
+  research: *1417
+  resemblance: *119
+  resentment: *1570
+  reside: *1143
+  residence: *1984
+  resign: *1613
+  resist: *1974
+  respect: *1943
+  responsibility: *1078
+  rest: *1038
+  restore: *940
+  retainer: *911
+  retreat: *1575
+  return: *782
+  revelation: *262
+  revered: *1547
+  review: *1745
+  revile: *392
+  revise: *362
+  revolve: *449
+  rhyme: *520
+  rhythm: *939
+  ri: *185
+  rice: *987
+  rice field: *14
+  rice plant: *976
+  riddle: *994
+  ride: *1709
+  ridgepole: *544
+  ridicule: *892
+  right: *82
+  righteousness: *691
+  rin: *190
+  ring: *899
+  riot: *76
+  rise up: *43
+  rising sun: *27
+  risk: *18
+  ritual: *1183
+  river: *157
+  road-way: *295
+  roast: *310
+  rob: *608
+  robust: *343
+  rod: *1697
+  romance: *1885
+  roof: *1138
+  room: *816
+  root: *1571
+  rot: *1099
+  rotation: *1125
+  round: *44
+  rouse: *565
+  route: *1790
+  row: *1924
+  rowboat: *2021
+  rowing: *1259
+  rub: *694
+  rue: *1595
+  rule: *92
+  run: *410
+  run alongside: *858
+  rut: *306
+  saber: *1801
+  sack: *1081
+  sacrifice: *693
+  sad: *1763
+  safeguard: *756
+  sagacious: *1089
+  sail: *434
+  sake: *1535
+  salary: *1449
+  saliva: *1706
+  salt: *1568
+  salutation: *1168
+  salvation: *1006
+  same: *192
+  sand: *122
+  sandwiched: *1357
+  sane: *1243
+  sash: *444
+  sated: *1592
+  savings: *206
+  say: *357
+  sayeth: *620
+  scaffold: *393
+  scar: *1822
+  scatter: *1273
+  scenery: *336
+  scheme: *1019
+  scold: *477
+  scorn: *1064
+  scribe: *568
+  scroll: *1292
+  sea: *500
+  seacoast: *1430
+  seal: *168
+  search: *1201
+  seasons: *978
+  seat: *1277
+  seaweed: *2191
+  second: *965
+  secrecy: *837
+  secret: *970
+  section: *1988
+  seduce: *90
+  see: *61
+  seedling: *249
+  seethe: *1325
+  seize: *757
+  self: *564
+  self-effacing: *1726
+  selfish: *641
+  sell: *345
+  semi-: *606
+  send back: *900
+  send off: *2172
+  sentence: *1861
+  separate: *94
+  sequential: *1998
+  set: *1144
+  set aside: *1272
+  set free: *535
+  settlement: *1456
+  seven: *7
+  severance: *1218
+  sew: *1685
+  sex: *1679
+  shade: *1718
+  shadow: *1848
+  shake: *2167
+  shaku: *1151
+  shallow: *395
+  shame: *886
+  shape: *1847
+  sheep: *586
+  shelf: *214
+  shellfish: *56
+  shield: *1997
+  shift: *964
+  shining: *91
+  shins: *1498
+  ship: *2019
+  shish kebab: *649
+  shoes: *2042
+  shoot: *1338
+  shop: *1982
+  short: *1550
+  shoulder: *1158
+  shouldering: *721
+  shout: *1626
+  shove: *1310
+  show: *1167
+  shrink: *1434
+  shudder: *1736
+  sickle: *1725
+  side: *1049
+  sideways: *1888
+  sigh: *1702
+  sign of the bird: *1534
+  sign of the cow: *2197
+  sign of the dragon: *2164
+  sign of the hare: *2199
+  sign of the hog: *1637
+  sign of the snake: *2200
+  sign of the tiger: *2162
+  signature: *1349
+  signpost: *1734
+  silence: *255
+  silk: *1468
+  silkworm: *562
+  silver: *1569
+  similar: *1106
+  simple: *2078
+  simplicity: *1749
+  sincerity: *388
+  single: *561
+  sink: *2033
+  sire: *1461
+  sit: *1100
+  six: *6
+  skeleton: *1383
+  sketch: *723
+  skill: *769
+  skin: *2147
+  skirt: *863
+  slacken: *2102
+  slap: *1932
+  slave: *2192
+  sleep: *1977
+  sleeve: *1189
+  slender: *1929
+  slip out: *761
+  slippery: *1384
+  slope: *780
+  slow: *1148
+  small bell: *1508
+  smash: *121
+  smoke: *1739
+  snake: *558
+  snapshot: *885
+  sniff: *129
+  snow: *1225
+  so-and-so: *1896
+  sociable: *2123
+  soft: *509
+  soil: *161
+  soldier: *1429
+  solely: *595
+  solemn: *1870
+  solicit: *1656
+  solution: *1018
+  somebody: *1337
+  someone: *1345
+  son: *1995
+  song: *508
+  sort: *1000
+  sort of thing: *256
+  soul: *2177
+  sound: *518
+  soup: *150
+  source: *153
+  south: *1740
+  sovereign: *466
+  span: *32
+  spare time: *2027
+  sparkle: *22
+  speaketh: *1198
+  special: *261
+  specialty: *47
+  species: *1810
+  specimen: *1564
+  speckled: *1865
+  sphere: *1293
+  spicy: *1612
+  spinal column: *268
+  spindle: *1708
+  spine: *24
+  spinning: *1457
+  spiny: *751
+  spirit: *2030
+  spirits: *1930
+  spit: *162
+  splash: *232
+  splendour: *1704
+  split: *876
+  sponsor: *1062
+  spoon: *476
+  spot: *181
+  sprain: *1101
+  spread: *2028
+  spring: *140
+  springtime: *1690
+  spy: *1056
+  squad: *1315
+  squared jewel: *167
+  squeeze: *1422
+  stab: *1416
+  stagnate: *445
+  stalk: *772
+  stamp: *1530
+  stand up: *462
+  standard: *904
+  star: *1676
+  stare: *252
+  starve: *1586
+  state: *135
+  station: *2138
+  stationery: *1011
+  statue: *2131
+  stature: *481
+  status: *312
+  status quo: *254
+  steadily: *1217
+  steal: *1559
+  stealth: *1419
+  steam: *2049
+  steel: *2113
+  step: *1381
+  stern: *2086
+  sticky: *989
+  stiff: *750
+  stimulate: *1373
+  stinking: *128
+  stipend: *1696
+  stirred up: *607
+  stocks: *236
+  stomach: *29
+  stone: *118
+  stop: *396
+  store: *632
+  storehouse: *913
+  storey: *1406
+  storm: *839
+  straightaway: *77
+  strand: *1353
+  strange: *133
+  strangle: *1448
+  stratum: *1146
+  straw rope: *1477
+  stream: *134
+  street: *95
+  strict: *917
+  strike: *705
+  strong: *1321
+  stubborn: *65
+  study: *346
+  stupid: *1814
+  sturdy: *2115
+  style: *377
+  subjugate: *946
+  submerge: *907
+  submit: *1935
+  subscription: *1958
+  substance: *1219
+  substitute: *1080
+  suck: *744
+  suckle: *1979
+  sue: *850
+  suffering: *239
+  sugar: *1242
+  suitable: *473
+  sulfur: *825
+  sultry: *1350
+  summer: *317
+  summit: *1683
+  sunshine: *1397
+  superfluous: *321
+  superintend: *1615
+  supplement: *1983
+  suppose: *739
+  surface: *1666
+  surname: *1678
+  surpass: *413
+  surplus: *1710
+  surround: *1948
+  suspend: *1495
+  suspicious: *773
+  sutra: *1460
+  swamp: *1153
+  sweat: *1780
+  sweep: *1235
+  sweet: *1894
+  sweet oak: *597
+  swell: *1855
+  swift: *298
+  swim: *144
+  swing: *2118
+  sword: *87
+  symptoms: *1816
+  system: *447
+  tag: *225
+  tail: *2064
+  tailor: *424
+  take: *882
+  take along: *305
+  tale: *368
+  tall: *329
+  tariff: *1916
+  task: *1313
+  tassel: *1159
+  tatami mat: *1923
+  tax: *961
+  tea: *267
+  teach: *1343
+  tears: *1163
+  technique: *450
+  tempering: *2186
+  temporarily: *1216
+  tempt: *828
+  ten: *10
+  ten thousand: *68
+  tenacious: *1623
+  tender: *1312
+  tenderness: *1068
+  tense: *1474
+  test: *378
+  texture: *70
+  the following: *617
+  thick: *132
+  thigh: *764
+  thin: *176
+  thing: *1129
+  think: *651
+  third class: *1096
+  thirst: *488
+  thong: *1444
+  thorn: *446
+  thousand: *40
+  thread: *1431
+  threaten: *936
+  three: *3
+  throat: *1768
+  throw: *762
+  thunder: *454
+  thwart: *1919
+  ticket: *1291
+  tide: *152
+  tie: *1451
+  tiger: *2145
+  tighten: *1440
+  tile: *1108
+  till: *1949
+  timber-trees: *1554
+  time: *171
+  tin can: *2116
+  tinker with: *731
+  tired: *1823
+  together: *1934
+  toil: *929
+  token: *1076
+  tolerant: *241
+  tomb: *1282
+  tombstone: *1630
+  tome: *1967
+  tongue: *41
+  too much: *1786
+  tool: *78
+  tooth: *1255
+  topic: *415
+  tortoise: *573
+  torture: *1344
+  touch: *725
+  towel: *432
+  tower: *1752
+  town: *221
+  toy: *276
+  tracks: *1883
+  trade: *1529
+  traffic: *1511
+  trail: *1382
+  training: *983
+  tranquillize: *294
+  transcend: *411
+  transit: *1279
+  transition: *1737
+  translate: *1154
+  transmit: *1036
+  transparent: *981
+  transport: *307
+  tray: *2017
+  tread: *1380
+  treasure: *273
+  tree: *207
+  tree trunk: *1783
+  treetops: *213
+  tremendously: *1905
+  tribe: *1307
+  tribute: *85
+  trifle: *1699
+  trip: *1127
+  trouble: *2085
+  'true': *79
+  trunk: *194
+  truss: *1476
+  trust: *1794
+  tumor: *1807
+  tune: *373
+  turf: *1301
+  turn: *2058
+  turn into: *386
+  tusk: *2053
+  twenty: *1274
+  twig: *319
+  twist: *1627
+  two: *2
+  two-mat area: *1598
+  tyrannize: *2153
+  ugly: *2176
+  ultramarine: *1528
+  umbrella: *1103
+  un-: *1760
+  uncle: *775
+  unclear: *797
+  uncommon: *1936
+  undefiled: *1668
+  undertake: *401
+  undress: *537
+  uneasiness: *2150
+  unfold: *2075
+  universal: *1925
+  unlucky: *1519
+  unravel: *1955
+  unusual: *1882
+  upbraid: *2182
+  upright: *58
+  uprising: *930
+  urge: *300
+  urine: *1132
+  use: *1065
+  usual: *862
+  utensil: *127
+  utilize: *1265
+  utmost: *884
+  vague: *245
+  valley: *851
+  value: *1729
+  valve: *803
+  vapor: *2031
+  various: *1351
+  vast: *1320
+  vat: *1260
+  vegetable: *793
+  vein: *2000
+  venerable old man: *849
+  verification: *2134
+  vermilion: *235
+  versify: *1714
+  vertical: *1436
+  vessels: *755
+  vicarious: *1876
+  vice-: *93
+  victory: *1294
+  vie: *465
+  villa: *344
+  village: *96
+  villain: *1603
+  vine: *2095
+  vinegar: *1542
+  violent: *536
+  virtuous: *1112
+  vis-a-vis: *1862
+  visit: *1856
+  visit a shrine: *495
+  voice: *2044
+  voiced: *898
+  void: *2148
+  volume: *1663
+  vow: *1214
+  vulgar: *1042
+  wait: *944
+  waiter: *1050
+  walk: *397
+  wall: *1616
+  wandering: *1580
+  war: *2079
+  ward: *1831
+  ward off: *1399
+  warehouse: *633
+  warm: *1560
+  warmth: *2099
+  warrior: *403
+  warship: *2020
+  wash: *264
+  watch over: *688
+  watchtower: *999
+  water: *137
+  waterfall: *576
+  waver: *1546
+  waves: *866
+  weak: *1323
+  wealth: *205
+  weave: *1432
+  wee hours: *201
+  week: *340
+  weekday: *618
+  welcome: *1837
+  weld: *623
+  welfare: *1172
+  well: *1946
+  west: *1728
+  wet: *1755
+  whale: *337
+  what: *1087
+  wheel: *1963
+  wherefore: *1186
+  whirlpool: *1387
+  white: *37
+  who?: *598
+  whole: *281
+  wholesale: *1499
+  wick: *647
+  wicked: *2055
+  wide: *799
+  widespread: *1518
+  widow: *664
+  wife: *2035
+  willow: *1525
+  wind: *563
+  winding: *1469
+  window: *811
+  windpipe: *628
+  wing: *1937
+  wink: *880
+  winter: *456
+  wipe: *695
+  wisdom: *1309
+  wish: *1715
+  wisteria: *1295
+  with child: *2168
+  withdraw: *1415
+  wither: *219
+  withstand: *1907
+  woman: *102
+  womb: *810
+  wonder: *2141
+  word: *371
+  work: *1809
+  world: *266
+  worship: *1686
+  wound: *1071
+  wrap: *569
+  wrench: *1716
+  wretched: *1857
+  write: *349
+  writing brush: *1014
+  yank: *696
+  year: *1114
+  year-end: *551
+  yearn: *681
+  yell: *1121
+  yellow: *1887
+  yesterday: *1222
+  yield: *1140
+  yonder: *195
+  young: *237
+  younger brother: *1328
+  younger sister: *234
+  zero: *1504
