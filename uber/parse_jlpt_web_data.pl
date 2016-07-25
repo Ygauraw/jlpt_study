@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+# Take raw HTML files from various websites (see "Sources" below) and
+# converts them into YML files for easier processing.
+
 use strict;
 use warnings;
 
@@ -41,7 +44,7 @@ sub has_kanji {
 #print "\x{3041}\x{30a1}\n";
 
 # print various character ranges
-if (0) {
+if (1) {
     my ($low, $high) = @{ $ranges{roman_hankaku} };
     my ($i) = $low;
     while  ($i ++ <= $high) {
@@ -50,7 +53,7 @@ if (0) {
 }
 
 # quicker alternative to the above
-if (0) {
+if (1) {
     my ($low, $high) = @{ $ranges{katakana} };
     print map { chr } $low .. $high;
 }
@@ -169,6 +172,7 @@ sub input_file_name {
 # }
 # kanji_info is another hashref:
 # {
+#   id    => "ID, when used on source website",
 #   on_yomi => [ on_reading, ...], 
 #   kun_yomi => [ kun_reading, ... ],
 #   other_readings => [ unrecognised_readings ],
@@ -178,6 +182,7 @@ sub input_file_name {
 # }
 # vocab_info is another hashref:
 # {
+#    id    => "ID, when used on source website",
 #    vocab => "kanji/kana string",
 #    kana  => "kana-only string",
 #    english => "English translation",
@@ -267,7 +272,7 @@ sub parse_jlptstudy_kanji {
 }
 
 ## comment out for now (files already made and want to test next bit)
-if (0) {
+if (1) {
     my $i;
     for $i (2..5) {
 	my $jlpt_kanji = parse_jlptstudy_kanji($i);
@@ -310,7 +315,9 @@ sub parse_jlptstudy_vocab {
 
     do {
 	if (/^<tr id=\"(\d+)\"/) {
-	    $this_vocab = { id => $1, kana => undef, regular => undef, english => undef };
+	    # ID values are useless here (they're just row numbers)
+	    # $this_vocab = { id => $1, kana => undef, regular => undef, english => undef };
+	    $this_vocab = { kana => undef, regular => undef, english => undef };
 	    push @{$toplevel}, $this_vocab;
 	} elsif (/^<td class=\"kanji\">(.*)/) {
 	    $_ = $1; s/<\/.*>//;
@@ -322,7 +329,7 @@ sub parse_jlptstudy_vocab {
 	    }
 	} elsif (/<td>(.*?)<\/td>/) {
 		$this_vocab->{type} = $1;
-	} elsif (/^<td class=\"eng\">(.*?)<\//) {
+	} elsif (/<td class=\"eng\">(.*?)<\//) {
 		$this_vocab->{english} = $1;
 	}
     } while ($_=<FILE>);
@@ -332,7 +339,7 @@ sub parse_jlptstudy_vocab {
 }
 
 ## comment out for now (files already made and want to test next bit)
-if (0) {
+if (1) {
     my $i;
     for $i (2..5) {
 	next if $i == 3;
@@ -376,7 +383,7 @@ sub parse_jlptstudy_grammar {
 }
 
 ## comment out for now (files already made and want to test next bit)
-if (0) {
+if (1) {
     my $i;
     for $i (4..5) {
 	next if $i == 3;
@@ -408,7 +415,7 @@ sub parse_tagaini_kanji {
 
     while (<FILE>) {
 
-	($this_kanji, $readings, $english) = split /\s*\t\s*/;
+	($this_kanji, $readings, $english) = split /\t/;
 	$kanjirec = jlptstudy_empty_kanji_info();
 	$kanjirec->{kanji} = $this_kanji;
 	$kanjidic->{$this_kanji} = $kanjirec; # store new record now
@@ -437,7 +444,7 @@ sub parse_tagaini_kanji {
 }
 
 ## comment out for now (files already made and want to test next bit)
-if (0) {
+if (1) {
     my $i;
     for $i (2..5) {
 	next if $i == 3;
@@ -461,7 +468,7 @@ sub parse_tagaini_vocab {
 
     while (<FILE>) {
 
-	($written, $readings, $english) = split /\s*\t\s*/;
+	($written, $readings, $english) = split /\t/;
 	$this_vocab = { kana => $readings, regular => $written, english => $english };
 	push @{$toplevel}, $this_vocab;
     }
@@ -471,7 +478,7 @@ sub parse_tagaini_vocab {
 }
 
 ## comment out for now (files already made and want to test next bit)
-if (0) {
+if (1) {
     my $i;
     for $i (2..5) {
 	#	next if $i == 3;  # it appears that we have N3 vocab
@@ -554,7 +561,7 @@ sub parse_tanos_kanji {
 }
 
 ## comment out for now (files already made and want to test next bit)
-if (0) {
+if (1) {
     my $i;
     for $i (1..5) {
 	my $kanji = parse_tanos_kanji($i);
@@ -617,7 +624,7 @@ sub parse_tanos_vocab {
 }
 
 ## comment out for now (files already made and want to test next bit)
-if (0) {
+if (1) {
     my $i;
     for $i (1..5) {
 	my $vocab = parse_tanos_vocab($i);
@@ -647,7 +654,7 @@ sub parse_tanos_grammar {
 }
 
 ## comment out for now (files already made and want to test next bit)
-if (0) {
+if (1) {
     my $i;
     for $i (1..5) {
 	my $grammar = parse_tanos_grammar($i);
@@ -657,7 +664,7 @@ if (0) {
     
     
 ## Final thing: pull in my RTK flashcards
-if (0) {
+if (1) {
 
     open FILE, "<:encoding(UTF-8)", "../koohii/rtk_flashcards_2200.csv"
 	or die "Failed to open RTK file for reading in UTF8 mode: $!";
