@@ -140,7 +140,7 @@ sub input_file_name {
 	    return "$base_source_dir/JLPT Level N${level} Kanji List_files/" .
 		"N${level}_kanji-detail.html";
 	} elsif ($source eq "tagaini") {
-	    return "$base_source_dir/N${level}_kanij.tsv";
+	    return "$base_source_dir/N${level}_kanji.tsv";
 	} else { die }
 
     } elsif ($type eq "vocab") {
