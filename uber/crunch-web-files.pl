@@ -83,22 +83,87 @@ my %jouyou_levels = map
       }
   }
 } keys %jouyou;
+my %kanji_info = ();
+sub new_kanji {			# follows structure of database tables
+    {
+	kanji  => undef,
+	en_best => '',
+	en_jlpt => '',
+	en_tanos => '',
+	en_tagaini => '',
+	tanos_site_id => 0,
+	jlpt_level => 0,
+	jlpt_level_jlpt => 0,
+	jlpt_level_tanos => 0,
+	jlpt_level_tagaini => 0,
+	# These will be populated during scanning, then put into their
+	# own table:
+	on_yomi_hash => {},
+	kun_yomi_hash => {},
+    }
+}
+sub register_onkun_yomi {	# takes values from list, puts them in hash
+    my ($k,$t,$hash,$list) = @_;
+    die unless ref($hash) eq "HASH";
+    die unless ref($list) eq "ARRAY";
 
-
-
-sub register_kanji_level {
-    my ($kanji, $source, $level) = @_;
-    return unless exists $jouyou{$kanji}; # only store info for Jouyou kanji
-    #    warn "[$kanji,$source,$level]\n";
-
-    push @{$jouyou_levels{$kanji}->{found_in}->{$source}}, $level;
-    # The following stores the easiest level that the kanji was found
-    # at among all lists
-    if ($level > $jouyou_levels{$kanji}->{notional_level}) {
-	#warn "got here new level $level\n";
-	$jouyou_levels{$kanji}->{notional_level} = $level;
+    die unless $k;
+    die unless $t;
+    
+    foreach my $r (@$list) {
+	#warn "adding reading $r\n";
+	die unless $r;
+	$hash->{$r} = {
+	    kanji  => $k,
+	    type   => $t,
+	    popularity => 0,
+	    sightings  => 0,
+	    kana   => $r
+	} unless exists $hash->{$r};
+	($hash->{$r}->{popularity})+=10;
     }
 
+}
+
+# I originally had register_kanji sub that only dealt with JLPT
+# level info. Based on how straightforward it was to register all
+# vocab info into a hash indexed on ja_regular reading, I'm going to
+# do something similar here.
+
+sub register_kanji {
+    my ($ent, $src, $level) = @_;
+    my $k  = $ent->{kanji} or die;
+    return unless exists $jouyou{$k}; # only store info for Jouyou kanji
+    #    warn "[$k,$src,$level]\n";
+
+    push @{$jouyou_levels{$k}->{found_in}->{$src}}, $level;
+    # The following stores the easiest level that the kanji was found
+    # at among all lists
+    if ($level > $jouyou_levels{$k}->{notional_level}) {
+	#warn "got here new level $level\n";
+	$jouyou_levels{$k}->{notional_level} = $level;
+    }
+
+    # Now start updating kanji info 
+    my $rec;
+    $rec = exists $kanji_info{$k} ? $kanji_info{$k} : new_kanji();
+
+    # copy the easiest JLPT level into our new structure
+    $rec->{jlpt_level} = $jouyou_levels{$k}->{notional_level} or die;
+    if (exists $rec->{"jlpt_level_$src"}) {
+	my $ev = $rec->{"jlpt_level_$src"};
+	$rec->{"jlpt_level_$src"} = $level if $level > $ev;
+    }
+
+    $rec->{"en_$src"} = $ent->{english};
+    $rec->{kanji}     = $k;
+
+    # handle on, kun yomi
+    register_onkun_yomi($k,"on", $rec->{on_yomi_hash},  $ent->{on_yomi});
+    register_onkun_yomi($k,"kun",$rec->{kun_yomi_hash}, $ent->{kun_yomi});
+
+    # don't forget to save the record
+    $kanji_info{$k} = $rec;	# no-op if we already pulled it out
 }
 
 for my $level (1..5) {	# I get 204 non-Jouyou kanji if I include N1
@@ -119,7 +184,7 @@ for my $level (1..5) {	# I get 204 non-Jouyou kanji if I include N1
 
 	# validate keys (ie, kanji chars)
 	for my $testkey (keys %$data) {
-	    register_kanji_level($testkey, $src, $level);
+	    register_kanji($data->{$testkey}, $src, $level);
 	    next if exists $jouyou{$testkey};
 	    warn "[$src,$level]: Found non-Joyou kanji '$testkey' (suppressing further notices)\n" 
 		unless $non_joyou++;
@@ -404,20 +469,75 @@ $dbh->do("create table kanji_by_jlpt_grade (
 
 )");
 
-# Sources differ in the number and presentation of on-yomi and
-# kun-yomi so I will count up the number of times that they appear
-# across sources. Then I can order searches by "popularity"
 
 $dbh->do("create table kanji_readings (
 
    kanji               text  NOT NULL,
-   type                text  NOT NULL,  -- 'on','kun'
-   popularity          integer NOT NULL,-- how frequently it appears x10
-   sightings           integer NOT NULL,-- popularity based on sightings
+   type                text  NOT NULL,   -- 'on','kun'
+   popularity          integer NOT NULL, -- how frequently it appears x10
+   sightings           integer,          -- popularity based on sightings
 
-   kana                text NOT NULL    -- hiragana or katakana
+   kana                text NOT NULL     -- hiragana or katakana
 
 )");
+
+# Sources differ in the number and presentation of on-yomi and
+# kun-yomi so I will count up the number of times that they appear
+# across sources. Then I can order searches by "popularity"
+#
+# I changed the code that scans the kanji files so the %kanji_info
+# hash should have everything I need to populate the above two tables.
+
+warn "I have " . (0+ keys %kanji_info) . " kanji keys\n";
+foreach my $k (keys %kanji_info) {
+
+    $dbh->do("insert into kanji_by_jlpt_grade (
+	kanji,
+
+     -- en_best,
+	en_jlpt,
+	en_tanos,
+	en_tagaini,
+
+	tanos_site_id,
+
+	jlpt_level,  
+	jlpt_level_jlpt,
+	jlpt_level_tanos,
+	jlpt_level_tagaini
+       ) values (" .
+	  $dbh->quote($k)                                    . "," .
+	  $dbh->quote($kanji_info{$k}->{en_jlpt})            . "," .
+	  $dbh->quote($kanji_info{$k}->{en_tanos})           . "," .
+	  $dbh->quote($kanji_info{$k}->{en_tagaini})         . "," .
+	  $kanji_info{$k}->{tanos_site_id}                   . "," .
+	  $dbh->quote($kanji_info{$k}->{jlpt_level})         . "," .
+	  $dbh->quote($kanji_info{$k}->{jlpt_level_jlpt})    . "," .
+	  $dbh->quote($kanji_info{$k}->{jlpt_level_tanos})   . "," .
+	  $dbh->quote($kanji_info{$k}->{jlpt_level_tagaini}) . ")" );
+
+    # Now add the on and kun-yomi information
+    foreach my $href ($kanji_info{$k}->{on_yomi_hash},
+		      $kanji_info{$k}->{kun_yomi_hash} ) {
+	die unless ref $href eq 'HASH';
+	#warn "kanji: $k\n";
+	foreach my $kana (keys %$href) {
+	    my $krec = $href->{$kana};
+	    $dbh->do("insert into kanji_readings (
+	      kanji,
+	      type,
+	      popularity,
+	      kana
+	     ) values (" .
+	       $dbh->quote($k)                            . "," .
+	       $dbh->quote($krec->{type})                 . "," .
+	       $dbh->quote($krec->{popularity})           . "," .
+	       $dbh->quote($kana)                         . ")" 
+		);
+	}
+    }	
+}
+$dbh->commit;
 
 # There are actually two sets of vocab included on the tanos site. One
 # is attached to the kanji and it seems to bear no relationship to
@@ -455,19 +575,19 @@ $dbh->commit;
 foreach my $k (keys %vocab) {
 
     $dbh->do("insert into vocab_by_jlpt_grade (
-      ja_regular,
-      ja_kana,
-   -- en_best,
-      en_jlpt,
-      en_tanos,
-      en_tagaini,
-      pos,
-      jlpt_level,  
-      jlpt_level_jlpt,
-      jlpt_level_tanos,
-      jlpt_level_tagaini,
-      tanos_site_id
-) values (" .
+	ja_regular,
+	ja_kana,
+     -- en_best,
+	en_jlpt,
+	en_tanos,
+	en_tagaini,
+	pos,
+	jlpt_level,  
+	jlpt_level_jlpt,
+	jlpt_level_tanos,
+	jlpt_level_tagaini,
+	tanos_site_id
+      ) values (" .
 	     $dbh->quote($vocab{$k}->{ja_regular}) . "," .
 	     $dbh->quote($vocab{$k}->{ja_kana}) . "," .
 	     $dbh->quote($vocab{$k}->{en_jlpt}) . "," .
@@ -479,6 +599,7 @@ foreach my $k (keys %vocab) {
 	     $dbh->quote($vocab{$k}->{jlpt_level_tanos}) . "," .
 	     $dbh->quote($vocab{$k}->{jlpt_level_tagaini}) . "," .
              $vocab{$k}->{tanos_site_id} . ")" );
+    
 }
 
 $dbh->commit;
