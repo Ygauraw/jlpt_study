@@ -80,6 +80,13 @@ sub has_kanji {
     /[\x{4e00}-\x{9faf}]/;
 }
 
+sub strip_non_kanji {
+    local ($_) = shift;
+    $_ = shift or die if ref($_) eq __PACKAGE__;
+    tr/\x{4e00}-\x{9faf}//cd; # just keep kanji
+    $_;
+}
+
 
 # The big reason for this module is to allow lookups of kanji and
 # their official readings. I have this information stored in a
@@ -102,13 +109,17 @@ sub load_db {
     my ($kent,$k,$h,$t,$r,$d,$rek) = ();
     while (<$DATA>) {
 	chomp;
-	next if tr|.|.| == 1;
+
+	# Rework a bit to allow things like 張り切り
+	#next if tr|.|.| == 1;
 	if (tr|.|.| == 2) {
 	    s/\.(.*)\|(.*)\./|$2./; # tidy up dict form
 	}
 	s/\|-/|/;		# remove first and second hyphens
 	s/-\|/|/;		# (leaves dict field alone)
+
 	($k,$h,$t,$r,$d) = split '\|', "$_|";
+	#warn "OK, got 張/はり\n" if $k eq "張" and $r eq "はり";
 	#warn "$k:$t:$r:$d";
 	# make empty index slot if needed
 	unless (exists $kinfo{$k}) {
@@ -128,6 +139,18 @@ sub load_db {
 	#warn $rek;
 	$kent->{reads}->{$rek} = [] unless defined $kent->{reads}->{$rek};
 	push @{$kent->{reads}->{$rek}}, "$t:$r:$d";
+
+
+	# I could also include some "synthetic" reading elements here
+	# where sound changes can happen, eg:
+	# 列車   has reading れつ_しゃ, but reading becomes れっ_しゃ (small っ)
+	# 自転車 is normally じてんしゃ but can also be read じでんしゃ (て -> で)
+	# 方 is normally かた but might have sound change to がた
+	# etc.
+
+	# This code also doesn't handle the repetition marker 々 at
+	# all. Or punctuation (like ~方 or -方), or okurigana (飛び出
+	# す) or inflections/conjugations (like polite form endings)
     }
     close $DATA;
 
@@ -150,6 +173,25 @@ sub kanji_reading {
     my $reading = shift or die;
     die unless $have_kinfo;
 
+    # Try stripping off any hiragana at the end of both kanji/reading
+    # strings when they match. That won't help with compounds like 持っ
+    # て行く but it should for things like 切り
+    while ((substr $kanji, -1) eq (substr $reading, -1)) {
+	chop $kanji;
+	chop $reading;
+	# Tested, and is does work for, eg, 切れる => きれる. Maybe I
+	# can modify the code to make it work with, eg 思い切り => お
+	# もいきり. I have made some implementation decisions that
+	# make it not quite so straightforward to do this, though,
+	# particularly below where I strip all non-kanji characters
+	# from the kanji string... Mark as TODO.	
+    }
+    # Do the same at the start of strings
+    while ((substr $kanji, 0, 1) eq (substr $reading, 0, 1)) {
+	$kanji =~ s/^.//;
+	$reading =~ s/^.//;
+    }
+    
     # I'm not sure how generic the interpolation of sub-re's is in
     # perl so I'll use separate variables and interpolate everything
     # in one go.
@@ -157,15 +199,26 @@ sub kanji_reading {
     my ($r0,$r1,$r2,$r3,$r4,$r5,$r6,$r7,$r8,$r9) = (qr//) x 10;
     my @k = (0) x 10;
     my $stripped = $kanji;
-    $stripped =~ tr/\x{4e00}-\x{9faf}//cd; # just keep kanji
-    warn $stripped;
+#    $stripped =~ tr/\x{4e00}-\x{9faf}//cd; # just keep kanji
+    #warn $stripped;
 
-    # store each (presumably kanji) character in @k
+    # store each kanji character in @k
     my $len = length $stripped;
-    for my $pos (0..8) {
-	last if $pos >= $len;
-	$k[$pos] = substr $stripped, $pos, 1;
-	die unless exists $kinfo{$k[$pos]};
+    my $pos = 0; 		# which RE slot to fill
+    while ($pos < $len) {
+	# chop the start of the string. Kanji first, then trailing hiraganas
+	$k[$pos] = substr $stripped, 0, 1, "";
+	while ($stripped =~ s/^[\x{3041}-\x{3095}]//) {
+	    --$len;
+	}
+#	next if has_hira($k[$pos]
+	unless (exists $kinfo{$k[$pos]}) {
+	    # just leave caller to deal with this ...
+	    #warn "Probable non-Jouyou kanji $k[$pos] in kanji_reading\n";
+	    return undef;
+	}
+    } continue {
+	++$pos;
     }
     
     $r0 = $kinfo{$k[0]}->{re} if $k[0];
@@ -181,14 +234,20 @@ sub kanji_reading {
 
     my @results;
     if (@results = ($reading
-		    =~/^($r0)($r1)($r2)($r3)($r4)($r5)($r6)($r7)($r8)($r9)/ )) {
-	print "Success: " . (join "_", @results) . "\n";
+		    =~/^($r0)($r1)($r2)($r3)($r4)($r5)($r6)($r7)($r8)($r9)$/ )) {
+	#print "Success: " . (join "_", @results) . "\n";
     } else {
-	print "No success on $kanji, $reading\n";
+	#print "No success on $kanji, $reading\n";
+	return undef;
     }
+    pop @results while ($results[$#results] eq '');
 
-    # Cool
-   
+    # Cool. But what do we return?
+    return [ map { 
+	      $k[$_], 
+	      $results[$_],
+	      $kinfo{$k[$_]}->{reads}->{$results[$_]}
+	 } $[ .. $#results ];
 }
 
 
