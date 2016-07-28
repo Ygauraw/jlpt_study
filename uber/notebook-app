@@ -1,0 +1,56 @@
+#!/usr/bin/perl                       --  -*- Perl -*-
+
+use strict;
+use warnings;
+use utf8;
+
+binmode STDIN,  ":utf8";
+binmode STDOUT, ":utf8";
+binmode STDERR, ":utf8";
+
+use Data::Dump qw(dump dumpf);
+
+# Look for external modules in program directory
+BEGIN {
+    local($_) = $0;
+    s|^(.*)/.*$|$1|;
+    push @INC, $_;
+}
+
+#use sample;
+
+use JA_Script qw(hira_to_kata has_hira has_kata has_kanji);
+
+JA_Script::load_db;
+
+print JA_Script::hira_to_kata("ひらがな hiragana") . "\n";
+
+my $ja = JA_Script->new();
+print $ja->hira_to_kata("カタカナ katakana") . "\n";
+print JA_Script::hira_to_kata("カタカナ katakana") . "\n";
+print $ja->hira_to_kata("katakana") . "\n";
+
+my $str = "ひらがな hiragana : カタカナ katakana\n";
+print "String is $str";
+print "strip hira: " . ($str = JA_Script::strip_hira($str)) ;
+print "strip kata: " . ($str = JA_Script::strip_kata($str)) ;
+
+sub filter_dumped {
+    my ($ctx, $object_ref) = @_;
+    if ($ctx->is_scalar) {
+        return { dump => "'" . $$object_ref . "'" }; # needs $$!
+    } elsif($ctx->is_hash) {
+        return { hide_keys => ['xml:lang'] };
+    } else {
+        return undef;
+    }
+    return undef;
+}
+
+
+dumpf(\$JA_Script::kinfo{'付'}, \&filter_dumped);
+dumpf(\$JA_Script::kinfo{'仮'}, \&filter_dumped);
+
+$ja->kanji_reading("名前", "なまえ");
+$ja->kanji_reading("事務所", "じむしょ");
+$ja->kanji_reading("許可書", "きょかしょ");
