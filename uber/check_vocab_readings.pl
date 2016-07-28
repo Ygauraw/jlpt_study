@@ -63,8 +63,63 @@ my $sth = $dbh->prepare(
     "select ja_regular, ja_kana, jlpt_level 
      from vocab_by_jlpt_grade 
      where ja_regular like ?");
-
 die unless defined $sth;
+
+# Since I have two databases with vocabulary, it makes sense to search
+# both of them. I'll slurp both into a common structure.
+my %vocab_dict = ();
+sub new_dict {
+    {
+	vocab => shift,
+	grade => shift,
+	readings => [],
+	stoplist => {},		# prevent adding duplicate readings
+    }
+}
+my ($vocab, $kana, $grade, $reading);
+my $rc = $sth->execute("\%$kanji\%") or die;
+
+sub update_dict {		# wrap up to reuse for both queries
+    my $sth = shift;
+    while (($vocab, $kana, $grade) = $sth->fetchrow_array) {
+	next unless has_kanji($vocab);
+	# Found some odd entries with kana [kanji]. They cause an
+	# infinite loop somewhere: skip them
+	next if $vocab =~ tr|[]|[]|;
+	$vocab =~ s/(.)々/$1$1/;
+	$vocab_dict{$vocab} = new_dict($vocab,$grade)
+	    unless exists $vocab_dict{$vocab};
+	foreach $reading (split /\s*[,\/]\s*/, $kana) {
+	    next if exists $vocab_dict{$vocab}->{stoplist}->{$reading};
+	    $vocab_dict{$vocab}->{stoplist}->{$reading} = undef;
+	    push @{$vocab_dict{$vocab}->{readings}}, $reading;
+	}
+    }
+}
+
+update_dict($sth);
+
+warn "Read in tanos/jlptstudy/tagaini data\n";
+
+# Core 2k/6k dictionary
+my $dbh2 = DBI->connect(
+    "dbi:SQLite:dbname=/home/dec/JLPT_Study/core_6000/core_2k_6k.sqlite", "", "",
+    {
+        RaiseError     => 1,
+        sqlite_unicode => 1,
+        AutoCommit     => 0,
+    }
+    );
+die unless defined $dbh2;
+
+$sth = $dbh2->prepare(
+    "select ja_vocab, ja_vocab_kana, 0
+     from core_6k 
+     where ja_vocab like ?");
+die unless defined $sth;
+$rc = $sth->execute("\%$kanji\%") or die;
+update_dict($sth);
+warn "Read in Core data\n";
 
 # Structures for doing summary analysis of reading frequency and
 # failed parses
@@ -75,15 +130,13 @@ my $matched_count = 0;
 my $unstripped = $kanji;
 $kanji = $ja->strip_non_kanji($kanji);
 
-my $rc = $sth->execute("\%$kanji\%") or die;
-my ($vocab, $kana, $grade, $reading);
-while (($vocab, $kana, $grade) = $sth->fetchrow_array) {
+foreach my $vocab (sort {$a cmp $b} keys %vocab_dict) {
 
-    #warn "N$grade $vocab => $kana\n";
+    $grade = $vocab_dict{$vocab}->{grade};
+    my $readlist = $vocab_dict{$vocab}->{readings};
 
-    # Readings field can include multiple options
-    foreach $reading (split /\s*[,\/]\s*/, $kana) {
-	#warn "  $reading\n";
+    foreach $reading (@$readlist) {
+	#warn "Reading: $reading\n";
 
 	# check vocab reading
 	my $listref = $ja->kanji_reading($vocab,$reading);
@@ -108,10 +161,17 @@ while (($vocab, $kana, $grade) = $sth->fetchrow_array) {
 		my $rtype = undef;
 		foreach (@$dlist) {
 		    die unless /^(.*):(.*):(.*)$/;
-		    die if defined($rtype) and $rtype ne "$1:$2";
+		    # apparently we can have kanji like 訓 that has
+		    # both on-yomi and kun-yomi that map to the same
+		    # sound... I had a die in here but I'll just
+		    # change it to just pick the first match.
+		    $rtype = "$1:$2";
+		    last;
+		    # don't die below
+		    die "$rtype ne $1:$2" if defined($rtype) and $rtype ne "$1:$2";
 		    $rtype = "$1:$2";
 		}
-		# OK, scan didn't die, so returned readings only differ in dict form
+
 		$reading_counts{$rtype} = 0 unless defined $reading_counts{$rtype};
 		$reading_counts{$rtype}++;
 		last;
@@ -136,3 +196,4 @@ print "Non-matching:\n  " . (join "\n  ", @failed) . "\n";
 
 
 $dbh->disconnect;
+$dbh2->disconnect;
