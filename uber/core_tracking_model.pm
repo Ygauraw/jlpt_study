@@ -14,13 +14,13 @@ CoreTracking::DBI->connection(
     {   # does Class::DBI accept DBI/DBD options like below? Yes.
         RaiseError     => 1,
         sqlite_unicode => 1,
-        AutoCommit     => 0,
+        AutoCommit     => 1,
     }
     );
 
 #sub accessor_name_for { "get_$_[1]" }
 #sub mutator_name_for  { "set_$_[1]" }
-#sub autoupdate        { 1 }
+sub autoupdate        { 1 }
 
 
 # Order of definitions below is important since any table with a
@@ -75,7 +75,8 @@ CoreTracking::Seed->columns(All => qw/epoch_time_created type mode items sound_i
 CoreTracking::Seed->has_many(details     => 'CoreTracking::TestDetail');
 CoreTracking::Seed->has_many(data_points => 'CoreTracking::DataPoint');
 
-# expander/convertor from epoch time to something more useful
-CoreTracking::Seed->has_a(epoch_time_created => 'Date::Simple');
+# expander/convertor from epoch time to something more useful (except
+#that we can't initialise a Date::Simple from epoch seconds...)
+#CoreTracking::Seed->has_a(epoch_time_created => 'Date::Simple');
 
 1;

@@ -30,6 +30,7 @@ use Data::Dump qw(dump dumpf pp);
 require 'core_vocab_model.pm';
 require 'core_tracking_model.pm';
 
+
 # test out Class::DBI stuff
 my $core2k = CoreVocab::Core2k->retrieve(1);
 
@@ -76,5 +77,204 @@ foreach my $sen ($core6k->sentences) {
 
 ## End testing Core Class::DBI stuff
 
+use Gtk2 qw/-init/;
+use Gtk2::Ex::FormFactory;
+
+CoreTester::GUI->new->build_main_window;
+Gtk2->main;
+
+## I'll try to keep a separation between DB stuff and GUI stuff
+
+package TestList;
+
+use Carp;
+
+sub get_list {
+    my ($self, $attr) = @_;
+    my @lol = ();
+
+    warn "Got here\n";
+
+    my $iter = CoreTracking::Seed->retrieve_all;
+    while (my $test =  $iter->next) {
+	my $int_list = [$test->id, $test->epoch_time_created, 
+			$test->type, $test->mode];
+	# to get % complete, need to check other tables
+	push @lol, $int_list;
+    }
+    return \@lol;
+}
+
+our %valid_types;		# apparently these won't get
+our %valid_modes;		# initialised unless we use BEGIN {}
+
+BEGIN {				
+  %valid_types = (		# test types
+      'core2k' => undef,
+      'core6k' => undef,
+      'test2k' => undef,
+      'test6k' => undef,
+      );
+  %valid_modes = (		# challenge modes
+      'sound'  => undef,
+      'kanji'  => undef,
+      'both'   => undef,
+      );
+}
+
+sub new {
+    my $class = shift;
+    my $self = {
+	rng => Net::OnlineCode::RNG->new,
+    };
+    return bless $self, $class;
+}
+
+# Create a new test item
+sub new_item {
+    my $self = shift;
+    warn "Creating new_item with values " . (join ",", @_) . "\n";
+    my %o = (
+	type => undef,		# check against %valid_types
+	mode => undef,		# check against %valid_modes
+	items => undef,		# non-null
+	seed => undef,
+	@_
+    );
+
+    my ($now, $sound_items, $kanji_items, $vocab_count, $sentence_count) =
+	(time, 0, 0, 0, 0);
+
+    warn "valid modes: " . (join ", ", keys %valid_modes) . "\n";
+    croak "Invalid mode $o{mode}" unless exists $valid_modes{$o{mode}};
+    croak "Invalid type $o{type}" unless exists $valid_types{$o{type}};
+
+    # make a random seed if we weren't given one
+    $o{seed} = $self->{rng}->seed_random unless defined $o{seed};
+
+    if ($o{mode} eq "both") {
+	croak "Must have even number of items for mode='both'" if $o{items} & 1;
+	$sound_items = $kanji_items = $o{items} >> 1;
+    } elsif ($o{mode} eq "sound") {
+	($sound_items, $kanji_items) = ($o{items},0);
+    } elsif ($o{mode} eq "kanji") {
+	($sound_items, $kanji_items) = (0,$o{items});
+    }
+
+    if ($o{type} eq "core2k") {
+	($vocab_count, $sentence_count) = (2000, 2000);
+    } else {
+	$vocab_count     = 6000;
+	$sentence_count  = 0 + CoreVocab::Sentence->retrieve_all;
+    }	
+
+    # Create seed  entry. Only create summary record once test starts
+    my $entry = CoreTracking::Seed->insert(
+	{
+	    epoch_time_created  => $now,
+	    type                => $o{type},
+	    mode                => $o{mode},
+	    items               => $o{items},
+	    sound_items         => $o{sound_items},
+	    kanji_items         => $o{kanji_items},
+	    seed                => $o{seed},
+	    vocab_count         => $vocab_count,
+	    sentence_count      => $sentence_count,
+	}
+	);
+    #    $entry->update;
+}
+
+sub delete_item {
+    my $self = shift;
+    my $id  = shift or croak;	# unique timestamp of the thing to be deleted
+
+    CoreTracking::Seed->search(epoch_time_created => $id)->delete;    
+}
+
+1;
 
 
+package CoreTester::GUI;
+
+# basic accessors
+sub get_context                 { shift->{context}                      }
+sub get_form_factory            { shift->{form_factory}                 }
+
+sub set_context                 { shift->{context}              = $_[1] }
+sub set_form_factory            { shift->{form_factory}         = $_[1] }
+
+
+sub new {
+    my $class = shift;
+    bless { }, $class;
+}
+
+sub create_context {
+    my $self = shift;
+    $self->{context} = my $context = Gtk2::Ex::FormFactory::Context->new;
+
+    # Add all objects
+    $context -> add_object(
+	name   => "tests",
+	object => TestList->new,
+	);
+
+    return $context;
+}
+
+sub build_test_list {
+    return Gtk2::Ex::FormFactory::List->new (
+	name    => "test_list",
+	attr    => "tests.list",
+	columns => [ qw/time Created Type Mode %Complete/ ],
+	visible => [ 0, 1,1,1 ],
+	scrollbars         => [ "never", "automatic" ],
+	height  => 400,
+	expand_h => 1,
+	selection_mode     => "single",
+	);
+}
+
+sub build_main_window {
+    
+    my $self = shift;
+    my $context = $self->create_context;
+
+    my $ff = Gtk2::Ex::FormFactory->new (
+	context => $context,
+	content => [
+	    Gtk2::Ex::FormFactory::Window->new (
+		title   => "Core Vocabulary Tester",
+		properties => {
+		    default_width  => 640,
+		    default_height => 640,
+		},
+		quit_on_close => 1,
+		content => [
+		    Gtk2::Ex::FormFactory::VBox->new(
+			content => [
+			    build_test_list,
+			    Gtk2::Ex::FormFactory::Button->new(
+				label => 'Add test',
+				clicked_hook => sub {
+				    my $test_list = $context->get_object("tests");
+				    $test_list -> new_item(
+					mode => "kanji",
+					type => "test2k",
+					items => 20,
+					);
+				    $context->update_object_widgets("tests");
+				}
+			    )
+			],
+		    ),
+		],
+	    ),
+	],
+	);
+
+    $ff->open;
+    $ff->update;
+
+}

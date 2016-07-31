@@ -20,7 +20,7 @@ CoreVocab::DBI->connection(
 
 #sub accessor_name_for { "get_$_[1]" }
 #sub mutator_name_for  { "set_$_[1]" }
-#sub autoupdate        { 1 }
+sub autoupdate        { 1 }
 
 # Whereas tables are set up with plural names (eg, "sounds"), objects
 # will have singular names.
