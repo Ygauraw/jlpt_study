@@ -8,8 +8,15 @@
 # Gtk2::WebKit for <audio> support
 # Net::OnlineCode::RNG for replayable random selections
 #
-#
-# 
+
+BEGIN {
+    # I should probably figure out why I need to do this
+    push @INC, "/usr/local/lib/x86_64-linux-gnu/perl/5.20.2/";
+}
+
+# I happened to have this RNG lying around; I'll use it to generate
+# sample tests and save the seed for replaying at a later time.
+use Net::OnlineCode::RNG;
 
 use strict;
 use warnings;
@@ -20,7 +27,8 @@ binmode STDIN,  ":utf8";
 
 use Data::Dump qw(dump dumpf pp);
 
-require 'test_core_model.pm';
+require 'core_vocab_model.pm';
+require 'core_tracking_model.pm';
 
 # test out Class::DBI stuff
 my $core2k = CoreVocab::Core2k->retrieve(1);
@@ -65,3 +73,8 @@ foreach my $sen ($core6k->sentences) {
     print "[" . $sen->core_6k_id . ":" .$sen->sentence_id . "] " .
 	$sen->sentence_id->ja_text . "\n";
 }
+
+## End testing Core Class::DBI stuff
+
+
+
