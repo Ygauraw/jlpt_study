@@ -13,17 +13,83 @@ use Gtk2::WebKit;
 use strict;
 use warnings;
 
+# Class data: player script that will be the same for all instances
+our $player_script = <<'END';
+
+var wait_timer;
+function init() {
+  audio     = document.getElementById("audio");
+  trackno   = 0;
+  len       = playlist.length - 1;
+
+  // Can't use the following to introduce a delay because the timeout
+  // is created at the time this statement is executed rather than
+  // when the event triggers:
+  //
+  // audio.onended = setTimeout(advance, delay);
+
+  console.log("In init()");
+
+  // apparently audio.onended = ... is not supported:
+  //  audio.onended = function() {
+  //      console.log("In onended callback"); 
+  //      after(); 
+  //  };
+
+  // Instead use addEventListener
+  audio.addEventListener("ended", function() {
+      console.log("In onended callback"); 
+      after(); 
+  });
+
+
+  load_audio(audio, trackno);  
+  if (auto_play) {
+    play();
+  }
+}
+function after() {
+  console.log ("Got to after()");
+  wait_timer = setTimeout(advance, delay);
+}
+function advance() {
+  console.log ("Got to advance()");
+  trackno++;
+  if (trackno == len) {
+      trackno = 0;
+      if (!loop) {
+         return;
+      }
+  }
+  load_audio(audio, trackno);
+  // No need to re-add
+  //  audio.onended = function() { after; };
+  audio.play();
+}
+function play() {
+  audio.play ;
+}
+function load_audio(player, trackno) {
+  player.src = playlist[trackno];
+}
+
+
+END
+
+
 # accessors 
 sub get_track_delay_ms          { shift->{track_delay_ms}               }
 sub get_uri_base                { shift->{uri_base}                     }
 sub get_auto_play               { shift->{auto_play}                    }
 sub get_playlist                { shift->{playlist}                     }
+sub get_loop                    { shift->{loop}                         }
 sub get_allow_file_uri          { shift->{playlist}                     }
 
 sub set_track_delay_ms          { shift->{track_delay_ms}       = $_[1] }
 sub set_uri_base                { shift->{uri_base}             = $_[1] }
 sub set_auto_play               { shift->{auto_play}            = $_[1] }
 sub set_playlist                { shift->{playlist}             = $_[1] }
+sub set_loop                    { shift->{loop}                 = $_[1] }
 sub set_allow_file_uri          { shift->{allow_file_uri}       = $_[1] }
 
 # stash the gtk widget(s)
@@ -37,27 +103,30 @@ sub get_type { 'audio_player' }
 
 sub new {
     my $class = shift;
-    my %o = (			# default args
-	track_delay_ms => 600,
+    my %o = (
+        track_delay_ms => 600,	# default args
 	auto_play      => 1,
 	uri_base       => '',
 	playlist       => undef,
 	allow_file_uri => 1,
-	@_,			# user args
-	width          => 0,	# parent class args
-	height         => 0,
-     );
+	loop           => 0,
+        @_,			# user args
+
+	width          => 400,	# parent class args
+        height         => 60,
+    );
 
     my $self = $class->SUPER::new(%o);
 
     # stash options (using hash slice to pull out option keys)
-    my ($track_delay_ms, $auto_play, $uri_base, $playlist, $allow_file_uri) =
-	@o{qw/track_delay_ms auto_play uri_base playlist allow_file_uri/};
+    my ($track_delay_ms, $auto_play, $uri_base, $playlist, $allow_file_uri, $loop) =
+	@o{qw/track_delay_ms auto_play uri_base playlist allow_file_uri loop/};
 
     $self->set_track_delay_ms($track_delay_ms);
     $self->set_auto_play($auto_play);
     $self->set_uri_base($uri_base);
     $self->set_playlist($playlist);
+    $self->set_loop($loop);
     $self->set_allow_file_uri($allow_file_uri);
 
     return $self;
@@ -68,23 +137,44 @@ sub build_html {
 
     my $auto_play = $self->get_auto_play;
     my $autoplay = $auto_play ? "autoplay" : ""; # HTML tag
-
-    my $html = "<audio $autoplay id=\"audio\" preload=\"auto\" tabindex=\"0\">";
-
-    my $playlist = $self->get_playlist;
-
-    # The following will be replaced with JS code later
+    my $delay = $self->get_track_delay_ms;
     
+    my $loop = $self->get_loop;
+
+    # Might as well make this somewhat well-formed so that I can put
+    # scripts in the document head section
+    my $html = "<html><head>";
+
+    # Convert URIs in playlist into a Javascript array 'playlist[]'
+    my $playlist = $self->get_playlist;
+    my $js_playlist = '';
     if (defined $playlist) {
 	# playlist items will be just URIs. We could have specified
 	# content type, too, but I think it will work fine if we stick
 	# with just a filename for now and omit the content-type 
 	foreach my $uri (@$playlist) {
-	    $html .= "<source src=\"$uri\">\n";  #  type="audio/mp3">
+	    $js_playlist .= "'$uri',"; # don't need source/src
 	}
+	$js_playlist=~s/,$//;
     }
+    $html.="<script>\n";
+    $html.="var audio;\n";
+    $html.="var trackno   = 0;\n";
+    $html.="var playlist  = [ $js_playlist ];\n";
+    $html.="var auto_play = $auto_play;\n";
+    $html.="var loop      = $loop;\n";
+    $html.="var delay     = $delay;\n";
 
-    $html.="Your browser does not support the audio element.\n</audio>";
+    # Now add our other script functions
+    $html.=$player_script;    
+    
+    $html.="</script>\n";
+
+    # Note that body has an 'onload' event associated with it
+    $html.="</head><body onload=\"init()\">";
+    $html.="<audio $autoplay id=\"audio\" preload=\"auto\" tabindex=\"0\">";
+    $html.="Your browser does not support the audio element.\n</audio>\n";
+    $html.="</body></html>";
 
     warn $html;
     
