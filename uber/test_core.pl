@@ -192,6 +192,76 @@ sub delete_item {
     CoreTracking::Seed->search(epoch_time_created => $id)->delete;    
 }
 
+
+sub fisher_yates_shuffle {	# (loosely) based on recipe 4.18 from
+				# the Perl Cookbook
+    my $array = shift;		# let next die catch missing array
+    my $rng   = shift or die;
+    # Change recipe to allow picking a certain number of elements
+    my $picks = shift;		# allow it to be undef, as seen below
+
+    $picks=scalar(@$array) unless
+	defined($picks) and $picks >=0 and $picks<scalar(@$array);
+
+    my ($i, $j) = (scalar(@$array),undef);
+    while (--$i >= scalar(@$array) - $picks) {
+	$j=$rng->rand ($i + 1); # random int from [0,$i]
+	# next if $i==$j;       # don't swap element with itself
+	@$array[$i,$j]=@$array[$j,$i]
+    }
+
+    # Return the last $picks elements from the end of the array
+    splice @$array, 0, scalar @$array - $picks;
+}
+
+# used by generate_selection below. Go through odd elements in the
+# list and replace them with values from the database
+sub populate_selections {
+    my $listref = shift;
+    my $i       = 0;
+    my $sentence;
+    while ($i < @$listref) {
+	if ($listref->[$i+1] eq "2k") {
+	    $sentence = CoreVocab::Core2k->retrieve($listref->[$i])->main_sentence_id;
+	} elsif ($listref->[$i+1] eq "6k") {
+	    $sentence = CoreVocab::Sentence->retrieve($listref->[$i]);
+	} else { die }
+	$listref->[$i+1] = $sentence; # might as well just pass this object?
+    } continue {
+	$i += 2;
+    }
+
+}
+
+# Look up the test record in the db and return something suitable for
+# a testing window to work with (so it doesn't have to do DB lookups
+# itself)
+sub generate_selection {
+    my $self = shift;
+    my $id   = shift or die; 	# look up in database
+
+    # Get the ID from the database
+    my $ent = CoreTracking::Seed->retrieve($id);
+
+    my $selections;
+
+    if ($ent->type      eq "test2k") {
+	$selections = [ map { $_, "2k" } 1..$ent->items ];	
+    } elsif ($ent->type eq "test6k") {
+	$selections = [ map { $_, "6k" } 1 ..$ent->items ];	
+    } elsif ($ent->type eq "core2k") {
+	my $picks = fisher_yates_shuffle([1 .. 2000], $self->rng, $ent->items);
+	$selections = [ map { ($picks->[$_], "2k") } 0 .. scalar (@$picks) - 1 ];	
+    } elsif ($ent->type eq "core6k") {
+	my $nsentences = 0 + CoreVocab::Sentence->retrieve_all;
+	my $picks = fisher_yates_shuffle([1 .. $nsentences], $self->rng, $ent->items);
+	$selections = [ map { ($picks->[$_], "6k") } 0 .. scalar (@$picks) - 1 ];	
+    } else { die }
+
+    populate_selections($selections);
+
+}
+
 1;
 
 
@@ -223,6 +293,7 @@ sub create_context {
     return $context;
 }
 
+# A list of available tests
 sub build_test_list {
     return Gtk2::Ex::FormFactory::List->new (
 	name    => "test_list",
@@ -234,6 +305,12 @@ sub build_test_list {
 	expand_h => 1,
 	selection_mode     => "single",
 	);
+}
+
+# Testing of a single test selection
+sub build_test_window {
+
+
 }
 
 sub build_main_window {
