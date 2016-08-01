@@ -20,7 +20,7 @@ var wait_timer;
 function init() {
   audio     = document.getElementById("audio");
   trackno   = 0;
-  len       = playlist.length - 1;
+  len       = playlist.length;
 
   // Can't use the following to introduce a delay because the timeout
   // is created at the time this statement is executed rather than
@@ -37,10 +37,7 @@ function init() {
   //  };
 
   // Instead use addEventListener
-  audio.addEventListener("ended", function() {
-      console.log("In onended callback"); 
-      after(); 
-  });
+  audio.addEventListener("ended", after);
 
 
   load_audio(audio, trackno);  
@@ -54,16 +51,18 @@ function after() {
 }
 function advance() {
   console.log ("Got to advance()");
-  trackno++;
-  if (trackno == len) {
-      trackno = 0;
+  // remove event listener (we'll add later if needed)
+  audio.removeEventListener("ended",after);
+  trackno = (trackno + 1) % len;
+  if (trackno == 0) {
       if (!loop) {
+         console.log("Rolled over, but not looping");
          return;
       }
   }
   load_audio(audio, trackno);
-  // No need to re-add
-  //  audio.onended = function() { after; };
+  // add event listener back in
+  audio.addEventListener("ended", after);
   audio.play();
 }
 function play() {
@@ -161,6 +160,7 @@ sub build_html {
     $html.="var audio;\n";
     $html.="var trackno   = 0;\n";
     $html.="var playlist  = [ $js_playlist ];\n";
+    $html.="var len;\n";
     $html.="var auto_play = $auto_play;\n";
     $html.="var loop      = $loop;\n";
     $html.="var delay     = $delay;\n";

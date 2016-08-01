@@ -21,10 +21,10 @@ my $ff = Gtk2::Ex::FormFactory->new(
 	    quit_on_close => 1,
 	    content => [
 		Gtk2::Ex::FormFactory::AudioPlayer->new(
-		    track_delay_ms => 200,
+		    track_delay_ms => 100,
 		    auto_play      => 1,
 		    uri_base       => 'file:///home/dec/JLPT_Study/',
-		    playlist       => ['JW03182A.mp3','JW03182A.mp3'],
+		    playlist       => ['JW03182A.mp3','2lck24b1d1lv4.mp3'],
 		    allow_file_uri => 1,
 		    loop => 1,
 		),
