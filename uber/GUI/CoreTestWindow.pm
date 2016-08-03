@@ -17,6 +17,21 @@ sub set_form_factory            { shift->{form_factory}         = $_[1] }
 sub get_selected_test_id        { shift->{selected_test_id}             }
 sub set_selected_test_id        { shift->{selected_test_id}     = $_[1] }
 
+sub get_answer_visibility       { shift->{answer_visibility}            }
+sub set_answer_visibility       { shift->{answer_visibility}    = $_[1] }
+sub get_test_description        { shift->{test_description}             }
+sub set_test_description        { shift->{test_description}     = $_[1] }
+sub get_progress_text           { shift->{progress_text}                }
+sub set_progress_text           { shift->{progress_text}        = $_[1] }
+sub get_challenge_text          { shift->{challenge_text}               }
+sub set_challenge_text          { shift->{challenge_text}       = $_[1] }
+sub get_answer_text             { shift->{answer_text}                  }
+sub set_answer_text             { shift->{answer_text}          = $_[1] }
+sub get_explain_button_text     { shift->{explain_button_text}          }
+sub set_explain_button_text     { shift->{explain_button_text}  = $_[1] }
+
+
+
 # Organise things a little differently from CoreTestList.pm. We won't
 # create a context, for a start. Instead, we'll take an existing one,
 # store it and (if needed) register our own attributes or whatever
@@ -33,14 +48,30 @@ sub new {
 	@_,	
 	);
 
+    $id = 1;
+    
     my $self = {
 	test_id   => undef,
 	context   => $o{context},
 	ff        => undef,
 	toplevel  => $o{toplevel},
+	# set unique object name based on ID
+	name      => "core_test_window_$id",
     };
-    
+
     bless $self, $class;
+    
+    # Set up some default (mostly dummy) values for Label widgets
+    $self->set_answer_visibility       (0); # 'invisible');
+    $self->set_test_description        ("Describe the Test");
+    $self->set_progress_text           ("Completed X of Y");
+    $self->set_challenge_text          ("Either listen -> write or read -> understand");
+    $self->set_answer_text             ("This is where the answer goes");
+    $self->set_explain_button_text     ("Did you get the following questions right?");
+
+    warn "Answer visibility is " . $self->get_answer_visibility . "\n";
+    
+    $self;
 }
 
 
@@ -48,6 +79,16 @@ sub build {
 
     my $self    = shift;
     my $context = $self->{context};
+    my $name    = $self->{name};
+
+    $context->add_object(
+	name   => $name,
+	object => $self,
+	attr_depends_href => {
+	    answer_text => ["answer_visibility", ],
+	},
+	);
+
     $self->{ff} = my $ff = Gtk2::Ex::FormFactory->new (
 	context => $context,
 	content => [
@@ -72,13 +113,15 @@ sub build {
 
 sub build_table {
 
-    my $self = shift;
-    my $parent = $self->{win};
-    
+    my $self     = shift;
+    my $parent   = $self->{win};
+    my $name     = $self->{name};
+    my $context  = $self->{context};
+
     my $ff = Gtk2::Ex::FormFactory::Table->new(
 	title  => "Core Vocabulary Tester",
 	expand => 1,
-	layout => <<'END_TABLE', # must use camel case
+	layout => <<'END_TABLE', # must use camel case within (no _)
 +>>>>>>>>>>>>>>>+---------------]-+
 | Description   |          XofY   |
 |               |                 |
@@ -108,39 +151,50 @@ sub build_table {
 +---------------------------------+
 END_TABLE
 	content => [
-	    Gtk2::Ex::FormFactory::Label->new(label => "Describe the Test"),
-	    Gtk2::Ex::FormFactory::Label->new(label => "Completed X of Y"),
+	    Gtk2::Ex::FormFactory::Label->new(
+		attr   => "$name.test_description",
+	    ),
+	    Gtk2::Ex::FormFactory::Label->new(
+		attr  => "$name.progress_text",
+	    ),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Space after description"),
 	    Gtk2::Ex::FormFactory::Label->new(
-		label => "Either listen -> write or read -> understand"),
+		attr   => "$name.challenge_text",
+	    ),
 	    Gtk2::Ex::FormFactory::Button->new(
 		stock          => "gtk-media-play",
 		label          => "",
-		clicked_hook   => sub {},
+		clicked_hook   => sub {$self->play_pause },
 	    ),
-	    Gtk2::Ex::FormFactory::AudioPlayer->new(
+	    my $audio = Gtk2::Ex::FormFactory::AudioPlayer->new(
 		# Might as well extend AudioPlayer to optionally
 		# display text as well. Need more code here to send
 		# either audio playlist or kanji text, depending on mode
 		),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Correct Answers"),
 	    Gtk2::Ex::FormFactory::Label->new(
-		label => "This is where the answer goes"),
+		attr  => "$name.answer_text",
+		inactive => 'invisible',
+		# The below doesn't work so I have to use active_cond instead
+		# active_depends => "$name.answer_visibility",
+		active_cond => sub { $self->get_answer_visibility },
+	    ),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Your Answers"),
 	    Gtk2::Ex::FormFactory::Label->new(
-		label => "Did you get the following questions right?"
+		attr  => "$name.explain_button_text",
 	    ),
 	    Gtk2::Ex::FormFactory::Label->new(
-		label => "This will be another box with questions and buttons/checkboxes"
+		label => "This will be another box\nwith questions and\nbuttons/checkboxes"
 	    ),
 	    Gtk2::Ex::FormFactory::Button->new(
 		label          => "Show Answer/Next Question",
-		clicked_hook   => sub {},
+		clicked_hook   => sub { $self->{answer_visibility} ^=1; $context->update_object_attr_widgets ($self->{name}, "answer_visibility"); $self->next_button },
 	    ),
 #	    Gtk2::Ex::FormFactory::Label->new(label => "extra widget"),
 	],
 	);
 
+    $self->{audio} = $audio;
     $parent->add_child_widget($ff);
 
 }
