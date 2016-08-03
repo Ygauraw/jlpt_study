@@ -9,14 +9,10 @@
 # Net::OnlineCode::RNG for replayable random selections
 #
 
-BEGIN {
-    # I should probably figure out why I need to do this
-    push @INC, "/usr/local/lib/x86_64-linux-gnu/perl/5.20.2/";
-}
-
 # I happened to have this RNG lying around; I'll use it to generate
 # sample tests and save the seed for replaying at a later time.
-use Net::OnlineCode::RNG;
+use Util::RNG;
+use Util::Shuffle;
 
 use strict;
 use warnings;
@@ -27,9 +23,8 @@ binmode STDIN,  ":utf8";
 
 use Data::Dump qw(dump dumpf pp);
 
-require 'core_vocab_model.pm';
-require 'core_tracking_model.pm';
-
+use Model::CoreVocab;
+use Model::CoreTracking;
 
 # test out Class::DBI stuff
 my $core2k = CoreVocab::Core2k->retrieve(1);
@@ -125,7 +120,7 @@ BEGIN {
 sub new {
     my $class = shift;
     my $self = {
-	rng => Net::OnlineCode::RNG->new,
+	rng => Util::RNG->new,
     };
     return bless $self, $class;
 }
@@ -192,28 +187,6 @@ sub delete_item {
     CoreTracking::Seed->search(epoch_time_created => $id)->delete;    
 }
 
-
-sub fisher_yates_shuffle {	# (loosely) based on recipe 4.18 from
-				# the Perl Cookbook
-    my $array = shift;		# let next die catch missing array
-    my $rng   = shift or die;
-    # Change recipe to allow picking a certain number of elements
-    my $picks = shift;		# allow it to be undef, as seen below
-
-    $picks=scalar(@$array) unless
-	defined($picks) and $picks >=0 and $picks<scalar(@$array);
-
-    my ($i, $j) = (scalar(@$array),undef);
-    while (--$i >= scalar(@$array) - $picks) {
-	$j=$rng->rand ($i + 1); # random int from [0,$i]
-	# next if $i==$j;       # don't swap element with itself
-	@$array[$i,$j]=@$array[$j,$i]
-    }
-
-    # Return the last $picks elements from the end of the array
-    splice @$array, 0, scalar @$array - $picks;
-}
-
 # used by generate_selection below. Go through odd elements in the
 # list and replace them with values from the database
 sub populate_selections {
@@ -274,6 +247,10 @@ sub get_form_factory            { shift->{form_factory}                 }
 sub set_context                 { shift->{context}              = $_[1] }
 sub set_form_factory            { shift->{form_factory}         = $_[1] }
 
+sub get_selected_test_id        { shift->{selected_test_id}             }
+sub set_selected_test_id        { shift->{selected_test_id}     = $_[1] }
+
+
 
 sub new {
     my $class = shift;
@@ -290,6 +267,11 @@ sub create_context {
 	object => TestList->new,
 	);
 
+    $context -> add_object(
+	name   => "gui",
+	object => $self,
+	);
+
     return $context;
 }
 
@@ -304,6 +286,11 @@ sub build_test_list {
 	height  => 400,
 	expand_h => 1,
 	selection_mode     => "single",
+	attr_select        => "gui.selected_test_id",
+	attr_select_column => 0,
+	signal_connect_after => {
+	    row_activated => sub { warn "Row was activated\n"; }, 
+	},
 	);
 }
 
@@ -343,7 +330,18 @@ sub build_main_window {
 					);
 				    $context->update_object_widgets("tests");
 				}
-			    )
+			    ),			    Gtk2::Ex::FormFactory::Button->new(
+				label => 'Run test',
+				clicked_hook => sub {
+				    my $test_list = $context->get_object("tests");
+				    $test_list -> new_item(
+					mode => "kanji",
+					type => "test2k",
+					items => 20,
+					);
+				    $context->update_object_widgets("tests");
+				}
+			    ),
 			],
 		    ),
 		],
