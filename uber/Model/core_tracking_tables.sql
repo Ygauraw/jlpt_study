@@ -55,7 +55,8 @@ create table core_test_summary (
     -- The primary key below is just a string containing the two epoch
     -- times + mode that follow. This synthetic key makes it easier to
     -- map out relationships between the summary and detail tables
-    -- with Class::DBI
+    -- with Class::DBI, since it doesn't seem to support composite
+    -- primary keys in the has_a function.
     id                        TEXT PRIMARY KEY,
     epoch_time_created        INTEGER NOT NULL, -- must match a seed
     epoch_time_start_test     INTEGER NOT NULL, -- when test started
@@ -76,7 +77,7 @@ create table core_test_summary (
     correct_voc_write  INTEGER  -- were you able to write the vocab?
     correct_sen_know   INTEGER, -- did you understand the full sentence in English?
     correct_sen_read   INTEGER  -- were you able to read the full sentence?
-    correct_sen_write  INTEGER  -- were you able to write the full sentence?
+    correct_sen_write  INTEGER -- were you able to write the full sentence?
 
     -- Depending on the challenge modes, either the *_read/_write
     -- fields above may be ignored (both in the UI and in tallying):
@@ -103,11 +104,15 @@ create table core_test_summary (
 
     -- estimate of %vocab known out of the full 2k/6k (and margin of
     -- error) can be calculated using just the above information.
+
+    --  , PRIMARY KEY (epoch_time_created, epoch_time_start_test)
+
 );
 
 drop table core_test_details;
 create table core_test_details (
-    -- synthetic foreign key id matches core_test_summary
+    -- synthetic foreign key id (composed of next two items) matches
+    -- core_test_summary
     id                        TEXT,             -- not unique
     -- composite primary key must match _summary table
     epoch_time_created        INTEGER NOT NULL, -- foreign: match a seed 
@@ -131,7 +136,9 @@ create table core_test_details (
     correct_sen_read   INTEGER  -- were you able to read the full sentence?
     correct_sen_write  INTEGER  -- were you able to write the full sentence?
 
+    -- , PRIMARY KEY (epoch_time_created, epoch_time_start_test)
 );
+
 
 -- Since I'm going to allow re-testing with previously-used seeds, I
 -- don't want re-testing to skew the historical data. Therefore, the
