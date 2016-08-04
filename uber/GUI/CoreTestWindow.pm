@@ -2,6 +2,9 @@ package GUI::CoreTestWindow;
 
 # GUI element to give a test on selected core vocabulary
 
+use strict;
+use warnings;
+
 use Model::CoreTestList;
 
 use Gtk2::Ex::FormFactory;
@@ -48,7 +51,7 @@ sub new {
 	@_,	
 	);
 
-    $id = 1;
+    my $id = $o{id} = 1;
     
     my $self = {
 	test_id   => undef,
@@ -118,6 +121,8 @@ sub build_table {
     my $name     = $self->{name};
     my $context  = $self->{context};
 
+    my ($hbox, $answer);	# closure magic
+    
     my $ff = Gtk2::Ex::FormFactory::Table->new(
 	title  => "Core Vocabulary Tester",
 	expand => 1,
@@ -134,11 +139,14 @@ sub build_table {
 ^ Challenge          |            |
 |                    |            |
 +->------------------+------------+
-' HSeparator                      |
+| HSeparator                      |
++->----+[-------------------------+
+|      |                          |
+'      '                          |
+|Answer| Align                    |
+|      |                          |
+|      |                          |
 +---------------------------------+
-^ Answer                          |
-|                                 |
-+->-------------------------------+
 ' HSeparator                      |
 +---------------------------------+
 '                                 |
@@ -172,12 +180,23 @@ END_TABLE
 		# either audio playlist or kanji text, depending on mode
 		),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Correct Answers"),
-	    Gtk2::Ex::FormFactory::Label->new(
+	    # I can't get an "invisible" answer text to work within a
+	    # container so I'm making two containers above and beside
+	    # it and giving them a fixed size to prevent the whole
+	    # widget from resizing when I hide/show the answer text.
+#	    Gtk2::Ex::FormFactory::HBox->new(#
+#		width => 400,
+#	    ),
+	    $answer = Gtk2::Ex::FormFactory::Label->new(
 		attr  => "$name.answer_text",
 		inactive => 'invisible',
 		# The below doesn't work so I have to use active_cond instead
-		# active_depends => "$name.answer_visibility",
+		#active_depends => "$name.answer_visibility",
 		active_cond => sub { $self->get_answer_visibility },
+	    ),
+	    Gtk2::Ex::FormFactory::HBox->new(
+		height => 100,
+		width  => 1
 	    ),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Your Answers"),
 	    Gtk2::Ex::FormFactory::Label->new(
@@ -188,7 +207,13 @@ END_TABLE
 	    ),
 	    Gtk2::Ex::FormFactory::Button->new(
 		label          => "Show Answer/Next Question",
-		clicked_hook   => sub { $self->{answer_visibility} ^=1; $context->update_object_attr_widgets ($self->{name}, "answer_visibility"); $self->next_button },
+		clicked_hook   => sub {
+		    $self->{answer_visibility} ^=1;
+#		    $hbox->update_all;
+		    $answer->update;
+#		    $context->update_object_attr_widgets ($self->{name}, "answer_text");
+		    $self->next_button 
+		},
 	    ),
 #	    Gtk2::Ex::FormFactory::Label->new(label => "extra widget"),
 	],
