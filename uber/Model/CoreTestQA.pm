@@ -11,23 +11,37 @@ use Util::Shuffle;
 
 our $pkg = __PACKAGE__;
 
-# Reuse valid types, modes from CoreTestList
-our %valid_types;		# apparently if you use require
-our %valid_modes;		# instead of use, these won't get
-				# initialised unless we use BEGIN {}
-BEGIN {				
-  %valid_types = (		# test types
-      'core2k' => undef,
-      'core6k' => undef,
-      'test2k' => undef,
-      'test6k' => undef,
-      );
-  %valid_modes = (		# challenge modes
-      'sound'  => undef,
-      'kanji'  => undef,
-#      'both'   => undef,
-      );
+# use autoload feature to provide simple get_* accessors
+#use vars qw(%auto_attr $AUTOLOAD);
+our $AUTOLOAD;
+our %auto_attr = 
+    map { ("get_$_" => undef) } 
+    qw(creation_id test_rec_id rng challenge_mode
+       test_set items_total items_tested seed
+       vocab_pop sentence_pop);
+    
+sub AUTOLOAD {
+    my $self = shift;
+    my $attr = $AUTOLOAD;
+    $attr =~ s/^.*:://;
+    croak "Method $attr can't be autoloaded" 
+	unless exists $auto_attr{$attr};
+    $self->{$attr};
 }
+
+# Reuse valid types, modes from CoreTestList
+our %valid_types = (
+    'core2k' => undef,
+    'core6k' => undef,
+    'test2k' => undef,
+    'test6k' => undef,
+    );
+our %valid_modes = (
+    'sound'  => undef,
+    'kanji'  => undef,
+    #      'both'   => undef,
+    );
+
 
 sub new {
     my $class = shift;
@@ -39,6 +53,12 @@ sub new {
 	@_
 	);
 
+    # Both parameters below are mandatory
+    unless (defined($o{creation_id}) and defined($o{test_rec_id})) {
+	carp "$pkg->new requires both creation_id and test_rec_id args";
+	return undef;
+    }
+    
     my $self = {
 	creation_id    => $o{creation_id},
 	test_rec_id    => $o{test_rec_id},
@@ -48,8 +68,8 @@ sub new {
 	test_set       => undef, # "core[26]k" or "test[26]k"
 	items_total    => undef,
 	items_tested   => undef,
-	questions      => undef,
-	answers        => undef,
+	questions      => [],
+	answers        => [],
 	# The following three need to be taken together to ensure that
 	# the same random selection is generated each time
 	seed           => undef,
@@ -58,14 +78,16 @@ sub new {
     };
     bless $self, $class;
 
-    # load in stuff from database
-    $self->read_test_record;
+    # load summary information from database
+    $self->read_test_summary;
 
     # Validate retrieved data
     croak "Invalid mode $o{mode}" unless exists $valid_modes{$o{mode}};
     croak "Invalid type $o{type}" unless exists $valid_types{$o{type}};
 
+    # Next we need to actually (re)create the list of test items
 
+    
     # The following is subject to change (requires schema changes)
     my ($sound_items, $kanji_items);
     if ($o{mode} eq "both") {
@@ -76,6 +98,11 @@ sub new {
 	($sound_items, $kanji_items) = (0,$o{items});
     }
 
+
+    # Then we update the test details based on any previous answers
+    # stored in the database (so we don't ask them again)
+
+    
     # read in stuff from the database
     $o{seed} = $self->{rng}->seed_random unless defined $o{seed};
     
@@ -86,12 +113,15 @@ sub new {
 
 }
 
-sub read_test_record {
+sub read_test_summary {
     my $self = shift;
 
+    # Have to create a synthetic composite key
+    my $summary_id  = "$self->{creation_id}/$self->{test_rec_id}";
+    
     my $test_summary =
-	CoreTracking::TestSummary->retrieve($self->{creation_id})
-	or croak "Didn't find a database index for $self->{creation_id}";
+	CoreTracking::TestSummary->retrieve($self->{summary_id})
+	or croak "Didn't find a database index for $summary_id";
 
     # The following relate to the test in the abstract
     $self->{challenge_mode} = $test_summary->mode;
@@ -101,7 +131,6 @@ sub read_test_record {
     $self->{vocab_pop}      = $test_summary->vocab_count;
     $self->{sentence_pop}   = $test_summary->sentence_count;
 
-    # And the following relate to a particular sitting of the test
     my $test_sitting = CoreTracking::TestDetail->retrieve
 	({
 	    epoch_time_created    => $self->{creation_id},

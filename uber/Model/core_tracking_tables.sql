@@ -53,10 +53,10 @@ create table core_test_seeds (
 drop table core_test_summary;
 create table core_test_summary (
     -- The primary key below is just a string containing the two epoch
-    -- times + mode that follow. This synthetic key makes it easier to
-    -- map out relationships between the summary and detail tables
-    -- with Class::DBI, since it doesn't seem to support composite
-    -- primary keys in the has_a function.
+    -- times that follow. This synthetic key makes it easier to map
+    -- out relationships between the summary and detail tables with
+    -- Class::DBI, since it doesn't seem to support composite primary
+    -- keys in the has_a function.
     id                        TEXT PRIMARY KEY,
     epoch_time_created        INTEGER NOT NULL, -- must match a seed
     epoch_time_start_test     INTEGER NOT NULL, -- when test started
@@ -73,11 +73,11 @@ create table core_test_summary (
     -- will be asked to answer four questions selected from below. The
     -- following tally up the "yes" answers to each question type:
     correct_voc_know   INTEGER, -- did you understand the vocab in English?
-    correct_voc_read   INTEGER  -- were you able to read the vocab?
-    correct_voc_write  INTEGER  -- were you able to write the vocab?
+    correct_voc_read   INTEGER, -- were you able to read the vocab?
+    correct_voc_write  INTEGER, -- were you able to write the vocab?
     correct_sen_know   INTEGER, -- did you understand the full sentence in English?
-    correct_sen_read   INTEGER  -- were you able to read the full sentence?
-    correct_sen_write  INTEGER -- were you able to write the full sentence?
+    correct_sen_read   INTEGER, -- were you able to read the full sentence?
+    correct_sen_write  INTEGER  -- were you able to write the full sentence?
 
     -- Depending on the challenge modes, either the *_read/_write
     -- fields above may be ignored (both in the UI and in tallying):

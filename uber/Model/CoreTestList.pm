@@ -46,7 +46,7 @@ BEGIN {
   %valid_modes = (		# challenge modes
       'sound'  => undef,
       'kanji'  => undef,
-      'both'   => undef,
+#      'both'   => undef,
       );
 }
 
@@ -110,7 +110,26 @@ sub new_item {
 	    sentence_count      => $sentence_count,
 	}
 	);
-    # $entry->update;      # auto-update when $entry goes out of scope?
+    $entry->update;      # auto-update when $entry goes out of scope?
+
+    my $summary = CoreTracking::TestSummary->insert(
+	{
+	    id                    => "$now/$now",
+	    epoch_time_created    => $now,
+	    epoch_time_start_test => $now,
+	    mode                  => $o{mode},
+	    # end of key fields
+
+	    items_tested          => 0,
+	    correct_voc_know      => 0,
+	    correct_voc_read      => 0,
+	    correct_voc_write     => 0,
+	    correct_sen_know      => 0,
+	    correct_sen_read      => 0,
+	    correct_sen_write     => 0,
+	}
+	);
+
 }
 
 sub delete_item {
