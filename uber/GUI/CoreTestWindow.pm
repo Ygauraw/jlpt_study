@@ -45,7 +45,7 @@ sub new {
     my $class = shift;
     my %o = (
 	id         => undef,	# required, used to suffix object name
-	model_obj  => undef,	# object containing the test data
+	model_obj  => undef,	# object containing the test questions/answers
 	context    => undef,	# probably required
 	toplevel   => 1,	# when set, quit when window closed
 	@_,	
@@ -140,13 +140,13 @@ sub build_table {
 |                    |            |
 +->------------------+------------+
 | HSeparator                      |
-+->----+[-------------------------+
-|      |                          |
-'      '                          |
-|Answer| Align                    |
-|      |                          |
-|      |                          |
-+---------------------------------+
++->---------+[--------------------+
+|           |                     |
+'           '                     |
+|Answer     | Align               |
+|           |                     |
+|           |                     |
++-----------+---------------------+
 ' HSeparator                      |
 +---------------------------------+
 '                                 |
@@ -158,6 +158,7 @@ sub build_table {
 |        AnswerNextButton         |
 +---------------------------------+
 END_TABLE
+# '
 	content => [
 	    Gtk2::Ex::FormFactory::Label->new(
 		attr   => "$name.test_description",
@@ -181,12 +182,9 @@ END_TABLE
 		),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Correct Answers"),
 	    # I can't get an "invisible" answer text to work within a
-	    # container so I'm making two containers above and beside
-	    # it and giving them a fixed size to prevent the whole
-	    # widget from resizing when I hide/show the answer text.
-#	    Gtk2::Ex::FormFactory::HBox->new(#
-#		width => 400,
-#	    ),
+	    # container so I'm making an alignment container beside it
+	    # and giving it a fixed size to prevent the whole widget
+	    # from resizing when I hide/show the answer text.
 	    $answer = Gtk2::Ex::FormFactory::Label->new(
 		attr  => "$name.answer_text",
 		inactive => 'invisible',
@@ -194,7 +192,7 @@ END_TABLE
 		#active_depends => "$name.answer_visibility",
 		active_cond => sub { $self->get_answer_visibility },
 	    ),
-	    Gtk2::Ex::FormFactory::HBox->new(
+	    Gtk2::Ex::FormFactory::HBox->new( # alignment container
 		height => 100,
 		width  => 1
 	    ),
@@ -209,9 +207,9 @@ END_TABLE
 		label          => "Show Answer/Next Question",
 		clicked_hook   => sub {
 		    $self->{answer_visibility} ^=1;
-#		    $hbox->update_all;
 		    $answer->update;
-#		    $context->update_object_attr_widgets ($self->{name}, "answer_text");
+		    # without using closure object above:
+		    # $context->update_object_attr_widgets ($self->{name}, "answer_text");
 		    $self->next_button 
 		},
 	    ),
