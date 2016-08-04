@@ -57,9 +57,10 @@ package CoreTracking::TestSummary;
 use base CoreTracking::DBI;
 CoreTracking::TestSummary->table('core_test_summary');
 CoreTracking::TestSummary->columns(
-    All => qw/id epoch_time_created epoch_time_start_test mode items_tested
-              correct_voc_know correct_voc_read correct_voc_write
-              correct_sen_know correct_sen_read correct_sen_write/);
+    All   => qw/id epoch_time_created epoch_time_start_test
+                mode items_tested correct_voc_know correct_voc_read
+                correct_voc_write correct_sen_know correct_sen_read
+                correct_sen_write/);
 
 CoreTracking::TestSummary->has_many(details => 'CoreTracking::TestDetail');
 
