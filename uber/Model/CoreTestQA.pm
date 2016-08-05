@@ -193,30 +193,40 @@ sub populate_2k_entries {
     }
 }
 
-# 6k is similar to 2k but we have different tables to search,
-# naturally, but we may also have to select between several possible
+# 6k is similar to 2k. We have different tables to search, naturally,
+# but we may also have to select between several possible
 # sentences. Keep using the original RNG for repeatable results.
 sub populate_6k_entries {
     my $self    = shift;
     my $listref = shift;
     my $core6k;
-    my $rng;
+    my $rng     = $self->get_rng;
 
+    #warn "got here, doing 6k pop\n";
+    
     foreach (@$listref) {	# do in-place replacement of elements
 	next unless defined;
 	my $replacement = {};
+	#warn "doing individual 6k replacement\n";
 	$core6k = CoreVocab::Core6k->retrieve($_);
 	$replacement->{core_index}  = $_; # original core6k index
 	$replacement->{vocab_kanji} = $core6k->ja_vocab;
 	$replacement->{vocab_kana}  = $core6k->ja_vocab_kana;
 	$replacement->{vocab_en}    = $core6k->en_vocab;
-	$replacement->{sentence_id} = $core6k->main_sentence_id;
-	# warn $replacement->{sentence_id}; # checking that prints as int
-	# Create a playlist with the sound for this vocab element
+
+	# $_ should also index directly into vocabulary table
 	$replacement->{playlist} = [
-	    $core6k->vocab_id->sound_id->local_filename,
+	    CoreVocab::Vocab->retrieve($_)->sound_id->local_filename,
 	    ];
 	$_ = $replacement;
+
+	# Pick one of the sample sentences 
+	my $sentences = [$core6k->sentences];
+	#warn "We got " . (0 + @$sentences) . " sentences for this vocab\n";
+	my $selected_sentence = 
+	    shift [fisher_yates_shuffle($sentences, $rng, 1)];
+	$replacement->{sentence_id} = $selected_sentence->sentence_id;
+        warn $replacement->{sentence_id}; # checking that prints as int
     }
 }
 
@@ -247,13 +257,14 @@ sub generate_selection {
 	$selections = [ 1..$items ];
 	$self->populate_2k_entries($selections);
     } elsif ($test_set eq "test6k") {
+	$selections = [ 1..$items ];
 	$self->populate_6k_entries($selections);
 	$selections = [ 1 .. $items ];
     } elsif ($test_set eq "core2k") {
-	$selections = fisher_yates_shuffle([1 .. 2000], $rng, $items);
+	$selections = [fisher_yates_shuffle([1 .. 2000], $rng, $items)];
 	$self->populate_2k_entries($selections);
     } elsif ($test_set eq "core6k") {
-	$selections = fisher_yates_shuffle([1 .. 6000], $rng, $items);
+	$selections = [fisher_yates_shuffle([1 .. 6000], $rng, $items)];
 	$self->populate_6k_entries($selections);
     } else { die }
 
