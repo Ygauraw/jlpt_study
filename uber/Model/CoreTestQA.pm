@@ -221,10 +221,8 @@ sub populate_6k_entries {
 	$_ = $replacement;
 
 	# Pick one of the sample sentences 
-	my $sentences = [$core6k->sentences];
 	#warn "We got " . (0 + @$sentences) . " sentences for this vocab\n";
-	my $selected_sentence = 
-	    shift [fisher_yates_shuffle($sentences, $rng, 1)];
+	my ($selected_sentence) = fisher_yates_shuffle([$core6k->sentences], $rng, 1);
 	$replacement->{sentence_id} = $selected_sentence->sentence_id;
         warn $replacement->{sentence_id}; # checking that prints as int
     }
@@ -261,10 +259,12 @@ sub generate_selection {
 	$self->populate_6k_entries($selections);
 	$selections = [ 1 .. $items ];
     } elsif ($test_set eq "core2k") {
-	$selections = [fisher_yates_shuffle([1 .. 2000], $rng, $items)];
+	$selections = [1 .. 2000];
+	fisher_yates_shuffle($selections, $rng, $items);
 	$self->populate_2k_entries($selections);
     } elsif ($test_set eq "core6k") {
-	$selections = [fisher_yates_shuffle([1 .. 6000], $rng, $items)];
+	$selections = [1 .. 6000];
+	fisher_yates_shuffle($selections, $rng, $items);
 	$self->populate_6k_entries($selections);
     } else { die }
 

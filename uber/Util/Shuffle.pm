@@ -27,7 +27,13 @@ sub fisher_yates_shuffle {	# (loosely) based on recipe 4.18 from
 	@$array[$i,$j]=@$array[$j,$i]
     }
 
-    # Return the last $picks elements from the end of the array
-    return splice @$array, -$picks;
+    # remove the first elements, leaving only the last $picks elements
+    splice @$array, 0, scalar(@$array) -$picks;
+    warn "fisher returning " . scalar(@$array) . " items";
+    if (wantarray) {
+	return @$array;
+    } else {
+	return $array;
+    }
 }
 
