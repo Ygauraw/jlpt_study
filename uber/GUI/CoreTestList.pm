@@ -80,7 +80,7 @@ sub build_main_window {
 			content => [
 			    build_test_list,
 			    Gtk2::Ex::FormFactory::Button->new(
-				label => 'Add test',
+				label => 'Add kanji 2k test',
 				clicked_hook => sub {
 				    my $test_list = $context->get_object("tests");
 				    $test_list -> new_item(
@@ -90,13 +90,86 @@ sub build_main_window {
 					);
 				    $context->update_object_widgets("tests");
 				}
-			    ),			    Gtk2::Ex::FormFactory::Button->new(
-				label => 'Run test',
+			    ),
+			    Gtk2::Ex::FormFactory::Button->new(
+				label => 'Add kanji 6k test',
 				clicked_hook => sub {
 				    my $test_list = $context->get_object("tests");
 				    $test_list -> new_item(
 					mode => "kanji",
+					type => "test6k",
+					items => 20,
+					);
+				    $context->update_object_widgets("tests");
+				}
+			    ),
+			    Gtk2::Ex::FormFactory::Button->new(
+				label => 'Add kanji 2k random test',
+				clicked_hook => sub {
+				    my $test_list = $context->get_object("tests");
+				    $test_list -> new_item(
+					mode => "kanji",
+					type => "core2k",
+					items => 20,
+					);
+				    $context->update_object_widgets("tests");
+				}
+			    ),
+			    Gtk2::Ex::FormFactory::Button->new(
+				label => 'Add kanji 6k random test',
+				clicked_hook => sub {
+				    my $test_list = $context->get_object("tests");
+				    $test_list -> new_item(
+					mode => "kanji",
+					type => "core6k",
+					items => 20,
+					);
+				    $context->update_object_widgets("tests");
+				}
+			    ),
+			    Gtk2::Ex::FormFactory::Button->new(
+				label => 'Add sound 2k test',
+				clicked_hook => sub {
+				    my $test_list = $context->get_object("tests");
+				    $test_list -> new_item(
+					mode => "sound",
 					type => "test2k",
+					items => 20,
+					);
+				    $context->update_object_widgets("tests");
+				}
+			    ),
+			    Gtk2::Ex::FormFactory::Button->new(
+				label => 'Add sound 6k test',
+				clicked_hook => sub {
+				    my $test_list = $context->get_object("tests");
+				    $test_list -> new_item(
+					mode => "sound",
+					type => "test6k",
+					items => 20,
+					);
+				    $context->update_object_widgets("tests");
+				}
+			    ),
+			    Gtk2::Ex::FormFactory::Button->new(
+				label => 'Add sound 2k random test',
+				clicked_hook => sub {
+				    my $test_list = $context->get_object("tests");
+				    $test_list -> new_item(
+					mode => "sound",
+					type => "core2k",
+					items => 20,
+					);
+				    $context->update_object_widgets("tests");
+				}
+			    ),
+			    Gtk2::Ex::FormFactory::Button->new(
+				label => 'Add sound 6k random test',
+				clicked_hook => sub {
+				    my $test_list = $context->get_object("tests");
+				    $test_list -> new_item(
+					mode => "sound",
+					type => "core6k",
 					items => 20,
 					);
 				    $context->update_object_widgets("tests");

@@ -30,7 +30,8 @@ package CoreVocab::Sound;
 use base CoreVocab::DBI;
 
 CoreVocab::Sound->table('sounds');
-CoreVocab::Sound->columns(All => qw/id url type content_type local_filename audio/);
+CoreVocab::Sound->columns(Primary => qw/id/);
+CoreVocab::Sound->columns(Other   => qw/url type content_type local_filename audio/);
 
 #################
 package CoreVocab::Image;
@@ -44,7 +45,8 @@ package CoreVocab::Vocab;
 use base CoreVocab::DBI;
 
 CoreVocab::Vocab->table('vocabulary');
-CoreVocab::Vocab->columns(All => qw/id ja_text ja_kana ja_hira ja_romaji ja_alt
+CoreVocab::Vocab->columns(Primary => qw/id/);
+CoreVocab::Vocab->columns(Other => qw/ja_text ja_kana ja_hira ja_romaji ja_alt
     en_text en_text_2k en_text_6k pos core_2k_seq sound_id/);
 
 CoreVocab::Vocab->has_a(sound_id => 'CoreVocab::Sound');

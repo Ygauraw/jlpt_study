@@ -114,7 +114,7 @@ sub new_item {
 
     my $summary = CoreTracking::TestSummary->insert(
 	{
-	    id                    => "$now/$now",
+	    id                    => "${now}_$now",
 	    epoch_time_created    => $now,
 	    epoch_time_start_test => $now,
 	    mode                  => $o{mode},
