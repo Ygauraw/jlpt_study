@@ -28,6 +28,6 @@ sub fisher_yates_shuffle {	# (loosely) based on recipe 4.18 from
     }
 
     # Return the last $picks elements from the end of the array
-    splice @$array, 0, scalar @$array - $picks;
+    return splice @$array, -$picks;
 }
 
