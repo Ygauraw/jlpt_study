@@ -48,7 +48,8 @@ sub new {
 	model_obj  => undef,	# object containing the test questions/answers
 	context    => undef,	# probably required
 	toplevel   => 1,	# when set, quit when window closed
-	@_,	
+	reload     => 0,	# whether to add a reload button (for testing)
+	@_,
 	);
 
     my $id = $o{id} = 1;
@@ -58,6 +59,7 @@ sub new {
 	context   => $o{context},
 	ff        => undef,
 	toplevel  => $o{toplevel},
+	reload    => $o{reload},
 	# set unique object name based on ID
 	name      => "core_test_window_$id",
     };
@@ -103,12 +105,23 @@ sub build {
 		},
 		quit_on_close => $self->{toplevel},
 		content => [
+		    $self->{vbox} = Gtk2::Ex::FormFactory::VBox->new (expand=>1)
 		],
 	    )
 	]
 	);
 
     $self->build_table;
+
+    if ($self->{reload}) {
+	$self->{vbox}->add_child_widget(
+	    Gtk2::Ex::FormFactory::Button->new(
+		label => 'Reload Program',
+		clicked_hook => sub { exec $0, @ARGV or die },
+	    ),
+	)
+	    
+    }
     
     $ff->open;
     $ff->update;
@@ -117,7 +130,7 @@ sub build {
 sub build_table {
 
     my $self     = shift;
-    my $parent   = $self->{win};
+    my $parent   = $self->{vbox};
     my $name     = $self->{name};
     my $context  = $self->{context};
 
