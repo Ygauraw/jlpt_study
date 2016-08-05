@@ -176,18 +176,20 @@ sub populate_2k_entries {
     my $core2k;
     
     foreach (@$listref) {	# do in-place replacement of elements
-	next unless defined;
 	my $replacement = {};
 	$core2k = CoreVocab::Core2k->retrieve($_);
 	$replacement->{core_index}  = $_; # original core2k index
-	$replacement->{vocab_kanji} = $core2k->ja_vocab;
-	$replacement->{vocab_kana}  = $core2k->ja_vocab_kana;
-	$replacement->{vocab_en}    = $core2k->en_vocab;
+	$replacement->{core_list}   = 'core2k';
+	# Stringify the values below (actually Class::DBI objects)
+	# since we don't need to do queries on them any more
+	$replacement->{vocab_kanji} = "" . $core2k->ja_vocab;
+	$replacement->{vocab_kana}  = "" . $core2k->ja_vocab_kana;
+	$replacement->{vocab_en}    = "" . $core2k->en_vocab;
 	$replacement->{sentence_id} = $core2k->main_sentence_id;
-	# warn $replacement->{sentence_id}; # checking that prints as int
+
 	# Create a playlist with the sound for this vocab element
 	$replacement->{playlist} = [
-	    $core2k->vocab_id->sound_id->local_filename,
+	    $core2k->vocab_id->sound_id->local_filename . "",
 	    ];
 	$_ = $replacement;
     }
@@ -202,37 +204,56 @@ sub populate_6k_entries {
     my $core6k;
     my $rng     = $self->get_rng;
 
-    #warn "got here, doing 6k pop\n";
-    
-    foreach (@$listref) {	# do in-place replacement of elements
-	next unless defined;
+    foreach (@$listref) { # do in-place replacement of elements
 	my $replacement = {};
-	#warn "doing individual 6k replacement\n";
-	$core6k = CoreVocab::Core6k->retrieve($_);
+	$core6k = CoreVocab::Core6k->retrieve($_) or die;
 	$replacement->{core_index}  = $_; # original core6k index
-	$replacement->{vocab_kanji} = $core6k->ja_vocab;
-	$replacement->{vocab_kana}  = $core6k->ja_vocab_kana;
-	$replacement->{vocab_en}    = $core6k->en_vocab;
+	$replacement->{core_list}   = 'core6k';
+	$replacement->{vocab_kanji} = "" . $core6k->ja_vocab;
+	$replacement->{vocab_kana}  = "" . $core6k->ja_vocab_kana;
+	$replacement->{vocab_en}    = "" . $core6k->en_vocab;
 
 	# $_ should also index directly into vocabulary table
 	$replacement->{playlist} = [
-	    CoreVocab::Vocab->retrieve($_)->sound_id->local_filename,
+	    CoreVocab::Vocab->retrieve($_)->sound_id->local_filename . "",
 	    ];
-	$_ = $replacement;
-
 	# Pick one of the sample sentences 
-	#warn "We got " . (0 + @$sentences) . " sentences for this vocab\n";
-	my ($selected_sentence) = fisher_yates_shuffle([$core6k->sentences], $rng, 1);
-	$replacement->{sentence_id} = $selected_sentence->sentence_id;
-        warn $replacement->{sentence_id}; # checking that prints as int
+	my @sentence_choices = $core6k->sentences;
+	my @indices = (0..scalar(@sentence_choices) - 1);
+	my $pick = fisher_yates_shuffle(\@indices, $rng, 1)->[0];
+	my $selected_sentence = $sentence_choices[$pick]->sentence_id;
+	$replacement->{sentence_id} = $selected_sentence;
+	$_ = $replacement;
     }
 }
 
-# Called by the above routines once we have a sentence ID (and other
-# info)
+# Called once we have a sentence ID and other vocab info stored
 sub populate_sentence_details {
-    my $self = shift;
+    my $self       = shift;
+    my $selections = shift or die;
 
+    foreach my $sen (@$selections) {
+
+	# $selections is now a list of hashes
+	my $sid = $sen->{sentence_id} or die;
+
+	# $sid (sentence ID) is in fact a Class::DBI handle so it can be
+	# used for queries
+	$sen->{sentence_ja_text}     = "" . $sid->ja_text;
+	$sen->{sentence_ja_kana}     = "" . $sid->ja_kana;
+	# English translations can vary between core2k data sets
+	if      ($sen->{core_list} eq "core6k") {
+	    $sen->{sentence_en_text}     = "" . $sid->en_text_6k;
+	} elsif ($sen->{core_list} eq "core2k") {
+	    $sen->{sentence_en_text}     = "" . $sid->en_text_2k;
+	} else {die}
+
+	push @{$sen->{playlist}}, "" . $sid->sound_id->local_filename;
+
+	# Now that we've finished using the overloaded $sid, stringify
+	# it so that it isn't a database object any more
+	$sen->{sentence_id} = "$sid";
+    }
 }
 
 # Look up the test record in the db and return something suitable for
@@ -257,7 +278,6 @@ sub generate_selection {
     } elsif ($test_set eq "test6k") {
 	$selections = [ 1..$items ];
 	$self->populate_6k_entries($selections);
-	$selections = [ 1 .. $items ];
     } elsif ($test_set eq "core2k") {
 	$selections = [1 .. 2000];
 	fisher_yates_shuffle($selections, $rng, $items);
@@ -268,7 +288,7 @@ sub generate_selection {
 	$self->populate_6k_entries($selections);
     } else { die }
 
-    populate_sentence_details($selections);
+    $self->populate_sentence_details($selections);
 
     # Add a null element at the start (so indexing counts from 1) and
     # stash the resulting array
@@ -276,3 +296,4 @@ sub generate_selection {
     $self->{selections}=$selections;
 }
 
+1;
