@@ -19,9 +19,9 @@ our $pkg = __PACKAGE__;
 our $AUTOLOAD;
 our %auto_attr = 
     map { ($_ => undef) } 
-    qw(creation_id test_rec_id rng challenge_mode
-       test_set items_total items_tested seed
-       vocab_pop sentence_pop);
+    qw(summary_id creation_id test_rec_id rng challenge_mode
+       test_set items_total items_tested seed vocab_pop
+       sentence_pop);
     
 sub AUTOLOAD {
     my $self = shift;
@@ -64,7 +64,9 @@ sub new {
 	return undef;
     }
     
+    my $summary_id  = "$o{creation_id}_$o{test_rec_id}";
     my $self = {
+	summary_id     => $summary_id,
 	creation_id    => $o{creation_id},
 	test_rec_id    => $o{test_rec_id},
 	rng            => Util::RNG->new,
@@ -73,8 +75,6 @@ sub new {
 	test_set       => undef, # "core[26]k" or "test[26]k"
 	items_total    => undef,
 	items_tested   => undef,
-	questions      => [undef],
-	answers        => [undef],
 	# The following three need to be taken together to ensure that
 	# the same random selection is generated each time
 	seed           => undef,
@@ -96,8 +96,6 @@ sub new {
     croak "Invalid mode $o{mode}" unless exists $valid_modes{$self->{challenge_mode}};
     croak "Invalid type $o{type}" unless exists $valid_types{$self->{test_set}};
 
-    
-    
     # Next we need to actually (re)create the list of test items
     $self->generate_selection;
 
@@ -113,16 +111,10 @@ sub new {
 	($sound_items, $kanji_items) = (0,$self->{items_total});
     }
 
-
     # Then we update the test details based on any previous answers
     # stored in the database (so we don't ask them again)
-
+    $self->load_previous_answers;
     
-    # read in stuff from the database
-    
-    
-
-
     bless $self, $class;
 
 }
@@ -131,7 +123,7 @@ sub read_test_summary {
     my $self = shift;
 
     # Have to create a synthetic composite key
-    my $summary_id  = "$self->{creation_id}_$self->{test_rec_id}";
+    my $summary_id  = $self->get_summary_id;
     
     my $seed = CoreTracking::Seed->retrieve($self->{creation_id});
 
@@ -155,18 +147,6 @@ sub read_test_summary {
     
 }
 
-sub read_test_details {
-    my $self = shift;
-
-    my $summary = $self->{_summary}; # stashed DB accessor
-
-    # use DB's one-to-many relationship for an easy iterator
-    my $details = $summary->details;
-
-    carp "DB inconsistency wrt number of items tested" 
-	if $details != $self->{items_tested};
-
-}
 
 # used by generate_selection below. Go through the list and replace
 # them with a struct containing sentence IDs and from the database
@@ -231,11 +211,15 @@ sub populate_6k_entries {
 sub populate_sentence_details {
     my $self       = shift;
     my $selections = shift or die;
-
+    my $item_index = 1;
+    
     foreach my $sen (@$selections) {
 
 	# $selections is now a list of hashes
 	my $sid = $sen->{sentence_id} or die;
+
+	# Also store an item index
+	$sen->{item_index} = $item_index++;
 
 	# $sid (sentence ID) is in fact a Class::DBI handle so it can be
 	# used for queries
@@ -295,5 +279,43 @@ sub generate_selection {
     unshift @$selections, undef;
     $self->{selections}=$selections;
 }
+
+sub load_previous_answers {
+    my $self = shift;
+    
+    my $id = $self->{summary_id};
+
+    # use DB's one-to-many relationship for an easy iterator
+    my $summary = $self->{_summary}; # stashed DB accessor
+    my @details = $summary->details;
+
+    my $items_total = $self->{items_total};
+
+    foreach (@{$self->{selections}}) {
+	next unless defined;
+	$_->{answered} = 0;
+    }
+
+    # Do some validation on the data returned
+    carp "DB inconsistency wrt number of items tested" 
+	if scalar (@details) != $self->{items_tested};
+    foreach my $detail (@details) {
+	my $index = $detail->item_index;
+	croak if $index < 1 or $index > $items_total;
+	croak if $detail->id ne $id;
+	croak if $detail->epoch_time_created . $detail->epoch_time_start_test 
+	    ne $id;
+	my $ent = $self->{selections}->[$index];
+	# The six questions and a flag to indicate we have the answer
+	$ent->{answered} = 1;
+	$ent->{correct_voc_know}  = $detail->correct_voc_know;
+	$ent->{correct_voc_read}  = $detail->correct_voc_read;
+	$ent->{correct_voc_write} = $detail->correct_voc_write;
+	$ent->{correct_sen_know}  = $detail->correct_sen_know;
+	$ent->{correct_sen_read}  = $detail->correct_sen_read;
+	$ent->{correct_sen_write} = $detail->correct_sen_write;
+    }
+}
+    
 
 1;

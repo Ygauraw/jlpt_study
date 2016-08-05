@@ -42,7 +42,7 @@ CoreTracking::DataPoint->has_a(epoch_time_created => 'CoreTracking::Seed');
 ####################
 package CoreTracking::TestDetail ;
 use base CoreTracking::DBI;
-CoreTracking::TestDetail->table('core_test_summary');
+CoreTracking::TestDetail->table('core_test_details');
 CoreTracking::TestDetail->columns(
     All => qw/id epoch_time_created epoch_time_start_test mode item_index
               correct_voc_know correct_voc_read correct_voc_write
