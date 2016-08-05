@@ -14,26 +14,110 @@ use Util::Shuffle;
 
 our $pkg = __PACKAGE__;
 
-# use autoload feature to provide simple get_* accessors
-#use vars qw(%auto_attr $AUTOLOAD);
+# use autoload feature to provide simple get_* accessors for top-level
+# attributes (stored in $self hash) or rec_* accessors for attributes
+# relating to a specific test record (stored in $self->{selections}
+# array).
+
 our $AUTOLOAD;
-our %auto_attr = 
+our %get_attr =
     map { ($_ => undef) } 
     qw(summary_id creation_id test_rec_id rng challenge_mode
-       test_set items_total items_tested seed vocab_pop
-       sentence_pop);
+       test_set items_total items_tested seed);
+our %rec_attr =
+    map { ($_ => undef) }
+    qw(answered core_index core_list item_index playlist
+       vocab_en vocab_kana vocab_kanji
+       sentence_en_text sentence_ja_text sentence_ja_kana);
     
 sub AUTOLOAD {
     my $self = shift;
     my $attr = $AUTOLOAD;
-    $attr =~ s/^.*::get_//;
-    croak "Method $attr can't be autoloaded" 
-	unless exists $auto_attr{$attr};
-    return $self->{$attr};
+    if ($attr =~ s/^.*::get_//) {
+	croak "Method get_$attr not registered for autoloading"
+	    unless exists $get_attr{$attr};
+	return $self->{$attr};
+    }
+    if ($attr =~ s/^.*::rec_//) {
+	croak "Method rec_$attr not registered for autoloading"
+	    unless exists $rec_attr{$attr};
+	my $index = shift or die ;
+	return $self->{selections}->[$index]->{$attr};
+    }
+    croak "Method $attr does not exist";
 }
 
-# More complicated accessors for multi-dimensional data
+sub save_answers {
+    my $self = shift;
+    # all fields are mandatory
+    my $fields = {
+	item_index        => undef,
+	correct_voc_know  => undef,
+	correct_voc_read  => undef,
+	correct_voc_write => undef,
+	correct_sen_know  => undef,
+	correct_sen_read  => undef,
+	correct_sen_write => undef,
+	@_
+    };
+    croak "Extraneous arguments to save_answers"
+	unless 7 == keys %$fields;
+    foreach (keys %$fields) {
+	croak unless defined $fields->{$_};
+    }
+    my $index = $fields->{item_index};
+    croak if $index < 1 or $index > $self->get_items_total;
+    my $rec = $self->{selections}->[$index];
+    if ($rec->{answered}) {
+	croak "But question #$index is already answered!";
+    }
+    # update local structures so that it's quicker to update total
+    # counts in the summary table later
+    $rec->{answered}=1;
+    $self->{items_tested}++;
+    # set answer fields (and also item_index, which is the same)
+    for (keys %$fields) { 
+	$rec->{$_} = $fields->{$_}
+    }
 
+    # Now write a database record; reuse already-supplied fields
+    $fields->{id}                    = $self->{summary_id};
+    $fields->{epoch_time_created}    = $self->{creation_id};
+    $fields->{epoch_time_start_test} = $self->{test_rec_id};
+    $fields->{mode}                  = $self->{challenge_mode};
+    CoreVocab::TestDetail->insert($fields);
+    CoreVocab::TestDetail->update;
+}
+
+# No point updating totals until a test is finished
+sub update_answer_summary {
+
+    my $self    = shift;
+    my $summary = $self->{_summary}; # reuse saved query
+    my $items_tested = 0;
+    my $tallies = {
+	correct_voc_know  => 0,
+	correct_voc_read  => 0,
+	correct_voc_write => 0,
+	correct_sen_know  => 0,
+	correct_sen_read  => 0,
+	correct_sen_write => 0,
+    };
+
+    foreach my $rec (@{$self->{selections}}) {
+	next unless defined $rec;
+	next unless $rec->{answered};
+	for (keys %$tallies) {
+	    $tallies->{$_} += $rec->{$_}
+	}
+	++$items_tested;
+    }
+    croak unless $self->get_items_tested == $items_tested;
+    # Use low-level method to update Class::DBI data
+    $tallies->{items_tested} = $items_tested;
+    $summary->_attribute_set($tallies);
+    $summary->update;
+}
 
 # Reuse valid types, modes from CoreTestList
 our %valid_types = (
@@ -52,9 +136,7 @@ sub new {
     my $class = shift;
     my %o = (
 	creation_id    => undef, # epoch_time_created
-	test_rec_id    => undef, # unique ID to record this test
-				 # "sitting" (creation_id + a unique
-				 # number)
+	test_rec_id    => undef, # epoch_time_start_test
 	@_
 	);
 
@@ -63,7 +145,7 @@ sub new {
 	carp "$pkg->new requires both creation_id and test_rec_id args";
 	return undef;
     }
-    
+
     my $summary_id  = "$o{creation_id}_$o{test_rec_id}";
     my $self = {
 	summary_id     => $summary_id,
@@ -78,17 +160,14 @@ sub new {
 	# The following three need to be taken together to ensure that
 	# the same random selection is generated each time
 	seed           => undef,
-	vocab_pop      => undef,
-	sentence_pop   => undef,
 	# private variables tracking Class::DBI objects
 	_seed          => undef,
 	_summary       => undef,
-	_details       => undef,
     };
     bless $self, $class;
 
     die unless ref($self->{rng});
-    
+
     # load summary information from database
     $self->read_test_summary;
 
@@ -99,8 +178,6 @@ sub new {
     # Next we need to actually (re)create the list of test items
     $self->generate_selection;
 
-    
-    
     # The following is subject to change (requires schema changes)
     my ($sound_items, $kanji_items);
     if ($self->{challenge_mode} eq "both") {
@@ -112,9 +189,9 @@ sub new {
     }
 
     # Then we update the test details based on any previous answers
-    # stored in the database (so we don't ask them again)
+    # stored in the database (so we don't ask them again in this test)
     $self->load_previous_answers;
-    
+
     bless $self, $class;
 
 }
@@ -135,8 +212,6 @@ sub read_test_summary {
     $self->{test_set}       = $seed->type;
     $self->{items_total}    = $seed->items;
     $self->{seed}           = $seed->seed;
-    $self->{vocab_pop}      = $seed->vocab_count;
-    $self->{sentence_pop}   = $seed->sentence_count;
     
     $self->{challenge_mode} = $test_summary->mode;
     $self->{items_tested}   = $test_summary->items_tested;
@@ -149,7 +224,8 @@ sub read_test_summary {
 
 
 # used by generate_selection below. Go through the list and replace
-# them with a struct containing sentence IDs and from the database
+# them with a struct containing sentence IDs and other data from the
+# database
 sub populate_2k_entries {
     my $self    = shift;
     my $listref = shift;
