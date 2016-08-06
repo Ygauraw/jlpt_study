@@ -282,7 +282,10 @@ sub populate_from_model {
 	     ': </b>' .
 	    $model->rec_sentence_ja_text($index) . "\n"
 	    );
-    }
+    } elsif ($mode eq "sound") {
+	$self->{audio}->set_text('');
+	
+    } else { die }
 
     # Set up answer/response section
     my $answer_part = "\n" . '<span size="x-large"><b>' .
