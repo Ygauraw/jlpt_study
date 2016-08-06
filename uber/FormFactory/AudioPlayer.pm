@@ -95,14 +95,41 @@ sub get_playlist                { shift->{playlist}                     }
 sub get_loop                    { shift->{loop}                         }
 sub get_allow_file_uri          { shift->{allow_file_uri}               }
 sub get_auto_advance            { shift->{auto_advance}                 }
+sub get_text                    { shift->{text}                         }
 
 sub set_track_delay_ms          { shift->{track_delay_ms}       = $_[1] }
 sub set_uri_base                { shift->{uri_base}             = $_[1] }
 sub set_auto_play               { shift->{auto_play}            = $_[1] }
-sub set_playlist                { shift->{playlist}             = $_[1] }
 sub set_loop                    { shift->{loop}                 = $_[1] }
 sub set_allow_file_uri          { shift->{allow_file_uri}       = $_[1] }
 sub set_auto_advance            { shift->{auto_advance}         = $_[1] }
+
+sub quotify_text {
+    local($_) = shift;
+    s/\"/\\\"/g;
+    s/^(.*)$/\"$1\"/;
+    $_;
+}
+# set_text and set_playlist call for some JS injection as well as
+# updating local structures
+sub set_text {
+    my $self = shift;
+    my $text = shift;
+    warn "text was " .     $self->{text};
+    $self->{text} = $text;
+
+    warn "in set_text, webview object is a " . ref($self->get_gtk_webkit_webview());
+    $self->get_gtk_webkit_webview()->execute_script(
+	'document.getElementById("textarea").' .
+	'innerHTML = ' . quotify_text("$text") . ";"
+	)	
+}
+sub set_playlist {
+    my $self = shift;
+    my $playlist = shift;
+    $self->{playlist} = $playlist;    
+}
+
 
 # stash the gtk widget(s)
 sub get_gtk_vbox                { shift->{gtk_vbox}                     }
@@ -123,6 +150,7 @@ sub new {
 	loop           => 0,
 	uri_base       => '',
 	allow_file_uri => 0,
+	initial_text   => 'Initial WebKit text',
         @_,			# user args
 
 	width          => 400,	# parent class args
@@ -145,6 +173,9 @@ sub new {
     $self->set_loop($loop);
     $self->set_allow_file_uri($allow_file_uri);
 
+    # Don't call $self->set_text until widget is built...
+    $self->{text} = $o{initial_text};
+    
     return $self;
 }
 
@@ -155,6 +186,7 @@ sub build_html {
     my $auto_advance = $self->get_auto_advance;
     my $delay        = $self->get_track_delay_ms;
     my $loop         = $self->get_loop;
+    my $text         = $self->get_text;
 
     # for setting the attribute to the HTML <audio> tag
     my $autoplay = $auto_play ? "autoplay" : "";
@@ -191,9 +223,11 @@ sub build_html {
     $html.="</head><body onload=\"init()\">";
     $html.="<audio $autoplay id=\"audio\" preload=\"auto\" tabindex=\"0\">";
     $html.="Your browser does not support the audio element.\n</audio>\n";
+
+    $html.="<div id=\"textarea\">$text</div>\n";
     $html.="</body></html>";
 
-    #warn $html;
+    warn $html;
     
     my $wv   = $self->get_gtk_webkit_webview;
     my $base = $self->get_uri_base;
@@ -210,6 +244,8 @@ sub build_widget {
     my $vbox = Gtk2::VBox->new(0,10);
     my $wv   = Gtk2::WebKit::WebView->new;
 
+    #die "in build_widget, wv is a " . ref($wv);
+    
     $self->set_gtk_vbox($vbox);
     $self->set_gtk_webkit_webview($wv);
 
@@ -227,6 +263,11 @@ sub build_widget {
     
     $vbox->add($wv);
 
+    # Maybe it hasn't loaded yet?
+#    warn "before";
+#    $self->set_text($self->{text});
+#    warn "after";
+   
     # Call super to tell it which Gtk widget to place
     $self->set_gtk_widget($vbox);
     

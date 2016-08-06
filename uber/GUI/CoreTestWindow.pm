@@ -17,9 +17,6 @@ sub get_form_factory            { shift->{form_factory}                 }
 sub set_context                 { shift->{context}              = $_[1] }
 sub set_form_factory            { shift->{form_factory}         = $_[1] }
 
-sub get_selected_test_id        { shift->{selected_test_id}             }
-sub set_selected_test_id        { shift->{selected_test_id}     = $_[1] }
-
 sub get_answer_visibility       { shift->{answer_visibility}            }
 sub set_answer_visibility       { shift->{answer_visibility}    = $_[1] }
 sub get_test_description        { shift->{test_description}             }
@@ -54,16 +51,28 @@ sub new {
 
     my $id = $o{id} = 1;
     
+    my $model        = $o{model_obj};
+    my $items_tested = $model->get_items_tested;
+    my $items_total  = $model->get_items_total;
+    if ($items_tested >= $items_total) {
+	die "The passed test object has already been completed";
+    }
+
     my $self = {
-	test_id   => undef,
-	context   => $o{context},
-	ff        => undef,
-	toplevel  => $o{toplevel},
-	reload    => $o{reload},
+	test_id      => undef,
+	context      => $o{context},
+	ff           => undef,
+	toplevel     => $o{toplevel},
+	reload       => $o{reload},
+	model        => $model,
 	# set unique object name based on ID
-	name      => "core_test_window_$id",
+	name         => "core_test_window_$id",
+	index        => 0,	# which test item are we doing?
+	items_total  => $items_total,
+	items_tested => $items_tested,
     };
 
+    
     bless $self, $class;
     
     # Set up some default (mostly dummy) values for Label widgets
@@ -133,8 +142,7 @@ sub build_table {
     my $parent   = $self->{vbox};
     my $name     = $self->{name};
     my $context  = $self->{context};
-
-    my ($hbox, $answer);	# closure magic
+    my ($hbox, $audio, $answer);	# closure magic
     
     my $ff = Gtk2::Ex::FormFactory::Table->new(
 	title  => "Core Vocabulary Tester",
@@ -188,7 +196,7 @@ END_TABLE
 		label          => "",
 		clicked_hook   => sub {$self->play_pause },
 	    ),
-	    my $audio = Gtk2::Ex::FormFactory::AudioPlayer->new(
+	    $audio = Gtk2::Ex::FormFactory::AudioPlayer->new(
 		# Might as well extend AudioPlayer to optionally
 		# display text as well. Need more code here to send
 		# either audio playlist or kanji text, depending on mode
@@ -200,13 +208,14 @@ END_TABLE
 	    # from resizing when I hide/show the answer text.
 	    $answer = Gtk2::Ex::FormFactory::Label->new(
 		attr  => "$name.answer_text",
+		with_markup => 1,
 		inactive => 'invisible',
 		# The below doesn't work so I have to use active_cond instead
 		#active_depends => "$name.answer_visibility",
 		active_cond => sub { $self->get_answer_visibility },
 	    ),
 	    Gtk2::Ex::FormFactory::HBox->new( # alignment container
-		height => 100,
+		height => 180,
 		width  => 1
 	    ),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Your Answers"),
@@ -221,8 +230,6 @@ END_TABLE
 		clicked_hook   => sub {
 		    $self->{answer_visibility} ^=1;
 		    $answer->update;
-		    # without using closure object above:
-		    # $context->update_object_attr_widgets ($self->{name}, "answer_text");
 		    $self->next_button 
 		},
 	    ),
@@ -231,9 +238,63 @@ END_TABLE
 	);
 
     $self->{audio} = $audio;
+    $audio->build_widget;	# apparently needed before we can
+				# call set_text or set_playlist
+    
+    warn "Added audio " . ref($audio);
     $parent->add_child_widget($ff);
+
+    $self->populate_from_model;
 
 }
 
+# Call this at the start and whenever we advance to the next test item
+sub populate_from_model {
+
+    my $self  = shift;
+    my $model = $self->{model};
+
+    # advance to the next unanswered question
+    my $index = $self->{index};	# starts at 0
+    do {
+	die if ++$index > $self->{items_total};
+    } while ($model->rec_answered($index));
+
+    my $mode     = $model->get_challenge_mode;
+    my $test_set = $model->get_test_set;
+
+    $test_set =~ s/(core|test)(\d)k/Testing a selection of Core $2,000 Vocab/;
+    $self->set_test_description($test_set);
+
+    $self->set_challenge_text(
+	$mode eq "sound" ?
+	"Listen to the audio to test your writing ability.\n" :
+	"Read the text below to test your reading ability.\n");
+
+    $self->set_progress_text(
+	"Answered $self->{items_tested}/$self->{items_total}");
+
+    # Setting challenge text/audio will require updates to AudioPlayer
+    if ($mode eq "kanji") {
+	$self->{audio}->set_text(
+	    '<b>' .
+	    $model->rec_vocab_kanji($index) .
+	     ': </b>' .
+	    $model->rec_sentence_ja_text($index) . "\n"
+	    );
+    }
+
+    # Set up answer/response section
+    my $answer_part = "\n" . '<span size="x-large"><b>' .
+	$model->rec_vocab_kanji($index) .
+	"</b> (" . $model->rec_vocab_kana($index) . "): ".
+	$model->rec_vocab_en($index) . "\n\n" .
+	$model->rec_sentence_ja_text($index) . "\n" .
+	$model->rec_sentence_en_text($index) . "\n\n" .
+	$model->rec_sentence_ja_kana($index) . "\n</span>";
+
+    $self->set_answer_text($answer_part);
+    
+}
 
 1;

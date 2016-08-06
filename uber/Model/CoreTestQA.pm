@@ -302,10 +302,13 @@ sub populate_sentence_details {
 	$sen->{sentence_ja_text}     = "" . $sid->ja_text;
 	$sen->{sentence_ja_kana}     = "" . $sid->ja_kana;
 	# English translations can vary between core2k data sets
+	$sen->{sentence_en_text}     = "" . $sid->en_text;
 	if      ($sen->{core_list} eq "core6k") {
-	    $sen->{sentence_en_text}     = "" . $sid->en_text_6k;
+	    $sen->{sentence_en_text}     = "" . $sid->en_text_6k
+		if $sid->en_text_6k;
 	} elsif ($sen->{core_list} eq "core2k") {
-	    $sen->{sentence_en_text}     = "" . $sid->en_text_2k;
+	    $sen->{sentence_en_text}     = "" . $sid->en_text_2k
+		if $sid->en_text_2k;
 	} else {die}
 
 	push @{$sen->{playlist}}, "" . $sid->sound_id->local_filename;
