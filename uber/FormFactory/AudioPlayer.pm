@@ -13,14 +13,76 @@ use Gtk2::WebKit;
 use strict;
 use warnings;
 
-# Class data: player script that will be the same for all instances
+# Class data: player script that will be the same for all instances.
+# I'll write my local (Perl) accessors so that they each call JS
+# routines below. That helps to keep most of the complexity in one
+# place.
 our $player_script = <<'END';
 
 var audio;
 var len;
-var trackno   = 0;
+var trackno    = 0;
+
+// Replace the implementation with something that's more "eventy" than
+// what I had before. The point is to make it easier to see the
+// underlying state machine event points as well as to make a
+// play/pause feature easier to code.
 
 function init() {
+
+  audio     = document.getElementById("audio");
+  trackno   = 0;
+  len       = playlist.length;
+
+  if (debug) {  console.log("In init()"); }
+
+  // set up event listeners
+  audio.addEventListener("ended",      onend_trigger);
+  audio.addEventListener("loadeddata", onload_trigger);
+  // delay trigger is queued during onend_trigger
+
+  // start the cycle
+  load_audio(audio, trackno);
+
+}
+
+// These triggers will keep going round and round if both loop and
+// auto_play are set. If the chain stops it should be restartable
+// again by calling audio.play, which in turn will go through the
+// state triggers in the following order:
+//
+// onload_trigger -> onend_trigger -> delay_trigger -> onload_trigger -> ...
+
+
+function onload_trigger() {
+  if (debug) { console.log ("In onload_trigger()"); }
+  if (auto_play) { 
+    if (debug) { console.log("onload_trigger(): auto-playing"); }
+    if (play_state != "pause") { audio.play(); }
+  }
+}
+
+function onend_trigger() {
+  if (debug) { console.log ("In onend_trigger()"); }
+  setTimeout(delay_trigger, delay);
+}
+
+function delay_trigger() {
+  if (debug) { console.log ("In delay_trigger()"); }
+  trackno = (trackno + 1) % len;
+  load_audio(audio, trackno);
+  if (trackno == 0) {
+      if (!loop) {
+         if (debug) { console.log("delay_trigger: Rolled over, but not looping"); }
+         play_state = "pause";
+         return;
+      }
+  }
+}
+
+
+// called when body has finished loading
+function init_old() {
   audio     = document.getElementById("audio");
   trackno   = 0;
   len       = playlist.length;
@@ -77,10 +139,41 @@ function advance() {
   audio.play();
 }
 function play() {
-  audio.play ;
+  if (debug) { console.log ("in play(); play_state is " + play_state) }
+  if (play_state == "play") { return }
+  play_state = "play";
+  audio.play() ;
 }
 function load_audio(player, trackno) {
   player.src = playlist[trackno];
+  player.load();
+}
+function pause() {
+  if (debug) { console.log ("in pause(); play_state is " + play_state) }
+  play_state = "pause";
+  audio.pause() ;
+}
+function clear_playlist() {
+  audio.pause ;
+  playlist = [];
+  trackno  = 0;
+  len      = 0;
+}
+function set_auto_play(newvalue) {
+  auto_play = newvalue;
+}
+function add_playlist_item (item) {
+  playlist.push(item);
+  len = playlist.length;
+}
+function set_delay(ms) {
+  delay = ms;
+}
+function set_loop(newvalue) {
+  loop = newvalue;
+}
+function set_auto_advance(newvalue) {
+  auto_advance = newvalue;
 }
 END
 
@@ -92,7 +185,9 @@ sub get_track_delay_ms          { shift->{track_delay_ms}               }
 sub get_uri_base                { shift->{uri_base}                     }
 sub get_auto_play               { shift->{auto_play}                    }
 sub get_playlist                { shift->{playlist}                     }
+sub get_play_state              { shift->{play_state}                   }
 sub get_loop                    { shift->{loop}                         }
+sub get_debug                   { shift->{debug}                        }
 sub get_allow_file_uri          { shift->{allow_file_uri}               }
 sub get_auto_advance            { shift->{auto_advance}                 }
 sub get_text                    { shift->{text}                         }
@@ -100,7 +195,9 @@ sub get_text                    { shift->{text}                         }
 sub set_track_delay_ms          { shift->{track_delay_ms}       = $_[1] }
 sub set_uri_base                { shift->{uri_base}             = $_[1] }
 sub set_auto_play               { shift->{auto_play}            = $_[1] }
+sub set_play_state              { shift->{play_state}           = $_[1] }
 sub set_loop                    { shift->{loop}                 = $_[1] }
+sub set_debug                   { shift->{debug}                = $_[1] }
 sub set_allow_file_uri          { shift->{allow_file_uri}       = $_[1] }
 sub set_auto_advance            { shift->{auto_advance}         = $_[1] }
 
@@ -126,10 +223,35 @@ sub set_text {
 }
 sub set_playlist {
     my $self = shift;
-    my $playlist = shift;
-    $self->{playlist} = $playlist;    
+    my $playlist  = shift;
+    my $auto_play = shift;
+    $self->{playlist} = $playlist;
+    
+}
+sub set_autoplay {
+    my $self = shift;
+    my $ap   = shift;
+    # I think that we should always have the autoplay tag set:
+    #    $self->get_gtk_webkit_webview()->execute_script(
+    #	'document.getElementById("audio").' .
+    #	"autoplay = $ap;"
+    #	)	;
+
+    # So instead, use our auto_play variable
+    $self->get_gtk_webkit_webview()->execute_script("auto_play = $ap");
 }
 
+sub play {
+    my $self = shift;
+    $self->set_play_state("play");
+    $self->get_gtk_webkit_webview()->execute_script('play();');
+}
+
+sub pause {
+    my $self = shift;
+    $self->set_play_state("pause");
+    $self->get_gtk_webkit_webview()->execute_script('pause();');
+}
 
 # stash the gtk widget(s)
 sub get_gtk_vbox                { shift->{gtk_vbox}                     }
@@ -150,6 +272,7 @@ sub new {
 	loop           => 0,
 	uri_base       => '',
 	allow_file_uri => 0,
+	debug          => 1,
 	initial_text   => 'Initial WebKit text',
         @_,			# user args
 
@@ -161,9 +284,9 @@ sub new {
 
     # stash options (using hash slice to pull out option keys)
     my ($track_delay_ms, $auto_play, $auto_advance, $uri_base, $playlist, 
-	$allow_file_uri, $loop) =
+	$allow_file_uri, $loop, $debug) =
 	@o{qw/track_delay_ms auto_play auto_advance uri_base playlist
-              allow_file_uri loop/};
+              allow_file_uri loop debug/};
 
     $self->set_track_delay_ms($track_delay_ms);
     $self->set_auto_play($auto_play);
@@ -171,7 +294,10 @@ sub new {
     $self->set_uri_base($uri_base);
     $self->set_playlist($playlist);
     $self->set_loop($loop);
+    $self->set_debug($debug);
     $self->set_allow_file_uri($allow_file_uri);
+
+    $self->set_play_state("play");
 
     # Don't call $self->set_text until widget is built...
     $self->{text} = $o{initial_text};
@@ -183,8 +309,10 @@ sub build_html {
     my $self = shift;
 
     my $auto_play    = $self->get_auto_play;
+    my $play_state   = $self->get_play_state;
     my $auto_advance = $self->get_auto_advance;
     my $delay        = $self->get_track_delay_ms;
+    my $debug        = $self->get_debug;
     my $loop         = $self->get_loop;
     my $text         = $self->get_text;
 
@@ -210,9 +338,11 @@ sub build_html {
     $html.="<script>\n";
     $html.="var playlist     = [ $js_playlist ];\n";
     $html.="var auto_play    = $auto_play;\n";
+    $html.="var play_state   = \"$play_state\";\n";
     $html.="var auto_advance = $auto_advance;\n";
     $html.="var loop         = $loop;\n";
     $html.="var delay        = $delay;\n";
+    $html.="var debug        = $debug;\n";
 
     # Now add our other script functions
     $html.=$player_script;    
@@ -220,8 +350,9 @@ sub build_html {
     $html.="</script>\n";
 
     # Note that body has an 'onload' event associated with it
+    # Also, I'm keeping autoplay on in the audio element
     $html.="</head><body onload=\"init()\">";
-    $html.="<audio $autoplay id=\"audio\" preload=\"auto\" tabindex=\"0\">";
+    $html.="<audio id=\"audio\" preload=\"auto\" tabindex=\"0\">";
     $html.="Your browser does not support the audio element.\n</audio>\n";
 
     $html.="<div id=\"textarea\">$text</div>\n";
