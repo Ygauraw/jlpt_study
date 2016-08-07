@@ -14,10 +14,11 @@ use FormFactory::AudioPlayer;
 our $AUTOLOAD;
 our %get_set_attr = (
     map { ($_ => undef) } 
-    qw(context form_factory answer_visibility test_description progress_text
+    qw(context answer_visibility test_description progress_text
        challenge_text answer_text explain_button_text 
        question_text_1 question_text_2 yesno_1 yesno_2
        question_text_3 question_text_4 yesno_3 yesno_4
+       items_tested items_total
     ));
 sub AUTOLOAD {
     my $self = shift;
@@ -60,7 +61,7 @@ sub new {
     my $items_tested = $model->get_items_tested;
     my $items_total  = $model->get_items_total;
     if ($items_tested >= $items_total) {
-	die "The passed test object has already been completed";
+	die "The chosen test object has already been completed";
     }
 
     # Put a trailing / on uri_base if it doesn't already have one
@@ -129,6 +130,7 @@ sub build {
 	]
 	);
 
+    $ff->open;
     $self->build_table;
 
     if ($self->{reload}) {
@@ -140,8 +142,7 @@ sub build {
 	)
 	    
     }
-    
-    $ff->open;
+
     $ff->update;
 }
 
@@ -154,9 +155,10 @@ sub build_table {
     my ($hbox, $audio, $answer, $form);	# closure magic
     
     my $ff = Gtk2::Ex::FormFactory::Table->new(
-	title  => "Core Vocabulary Tester",
-	expand => 1,
-	layout => <<'END_TABLE', # must use camel case within (no _)
+	title   => "Core Vocabulary Tester",
+	context => $context,
+	expand  => 1,
+	layout  => <<'END_TABLE', # must use camel case within (no _)
 +>>>>>>>>>>>>>>>+---------------]-+
 | Description   |          XofY   |
 |               |                 |
@@ -287,21 +289,57 @@ END_TABLE
 	    ),
 	    Gtk2::Ex::FormFactory::Button->new(
 		label          => "Show Answer/Next Question",
-		clicked_hook   => sub {
-		    $self->{answer_visibility} ^=1;
-		    $answer->update;
-		    $self->next_button 
+		clicked_hook   => sub { 
+		    $self->next_button_hook($audio, $answer);
 		},
 	    ),
 #	    Gtk2::Ex::FormFactory::Label->new(label => "extra widget"),
 	],
 	);
-
     $self->{audio} = $audio;
-
     $parent->add_child_widget($ff);
-
     $self->populate_from_model;
+}
+
+sub next_button_hook {
+
+    my ($self, $audio, $answer) = @_;
+    # Bi-modal
+    my $show_answer = $self->{answer_visibility} ^=1;
+    $answer->update;
+    if ($show_answer) {
+	if ($self->{model}->get_challenge_mode eq "kanji") {
+	    $audio->play;
+	}
+    } else {
+	# save answers in DB
+	my %answer_attrs = (
+	    item_index         => $self->{index},
+	    correct_voc_know   => 0,
+	    correct_voc_read   => 0,
+	    correct_voc_write  => 0,
+	    correct_sen_know   => 0,
+	    correct_sen_read   => 0,
+	    correct_sen_write  => 0,
+	);
+	$answer_attrs{$self->{q1_attribute}} = $self->get_yesno_1;
+	$answer_attrs{$self->{q2_attribute}} = $self->get_yesno_2;
+	$answer_attrs{$self->{q3_attribute}} = $self->get_yesno_3;
+	$answer_attrs{$self->{q4_attribute}} = $self->get_yesno_4;
+	$self->{model}->save_answers(%answer_attrs);
+	warn "Got back from save_answers\n";
+
+	# See if we're finished
+	if (++$self->{items_tested} >= $self->get_items_total) {
+	    $self->{model}->update_answer_summary;
+	    $self->{ff}->close;
+	    Gtk2::main_quit if $self->{toplevel};
+	    return;
+	}
+
+	$self->populate_from_model;
+	$self->{ff}->update;
+    }
 }
 
 # If we have been given a URI base to pass to the audio player, then
@@ -342,8 +380,10 @@ sub populate_from_model {
     # advance to the next unanswered question
     my $index = $self->{index};	# starts at 0
     do {
-	die if ++$index > $self->{items_total};
+	die "Advanced past last answered question"
+	    if ++$index > $self->{items_total};
     } while ($model->rec_answered($index));
+    $self->{index} = $index;
 
     my $mode     = $model->get_challenge_mode;
     my $test_set = $model->get_test_set;
@@ -359,6 +399,10 @@ sub populate_from_model {
     $self->set_progress_text(
 	"Answered $self->{items_tested}/$self->{items_total}");
 
+    # Populate playlist
+    $audio->set_playlist(
+	$self->localise_playlist($model->rec_playlist($index)));
+
     # Setting challenge text/audio will require updates to AudioPlayer
     if ($mode eq "kanji") {
 	$audio->set_auto_play(0);
@@ -370,12 +414,10 @@ sub populate_from_model {
 	    );
     } elsif ($mode eq "sound") {
 	$audio->set_auto_play(1);
-	$audio->set_text('');
-    } else { die }
-    # Populate playlist
-    $audio->set_playlist(
-	$self->localise_playlist($model->rec_playlist($index)));
-    
+	$audio->set_text('[Audio]');
+    } else { die "Invalid challenge mode" }
+
+   
     # Set up answer/response section
     my $answer_part = "\n" . '<span size="x-large"><b>' .
 	$model->rec_vocab_kanji($index) .
@@ -402,7 +444,6 @@ sub populate_from_model {
 	sr => "<b>Sentence Reading</b>: Were you able to read the full sentence?",
 	sw => "<b>Sentence Reading</b>: Were you able to write the full sentence?",
 	sm => "<b>Sentence Meaning</b>: Did you know the sentence's English meaning?",
-	
 	);
     
     if ($mode eq "kanji") {
@@ -428,7 +469,13 @@ sub populate_from_model {
 	$self->{q4_attribute} = "correct_sen_know";
 
     }
-    
+
+    $self->set_yesno_1(0);
+    $self->set_yesno_2(0);
+    $self->set_yesno_3(0);
+    $self->set_yesno_4(0);
+
+    $self->{ff}->update;
 }
 
 1;

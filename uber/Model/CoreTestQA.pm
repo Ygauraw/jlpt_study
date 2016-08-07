@@ -60,16 +60,21 @@ sub save_answers {
 	correct_sen_write => undef,
 	@_
     };
+    
+    warn "Adding new test detail:" . join ",", @_;
     croak "Extraneous arguments to save_answers"
 	unless 7 == keys %$fields;
+    warn "Keys OK\n";
+
     foreach (keys %$fields) {
-	croak unless defined $fields->{$_};
+	die "Undefined field $_\n" unless defined $fields->{$_};
     }
     my $index = $fields->{item_index};
-    croak if $index < 1 or $index > $self->get_items_total;
+    die "Index out of range"
+	if $index < 1 or $index > $self->get_items_total;
     my $rec = $self->{selections}->[$index];
     if ($rec->{answered}) {
-	croak "But question #$index is already answered!";
+	die "But question #$index is already answered!";
     }
     # update local structures so that it's quicker to update total
     # counts in the summary table later
@@ -80,13 +85,15 @@ sub save_answers {
 	$rec->{$_} = $fields->{$_}
     }
 
+    warn "About to insert into db\n";
     # Now write a database record; reuse already-supplied fields
     $fields->{id}                    = $self->{summary_id};
     $fields->{epoch_time_created}    = $self->{creation_id};
     $fields->{epoch_time_start_test} = $self->{test_rec_id};
     $fields->{mode}                  = $self->{challenge_mode};
-    CoreVocab::TestDetail->insert($fields);
-    CoreVocab::TestDetail->update;
+    my $ent = CoreTracking::TestDetail->insert($fields);
+    $ent->update;
+    warn "Added new test detail\n";
 }
 
 # No point updating totals until a test is finished
@@ -166,7 +173,7 @@ sub new {
     };
     bless $self, $class;
 
-    die unless ref($self->{rng});
+    die "RNG not a ref" unless ref($self->{rng});
 
     # load summary information from database
     $self->read_test_summary;
@@ -262,7 +269,8 @@ sub populate_6k_entries {
 
     foreach (@$listref) { # do in-place replacement of elements
 	my $replacement = {};
-	$core6k = CoreVocab::Core6k->retrieve($_) or die;
+	$core6k = CoreVocab::Core6k->retrieve($_) 
+	    or die "$_ returned no Core6k elements";
 	$replacement->{core_index}  = $_; # original core6k index
 	$replacement->{core_list}   = 'core6k';
 	$replacement->{vocab_kanji} = "" . $core6k->ja_vocab;
@@ -286,7 +294,7 @@ sub populate_6k_entries {
 # Called once we have a sentence ID and other vocab info stored
 sub populate_sentence_details {
     my $self       = shift;
-    my $selections = shift or die;
+    my $selections = shift or die "No sentence selections to populate";
     my $item_index = 1;
     
     foreach my $sen (@$selections) {
@@ -381,8 +389,9 @@ sub load_previous_answers {
     foreach my $detail (@details) {
 	my $index = $detail->item_index;
 	croak if $index < 1 or $index > $items_total;
-	croak if $detail->id ne $id;
-	croak if $detail->epoch_time_created . $detail->epoch_time_start_test 
+	die "dying here" if $detail->id ne $id;
+	die "Invalid DB synthetic key"
+	    if $detail->epoch_time_created . "_" . $detail->epoch_time_start_test 
 	    ne $id;
 	my $ent = $self->{selections}->[$index];
 	# The six questions and a flag to indicate we have the answer

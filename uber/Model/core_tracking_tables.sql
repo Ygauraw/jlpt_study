@@ -130,10 +130,10 @@ create table core_test_details (
 
     -- detailed items corresponding to tallies above
     correct_voc_know   INTEGER, -- did you understand the vocab in English?
-    correct_voc_read   INTEGER  -- were you able to read the vocab?
-    correct_voc_write  INTEGER  -- were you able to write the vocab?
+    correct_voc_read   INTEGER, -- were you able to read the vocab?
+    correct_voc_write  INTEGER, -- were you able to write the vocab?
     correct_sen_know   INTEGER, -- did you understand the full sentence in English?
-    correct_sen_read   INTEGER  -- were you able to read the full sentence?
+    correct_sen_read   INTEGER, -- were you able to read the full sentence?
     correct_sen_write  INTEGER  -- were you able to write the full sentence?
 
     -- , PRIMARY KEY (epoch_time_created, epoch_time_start_test)
