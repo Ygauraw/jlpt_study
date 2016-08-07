@@ -17,6 +17,7 @@ our %get_set_attr = (
     qw(context form_factory answer_visibility test_description progress_text
        challenge_text answer_text explain_button_text 
        question_text_1 question_text_2 yesno_1 yesno_2
+       question_text_3 question_text_4 yesno_3 yesno_4
     ));
 sub AUTOLOAD {
     my $self = shift;
@@ -62,6 +63,9 @@ sub new {
 	die "The passed test object has already been completed";
     }
 
+    # Put a trailing / on uri_base if it doesn't already have one
+    $o{uri_base} =~ s|^(.+?)([^/])$|$1$2/|;
+    
     my $self = {
 	test_id      => undef,
 	context      => $o{context},
@@ -86,7 +90,7 @@ sub new {
     $self->set_progress_text           ("Completed X of Y");
     $self->set_challenge_text          ("Either listen -> write or read -> understand");
     $self->set_answer_text             ("This is where the answer goes");
-    $self->set_explain_button_text     ("Did you get the following questions right?");
+    $self->set_explain_button_text     ("Answer the following questions:");
 
     warn "Answer visibility is " . $self->get_answer_visibility . "\n";
     
@@ -180,7 +184,11 @@ sub build_table {
 +---------------+-------------->--+
 ^ ButtonText1   |   YesNo1        |
 +---------------+-------------->--+
-^ ButtonText2   |   YesNo2        |
+^ ButtonText2   ^   YesNo2        |
++---------------+-------------->--+
+^ ButtonText3   |   YesNo3        |
++---------------+-------------->--+
+^ ButtonText4   ^   YesNo4        |
 +---------------+-----------------+
 |        AnswerNextButton         |
 +---------------------------------+
@@ -207,7 +215,7 @@ END_TABLE
 		# display text as well. Need more code here to send
 		# either audio playlist or kanji text, depending on mode
 		debug => 1,
-		# The following value really shouldn't go in a GUI
+		# URI base should come from outside (not defined in GUI)
 		uri_base => $self->{uri_base},
 		),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Correct Answers"),
@@ -231,9 +239,24 @@ END_TABLE
 	    Gtk2::Ex::FormFactory::Label->new(
 		attr  => "$name.explain_button_text",
 	    ),
+	    # It would be better to have linked checkboxes like below
+	    # (with a default state of all unchecked) but I can't
+	    # figure out how to get them to work here
+	    #
+	    # Gtk2::Ex::FormFactory::RadioButton->new(
+	    #		label => "Foo",
+	    #		attr  => "$name.yesno_2",
+	    #		value => 1
+	    #		),
+	    #	    Gtk2::Ex::FormFactory::RadioButton->new(
+	    #		label => "Bar",
+	    #		attr  => "$name.yesno_2",
+	    #		value => 0
+	    #		),
 	    Gtk2::Ex::FormFactory::Label->new(
 		label => "Question 1",
 		attr  => "$name.question_text_1",
+		with_markup => 1,
 	    ),
 	    Gtk2::Ex::FormFactory::YesNo->new(
 		attr  => "$name.yesno_1",
@@ -241,9 +264,26 @@ END_TABLE
 	    Gtk2::Ex::FormFactory::Label->new(
 		label => "Question 2",
 		attr  => "$name.question_text_2",
+		with_markup => 1,
 	    ),
 	    Gtk2::Ex::FormFactory::YesNo->new(
 		attr  => "$name.yesno_2",
+	    ),
+	    Gtk2::Ex::FormFactory::Label->new(
+		label => "Question 3",
+		attr  => "$name.question_text_3",
+		with_markup => 1,
+	    ),
+	    Gtk2::Ex::FormFactory::YesNo->new(
+		attr  => "$name.yesno_3",
+	    ),
+	    Gtk2::Ex::FormFactory::Label->new(
+		label => "Question 4",
+		attr  => "$name.question_text_4",
+		with_markup => 1,
+	    ),
+	    Gtk2::Ex::FormFactory::YesNo->new(
+		attr  => "$name.yesno_4",
 	    ),
 	    Gtk2::Ex::FormFactory::Button->new(
 		label          => "Show Answer/Next Question",
@@ -258,10 +298,7 @@ END_TABLE
 	);
 
     $self->{audio} = $audio;
-#    $audio->build_widget;	# apparently needed before we can
-#				# call set_text or set_playlist
 
-#    warn "Added audio " . ref($audio);
     $parent->add_child_widget($ff);
 
     $self->populate_from_model;
@@ -278,7 +315,8 @@ sub localise_playlist {
 				# the old one. Old list might
 				# accidentally have db accessor, which
 				# we don't want to cause changes to db
-    warn $uri_base;
+    return $listref if $uri_base eq '';
+    # warn $uri_base;
     foreach my $fn (@$listref) {
 	my $urised = "file://$fn";
 	my $front = substr $urised, 0, length $uri_base, '';
@@ -348,6 +386,48 @@ sub populate_from_model {
 	$model->rec_sentence_ja_kana($index) . "\n</span>";
 
     $self->set_answer_text($answer_part);
+
+    # Text for questions. Select four out of six, depending on mode
+    #	correct_voc_know  
+    #	correct_voc_read  
+    #	correct_voc_write 
+    #	correct_sen_know  
+    #	correct_sen_read  
+    #	correct_sen_write 
+
+    my %texts = (
+	vr => "<b>Vocab Reading</b>: Were you able to read the vocab element?",
+	vw => "<b>Vocab Writing</b>: Were you able to write the vocab element?",
+	vm => "<b>Vocab Meaning</b>: Did you know the vocab's English meaning?",
+	sr => "<b>Sentence Reading</b>: Were you able to read the full sentence?",
+	sw => "<b>Sentence Reading</b>: Were you able to write the full sentence?",
+	sm => "<b>Sentence Meaning</b>: Did you know the sentence's English meaning?",
+	
+	);
+    
+    if ($mode eq "kanji") {
+
+	$self->set_question_text_1($texts{vr});
+	$self->{q1_attribute} = "correct_voc_read";
+	$self->set_question_text_2($texts{vm});
+	$self->{q2_attribute} = "correct_voc_know";
+	$self->set_question_text_3($texts{sr});
+	$self->{q3_attribute} = "correct_sen_read";
+	$self->set_question_text_4($texts{sm});
+	$self->{q4_attribute} = "correct_sen_know";
+	
+    } else {
+
+	$self->set_question_text_1($texts{vw});
+	$self->{q1_attribute} = "correct_voc_write";
+	$self->set_question_text_2($texts{vm});
+	$self->{q2_attribute} = "correct_voc_know";
+	$self->set_question_text_3($texts{sw});
+	$self->{q3_attribute} = "correct_sen_write";
+	$self->set_question_text_4($texts{sm});
+	$self->{q4_attribute} = "correct_sen_know";
+
+    }
     
 }
 

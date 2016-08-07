@@ -37,7 +37,7 @@ my $context = Gtk2::Ex::FormFactory::Context->new;
 GUI::CoreTestWindow->new(
     context   => $context,
     model_obj => $test,
-    uri_base  => 'file:///home/dec/JLPT_Study/core_6000/', # need trailing /
+    uri_base  => 'file:///home/dec/JLPT_Study/core_6000/',
     reload    => 1,		# add a reload button
     )->build;
 
