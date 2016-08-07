@@ -4,33 +4,36 @@ package GUI::CoreTestWindow;
 
 use strict;
 use warnings;
+use Carp;
 
 use Model::CoreTestList;
 
 use Gtk2::Ex::FormFactory;
 use FormFactory::AudioPlayer;
 
-# basic accessors
-sub get_context                 { shift->{context}                      }
-sub get_form_factory            { shift->{form_factory}                 }
+our $AUTOLOAD;
+our %get_set_attr = (
+    map { ($_ => undef) } 
+    qw(context form_factory answer_visibility test_description progress_text
+       challenge_text answer_text explain_button_text 
+       question_text_1 question_text_2 yesno_1 yesno_2
+    ));
+sub AUTOLOAD {
+    my $self = shift;
+    my $attr = $AUTOLOAD;
+    if ($attr =~ s/^.*::get_//) {
+        croak "Method get_$attr not registered for autoloading"
+            unless exists $get_set_attr{$attr};
+        return $self->{$attr};
+    }
+    if ($attr =~ s/^.*::set_//) {
+        croak "Method set_$attr not registered for autoloading"
+            unless exists $get_set_attr{$attr};
+        return $self->{$attr}=shift;
+    }
 
-sub set_context                 { shift->{context}              = $_[1] }
-sub set_form_factory            { shift->{form_factory}         = $_[1] }
-
-sub get_answer_visibility       { shift->{answer_visibility}            }
-sub set_answer_visibility       { shift->{answer_visibility}    = $_[1] }
-sub get_test_description        { shift->{test_description}             }
-sub set_test_description        { shift->{test_description}     = $_[1] }
-sub get_progress_text           { shift->{progress_text}                }
-sub set_progress_text           { shift->{progress_text}        = $_[1] }
-sub get_challenge_text          { shift->{challenge_text}               }
-sub set_challenge_text          { shift->{challenge_text}       = $_[1] }
-sub get_answer_text             { shift->{answer_text}                  }
-sub set_answer_text             { shift->{answer_text}          = $_[1] }
-sub get_explain_button_text     { shift->{explain_button_text}          }
-sub set_explain_button_text     { shift->{explain_button_text}  = $_[1] }
-
-
+    croak "Method $attr does not exist";
+}
 
 # Organise things a little differently from CoreTestList.pm. We won't
 # create a context, for a start. Instead, we'll take an existing one,
@@ -134,6 +137,11 @@ sub build {
     
     $ff->open;
     $ff->update;
+
+    # trying to do this as late as possible
+    $self->populate_from_model;
+
+
 }
 
 sub build_table {
@@ -142,7 +150,7 @@ sub build_table {
     my $parent   = $self->{vbox};
     my $name     = $self->{name};
     my $context  = $self->{context};
-    my ($hbox, $audio, $answer);	# closure magic
+    my ($hbox, $audio, $answer, $form);	# closure magic
     
     my $ff = Gtk2::Ex::FormFactory::Table->new(
 	title  => "Core Vocabulary Tester",
@@ -172,10 +180,11 @@ sub build_table {
 +---------------------------------+
 '                                 |
 | ButtonExplanation               |
-+---------------------------------+
-^ ButtonTable                     |
-|                                 |
-+---------------------------------+
++---------------+-------------->--+
+^ ButtonText1   |   YesNo1        |
++---------------+-------------->--+
+^ ButtonText2   |   YesNo2        |
++---------------+-----------------+
 |        AnswerNextButton         |
 +---------------------------------+
 END_TABLE
@@ -194,12 +203,13 @@ END_TABLE
 	    Gtk2::Ex::FormFactory::Button->new(
 		stock          => "gtk-media-play",
 		label          => "",
-		clicked_hook   => sub {$self->play_pause },
+		clicked_hook   => sub {$audio->play_pause },
 	    ),
 	    $audio = Gtk2::Ex::FormFactory::AudioPlayer->new(
 		# Might as well extend AudioPlayer to optionally
 		# display text as well. Need more code here to send
 		# either audio playlist or kanji text, depending on mode
+		debug => 1,
 		),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Correct Answers"),
 	    # I can't get an "invisible" answer text to work within a
@@ -223,7 +233,18 @@ END_TABLE
 		attr  => "$name.explain_button_text",
 	    ),
 	    Gtk2::Ex::FormFactory::Label->new(
-		label => "This will be another box\nwith questions and\nbuttons/checkboxes"
+		label => "Question 1",
+		attr  => "$name.question_text_1",
+	    ),
+	    Gtk2::Ex::FormFactory::YesNo->new(
+		attr  => "$name.yesno_1",
+	    ),
+	    Gtk2::Ex::FormFactory::Label->new(
+		label => "Question 2",
+		attr  => "$name.question_text_2",
+	    ),
+	    Gtk2::Ex::FormFactory::YesNo->new(
+		attr  => "$name.yesno_2",
 	    ),
 	    Gtk2::Ex::FormFactory::Button->new(
 		label          => "Show Answer/Next Question",
@@ -238,14 +259,11 @@ END_TABLE
 	);
 
     $self->{audio} = $audio;
-    $audio->build_widget;	# apparently needed before we can
-				# call set_text or set_playlist
+#    $audio->build_widget;	# apparently needed before we can
+#				# call set_text or set_playlist
     
-    warn "Added audio " . ref($audio);
+#    warn "Added audio " . ref($audio);
     $parent->add_child_widget($ff);
-
-    $self->populate_from_model;
-
 }
 
 # Call this at the start and whenever we advance to the next test item
@@ -253,6 +271,7 @@ sub populate_from_model {
 
     my $self  = shift;
     my $model = $self->{model};
+    my $audio = $self->{audio};
 
     # advance to the next unanswered question
     my $index = $self->{index};	# starts at 0
@@ -276,17 +295,20 @@ sub populate_from_model {
 
     # Setting challenge text/audio will require updates to AudioPlayer
     if ($mode eq "kanji") {
-	$self->{audio}->set_text(
+	$audio->set_auto_play(0);
+	$audio->set_text(
 	    '<b>' .
 	    $model->rec_vocab_kanji($index) .
 	     ': </b>' .
 	    $model->rec_sentence_ja_text($index) . "\n"
 	    );
     } elsif ($mode eq "sound") {
-	$self->{audio}->set_text('');
-	
+	$audio->set_auto_play(1);
+	$audio->set_text('');
     } else { die }
-
+    # Populate playlist
+    $audio->set_playlist($model->rec_playlist($index));
+    
     # Set up answer/response section
     my $answer_part = "\n" . '<span size="x-large"><b>' .
 	$model->rec_vocab_kanji($index) .

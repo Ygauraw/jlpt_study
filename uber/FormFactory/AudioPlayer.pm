@@ -18,165 +18,100 @@ use warnings;
 # routines below. That helps to keep most of the complexity in one
 # place.
 our $player_script = <<'END';
+var textarea; var audio; var len; var trackno = 0;
 
-var audio;
-var len;
-var trackno    = 0;
-
-// Replace the implementation with something that's more "eventy" than
-// what I had before. The point is to make it easier to see the
-// underlying state machine event points as well as to make a
-// play/pause feature easier to code.
-
-function init() {
-
+function init() {      // called once body has finished loading
+  textarea  = document.getElementById("textarea");
   audio     = document.getElementById("audio");
   trackno   = 0;
   len       = playlist.length;
-
   if (debug) {  console.log("In init()"); }
-
-  // set up event listeners
   audio.addEventListener("ended",      onend_trigger);
   audio.addEventListener("loadeddata", onload_trigger);
-  // delay trigger is queued during onend_trigger
-
   // start the cycle
-  load_audio(audio, trackno);
-
+  load_audio();
 }
-
-// These triggers will keep going round and round if both loop and
-// auto_play are set. If the chain stops it should be restartable
-// again by calling audio.play, which in turn will go through the
-// state triggers in the following order:
-//
 // onload_trigger -> onend_trigger -> delay_trigger -> onload_trigger -> ...
-
-
 function onload_trigger() {
   if (debug) { console.log ("In onload_trigger()"); }
-  if (auto_play) { 
+//  if (auto_play) { 
     if (debug) { console.log("onload_trigger(): auto-playing"); }
     if (play_state != "pause") { audio.play(); }
-  }
+//  }
 }
-
 function onend_trigger() {
   if (debug) { console.log ("In onend_trigger()"); }
   setTimeout(delay_trigger, delay);
 }
-
 function delay_trigger() {
   if (debug) { console.log ("In delay_trigger()"); }
   trackno = (trackno + 1) % len;
-  load_audio(audio, trackno);
-  if (trackno == 0) {
-      if (!loop) {
-         if (debug) { console.log("delay_trigger: Rolled over, but not looping"); }
-         play_state = "pause";
-         return;
-      }
+  load_audio();
+  if ((trackno == 0) && !loop) {
+    if (debug) { console.log("delay_trigger: Rolled over, but not looping"); }
+    play_state = "pause";
   }
 }
-
-
-// called when body has finished loading
-function init_old() {
-  audio     = document.getElementById("audio");
-  trackno   = 0;
-  len       = playlist.length;
-
-  // Can't use the following to introduce a delay because the timeout
-  // is created at the time this statement is executed rather than
-  // when the event triggers:
-  //
-  // audio.onended = setTimeout(advance, delay);
-
-  console.log("In init()");
-
-  // apparently audio.onended = ... is not supported:
-  //  audio.onended = function() {
-  //      console.log("In onended callback"); 
-  //      after(); 
-  //  };
-
-  // Instead use addEventListener
-  audio.addEventListener("ended", after);
-
-  load_audio(audio, trackno);  
-  if (auto_play) {
-    console.log("auto_play variable on, auto-playing");
-
-    // it appears that autoplay is needed on the <audio> element. Its
-    // purpose is to auto-play when the media file actually loads.
-    // Without the autoplay attribute, the following does nothing,
-    // presumably because the file hasn't been loaded yet. An
-    // alternative way to fix this would probably be to add an onload
-    // event trigger
-    play();
-  }
+function set_text(text) { textarea.innerHTML = text };
+function load_audio() {
+  audio.src = playlist[trackno];
+  audio.load();
 }
-function after() {
-  console.log ("Got to after()");
-  if (!auto_advance) { return };
-  wait_timer = setTimeout(advance, delay);
+function clear_playlist() {
+  if (debug) { console.log ("in clear_playlist()") }
+  pause();  playlist = [];  trackno  = 0;  len      = 0;
 }
-function advance() {
-  console.log ("Got to advance()");
-  // remove event listener (we'll add later if needed)
-  audio.removeEventListener("ended",after);
-  trackno = (trackno + 1) % len;
-  if (trackno == 0) {
-      if (!loop) {
-         console.log("Rolled over, but not looping");
-         return;
-      }
-  }
-  load_audio(audio, trackno);
-  // add event listener back in
-  audio.addEventListener("ended", after);
-  audio.play();
+function add_playlist_item (item) {
+  if (debug) { console.log ("in add_playlist_item(). New item is " + item) }
+  playlist.push(item);
+  len = playlist.length;
 }
 function play() {
   if (debug) { console.log ("in play(); play_state is " + play_state) }
   if (play_state == "play") { return }
-  play_state = "play";
-  audio.play() ;
-}
-function load_audio(player, trackno) {
-  player.src = playlist[trackno];
-  player.load();
+  play_state = "play";   audio.play()
 }
 function pause() {
   if (debug) { console.log ("in pause(); play_state is " + play_state) }
-  play_state = "pause";
-  audio.pause() ;
+  play_state = "pause";  audio.pause() ;
 }
-function clear_playlist() {
-  audio.pause ;
-  playlist = [];
-  trackno  = 0;
-  len      = 0;
+function play_pause() {
+  if (debug) { console.log ("in play_pause(); play_state is " + play_state) }
+  if (play_state == "play") { pause() } else { play() }
 }
-function set_auto_play(newvalue) {
-  auto_play = newvalue;
-}
-function add_playlist_item (item) {
-  playlist.push(item);
-  len = playlist.length;
-}
-function set_delay(ms) {
-  delay = ms;
-}
-function set_loop(newvalue) {
-  loop = newvalue;
-}
-function set_auto_advance(newvalue) {
-  auto_advance = newvalue;
-}
+function set_auto_play(newvalue) {  auto_play = newvalue; }
+function set_delay(ms)      { delay = ms; }
+function set_loop(newvalue) { loop = newvalue; }
+function set_auto_advance(newvalue) { auto_advance = newvalue; }
 END
 
+# A big downside to using WebKit and JavaScript injection to provide
+# functionality is that injected JS won't work properly if the whole
+# page hasn't loaded. I decided that the best workaround is to queue
+# up any such items.
+sub enqueue_js {
+    my $self    = shift;
+    my $script  = shift;
+    my $comment = shift;	# optional debug comment
+    if ($self->{js_ok}) {
+	warn "Executing JS script (directly): $script\n"
+	    if (defined $comment) and $self->{debug};
+	$self->{wv}->execute_script($script);
+    } else {
+	push @{$self->{js_queue}}, [$script, $comment];
+    }
+}
+sub apply_js_queue {
+    my $self    = shift;
+    my $queue   = $self->{js_queue};
+    while (my $listref = shift @$queue) {
+	my $script  = shift @$listref;
+	my $comment = shift @$listref;
+	warn "Executing JS script (from queue): $script\n"
+	    if (defined $comment) and $self->{debug};
+	$self->{wv}->execute_script($script);
+    }	
+}
 
 # Accessors. These are for the Perl side, which only deals with
 # initial construction of the webkit + html + script bundle. To get
@@ -203,8 +138,9 @@ sub set_auto_advance            { shift->{auto_advance}         = $_[1] }
 
 sub quotify_text {
     local($_) = shift;
-    s/\"/\\\"/g;
-    s/^(.*)$/\"$1\"/;
+    chomp;
+    s/\'/\\\'/g;
+    s/^(.*)$/\'$1\'/;
     $_;
 }
 # set_text and set_playlist call for some JS injection as well as
@@ -216,17 +152,21 @@ sub set_text {
     $self->{text} = $text;
 
     warn "in set_text, webview object is a " . ref($self->get_gtk_webkit_webview());
-    $self->get_gtk_webkit_webview()->execute_script(
-	'document.getElementById("textarea").' .
-	'innerHTML = ' . quotify_text("$text") . ";"
-	)	
+    $self->enqueue_js(
+	'set_text(' . quotify_text("$text") . ");", "Setting text")
 }
 sub set_playlist {
     my $self = shift;
     my $playlist  = shift;
-    my $auto_play = shift;
-    $self->{playlist} = $playlist;
     
+    $self->{playlist} = $playlist;
+    $self->enqueue_js('var a = clear_playlist();', "Clearing playlist");
+    foreach (@$playlist) {
+	my $cmd = 'add_playlist_item(' . quotify_text($_) . ');';
+	warn "playlist item $_ is of ref '" . ref($_) . "'\n" ;
+	warn "JS command to execute: $cmd\n";
+	$self->enqueue_js($cmd, "Adding playlist item");
+    }    
 }
 sub set_autoplay {
     my $self = shift;
@@ -238,21 +178,29 @@ sub set_autoplay {
     #	)	;
 
     # So instead, use our auto_play variable
-    $self->get_gtk_webkit_webview()->execute_script("auto_play = $ap");
+    $self->enqueue_js("auto_play = $ap;", "Setting auto_play value");
 }
 
 sub play {
     my $self = shift;
     $self->set_play_state("play");
-    $self->get_gtk_webkit_webview()->execute_script('play();');
+    $self->enqueue_js('play();', "Calling play()");
 }
 
 sub pause {
     my $self = shift;
     $self->set_play_state("pause");
-    $self->get_gtk_webkit_webview()->execute_script('pause();');
+    $self->enqueue_js('pause();', "Calling pause()");
 }
 
+sub play_pause {
+    my $self = shift;
+    if ($self->get_play_state eq "play") {
+	$self->pause;
+    } else {
+	$self->play;
+    }
+}
 # stash the gtk widget(s)
 sub get_gtk_vbox                { shift->{gtk_vbox}                     }
 sub get_gtk_webkit_webview      { shift->{gtk_webkit_webview}           }
@@ -272,7 +220,7 @@ sub new {
 	loop           => 0,
 	uri_base       => '',
 	allow_file_uri => 0,
-	debug          => 1,
+	debug          => 0,
 	initial_text   => 'Initial WebKit text',
         @_,			# user args
 
@@ -292,7 +240,7 @@ sub new {
     $self->set_auto_play($auto_play);
     $self->set_auto_advance($auto_advance);
     $self->set_uri_base($uri_base);
-    $self->set_playlist($playlist);
+    $self->{playlist} = $playlist;
     $self->set_loop($loop);
     $self->set_debug($debug);
     $self->set_allow_file_uri($allow_file_uri);
@@ -301,6 +249,8 @@ sub new {
 
     # Don't call $self->set_text until widget is built...
     $self->{text} = $o{initial_text};
+
+    #$self->build_widget;
     
     return $self;
 }
@@ -355,10 +305,10 @@ sub build_html {
     $html.="<audio id=\"audio\" preload=\"auto\" tabindex=\"0\">";
     $html.="Your browser does not support the audio element.\n</audio>\n";
 
-    $html.="<div id=\"textarea\">$text</div>\n";
+    $html.="<div id=\"textarea\">No initial text</div>\n";
     $html.="</body></html>";
 
-    warn $html;
+    #warn $html if $self->{debug};
     
     my $wv   = $self->get_gtk_webkit_webview;
     my $base = $self->get_uri_base;
@@ -373,7 +323,16 @@ sub build_widget {
     # Build up in terms of basic GTK widgets
 
     my $vbox = Gtk2::VBox->new(0,10);
-    my $wv   = Gtk2::WebKit::WebView->new;
+    my $wv   = $self->{wv} = Gtk2::WebKit::WebView->new;
+    # set up for queueing of JavaScript commands to run after page loaded
+    $self->{js_ok} = 0;
+    $self->{js_queue} = [];
+    $wv->signal_connect("load-finished" => sub {
+	warn "WebView finished loading; direct JS OK after queue flush.\n";
+	$self->apply_js_queue;
+	delete $self->{js_queue};
+	$self->{js_ok} = 1;
+    });
 
     #die "in build_widget, wv is a " . ref($wv);
     

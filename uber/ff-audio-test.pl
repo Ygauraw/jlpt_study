@@ -23,6 +23,7 @@ my $ff = Gtk2::Ex::FormFactory->new(
 	    quit_on_close => 1,
 	    content => [
 		$ap_object = Gtk2::Ex::FormFactory::AudioPlayer->new(
+		    debug => 1,
 		    track_delay_ms => 600,
 		    auto_play      => 1,
 		    auto_advance   => 0,
@@ -38,7 +39,11 @@ my $ff = Gtk2::Ex::FormFactory->new(
 		Gtk2::Ex::FormFactory::Button->new(
 		    label => 'Pause',
 		    clicked_hook => sub { $ap_object->pause; },
-		),		
+		),
+		Gtk2::Ex::FormFactory::Button->new(
+		    label => 'Set Text',
+		    clicked_hook => sub { $ap_object->set_text("Set Text"); },
+		),
 		Gtk2::Ex::FormFactory::Button->new(
 		    label => 'Reload Program',
 		    clicked_hook => sub { exec $0, @ARGV or die },
@@ -50,6 +55,8 @@ my $ff = Gtk2::Ex::FormFactory->new(
 
 $ff->open;
 $ff->update; 
+
+$ap_object->set_text("A different text");
 
 print "AudioPlayer object's name is " . $ap_object->get_name . "\n";
 

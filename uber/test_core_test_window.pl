@@ -39,4 +39,5 @@ GUI::CoreTestWindow->new(
     model_obj => $test,
     reload    => 1,		# add a reload button
     )->build;
+
 Gtk2->main;
