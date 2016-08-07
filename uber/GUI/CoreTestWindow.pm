@@ -49,6 +49,7 @@ sub new {
 	context    => undef,	# probably required
 	toplevel   => 1,	# when set, quit when window closed
 	reload     => 0,	# whether to add a reload button (for testing)
+	uri_base   => '',
 	@_,
 	);
 
@@ -68,6 +69,7 @@ sub new {
 	toplevel     => $o{toplevel},
 	reload       => $o{reload},
 	model        => $model,
+	uri_base     => $o{uri_base},
 	# set unique object name based on ID
 	name         => "core_test_window_$id",
 	index        => 0,	# which test item are we doing?
@@ -137,11 +139,6 @@ sub build {
     
     $ff->open;
     $ff->update;
-
-    # trying to do this as late as possible
-    $self->populate_from_model;
-
-
 }
 
 sub build_table {
@@ -210,6 +207,8 @@ END_TABLE
 		# display text as well. Need more code here to send
 		# either audio playlist or kanji text, depending on mode
 		debug => 1,
+		# The following value really shouldn't go in a GUI
+		uri_base => $self->{uri_base},
 		),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Correct Answers"),
 	    # I can't get an "invisible" answer text to work within a
@@ -261,9 +260,38 @@ END_TABLE
     $self->{audio} = $audio;
 #    $audio->build_widget;	# apparently needed before we can
 #				# call set_text or set_playlist
-    
+
 #    warn "Added audio " . ref($audio);
     $parent->add_child_widget($ff);
+
+    $self->populate_from_model;
+}
+
+# If we have been given a URI base to pass to the audio player, then
+# the local path names in the database need to be rewritten so that
+# full path (from db) = uri base + relative name (returned from here)
+sub localise_playlist {
+    my $self     = shift;
+    my $uri_base = $self->{uri_base};
+    my $listref  = shift;
+    my $newlist  = [];		# use a new list instead of modifying
+				# the old one. Old list might
+				# accidentally have db accessor, which
+				# we don't want to cause changes to db
+    warn $uri_base;
+    foreach my $fn (@$listref) {
+	my $urised = "file://$fn";
+	my $front = substr $urised, 0, length $uri_base, '';
+	if ($front eq $uri_base) {
+	    warn "Matched against URI base; local is $urised\n";
+	    push @$newlist, $urised;
+	} else {
+	    warn "No match against URI base $uri_base; ($urised)\n";
+	    push @$newlist, $fn;
+	}
+
+    }
+    return $newlist;    
 }
 
 # Call this at the start and whenever we advance to the next test item
@@ -307,7 +335,8 @@ sub populate_from_model {
 	$audio->set_text('');
     } else { die }
     # Populate playlist
-    $audio->set_playlist($model->rec_playlist($index));
+    $audio->set_playlist(
+	$self->localise_playlist($model->rec_playlist($index)));
     
     # Set up answer/response section
     my $answer_part = "\n" . '<span size="x-large"><b>' .

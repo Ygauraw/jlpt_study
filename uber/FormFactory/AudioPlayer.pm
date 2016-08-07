@@ -25,7 +25,7 @@ function init() {      // called once body has finished loading
   audio     = document.getElementById("audio");
   trackno   = 0;
   len       = playlist.length;
-  if (debug) {  console.log("In init()"); }
+  if (debug) {  console.log("In init(); debug is " + debug); }
   audio.addEventListener("ended",      onend_trigger);
   audio.addEventListener("loadeddata", onload_trigger);
   // start the cycle
@@ -65,6 +65,10 @@ function add_playlist_item (item) {
   if (debug) { console.log ("in add_playlist_item(). New item is " + item) }
   playlist.push(item);
   len = playlist.length;
+  if (len == 1) {
+    if (debug) { console.log ("in add_playlist_item(). Loading this item") }
+    load_audio()
+   }
 }
 function play() {
   if (debug) { console.log ("in play(); play_state is " + play_state) }
@@ -91,6 +95,7 @@ END
 # up any such items.
 sub enqueue_js {
     my $self    = shift;
+    my $queue   = $self->{js_queue};
     my $script  = shift;
     my $comment = shift;	# optional debug comment
     if ($self->{js_ok}) {
@@ -98,19 +103,22 @@ sub enqueue_js {
 	    if (defined $comment) and $self->{debug};
 	$self->{wv}->execute_script($script);
     } else {
-	push @{$self->{js_queue}}, [$script, $comment];
+	push @$queue, [$script, $comment];
     }
 }
 sub apply_js_queue {
     my $self    = shift;
     my $queue   = $self->{js_queue};
+    warn "About to flush " . scalar(@$queue) . " pending JS commands\n";
     while (my $listref = shift @$queue) {
 	my $script  = shift @$listref;
 	my $comment = shift @$listref;
 	warn "Executing JS script (from queue): $script\n"
 	    if (defined $comment) and $self->{debug};
 	$self->{wv}->execute_script($script);
-    }	
+    }
+    delete $self->{js_queue};
+    $self->{js_ok} = 1;
 }
 
 # Accessors. These are for the Perl side, which only deals with
@@ -245,6 +253,9 @@ sub new {
     $self->set_debug($debug);
     $self->set_allow_file_uri($allow_file_uri);
 
+    $self->{js_queue} = [];
+    $self->{js_ok}    = 0;
+    
     $self->set_play_state("play");
 
     # Don't call $self->set_text until widget is built...
@@ -324,14 +335,11 @@ sub build_widget {
 
     my $vbox = Gtk2::VBox->new(0,10);
     my $wv   = $self->{wv} = Gtk2::WebKit::WebView->new;
+
     # set up for queueing of JavaScript commands to run after page loaded
-    $self->{js_ok} = 0;
-    $self->{js_queue} = [];
     $wv->signal_connect("load-finished" => sub {
 	warn "WebView finished loading; direct JS OK after queue flush.\n";
 	$self->apply_js_queue;
-	delete $self->{js_queue};
-	$self->{js_ok} = 1;
     });
 
     #die "in build_widget, wv is a " . ref($wv);
