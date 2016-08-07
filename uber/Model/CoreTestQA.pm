@@ -384,7 +384,7 @@ sub load_previous_answers {
     }
 
     # Do some validation on the data returned
-    carp "DB inconsistency wrt number of items tested" 
+    die "DB inconsistency wrt number of items tested" 
 	if scalar (@details) != $self->{items_tested};
     foreach my $detail (@details) {
 	my $index = $detail->item_index;
