@@ -6,6 +6,8 @@
 use strict;
 use warnings;
 use utf8;
+use Encode qw(decode_utf8);
+use Data::Dump qw(dump dumpf);
 
 use DBI;
 
@@ -17,37 +19,20 @@ binmode STDOUT, ":utf8";
 binmode STDERR, ":utf8";
 
 # apparently ARGV doesn't automatically have UTF8 flag...
-use Encode qw(decode_utf8);
 @ARGV = map { decode_utf8($_, 1) } @ARGV;
 
-use Data::Dump qw(dump dumpf);
-sub filter_dumped {
-    my ($ctx, $object_ref) = @_;
-    if ($ctx->reftype eq "SCALAR") {
-        return { dump => "'" . $$object_ref . "'" }; # needs $$!
-    } elsif($ctx->is_hash) {
-        return { hide_keys => ['xml:lang'] };
-    } else {
-        return undef;
-    }
-    return undef;
-}
+my $ja = Util::JA_Script->new; $ja->load_db;
 
-my $ja = Util::JA_Script->new;
-$ja->load_db;
-
-die "Please supply a kanji arg (or '--makedb') to test\n"
-    unless (@ARGV);
+die "A kanji argument (or '--makedb') is required\n" unless (@ARGV);
 
 my $kanji = shift @ARGV;
-
 if ($kanji ne "--makedb") {
     die "Arg $kanji doesn't have kanji!\n" 
 	unless has_kanji($kanji);
 }
 
-# Database
-my $dbh = DBI->connect(
+# Vocabulary databases:
+my $web_data_db = DBI->connect(
     "dbi:SQLite:dbname=web_data.sqlite", "", "",
     {
         RaiseError     => 1,
@@ -55,51 +40,7 @@ my $dbh = DBI->connect(
         AutoCommit     => 0,
     }
     );
-
-my $sth = $dbh->prepare(
-    "select ja_regular, ja_kana, jlpt_level 
-     from vocab_by_jlpt_grade 
-     where ja_regular like ?");
-die unless defined $sth;
-
-# Since I have two databases with vocabulary, it makes sense to search
-# both of them. I'll slurp both into a common structure.
-my %vocab_dict = ();
-sub new_dict {
-    {
-	vocab => shift,
-	grade => shift,
-	readings => [],
-	stoplist => {},		# prevent adding duplicate readings
-    }
-}
-my ($vocab, $kana, $grade, $reading);
-my $rc = $sth->execute("\%$kanji\%") or die;
-
-sub update_dict {		# wrap up to reuse for both queries
-    my $sth = shift;
-    while (($vocab, $kana, $grade) = $sth->fetchrow_array) {
-	next unless has_kanji($vocab);
-	# Found some odd entries with kana [kanji]. They cause an
-	# infinite loop somewhere: skip them
-	next if $vocab =~ tr|[]|[]|;
-	$vocab =~ s/(.)々/$1$1/;
-	$vocab_dict{$vocab} = new_dict($vocab,$grade)
-	    unless exists $vocab_dict{$vocab};
-	foreach $reading (split /\s*[,\/]\s*/, $kana) {
-	    next if exists $vocab_dict{$vocab}->{stoplist}->{$reading};
-	    $vocab_dict{$vocab}->{stoplist}->{$reading} = undef;
-	    push @{$vocab_dict{$vocab}->{readings}}, $reading;
-	}
-    }
-}
-
-update_dict($sth);
-
-warn "Read in tanos/jlptstudy/tagaini data\n";
-
-# Core 2k/6k dictionary
-my $dbh2 = DBI->connect(
+my $core_26k_db = DBI->connect(
     "dbi:SQLite:dbname=/home/dec/JLPT_Study/core_6000/core_2k_6k.sqlite", "", "",
     {
         RaiseError     => 1,
@@ -107,26 +48,81 @@ my $dbh2 = DBI->connect(
         AutoCommit     => 0,
     }
     );
-die unless defined $dbh2;
+die unless defined($web_data_db) and defined($core_26k_db);
 
-$sth = $dbh2->prepare(
-    "select ja_vocab, ja_vocab_kana, 0
-     from core_6k 
-     where ja_vocab like ?");
-die unless defined $sth;
-$rc = $sth->execute("\%$kanji\%") or die;
-update_dict($sth);
-warn "Read in Core data\n";
+# Global: per-kanji vocab dictionary
+my %vocab_dict = ();
 
-# Refactor to turn searching for a single kanji into a sub
-
+# Choice of making Jouyou kanji db or showing info for a single kanji
 if ($kanji eq "--makedb") {
     print "About to nuke db tables; ^C if you don't want this\n";
     <STDIN>;
+    my $new_db = DBI->connect(
+	"dbi:SQLite:dbname=kanji_readings.sqlite", "", "",
+	{
+	    RaiseError     => 1,
+	    sqlite_unicode => 1,
+	    AutoCommit     => 0,
+	}
+	);
+    die "Failed to open kanji_readings.sqlite: $!\n"  # $!?
+	unless defined($new_db);
+    recreate_tables($new_db);
+    # probably a good idea to prepare some insert statement handlers
+    for my $kanji (qw/降 雨/) { # small test set
+	%vocab_dict = ();	# must clear for each new kanji
+	load_vocab($kanji);
+
+	my $result = search_single($kanji);
+	summarise_readings($result);
+	save_readings($new_db,$result);
+    }
+    
 } else {
+    %vocab_dict = ();
+    load_vocab($kanji);
     my $result = search_single($kanji);
     summarise_readings($result);
 } 
+
+$web_data_db->disconnect;
+$core_26k_db->disconnect;
+
+exit(0);
+
+# The rest is just subs
+
+sub recreate_tables {
+    my $dbh = shift;
+}
+sub save_readings {
+    my ($dbh, $result, @junk) = @_;
+
+}
+
+# 
+sub load_vocab {
+    my $kanji = shift;
+    # Prepare query for web_data_db and update the dictionary
+    my $sth = $web_data_db->prepare(
+	"select ja_regular, ja_kana, jlpt_level 
+     from vocab_by_jlpt_grade 
+     where ja_regular like ?");
+    my $rc = $sth->execute("\%$kanji\%") or die;
+    die unless defined $sth;
+    update_dict($sth);
+    warn "Read in tanos/jlptstudy/tagaini data\n";
+
+    # Prepare query for core_26k_db and update the dictionary
+    $sth = $core_26k_db->prepare(
+	"select ja_vocab, ja_vocab_kana, 0
+     from core_6k 
+     where ja_vocab like ?");
+    die unless defined $sth;
+    $rc = $sth->execute("\%$kanji\%") or die;
+    update_dict($sth);
+    warn "Read in Core data\n";
+}
 
 sub search_single {
     # Structures for doing summary analysis of reading frequency and
@@ -135,6 +131,7 @@ sub search_single {
     my @failed = ();
     my %reading_counts = ();
     my $matched_count = 0;
+    my ($vocab, $kana, $grade, $reading);
 
     my $unstripped = $kanji;
     $kanji = $ja->strip_non_kanji($kanji);
@@ -219,5 +216,43 @@ sub summarise_readings {
     print "Non-matching:\n  " . (join "\n  ", @$failed) . "\n";
 }
 
-$dbh->disconnect;
-$dbh2->disconnect;
+sub new_dict {
+    {
+	vocab => shift,
+	grade => shift,
+	readings => [],
+	stoplist => {},		# prevent adding duplicate readings
+    }
+}
+
+sub update_dict {		# wrap up to reuse for both queries
+    my $sth = shift;
+    my ($vocab, $kana, $grade, $reading);
+    while (($vocab, $kana, $grade) = $sth->fetchrow_array) {
+	next unless has_kanji($vocab);
+	# Found some odd entries with kana [kanji]. They cause an
+	# infinite loop somewhere: skip them
+	next if $vocab =~ tr|[]|[]|;
+	$vocab =~ s/(.)々/$1$1/;
+	$vocab_dict{$vocab} = new_dict($vocab,$grade)
+	    unless exists $vocab_dict{$vocab};
+	foreach $reading (split /\s*[,\/]\s*/, $kana) {
+	    next if exists $vocab_dict{$vocab}->{stoplist}->{$reading};
+	    $vocab_dict{$vocab}->{stoplist}->{$reading} = undef;
+	    push @{$vocab_dict{$vocab}->{readings}}, $reading;
+	}
+    }
+}
+
+sub filter_dumped {
+    my ($ctx, $object_ref) = @_;
+    if ($ctx->reftype eq "SCALAR") {
+        return { dump => "'" . $$object_ref . "'" }; # needs $$!
+    } elsif($ctx->is_hash) {
+        return { hide_keys => ['xml:lang'] };
+    } else {
+        return undef;
+    }
+    return undef;
+}
+
