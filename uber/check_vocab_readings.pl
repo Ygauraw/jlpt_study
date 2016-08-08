@@ -9,6 +9,9 @@ use utf8;
 
 use DBI;
 
+# Script-related utils
+use Util::JA_Script qw(hira_to_kata has_hira has_kata has_kanji);
+
 binmode STDIN,  ":utf8";
 binmode STDOUT, ":utf8";
 binmode STDERR, ":utf8";
@@ -31,16 +34,14 @@ sub filter_dumped {
 }
 
 # Look for external modules in program directory
-BEGIN {
-    local($_) = $0;
-    s|^(.*)/.*$|$1|;
-    push @INC, $_;
-}
+#BEGIN {
+#    local($_) = $0;
+#    s|^(.*)/.*$|$1|;
+#    push @INC, $_;
+#}
 
-# Script-related utils
-use JA_Script qw(hira_to_kata has_hira has_kata has_kanji);
 
-my $ja = JA_Script->new;
+my $ja = Util::JA_Script->new;
 $ja->load_db;
 
 die "Please supply a kanji arg to test\n" unless (@ARGV);

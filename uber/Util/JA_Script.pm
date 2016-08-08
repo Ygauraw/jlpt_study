@@ -1,4 +1,4 @@
-package JA_Script;
+package Util::JA_Script;
 
 require Exporter;
 @ISA = qw(Exporter);
