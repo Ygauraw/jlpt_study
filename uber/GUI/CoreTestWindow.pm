@@ -407,9 +407,9 @@ sub populate_from_model {
     if ($mode eq "kanji") {
 	$audio->set_auto_play(0);
 	$audio->set_text(
-	    '<b>' .
+	    '<span size="x-large"><b>' .
 	    $model->rec_vocab_kanji($index) .
-	     ': </b>' .
+	     ': </b></span>' .
 	    $model->rec_sentence_ja_text($index) . "\n"
 	    );
     } elsif ($mode eq "sound") {
