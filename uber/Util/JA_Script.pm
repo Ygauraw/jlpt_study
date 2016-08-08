@@ -23,6 +23,7 @@ our $kata_chars =
     "ナニヌネノハバパヒビピフブプヘベペホボポ" .
     "マミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷ";
 
+our $jouyou_list = [];
 our %kinfo;
 our $have_kinfo = undef;
 
@@ -33,7 +34,6 @@ sub new {
     my $class = shift;
     bless {}, $class;
 }
-
 
 sub strip_hira {
     local ($_) = shift or die;
@@ -97,7 +97,6 @@ sub strip_non_kanji {
 # is like what kakasi does and the reverse of what a Japanese input
 # system does.
 
-
 sub load_db {
 
     return if defined $have_kinfo;
@@ -123,6 +122,7 @@ sub load_db {
 	#warn "$k:$t:$r:$d";
 	# make empty index slot if needed
 	unless (exists $kinfo{$k}) {
+	    push @$jouyou_list, $k; # save in Heisig keyword order
 	    $kinfo{$k} = {
 		k => $k,
 		re => undef,	# will be regular expression for all
@@ -164,6 +164,12 @@ sub load_db {
 
     
     ++$have_kinfo;
+}
+
+sub get_jouyou_list {
+    # ignore any args
+    die "Must call $pkg::load_db before get_jouyou_list\n";
+    return $jouyou_list;
 }
 
 # Now for the application of all this data

@@ -33,22 +33,18 @@ sub filter_dumped {
     return undef;
 }
 
-# Look for external modules in program directory
-#BEGIN {
-#    local($_) = $0;
-#    s|^(.*)/.*$|$1|;
-#    push @INC, $_;
-#}
-
-
 my $ja = Util::JA_Script->new;
 $ja->load_db;
 
-die "Please supply a kanji arg to test\n" unless (@ARGV);
+die "Please supply a kanji arg (or '--makedb') to test\n"
+    unless (@ARGV);
 
 my $kanji = shift @ARGV;
 
-die "Arg $kanji doesn't have kanji!\n" unless has_kanji($kanji);
+if ($kanji ne "--makedb") {
+    die "Arg $kanji doesn't have kanji!\n" 
+	unless has_kanji($kanji);
+}
 
 # Database
 my $dbh = DBI->connect(
@@ -122,79 +118,106 @@ $rc = $sth->execute("\%$kanji\%") or die;
 update_dict($sth);
 warn "Read in Core data\n";
 
-# Structures for doing summary analysis of reading frequency and
-# failed parses
-my @failed = ();
-my %reading_counts = ();
-my $matched_count = 0;
+# Refactor to turn searching for a single kanji into a sub
 
-my $unstripped = $kanji;
-$kanji = $ja->strip_non_kanji($kanji);
+if ($kanji eq "--makedb") {
+    print "About to nuke db tables; ^C if you don't want this\n";
+    <STDIN>;
+} else {
+    my $result = search_single($kanji);
+    summarise_readings($result);
+} 
 
-foreach my $vocab (sort {$a cmp $b} keys %vocab_dict) {
+sub search_single {
+    # Structures for doing summary analysis of reading frequency and
+    # failed parses
+    my $kanji = shift or die;
+    my @failed = ();
+    my %reading_counts = ();
+    my $matched_count = 0;
 
-    $grade = $vocab_dict{$vocab}->{grade};
-    my $readlist = $vocab_dict{$vocab}->{readings};
+    my $unstripped = $kanji;
+    $kanji = $ja->strip_non_kanji($kanji);
 
-    foreach $reading (@$readlist) {
-	#warn "Reading: $reading\n";
+    foreach my $vocab (sort {$a cmp $b} keys %vocab_dict) {
 
-	# check vocab reading
-	my $listref = $ja->kanji_reading($vocab,$reading);
-	unless(defined $listref) {
-	    #warn "No match for $vocab => $reading\n";
-	    push @failed, "N$grade $vocab => $reading";
-	    
-	} else {
-	    print "Matched N$grade $vocab => $reading\n";
-	    #dumpf($listref, \&filter_dumped);
+	$grade = $vocab_dict{$vocab}->{grade};
+	my $readlist = $vocab_dict{$vocab}->{readings};
 
-	    ++$matched_count;
+	foreach $reading (@$readlist) {
+	    #warn "Reading: $reading\n";
 
-	    # Scan through the list to find just the kanji we're
-	    # interested in.
-	    my $pos = 0;
-	    while ($pos < @$listref) {
-		next unless $listref->[$pos] eq $kanji;
-		my $hira  = $listref->[$pos+1];
-		my $dlist = $listref->[$pos+2];
-		# Just take the first matching reading? Scan them all
-		my $rtype = undef;
-		foreach (@$dlist) {
-		    die unless /^(.*):(.*):(.*)$/;
-		    # apparently we can have kanji like 訓 that has
-		    # both on-yomi and kun-yomi that map to the same
-		    # sound... I had a die in here but I'll just
-		    # change it to just pick the first match.
-		    $rtype = "$1:$2";
+	    # check vocab reading
+	    my $listref = $ja->kanji_reading($vocab,$reading);
+	    unless(defined $listref) {
+		#warn "No match for $vocab => $reading\n";
+		push @failed, "N$grade $vocab => $reading";
+
+	    } else {
+		print "Matched N$grade $vocab => $reading\n";
+		#dumpf($listref, \&filter_dumped);
+
+		++$matched_count;
+
+		# Scan through the list to find just the kanji we're
+		# interested in.
+		my $pos = 0;
+		while ($pos < @$listref) {
+		    next unless $listref->[$pos] eq $kanji;
+		    my $hira  = $listref->[$pos+1];
+		    my $dlist = $listref->[$pos+2];
+		    # Just take the first matching reading? Scan them all
+		    my $rtype = undef;
+		    foreach (@$dlist) {
+			die unless /^(.*):(.*):(.*)$/;
+			# apparently we can have kanji like 訓 that has
+			# both on-yomi and kun-yomi that map to the same
+			# sound... I had a die in here but I'll just
+			# change it to just pick the first match.
+			$rtype = "$1:$2";
+			last;
+			# don't die below
+			die "$rtype ne $1:$2" 
+			    if defined($rtype) and $rtype ne "$1:$2";
+			$rtype = "$1:$2";
+		    }
+
+		    $reading_counts{$rtype} = 0 
+			unless defined $reading_counts{$rtype};
+		    $reading_counts{$rtype}++;
 		    last;
-		    # don't die below
-		    die "$rtype ne $1:$2" if defined($rtype) and $rtype ne "$1:$2";
-		    $rtype = "$1:$2";
+		} continue {
+		    $pos += 3;
 		}
-
-		$reading_counts{$rtype} = 0 unless defined $reading_counts{$rtype};
-		$reading_counts{$rtype}++;
-		last;
-	    } continue {
-		$pos += 3;
 	    }
-	    
 	}
-	
     }
+    return {
+	kanji => $kanji,
+	matched_count => $matched_count,
+	reading_counts => \%reading_counts,
+	failed => \@failed,
+    };
 }
 
-# Summarise readings
-print "Summary of readings for kanji $kanji:\n";
-print "Total vocab readings: " . ($matched_count + @failed) . ", of which " .
-    (0 + @failed) . " had no match\n";
-print "Summary of readings:\n";
-for (sort {$a cmp $b} keys %reading_counts) { 
-    printf("  %02d time(s)  %-16s \n", $reading_counts{$_}, $_)  
-};
-print "Non-matching:\n  " . (join "\n  ", @failed) . "\n";
+sub summarise_readings {
+    my $rhash = shift or die;
+    # unpack hash elements
+    my $kanji          = $rhash->{kanji};
+    my $matched_count  = $rhash->{matched_count};
+    my $reading_counts = $rhash->{reading_counts};
+    my $failed         = $rhash->{failed};
 
+    print "Summary of readings for kanji $kanji:\n";
+    print "Total vocab readings: " . ($matched_count + @$failed) .
+	", of which " .
+	(0 + @$failed) . " had no match\n";
+    print "Summary of readings:\n";
+    for (sort {$a cmp $b} keys %$reading_counts) { 
+	printf("  %02d time(s)  %-16s \n", $reading_counts->{$_}, $_)  
+    };
+    print "Non-matching:\n  " . (join "\n  ", @$failed) . "\n";
+}
 
 $dbh->disconnect;
 $dbh2->disconnect;
