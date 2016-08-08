@@ -14,6 +14,9 @@ use DBI;
 # Script-related utils
 use Util::JA_Script qw(hira_to_kata has_hira has_kata has_kanji);
 
+# Class::DBI model for insertion into new kanji_readings db
+use Model::KanjiReadings;
+
 binmode STDIN,  ":utf8";
 binmode STDOUT, ":utf8";
 binmode STDERR, ":utf8";
@@ -55,7 +58,7 @@ my %vocab_dict = ();
 
 # Choice of making Jouyou kanji db or showing info for a single kanji
 if ($kanji eq "--makedb") {
-    print "About to nuke db tables; ^C if you don't want this\n";
+    print "About to add to db tables; ^C if you don't want this\n";
     <STDIN>;
     my $new_db = DBI->connect(
 	"dbi:SQLite:dbname=kanji_readings.sqlite", "", "",
@@ -94,13 +97,21 @@ exit(0);
 
 sub recreate_tables {
     my $dbh = shift;
+
+    # Actually, don't bother. Keep the schema definition in a separate
+    # file in the Model directory and pass it to sqlite.
+    #
+    # Likewise, use Class::DBI instead of raw SQL for this particular
+    # DB.    
 }
 sub save_readings {
     my ($dbh, $result, @junk) = @_;
 
 }
 
-# 
+# Load vocab with matching kanji from both sources and merge into a
+# single dictionary.  I could try updating this to store the source
+# and/or English text but it's not worth the hassle.
 sub load_vocab {
     my $kanji = shift;
     # Prepare query for web_data_db and update the dictionary
