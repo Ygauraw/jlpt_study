@@ -169,6 +169,8 @@ sub print_vocab_item {
     my $item = shift;
     print shift || '';
     print "N$item->{grade} $item->{vocab} => $item->{reading}\n";
+    # Uncomment to check kanji reading detail fields:
+    # print "[$item->{kanji_hira}:$item->{kanji_type}:$item->{kanji_kana}]\n";
 }
 sub search_single {
     # Structures for doing summary analysis of reading frequency and
@@ -192,8 +194,13 @@ sub search_single {
 	    #warn "Reading: $reading\n";
 	    my $vocab_item = {
 		grade   => $grade,
+		# The following two are vocab kanji/kana
 		vocab   => $vocab,
 		reading => $reading,
+		# Also want to record specifics of kanji reading
+		kanji_hira => '',
+		kanji_type => '', # on/kun
+		kanji_kana => '', # on->katakana, kun->hiragana		
 	    };
 
 	    # check vocab reading
@@ -225,6 +232,10 @@ sub search_single {
 			# sound... I had a die in here but I'll just
 			# change it to just pick the first match.
 			$rtype = "$1:$2";
+			# Save kanji reading to result hash
+			$vocab_item->{kanji_hira}=$hira;
+			$vocab_item->{kanji_type}=$1;
+			$vocab_item->{kanji_kana}=$2;
 			last;
 			# don't die below
 			die "$rtype ne $1:$2" 
