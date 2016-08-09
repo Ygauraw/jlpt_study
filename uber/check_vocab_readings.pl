@@ -60,25 +60,14 @@ my %vocab_dict = ();
 if ($kanji eq "--makedb") {
     print "About to add to db tables; ^C if you don't want this\n";
     <STDIN>;
-    my $new_db = DBI->connect(
-	"dbi:SQLite:dbname=kanji_readings.sqlite", "", "",
-	{
-	    RaiseError     => 1,
-	    sqlite_unicode => 1,
-	    AutoCommit     => 0,
-	}
-	);
-    die "Failed to open kanji_readings.sqlite: $!\n"  # $!?
-	unless defined($new_db);
-    recreate_tables($new_db);
-    # probably a good idea to prepare some insert statement handlers
+
     for my $kanji (qw/降 雨/) { # small test set
 	%vocab_dict = ();	# must clear for each new kanji
 	load_vocab($kanji);
 
 	my $result = search_single($kanji);
 	summarise_readings($result);
-	save_readings($new_db,$result);
+	save_readings($result);
     }
     
 } else {
@@ -86,7 +75,7 @@ if ($kanji eq "--makedb") {
     load_vocab($kanji);
     my $result = search_single($kanji);
     summarise_readings($result);
-} 
+}
 
 $web_data_db->disconnect;
 $core_26k_db->disconnect;
@@ -94,6 +83,51 @@ $core_26k_db->disconnect;
 exit(0);
 
 # The rest is just subs
+my $heisig6_seq = 0;
+sub save_readings {
+    my $result = shift;
+
+    # OK, not using dbh since I have Class::DBI
+    my $kanji          = $result->{kanji};
+    my $num_failed     = 0 + @{$result->{failed}};
+    my $num_parsed     = 0 + keys %{$result->{reading_counts}};
+    my $failed         = $result->{failed};
+    my $reading_counts = $result->{reading_counts};
+    
+    my $fields = {
+	kanji         => $kanji,
+	heisig6_seq   => ++$heisig6_seq,
+	num_readings  => $num_parsed + $num_failed,
+	adj_readings  => $num_parsed + $num_failed,
+	num_vocab     => $result->{matched_count},
+	num_failed    => $num_failed,
+	adj_failed    => $num_failed,
+    };
+
+    my $Summary = KanjiReadings::Summary->insert($fields);
+    die unless ref($Summary);
+    $Summary->update;
+
+    my %tally = (
+	on => 0,
+	kun => 0,
+	failed => 0,
+    );
+    
+    my $tally_fields = {
+	kanji => $kanji,
+    };
+    for my $hira (sort {$a cmp $b} keys %$reading_counts) {
+	my $vocab_reading_fields = {
+	    kanji => $kanji,
+	};
+	my $syn = $reading_counts->{$hira}; # like kun:お
+	
+    }
+
+    
+    
+}
 
 sub recreate_tables {
     my $dbh = shift;
@@ -104,11 +138,6 @@ sub recreate_tables {
     # Likewise, use Class::DBI instead of raw SQL for this particular
     # DB.    
 }
-sub save_readings {
-    my ($dbh, $result, @junk) = @_;
-
-}
-
 # Load vocab with matching kanji from both sources and merge into a
 # single dictionary.  I could try updating this to store the source
 # and/or English text but it's not worth the hassle.
@@ -162,6 +191,7 @@ sub search_single {
 		push @failed, "N$grade $vocab => $reading";
 
 	    } else {
+		# !!! Make this appear as part of result !!!
 		print "Matched N$grade $vocab => $reading\n";
 		#dumpf($listref, \&filter_dumped);
 

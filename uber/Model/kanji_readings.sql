@@ -25,7 +25,7 @@ create table reading_tallies (
   hiragana     TEXT,		-- hiragana rendering
 
   -- tallies can be adjusted for:
-  --   出発-like sound change (+1 to adj_tally for はつ)
+  --   出発-like sound change (+1 to adj_tally for はつ; -1 for failed はっ)
   --   okurigana that program didn't recognise properly (eg in 取り引き,
   --   -1 for とり, +1 for と)
   -- These adjustments should me made manually and require simultaneous
@@ -53,7 +53,7 @@ create table vocab_readings (
   adj_type     TEXT,		-- fields. If they're populated, use them 
   adj_kana     TEXT,		-- in preference to the reading_* fields
 
-  -- finally a flag for ignoring this vocab/reading pair set for, eg
-  -- N5 大切 => たいせち (very unusual and possibly incorrect reading)
+  -- finally, a flag for ignoring this vocab/reading pair set for, eg
+  -- N5 大切 => たいせち (unusual and possibly incorrect reading)
   ignore_flag  INTEGER		
 );
