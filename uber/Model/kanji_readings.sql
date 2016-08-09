@@ -22,7 +22,7 @@ create table reading_tallies (
   kanji        TEXT NOT NULL,
   read_type    TEXT NOT NULL,	-- 'on' or 'kun'
   kana         TEXT NOT NULL,   -- can be hiragana (kun) or katakana (on)
-  hiragana     TEXT,		-- hiragana rendering
+  hiragana     TEXT NOT NULL,	-- hiragana rendering
 
   -- tallies can be adjusted for:
   --   出発-like sound change (+1 to adj_tally for はつ; -1 for failed はっ)

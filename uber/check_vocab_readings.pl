@@ -12,7 +12,8 @@ use Data::Dump qw(dump dumpf);
 use DBI;
 
 # Script-related utils
-use Util::JA_Script qw(hira_to_kata has_hira has_kata has_kanji);
+use Util::JA_Script qw(hira_to_kata kata_to_hira has_hira
+                       has_kata has_kanji get_jouyou_list);
 
 # Class::DBI model for insertion into new kanji_readings db
 use Model::KanjiReadings;
@@ -61,7 +62,9 @@ if ($kanji eq "--makedb") {
     print "About to add to db tables; ^C if you don't want this\n";
     <STDIN>;
 
-    for my $kanji (qw/降 雨/) { # small test set
+    #my $kanji_list = [qw/降 雨/];	# small test set
+    my $kanji_list = get_jouyou_list();
+    for my $kanji (@$kanji_list) {
 	%vocab_dict = ();	# must clear for each new kanji
 	load_vocab($kanji);
 
@@ -69,7 +72,11 @@ if ($kanji eq "--makedb") {
 	summarise_readings($result);
 	save_readings($result);
     }
-    
+    if (1) {
+	KanjiReadings::Summary->dbi_commit;
+	KanjiReadings::ReadingTally->dbi_commit;
+	KanjiReadings::VocabReading->dbi_commit;
+    }
 } else {
     %vocab_dict = ();
     load_vocab($kanji);
@@ -89,10 +96,10 @@ sub save_readings {
 
     # OK, not using dbh since I have Class::DBI
     my $kanji          = $result->{kanji};
-    my $num_failed     = 0 + @{$result->{failed}};
-    my $num_parsed     = 0 + keys %{$result->{reading_counts}};
-    my $failed         = $result->{failed};
     my $reading_counts = $result->{reading_counts};
+    my $failed         = $result->{failed};
+    my $num_failed     = 0 + @$failed;
+    my $num_parsed     = 0 + keys %$reading_counts;
     
     my $fields = {
 	kanji         => $kanji,
@@ -108,25 +115,51 @@ sub save_readings {
     die unless ref($Summary);
     $Summary->update;
 
-    my %tally = (
-	on => 0,
-	kun => 0,
-	failed => 0,
-    );
-    
-    my $tally_fields = {
-	kanji => $kanji,
-    };
-    for my $hira (sort {$a cmp $b} keys %$reading_counts) {
-	my $vocab_reading_fields = {
+    # Insert tally records
+    for my $syn (sort {$a cmp $b} keys %$reading_counts) {
+	my $fields = {
 	    kanji => $kanji,
 	};
-	my $syn = $reading_counts->{$hira}; # like kun:お
-	
+	die "Expected reading counts like hira => (on|kun):<kana>\n" unless
+	    $syn =~ /^(on|kun):(.*)/;
+	$fields->{read_type}   = $1;
+	$fields->{kana}        = $2;
+	$fields->{hiragana}    = kata_to_hira($2); # hira->hira ok
+	$fields->{raw_tally}   =
+	$fields->{adj_tally}   = $reading_counts->{$syn};
+
+	KanjiReadings::ReadingTally->insert($fields);
     }
 
-    
-    
+    # Insert vocab reading records. Since we add both matched and
+    # failed, I'll move the actual work into a separate sub
+    for my $vocab (@{$result->{matched_list}}) {
+	save_vocab_reading($kanji, $vocab);
+    }
+    for my $vocab (@{$result->{failed}}) {
+	save_vocab_reading($kanji, $vocab);
+    }
+}
+
+sub save_vocab_reading {
+    my $kanji = shift;
+    my $item  = shift;
+    die unless ref($item) eq "HASH";
+
+    KanjiReadings::VocabReading->insert({
+	kanji        => $kanji,
+	vocab_kanji  => $item->{vocab},
+	vocab_kana   => $item->{reading},
+	jlpt_grade   => $item->{grade},
+	reading_hira => $item->{kanji_hira} || '',
+	reading_type => $item->{kanji_type} || '',
+	reading_kana => $item->{kanji_kana} || '',
+	adj_hira     => $item->{kanji_hira} || '',
+	adj_type     => $item->{kanji_type} || '',
+	adj_kana     => $item->{kanji_kana} || '',
+	ignore_flag  => 0,
+    });;
+
 }
 
 sub recreate_tables {

@@ -2,7 +2,8 @@ package Util::JA_Script;
 
 require Exporter;
 @ISA = qw(Exporter);
-@EXPORT_OK = qw(hira_to_kata kata_to_hira has_hira has_kata has_kanji);
+@EXPORT_OK = qw(hira_to_kata kata_to_hira has_hira has_kata has_kanji
+                get_jouyou_list);
 
 use strict;
 use warnings;
@@ -168,7 +169,8 @@ sub load_db {
 
 sub get_jouyou_list {
     # ignore any args
-    die "Must call $pkg::load_db before get_jouyou_list\n";
+    die "Must call $pkg::load_db before get_jouyou_list\n" 
+	unless $have_kinfo;
     return $jouyou_list;
 }
 

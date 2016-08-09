@@ -11,7 +11,7 @@ KanjiReadings::DBI->connection(
     {   # does Class::DBI accept DBI/DBD options like below? Yes.
         RaiseError     => 1,
         sqlite_unicode => 1,
-        AutoCommit     => 1,
+        AutoCommit     => 0, # remember to use dbi_commit!
     }
     );
 
