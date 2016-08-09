@@ -164,6 +164,12 @@ sub load_vocab {
     warn "Read in Core data\n";
 }
 
+# print a failed or matched vocab item
+sub print_vocab_item {
+    my $item = shift;
+    print shift || '';
+    print "N$item->{grade} $item->{vocab} => $item->{reading}\n";
+}
 sub search_single {
     # Structures for doing summary analysis of reading frequency and
     # failed parses
@@ -171,6 +177,7 @@ sub search_single {
     my @failed = ();
     my %reading_counts = ();
     my $matched_count = 0;
+    my $matched_list  = [];
     my ($vocab, $kana, $grade, $reading);
 
     my $unstripped = $kanji;
@@ -183,18 +190,23 @@ sub search_single {
 
 	foreach $reading (@$readlist) {
 	    #warn "Reading: $reading\n";
+	    my $vocab_item = {
+		grade   => $grade,
+		vocab   => $vocab,
+		reading => $reading,
+	    };
 
 	    # check vocab reading
 	    my $listref = $ja->kanji_reading($vocab,$reading);
 	    unless(defined $listref) {
 		#warn "No match for $vocab => $reading\n";
-		push @failed, "N$grade $vocab => $reading";
+		push @failed, $vocab_item;
 
 	    } else {
-		# !!! Make this appear as part of result !!!
-		print "Matched N$grade $vocab => $reading\n";
+		# The below will now appear in returned result
+		#print "Matched N$grade $vocab => $reading\n";
 		#dumpf($listref, \&filter_dumped);
-
+		push @$matched_list, $vocab_item;
 		++$matched_count;
 
 		# Scan through the list to find just the kanji we're
@@ -233,8 +245,10 @@ sub search_single {
     return {
 	kanji => $kanji,
 	matched_count => $matched_count,
+	matched_list  => $matched_list,
 	reading_counts => \%reading_counts,
 	failed => \@failed,
+	failed_count => scalar (@failed),
     };
 }
 
@@ -245,6 +259,12 @@ sub summarise_readings {
     my $matched_count  = $rhash->{matched_count};
     my $reading_counts = $rhash->{reading_counts};
     my $failed         = $rhash->{failed};
+    my $failed_count   = $rhash->{failed_count};
+    my $matched_list   = $rhash->{matched_list};
+
+    foreach my $item (@$matched_list) {
+	print_vocab_item($item, "Matched ");
+    }
 
     print "Summary of readings for kanji $kanji:\n";
     print "Total vocab readings: " . ($matched_count + @$failed) .
@@ -254,7 +274,10 @@ sub summarise_readings {
     for (sort {$a cmp $b} keys %$reading_counts) { 
 	printf("  %02d time(s)  %-16s \n", $reading_counts->{$_}, $_)  
     };
-    print "Non-matching:\n  " . (join "\n  ", @$failed) . "\n";
+    print "Non-matching:\n";
+        foreach my $item (@$failed) {
+	print_vocab_item($item, "  ");
+    }
 }
 
 sub new_dict {
