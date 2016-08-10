@@ -38,6 +38,10 @@ sub new {
 	);
 
     $context->add_object(
+	name          => "failed",
+	aggregated_by => "gui.selected_kanji",
+	);
+    $context->add_object(
 	name          => "summary",
 	aggregated_by => "gui.selected_kanji",
 	attr_accessors_href => {
@@ -52,10 +56,6 @@ sub new {
 	);
     $context->add_object(
 	name          => "matched",
-	#aggregated_by => "gui.selected_kanji",
-	);
-    $context->add_object(
-	name          => "failed",
 	#aggregated_by => "gui.selected_kanji",
 	);
 
