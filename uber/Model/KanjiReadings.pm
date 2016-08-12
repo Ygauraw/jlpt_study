@@ -34,10 +34,14 @@ package KanjiReadings::VocabReading;
 use base 'KanjiReadings::DBI';
 
 KanjiReadings::VocabReading->table('vocab_readings');
+# The following are not actually primary keys, but we need to pretend
+# they are so that Class::DBI will work properly when doing has_many
+# from Summary table.
+KanjiReadings::VocabReading->columns( 
+    Primary     => qw(kanji vocab_kanji vocab_kana reading_type));
 KanjiReadings::VocabReading->columns(
-    Others => qw(kanji vocab_kanji vocab_kana 
-                reading_hira reading_type reading_kana
-                jlpt_grade adj_hira adj_type adj_kana ignore_flag));
+    Others => qw( reading_hira jlpt_grade
+                  reading_kana adj_hira adj_type adj_kana ignore_flag));
 
 KanjiReadings::VocabReading->has_a(kanji => 'KanjiReadings::Summary');
 
@@ -49,14 +53,14 @@ use base 'KanjiReadings::DBI';
 
 KanjiReadings::Summary->table('summary');
 KanjiReadings::Summary->columns(Primary => 'kanji');
-KanjiReadings::Summary->columns(
-    Others => qw(heisig6_seq num_readings adj_readings num_vocab
-                num_failed adj_failed));
+KanjiReadings::Summary->columns(Others  => qw(heisig6_seq num_readings adj_readings 
+                                              num_vocab num_failed adj_failed));
 
 KanjiReadings::Summary->has_many(
     tallies        => 'KanjiReadings::ReadingTally');
 KanjiReadings::Summary->has_many(
-    vocab_readings => 'KanjiReadings::VocabReading');
+    vocab_readings => 'KanjiReadings::VocabReading', 'kanji',
+    { order_by => vocab_kanji} );
 
 
 1;
