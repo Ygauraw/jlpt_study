@@ -31,6 +31,8 @@ use Util::JA_Script qw(has_kanji has_hira);
 
 use Carp;
 
+use Glib qw/TRUE FALSE/; 
+
 our ($AUTOLOAD, %get_set_attr, $DEBUG);
 BEGIN {
     $DEBUG=1;
@@ -84,7 +86,6 @@ sub new {
 		warn "failed: $self->{kanji}; self is of type " . ref($self);
 		my @outlist = ();
 		foreach my $vocab ($self->vocab_readings) {
-		    #warn "Type: " . $vocab->reading_type . "\n";
 		    next if $vocab->reading_type;
 		    push @outlist, [
 			"N" . $vocab->jlpt_grade,
@@ -110,15 +111,30 @@ sub new {
 		}
 		\@outlist;
 	    },
+	    get_tallies => sub {
+		my $self = shift;
+		warn "Asked to get tallies, kanji is " . $self->kanji . "\n";
+		my @outlist = ();
+		foreach my $tally ($self->tallies) {
+		    #warn "Type: " . $vocab->reading_type . "\n";
+		    next unless $tally->read_type;
+		    push @outlist, [
+			$tally ->adj_tally || $tally->raw_tally,
+			$tally->read_type,
+			$tally->kana,
+		    ]
+		}
+		\@outlist;
+	    },
 	},
 	attr_depends_href => {
 	    matched     => "gui.selected_kanji",
 	    summary     => "gui.selected_kanji",
 	    failed      => "gui.selected_kanji",
+	    tallies     => "gui.selected_kanji",
 	},
 	aggregated_by => "gui.selected_kanji",
-
-    );
+	);
 
   return $self;
   
@@ -134,24 +150,31 @@ sub build_window {
 	content => [
 	    Gtk2::Ex::FormFactory::Window->new(
 		quit_on_close => 1,
+		expand => 1,
+		#		height => 600,
+		
+		width  => 600,
 		content => [
 		    Gtk2::Ex::FormFactory::Table->new(
 			expand => 1,
 			layout => <<'END',
                         +---->----------------+---------+
                         '     Search Box      '  Go     |
-                        +---->----------------+---------+
-                        ^          Summary              |
+                        +---------------------+---------+
+                        |          Summary              |
                         +-------------------------------+
-                        |          Matched              |
+                        ^          Tallies              |
                         +-------------------------------+
-                        |          Failed               |
+                        ^          Matched              |
+                        +-------------------------------+
+                        ^          Failed               |
                         +-------------------------------+
 END
 			content => [
 			    $self->build_search,
 			    $self->build_go,
 			    $self->build_summary,
+			    $self->build_tallies,
 			    $self->build_matched,
 			    $self->build_failed,
 			],
@@ -201,30 +224,79 @@ sub build_go {
 
 sub build_summary {
     my $self = shift;
-    Gtk2::Ex::FormFactory::Label->new(
-	attr => "kanji.summary",
-	label => "change me",
-	inactive => 'insensitive',
-	);
+    Gtk2::Ex::FormFactory::Form->new(
+	content => [
+	    Gtk2::Ex::FormFactory::Label->new(
+		label   => "Summary of readings",
+		attr => "kanji.summary",
+	    ),
+#	    Gtk2::Ex::FormFactory::List->new(
+#		attr => "kanji.summary",
+#		columns => ["JLPT", "Vocab", "Reading", "Type", "Kana"],
+#	    )
+	],
+    );
+}
+
+sub build_tallies {
+    my $self = shift;
+    Gtk2::Ex::FormFactory::Form->new(
+#	height  => 120,
+	expand  => 1,
+	content => [
+	    Gtk2::Ex::FormFactory::Label->new(
+		label   => "Reading Tallies",
+	    ),
+	    Gtk2::Ex::FormFactory::List->new(
+		attr => "kanji.tallies",
+		columns => ["Count", "Type", "Reading", ],
+		height  => 120,
+		scrollbars => ["never", "automatic"],
+		expand => 1,
+	    )
+	],
+    );
 }
 
 sub build_matched {
     my $self = shift;
-    Gtk2::Ex::FormFactory::List->new(
-	attr    => "kanji.matched",
-	label   => "Matching Readings",
-	columns => ["JLPT", "Vocab", "Reading", "Type", "Kana"],
+    Gtk2::Ex::FormFactory::Form->new(
+#	height  => 400,
+	expand  => 1,
+	content => [
+	    Gtk2::Ex::FormFactory::Label->new(
+		label   => "Vocab with matching readings",
+	    ),
+	    Gtk2::Ex::FormFactory::List->new(
+		attr    => "kanji.matched",
+		columns => ["JLPT", "Vocab", "Reading", "Type", "Kana"],
+		height  => 320,
+		scrollbars => ["never", "automatic"],
+		expand => 1,
+	    )
+	]
     )
 }
 
 sub build_failed {
     my $self = shift;
-    Gtk2::Ex::FormFactory::List->new(
-	attr    => "kanji.failed",
-	label   => "Non-matching Readings",
-	columns => ["JLPT", "Vocab", "Reading"],
+    Gtk2::Ex::FormFactory::Form->new(
+#	height  => 200,
+	expand  => 1,
+	content => [
+	    Gtk2::Ex::FormFactory::Label->new(
+		label   => "Vocab with no matching readings",
+	    ),
+	    Gtk2::Ex::FormFactory::List->new(
+		attr    => "kanji.failed",
+		columns => ["JLPT", "Vocab", "Reading"],
+		height  => 200,
+		scrollbars => ["never", "automatic"],
+		expand => 1,
+
+	    )
+	]
     )
 }
-
 
 1;

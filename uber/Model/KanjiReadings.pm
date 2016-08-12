@@ -24,7 +24,9 @@ use base 'KanjiReadings::DBI';
 
 KanjiReadings::ReadingTally->table('reading_tallies');
 KanjiReadings::ReadingTally->columns(
-    Others => qw(kanji read_type kana hiragana raw_tally adj_tally));
+    Primary => qw(kanji read_type kana));
+KanjiReadings::ReadingTally->columns(
+    Others  => qw(hiragana raw_tally adj_tally));
 
 KanjiReadings::ReadingTally->has_a(kanji => 'KanjiReadings::Summary');
 
