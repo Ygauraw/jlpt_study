@@ -9,6 +9,8 @@ use utf8;
 use Encode qw(decode_utf8);
 use Data::Dump qw(dump dumpf);
 
+my $verbose = 0;
+
 use DBI;
 
 # Script-related utils
@@ -62,6 +64,11 @@ if ($kanji eq "--makedb") {
     print "About to add to db tables; ^C if you don't want this\n";
     <STDIN>;
 
+    # I've changed AutoCommit to 1 by default in the KanjiReadings
+    # class, but it's really slow. So turn it off for the duration of
+    # these updates:
+    KanjiReadings::DBI->begin_work;
+
     #my $kanji_list = [qw/降 雨/];	# small test set
     my $kanji_list = get_jouyou_list();
     for my $kanji (@$kanji_list) {
@@ -69,14 +76,14 @@ if ($kanji eq "--makedb") {
 	load_vocab($kanji);
 
 	my $result = search_single($kanji);
-	summarise_readings($result);
+	summarise_readings($result) if $verbose;
 	save_readings($result);
     }
-    if (1) {
-	KanjiReadings::Summary->dbi_commit;
-	KanjiReadings::ReadingTally->dbi_commit;
-	KanjiReadings::VocabReading->dbi_commit;
-    }
+    KanjiReadings::DBI->end_work;
+    # Explicit commits below shouldn't be needed now:
+    #	KanjiReadings::Summary->dbi_commit;
+    #	KanjiReadings::ReadingTally->dbi_commit;
+    #	KanjiReadings::VocabReading->dbi_commit;
 } else {
     %vocab_dict = ();
     load_vocab($kanji);
@@ -184,7 +191,7 @@ sub load_vocab {
     my $rc = $sth->execute("\%$kanji\%") or die;
     die unless defined $sth;
     update_dict($sth);
-    warn "Read in tanos/jlptstudy/tagaini data\n";
+    warn "Read in tanos/jlptstudy/tagaini data\n" if $verbose;
 
     # Prepare query for core_26k_db and update the dictionary
     $sth = $core_26k_db->prepare(
@@ -194,7 +201,7 @@ sub load_vocab {
     die unless defined $sth;
     $rc = $sth->execute("\%$kanji\%") or die;
     update_dict($sth);
-    warn "Read in Core data\n";
+    warn "Read in Core data\n" if $verbose;
 }
 
 # print a failed or matched vocab item

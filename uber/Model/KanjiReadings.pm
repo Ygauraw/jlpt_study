@@ -11,11 +11,24 @@ KanjiReadings::DBI->connection(
     {   # does Class::DBI accept DBI/DBD options like below? Yes.
         RaiseError     => 1,
         sqlite_unicode => 1,
-        AutoCommit     => 0, # remember to use dbi_commit!
+        AutoCommit     => 1, # set to 0 locally for big, slow updates
     }
     );
 
+sub begin_work {
+    my $self = shift;
+    $self->db_Main->begin_work;
+}
+
+sub end_work {
+    my $self = shift;
+    $self->db_Main->commit;
+}
+
+
 sub autoupdate        { 1 }
+
+1;
 
 ####################
 
