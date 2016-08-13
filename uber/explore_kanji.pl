@@ -38,7 +38,7 @@ BEGIN {
     $DEBUG=1;
     %get_set_attr = (
 	    map { ($_ => undef) } 
-	    qw(selected_kanji search_term
+	    qw(selected_kanji search_term search_term_presets
     ));
     $kanjivg_dir = '/home/dec/JLPT_Study/kanjivg/kanjivg-r20160426/kanji';    
 }
@@ -68,9 +68,14 @@ sub new {
     
     my $self = bless { context => $context };
 
+    $self->{search_term_presets} = ['雨', 'rain'];
+    
     $context->add_object(
 	name => "gui",
 	object => $self,
+	attr_depends_href => {
+	    search_term => "gui.selected_kanji", # works OK when we update history
+	}
     );
     
     $context->add_object(
@@ -187,17 +192,17 @@ sub build_window {
 		expand => 1,
 		#		height => 600,
 		
-		width  => 800,
+		width  => 600,
 		content => [
 		    Gtk2::Ex::FormFactory::Table->new(
 			expand => 1,
 			layout => <<'END',
                         +---->----------------+---------+
                         '     Search Box      '  Go     |
-                        +-------------------+-+-->------+
+                        +->>----------------+-+-->------+
                         ^ Pixbuf            |           |
                         +-------------------+ Matched   |
-                        ^          Tallies  |           |
+                        |          Tallies  |           |
                         +-------------------------------+
                         ^          Failed               |
                         +-------------------------------+
@@ -232,10 +237,11 @@ sub build_search {
     Gtk2::Ex::FormFactory::Combo->new(
 	label   => "Enter a kanji or an RTK frame number/keyword",
 	attr    => "gui.search_term",
-	presets => ['雨', 'rain'],
 	# later implement history feature
     )
 }
+
+
 
 sub build_go {
     my $self = shift;
@@ -248,6 +254,15 @@ sub build_go {
 	    unless ($kanji) {
 		warn "Blank search\n"; return 
 	    }
+
+	    # Handle history
+	    if ($kanji ne $self->{search_term_presets}->[0]) {
+		unshift @{$self->{search_term_presets}}, $kanji;
+		shift  @{$self->{search_term_presets}} 
+		if  @{$self->{search_term_presets}} > 40;
+		warn "New history is " . join ", ",  @{$self->{search_term_presets}};
+	    }
+	    
 	    # Add stuff here to convert keyword/frame number to kanji
 	    $context->set_object_attr("gui.selected_kanji",
 				      KanjiReadings::Summary->retrieve($kanji));
@@ -278,9 +293,9 @@ sub build_pixbuf {
     Gtk2::Ex::FormFactory::Image->new(
 	attr => "kanji.image_file",
 	bgcolor => "#ffffff",
-	#height => 400, # does nothing!
-	scale_to_fit => 1,
-	scale => 1.25,
+	# height => 400, # does nothing!
+	scale_to_fit => 1, 
+	# scale => 1.25,
     );
     
 }
@@ -299,7 +314,20 @@ sub build_tallies {
 		columns => ["Count", "Type", "Reading", ],
 		height  => 120,
 		scrollbars => ["never", "automatic"],
-		expand => 1,
+		#		expand => 1,
+		# hook that selects all matching vocab in readings panel
+		signal_connect_after => {
+		    row_activated => sub  {
+			# Passed values are of the types:
+			# Gtk2::SimpleList
+			# Gtk2::TreePath
+			# Gtk2::TreeViewColumn
+			# from Gtk2::SimpleList pod:
+			my ($sl, $path, $column) = @_;
+			my $row_ref = $sl->get_row_data_from_path ($path);
+
+		    }
+		},
 	    )
 	],
     );
@@ -332,12 +360,12 @@ sub build_failed {
 	expand  => 1,
 	content => [
 	    Gtk2::Ex::FormFactory::Label->new(
-		label   => "Unmatched",
+		label   => "Unmatched Vocab",
 	    ),
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.failed",
 		columns => ["JLPT", "Vocab", "Reading"],
-		height  => 200,
+		height  => 140,
 		scrollbars => ["never", "automatic"],
 		expand => 1,
 
