@@ -26,7 +26,7 @@ KanjiReadings::ReadingTally->table('reading_tallies');
 KanjiReadings::ReadingTally->columns(
     Primary => qw(kanji read_type kana));
 KanjiReadings::ReadingTally->columns(
-    Others  => qw(hiragana raw_tally adj_tally));
+    Others  => qw(hiragana exemplar raw_tally adj_tally));
 
 KanjiReadings::ReadingTally->has_a(kanji => 'KanjiReadings::Summary');
 

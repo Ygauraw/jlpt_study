@@ -24,6 +24,8 @@ create table reading_tallies (
   kana         TEXT NOT NULL,   -- can be hiragana (kun) or katakana (on)
   hiragana     TEXT NOT NULL,	-- hiragana rendering
 
+  exemplar     TEXT,            -- single exemplary vocab for this reading
+
   -- tallies can be adjusted for:
   --   出発-like sound change (+1 to adj_tally for はつ; -1 for failed はっ)
   --   okurigana that program didn't recognise properly (eg in 取り引き,

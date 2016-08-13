@@ -27,7 +27,7 @@ package GUI::KanjiExplorer;
 
 use strict;
 use warnings;
-use Util::JA_Script qw(has_kanji has_hira);
+use Util::JA_Script qw(has_kanji has_hira strip_non_kanji);
 
 use Carp;
 
@@ -131,6 +131,7 @@ sub new {
 			$tally ->adj_tally || $tally->raw_tally,
 			$tally->read_type,
 			$tally->kana,
+			$tally->exemplar,
 		    ]
 		}
 		\@outlist;
@@ -266,8 +267,10 @@ sub jump_to_kanji {
 	#warn "New history is " . join ", ",  @$history;
     }
 
+    $context->set_object_attr("gui.search_term",'');
     $context->set_object_attr("gui.selected_kanji",
 			      KanjiReadings::Summary->retrieve($kanji));
+    $self->{kanji} = $kanji;
 }
 
 sub build_go {
@@ -339,7 +342,7 @@ sub build_tallies {
 	    ),
 	    Gtk2::Ex::FormFactory::List->new(
 		attr => "kanji.tallies",
-		columns => ["Count", "Type", "Reading", ],
+		columns => ["Count", "Type", "Reading", "Exemplar", ],
 		height  => 120,
 		scrollbars => ["never", "automatic"],
 		#		expand => 1,
@@ -371,6 +374,12 @@ sub build_tallies {
 		    # popup menu and clipboard pasting. Figured this
 		    # from various sources...
 		    button_press_event => sub {
+			my ($sl,$event) = @_;
+			# Need to consume right mouse button press or
+			# else GTK will consider it to be a selection
+			return ($event->button == 3);
+		    },
+		    button_release_event => sub {
 			my ($sl, $event) = @_;
 			return 0 if ($event->button != 3);
 			warn "Got right-click on tallies table\n";
@@ -407,6 +416,90 @@ sub build_tallies {
     );
 }
 
+# Build a menu that can be used on either the matched or failed
+# panels. Meant to be called from a button_press_event handler.
+sub vocab_panel_popup_menu {
+    my ($self, $sl, $event, $panel) = @_;
+    return 0 if ($event->button != 3);
+
+    warn "Got right-click on $panel table\n";
+
+    # Find out where the click went
+    my ($path, $col, $cell_x, $cell_y)
+	= $sl->get_path_at_pos ($event->x, $event->y);
+    return 0 unless defined $path; # didn't click on a row
+
+    # Find row index and data based on the TreeView path
+    my ($row_idx) = $path->get_indices;
+    my $row_ref   = $sl->get_row_data_from_path ($path);
+    warn "row index is $row_idx\n";
+    warn "row_ref is of type " . ref($row_ref);
+    warn "This row contains " . (join ", ", @$row_ref) . "\n";
+
+    # when giving option to search for kanji, ignore the
+    # currently-selected one
+    my $kanji = $self->{kanji};
+    warn "kanji is '$kanji'\n";
+
+    # Will add options to search for other kanji in vocab
+    my %other_kanji = ();
+    my @selected_rows = $sl->get_selected_indices;
+    @selected_rows = ($row_idx) if @selected_rows < 2;
+    warn "Selected rows are: " . (join ", ", @selected_rows) . "\n";
+
+    # Scan selected rows to pull out other kanji
+    my $lol = $sl->{data};
+    foreach my $i (@selected_rows) {
+	my $vocab = strip_non_kanji($lol->[$i]->[1]);
+	foreach my $char (split "", $vocab) {
+	    next if $char eq $kanji;
+	    $other_kanji{$char} = undef;
+	}
+    }
+    warn join ", ", keys %other_kanji;
+
+    my $menu = Gtk2::Menu->new();
+    my $menu_item;
+    my $menu_items = 0;
+
+    for my $char (sort { $a cmp $b } keys %other_kanji) {
+	$menu_item = Gtk2::MenuItem->new("Look up $char");
+	$menu_item->signal_connect(
+	    activate => sub {
+		$self->jump_to_kanji($char);
+	    }
+	);
+	$menu_items++;
+	$menu_item->show;
+	$menu->append($menu_item);
+    }
+    
+    # add menu item for copying either vocab or reading
+    if (@selected_rows == 1) {
+	if ($menu_items) {
+	    $menu_item = Gtk2::SeparatorMenuItem->new;
+	    $menu_item->show;
+	    $menu->append($menu_item);
+	}	    
+	for my $col (1,2) {
+	    my $copy_text = $row_ref->[$col];
+	    $menu_item = Gtk2::MenuItem->new("Copy $copy_text");
+	    $menu_item->signal_connect(
+		activate => sub {
+		    Gtk2::Clipboard->get(Gtk2::Gdk->SELECTION_CLIPBOARD)
+			->set_text($copy_text);
+		}
+	    );
+	    $menu_item->show;
+	    $menu->append($menu_item);
+	}
+    }
+
+    $menu->popup(undef,undef,undef,undef,$event->button, $event->time);
+    
+    return 1;			# indicates we consumed the event
+}
+
 sub build_matched {
     my $self = shift;
     Gtk2::Ex::FormFactory::Form->new(
@@ -420,10 +513,19 @@ sub build_matched {
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.matched",
 		columns => ["JLPT", "Vocab", "Reading", "Type", "Kana"],
-		height  => 320,
+		height  => 400,
 		scrollbars => ["never", "automatic"],
 		expand => 1,
 		selection_mode => "multiple",
+		signal_connect => {
+		    button_press_event => sub {
+			my ($sl,$event) = @_;
+			return ($event->button == 3);
+		    },
+		    button_release_event => sub {
+			$self->vocab_panel_popup_menu(@_, "matched");
+		    }
+		},		
 	    )
 	]
     )
@@ -445,6 +547,15 @@ sub build_failed {
 		scrollbars => ["never", "automatic"],
 		expand => 1,
 		selection_mode => "multiple",
+		signal_connect => {
+		    button_press_event => sub {
+			my ($sl,$event) = @_;
+			return ($event->button == 3);
+		    },
+		    button_release_event => sub {
+			$self->vocab_panel_popup_menu(@_, "failed");
+		    }
+		},		
 	    )
 	]
     )

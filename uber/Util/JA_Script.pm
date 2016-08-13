@@ -3,7 +3,7 @@ package Util::JA_Script;
 require Exporter;
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(hira_to_kata kata_to_hira has_hira has_kata has_kanji
-                get_jouyou_list);
+                get_jouyou_list strip_non_kanji);
 
 use strict;
 use warnings;
