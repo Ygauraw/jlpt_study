@@ -354,6 +354,9 @@ sub build_rtk {
     );
 }
 
+sub build_jouyou_grade {
+    
+}
 
 sub build_tallies {
     my $self = shift;
