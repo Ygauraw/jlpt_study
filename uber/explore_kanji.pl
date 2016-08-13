@@ -276,8 +276,8 @@ sub build_go {
 	label        => 'Search',
 	attr         => 'gui.selected_kanji',
 	clicked_hook => sub {
-	    my $term = $self->get_search_term;
-	    my $kanji;
+	    my $term  = $self->get_search_term;
+	    my $kanji = $term;
 	    unless ($term) {
 		warn "Blank search\n"; return 
 	    }
@@ -326,6 +326,8 @@ sub build_pixbuf {
     
 }
 
+
+
 sub build_tallies {
     my $self = shift;
     Gtk2::Ex::FormFactory::Form->new(
@@ -342,7 +344,7 @@ sub build_tallies {
 		scrollbars => ["never", "automatic"],
 		#		expand => 1,
 		# hook that selects all matching vocab in readings panel
-		signal_connect_after => {
+		signal_connect => {
 		    row_activated => sub  {
 			# Passed values are of the types:
 			# Gtk2::SimpleList
@@ -351,7 +353,41 @@ sub build_tallies {
 			# from Gtk2::SimpleList pod:
 			my ($sl, $path, $column) = @_;
 			my $row_ref = $sl->get_row_data_from_path ($path);
+		    },
 
+		    # Kind of hard to find examples for how to do a
+		    # popup menu and clipboard pasting. Figured this
+		    # from various sources...
+		    button_press_event => sub {
+			my ($sl, $event) = @_;
+			return 0 if ($event->button != 3);
+			warn "Got right-click on tallies table\n";
+			# Find out where the click went
+			my ($path, $col, $cell_x, $cell_y)
+			    = $sl->get_path_at_pos ($event->x, $event->y);
+			# Find row based on the TreeView path
+			my $row_ref = $sl->get_row_data_from_path ($path);
+			warn "row_ref is of type " . ref($row_ref);
+			warn "This row contains " . (join ", ", @$row_ref) . "\n";
+
+			# Build a popup menu with option to copy text
+			my $copy_text = $row_ref->[2];
+			my $menu = Gtk2::Menu->new();
+			my $menu_item = Gtk2::MenuItem->new("Copy $copy_text");
+			$menu_item->signal_connect(
+			    activate => sub {
+				Gtk2::Clipboard->get(Gtk2::Gdk->SELECTION_CLIPBOARD)
+				    ->set_text($copy_text);
+			    }
+			);
+			$menu_item->show;
+			$menu->append($menu_item);
+
+			warn "menu is a " . ref($menu);
+			#$menu->popup($event->x,$event->y,$event->button, $event->time);
+			$menu->popup(undef,undef,undef,undef,$event->button, $event->time);
+
+			return 1;
 		    }
 		},
 	    )
@@ -374,6 +410,7 @@ sub build_matched {
 		height  => 320,
 		scrollbars => ["never", "automatic"],
 		expand => 1,
+		selection_mode => "multiple",
 	    )
 	]
     )
@@ -394,7 +431,7 @@ sub build_failed {
 		height  => 140,
 		scrollbars => ["never", "automatic"],
 		expand => 1,
-
+		selection_mode => "multiple",
 	    )
 	]
     )
