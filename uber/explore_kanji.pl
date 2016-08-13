@@ -70,9 +70,9 @@ sub new {
     my $context = shift || Gtk2::Ex::FormFactory::Context->new;
     
     my $self = bless { context => $context };
-
-    $self->{search_term_presets} = ['雨', 'rain'];
     
+    $self->{search_term_presets} = ['雨', 'rain'];
+
     $context->add_object(
 	name => "gui",
 	object => $self,
@@ -120,6 +120,21 @@ sub new {
 		}
 		\@outlist;
 	    },
+	    get_rtk_info => sub {
+		my $self  = shift;
+		my $kanji = $self->kanji;
+
+		my $rtk;
+		if (exists($rtkinfo->{by_kanji}->{$kanji})) {
+		    $rtk = $rtkinfo->{by_kanji}->{$kanji};
+		} else {
+		    $rtk = {
+			frame  => "n/a",
+			keyword => "n/a",
+		    }
+		}
+		return "#" . $rtk->{frame} . ": " . $rtk->{keyword};
+	    },
 	    get_tallies => sub {
 		my $self = shift;
 		warn "Asked to get tallies, kanji is " . $self->kanji . "\n";
@@ -141,6 +156,7 @@ sub new {
 		my $kanji = $self->kanji;
 		warn "Asked to get image file, kanji is $kanji\n";
 		my $unicode = sprintf("%05x", ord $kanji);
+
 		# Unfortunately, my Gtk2::Gdk::Pixbuf is saying it
 		# doesn't recognise the svg file ...
 		# https://bugs.launchpad.net/ubuntu/+source/gdk-pixbuf/+bug/926019
@@ -171,15 +187,11 @@ sub new {
 	    failed      => "gui.selected_kanji",
 	    tallies     => "gui.selected_kanji",
 	    image_file  => "gui.selected_kanji",
+	    rtk_info    => "gui.selected_kanji",
 	},
 	aggregated_by => "gui.selected_kanji",
-	);
-
-    $context->add_object(
-	name  => "image",
-	
     );
-    
+
     return $self;
   
 }
@@ -205,10 +217,12 @@ sub build_window {
                         +---->----------------+---------+
                         '     Search Box      '  Go     |
                         +->>----------------+-+-->------+
-                        ^ Pixbuf            |           |
-                        +-------------------+ Matched   |
+                        ^ Pixbuf            | Matched   |
+                        +--------%----------+           |
+                        |       RTK         |           |
+                        +-------------------+           |
                         |          Tallies  |           |
-                        +-------------------------------+
+                        +-------------------+-----------+
                         ^          Failed               |
                         +-------------------------------+
 END
@@ -216,10 +230,11 @@ END
 			    $self->build_search,
 			    $self->build_go,
 			    $self->build_pixbuf,
-#			    $self->build_summary,
 			    $self->build_matched,
+			    $self->build_rtk,
 			    $self->build_tallies,
 			    $self->build_failed,
+#			    $self->build_summary,
 			],
 		    ),
 		    Gtk2::Ex::FormFactory::Button->new(
@@ -267,10 +282,12 @@ sub jump_to_kanji {
 	#warn "New history is " . join ", ",  @$history;
     }
 
+    warn "jump_to_kanji: kanji is $kanji\n";
+    $self->{kanji} = $kanji;
+
     $context->set_object_attr("gui.search_term",'');
     $context->set_object_attr("gui.selected_kanji",
 			      KanjiReadings::Summary->retrieve($kanji));
-    $self->{kanji} = $kanji;
 }
 
 sub build_go {
@@ -316,7 +333,7 @@ sub build_summary {
 }
 
 sub build_pixbuf {
-    my $self = shift;
+    my $self  = shift;
     my $kanji = $self->{kanji};
 
     Gtk2::Ex::FormFactory::Image->new(
@@ -326,9 +343,16 @@ sub build_pixbuf {
 	scale_to_fit => 1, 
 	# scale => 1.25,
     );
-    
 }
 
+
+sub build_rtk {
+    my $self  = shift;
+
+    Gtk2::Ex::FormFactory::Label->new(
+	attr => "kanji.rtk_info",
+    );
+}
 
 
 sub build_tallies {
