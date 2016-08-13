@@ -32,15 +32,18 @@ use Util::JA_Script qw(has_kanji has_hira);
 use Carp;
 
 use Glib qw/TRUE FALSE/; 
+use YAML::Any qw(LoadFile);
 
-our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir);
+our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir, $rtkinfo);
 BEGIN {
     $DEBUG=1;
     %get_set_attr = (
 	    map { ($_ => undef) } 
 	    qw(selected_kanji search_term search_term_presets
     ));
-    $kanjivg_dir = '/home/dec/JLPT_Study/kanjivg/kanjivg-r20160426/kanji';    
+    $kanjivg_dir = '/home/dec/JLPT_Study/kanjivg/kanjivg-r20160426/kanji';
+    $rtkinfo = LoadFile("./rtk_kanji.yaml") or die;
+    
 }
 sub AUTOLOAD {
     my $self = shift;
@@ -89,7 +92,7 @@ sub new {
 	    get_failed => sub {
 		warn "Asked to get failed\n";
 		my $self = shift;
-		warn "failed: $self->{kanji}; self is of type " . ref($self);
+		#warn "failed: $self->{kanji}; self is of type " . ref($self);
 		my @outlist = ();
 		foreach my $vocab ($self->vocab_readings) {
 		    next if $vocab->reading_type;
@@ -143,6 +146,7 @@ sub new {
 		# If I delete the comment, it works...
 		my $filename = "$kanjivg_dir/$unicode.svg";
 		return $filename;
+
 		# OK, can't use filename#id notation as below...
 		# my $filename = "/home/dec/JLPT_Study/kanjivg/kanjivg-20160426.xml";
 		# warn "No file $filename" unless -f $filename;
@@ -241,7 +245,30 @@ sub build_search {
     )
 }
 
+# jump_to_kanji was initially handled in the go button handler, but
+# I'm breaking it out here to reuse when I add a right-click menu to
+# table elements to allow jumping to other kanji found within compound
+# words. The optional term argument could be a keyword or frame
+# number, which is what I'll actually store in the history rather than
+# necessarily converting it.
+sub jump_to_kanji {
+    my $self = shift;
+    my $kanji = shift or die;
+    my $term  = shift || $kanji;
 
+    my $context = $self->{context};
+
+    # Handle history
+    my $history = $self->{search_term_presets};
+    if ($term ne $history->[0]) {
+	unshift @$history, $term;
+	shift   @$history if @$history > 40;
+	#warn "New history is " . join ", ",  @$history;
+    }
+
+    $context->set_object_attr("gui.selected_kanji",
+			      KanjiReadings::Summary->retrieve($kanji));
+}
 
 sub build_go {
     my $self = shift;
@@ -249,23 +276,22 @@ sub build_go {
 	label        => 'Search',
 	attr         => 'gui.selected_kanji',
 	clicked_hook => sub {
-	    my $context = $self->{context};
-	    my $kanji   = $self->get_search_term;
-	    unless ($kanji) {
+	    my $term = $self->get_search_term;
+	    my $kanji;
+	    unless ($term) {
 		warn "Blank search\n"; return 
 	    }
 
-	    # Handle history
-	    if ($kanji ne $self->{search_term_presets}->[0]) {
-		unshift @{$self->{search_term_presets}}, $kanji;
-		shift  @{$self->{search_term_presets}} 
-		if  @{$self->{search_term_presets}} > 40;
-		warn "New history is " . join ", ",  @{$self->{search_term_presets}};
+	    # Look up Heisig/RTK keywords or frame numbers
+	    if ($term =~ /(\d+)/) {
+		warn "Looking up number in RTK index\n";
+		$kanji = $rtkinfo->{by_frame}->[$term = $1]->{kanji}
+	    } elsif (!has_kanji($term)) {
+		warn "No kanji characters, looking up as RTK keyword\n";
+		$kanji = $rtkinfo->{by_keyword}->{$term}->{kanji}
 	    }
 	    
-	    # Add stuff here to convert keyword/frame number to kanji
-	    $context->set_object_attr("gui.selected_kanji",
-				      KanjiReadings::Summary->retrieve($kanji));
+	    $self->jump_to_kanji($kanji,$term);
 	}
     )
 }
