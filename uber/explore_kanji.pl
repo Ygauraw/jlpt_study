@@ -343,8 +343,9 @@ sub build_tallies {
 		height  => 120,
 		scrollbars => ["never", "automatic"],
 		#		expand => 1,
-		# hook that selects all matching vocab in readings panel
 		signal_connect => {
+		    # Double-clicking will allow selection of all
+		    # vocab with the selected reading
 		    row_activated => sub  {
 			# Passed values are of the types:
 			# Gtk2::SimpleList
@@ -353,6 +354,17 @@ sub build_tallies {
 			# from Gtk2::SimpleList pod:
 			my ($sl, $path, $column) = @_;
 			my $row_ref = $sl->get_row_data_from_path ($path);
+			my $kana = $row_ref->[2];
+
+			# Talk to the underlying Gtk2::Ex::Simple::List
+			my $list = $self->{ff_matched};
+			my $gtk  = $list->get_gtk_widget;
+			$gtk->get_selection->unselect_all;
+			my $i = 0;
+			for my $row (@{$list->get_data}) {
+			    $gtk->select($i) if ($row->[4] eq $kana);
+			    ++$i;
+			}
 		    },
 
 		    # Kind of hard to find examples for how to do a
@@ -404,6 +416,7 @@ sub build_matched {
 	    Gtk2::Ex::FormFactory::Label->new(
 		label   => "Vocab with matching readings",
 	    ),
+	    $self->{ff_matched} =
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.matched",
 		columns => ["JLPT", "Vocab", "Reading", "Type", "Kana"],
