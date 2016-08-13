@@ -33,13 +33,14 @@ use Carp;
 
 use Glib qw/TRUE FALSE/; 
 
-our ($AUTOLOAD, %get_set_attr, $DEBUG);
+our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir);
 BEGIN {
     $DEBUG=1;
     %get_set_attr = (
 	    map { ($_ => undef) } 
 	    qw(selected_kanji search_term
     ));
+    $kanjivg_dir = '/home/dec/JLPT_Study/kanjivg/kanjivg-r20160426/kanji';    
 }
 sub AUTOLOAD {
     my $self = shift;
@@ -126,17 +127,50 @@ sub new {
 		}
 		\@outlist;
 	    },
+	    get_image_file => sub {
+		my $self = shift;
+		my $kanji = $self->kanji;
+		warn "Asked to get image file, kanji is $kanji\n";
+		my $unicode = sprintf("%05x", ord $kanji);
+		# Unfortunately, my Gtk2::Gdk::Pixbuf is saying it
+		# doesn't recognise the svg file ...
+		# https://bugs.launchpad.net/ubuntu/+source/gdk-pixbuf/+bug/926019
+		# If I delete the comment, it works...
+		my $filename = "$kanjivg_dir/$unicode.svg";
+		return $filename;
+		# OK, can't use filename#id notation as below...
+		# my $filename = "/home/dec/JLPT_Study/kanjivg/kanjivg-20160426.xml";
+		# warn "No file $filename" unless -f $filename;
+		# return "$filename#kvg:kanji_$unicode";
+		
+		# There seems to be a bug in gdk-pixbuf. It's supposed
+		# to look through the first 4,096 characters of the
+		# file to find the starting tag for the svg, but it
+		# doesn't work. I've tried messing with patterns in
+		# loaders.cache but it didn't work. As a workaround,
+		# I'm stripping out all the comments:
+		#
+		# perl -i.bak -nle 'print unless m|^<!--| .. m|-->$|' *.svg
+
+		
+	    },
 	},
 	attr_depends_href => {
 	    matched     => "gui.selected_kanji",
 	    summary     => "gui.selected_kanji",
 	    failed      => "gui.selected_kanji",
 	    tallies     => "gui.selected_kanji",
+	    image_file  => "gui.selected_kanji",
 	},
 	aggregated_by => "gui.selected_kanji",
 	);
 
-  return $self;
+    $context->add_object(
+	name  => "image",
+	
+    );
+    
+    return $self;
   
 }
 
@@ -153,19 +187,17 @@ sub build_window {
 		expand => 1,
 		#		height => 600,
 		
-		width  => 600,
+		width  => 800,
 		content => [
 		    Gtk2::Ex::FormFactory::Table->new(
 			expand => 1,
 			layout => <<'END',
                         +---->----------------+---------+
                         '     Search Box      '  Go     |
-                        +---------------------+---------+
-                        |          Summary              |
-                        +-------------------------------+
-                        ^          Tallies              |
-                        +-------------------------------+
-                        ^          Matched              |
+                        +-------------------+-+-->------+
+                        ^ Pixbuf            |           |
+                        +-------------------+ Matched   |
+                        ^          Tallies  |           |
                         +-------------------------------+
                         ^          Failed               |
                         +-------------------------------+
@@ -173,9 +205,10 @@ END
 			content => [
 			    $self->build_search,
 			    $self->build_go,
-			    $self->build_summary,
-			    $self->build_tallies,
+			    $self->build_pixbuf,
+#			    $self->build_summary,
 			    $self->build_matched,
+			    $self->build_tallies,
 			    $self->build_failed,
 			],
 		    ),
@@ -238,6 +271,20 @@ sub build_summary {
     );
 }
 
+sub build_pixbuf {
+    my $self = shift;
+    my $kanji = $self->{kanji};
+
+    Gtk2::Ex::FormFactory::Image->new(
+	attr => "kanji.image_file",
+	bgcolor => "#ffffff",
+	#height => 400, # does nothing!
+	scale_to_fit => 1,
+	scale => 1.25,
+    );
+    
+}
+
 sub build_tallies {
     my $self = shift;
     Gtk2::Ex::FormFactory::Form->new(
@@ -285,7 +332,7 @@ sub build_failed {
 	expand  => 1,
 	content => [
 	    Gtk2::Ex::FormFactory::Label->new(
-		label   => "Vocab with no matching readings",
+		label   => "Unmatched",
 	    ),
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.failed",
