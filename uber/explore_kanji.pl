@@ -94,27 +94,16 @@ sub new {
 		my $self = shift;
 		#warn "failed: $self->{kanji}; self is of type " . ref($self);
 		my @outlist = ();
-		if ("new" eq "works") {
-		    foreach my $kic ($self->kanji_in_context) {
-			warn $kic->yomi_id->yomi_id;
-			warn $kic->yomi_id->kanji;
-			warn $kic->yomi_id->reading_kana;
-			if ($kic->vocab_id->vocab_kana) {
-			    warn "skipped failed";
-			    #next
-			}
+		if ("new" ) {
+		    # !! Change later when Summary -> Kanji
+		    my $krec = KanjiReadings::Kanji->retrieve($self->kanji);
+		    my @failed = grep { 0 == $_->yomi_id } $krec->kv_link;
+		    foreach my $link (@failed) {
+			my $v = $link->vocab_id;
 			push @outlist, [
-			    "N" . $kic->vocab_id->jlpt_grade,
-			    $kic->vocab_id->vocab_ja,
-			    $kic->vocab_id->vocab_kana,]
-		    }
-		} else {
-		    foreach my $vocab ($self->vocab_readings) {
-			next if $vocab->reading_type;
-			push @outlist, [
-			    "N" . $vocab->jlpt_grade,
-			    $vocab ->vocab_kanji,
-			    $vocab ->vocab_kana,]
+			    "N" . $v->jlpt_grade,
+			    $v->vocab_ja,
+			    $v->vocab_kana,]
 		    }
 		}
 		\@outlist;
@@ -123,16 +112,21 @@ sub new {
 		my $self = shift;
 		warn "Asked to get matched, kanji is " . $self->kanji . "\n";
 		my @outlist = ();
-		foreach my $vocab ($self->vocab_readings) {
-		    #warn "Type: " . $vocab->reading_type . "\n";
-		    next unless $vocab->reading_type;
-		    push @outlist, [
-			"N" . $vocab->jlpt_grade,
-			$vocab ->vocab_kanji,
-			$vocab ->vocab_kana,
-			$vocab ->reading_type,
-			$vocab ->reading_kana,
-		    ]
+		if ("new") {
+		    # !! Change later when Summary -> Kanji
+		    my $krec = KanjiReadings::Kanji->retrieve($self->kanji);
+		    foreach my $link ($krec->kv_link) {
+			next if 0 == $link->yomi_id;
+			my $v = $link->vocab_id;
+			my $y = $link->yomi_id;
+			push @outlist, [
+			    "N" . $v->jlpt_grade,
+			    $v->vocab_ja,
+			    $v->vocab_kana,
+			    $y->yomi_type,
+			    $y->yomi_kana,
+			]
+		    }
 		}
 		\@outlist;
 	    },
@@ -155,15 +149,18 @@ sub new {
 		my $self = shift;
 		warn "Asked to get tallies, kanji is " . $self->kanji . "\n";
 		my @outlist = ();
-		foreach my $tally ($self->tallies) {
-		    #warn "Type: " . $vocab->reading_type . "\n";
-		    next unless $tally->read_type;
-		    push @outlist, [
-			$tally ->adj_tally || $tally->raw_tally,
-			$tally->read_type,
-			$tally->kana,
-			$tally->exemplar,
-		    ]
+		if ("new") {
+		    my $krec = KanjiReadings::Kanji->retrieve($self->kanji);
+		    foreach my $tally ($krec->tallies) {
+			my $y = $tally->yomi_id;
+			next if 0 == $y;
+			push @outlist, [
+			    $tally->adj_count || $tally->yomi_count,
+			    $y->yomi_type,
+			    $y->yomi_kana,
+			    $tally->exemplary_vocab_id ? $tally->exemplary_vocab->vocab_ja : '',
+			]
+		    }
 		}
 		\@outlist;
 	    },
@@ -303,7 +300,7 @@ sub jump_to_kanji {
 
     $context->set_object_attr("gui.search_term",'');
     $context->set_object_attr("gui.selected_kanji",
-			      KanjiReadings::Summary->retrieve($kanji));
+			      KanjiReadings::Kanji->retrieve($kanji));
 }
 
 sub build_go {
