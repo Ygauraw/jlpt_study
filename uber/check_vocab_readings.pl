@@ -136,8 +136,8 @@ if ($kanji eq "--fromdb") {
     # Make updates a lot faster by turning off auto-commit:
     KanjiReadings::DBI->begin_work;
 
-    my $kanji_list = [qw/降 雨 行/];	# small test set
-    #my $kanji_list = get_jouyou_list();
+    #my $kanji_list = [qw/降 雨 行/];	# small test set
+    my $kanji_list = get_jouyou_list();
     for my $kanji (@$kanji_list) {
 	%vocab_dict = ();	# must clear for each new kanji
 	load_vocab($kanji);
