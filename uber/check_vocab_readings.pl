@@ -32,7 +32,11 @@ my $ja = Util::JA_Script->new; $ja->load_db;
 die "A kanji argument (or '--makedb') is required\n" unless (@ARGV);
 
 my $kanji = shift @ARGV;
-if ($kanji ne "--makedb") {
+if ($kanji eq "--fromdb") {
+    # check later
+} elsif ($kanji eq "--makedb") {
+    # no extra args needed
+} else {	
     die "Arg $kanji doesn't have kanji!\n" 
 	unless has_kanji($kanji);
 }
@@ -60,23 +64,87 @@ die unless defined($web_data_db) and defined($core_26k_db);
 my %vocab_dict = ();
 
 # Choice of making Jouyou kanji db or showing info for a single kanji
-if ($kanji eq "--makedb") {
-    print "About to add to db tables; ^C if you don't want this\n";
-    <STDIN>;
 
-    # I've changed AutoCommit to 1 by default in the KanjiReadings
-    # class, but it's really slow. So turn it off for the duration of
-    # these updates:
+
+if ($kanji eq "--fromdb") {
+    # Display from db created with --makedb
+    $kanji = shift @ARGV or die "--fromdb needs more args";
+
+    my $lookup = "kanji";
+    if ($kanji eq "-k") {
+	$lookup = "kanji";
+	$kanji = shift @ARGV or die "--fromdb needs more args";
+    } elsif ($kanji eq "-v") {
+	$lookup = "vocab";
+	$kanji = shift @ARGV or die "--fromdb needs more args";
+    }
+
+    my $krec = KanjiReadings::Kanji->retrieve($kanji)
+	or die "No kanji matchs '$kanji'\n";
+    my @failed = ();
+
+    foreach my $kv_link ($krec->kv_link) {
+	my $vid = $kv_link->vocab_id;
+	my $vocab = "N" . $vid->jlpt_grade . " " . $vid->vocab_ja . 
+	    " => " . $vid->vocab_kana;
+	my $yomi;
+	if ($kv_link->yomi_id != 0) {
+	    $yomi = " reading $kanji as " . $kv_link->yomi_id->yomi_type .
+		":" . $kv_link->yomi_id->yomi_kana . " (" .
+		$kv_link->yomi_id->yomi_hira . ")";
+	    print "$vocab$yomi\n";
+	} else {
+	    $yomi = '';
+	    push @failed, "  $vocab\n";
+	}
+    }
+
+    print "Summary of readings for kanji $kanji:\n";
+    print "Total vocab readings: " . (0 + ($krec->kv_link)) . ", of which ";
+    my $failed_count;
+    if (1) {
+	# Fails if we do:
+	#    my $failed_count = grep { 0 == $_->yomi_count } $tallies;
+	# OR:
+	#    my $tallies = $krec->tallies;
+	#    foreach my $tally ($tallies) { ... }
+	# I guess it does wantarray
+
+	foreach my $tally ($krec->tallies) {
+	    #	    print ref($tally);
+	    #	    print $tally -> 
+	}
+	# a bit awkward, but it works
+	grep { $failed_count = $_->yomi_count if 0 == $_->yomi_id } $krec->tallies;
+	print "$failed_count had no match\n";
+    } else {
+	print 0 + @failed . " had no match\n";
+    }
+
+    print "Summary of readings:\n";
+    for my $tally ($krec->tallies) {
+	next if 0 == $tally->yomi_id;
+	printf("  %02d time(s)  %s:%s\n", $tally->yomi_count,
+	       $tally->yomi_id->yomi_type,
+	       $tally->yomi_id->yomi_kana);
+    }
+
+    print "Non-matching:\n" . (join '', @failed);
+    
+} elsif ($kanji eq "--makedb") {
+
+    # Make updates a lot faster by turning off auto-commit:
     KanjiReadings::DBI->begin_work;
 
-    #my $kanji_list = [qw/降 雨/];	# small test set
-    my $kanji_list = get_jouyou_list();
+    my $kanji_list = [qw/降 雨 行/];	# small test set
+    #my $kanji_list = get_jouyou_list();
     for my $kanji (@$kanji_list) {
 	%vocab_dict = ();	# must clear for each new kanji
 	load_vocab($kanji);
 
 	my $result = search_single($kanji);
 	summarise_readings($result) if $verbose;
+	old_save_readings($result);
 	save_readings($result);
     }
     KanjiReadings::DBI->end_work;
@@ -84,7 +152,9 @@ if ($kanji eq "--makedb") {
     #	KanjiReadings::Summary->dbi_commit;
     #	KanjiReadings::ReadingTally->dbi_commit;
     #	KanjiReadings::VocabReading->dbi_commit;
+
 } else {
+    # display from source db
     %vocab_dict = ();
     load_vocab($kanji);
     my $result = search_single($kanji);
@@ -96,9 +166,210 @@ $core_26k_db->disconnect;
 
 exit(0);
 
-# The rest is just subs
-my $heisig6_seq = 0;
+# Reimplement save_readings and save_vocab_readings
+#
+# The ordering is quite different due to foreign keys
+
+my ($heisig6_seq, $yomi_rec_seq, $vocab_rec_seq, 
+    $link_rec_seq, @junkjunk) = (0) x 10;
+my %yomi_records = ();
+sub yomi_record {
+    my ($type, $kana, $hira, @o) = @_;
+    die "bad type '$type'" unless $type eq 'on' or $type eq 'kun';
+    die unless $hira;
+    die if @o;
+
+    my $key = "$type:$kana";
+    return $yomi_records{$key}
+	if exists $yomi_records{$key};
+    $yomi_records{$key} = ++$yomi_rec_seq;
+    KanjiReadings::Yomi->insert(
+	{
+	    yomi_id    => $yomi_rec_seq,
+	    yomi_type  => $type,
+	    yomi_kana  => $kana,
+	    yomi_hira  => $hira
+	}
+    );
+    return $yomi_rec_seq;
+}
+
+my %vocab_records = ();
+sub vocab_record {
+    my ($ja, $kana, $en, $jlpt, @o) = @_;
+    die if @o;
+    die unless $ja;
+    die unless $kana;
+    $jlpt = 0 unless $jlpt;
+    $en = '' unless $en;
+
+    my $key = "$ja:$kana";
+    return $vocab_records{$key} if exists $vocab_records{$key};
+    $vocab_records{$key} = ++$vocab_rec_seq;
+    KanjiReadings::Vocabulary->insert(
+	{
+	    vocab_id  => $vocab_rec_seq,
+	    vocab_ja  => $ja,
+	    vocab_kana => $kana,
+	    vocab_en  => $en,
+	    jlpt_grade => $jlpt,
+	}
+    );
+    return $vocab_rec_seq;
+}
+my %kanji_records = ();
+sub kanji_record {
+    my ($kanji, $frame, $keyword, $jlpt, $jouyou, @o) = @_;
+    die if @o;
+    die unless $kanji;
+    $frame = 0 unless $frame;
+    $keyword = '' unless $keyword;
+    $jouyou = 0 unless $jouyou;
+
+    return $kanji if exists $kanji_records{$kanji};
+    KanjiReadings::Kanji->insert(
+	{
+	    kanji => $kanji,
+	    rtk_frame => $frame,
+	    rtk_keyword => $keyword,
+	    jlpt_grade => $jlpt,
+	    jouyou_grade => $jouyou,
+	}
+    );
+    return $kanji;
+}
+my %link_records = ();
+sub link_record {
+    my ($kanji, $yomi_id, $adj_yomi_id, $adj_reason, $vocab_id, @o) = @_;
+    die if @o;
+    die unless $kanji and $vocab_id and defined($yomi_id);
+    $adj_yomi_id = '' unless $adj_yomi_id;
+    $adj_reason = '' unless $adj_reason;
+
+    my $key = "$kanji:$vocab_id";
+    return $link_records{$key} if exists $link_records{$key};
+    $link_records{$key} = ++$link_rec_seq;
+    KanjiReadings::KanjiVocabLink->insert(
+	{
+	    kv_link_id => $link_rec_seq,
+	    kanji => $kanji,
+	    yomi_id => $yomi_id,
+	    adj_yomi_id => $adj_yomi_id,
+	    adj_reason => $adj_reason,
+	    vocab_id => $vocab_id,
+	}
+    );
+    return $link_rec_seq;
+ }
+my %yomi_tally_records=();
+sub yomi_tally_record { 
+    my ($kanji, $yomi_id, $yomi_count, $adj_count, $eg, @o) = @_;
+    die if @o;
+    die unless $kanji;
+    $yomi_id = 0 unless $yomi_id;
+    $yomi_count = 0 unless $yomi_count;
+    $adj_count = 0 unless $adj_count;
+    $eg = 0 unless $eg;
+    my $key = "$kanji:$yomi_id";
+    die if exists $yomi_tally_records{$key};
+    $yomi_tally_records{$key} = "something";
+    KanjiReadings::KanjiYomiTally->insert(
+	{
+	    kanji => $kanji,
+	    yomi_id => $yomi_id,
+	    yomi_count => $yomi_count,
+	    adj_count => $adj_count,
+	    exemplary_vocab_id => $eg,
+	}
+    );
+    return "something";    
+}
+
 sub save_readings {
+
+    # copy-pasta shows what we're getting
+    my $result = shift or die;
+    my $kanji          = $result->{kanji};
+    my $reading_counts = $result->{reading_counts};
+    my $failed_list    = $result->{failed};
+    my $matched_list   = $result->{matched_list};
+    my $num_failed     = 0 + @$failed_list;
+    my $num_parsed     = 0 + keys %$reading_counts;
+
+    my %syn_yomi_id    = ();	# same keys as in reading_counts
+    
+    # We must store kanji and vocab first
+    ++$heisig6_seq;
+    kanji_record($kanji, $heisig6_seq, '', 0, 0);
+
+    foreach my $item (@$matched_list, @$failed_list) {
+	my $vocab_id = vocab_record(
+	    $item->{vocab},
+	    $item->{reading},
+	    '',			# en
+	    $item->{grade},
+	);
+	# stash vocab_id in case it's needed later
+	$item->{vocab_id} = $vocab_id;
+    }
+
+    # Then the yomi (stashing yomi id as we go; hence scan failed too)
+    foreach my $item (@$matched_list, @$failed_list) {
+	unless ($item->{kanji_type}) {
+	    $item->{yomi_id} = 0;
+	    next;
+	}
+	my $yomi_id = yomi_record(
+	    $item->{kanji_type},
+	    $item->{kanji_kana},
+	    $item->{kanji_hira},
+	);
+	$item->{yomi_id} = $yomi_id;
+	# stash in reading_counts too?
+	my $syn = "$item->{kanji_type}:$item->{kanji_kana}";
+	die "Added yomi with synthetic key '$syn' not in reading counts"
+	    unless exists $reading_counts->{$syn};
+	$syn_yomi_id{$syn} = $yomi_id;
+    }
+
+    # Then the link table
+
+    # This loop handles one kanji to many vocab, but thanks to stashing
+    # vocab_id globally in vocab_record(), we will also handle the
+    # reverse map if the same vocab comes up again.
+    foreach my $item (@$matched_list, @$failed_list) {
+	my $link_id = link_record(
+	    $kanji,
+	    $item->{yomi_id},
+	    '',
+	    '',
+	    $item->{vocab_id}
+	);
+    }
+
+    # Finally, the tallies
+    # Tally non-matched first
+    yomi_tally_record($kanji, 0, $num_failed, 0, '');
+    for my $syn (sort {$a cmp $b} keys %$reading_counts) {
+	die "Expected reading counts like hira => (on|kun):<kana>\n" unless
+	    $syn =~ /^(on|kun):(.*)/;
+	my $yomi_id = $syn_yomi_id{$syn} or die;
+	yomi_tally_record(
+	    $kanji,
+	    $yomi_id,
+	    $reading_counts->{$syn},
+	    0,
+	    ''
+	);
+    }
+
+}
+
+# The rest is just subs
+my ($old_heisig6_seq, $vocab_seq, $yomi_seq, $tally_seq, @junk) 
+    = (0) x 15;			# sequence numbers for db tables
+my %all_yomi = ();
+sub old_save_readings {
     my $result = shift;
 
     # OK, not using dbh since I have Class::DBI
@@ -107,10 +378,13 @@ sub save_readings {
     my $failed         = $result->{failed};
     my $num_failed     = 0 + @$failed;
     my $num_parsed     = 0 + keys %$reading_counts;
-    
+
+    ++$old_heisig6_seq;
+
+    # insert summary
     my $fields = {
 	kanji         => $kanji,
-	heisig6_seq   => ++$heisig6_seq,
+	heisig6_seq   => $old_heisig6_seq,
 	num_readings  => $num_parsed + $num_failed,
 	adj_readings  => $num_parsed + $num_failed,
 	num_vocab     => $result->{matched_count},
@@ -133,27 +407,55 @@ sub save_readings {
 	$fields->{kana}        = $2;
 	$fields->{hiragana}    = kata_to_hira($2); # hira->hira ok
 	$fields->{raw_tally}   =
-	$fields->{adj_tally}   = $reading_counts->{$syn};
+	    $fields->{adj_tally}   = $reading_counts->{$syn};
 
 	KanjiReadings::ReadingTally->insert($fields);
     }
-
+    
     # Insert vocab reading records. Since we add both matched and
     # failed, I'll move the actual work into a separate sub
     for my $vocab (@{$result->{matched_list}}) {
-	save_vocab_reading($kanji, $vocab);
+	if ("do_old") { save_old_vocab_reading($kanji, $vocab); }
     }
     for my $vocab (@{$result->{failed}}) {
-	save_vocab_reading($kanji, $vocab);
+	if ("do_old") { save_old_vocab_reading($kanji, $vocab); }
     }
 }
 
+my %all_vocab = ();
+my %all_kic   = ();
 sub save_vocab_reading {
     my $kanji = shift;
     my $item  = shift;
     die unless ref($item) eq "HASH";
+    my ($vocab_id, $kic_id);
 
-    KanjiReadings::VocabReading->insert({
+    if (exists($all_vocab{"$item->{vocab}:$item->{reading}"})) {
+	$vocab_id = $all_vocab{"$item->{vocab}:$item->{reading}"};
+	# die "$item->{vocab}:$item->{reading}";
+    } else {
+	$all_vocab{"$item->{vocab}:$item->{reading}"} = $vocab_id = ++$vocab_seq;
+	KanjiReadings::Vocab->insert(
+	    {
+		vocab_id     => $vocab_id,
+		vocab_ja     => $item->{vocab},
+		vocab_kana   => $item->{reading},
+		jlpt_grade   => $item->{grade},
+	    });
+	#print "$vocab_id: ($item->{vocab}:$item->{reading})\n";
+    }
+    #return;
+    #
+    # Populate using new table schema below
+    
+}
+
+sub save_old_vocab_reading {
+    my $kanji = shift;
+    my $item  = shift;
+    die unless ref($item) eq "HASH";
+
+    KanjiReadings::OldVocabReading->insert({
 	kanji        => $kanji,
 	vocab_kanji  => $item->{vocab},
 	vocab_kana   => $item->{reading},
@@ -166,7 +468,6 @@ sub save_vocab_reading {
 	adj_kana     => $item->{kanji_kana} || '',
 	ignore_flag  => 0,
     });;
-
 }
 
 sub recreate_tables {

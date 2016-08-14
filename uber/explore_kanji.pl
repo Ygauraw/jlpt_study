@@ -94,12 +94,28 @@ sub new {
 		my $self = shift;
 		#warn "failed: $self->{kanji}; self is of type " . ref($self);
 		my @outlist = ();
-		foreach my $vocab ($self->vocab_readings) {
-		    next if $vocab->reading_type;
-		    push @outlist, [
-			"N" . $vocab->jlpt_grade,
-			$vocab ->vocab_kanji,
-			$vocab ->vocab_kana,]
+		if ("new" eq "works") {
+		    foreach my $kic ($self->kanji_in_context) {
+			warn $kic->yomi_id->yomi_id;
+			warn $kic->yomi_id->kanji;
+			warn $kic->yomi_id->reading_kana;
+			if ($kic->vocab_id->vocab_kana) {
+			    warn "skipped failed";
+			    #next
+			}
+			push @outlist, [
+			    "N" . $kic->vocab_id->jlpt_grade,
+			    $kic->vocab_id->vocab_ja,
+			    $kic->vocab_id->vocab_kana,]
+		    }
+		} else {
+		    foreach my $vocab ($self->vocab_readings) {
+			next if $vocab->reading_type;
+			push @outlist, [
+			    "N" . $vocab->jlpt_grade,
+			    $vocab ->vocab_kanji,
+			    $vocab ->vocab_kana,]
+		    }
 		}
 		\@outlist;
 	    },
