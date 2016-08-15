@@ -34,13 +34,16 @@ use Carp;
 use Glib qw/TRUE FALSE/; 
 use YAML::Any qw(LoadFile);
 
+# Name the columns in the two vocabulary-related lists
 use constant {
-    COL_VOCAB_ID   => 1,
+    COL_GRADE      => 0,
+    COL_VOCAB_ID   => 1,	# not displayed
     COL_VOCAB      => 2,
     COL_VOCAB_KANA => 3,
+    COL_YOMI_ID    => 4, 	# matched list, not displayed
+    COL_YOMI_KANJI => 5,
+    COL_YOMI_KANA  => 6,
 };
-
-
 
 our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir, $rtkinfo);
 BEGIN {
@@ -133,6 +136,7 @@ sub new {
 			    "" . $v->vocab_id,
 			    $v->vocab_ja,
 			    $v->vocab_kana,
+			    "$y", # stringified yomi_id 
 			    $y->yomi_type,
 			    $y->yomi_kana,
 			]
@@ -294,6 +298,8 @@ sub build_search {
 	label   => "Enter a kanji or an RTK frame number/keyword",
 	attr    => "gui.search_term",
 	# later implement history feature
+	tip     =>
+	"Enter a single kanji, RTK frame #, RTK keyword or \"r\" for a random Jouyou kanji",
     )
 }
 
@@ -338,8 +344,12 @@ sub build_go {
 		warn "Blank search\n"; return 
 	    }
 
-	    # Look up Heisig/RTK keywords or frame numbers
-	    if ($term =~ /(\d+)/) {
+	    if ($term eq "r") {
+		# pick a random frame number and convert it to a kanji
+		$term = int (rand (2200)) + 1;
+		$term = $kanji = $rtkinfo->{by_frame}->[$term]->{kanji};
+	    } elsif ($term =~ /(\d+)/) {
+		# Look up Heisig/RTK keywords or frame numbers
 		warn "Looking up number in RTK index\n";
 		$kanji = $rtkinfo->{by_frame}->[$term = $1]->{kanji}
 	    } elsif (!has_kanji($term)) {
@@ -420,7 +430,7 @@ sub build_tallies {
 			# from Gtk2::SimpleList pod:
 			my ($sl, $path, $column) = @_;
 			my $row_ref = $sl->get_row_data_from_path ($path);
-			my $kana = $row_ref->[COL_VOCAB_KANA];
+			my $kana = $row_ref->[2];
 
 			# Talk to the underlying Gtk2::Ex::Simple::List
 			my $list = $self->{ff_matched};
@@ -428,7 +438,7 @@ sub build_tallies {
 			$gtk->get_selection->unselect_all;
 			my $i = 0;
 			for my $row (@{$list->get_data}) {
-			    $gtk->select($i) if ($row->[4] eq $kana);
+			    $gtk->select($i) if ($row->[COL_YOMI_KANA] eq $kana);
 			    ++$i;
 			}
 		    },
@@ -599,8 +609,8 @@ sub build_matched {
 	    $self->{ff_matched} =
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.matched",
-		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Type", "Kana"],
-		visible => [1,0,1,1,1,1],
+		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Yomi_id", "Type", "Kana"],
+		visible => [1,0,1,1,0,1,1], # don't display vocab/yomi id
 		height  => 400,
 		scrollbars => ["never", "automatic"],
 		expand => 1,
@@ -644,7 +654,7 @@ sub build_failed {
 		    button_release_event => sub {
 			$self->vocab_panel_popup_menu(@_, "failed");
 		    }
-		},		
+		},
 	    )
 	]
     )
