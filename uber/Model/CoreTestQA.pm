@@ -91,39 +91,9 @@ sub save_answers {
     $fields->{epoch_time_created}    = $self->{creation_id};
     $fields->{epoch_time_start_test} = $self->{test_rec_id};
     $fields->{mode}                  = $self->{challenge_mode};
-    my $ent = CoreTracking::TestDetail->insert($fields);
+    my $ent = CoreTracking::TestSittingDetail->insert($fields);
     $ent->update;
     warn "Added new test detail\n";
-}
-
-# No point updating totals until a test is finished
-sub update_answer_summary {
-
-    my $self    = shift;
-    my $summary = $self->{_summary}; # reuse saved query
-    my $items_tested = 0;
-    my $tallies = {
-	correct_voc_know  => 0,
-	correct_voc_read  => 0,
-	correct_voc_write => 0,
-	correct_sen_know  => 0,
-	correct_sen_read  => 0,
-	correct_sen_write => 0,
-    };
-
-    foreach my $rec (@{$self->{selections}}) {
-	next unless defined $rec;
-	next unless $rec->{answered};
-	for (keys %$tallies) {
-	    $tallies->{$_} += $rec->{$_}
-	}
-	++$items_tested;
-    }
-    croak unless $self->get_items_tested == $items_tested;
-    # Use low-level method to update Class::DBI data
-    $tallies->{items_tested} = $items_tested;
-    $summary->_attribute_set($tallies);
-    $summary->update;
 }
 
 # Reuse valid types, modes from CoreTestList
@@ -209,14 +179,14 @@ sub read_test_summary {
     # Have to create a synthetic composite key
     my $summary_id  = $self->get_summary_id;
     
-    my $seed = CoreTracking::Seed->retrieve($self->{creation_id});
+    my $seed = CoreTracking::TestSpec->retrieve($self->{creation_id});
 
     my $test_summary =
-	CoreTracking::TestSummary->retrieve($summary_id)
+	CoreTracking::TestSitting->retrieve($summary_id)
 	or croak "Didn't find a database index for $summary_id";
 
     # The following relate to the test in the abstract
-    $self->{test_set}       = $seed->type;
+    $self->{test_set}       = $seed->test_type;
     $self->{items_total}    = $seed->items;
     $self->{seed}           = $seed->seed;
     
@@ -227,6 +197,36 @@ sub read_test_summary {
     $self->{_summary} = $test_summary;
     $self->{_seed}    = $seed;
     
+}
+
+
+# No point updating totals until a test is finished
+sub update_answer_summary {
+    my $self    = shift;
+    my $summary = $self->{_summary}; # reuse saved query
+    my $items_tested = 0;
+    my $tallies = {
+	correct_voc_know  => 0,
+	correct_voc_read  => 0,
+	correct_voc_write => 0,
+	correct_sen_know  => 0,
+	correct_sen_read  => 0,
+	correct_sen_write => 0,
+    };
+
+    foreach my $rec (@{$self->{selections}}) {
+	next unless defined $rec;
+	next unless $rec->{answered};
+	for (keys %$tallies) {
+	    $tallies->{$_} += $rec->{$_}
+	}
+	++$items_tested;
+    }
+    croak unless $self->get_items_tested == $items_tested;
+    # Use low-level method to update Class::DBI data
+    $tallies->{items_tested} = $items_tested;
+    $summary->_attribute_set($tallies);
+    $summary->update;
 }
 
 

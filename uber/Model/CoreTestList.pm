@@ -17,21 +17,9 @@ package Model::CoreTestList;
 use strict;
 use Carp;
 
-sub get_list {
-    my ($self, $attr) = @_;
-    my @lol = ();
+use Util::RNG;
+use Util::Shuffle;
 
-    warn "Got here\n";
-
-    my $iter = CoreTracking::Seed->retrieve_all;
-    while (my $test =  $iter->next) {
-	my $int_list = [$test->id, $test->epoch_time_created, 
-			$test->type, $test->mode];
-	# to get % complete, need to check other tables
-	push @lol, $int_list;
-    }
-    return \@lol;
-}
 
 our %valid_types;		# apparently if you use require
 our %valid_modes;		# instead of use, these won't get
@@ -70,8 +58,7 @@ sub new_item {
 	@_
     );
 
-    my ($now, $sound_items, $kanji_items, $vocab_count, $sentence_count) =
-	(time, 0, 0, 0, 0);
+    my $now = time;
 
     warn "valid modes: " . (join ", ", keys %valid_modes) . "\n";
     croak "Invalid mode $o{mode}" unless exists $valid_modes{$o{mode}};
@@ -80,39 +67,20 @@ sub new_item {
     # make a random seed if we weren't given one
     $o{seed} = $self->{rng}->seed_random unless defined $o{seed};
 
-    if ($o{mode} eq "both") {
-	croak "Must have even number of items for mode='both'" if $o{items} & 1;
-	$sound_items = $kanji_items = $o{items} >> 1;
-    } elsif ($o{mode} eq "sound") {
-	($sound_items, $kanji_items) = ($o{items},0);
-    } elsif ($o{mode} eq "kanji") {
-	($sound_items, $kanji_items) = (0,$o{items});
-    }
-
-    if ($o{type} eq "core2k") {
-	($vocab_count, $sentence_count) = (2000, 2000);
-    } else {
-	$vocab_count     = 6000;
-	$sentence_count  = 0 + CoreVocab::Sentence->retrieve_all;
-    }	
-
     # Create seed  entry. Only create summary record once test starts
-    my $entry = CoreTracking::Seed->insert(
+    my $entry = CoreTracking::TestSpec->insert(
 	{
 	    epoch_time_created  => $now,
-	    type                => $o{type},
+	    latest_test_sitting => $now,
+	    test_type           => $o{type},
 	    mode                => $o{mode},
 	    items               => $o{items},
-	    sound_items         => $o{sound_items},
-	    kanji_items         => $o{kanji_items},
 	    seed                => $o{seed},
-	    vocab_count         => $vocab_count,
-	    sentence_count      => $sentence_count,
 	}
 	);
     $entry->update;      # auto-update when $entry goes out of scope?
 
-    my $summary = CoreTracking::TestSummary->insert(
+    my $summary = CoreTracking::TestSitting->insert(
 	{
 	    id                    => "${now}_$now",
 	    epoch_time_created    => $now,
@@ -130,6 +98,8 @@ sub new_item {
 	}
 	);
 
+    return "${now}_$now";	# handy for gui to launch test straight away
+    
 }
 
 sub delete_item {

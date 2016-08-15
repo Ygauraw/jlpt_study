@@ -54,10 +54,12 @@ sub new {
 	uri_base   => '',
 	@_,
 	);
-
-    my $id = $o{id} = 1;
+    my $id = $o{id};
+    die unless defined $id;
     
     my $model        = $o{model_obj};
+    die "Expected model to be a CoreTestQA object" 
+	unless ref($model) eq 'Model::CoreTestQA';
     my $items_tested = $model->get_items_tested;
     my $items_total  = $model->get_items_total;
     if ($items_tested >= $items_total) {
@@ -98,6 +100,13 @@ sub new {
     $self;
 }
 
+# Not the correct way to remove ourselves... called too late
+sub DESTROY {
+    my $self = shift;
+    warn "DESTROY " . ref($self) . "\n";
+    
+#    $self->{context}->remove_object($self->{name});
+}
 
 sub build {
 
@@ -123,6 +132,19 @@ sub build {
 		    default_height => 640,
 		},
 		quit_on_close => $self->{toplevel},
+		closed_hook => sub {
+		    #
+		    warn "Test window $self->{name} is closing\n";
+		    $self->{model}->update_answer_summary;
+		    $self->{context}->remove_object($self->{name});
+		    $self = undef; # forces garbage collection; interesting
+		    return 0;	# needed!
+		    # How can closing this window signal that the
+		    # table in the main window needs updating?  I want
+		    # this screen to be available in stand-alone mode,
+		    # so referring to an external context object is
+		    # not an option ...
+		},
 		content => [
 		    $self->{vbox} = Gtk2::Ex::FormFactory::VBox->new (expand=>1)
 		],
@@ -216,7 +238,7 @@ END_TABLE
 		# Might as well extend AudioPlayer to optionally
 		# display text as well. Need more code here to send
 		# either audio playlist or kanji text, depending on mode
-		debug => 1,
+		debug => 0,
 		# URI base should come from outside (not defined in GUI)
 		uri_base => $self->{uri_base},
 		),
@@ -331,7 +353,8 @@ sub next_button_hook {
 
 	# See if we're finished
 	if (++$self->{items_tested} >= $self->get_items_total) {
-	    $self->{model}->update_answer_summary;
+	    # Move updating summary into window close callback
+	    #	    $self->{model}->update_answer_summary;
 	    $self->{ff}->close;
 	    Gtk2::main_quit if $self->{toplevel};
 	    return;

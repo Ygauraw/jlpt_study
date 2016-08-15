@@ -1,18 +1,13 @@
 --
 -- This creates the tables needed to store the history of Core 2k/6k
 -- vocabulary tests generated and (partially) completed (or retested)
---
--- I will expand the database to include tests on different items so
--- I'm putting in drop table statements here to clear out just the
--- tables defined here rather than simply rm'ing the database file.
 
 -- Generally speaking, I'll use a seed value to make a selection from
 -- available vocabulary items. Re-using the same seed (and associated
 -- parameters) should generate the same list later on, if needed (for
 -- re-testing or other uses). Therefore, saving a seed should be the
 -- same as storing an actual test list in the database.
-drop table core_test_seeds;
-create table core_test_seeds (
+create table core_test_specs (
     epoch_time_created      INTEGER PRIMARY KEY,
     -- The test_?k types below are for testing. They test the first n
     -- core?k vocab items (in 1..n order) and ignore the seed
@@ -20,7 +15,7 @@ create table core_test_seeds (
     -- will only be one test set created (and reused) for a given
     -- (n,mode) tuple.  Otherwise, each core?k type generates a new
     -- random selection from the appropriate core?k lists.
-    type                    TEXT,     -- core2k, core6k, test2k or test6k
+    test_type               TEXT,     -- core2k, core6k, test2k or test6k
     mode                    TEXT,     -- challenge mode: "sound", "kanji" or "both"
 
     -- The following relate to the most recent test/re-test of this seed
@@ -28,8 +23,10 @@ create table core_test_seeds (
     -- If a test has mode "both" then user should be able to test just
     -- the kanji side or just the sound side separately if they want
     items                   INTEGER NOT NULL,  -- how many to test?
-    sound_items             INTEGER, -- of which some are sound challenges
-    kanji_items             INTEGER, -- and others kanji challenges
+
+    -- 
+    latest_test_sitting     INTEGER NOT NULL,
+
     
     -- In order to recreate the test in the same way later, we also
     -- need the following values. The use of a predictable RNG (and
@@ -38,9 +35,7 @@ create table core_test_seeds (
     -- fields in here and use that as my seed, but it's less
     -- error-prone to just create a random seed and use that every
     -- time I create a new test.
-    seed                    TEXT,     -- uses Net::OnlineCode::RNG
-    vocab_count             INTEGER,  -- how many vocab? (2k/6k)
-    sentence_count          INTEGER   -- how many sentences? (from db)
+    seed                    TEXT -- uses Net::OnlineCode::RNG
 );
 
 -- Every time the user starts a test that is either new or has been
@@ -50,8 +45,7 @@ create table core_test_seeds (
 -- just be updated with the most recent results (skipping over the
 -- items_tested number of items that have already been tested)
 
-drop table core_test_summary;
-create table core_test_summary (
+create table core_test_sitting (
     -- The primary key below is just a string containing the two epoch
     -- times that follow. This synthetic key makes it easier to map
     -- out relationships between the summary and detail tables with
@@ -109,8 +103,7 @@ create table core_test_summary (
 
 );
 
-drop table core_test_details;
-create table core_test_details (
+create table core_test_sitting_details (
     -- synthetic foreign key id (composed of next two items) matches
     -- core_test_summary
     id                        TEXT,             -- not unique
@@ -147,7 +140,6 @@ create table core_test_details (
 -- the seed table, but I'll keep it separate, duplicating some fields
 -- but ignoring those needed to generate the test lists.
 
-drop table data_points;
 create table data_points (
     epoch_time_created      INTEGER PRIMARY KEY,
     -- duplicate some values from seed table
