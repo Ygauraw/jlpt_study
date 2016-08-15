@@ -138,6 +138,11 @@ sub build_test_window {
 	context => $context,
 	toplevel => 0,
 	uri_base => 'file:///home/dec/JLPT_Study/core_6000/',
+	close_hook => sub {
+	    # signal update of the parent GUI when window closes
+	    warn "Got window $test_win_id closure callback\n";
+	    $context->update_object_attr_widgets("gui_main.test_list");
+	}
     );
 
     $win->build;

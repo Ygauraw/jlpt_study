@@ -52,11 +52,14 @@ sub new {
 	toplevel   => 1,	# when set, quit when window closed
 	reload     => 0,	# whether to add a reload button (for testing)
 	uri_base   => '',
+	close_hook => undef,	# notify parent when we close our window
 	@_,
 	);
     my $id = $o{id};
     die unless defined $id;
-    
+
+    die if defined($o{close_hook}) and ref($o{close_hook}) ne "CODE";
+
     my $model        = $o{model_obj};
     die "Expected model to be a CoreTestQA object" 
 	unless ref($model) eq 'Model::CoreTestQA';
@@ -82,6 +85,8 @@ sub new {
 	index        => 0,	# which test item are we doing?
 	items_total  => $items_total,
 	items_tested => $items_tested,
+	close_hook   => $o{close_hook},
+	need_db_update => 0,
     };
 
     
@@ -103,9 +108,24 @@ sub new {
 # Not the correct way to remove ourselves... called too late
 sub DESTROY {
     my $self = shift;
-    warn "DESTROY " . ref($self) . "\n";
+    warn "DESTROY $self->{name}, " . ref($self) . "\n";
+}
+
+# An explicit cleanup call is better
+sub cleanup {
+    my $self = shift;
+    warn "Cleanup " . ref($self) . "\n";
     
-#    $self->{context}->remove_object($self->{name});
+    # update database counts and remove from context
+    $self->{model}->update_answer_summary if $self->{need_db_update};
+    $self->{context}->remove_object($self->{name});
+
+    # have a death callback?
+    my $callback = $self->{close_hook};
+    if (defined($callback)) {
+	warn "Calling user-supplied death callback\n";
+	&$callback();
+    };
 }
 
 sub build {
@@ -133,20 +153,12 @@ sub build {
 		},
 		quit_on_close => $self->{toplevel},
 		closed_hook => sub {
-		    #
-		    warn "Test window $self->{name} is closing\n";
-		    $self->{model}->update_answer_summary;
-		    $self->{context}->remove_object($self->{name});
-		    $self = undef; # forces garbage collection; interesting
-		    return 0;	# needed!
-		    # How can closing this window signal that the
-		    # table in the main window needs updating?  I want
-		    # this screen to be available in stand-alone mode,
-		    # so referring to an external context object is
-		    # not an option ...
+		    warn "Test window $self->{name} is closing (closed_hook)\n";
+		    $self->cleanup;
+		    return 0;
 		},
 		content => [
-		    $self->{vbox} = Gtk2::Ex::FormFactory::VBox->new (expand=>1)
+		    $self->{vbox} = Gtk2::Ex::FormFactory::VBox->new(expand =>1)
 		],
 	    )
 	]
@@ -162,7 +174,6 @@ sub build {
 		clicked_hook => sub { exec $0, @ARGV or die },
 	    ),
 	)
-	    
     }
 
     $ff->update;
@@ -263,20 +274,6 @@ END_TABLE
 	    Gtk2::Ex::FormFactory::Label->new(
 		attr  => "$name.explain_button_text",
 	    ),
-	    # It would be better to have linked checkboxes like below
-	    # (with a default state of all unchecked) but I can't
-	    # figure out how to get them to work here
-	    #
-	    # Gtk2::Ex::FormFactory::RadioButton->new(
-	    #		label => "Foo",
-	    #		attr  => "$name.yesno_2",
-	    #		value => 1
-	    #		),
-	    #	    Gtk2::Ex::FormFactory::RadioButton->new(
-	    #		label => "Bar",
-	    #		attr  => "$name.yesno_2",
-	    #		value => 0
-	    #		),
 	    Gtk2::Ex::FormFactory::Label->new(
 		label => "Question 1",
 		attr  => "$name.question_text_1",
@@ -335,6 +332,7 @@ sub next_button_hook {
 	}
     } else {
 	# save answers in DB
+	$self->{need_db_update} = 1; # write summary during cleanup
 	my %answer_attrs = (
 	    item_index         => $self->{index},
 	    correct_voc_know   => 0,
@@ -355,11 +353,19 @@ sub next_button_hook {
 	if (++$self->{items_tested} >= $self->get_items_total) {
 	    # Move updating summary into window close callback
 	    #	    $self->{model}->update_answer_summary;
-	    $self->{ff}->close;
-	    Gtk2::main_quit if $self->{toplevel};
-	    return;
-	}
 
+	    # It appears that the following doesn't call our
+	    # closed_hook and ->destroy isn't an option.
+	    warn "All questions answered:\n  * closing window\n";
+	    $self->{ff}->close;
+
+	    warn " * doing cleanup\n";
+	    $self->cleanup;
+
+	    my $toplevel = $self->{toplevel};
+	    Gtk2::main_quit if $toplevel;
+	    return 0;
+	}
 	$self->populate_from_model;
 	$self->{ff}->update;
     }
