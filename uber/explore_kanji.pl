@@ -574,6 +574,7 @@ sub vocab_panel_popup_menu {
 		# exemplary vocab id set.
 		warn "would set exemplar for $panel kanji $kanji to vocab id $vocab_id";
 		# Looks like we also have to pull out yomi_id ... more hidden fields :(
+		# !! Finish later
 	    }
 	);
 	$menu_item->show;
