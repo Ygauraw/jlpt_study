@@ -34,6 +34,14 @@ use Carp;
 use Glib qw/TRUE FALSE/; 
 use YAML::Any qw(LoadFile);
 
+use constant {
+    COL_VOCAB_ID   => 1,
+    COL_VOCAB      => 2,
+    COL_VOCAB_KANA => 3,
+};
+
+
+
 our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir, $rtkinfo);
 BEGIN {
     $DEBUG=1;
@@ -96,12 +104,13 @@ sub new {
 		my @outlist = ();
 		if ("new" ) {
 		    # !! Change later when Summary -> Kanji
-		    my $krec = KanjiReadings::Kanji->retrieve($self->kanji);
-		    my @failed = grep { 0 == $_->yomi_id } $krec->kv_link;
+		    my @failed = grep { 0 == $_->yomi_id } $self->kv_link;
 		    foreach my $link (@failed) {
 			my $v = $link->vocab_id;
 			push @outlist, [
 			    "N" . $v->jlpt_grade,
+			    # Hidden field containing vocab_id
+			    "" . $v->vocab_id,
 			    $v->vocab_ja,
 			    $v->vocab_kana,]
 		    }
@@ -114,13 +123,14 @@ sub new {
 		my @outlist = ();
 		if ("new") {
 		    # !! Change later when Summary -> Kanji
-		    my $krec = KanjiReadings::Kanji->retrieve($self->kanji);
-		    foreach my $link ($krec->kv_link) {
+		    foreach my $link ($self->kv_link) {
 			next if 0 == $link->yomi_id;
 			my $v = $link->vocab_id;
 			my $y = $link->yomi_id;
 			push @outlist, [
 			    "N" . $v->jlpt_grade,
+			    # Hidden field containing vocab_id
+			    "" . $v->vocab_id,
 			    $v->vocab_ja,
 			    $v->vocab_kana,
 			    $y->yomi_type,
@@ -149,18 +159,31 @@ sub new {
 		my $self = shift;
 		warn "Asked to get tallies, kanji is " . $self->kanji . "\n";
 		my @outlist = ();
-		if ("new") {
-		    my $krec = KanjiReadings::Kanji->retrieve($self->kanji);
-		    foreach my $tally ($krec->tallies) {
-			my $y = $tally->yomi_id;
-			next if 0 == $y;
-			push @outlist, [
-			    $tally->adj_count || $tally->yomi_count,
-			    $y->yomi_type,
-			    $y->yomi_kana,
-			    $tally->exemplary_vocab_id ? $tally->exemplary_vocab->vocab_ja : '',
+		my $has_failed = 0;
+		my $eg_failed = '';
+		foreach my $tally ($self->tallies) {
+		    my $y = $tally->yomi_id;
+		    if (0 == $y) {
+			$has_failed += $tally->adj_count || $tally->yomi_count;
+			$eg_failed = $tally->exemplary_vocab->vocab_ja if
+			    $tally->exemplary_vocab_id;
+			next;
+		    };
+		    push @outlist, [
+			$tally->adj_count || $tally->yomi_count,
+			$y->yomi_type,
+			$y->yomi_kana,
+			$tally->exemplary_vocab_id ? $tally->exemplary_vocab->vocab_ja : '',
 			]
-		    }
+		}
+		# put failed at the end, but only if at least one exists
+		if ($has_failed) {
+		    push @outlist, [
+			$has_failed,
+			"-",
+			"-",
+			$eg_failed,
+		    ];
 		}
 		\@outlist;
 	    },
@@ -397,7 +420,7 @@ sub build_tallies {
 			# from Gtk2::SimpleList pod:
 			my ($sl, $path, $column) = @_;
 			my $row_ref = $sl->get_row_data_from_path ($path);
-			my $kana = $row_ref->[2];
+			my $kana = $row_ref->[COL_VOCAB_KANA];
 
 			# Talk to the underlying Gtk2::Ex::Simple::List
 			my $list = $self->{ff_matched};
@@ -490,13 +513,13 @@ sub vocab_panel_popup_menu {
     # Scan selected rows to pull out other kanji
     my $lol = $sl->{data};
     foreach my $i (@selected_rows) {
-	my $vocab = strip_non_kanji($lol->[$i]->[1]);
+	my $vocab = strip_non_kanji($lol->[$i]->[COL_VOCAB]);
 	foreach my $char (split "", $vocab) {
 	    next if $char eq $kanji;
 	    $other_kanji{$char} = undef;
 	}
     }
-    warn join ", ", keys %other_kanji;
+    #warn join ", ", keys %other_kanji;
 
     my $menu = Gtk2::Menu->new();
     my $menu_item;
@@ -514,14 +537,14 @@ sub vocab_panel_popup_menu {
 	$menu->append($menu_item);
     }
     
-    # add menu item for copying either vocab or reading
+    # Add menu item for copying either vocab or reading
     if (@selected_rows == 1) {
 	if ($menu_items) {
 	    $menu_item = Gtk2::SeparatorMenuItem->new;
 	    $menu_item->show;
 	    $menu->append($menu_item);
 	}	    
-	for my $col (1,2) {
+	for my $col (2,3) {
 	    my $copy_text = $row_ref->[$col];
 	    $menu_item = Gtk2::MenuItem->new("Copy $copy_text");
 	    $menu_item->signal_connect(
@@ -534,6 +557,29 @@ sub vocab_panel_popup_menu {
 	    $menu->append($menu_item);
 	}
     }
+
+    # Add menu item for setting exemplary vocab
+    if (@selected_rows == 1) {
+	$menu_item = Gtk2::SeparatorMenuItem->new;
+	$menu_item->show;
+	$menu->append($menu_item);
+	# need vocab_id for this to work; it must be a non-displayed
+	# field in the row_ref above.
+	my $vocab_id = $row_ref->[COL_VOCAB_ID];
+	my $vocrec = KanjiReadings::Vocabulary->retrieve($vocab_id);
+	$menu_item = Gtk2::MenuItem->new("Exemplar " . $vocrec->vocab_ja);
+	$menu_item->signal_connect(
+	    activate => sub {
+		# I should really use a popup if there's already an
+		# exemplary vocab id set.
+		warn "would set exemplar for $panel kanji $kanji to vocab id $vocab_id";
+		# Looks like we also have to pull out yomi_id ... more hidden fields :(
+	    }
+	);
+	$menu_item->show;
+	$menu->append($menu_item);
+    }
+
 
     $menu->popup(undef,undef,undef,undef,$event->button, $event->time);
     
@@ -552,7 +598,8 @@ sub build_matched {
 	    $self->{ff_matched} =
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.matched",
-		columns => ["JLPT", "Vocab", "Reading", "Type", "Kana"],
+		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Type", "Kana"],
+		visible => [1,0,1,1,1,1],
 		height  => 400,
 		scrollbars => ["never", "automatic"],
 		expand => 1,
@@ -582,7 +629,8 @@ sub build_failed {
 	    ),
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.failed",
-		columns => ["JLPT", "Vocab", "Reading"],
+		columns => ["JLPT", "Vocab_id", "Vocab", "Reading"],
+		visible => [1,0,1,1],
 		height  => 140,
 		scrollbars => ["never", "automatic"],
 		expand => 1,

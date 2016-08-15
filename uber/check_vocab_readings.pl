@@ -144,14 +144,9 @@ if ($kanji eq "--fromdb") {
 
 	my $result = search_single($kanji);
 	summarise_readings($result) if $verbose;
-	old_save_readings($result);
 	save_readings($result);
     }
     KanjiReadings::DBI->end_work;
-    # Explicit commits below shouldn't be needed now:
-    #	KanjiReadings::Summary->dbi_commit;
-    #	KanjiReadings::ReadingTally->dbi_commit;
-    #	KanjiReadings::VocabReading->dbi_commit;
 
 } else {
     # display from source db
@@ -168,10 +163,9 @@ exit(0);
 
 # Reimplement save_readings and save_vocab_readings
 #
-# The ordering is quite different due to foreign keys
+# Helper functions below cache anything that is to be added to the db
 
-my ($heisig6_seq, $yomi_rec_seq, $vocab_rec_seq, 
-    $link_rec_seq, @junkjunk) = (0) x 10;
+my ($heisig6_seq, $yomi_rec_seq, $vocab_rec_seq, $link_rec_seq, @junk) = (0) x 10;
 my %yomi_records = ();
 sub yomi_record {
     my ($type, $kana, $hira, @o) = @_;
@@ -287,7 +281,7 @@ sub yomi_tally_record {
 
 sub save_readings {
 
-    # copy-pasta shows what we're getting
+    # copy-pasta from older code shows what we're getting
     my $result = shift or die;
     my $kanji          = $result->{kanji};
     my $reading_counts = $result->{reading_counts};
@@ -366,110 +360,6 @@ sub save_readings {
 }
 
 # The rest is just subs
-my ($old_heisig6_seq, $vocab_seq, $yomi_seq, $tally_seq, @junk) 
-    = (0) x 15;			# sequence numbers for db tables
-my %all_yomi = ();
-sub old_save_readings {
-    my $result = shift;
-
-    # OK, not using dbh since I have Class::DBI
-    my $kanji          = $result->{kanji};
-    my $reading_counts = $result->{reading_counts};
-    my $failed         = $result->{failed};
-    my $num_failed     = 0 + @$failed;
-    my $num_parsed     = 0 + keys %$reading_counts;
-
-    ++$old_heisig6_seq;
-
-    # insert summary
-    my $fields = {
-	kanji         => $kanji,
-	heisig6_seq   => $old_heisig6_seq,
-	num_readings  => $num_parsed + $num_failed,
-	adj_readings  => $num_parsed + $num_failed,
-	num_vocab     => $result->{matched_count},
-	num_failed    => $num_failed,
-	adj_failed    => $num_failed,
-    };
-
-    my $Summary = KanjiReadings::Summary->insert($fields);
-    die unless ref($Summary);
-    $Summary->update;
-
-    # Insert tally records
-    for my $syn (sort {$a cmp $b} keys %$reading_counts) {
-	my $fields = {
-	    kanji => $kanji,
-	};
-	die "Expected reading counts like hira => (on|kun):<kana>\n" unless
-	    $syn =~ /^(on|kun):(.*)/;
-	$fields->{read_type}   = $1;
-	$fields->{kana}        = $2;
-	$fields->{hiragana}    = kata_to_hira($2); # hira->hira ok
-	$fields->{raw_tally}   =
-	    $fields->{adj_tally}   = $reading_counts->{$syn};
-
-	KanjiReadings::ReadingTally->insert($fields);
-    }
-    
-    # Insert vocab reading records. Since we add both matched and
-    # failed, I'll move the actual work into a separate sub
-    for my $vocab (@{$result->{matched_list}}) {
-	if ("do_old") { save_old_vocab_reading($kanji, $vocab); }
-    }
-    for my $vocab (@{$result->{failed}}) {
-	if ("do_old") { save_old_vocab_reading($kanji, $vocab); }
-    }
-}
-
-my %all_vocab = ();
-my %all_kic   = ();
-sub save_vocab_reading {
-    my $kanji = shift;
-    my $item  = shift;
-    die unless ref($item) eq "HASH";
-    my ($vocab_id, $kic_id);
-
-    if (exists($all_vocab{"$item->{vocab}:$item->{reading}"})) {
-	$vocab_id = $all_vocab{"$item->{vocab}:$item->{reading}"};
-	# die "$item->{vocab}:$item->{reading}";
-    } else {
-	$all_vocab{"$item->{vocab}:$item->{reading}"} = $vocab_id = ++$vocab_seq;
-	KanjiReadings::Vocab->insert(
-	    {
-		vocab_id     => $vocab_id,
-		vocab_ja     => $item->{vocab},
-		vocab_kana   => $item->{reading},
-		jlpt_grade   => $item->{grade},
-	    });
-	#print "$vocab_id: ($item->{vocab}:$item->{reading})\n";
-    }
-    #return;
-    #
-    # Populate using new table schema below
-    
-}
-
-sub save_old_vocab_reading {
-    my $kanji = shift;
-    my $item  = shift;
-    die unless ref($item) eq "HASH";
-
-    KanjiReadings::OldVocabReading->insert({
-	kanji        => $kanji,
-	vocab_kanji  => $item->{vocab},
-	vocab_kana   => $item->{reading},
-	jlpt_grade   => $item->{grade},
-	reading_hira => $item->{kanji_hira} || '',
-	reading_type => $item->{kanji_type} || '',
-	reading_kana => $item->{kanji_kana} || '',
-	adj_hira     => $item->{kanji_hira} || '',
-	adj_type     => $item->{kanji_type} || '',
-	adj_kana     => $item->{kanji_kana} || '',
-	ignore_flag  => 0,
-    });;
-}
-
 sub recreate_tables {
     my $dbh = shift;
 
