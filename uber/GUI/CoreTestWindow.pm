@@ -138,9 +138,9 @@ sub build {
 	name   => $name,
 	object => $self,
 	attr_depends_href => {
-	    answer_text => ["answer_visibility", ],
+	    answer_text => "answer_visibility",
 	},
-	);
+    );
 
     $self->{ff} = my $ff = Gtk2::Ex::FormFactory->new (
 	context => $context,
@@ -240,10 +240,14 @@ END_TABLE
 	    Gtk2::Ex::FormFactory::Label->new(
 		attr   => "$name.challenge_text",
 	    ),
-	    Gtk2::Ex::FormFactory::Button->new(
+	    my $play_button = Gtk2::Ex::FormFactory::Button->new(
 		stock          => "gtk-media-play",
 		label          => "",
-		clicked_hook   => sub {$audio->play_pause },
+		clicked_hook   => sub { $audio->play_pause },
+		active_cond    => sub {
+		    $self->{model}->get_challenge_mode eq "sound"
+			or $self->get_answer_visibility
+		},
 	    ),
 	    $audio = Gtk2::Ex::FormFactory::AudioPlayer->new(
 		# Might as well extend AudioPlayer to optionally
@@ -266,7 +270,7 @@ END_TABLE
 		with_markup => 1,
 		inactive => 'invisible',
 		# The below doesn't work so I have to use active_cond instead
-		#active_depends => "$name.answer_visibility",
+#		active_depends => "$name.answer_visibility",
 		active_cond => sub { $self->get_answer_visibility },
 	    ),
 	    Gtk2::Ex::FormFactory::HBox->new( # alignment container
@@ -319,6 +323,7 @@ END_TABLE
 	],
 	);
     $self->{audio} = $audio;
+    $self->{play_button} = $play_button;
     $parent->add_child_widget($ff);
     $self->populate_from_model;
 }
@@ -326,9 +331,16 @@ END_TABLE
 sub next_button_hook {
 
     my ($self, $audio, $answer) = @_;
-    # Bi-modal
+    my $context = $self->{context};
+    my $name    = $self->{name};
+
+    # Update this to set a context attribute controlling whether the
+    # play button is functional or not
+
     my $show_answer = $self->{answer_visibility} ^=1;
-    $answer->update;
+    $context->set_object_attr("$name.answer_visibility", $show_answer);
+    $self->{play_button}->update;
+
     if ($show_answer) {
 	if ($self->{model}->get_challenge_mode eq "kanji") {
 	    $audio->play;
@@ -437,10 +449,8 @@ sub populate_from_model {
     } elsif ($mode eq "sound") {
 	$audio->set_play_state("play");
     }
-
     $audio->set_playlist(
 	$self->localise_playlist($model->rec_playlist($index)));
-
     if ($mode eq "sound") {
 	$audio->play;
     }
@@ -495,9 +505,7 @@ sub populate_from_model {
 	$self->{q3_attribute} = "correct_sen_read";
 	$self->set_question_text_4($texts{sm});
 	$self->{q4_attribute} = "correct_sen_know";
-	
     } else {
-
 	$self->set_question_text_1($texts{vw});
 	$self->{q1_attribute} = "correct_voc_write";
 	$self->set_question_text_2($texts{vm});
@@ -506,7 +514,6 @@ sub populate_from_model {
 	$self->{q3_attribute} = "correct_sen_write";
 	$self->set_question_text_4($texts{sm});
 	$self->{q4_attribute} = "correct_sen_know";
-
     }
 
     $self->set_yesno_1(0);
