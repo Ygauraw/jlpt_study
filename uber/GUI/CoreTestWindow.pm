@@ -252,7 +252,10 @@ END_TABLE
 		debug => 0,
 		# URI base should come from outside (not defined in GUI)
 		uri_base => $self->{uri_base},
-		),
+		initial_play_state =>
+		$self->{model}->get_challenge_mode() eq "sound" ?
+		"play" : "pause",
+	    ),
 	    Gtk2::Ex::FormFactory::HSeparator->new(label => "Correct Answers"),
 	    # I can't get an "invisible" answer text to work within a
 	    # container so I'm making an alignment container beside it
@@ -429,12 +432,21 @@ sub populate_from_model {
 	"Answered $self->{items_tested}/$self->{items_total}");
 
     # Populate playlist
+    if ($mode eq "kanji") {
+	$audio->set_play_state("pause");
+    } elsif ($mode eq "sound") {
+	$audio->set_play_state("play");
+    }
+
     $audio->set_playlist(
 	$self->localise_playlist($model->rec_playlist($index)));
 
+    if ($mode eq "sound") {
+	$audio->play;
+    }
+
     # Setting challenge text/audio will require updates to AudioPlayer
     if ($mode eq "kanji") {
-	$audio->set_auto_play(0);
 	$audio->set_text(
 	    '<span size="x-large"><b>' .
 	    $model->rec_vocab_kanji($index) .
@@ -442,10 +454,8 @@ sub populate_from_model {
 	    $model->rec_sentence_ja_text($index) . "\n"
 	    );
     } elsif ($mode eq "sound") {
-	$audio->set_auto_play(1);
 	$audio->set_text('[Audio]');
     } else { die "Invalid challenge mode" }
-
    
     # Set up answer/response section
     my $answer_part = "\n" . '<span size="x-large"><b>' .

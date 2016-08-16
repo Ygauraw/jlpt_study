@@ -34,10 +34,11 @@ function init() {      // called once body has finished loading
 // onload_trigger -> onend_trigger -> delay_trigger -> onload_trigger -> ...
 function onload_trigger() {
   if (debug) { console.log ("In onload_trigger()"); }
-//  if (auto_play) { 
+  if (play_state != "pause") {
+    if (debug) { console.log("onload_trigger(): play_state is " + play_state); }
     if (debug) { console.log("onload_trigger(): auto-playing"); }
-    if (play_state != "pause") { audio.play(); }
-//  }
+    audio.play();
+  }
 }
 function onend_trigger() {
   if (debug) { console.log ("In onend_trigger()"); }
@@ -128,7 +129,6 @@ sub get_track_delay_ms          { shift->{track_delay_ms}               }
 sub get_uri_base                { shift->{uri_base}                     }
 sub get_auto_play               { shift->{auto_play}                    }
 sub get_playlist                { shift->{playlist}                     }
-sub get_play_state              { shift->{play_state}                   }
 sub get_loop                    { shift->{loop}                         }
 sub get_debug                   { shift->{debug}                        }
 sub get_allow_file_uri          { shift->{allow_file_uri}               }
@@ -137,12 +137,16 @@ sub get_text                    { shift->{text}                         }
 
 sub set_track_delay_ms          { shift->{track_delay_ms}       = $_[1] }
 sub set_uri_base                { shift->{uri_base}             = $_[1] }
-sub set_auto_play               { shift->{auto_play}            = $_[1] }
-sub set_play_state              { shift->{play_state}           = $_[1] }
 sub set_loop                    { shift->{loop}                 = $_[1] }
 sub set_debug                   { shift->{debug}                = $_[1] }
 sub set_allow_file_uri          { shift->{allow_file_uri}       = $_[1] }
 sub set_auto_advance            { shift->{auto_advance}         = $_[1] }
+
+# This needs to propagate a JS event
+sub set_play_state {
+    my $self = shift;
+    $self->enqueue_js('play("' . shift . '");', "set_play_state");
+};
 
 sub quotify_text {
     local($_) = shift;
@@ -171,8 +175,6 @@ sub set_playlist {
     $self->enqueue_js('var a = clear_playlist();', "Clearing playlist");
     foreach (@$playlist) {
 	my $cmd = 'add_playlist_item(' . quotify_text($_) . ');';
-	warn "playlist item $_ is of ref '" . ref($_) . "'\n" ;
-	warn "JS command to execute: $cmd\n";
 	$self->enqueue_js($cmd, "Adding playlist item");
     }    
 }
@@ -191,23 +193,17 @@ sub set_autoplay {
 
 sub play {
     my $self = shift;
-    $self->set_play_state("play");
     $self->enqueue_js('play();', "Calling play()");
 }
 
 sub pause {
     my $self = shift;
-    $self->set_play_state("pause");
     $self->enqueue_js('pause();', "Calling pause()");
 }
 
 sub play_pause {
     my $self = shift;
-    if ($self->get_play_state eq "play") {
-	$self->pause;
-    } else {
-	$self->play;
-    }
+    $self->enqueue_js('play_pause();', "Calling play_pause()");
 }
 # stash the gtk widget(s)
 sub get_gtk_vbox                { shift->{gtk_vbox}                     }
@@ -230,6 +226,7 @@ sub new {
 	allow_file_uri => 0,
 	debug          => 0,
 	initial_text   => 'Initial WebKit text',
+	initial_play_state => "pause",
         @_,			# user args
 
 	width          => 400,	# parent class args
@@ -245,7 +242,6 @@ sub new {
               allow_file_uri loop debug/};
 
     $self->set_track_delay_ms($track_delay_ms);
-    $self->set_auto_play($auto_play);
     $self->set_auto_advance($auto_advance);
     $self->set_uri_base($uri_base);
     $self->{playlist} = $playlist;
@@ -256,12 +252,10 @@ sub new {
     $self->{js_queue} = [];
     $self->{js_ok}    = 0;
     
-    $self->set_play_state("play");
-
     # Don't call $self->set_text until widget is built...
     $self->{text} = $o{initial_text};
 
-    #$self->build_widget;
+    $self->{initial_play_state} = $o{initial_play_state};
     
     return $self;
 }
@@ -269,17 +263,13 @@ sub new {
 sub build_html {
     my $self = shift;
 
-    my $auto_play    = $self->get_auto_play;
-    my $play_state   = $self->get_play_state;
     my $auto_advance = $self->get_auto_advance;
     my $delay        = $self->get_track_delay_ms;
     my $debug        = $self->get_debug;
     my $loop         = $self->get_loop;
     my $text         = $self->get_text;
+    my $play_state   = $self->{initial_play_state};
 
-    # for setting the attribute to the HTML <audio> tag
-    my $autoplay = $auto_play ? "autoplay" : "";
-    
     # Might as well make this somewhat well-formed so that I can put
     # scripts in the document head section
     my $html = "<html><head>";
@@ -298,7 +288,6 @@ sub build_html {
     }
     $html.="<script>\n";
     $html.="var playlist     = [ $js_playlist ];\n";
-    $html.="var auto_play    = $auto_play;\n";
     $html.="var play_state   = \"$play_state\";\n";
     $html.="var auto_advance = $auto_advance;\n";
     $html.="var loop         = $loop;\n";
@@ -311,15 +300,14 @@ sub build_html {
     $html.="</script>\n";
 
     # Note that body has an 'onload' event associated with it
-    # Also, I'm keeping autoplay on in the audio element
     $html.="</head><body onload=\"init()\">";
-    $html.="<audio id=\"audio\" preload=\"auto\" tabindex=\"0\">";
+    $html.="<audio id=\"audio\" preload=\"none\" tabindex=\"0\">";
     $html.="Your browser does not support the audio element.\n</audio>\n";
 
     $html.="<div id=\"textarea\">No initial text</div>\n";
     $html.="</body></html>";
 
-    #warn $html if $self->{debug};
+    warn $html if $self->{debug};
     
     my $wv   = $self->get_gtk_webkit_webview;
     my $base = $self->get_uri_base;
