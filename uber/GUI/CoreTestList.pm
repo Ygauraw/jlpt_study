@@ -60,15 +60,15 @@ sub get_test_list {
     my $iter = CoreTracking::TestSpec->retrieve_all;
     while (my $test =  $iter->next) {
 	my $int_list = [
-	    map { $test->$_ } qw(id test_type mode latest_test_sitting items)
+	    map { $test->$_ } qw(test_id test_type test_mode latest_sitting_id test_items)
 	];
 	
 	# to get % complete, need to check TestSitting table
 	my $test_id  = $int_list->[0];
 	my $sit_date = $int_list->[3];
-	my $sit_id   = "${test_id}_$sit_date";
+	my $sit_id   = $int_list->[3];
 	warn "sit id is $sit_id";
-	my $sitrec = CoreTracking::TestSitting->retrieve($sit_id);
+	my $sitrec = CoreTracking::TestSitting->retrieve($test_id);
 
 	my $items_tested = $sitrec->items_tested;
 	my $items_total  = $int_list->[4];
@@ -232,9 +232,11 @@ sub build_quick_add_buttons {
 	    clicked_hook => sub {
 		my $test_list = $context->get_object("tests");
 		$test_list -> new_item(
+		    set  => "core2k",
 		    mode => "kanji",
-		    type => "test2k",
+		    type => "range",
 		    items => 20,
+		    first => 0,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");
 	    }
@@ -245,8 +247,36 @@ sub build_quick_add_buttons {
 		my $test_list = $context->get_object("tests");
 		$test_list -> new_item(
 		    mode => "kanji",
-		    type => "test6k",
+		    type => "range",
 		    items => 20,
+		    first => 0,
+		);
+		$context->update_object_attr_widgets("gui_main.test_list");
+	    }
+	),
+	Gtk2::Ex::FormFactory::Button->new(
+	    label => 'Add sound 2k test',
+	    clicked_hook => sub {
+		my $test_list = $context->get_object("tests");
+		$test_list -> new_item(
+		    set  => "core2k",
+		    mode => "sound",
+		    type => "range",
+		    items => 20,
+		    first => 0,
+		);
+		$context->update_object_attr_widgets("gui_main.test_list");
+	    }
+	),
+	Gtk2::Ex::FormFactory::Button->new(
+	    label => 'Add sound 6k test',
+	    clicked_hook => sub {
+		my $test_list = $context->get_object("tests");
+		$test_list -> new_item(
+		    mode => "sound",
+		    type => "range",
+		    items => 20,
+		    first => 0,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");
 	    }
@@ -256,7 +286,21 @@ sub build_quick_add_buttons {
 	    clicked_hook => sub {
 		my $test_list = $context->get_object("tests");
 		$test_list -> new_item(
+		    set  => "core2k",
 		    mode => "kanji",
+		    type => "core2k",
+		    items => 20,
+		);
+		$context->update_object_attr_widgets("gui_main.test_list");
+	    }
+	),
+	Gtk2::Ex::FormFactory::Button->new(
+	    label => 'Add sound 2k random test',
+	    clicked_hook => sub {
+		my $test_list = $context->get_object("tests");
+		$test_list -> new_item(
+		    set  => "core2k",
+		    mode => "sound",
 		    type => "core2k",
 		    items => 20,
 		);
@@ -276,46 +320,11 @@ sub build_quick_add_buttons {
 	    }
 	),
 	Gtk2::Ex::FormFactory::Button->new(
-	    label => 'Add sound 2k test',
-	    clicked_hook => sub {
-		my $test_list = $context->get_object("tests");
-		$test_list -> new_item(
-		    mode => "sound",
-		    type => "test2k",
-		    items => 20,
-		);
-		$context->update_object_attr_widgets("gui_main.test_list");
-	    }
-	),
-	Gtk2::Ex::FormFactory::Button->new(
-	    label => 'Add sound 6k test',
-	    clicked_hook => sub {
-		my $test_list = $context->get_object("tests");
-		$test_list -> new_item(
-		    mode => "sound",
-		    type => "test6k",
-		    items => 20,
-		);
-		$context->update_object_attr_widgets("gui_main.test_list");
-	    }
-	),
-	Gtk2::Ex::FormFactory::Button->new(
-	    label => 'Add sound 2k random test',
-	    clicked_hook => sub {
-		my $test_list = $context->get_object("tests");
-		$test_list -> new_item(
-		    mode => "sound",
-		    type => "core2k",
-		    items => 20,
-		);
-		$context->update_object_attr_widgets("gui_main.test_list");
-	    }
-	),
-	Gtk2::Ex::FormFactory::Button->new(
 	    label => 'Add sound 6k random test',
 	    clicked_hook => sub {
 		my $test_list = $context->get_object("tests");
 		$test_list -> new_item(
+		    set  => "core2k",
 		    mode => "sound",
 		    type => "core6k",
 		    items => 20,

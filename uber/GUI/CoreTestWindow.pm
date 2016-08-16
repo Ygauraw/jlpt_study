@@ -181,8 +181,11 @@ sub build {
 
 sub show {
     warn "got a call to show a window\n";
+    # Things are complicated because the following just gets a VBox
+    # rather than the window. Boo Hiss.
+    #
     #    shift->{win}->get_gtk_widget->window_present;
-    shift->{ff}->open;
+    shift->{ff}->open; # this doesn't raise the window either
 }
 
 sub build_table {

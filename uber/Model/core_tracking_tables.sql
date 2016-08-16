@@ -2,40 +2,21 @@
 -- This creates the tables needed to store the history of Core 2k/6k
 -- vocabulary tests generated and (partially) completed (or retested)
 
--- Generally speaking, I'll use a seed value to make a selection from
--- available vocabulary items. Re-using the same seed (and associated
--- parameters) should generate the same list later on, if needed (for
--- re-testing or other uses). Therefore, saving a seed should be the
--- same as storing an actual test list in the database.
-create table core_test_specs (
-    epoch_time_created      INTEGER PRIMARY KEY,
-    -- The test_?k types below are for testing. They test the first n
-    -- core?k vocab items (in 1..n order) and ignore the seed
-    -- completely. Since the epoch_time_created key is primary, there
-    -- will only be one test set created (and reused) for a given
-    -- (n,mode) tuple.  Otherwise, each core?k type generates a new
-    -- random selection from the appropriate core?k lists.
-    test_type               TEXT,     -- core2k, core6k, test2k or test6k
-    mode                    TEXT,     -- challenge mode: "sound", "kanji" or "both"
+drop table test_specs;
+create table test_specs (
+    test_id                 INTEGER PRIMARY KEY,
+    time_created            INTEGER,
 
-    -- The following relate to the most recent test/re-test of this seed
-    -- 
-    -- If a test has mode "both" then user should be able to test just
-    -- the kanji side or just the sound side separately if they want
-    items                   INTEGER NOT NULL,  -- how many to test?
+    core_set                TEXT NOT NULL, -- 'core2k' or 'core6k'
+    test_type               TEXT NOT NULL, -- 'full', 'range' or 'chapter'
+    test_mode               TEXT NOT NULL, -- challenge mode: "sound", "kanji"
+    test_items              INTEGER NOT NULL, -- how many to test?
+    randomise               INTEGER,	      -- whether to shuffle or not
 
-    -- 
-    latest_test_sitting     INTEGER NOT NULL,
-
-    
-    -- In order to recreate the test in the same way later, we also
-    -- need the following values. The use of a predictable RNG (and
-    -- selection algorithm) seeded in this way lets us avoid storing
-    -- the actual selections. I could munge up all the non-computed
-    -- fields in here and use that as my seed, but it's less
-    -- error-prone to just create a random seed and use that every
-    -- time I create a new test.
-    seed                    TEXT -- uses Net::OnlineCode::RNG
+    range_start             INTEGER,
+    range_end               INTEGER,
+    seed                    TEXT,          -- uses Util::RNG
+    latest_sitting_id       INTEGER NOT NULL
 );
 
 -- Every time the user starts a test that is either new or has been
@@ -45,22 +26,14 @@ create table core_test_specs (
 -- just be updated with the most recent results (skipping over the
 -- items_tested number of items that have already been tested)
 
-create table core_test_sitting (
-    -- The primary key below is just a string containing the two epoch
-    -- times that follow. This synthetic key makes it easier to map
-    -- out relationships between the summary and detail tables with
-    -- Class::DBI, since it doesn't seem to support composite primary
-    -- keys in the has_a function.
-    id                        TEXT PRIMARY KEY,
-    epoch_time_created        INTEGER NOT NULL, -- must match a seed
-    epoch_time_start_test     INTEGER NOT NULL, -- when test started
-    -- Whereas the main table can have "both" as a mode, this table
-    -- can only have "sound" or "kanji" (separate test records for
-    -- each)
-    mode                      TEXT NOT NULL,
-    -- end of key fields
+drop table test_sittings;
+create table test_sittings (
+    sitting_id                INTEGER PRIMARY KEY,
+    test_id                   INTEGER NOT NULL, -- must match a seed
+    test_start_time           INTEGER,          -- when test started
+    test_end_time             INTEGER,          -- when tallies below updated
 
-    -- items_tested/(sound|kanji)_items (from above) = %complete:
+    -- items_tested/test_items (from test spec, above) = %complete:
     items_tested              INTEGER,
 
     -- After showing the answer for each vocab challenge, the user
@@ -78,46 +51,26 @@ create table core_test_sitting (
     --
     -- * sound: play audio, challenge to write vocab/sentence (ignore _read)
     -- * kanji: display kanji, challenge to read vocab/sentence (ignore _write)
-    -- * both: not an available mode in this table
     --
     -- I guess I could convert _read and _write into _readwrite ...
     -- but I like the clarity that specific field names give when
     -- examined in isolation.
 
-    -- It's quite possible that the user will fail on one of the
-    -- sentence-related questions due to it using some strange (to
-    -- them) vocabulary that they don't understand in some way.
-    -- Obviously it would be nice to store more details about why they
-    -- failed (especially if they want to repeat the test after
-    -- learning the failed non-key vocab items) but that sort of
-    -- functionality isn't really core to what's going on here. If
-    -- collating such vocab is important, the user can always search
-    -- on failed items (in a detailed test report) and then copy/paste
-    -- (or whatever) from that report into some other vocabulary
-    -- management interface.
-
     -- estimate of %vocab known out of the full 2k/6k (and margin of
     -- error) can be calculated using just the above information.
-
-    --  , PRIMARY KEY (epoch_time_created, epoch_time_start_test)
-
 );
 
-create table core_test_sitting_details (
-    -- synthetic foreign key id (composed of next two items) matches
-    -- core_test_summary
-    id                        TEXT,             -- not unique
+drop table test_sitting_details;
+create table test_sitting_details (
+    sitting_id                TEXT,             -- not unique
     -- composite primary key must match _summary table
-    epoch_time_created        INTEGER NOT NULL, -- foreign: match a seed 
-    epoch_time_start_test     INTEGER NOT NULL, -- when test instance started
-    mode                      TEXT    NOT NULL,
-    -- end of key fields
+    test_id                   INTEGER NOT NULL, -- matches a test spec
+    test_start_time           INTEGER NOT NULL, -- when test instance started
 
     -- Note that we don't index into sentence tables or anything here.
-    -- The random seed (and associated data) fully define the list of
-    -- things being tested and their ordering, so we're indexing into
-    -- a virtual data structure (all item_index values are sequential
-    -- within a mode).
+    -- The random seed (or range data) fully define the list of things
+    -- being tested and their ordering, so we're indexing into a
+    -- virtual data structure.
 
     item_index                INTEGER NOT NULL, -- counting from 1
 
@@ -125,42 +78,46 @@ create table core_test_sitting_details (
     correct_voc_know   INTEGER, -- did you understand the vocab in English?
     correct_voc_read   INTEGER, -- were you able to read the vocab?
     correct_voc_write  INTEGER, -- were you able to write the vocab?
-    correct_sen_know   INTEGER, -- did you understand the full sentence in English?
+    correct_sen_know   INTEGER, -- did you understand the sentence in English?
     correct_sen_read   INTEGER, -- were you able to read the full sentence?
     correct_sen_write  INTEGER  -- were you able to write the full sentence?
-
-    -- , PRIMARY KEY (epoch_time_created, epoch_time_start_test)
 );
 
 
 -- Since I'm going to allow re-testing with previously-used seeds, I
 -- don't want re-testing to skew the historical data. Therefore, the
 -- first time that a test is completed it will add some raw data
--- points to the table that follows. This table could be rolled into
--- the seed table, but I'll keep it separate, duplicating some fields
--- but ignoring those needed to generate the test lists.
+-- points to the table that follows. Adding data points is up to the
+-- discretion of the application; all the actual data can be retrieved
+-- from the linked test/sitting records.
 
+drop table data_points;
 create table data_points (
-    epoch_time_created      INTEGER PRIMARY KEY,
-    -- duplicate some values from seed table
-    type                    TEXT,     -- core2k, core6k, test2k or test6k
-    mode                    TEXT,     -- challenge mode: "sound" or "kanji" only
-
-    items                   INTEGER NOT NULL,  -- how many items tested?
-
-    -- The following needed for statistical formula
-    vocab_count             INTEGER,  -- 2k/6k
-    sentence_count          INTEGER,  -- actual sentence counts at the time
-
-    -- The following are the tallies (used with above to generate p values)
-    correct_voc_know   INTEGER, -- did you understand the vocab in English?
-    correct_voc_read   INTEGER  -- were you able to read the vocab?
-    correct_voc_write  INTEGER  -- were you able to write the vocab?
-    correct_sen_know   INTEGER, -- did you understand the full sentence in English?
-    correct_sen_read   INTEGER  -- were you able to read the full sentence?
-    correct_sen_write  INTEGER  -- were you able to write the full sentence?
-
-    -- again, estimates of %known and margin of error can be computed
-    -- from the above as/when needed.
-
+    sitting_id  INTEGER PRIMARY KEY,
+    test_id     INTEGER
+    
 );
+
+-- The way I defined tests (allowing for ranges) opens up the idea of
+-- using the vocab tester program as a browser or revision tool.
+-- Basically the user (me) would have the option of progressing
+-- through the sets in "chapter" mode. This simply involves setting a
+-- default chapter size and some option for moving to the next
+-- one. Each chapter will have a test_type of 'chapter' set.
+--
+
+drop table chapter_overview;
+create table chapter_overview (
+   default_core2k_chapter_size   INTEGER,
+   default_core6k_chapter_size   INTEGER,
+
+   core_2k_progress              INTEGER DEFAULT 0,
+   core_6k_progress              INTEGER DEFAULT 0
+   -- no need to store 2,000, 6,000 values; implicit
+);
+insert into chapter_overview values (50, 50, 0, 0);
+
+-- no need for a table to store chapters since we have the specific
+-- 'chapter' test_type that can be used to pull them out of the test
+-- spec/sitting tables.
+

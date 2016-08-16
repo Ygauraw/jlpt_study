@@ -26,10 +26,9 @@ our %valid_modes;		# instead of use, these won't get
 				# initialised unless we use BEGIN {}
 BEGIN {				
   %valid_types = (		# test types
-      'core2k' => undef,
-      'core6k' => undef,
-      'test2k' => undef,
-      'test6k' => undef,
+      'random' => undef,
+      'range' => undef,
+      'chapter' => undef,
       );
   %valid_modes = (		# challenge modes
       'sound'  => undef,
@@ -51,9 +50,10 @@ sub new_item {
     my $self = shift;
     warn "Creating new_item with values " . (join ",", @_) . "\n";
     my %o = (
-	type => undef,		# check against %valid_types
-	mode => undef,		# check against %valid_modes
-	items => undef,		# non-null
+	type => "undef",	# check against %valid_types
+	mode => "undef",	# check against %valid_modes
+	set  => "undef",        # core2k or core6k
+	items => 0,		# non-null
 	seed => undef,
 	@_
     );
@@ -61,20 +61,23 @@ sub new_item {
     my $now = time;
 
     warn "valid modes: " . (join ", ", keys %valid_modes) . "\n";
-    croak "Invalid mode $o{mode}" unless exists $valid_modes{$o{mode}};
-    croak "Invalid type $o{type}" unless exists $valid_types{$o{type}};
-
+    croak "Bad mode $o{mode}" unless exists $valid_modes{$o{mode}};
+    croak "Bad type $o{type}" unless exists $valid_types{$o{type}};
+    croak "Bad set $o{set}"   unless $o{set} eq "core6k" or $o{set} eq "core2k";
+    
     # make a random seed if we weren't given one
     $o{seed} = $self->{rng}->seed_random unless defined $o{seed};
 
     # Create seed  entry. Only create summary record once test starts
     my $entry = CoreTracking::TestSpec->insert(
 	{
-	    epoch_time_created  => $now,
-	    latest_test_sitting => $now,
+	    # allow Class::DBI to create a new id
+	    time_created        => $now,
+	    latest_sitting_id   => 0,
+	    core_set            => $o{set},
 	    test_type           => $o{type},
-	    mode                => $o{mode},
-	    items               => $o{items},
+	    test_mode           => $o{mode},
+	    test_items          => $o{items},
 	    seed                => $o{seed},
 	}
 	);
@@ -82,11 +85,8 @@ sub new_item {
 
     my $summary = CoreTracking::TestSitting->insert(
 	{
-	    id                    => "${now}_$now",
-	    epoch_time_created    => $now,
-	    epoch_time_start_test => $now,
-	    mode                  => $o{mode},
-	    # end of key fields
+	    test_id         => $entry->id,
+	    test_start_time => $now,
 
 	    items_tested          => 0,
 	    correct_voc_know      => 0,

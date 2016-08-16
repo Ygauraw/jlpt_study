@@ -31,54 +31,60 @@ sub autoupdate        { 1 }
 ####################
 package CoreTracking::DataPoint ;
 use base CoreTracking::DBI;
-__PACKAGE__->table('core_test_summary');
-__PACKAGE__->columns(
-    All => qw/epoch_time_created type mode items vocab_count sentence_count
-              correct_voc_know correct_voc_read correct_voc_write
-              correct_sen_know correct_sen_read correct_sen_write/);
+__PACKAGE__->table('data_points');
+__PACKAGE__->columns(Primary => 'sitting_id');
+__PACKAGE__->columns(Others  => 'test_id');
 
-__PACKAGE__->has_a(epoch_time_created => CoreTracking::TestSpec);
+__PACKAGE__->has_a(sitting_id => CoreTracking::TestSitting);
 
 ####################
 package CoreTracking::TestSittingDetail ;
 use base CoreTracking::DBI;
-__PACKAGE__->table('core_test_sitting_details');
-__PACKAGE__->columns(
-    All => qw/id epoch_time_created epoch_time_start_test mode item_index
+__PACKAGE__->table('test_sitting_details');
+__PACKAGE__->columns( # All?
+Others   => qw/sitting_id test_id test_start_time test_mode item_index
               correct_voc_know correct_voc_read correct_voc_write
               correct_sen_know correct_sen_read correct_sen_write/);
 
-# half of many-to-one mapping to TestSummary
-__PACKAGE__->has_a(id => CoreTracking::TestSitting);
+# half of many-to-one mapping to TestSitting
+__PACKAGE__->has_a(sitting_id => CoreTracking::TestSitting);
 
 
 ####################
 package CoreTracking::TestSitting;
 use base CoreTracking::DBI;
-__PACKAGE__->table('core_test_sitting');
-__PACKAGE__->columns(
-    All   => qw/id epoch_time_created epoch_time_start_test
-                mode items_tested correct_voc_know correct_voc_read
-                correct_voc_write correct_sen_know correct_sen_read
-                correct_sen_write/);
+__PACKAGE__->table('test_sittings');
+__PACKAGE__->columns(Primary => qw/sitting_id/);
+__PACKAGE__->columns(Others  => qw/test_id test_start_time test_end_time
+                items_tested
+                correct_voc_know correct_voc_read correct_voc_write
+                correct_sen_know correct_sen_read correct_sen_write/);
 
 __PACKAGE__->has_many(details => CoreTracking::TestSittingDetail);
-
-
 
 ####################
 package CoreTracking::TestSpec;
 use base CoreTracking::DBI;
 
-__PACKAGE__->table('core_test_specs');
-__PACKAGE__->columns(All => qw/epoch_time_created latest_test_sitting
-                               test_type mode items seed /);
+__PACKAGE__->table('test_specs');
+# __PACKAGE__->set_up_table('test_specs');
+__PACKAGE__->columns(Primary => 'test_id');
+__PACKAGE__->columns(Others  => qw/time_created core_set test_type test_mode
+                                   test_items randomise range_start range_end
+                                   seed latest_sitting_id/);
 
-__PACKAGE__->has_many(details     => CoreTracking::TestSittingDetail);
-__PACKAGE__->has_many(data_points => CoreTracking::DataPoint);
+__PACKAGE__->has_many  (details     => CoreTracking::TestSittingDetail
+			=> 'latest_sitting_id');
+__PACKAGE__->might_have(data_point  => CoreTracking::DataPoint);
+# __PACKAGE__->sequence('test_specs_id_seq');
 
-# expander/convertor from epoch time to something more useful (except
-#that we can't initialise a Date::Simple from epoch seconds...)
-#CoreTracking::Seed->has_a(epoch_time_created => 'Date::Simple');
+####################
+package CoreTracking::ChapterOverview;
+use base CoreTracking::DBI;
+
+__PACKAGE__->table('chapter_overview');
+__PACKAGE__->columns(Others  => qw/default_core2k_chapter_size
+                                   default_core6k_chapter_size
+                                   core_2k_progress core_6k_progress/);
 
 1;
