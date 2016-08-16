@@ -179,6 +179,12 @@ sub build {
     $ff->update;
 }
 
+sub show {
+    warn "got a call to show a window\n";
+    #    shift->{win}->get_gtk_widget->window_present;
+    shift->{ff}->open;
+}
+
 sub build_table {
 
     my $self     = shift;

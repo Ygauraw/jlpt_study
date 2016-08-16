@@ -37,6 +37,7 @@ sub new {
 	context => $context,
 	reload  => $o{reload},
 	buttons => $o{buttons},
+	active  => {},		# hash of active test windows (key=id)
     }, $class;
 
     $context -> add_object(
@@ -99,19 +100,39 @@ sub build_test_list {
 }
 
 # Testing of a single test selection
+#
+# First, some routines to keep track of active test windows
+sub look_up_test_window {
+    my ($self, $id) = @_;
+    return undef unless exists $self->{active}->{$id};
+    warn join ", ". keys(%{$self->{active}}) . "\n";
+    warn "Lookup says $id exists\n";
+    return $self->{active}->{$id};
+}
+sub register_test_window {
+    my ($self, $id, $obj) = @_;
+    die unless defined $obj;
+    warn "Registering window $id\n";
+    die if exists $self->{active}->{$id};
+    $self->{active}->{$id} = $obj;
+}
+sub dereg_test_window {
+    my ($self, $id) = @_;
+    die unless exists $self->{active}->{$id};
+    delete $self->{active}->{$id};
+}
 sub build_test_window {
 
     # Turn callback into method call for our class so we can look up
     # context
     my ($self, $list, $path, $column) = @_;
     
+    my $context = $self->{context};
     my $row_ref = $list->get_row_data_from_path ($path);
     my $creation_id = $row_ref->[0];
     my $test_rec_id = $row_ref->[3];
 
     my $test_win_id = "${creation_id}_$test_rec_id";
-
-    my $context = $self->{context};
 
     if (0) {
 	# the following fails if the object doesn't exist...
@@ -120,6 +141,15 @@ sub build_test_window {
 	    warn "This test window is still open";
 	    # how to get that window to show? $existing isn't a gui object...
 	    return 0;
+	}
+    } else {
+	my $win = $self->look_up_test_window($test_win_id);
+	if (defined($win)) {
+	    warn "Test window $test_win_id does already exist\n";
+	    $win->show;
+	    return;
+	} else {
+	    warn "Test window $test_win_id doesn't already exist\n";
 	}
     }
     
@@ -142,10 +172,13 @@ sub build_test_window {
 	    # signal update of the parent GUI when window closes
 	    warn "Got window $test_win_id closure callback\n";
 	    $context->update_object_attr_widgets("gui_main.test_list");
+	    $self->dereg_test_window($test_win_id);
 	}
     );
-
+    $self->register_test_window($test_win_id, $win);
     $win->build;
+
+    
 }
 
 sub build_main_window {
