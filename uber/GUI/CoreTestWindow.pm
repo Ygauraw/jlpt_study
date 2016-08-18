@@ -467,10 +467,10 @@ sub populate_from_model {
     # Setting challenge text/audio will require updates to AudioPlayer
     if ($mode eq "kanji") {
 	$audio->set_text(
-	    '<span size="x-large"><b>' .
+	    '<span style="font-size: 24px;"><b>' .
 	    $model->rec_vocab_kanji($index) .
-	     ': </b></span>' .
-	    $model->rec_sentence_ja_text($index) . "\n"
+	     ': </b>' .
+	    $model->rec_sentence_ja_text($index) . "</span>\n"
 	    );
     } elsif ($mode eq "sound") {
 	$audio->set_text('[Audio]');
