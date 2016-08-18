@@ -41,8 +41,8 @@ __PACKAGE__->has_a(sitting_id => CoreTracking::TestSitting);
 package CoreTracking::TestSittingDetail ;
 use base CoreTracking::DBI;
 __PACKAGE__->table('test_sitting_details');
-__PACKAGE__->columns( # All?
-Others   => qw/sitting_id test_id test_start_time test_mode item_index
+__PACKAGE__->columns(Primary => qw/sitting_id item_index/);
+__PACKAGE__->columns(Others   => qw/
               correct_voc_know correct_voc_read correct_voc_write
               correct_sen_know correct_sen_read correct_sen_write/);
 
@@ -60,6 +60,7 @@ __PACKAGE__->columns(Others  => qw/test_id test_start_time test_end_time
                 correct_voc_know correct_voc_read correct_voc_write
                 correct_sen_know correct_sen_read correct_sen_write/);
 
+__PACKAGE__->has_a   (test_id => CoreTracking::TestSpec);
 __PACKAGE__->has_many(details => CoreTracking::TestSittingDetail);
 
 ####################
@@ -73,9 +74,10 @@ __PACKAGE__->columns(Others  => qw/time_created core_set test_type test_mode
                                    test_items randomise range_start range_end
                                    seed latest_sitting_id/);
 
-__PACKAGE__->has_many  (details     => CoreTracking::TestSittingDetail
-			=> 'latest_sitting_id');
-__PACKAGE__->might_have(data_point  => CoreTracking::DataPoint);
+# __PACKAGE__->has_many  (details     => CoreTracking::TestSittingDetail
+# 			=> 'latest_sitting_id');
+__PACKAGE__->might_have(data_point         => CoreTracking::DataPoint);
+__PACKAGE__->has_a     (latest_sitting_id  => CoreTracking::TestSitting);
 # __PACKAGE__->sequence('test_specs_id_seq');
 
 ####################

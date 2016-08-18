@@ -1,5 +1,7 @@
 package GUI::CoreTestList;
 
+use Date::Format;
+
 use Model::CoreTestList;
 use Model::CoreTestQA;
     
@@ -59,21 +61,20 @@ sub get_test_list {
 
     my $iter = CoreTracking::TestSpec->retrieve_all;
     while (my $test =  $iter->next) {
+	# use new sub from model to get all the fields
+	my $fields = Model::CoreTestList->test_fields_from_test_iter($test);
 	my $int_list = [
-	    map { $test->$_ } qw(test_id test_type test_mode latest_sitting_id test_items)
+	    # $fields,		# Can't store; gets stringified
+	    $fields->{test_id},
+	    $fields->{latest_sitting_id},
+	    time2str("%Y-%m-%d %R", $fields->{time_created}),
+	    map { $fields->{$_} } 
+	    qw(ls_test_end_time core_set test_type test_mode test_items)
 	];
-	
-	# to get % complete, need to check TestSitting table
-	my $test_id  = $int_list->[0];
-	my $sit_date = $int_list->[3];
-	my $sit_id   = $int_list->[3];
-	warn "sit id is $sit_id";
-	my $sitrec = CoreTracking::TestSitting->retrieve($test_id);
 
-	my $items_tested = $sitrec->items_tested;
-	my $items_total  = $int_list->[4];
+	my $items_tested = $fields->{ls_items_tested};
+	my $items_total  = $fields->{test_items};
 	push @$int_list, int (100 * $items_tested / $items_total);
-	
 	push @lol, $int_list;
     }
     return \@lol;
@@ -83,8 +84,9 @@ sub build_test_list {
     my $self = shift;
     return Gtk2::Ex::FormFactory::List->new (
 	attr    => "gui_main.test_list",
-	columns => [ "Created", "Last Sitting", "Times\nCompleted", "Type", "Mode", "%Complete" ],
-	visible => [ 1, 1,1,1 ],
+	columns => [ "#", "[latest_sitting_id]", "Created", "Last Sat", "Set", 
+		     "Type", "Mode", "Items", "%Complete" ],
+	visible => [ 1,0,1,1,1,1,1 ],
 	scrollbars         => [ "never", "automatic" ],
 	height  => 400,
 	expand_h => 1,
@@ -129,53 +131,43 @@ sub build_test_window {
     
     my $context = $self->{context};
     my $row_ref = $list->get_row_data_from_path ($path);
-    my $creation_id = $row_ref->[0];
-    my $test_rec_id = $row_ref->[3];
+    my $test_id    = $row_ref->[0];
+    my $sitting_id = $row_ref->[1];
 
-    my $test_win_id = "${creation_id}_$test_rec_id";
-
-    if (0) {
-	# the following fails if the object doesn't exist...
-	my $existing = $context->get_object("core_test_window_$test_win_id");
-	if ($existing) {
-	    warn "This test window is still open";
-	    # how to get that window to show? $existing isn't a gui object...
-	    return 0;
-	}
-    } else {
-	my $win = $self->look_up_test_window($test_win_id);
-	if (defined($win)) {
-	    warn "Test window $test_win_id does already exist\n";
-	    $win->show;
-	    return;
-	} else {
-	    warn "Test window $test_win_id doesn't already exist\n";
-	}
-    }
+    my $win_id = "core_test_window_$sitting_id";
     
+    my $win_obj = $self->look_up_test_window($win_id);
+    if (defined($win_obj)) {
+	warn "Test window $win_id does already exist\n";
+	$win_obj->show;
+	return;
+    } else {
+	warn "Test window $win_id doesn't already exist\n";
+    }
+
     # add check here to see if test was already taken and
     # if it was (optionally) create a new sitting
 
     # start up a new test window
     my $test_model = Model::CoreTestQA->new(
-	creation_id => $creation_id,
-	test_rec_id => $test_rec_id,
+	sitting_id => $sitting_id,
+	test_id    => $test_id,
     );
 
     my $win = GUI::CoreTestWindow->new(
-	id => $test_win_id,
+	id => $sitting_id,
 	model_obj => $test_model,
 	context => $context,
 	toplevel => 0,
 	uri_base => 'file:///home/dec/JLPT_Study/core_6000/',
 	close_hook => sub {
 	    # signal update of the parent GUI when window closes
-	    warn "Got window $test_win_id closure callback\n";
+	    warn "Got window $win_id closure callback\n";
 	    $context->update_object_attr_widgets("gui_main.test_list");
-	    $self->dereg_test_window($test_win_id);
+	    $self->dereg_test_window($win_id);
 	}
     );
-    $self->register_test_window($test_win_id, $win);
+    $self->register_test_window($win_id, $win);
     $win->build;
 
     
@@ -246,6 +238,7 @@ sub build_quick_add_buttons {
 	    clicked_hook => sub {
 		my $test_list = $context->get_object("tests");
 		$test_list -> new_item(
+		    set  => "core6k",
 		    mode => "kanji",
 		    type => "range",
 		    items => 20,
@@ -273,6 +266,7 @@ sub build_quick_add_buttons {
 	    clicked_hook => sub {
 		my $test_list = $context->get_object("tests");
 		$test_list -> new_item(
+		    set  => "core6k",
 		    mode => "sound",
 		    type => "range",
 		    items => 20,
@@ -288,7 +282,7 @@ sub build_quick_add_buttons {
 		$test_list -> new_item(
 		    set  => "core2k",
 		    mode => "kanji",
-		    type => "core2k",
+		    type => "random",
 		    items => 20,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");
@@ -301,7 +295,7 @@ sub build_quick_add_buttons {
 		$test_list -> new_item(
 		    set  => "core2k",
 		    mode => "sound",
-		    type => "core2k",
+		    type => "random",
 		    items => 20,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");
@@ -312,8 +306,9 @@ sub build_quick_add_buttons {
 	    clicked_hook => sub {
 		my $test_list = $context->get_object("tests");
 		$test_list -> new_item(
+		    set  => "core6k",
 		    mode => "kanji",
-		    type => "core6k",
+		    type => "random",
 		    items => 20,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");
@@ -324,9 +319,9 @@ sub build_quick_add_buttons {
 	    clicked_hook => sub {
 		my $test_list = $context->get_object("tests");
 		$test_list -> new_item(
-		    set  => "core2k",
+		    set  => "core6k",
 		    mode => "sound",
-		    type => "core6k",
+		    type => "random",
 		    items => 20,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");

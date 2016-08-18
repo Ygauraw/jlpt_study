@@ -63,15 +63,6 @@ create table test_sittings (
 drop table test_sitting_details;
 create table test_sitting_details (
     sitting_id                TEXT,             -- not unique
-    -- composite primary key must match _summary table
-    test_id                   INTEGER NOT NULL, -- matches a test spec
-    test_start_time           INTEGER NOT NULL, -- when test instance started
-
-    -- Note that we don't index into sentence tables or anything here.
-    -- The random seed (or range data) fully define the list of things
-    -- being tested and their ordering, so we're indexing into a
-    -- virtual data structure.
-
     item_index                INTEGER NOT NULL, -- counting from 1
 
     -- detailed items corresponding to tallies above

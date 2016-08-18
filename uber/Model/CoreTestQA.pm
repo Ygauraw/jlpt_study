@@ -22,7 +22,7 @@ our $pkg = __PACKAGE__;
 our $AUTOLOAD;
 our %get_attr =
     map { ($_ => undef) } 
-    qw(summary_id creation_id test_rec_id rng challenge_mode
+    qw(sitting_id rng challenge_mode
        test_set items_total items_tested seed);
 our %rec_attr =
     map { ($_ => undef) }
@@ -62,9 +62,7 @@ sub save_answers {
     };
     
     warn "Adding new test detail:" . join ",", @_;
-    croak "Extraneous arguments to save_answers"
-	unless 7 == keys %$fields;
-    warn "Keys OK\n";
+    croak "Extraneous arguments to save_answers" unless 7 == keys %$fields;
 
     foreach (keys %$fields) {
 	die "Undefined field $_\n" unless defined $fields->{$_};
@@ -76,6 +74,7 @@ sub save_answers {
     if ($rec->{answered}) {
 	die "But question #$index is already answered!";
     }
+
     # update local structures so that it's quicker to update total
     # counts in the summary table later
     $rec->{answered}=1;
@@ -85,61 +84,51 @@ sub save_answers {
 	$rec->{$_} = $fields->{$_}
     }
 
+    # Now write a database record
     warn "About to insert into db\n";
-    # Now write a database record; reuse already-supplied fields
-    $fields->{id}                    = $self->{summary_id};
-    $fields->{epoch_time_created}    = $self->{creation_id};
-    $fields->{epoch_time_start_test} = $self->{test_rec_id};
-    $fields->{mode}                  = $self->{challenge_mode};
+    $fields->{sitting_id} = $self->{sitting_id};
     my $ent = CoreTracking::TestSittingDetail->insert($fields);
     $ent->update;
     warn "Added new test detail\n";
 }
 
-# Reuse valid types, modes from CoreTestList
-our %valid_types = (
-    'core2k' => undef,
-    'core6k' => undef,
-    'test2k' => undef,
-    'test6k' => undef,
-    );
-our %valid_modes = (
-    'sound'  => undef,
-    'kanji'  => undef,
-    #      'both'   => undef,
-    );
-
 sub new {
     my $class = shift;
     my %o = (
-	creation_id    => undef, # epoch_time_created
-	test_rec_id    => undef, # epoch_time_start_test
+	sitting_id    => undef,
+	test_id       => undef,	# we could pull from db, but ...
 	@_
 	);
 
     # Both parameters below are mandatory
-    unless (defined($o{creation_id}) and defined($o{test_rec_id})) {
-	carp "$pkg->new requires both creation_id and test_rec_id args";
+    unless (defined($o{sitting_id})) {
+	carp "$pkg->new requires test sitting id";
+	return undef;
+    }
+    unless (defined($o{test_id})) {
+	carp "$pkg->new requires test spec id";
 	return undef;
     }
 
-    my $summary_id  = "$o{creation_id}_$o{test_rec_id}";
+    my $sitting_id  = $o{sitting_id};
+    my $test_id     = $o{test_id};
     my $self = {
-	summary_id     => $summary_id,
-	creation_id    => $o{creation_id},
-	test_rec_id    => $o{test_rec_id},
+	sitting_id     => $sitting_id,
+	test_id        => $test_id,
+	creation_id    => undef,   # to be deleted
+	test_rec_id    => undef,   # to be deleted
 	rng            => Util::RNG->new,
-	# The following are taken from the database
-	challenge_mode => undef, # "sound" or "kanji"
-	test_set       => undef, # "core[26]k" or "test[26]k"
+	# The following come from the database
+	test_set       => "unset", # "core2k" or "core6k"
+	test_type      => "unset", # "range", "chapter" or "random"
+	challenge_mode => "unset", # "sound" or "kanji"
 	items_total    => undef,
 	items_tested   => undef,
-	# The following three need to be taken together to ensure that
-	# the same random selection is generated each time
+	# seed allows repeatable random selection
 	seed           => undef,
 	# private variables tracking Class::DBI objects
-	_seed          => undef,
-	_summary       => undef,
+	_test_spec     => undef,
+	_sitting       => undef,
     };
     bless $self, $class;
 
@@ -149,21 +138,15 @@ sub new {
     $self->read_test_summary;
 
     # Validate retrieved data
-    croak "Invalid mode $o{mode}" unless exists $valid_modes{$self->{challenge_mode}};
-    croak "Invalid type $o{type}" unless exists $valid_types{$self->{test_set}};
+    die "Invalid mode $self->{challenge_mode}" 
+	unless Model::CoreTestList->validate_mode($self->{challenge_mode});
+    die "Invalid type $self->{test_type}" 
+	unless Model::CoreTestList->validate_type($self->{test_type});
+    die "Invalid test set $self->{test_set}" unless 
+	$self->{test_set} eq "core2k" or $self->{test_set} eq "core6k";
 
     # Next we need to actually (re)create the list of test items
     $self->generate_selection;
-
-    # The following is subject to change (requires schema changes)
-    my ($sound_items, $kanji_items);
-    if ($self->{challenge_mode} eq "both") {
-	croak "Challenge mode of both currently not implemented";
-    } elsif ($self->{challenge_mode} eq "sound") {
-	($sound_items, $kanji_items) = ($self->{items_total},0);
-    } elsif ($self->{challenge_mode} eq "kanji") {
-	($sound_items, $kanji_items) = (0,$self->{items_total});
-    }
 
     # Then we update the test details based on any previous answers
     # stored in the database (so we don't ask them again in this test)
@@ -175,27 +158,23 @@ sub new {
 
 sub read_test_summary {
     my $self = shift;
-
-    # Have to create a synthetic composite key
-    my $summary_id  = $self->get_summary_id;
-    
-    my $seed = CoreTracking::TestSpec->retrieve($self->{creation_id});
-
-    my $test_summary =
-	CoreTracking::TestSitting->retrieve($summary_id)
-	or croak "Didn't find a database index for $summary_id";
+    my $sitting_id  = $self->get_sitting_id;
+    my $sitting   = CoreTracking::TestSitting->retrieve($sitting_id)
+	or croak "Didn't find a database index for $sitting_id";
+    my $test_spec = $sitting->test_id;
 
     # The following relate to the test in the abstract
-    $self->{test_set}       = $seed->test_type;
-    $self->{items_total}    = $seed->items;
-    $self->{seed}           = $seed->seed;
-    
-    $self->{challenge_mode} = $test_summary->mode;
-    $self->{items_tested}   = $test_summary->items_tested;
+    $self->{test_set}       = $test_spec->core_set;
+    $self->{test_type}      = $test_spec->test_type;
+    $self->{items_total}    = $test_spec->test_items;
+    $self->{seed}           = $test_spec->seed;
+    $self->{challenge_mode} = $test_spec->test_mode;
+
+    $self->{items_tested}   = $sitting->items_tested;
 
     # stash the db accessors used here
-    $self->{_summary} = $test_summary;
-    $self->{_seed}    = $seed;
+    $self->{_sitting}       = $sitting;
+    $self->{_test_spec}     = $test_spec;
     
 }
 
@@ -203,7 +182,7 @@ sub read_test_summary {
 # No point updating totals until a test is finished
 sub update_answer_summary {
     my $self    = shift;
-    my $summary = $self->{_summary}; # reuse saved query
+    my $sitting = $self->{_sitting}; # reuse saved query
     my $items_tested = 0;
     my $tallies = {
 	correct_voc_know  => 0,
@@ -225,8 +204,8 @@ sub update_answer_summary {
     croak unless $self->get_items_tested == $items_tested;
     # Use low-level method to update Class::DBI data
     $tallies->{items_tested} = $items_tested;
-    $summary->_attribute_set($tallies);
-    $summary->update;
+    $sitting->_attribute_set($tallies);
+    $sitting->update;
 }
 
 
@@ -370,11 +349,11 @@ sub generate_selection {
 sub load_previous_answers {
     my $self = shift;
     
-    my $id = $self->{summary_id};
+    my $sitting_id = $self->{sitting_id};
 
     # use DB's one-to-many relationship for an easy iterator
-    my $summary = $self->{_summary}; # stashed DB accessor
-    my @details = $summary->details;
+    my $sitting = $self->{_sitting}; # stashed DB accessor
+    my @details = $sitting->details;
 
     my $items_total = $self->{items_total};
 
@@ -389,10 +368,7 @@ sub load_previous_answers {
     foreach my $detail (@details) {
 	my $index = $detail->item_index;
 	croak if $index < 1 or $index > $items_total;
-	die "dying here" if $detail->id ne $id;
-	die "Invalid DB synthetic key"
-	    if $detail->epoch_time_created . "_" . $detail->epoch_time_start_test 
-	    ne $id;
+	die "dying here" if $detail->sitting_id ne $sitting_id;
 	my $ent = $self->{selections}->[$index];
 	# The six questions and a flag to indicate we have the answer
 	$ent->{answered} = 1;
