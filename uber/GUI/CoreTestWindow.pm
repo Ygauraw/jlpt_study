@@ -100,7 +100,7 @@ sub new {
     $self->set_answer_text             ("This is where the answer goes");
     $self->set_explain_button_text     ("Answer the following questions:");
 
-    warn "Answer visibility is " . $self->get_answer_visibility . "\n";
+    #warn "Answer visibility is " . $self->get_answer_visibility . "\n";
     
     $self;
 }
@@ -108,13 +108,13 @@ sub new {
 # Not the correct way to remove ourselves... called too late
 sub DESTROY {
     my $self = shift;
-    warn "DESTROY $self->{name}, " . ref($self) . "\n";
+    #warn "DESTROY $self->{name}, " . ref($self) . "\n";
 }
 
 # An explicit cleanup call is better
 sub cleanup {
     my $self = shift;
-    warn "Cleanup " . ref($self) . "\n";
+    #warn "Cleanup " . ref($self) . "\n";
     
     # update database counts and remove from context
     $self->{model}->update_answer_summary if $self->{need_db_update};
@@ -123,7 +123,7 @@ sub cleanup {
     # have a death callback?
     my $callback = $self->{close_hook};
     if (defined($callback)) {
-	warn "Calling user-supplied death callback\n";
+	#warn "Calling user-supplied death callback\n";
 	&$callback();
     };
 }
@@ -153,7 +153,7 @@ sub build {
 		},
 		quit_on_close => $self->{toplevel},
 		closed_hook => sub {
-		    warn "Test window $self->{name} is closing (closed_hook)\n";
+		    #warn "Test window $self->{name} is closing (closed_hook)\n";
 		    $self->cleanup;
 		    return 0;
 		},
@@ -180,7 +180,7 @@ sub build {
 }
 
 sub show {
-    warn "got a call to show a window\n";
+    #warn "got a call to show a window\n";
     # Things are complicated because the following just gets a VBox
     # rather than the window. Boo Hiss.
     #
@@ -371,7 +371,7 @@ sub next_button_hook {
 	$answer_attrs{$self->{q3_attribute}} = $self->get_yesno_3;
 	$answer_attrs{$self->{q4_attribute}} = $self->get_yesno_4;
 	$self->{model}->save_answers(%answer_attrs);
-	warn "Got back from save_answers\n";
+	#warn "Got back from save_answers\n";
 
 	# See if we're finished
 	if (++$self->{items_tested} >= $self->get_items_total) {
@@ -380,10 +380,10 @@ sub next_button_hook {
 
 	    # It appears that the following doesn't call our
 	    # closed_hook and ->destroy isn't an option.
-	    warn "All questions answered:\n  * closing window\n";
+	    #warn "All questions answered:\n  * closing window\n";
 	    $self->{ff}->close;
 
-	    warn " * doing cleanup\n";
+	    #warn " * doing cleanup\n";
 	    $self->cleanup;
 
 	    my $toplevel = $self->{toplevel};
@@ -412,10 +412,10 @@ sub localise_playlist {
 	my $urised = "file://$fn";
 	my $front = substr $urised, 0, length $uri_base, '';
 	if ($front eq $uri_base) {
-	    warn "Matched against URI base; local is $urised\n";
+	    #warn "Matched against URI base; local is $urised\n";
 	    push @$newlist, $urised;
 	} else {
-	    warn "No match against URI base $uri_base; ($urised)\n";
+	    #warn "No match against URI base $uri_base; ($urised)\n";
 	    push @$newlist, $fn;
 	}
 

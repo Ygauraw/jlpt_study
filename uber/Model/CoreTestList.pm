@@ -37,7 +37,7 @@ BEGIN {
 
 sub validate_type {
     my $class = shift;
-    warn keys %valid_types;
+    #warn keys %valid_types;
     exists $valid_types{$_[0]}
 }
 
@@ -96,7 +96,7 @@ sub test_fields_from_test_id {
 # Create a new test item
 sub new_item {
     my $self = shift;
-    warn "Creating new_item with values " . (join ",", @_) . "\n";
+    #warn "Creating new_item with values " . (join ",", @_) . "\n";
     my %o = (
 	type => "undef",	# check against %valid_types
 	mode => "undef",	# check against %valid_modes
@@ -108,7 +108,7 @@ sub new_item {
 
     my $now = time;
 
-    warn "valid modes: " . (join ", ", keys %valid_modes) . "\n";
+    #warn "valid modes: " . (join ", ", keys %valid_modes) . "\n";
     croak "Bad mode $o{mode}" unless $self->validate_mode($o{mode});
     croak "Bad type $o{type}" unless $self->validate_type($o{type});
     croak "Bad set $o{set}"   unless $o{set} eq "core6k" or $o{set} eq "core2k";

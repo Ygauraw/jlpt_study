@@ -26,7 +26,7 @@ my $mw = GUI::CoreTestList->new(
     context => $context,
     reload  => 1,
 ); 
-warn "Before build, mw->{buttons} is $mw->{buttons}\n";
+#warn "Before build, mw->{buttons} is $mw->{buttons}\n";
 $mw->build_main_window;
 Gtk2->main;
 

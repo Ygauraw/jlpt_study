@@ -61,7 +61,7 @@ sub save_answers {
 	@_
     };
     
-    warn "Adding new test detail:" . join ",", @_;
+    #warn "Adding new test detail:" . join ",", @_;
     croak "Extraneous arguments to save_answers" unless 7 == keys %$fields;
 
     foreach (keys %$fields) {
@@ -85,11 +85,11 @@ sub save_answers {
     }
 
     # Now write a database record
-    warn "About to insert into db\n";
+    #warn "About to insert into db\n";
     $fields->{sitting_id} = $self->{sitting_id};
     my $ent = CoreTracking::TestSittingDetail->insert($fields);
     $ent->update;
-    warn "Added new test detail\n";
+    #warn "Added new test detail\n";
 }
 
 sub new {
@@ -284,8 +284,8 @@ sub populate_sentence_details {
 	# Also store an item index
 	$sen->{item_index} = $item_index++;
 
-	# $sid (sentence ID) is in fact a Class::DBI handle so it can be
-	# used for queries
+	# $sid (sentence ID) is a Class::DBI object so it can be used
+	# for queries
 	$sen->{sentence_ja_text}     = "" . $sid->ja_text;
 	$sen->{sentence_ja_kana}     = "" . $sid->ja_kana;
 	# English translations can vary between core2k data sets

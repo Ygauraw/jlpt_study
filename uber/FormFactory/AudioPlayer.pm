@@ -110,7 +110,8 @@ sub enqueue_js {
 sub apply_js_queue {
     my $self    = shift;
     my $queue   = $self->{js_queue};
-    warn "About to flush " . scalar(@$queue) . " pending JS commands\n";
+    warn "About to flush " . scalar(@$queue) . " pending JS commands\n"
+	if $self->{debug};
     while (my $listref = shift @$queue) {
 	my $script  = shift @$listref;
 	my $comment = shift @$listref;
@@ -160,10 +161,10 @@ sub quotify_text {
 sub set_text {
     my $self = shift;
     my $text = shift;
-    warn "text was " .     $self->{text};
+    #warn "text was " .     $self->{text};
     $self->{text} = $text;
 
-    warn "in set_text, webview object is a " . ref($self->get_gtk_webkit_webview());
+    #warn "in set_text, webview object is a " . ref($self->get_gtk_webkit_webview());
     $self->enqueue_js(
 	'set_text(' . quotify_text("$text") . ");", "Setting text")
 }
@@ -326,7 +327,7 @@ sub build_widget {
 
     # set up for queueing of JavaScript commands to run after page loaded
     $wv->signal_connect("load-finished" => sub {
-	warn "WebView finished loading; direct JS OK after queue flush.\n";
+	#warn "WebView finished loading; direct JS OK after queue flush.\n";
 	$self->apply_js_queue;
     });
 
@@ -349,16 +350,10 @@ sub build_widget {
     
     $vbox->add($wv);
 
-    # Maybe it hasn't loaded yet?
-#    warn "before";
-#    $self->set_text($self->{text});
-#    warn "after";
-   
     # Call super to tell it which Gtk widget to place
     $self->set_gtk_widget($vbox);
     
     1;
-
 }
 
 1;

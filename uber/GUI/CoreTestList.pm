@@ -107,14 +107,14 @@ sub build_test_list {
 sub look_up_test_window {
     my ($self, $id) = @_;
     return undef unless exists $self->{active}->{$id};
-    warn join ", ". keys(%{$self->{active}}) . "\n";
-    warn "Lookup says $id exists\n";
+    #warn join ", ". keys(%{$self->{active}}) . "\n";
+    #warn "Lookup says $id exists\n";
     return $self->{active}->{$id};
 }
 sub register_test_window {
     my ($self, $id, $obj) = @_;
     die unless defined $obj;
-    warn "Registering window $id\n";
+    #warn "Registering window $id\n";
     die if exists $self->{active}->{$id};
     $self->{active}->{$id} = $obj;
 }
@@ -138,11 +138,11 @@ sub build_test_window {
     
     my $win_obj = $self->look_up_test_window($win_id);
     if (defined($win_obj)) {
-	warn "Test window $win_id does already exist\n";
+	#warn "Test window $win_id does already exist\n";
 	$win_obj->show;
 	return;
     } else {
-	warn "Test window $win_id doesn't already exist\n";
+	#warn "Test window $win_id doesn't already exist\n";
     }
 
     # add check here to see if test was already taken and
@@ -162,7 +162,7 @@ sub build_test_window {
 	uri_base => 'file:///home/dec/JLPT_Study/core_6000/',
 	close_hook => sub {
 	    # signal update of the parent GUI when window closes
-	    warn "Got window $win_id closure callback\n";
+	    #warn "Got window $win_id closure callback\n";
 	    $context->update_object_attr_widgets("gui_main.test_list");
 	    $self->dereg_test_window($win_id);
 	}
