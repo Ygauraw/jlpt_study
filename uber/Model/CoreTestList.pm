@@ -102,9 +102,13 @@ sub new_item {
 	mode => "undef",	# check against %valid_modes
 	set  => "undef",        # core2k or core6k
 	items => 0,		# non-null
+	first => 0,		# if set, first + items is last item
 	seed => undef,
 	@_
     );
+
+    croak "Can't add a test with 0 items (did you forget items?)"
+	unless $o{items} >0;
 
     my $now = time;
 
@@ -113,10 +117,39 @@ sub new_item {
     croak "Bad type $o{type}" unless $self->validate_type($o{type});
     croak "Bad set $o{set}"   unless $o{set} eq "core6k" or $o{set} eq "core2k";
 
-    # make a random seed if we weren't given one
+    # Test type and items are mandatory (checked above), but first can
+    # be optional. Check/set first, then set range_start/range_end
+    my $max_items = $o{set} eq "core6k" ? 6_000 : 2_000;
+    my ($range_start, $range_end);
+    if ($o{type} eq "chapter") {
+	die "'first' argument needed for 'chapter' test" unless $o{first} >0;
+	if ($o{first} + $o{items} - 1 > $max_items) {
+	    ($range_start, $range_end) = ($o{first}, $max_items);
+	    $o{items} = $range_end - $range_start;
+	}
+    } elsif ($o{type} eq "range") {
+	die "'first' argument needed for 'range' test" unless $o{first} >0;
+	if ($o{first} + $o{items} - 1 > $max_items) {
+	    croak "Selection of $o{first} + $o{items} is too big for $o{set}\n";
+	}
+	($range_start, $range_end) = ($o{first}, $o{first} + $o{items} - 1);
+    } elsif ($o{type} eq "random") {
+	# first is optional
+	$o{first} = 1 unless $o{first};
+	if ($o{items} > $max_items) {
+	    croak "There aren't $o{items} in $o{set}\n";
+	}
+	($range_start, $range_end) = ($o{first}, $max_items);
+    } else {
+	die;
+    }
+
+    #warn "range is [$range_start .. $range_end]\n";
+
+    # Make a random seed if we weren't given one
     $o{seed} = $self->{rng}->seed_random unless defined $o{seed};
 
-    # Create seed  entry. Only create summary record once test starts
+    # Create test spec.  Only create sitting record once test starts
     my $entry = CoreTracking::TestSpec->insert(
 	{
 	    # allow Class::DBI to create a new id
@@ -126,6 +159,8 @@ sub new_item {
 	    test_type           => $o{type},
 	    test_mode           => $o{mode},
 	    test_items          => $o{items},
+	    range_start         => $range_start,
+	    range_end           => $range_end,
 	    seed                => $o{seed},
 	}
     );

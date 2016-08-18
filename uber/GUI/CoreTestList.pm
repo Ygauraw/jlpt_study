@@ -228,7 +228,7 @@ sub build_quick_add_buttons {
 		    mode => "kanji",
 		    type => "range",
 		    items => 20,
-		    first => 0,
+		    first => 1,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");
 	    }
@@ -242,7 +242,7 @@ sub build_quick_add_buttons {
 		    mode => "kanji",
 		    type => "range",
 		    items => 20,
-		    first => 0,
+		    first => 1,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");
 	    }
@@ -256,7 +256,7 @@ sub build_quick_add_buttons {
 		    mode => "sound",
 		    type => "range",
 		    items => 20,
-		    first => 0,
+		    first => 1,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");
 	    }
@@ -270,7 +270,7 @@ sub build_quick_add_buttons {
 		    mode => "sound",
 		    type => "range",
 		    items => 20,
-		    first => 0,
+		    first => 1,
 		);
 		$context->update_object_attr_widgets("gui_main.test_list");
 	    }

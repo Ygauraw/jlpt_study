@@ -47,51 +47,6 @@ sub AUTOLOAD {
     croak "Method $attr does not exist";
 }
 
-sub save_answers {
-    my $self = shift;
-    # all fields are mandatory
-    my $fields = {
-	item_index        => undef,
-	correct_voc_know  => undef,
-	correct_voc_read  => undef,
-	correct_voc_write => undef,
-	correct_sen_know  => undef,
-	correct_sen_read  => undef,
-	correct_sen_write => undef,
-	@_
-    };
-    
-    #warn "Adding new test detail:" . join ",", @_;
-    croak "Extraneous arguments to save_answers" unless 7 == keys %$fields;
-
-    foreach (keys %$fields) {
-	die "Undefined field $_\n" unless defined $fields->{$_};
-    }
-    my $index = $fields->{item_index};
-    die "Index out of range"
-	if $index < 1 or $index > $self->get_items_total;
-    my $rec = $self->{selections}->[$index];
-    if ($rec->{answered}) {
-	die "But question #$index is already answered!";
-    }
-
-    # update local structures so that it's quicker to update total
-    # counts in the summary table later
-    $rec->{answered}=1;
-    $self->{items_tested}++;
-    # set answer fields (and also item_index, which is the same)
-    for (keys %$fields) { 
-	$rec->{$_} = $fields->{$_}
-    }
-
-    # Now write a database record
-    #warn "About to insert into db\n";
-    $fields->{sitting_id} = $self->{sitting_id};
-    my $ent = CoreTracking::TestSittingDetail->insert($fields);
-    $ent->update;
-    #warn "Added new test detail\n";
-}
-
 sub new {
     my $class = shift;
     my %o = (
@@ -168,6 +123,8 @@ sub read_test_summary {
     $self->{test_type}      = $test_spec->test_type;
     $self->{items_total}    = $test_spec->test_items;
     $self->{seed}           = $test_spec->seed;
+    $self->{range_start}    = $test_spec->range_start;
+    $self->{range_end}      = $test_spec->range_end;
     $self->{challenge_mode} = $test_spec->test_mode;
 
     $self->{items_tested}   = $sitting->items_tested;
@@ -322,21 +279,24 @@ sub generate_selection {
     # core list. After selection, those records need to be looked up.
     my $selections;		
 
-    if ($test_set         eq "test2k") {
-	$selections = [ 1..$items ];
-	$self->populate_2k_entries($selections);
-    } elsif ($test_set eq "test6k") {
-	$selections = [ 1..$items ];
-	$self->populate_6k_entries($selections);
-    } elsif ($test_set eq "core2k") {
-	$selections = [1 .. 2000];
+    my $range_start = $self->{range_start};
+    my $range_end   = $self->{range_end};
+
+    #warn "using $items items from range [$range_start .. $range_end]\n";
+
+    $selections = [$range_start .. $range_end];
+
+    if ($self->{test_type} eq "random") {
 	fisher_yates_shuffle($selections, $rng, $items);
+    }
+
+    if ($test_set eq "core2k") {
 	$self->populate_2k_entries($selections);
     } elsif ($test_set eq "core6k") {
-	$selections = [1 .. 6000];
-	fisher_yates_shuffle($selections, $rng, $items);
 	$self->populate_6k_entries($selections);
-    } else { die }
+    } else {
+	die
+    }
 
     $self->populate_sentence_details($selections);
 
@@ -380,6 +340,50 @@ sub load_previous_answers {
 	$ent->{correct_sen_write} = $detail->correct_sen_write;
     }
 }
+
+sub save_answers {
+    my $self = shift;
+    # all fields are mandatory
+    my $fields = {
+	item_index        => undef,
+	correct_voc_know  => undef,
+	correct_voc_read  => undef,
+	correct_voc_write => undef,
+	correct_sen_know  => undef,
+	correct_sen_read  => undef,
+	correct_sen_write => undef,
+	@_
+    };
     
+    #warn "Adding new test detail:" . join ",", @_;
+    croak "Extraneous arguments to save_answers" unless 7 == keys %$fields;
+
+    foreach (keys %$fields) {
+	die "Undefined field $_\n" unless defined $fields->{$_};
+    }
+    my $index = $fields->{item_index};
+    die "Index out of range"
+	if $index < 1 or $index > $self->get_items_total;
+    my $rec = $self->{selections}->[$index];
+    if ($rec->{answered}) {
+	die "But question #$index is already answered!";
+    }
+
+    # update local structures so that it's quicker to update total
+    # counts in the summary table later
+    $rec->{answered}=1;
+    $self->{items_tested}++;
+    # set answer fields (and also item_index, which is the same)
+    for (keys %$fields) { 
+	$rec->{$_} = $fields->{$_}
+    }
+
+    # Now write a database record
+    #warn "About to insert into db\n";
+    $fields->{sitting_id} = $self->{sitting_id};
+    my $ent = CoreTracking::TestSittingDetail->insert($fields);
+    $ent->update;
+    #warn "Added new test detail\n";
+}
 
 1;
