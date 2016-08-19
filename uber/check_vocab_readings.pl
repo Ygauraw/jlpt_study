@@ -19,6 +19,7 @@ use Util::JA_Script qw(hira_to_kata kata_to_hira has_hira
 
 # Class::DBI model for insertion into new kanji_readings db
 use Model::KanjiReadings;
+use Model::BreenKanji;		# for Jouyou data
 
 binmode STDIN,  ":utf8";
 binmode STDOUT, ":utf8";
@@ -294,7 +295,11 @@ sub save_readings {
     
     # We must store kanji and vocab first
     ++$heisig6_seq;
-    kanji_record($kanji, $heisig6_seq, '', 0, 0);
+
+    # Get jouyou grade from Jim Breen's kanji dictionary
+    my $jouyou = BreenKanji::Entry->retrieve($kanji)->jouyou;
+
+    kanji_record($kanji, $heisig6_seq, '', 0, $jouyou);
 
     foreach my $item (@$matched_list, @$failed_list) {
 	my $vocab_id = vocab_record(
