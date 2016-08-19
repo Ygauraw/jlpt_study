@@ -228,6 +228,7 @@ sub new {
 	debug          => 0,
 	initial_text   => 'Initial WebKit text',
 	initial_play_state => "pause",
+	user_controls  => 0,	# whether to display audio controls
         @_,			# user args
 
 	width          => 400,	# parent class args
@@ -249,6 +250,7 @@ sub new {
     $self->set_loop($loop);
     $self->set_debug($debug);
     $self->set_allow_file_uri($allow_file_uri);
+    $self->{user_controls} = $o{user_controls};
 
     $self->{js_queue} = [];
     $self->{js_ok}    = 0;
@@ -300,12 +302,15 @@ sub build_html {
     
     $html.="</script>\n";
 
+    my $uc = $self->{user_controls};
+    my $uc_tag = $uc ? " controls "  : "";
+    
     # Note that body has an 'onload' event associated with it
     $html.="</head><body onload=\"init()\">";
-    $html.="<audio id=\"audio\" preload=\"none\" tabindex=\"0\">";
+    $html.="<audio id=\"audio\" $uc_tag preload=\"none\" tabindex=\"0\">";
     $html.="Your browser does not support the audio element.\n</audio>\n";
 
-    $html.="<div id=\"textarea\">No initial text</div>\n";
+    $html.="<div id=\"textarea\"></div>\n";
     $html.="</body></html>";
 
     warn $html if $self->{debug};
