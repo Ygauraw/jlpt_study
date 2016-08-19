@@ -15,59 +15,132 @@ use warnings;
 use Gtk2 qw/-init/;
 
 use Gtk2::Ex::FormFactory;
-
-# This is the new widget class
 use FormFactory::AudioPlayer;
 
+# Main program just creates the context and a top-level GUI object
+
 my $context = Gtk2::Ex::FormFactory::Context->new;
-my $ap_object;
 
-my $ff = Gtk2::Ex::FormFactory->new(
-    context => $context,
-    content => [
-	Gtk2::Ex::FormFactory::Window->new(
-	    title => 'Test wrapping of audio widget',
-	    height => 400,
-	    width  => 400,
-	    quit_on_close => 1,
-	    content => [
-		$ap_object = Gtk2::Ex::FormFactory::AudioPlayer->new(
-		    debug => 1,
-		    track_delay_ms => 600,
-		    auto_play      => 1,
-		    auto_advance   => 0,
-		    uri_base       => 'file:///home/dec/jpod/tmp/',
-		    playlist       => ['Newbie/05_New_Year_Greetings/0_NB5_010107_jpod101_review.mp3'],
-		    user_controls  => 1, # HTML5 play/pause/transport ui
-		    allow_file_uri => 0,
-		    loop => 0,
-		),
-		Gtk2::Ex::FormFactory::Button->new(
-		    label => 'Play',
-		    clicked_hook => sub { $ap_object->play; },
-		),		
-		Gtk2::Ex::FormFactory::Button->new(
-		    label => 'Pause',
-		    clicked_hook => sub { $ap_object->pause; },
-		),
-		Gtk2::Ex::FormFactory::Button->new(
-		    label => 'Set Text',
-		    clicked_hook => sub { $ap_object->set_text("Set Text"); },
-		),
-		Gtk2::Ex::FormFactory::Button->new(
-		    label => 'Reload Program',
-		    clicked_hook => sub { exec $0, @ARGV or die },
-		),
-	    ],
-	),
-    ],
-    );
-
-$ff->open;
-$ff->update; 
-
-#$ap_object->set_text("A different text");
-
-print "AudioPlayer object's name is " . $ap_object->get_name . "\n";
+my $player_window = GUI::PlayerWindow->new(
+    context  => $context,
+    filename => 'Newbie/05_New_Year_Greetings/0_NB5_010107_jpod101_review.mp3',
+    toplevel => 1,
+);
 
 Gtk2->main;
+
+exit 0;
+
+package GUI::Base;
+
+# Small package that all other GUI objects will derive from. Its
+# purpose is to provide storage of a common Context. Based on code
+# from DVDRip.
+
+sub new {
+    my $class = shift;
+    my %opt = ( context => 0, @_ );
+    my ($context) = $opt{context};
+
+    die "Objects deriving fro GUI::Base must have context => ... opt\n"
+	unless $context;
+    
+    return bless {
+	context => $context,
+    }, $class;
+}
+
+sub get_context { shift->{context} }
+sub set_context { shift->{context} = $_[1] }
+sub get_ff { shift->{ff} }
+sub set_ff { shift->{ff} = $_[1] }
+
+# Don't know if I'll need this:
+sub get_context_object { $_[0]->{context}->get_object($_[1]) }
+
+# Generic message for missing methods in subclasses
+our $AUTOLOAD;
+sub AUTOLOAD {
+    my $class  = shift;
+    my $method = $AUTOLOAD;
+    die "Class $class does not define a method $method()\n";
+};
+
+
+package GUI::PlayerWindow;
+
+use base 'GUI::Base';
+
+sub new {
+    my $class = shift;
+    my $self  = $class->SUPER::new(@_);
+    my %opts  = (
+	filename => undef,
+	toplevel => 0,
+	uri_base => 'file:///home/dec/jpod/',
+	debug_audio => 0,
+	@_
+    );
+    my ($filename, $toplevel, $uri_base, $debug_audio) = 
+	@opts{qw/filename toplevel uri_base debug_audio/};
+
+    unless (defined $filename) {
+	warn "GUI::PlayerWindow needs a filename option\n";
+	return undef;
+    }
+    $self->{filename} = $filename;
+    $self->{toplevel} = $toplevel;
+    $self->{uri_base} = $uri_base;
+    $self->{debug_audio} = $debug_audio;
+
+    $self->build;
+    $self->{ff}->open;
+    $self->{ff}->update;
+    $self;
+}
+
+sub build {
+    my $self = shift;
+    $self->{ff} = my $ff = Gtk2::Ex::FormFactory->new(
+	context => $self->get_context,
+	content => [
+	    Gtk2::Ex::FormFactory::Window->new(
+		title => 'Podcast Player',
+		height => 400,
+		width  => 400,
+		quit_on_close => $self->{toplevel},
+		content => [
+		    $self->player_widgets(),
+		],
+	    ),
+	],
+    );
+}
+
+sub player_widgets {
+    my $self = shift;
+    (
+     ($self->{ap_object} =
+     Gtk2::Ex::FormFactory::AudioPlayer->new(
+	 debug => $self->{debug_audio},
+	 track_delay_ms => 600,
+	 auto_advance   => 0,
+	 play_state     => "play",
+	 uri_base       => $self->{uri_base},
+	 playlist       => [$self->{filename}],
+	 user_controls  => 1, # HTML5 play/pause/transport ui
+     )),
+     Gtk2::Ex::FormFactory::Button->new(
+	 label => 'Play',
+	 clicked_hook => sub { $self->{ap_object}->play; },
+     ),		
+     Gtk2::Ex::FormFactory::Button->new(
+	 label => 'Pause',
+	 clicked_hook => sub { $self->{ap_object}->pause; },
+     ),
+     Gtk2::Ex::FormFactory::Button->new(
+	 label => 'Reload Program',
+	 clicked_hook => sub { exec $0, @ARGV or die },
+     ),
+    )
+};
