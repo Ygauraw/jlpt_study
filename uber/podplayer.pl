@@ -34,19 +34,21 @@ exit 0;
 package GUI::Base;
 
 # Small package that all other GUI objects will derive from. Its
-# purpose is to provide storage of a common Context. Based on code
-# from DVDRip.
+# purpose is to provide handling/stashing of common parameters such as
+# Context.
 
 sub new {
     my $class = shift;
-    my %opt = ( context => 0, @_ );
-    my ($context) = $opt{context};
+    my %opt = ( context => 0, toplevel => 0, @_ );
+    my ($context)  = $opt{context};
+    my ($toplevel) = $opt{toplevel};
 
-    die "Objects deriving fro GUI::Base must have context => ... opt\n"
+    die "Objects deriving from GUI::Base must have context => ... \n"
 	unless $context;
     
     return bless {
-	context => $context,
+	context  => $context,
+	toplevel => $toplevel,
     }, $class;
 }
 
@@ -76,7 +78,6 @@ sub new {
     my $self  = $class->SUPER::new(@_);
     my %opts  = (
 	filename => undef,
-	toplevel => 0,
 	uri_base => 'file:///home/dec/jpod/',
 	debug_audio => 0,
 	@_
@@ -89,7 +90,6 @@ sub new {
 	return undef;
     }
     $self->{filename} = $filename;
-    $self->{toplevel} = $toplevel;
     $self->{uri_base} = $uri_base;
     $self->{debug_audio} = $debug_audio;
 
@@ -122,7 +122,7 @@ sub player_widgets {
     (
      ($self->{ap_object} =
      Gtk2::Ex::FormFactory::AudioPlayer->new(
-	 debug => $self->{debug_audio},
+	 debug          => $self->{debug_audio},
 	 track_delay_ms => 600,
 	 auto_advance   => 0,
 	 play_state     => "play",
