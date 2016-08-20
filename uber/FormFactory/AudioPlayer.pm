@@ -307,10 +307,12 @@ sub build_html {
     
     # Note that body has an 'onload' event associated with it
     $html.="</head><body onload=\"init()\">";
+
     $html.="<audio id=\"audio\" $uc_tag preload=\"none\" tabindex=\"0\">";
     $html.="Your browser does not support the audio element.\n</audio>\n";
 
     $html.="<div id=\"textarea\"></div>\n";
+
     $html.="</body></html>";
 
     warn $html if $self->{debug};

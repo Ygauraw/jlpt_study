@@ -8,27 +8,38 @@ create table series (
 
 );
 
+-- With the plethora of different file types, it makes sense to put
+-- them in a separate table rather than having lots of blank fields in
+-- the main episodes table. The main audio shouldn't go in here.
+create table episode_other_audio (
+  episode_id   INTEGER NOT NULL,
+  audio_type   TEXT,		-- derived from the filename
+  audio_file   TEXT
+);
+
+-- Do the same thing for episode text files
+create table episode_text_files (
+  episode_id   INTEGER NOT NULL,
+  file         TEXT NOT NULL,
+  title        TEXT NOT NULL,	-- something short
+  contents     TEXT		-- slurp
+);
+
 create table episodes (
   episode_id   INTEGER PRIMARY KEY, -- unique across all episodes
   series_id    INTEGER NOT NULL,
-  episode_num  INTEGER NOT NULL,
+  episode_seq  INTEGER NOT NULL, -- sequence within ep. dir.
 
   -- all MP3 files are under a two-level series/episode dir structure
   episode_dir    TEXT NOT NULL,	-- just the subdir
-  episode_text   TEXT NOT NULL,
+  episode_desc   TEXT NOT NULL,
 
   -- Unfortunately, there isn't a clear naming scheme in place across
   -- all the MP3 files. I will try to work this out in the population
   -- step so that I have at least the main audio file (however it may
   -- be named). I've ordered the non-main types below in decreasing
   -- order of frequency.
-  file_main      TEXT NOT NULL, -- main audio file
-  file_dialogue  TEXT,
-  file_review    TEXT,
-  file_grammar   TEXT,
-  file_bonus     TEXT,
-
-  file_other     TEXT 		-- a single catch-all 
+  main_audio     TEXT 		-- main audio file only
 );
 
 -- These tables are for vocab (and phrases) that can be automatically
