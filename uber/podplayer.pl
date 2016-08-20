@@ -16,20 +16,64 @@ use Gtk2 qw/-init/;
 
 use Gtk2::Ex::FormFactory;
 use FormFactory::AudioPlayer;
+use Model::JPod;
 
-# Main program just creates the context and a top-level GUI object
+my $topdir = '/home/dec/jpod';
 
-my $context = Gtk2::Ex::FormFactory::Context->new;
+if (@ARGV and $ARGV[0] eq "--populate") {
 
-my $player_window = GUI::PlayerWindow->new(
-    context  => $context,
-    filename => 'Newbie/05_New_Year_Greetings/0_NB5_010107_jpod101_review.mp3',
-    toplevel => 1,
-);
+    warn "This will nuke the tables! Hit enter to continue\n";
+    populate();
 
-Gtk2->main;
+} else {
+    # Main program creates the context and starts the top-level GUI
+    my $context = Gtk2::Ex::FormFactory::Context->new;
+
+    my $player_window = GUI::PlayerWindow->new(
+	context  => $context,
+	filename => 'Newbie/05_New_Year_Greetings/0_NB5_010107_jpod101_review.mp3',
+	toplevel => 1,
+    );
+
+    Gtk2->main;
+}
 
 exit 0;
+
+## Populate the database. 
+
+sub traverse_episodes {
+
+}
+
+sub traverse_series {
+
+    my $dh;
+    opendir($dh, $topdir) or die "$topdir isn't readable: $!\n";
+    my @sdirs = sort { $a cmp $b} 
+    grep { -d "$topdir/$_" and !/^\./ and !/qwajibo|tmp/ } readdir($dh);
+    closedir $dh;
+
+    foreach my $sdir (@sdirs) {
+	warn "$sdir\n";
+	my $series_text = $sdir;
+	$series_text =~ tr/_/ /;
+	my $series = JPod::Series->insert(
+	    {
+		series_dir => $sdir,
+		series_text => $series_text,
+	    });
+	last;			# just do one dir during testing
+    }
+}
+
+sub populate {
+    traverse_series;
+}
+
+sub delete_tables {
+    
+}
 
 package GUI::Base;
 
@@ -144,3 +188,46 @@ sub player_widgets {
      ),
     )
 };
+
+package GUI::MainWindow;
+use base 'GUI::Base';
+
+sub new {
+    my $class = shift;
+    my $self  = $class->SUPER::new(@_);
+    my %opts  = (
+	foo => 'bar',
+	@_
+    );
+
+    $self;
+};
+
+package GUI::EpisodeList;
+use base 'GUI::Base';
+
+sub new {
+    my $class = shift;
+    my $self  = $class->SUPER::new(@_);
+    my %opts  = (
+	foo => 'bar',
+	@_
+    );
+
+    $self;
+};
+
+package GUI::SeriesList;
+use base 'GUI::Base';
+
+sub new {
+    my $class = shift;
+    my $self  = $class->SUPER::new(@_);
+    my %opts  = (
+	foo => 'bar',
+	@_
+    );
+
+    $self;
+};
+
