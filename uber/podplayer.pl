@@ -335,6 +335,10 @@ sub new {
 
     # Move audio widget down so that I can change volume! (persists after exit)
     #$self->{ap_object}->set_text("<br><br><br>");
+
+    # A better solution if you accidentally turn the volume down too
+    # low is to use Gnome's sound preferences to set per-application
+    # volume.
     
     $self->{ff}->open;
     $self->{ff}->update;
