@@ -44,7 +44,8 @@ use constant {
     COL_YOMI_ID    => 4, 	# matched list, not displayed
     COL_YOMI_KANJI => 5,
     COL_YOMI_KANA  => 6,
-    COL_STATUS     => 7,
+    COL_STATUS_ID  => 7,	# numeric status value, not displayed
+    COL_STATUS     => 8,	# textual status value
 };
 
 our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir, $rtkinfo);
@@ -112,15 +113,16 @@ sub new {
 		    my @failed = grep { 0 == $_->yomi_id } $self->kv_link;
 		    foreach my $link (@failed) {
 			my $v = $link->vocab_id;
+			my $status = Learnable::KanjiVocab
+			    ->get_status(vocab_id => $v->vocab_id);
 			push @outlist, [
 			    "N" . $v->jlpt_grade,
 			    # Hidden field containing vocab_id
 			    "" . $v->vocab_id,
 			    $v->vocab_ja,
 			    $v->vocab_kana,
-			    Learnable::KanjiVocab
-			    ->get_status_text($v->vocab_id),
-
+			    $status,
+			    Model::Learnable->status_text($status),
 			]
 		    }
 		}
@@ -136,6 +138,8 @@ sub new {
 			next if 0 == $link->yomi_id;
 			my $v = $link->vocab_id;
 			my $y = $link->yomi_id;
+			my $status = Learnable::KanjiVocab
+			    ->get_status(vocab_id => $v->vocab_id);
 			push @outlist, [
 			    "N" . $v->jlpt_grade,
 			    # Hidden field containing vocab_id
@@ -145,8 +149,8 @@ sub new {
 			    "$y", # stringified yomi_id 
 			    $y->yomi_type,
 			    $y->yomi_kana,
-			    Learnable::KanjiVocab
-			    ->get_status_text($v->vocab_id),
+			    $status,
+			    Model::Learnable->status_text($status),
 			]
 		    }
 		}
@@ -167,9 +171,13 @@ sub new {
 		}
 		return "#" . $rtk->{frame} . ": " . $rtk->{keyword};
 	    },
+	    get_jlpt => sub {
+		my $self  = shift;
+		"N" . $self->jlpt_grade . ", ";
+	    },
 	    get_jouyou => sub {
 		my $self  = shift;
-		"J" . $self->jouyou_grade . ", ";
+		"J" . $self->jouyou_grade;
 	    },
 	    get_tallies => sub {
 		my $self = shift;
@@ -268,23 +276,24 @@ sub build_window {
 		    Gtk2::Ex::FormFactory::Table->new(
 			expand => 1,
 			layout => <<'END',
-                        +---->----------------+---------+
-                        '     Search Box      '  Go     |
-                        +->>----------------+-+-->------+
-                        ^ Pixbuf            | Matched   |
-                        +------]-+-[--------+           |
-                        | Jouyou | RTK      |           |
-                        +--------+----------+           |
-                        | Tallies           |           |
-                        +-------------------+-----------+
-                        ^          Failed               |
-                        +-------------------------------+
+                        +---->-------------------+---------+
+                        '     Search Box         '  Go     |
+                        +->>-------------------+-+-->------+
+                        ^ Pixbuf               | Matched   |
+                        +-[----+---->-+------]-+           |
+                        | JLPT |Jouyou|   RTK  |           |
+                        +------+------+--------+           |
+                        | Tallies              |           |
+                        +----------------------+-----------+
+                        ^          Failed                  |
+                        +----------------------------------+
 END
 			content => [
 			    $self->build_search,
 			    $self->build_go,
 			    $self->build_pixbuf,
 			    $self->build_matched,
+			    $self->build_jlpt,
 			    $self->build_jouyou,
 			    $self->build_rtk,
 			    $self->build_tallies,
@@ -419,6 +428,13 @@ sub build_jouyou {
     my $self  = shift;
     Gtk2::Ex::FormFactory::Label->new(
 	attr => "kanji.jouyou",
+    );
+}
+
+sub build_jlpt {
+    my $self  = shift;
+    Gtk2::Ex::FormFactory::Label->new(
+	attr => "kanji.jlpt",
     );
 }
 
@@ -627,8 +643,8 @@ sub build_matched {
 	    $self->{ff_matched} =
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.matched",
-		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Yomi_id", "Type", "Kana", "Status"],
-		visible => [1,0,1,1,0,1,1,1], # don't display vocab/yomi id
+		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Yomi_id", "Type", "Kana", "Status#", "Status"],
+		visible => [1,0,1,1,0,1,1,0,1], # don't display vocab/yomi id
 		height  => 400,
 		scrollbars => ["never", "automatic"],
 		expand => 1,
@@ -658,8 +674,8 @@ sub build_failed {
 	    ),
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.failed",
-		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Status"],
-		visible => [1,0,1,1,1],
+		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Status#", "Status"],
+		visible => [1,0,1,1,0,1],
 		height  => 140,
 		scrollbars => ["never", "automatic"],
 		expand => 1,

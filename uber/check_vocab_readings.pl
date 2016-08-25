@@ -21,6 +21,12 @@ use Util::JA_Script qw(hira_to_kata kata_to_hira has_hira
 use Model::KanjiReadings;
 use Model::BreenKanji;		# for Jouyou data
 
+use YAML::XS qw/LoadFile/;
+
+# I have the wrong name for the yaml file containing JLPT levels:
+my $jlpt_levels = LoadFile("./jouyou_levels.yaml");
+die "Failed to load JLPT level file: $!\n" unless defined($jlpt_levels);
+
 binmode STDIN,  ":utf8";
 binmode STDOUT, ":utf8";
 binmode STDERR, ":utf8";
@@ -299,7 +305,10 @@ sub save_readings {
     # Get jouyou grade from Jim Breen's kanji dictionary
     my $jouyou = BreenKanji::Entry->retrieve($kanji)->jouyou;
 
-    kanji_record($kanji, $heisig6_seq, '', 0, $jouyou);
+    # Get JLPT grade from YAML file
+    my $jlpt_level = $jlpt_levels->{$kanji}->{notional_level};
+
+    kanji_record($kanji, $heisig6_seq, '', $jlpt_level, $jouyou);
 
     foreach my $item (@$matched_list, @$failed_list) {
 	my $vocab_id = vocab_record(
