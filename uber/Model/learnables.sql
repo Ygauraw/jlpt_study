@@ -16,6 +16,7 @@ insert into classes values (5, 'Learnable::Grammar');
 insert into classes values (6, 'Learnable::CoreVocab');
 insert into classes values (7, 'Learnable::Core2k');
 insert into classes values (8, 'Learnable::Core6k');
+insert into classes values (9, 'Learnable::KanjiVocab');
 
 -- 
 create table config (

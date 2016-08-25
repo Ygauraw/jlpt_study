@@ -14,7 +14,7 @@ LearnableStorage->connection(
         sqlite_unicode => 1,
         AutoCommit     => 1, # set to 0 locally for big, slow updates
     }
-    );
+);
 
 sub begin_work {
     my $self = shift;
@@ -33,21 +33,21 @@ sub autoupdate        { 1 }
 
 
 package LearnableClass;
-use base 'LearnableStorage';
+use parent -norequire, 'LearnableStorage';
 
 __PACKAGE__->table  ('classes');
 __PACKAGE__->columns(Primary => qw(class_id));
 __PACKAGE__->columns(Others  => qw(class_name));
 
 package LearnableConfig;
-use base 'LearnableStorage';
+use parent -norequire, 'LearnableStorage';
 
 __PACKAGE__->table  ('config');
 __PACKAGE__->columns(Primary => qw(c_id));
 __PACKAGE__->columns(Others  => qw(c_name c_value));
 
 package LearnableCurrentStatus;
-use base 'LearnableStorage';
+use parent -norequire, 'LearnableStorage';
 
 __PACKAGE__->table  ('current_status');
 __PACKAGE__->columns(Primary => qw(class_id class_key));

@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Model::KanjiReadings;
+use Model::Learnable;
 
 use Gtk2 qw(-init);
 use Gtk2::Ex::FormFactory;
@@ -43,6 +44,7 @@ use constant {
     COL_YOMI_ID    => 4, 	# matched list, not displayed
     COL_YOMI_KANJI => 5,
     COL_YOMI_KANA  => 6,
+    COL_STATUS     => 7,
 };
 
 our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir, $rtkinfo);
@@ -103,7 +105,7 @@ sub new {
 	    get_failed => sub {
 		warn "Asked to get failed\n";
 		my $self = shift;
-		#warn "failed: $self->{kanji}; self is of type " . ref($self);
+		warn "failed: $self->{kanji}; self is of type " . ref($self);
 		my @outlist = ();
 		if ("new" ) {
 		    # !! Change later when Summary -> Kanji
@@ -115,7 +117,11 @@ sub new {
 			    # Hidden field containing vocab_id
 			    "" . $v->vocab_id,
 			    $v->vocab_ja,
-			    $v->vocab_kana,]
+			    $v->vocab_kana,
+			    Learnable::KanjiVocab
+			    ->get_status_text($v->vocab_id),
+
+			]
 		    }
 		}
 		\@outlist;
@@ -139,6 +145,8 @@ sub new {
 			    "$y", # stringified yomi_id 
 			    $y->yomi_type,
 			    $y->yomi_kana,
+			    Learnable::KanjiVocab
+			    ->get_status_text($v->vocab_id),
 			]
 		    }
 		}
@@ -159,6 +167,10 @@ sub new {
 		}
 		return "#" . $rtk->{frame} . ": " . $rtk->{keyword};
 	    },
+	    get_jouyou => sub {
+		my $self  = shift;
+		"J" . $self->jouyou_grade . ", ";
+	    },
 	    get_tallies => sub {
 		my $self = shift;
 		warn "Asked to get tallies, kanji is " . $self->kanji . "\n";
@@ -177,7 +189,8 @@ sub new {
 			$tally->adj_count || $tally->yomi_count,
 			$y->yomi_type,
 			$y->yomi_kana,
-			$tally->exemplary_vocab_id ? $tally->exemplary_vocab->vocab_ja : '',
+			$tally->exemplary_vocab_id
+			?  $tally->exemplary_vocab->vocab_ja : '',
 			]
 		}
 		# put failed at the end, but only if at least one exists
@@ -228,6 +241,7 @@ sub new {
 	    tallies     => "gui.selected_kanji",
 	    image_file  => "gui.selected_kanji",
 	    rtk_info    => "gui.selected_kanji",
+	    jouyou      => "gui.selected_kanji",
 	},
 	aggregated_by => "gui.selected_kanji",
     );
@@ -258,10 +272,10 @@ sub build_window {
                         '     Search Box      '  Go     |
                         +->>----------------+-+-->------+
                         ^ Pixbuf            | Matched   |
-                        +--------%----------+           |
-                        |       RTK         |           |
-                        +-------------------+           |
-                        |          Tallies  |           |
+                        +------]-+-[--------+           |
+                        | Jouyou | RTK      |           |
+                        +--------+----------+           |
+                        | Tallies           |           |
                         +-------------------+-----------+
                         ^          Failed               |
                         +-------------------------------+
@@ -271,6 +285,7 @@ END
 			    $self->build_go,
 			    $self->build_pixbuf,
 			    $self->build_matched,
+			    $self->build_jouyou,
 			    $self->build_rtk,
 			    $self->build_tallies,
 			    $self->build_failed,
@@ -400,8 +415,11 @@ sub build_rtk {
     );
 }
 
-sub build_jouyou_grade {
-    
+sub build_jouyou {
+    my $self  = shift;
+    Gtk2::Ex::FormFactory::Label->new(
+	attr => "kanji.jouyou",
+    );
 }
 
 sub build_tallies {
@@ -415,7 +433,7 @@ sub build_tallies {
 	    ),
 	    Gtk2::Ex::FormFactory::List->new(
 		attr => "kanji.tallies",
-		columns => ["Count", "Type", "Reading", "Exemplar", ],
+		columns => ["Count", "Type", "Reading", "Exemplar", "Status" ],
 		height  => 120,
 		scrollbars => ["never", "automatic"],
 		#		expand => 1,
@@ -609,8 +627,8 @@ sub build_matched {
 	    $self->{ff_matched} =
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.matched",
-		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Yomi_id", "Type", "Kana"],
-		visible => [1,0,1,1,0,1,1], # don't display vocab/yomi id
+		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Yomi_id", "Type", "Kana", "Status"],
+		visible => [1,0,1,1,0,1,1,1], # don't display vocab/yomi id
 		height  => 400,
 		scrollbars => ["never", "automatic"],
 		expand => 1,
@@ -640,8 +658,8 @@ sub build_failed {
 	    ),
 	    Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.failed",
-		columns => ["JLPT", "Vocab_id", "Vocab", "Reading"],
-		visible => [1,0,1,1],
+		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Status"],
+		visible => [1,0,1,1,1],
 		height  => 140,
 		scrollbars => ["never", "automatic"],
 		expand => 1,
