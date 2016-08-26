@@ -65,7 +65,7 @@ __PACKAGE__->columns(Others  => qw(
 
 __PACKAGE__->has_a(kanji                => KanjiReadings::Kanji);
 __PACKAGE__->has_a(yomi_id              => KanjiReadings::Yomi);
-__PACKAGE__->might_have(exemplary_vocab => KanjiReadings::Vocabulary);
+__PACKAGE__->has_a(exemplary_vocab_id   => KanjiReadings::Vocabulary);
 
 ####################
 

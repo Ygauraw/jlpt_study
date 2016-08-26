@@ -110,7 +110,7 @@ sub new {
 		my @outlist = ();
 		if ("new" ) {
 		    # !! Change later when Summary -> Kanji
-		    my @failed = grep { 0 == $_->yomi_id } $self->kv_link;
+		    my @failed = grep { 1 == $_->yomi_id } $self->kv_link;
 		    foreach my $link (@failed) {
 			my $v = $link->vocab_id;
 			my $status = Learnable::KanjiVocab
@@ -135,7 +135,7 @@ sub new {
 		if ("new") {
 		    # !! Change later when Summary -> Kanji
 		    foreach my $link ($self->kv_link) {
-			next if 0 == $link->yomi_id;
+			next if 1 == $link->yomi_id;
 			my $v = $link->vocab_id;
 			my $y = $link->yomi_id;
 			my $status = Learnable::KanjiVocab
@@ -183,31 +183,38 @@ sub new {
 		my $self = shift;
 		warn "Asked to get tallies, kanji is " . $self->kanji . "\n";
 		my @outlist = ();
-		my $has_failed = 0;
-		my $eg_failed = '';
+		my ($has_failed, $eg_failed, $failed_status) = (0, '', 0);
 		foreach my $tally ($self->tallies) {
 		    my $y = $tally->yomi_id;
-		    if (0 == $y) {
+		    my $status = Learnable::KanjiExemplar->get_status(
+			kanji => $self->kanji,
+			yomi_id => "$y",
+		    );
+		    $status = Model::Learnable->status_text($status);
+		    if (1 == $y) {
 			$has_failed += $tally->adj_count || $tally->yomi_count;
-			$eg_failed = $tally->exemplary_vocab->vocab_ja if
+			$eg_failed = $tally->exemplary_vocab_id->vocab_ja if
 			    $tally->exemplary_vocab_id;
+			$failed_status = $status;
 			next;
 		    };
 		    push @outlist, [
 			$tally->adj_count || $tally->yomi_count,
 			$y->yomi_type,
 			$y->yomi_kana,
-			$tally->exemplary_vocab_id
-			?  $tally->exemplary_vocab->vocab_ja : '',
+			($tally->exemplary_vocab_id
+			 ?  $tally->exemplary_vocab_id->vocab_ja : ''),
+			$status,
 			]
 		}
 		# put failed at the end, but only if at least one exists
 		if ($has_failed) {
 		    push @outlist, [
 			$has_failed,
-			"-",
-			"-",
+			"*",
+			"*",
 			$eg_failed,
+			$failed_status,
 		    ];
 		}
 		\@outlist;
@@ -215,7 +222,7 @@ sub new {
 	    get_image_file => sub {
 		my $self = shift;
 		my $kanji = $self->kanji;
-		warn "Asked to get image file, kanji is $kanji\n";
+		#warn "Asked to get image file, kanji is $kanji\n";
 		my $unicode = sprintf("%05x", ord $kanji);
 
 		# Unfortunately, my Gtk2::Gdk::Pixbuf is saying it
@@ -523,6 +530,50 @@ sub build_tallies {
     );
 }
 
+sub set_exemplary {
+    my ($self, $kanji, $yomi_id, $vocab_id) = @_;
+
+    warn "in set_exemplary\n";
+    warn "self is a " . ref($self) . "\n";
+    my $confirmed = 0;
+
+    warn "set_exemplary: args are $kanji, $yomi_id, $vocab_id\n";
+    # stash in KanjiReadings::KanjiYomiTally
+    my $yomi_tally = 
+	KanjiReadings::KanjiYomiTally->retrieve(
+	    kanji   => $kanji,
+	    yomi_id => $yomi_id);
+    if (0 != $yomi_tally->exemplary_vocab_id) {
+	# do a pop-up window to confirm overwrite
+	warn "would confirm here\n";
+	#return;
+    }
+
+    warn "Updating exemplary vocab_id to $vocab_id\n";
+    $yomi_tally->exemplary_vocab_id($vocab_id);
+    warn "Got here";
+    $yomi_tally->update;
+
+    # Make a note of learnable kanji exemplar
+    my $oldstatus = Learnable::KanjiExemplar->get_status(
+	    kanji => $kanji,
+	    yomi_id => $yomi_id,
+    );
+    if ($oldstatus < 1) {
+	Learnable::KanjiExemplar->set_update_status(1,
+	    kanji => $kanji,
+	    yomi_id => $yomi_id,
+	);
+    }
+
+    # And also of learnable vocab
+    $oldstatus = Learnable::KanjiVocab->get_status(vocab_id => $vocab_id);
+    if ($oldstatus < 1) {
+	Learnable::KanjiVocab->set_update_status(1, vocab_id => $vocab_id);
+    }
+    $self->{ff}->update;
+}
+
 # Build a menu that can be used on either the matched or failed
 # panels. Meant to be called from a button_press_event handler.
 sub vocab_panel_popup_menu {
@@ -616,9 +667,9 @@ sub vocab_panel_popup_menu {
 	    activate => sub {
 		# I should really use a popup if there's already an
 		# exemplary vocab id set.
-		warn "would set exemplar for $panel kanji $kanji to vocab id $vocab_id";
-		# Looks like we also have to pull out yomi_id ... more hidden fields :(
-		# !! Finish later
+		warn "Will set exemplar for $panel kanji $kanji to vocab id $vocab_id";
+		my $yomi_id = $panel eq "failed" ? 1 : $row_ref->[COL_YOMI_ID];
+		$self->set_exemplary($kanji, $yomi_id, $vocab_id);
 	    }
 	);
 	$menu_item->show;

@@ -27,7 +27,7 @@ sub end_work {
 }
 
 
-sub autoupdate        { 1 }
+sub autoupdate        { 0 }
 
 1;
 

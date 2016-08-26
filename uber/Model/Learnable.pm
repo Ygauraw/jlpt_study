@@ -1,9 +1,12 @@
 package Model::Learnable;
 
+use strict;
+use warnings;
+
 use Model::LearnableStorage;
 
 our %class_name_id;
-our @status_names = ( '', 'Enrolled', 'Reviewing',
+our @status_names = ( '', 'Learning', 'Reviewing',
 		      'SRS 1', 'SRS 2', 'SRS 3', 'SRS 4','SRS 5',
 		      'Buried (-5)', 'Buried (-4)', 'Buried (-3)', 'Buried (-2)',
 		      'Buried (-1)');
@@ -19,8 +22,8 @@ sub status_text {
     my $class = shift;
     my $status = shift;
     die unless defined($status);
-    die "Status outside range [-5,7]\n" if $st < -5 or $st > +7;
-    return $status_names[$st];	
+    die "Status outside range [-5,7]\n" if $status < -5 or $status > +7;
+    return $status_names[$status];
 }
 
 sub get_status {
@@ -36,41 +39,117 @@ sub get_status {
     $status->status;
 }
 
+# insert/update
+sub set_update_status {
+    my ($class, $newstatus, $key, @junk) = @_;
+    die "Excess arguments\n" if @junk;
+    my $class_id = $class_name_id{$class} or die "Class $class not in db\n";
+    my ($now, $cur, $hist, $oldstatus) = (time);
+
+    LearnableStorage->begin_work;
+    $cur = LearnableCurrentStatus->retrieve(
+	class_id => $class_id, class_key => $key
+    );
+    if (defined($cur)) {
+	$oldstatus = $cur->status;
+	$cur->status($newstatus);
+	$cur->change_time($now);
+    } else {
+	$oldstatus = 0;
+	$cur = LearnableCurrentStatus->insert({
+	    class_id => $class_id, class_key => $key,
+	    change_time => $now, status => $newstatus});
+    }
+    $cur->update;
+    $hist = LearnableStatusChange->insert({
+	class_id => $class_id, class_key => $key, change_time => $now,
+	old_status => $oldstatus, new_status => $newstatus,
+    });
+    $hist->update;
+    LearnableStorage->end_work;
+}
+
+# Checking required key attributes can be done in base class
+sub required_attributes {
+    my $class = shift;
+    die "Subclass $class should define required_attributes() method!\n";
+}
+sub check_required_attributes {
+    my $class = shift;
+    my @attrs = $class->required_attributes;
+    die "Wrong number of key attributes for $class\n" if @attrs - @_;
+    my %hash = (@attrs, @_);
+    if (2 * keys (%hash) - @attrs) {
+	warn "Wrong attribute names for $class\n";
+	warn join ",", @{%hash} . "\n";
+	die;
+    }
+    foreach my $key (keys %hash) {
+	# all key parts must be non-zero or a non-blank string
+	die "$class attribute $key has invalid value $hash{$key}\n"
+	    unless $hash{$key};
+    }
+}
+
+
 package Learnable::KanjiExemplar;
 
 use parent -norequire, 'Model::Learnable';
 
-# subclass only responsible for marshalling/checking key arguments
-sub get_status {
-    warn join "\n", @_;
-    my $self = shift;
-    my $opt = {
-	kanji => 0,
-	yomi_id => 0,
-	@_
-    };
-    die "Extra parameters to $self::get_status\n" unless 2 == keys %$opt;
-    die "Bad kanji parameter passed to $self::get_status\n" unless $opt->{kanji};
-    die "Bad yomi_id passed to $self::get_status\n" unless $opt->{yomi_id} > 0;
-    # Super doesn't need to know we're using a composite key
-    $self->SUPER::get_status("$opt->{kanji}:$opt->{yomi_id}");
+sub required_attributes { ( kanji => 0, yomi_id => 0 ) }
+
+# subclass only responsible for marshalling key parameters
+sub keyhash_to_string {
+    my $class = shift;
+    my %opt   = @_;		# expected to have been validated
+    return "$opt{kanji}:$opt{yomi_id}";
 }
+sub keystring_to_hash {
+    my $class  = shift;
+    local($_)  = shift;
+    die "Not a valid key string for $class: $_\n" unless /^(\w+):(\d+)$/;
+    return { kanji => $1, yomi_id => $2 };
+}
+sub get_status {
+    my $self = shift;
+    $self->check_required_attributes(@_);
+    $self->SUPER::get_status($self->keyhash_to_string(@_));
+}
+sub set_update_status {
+    my $class = shift;
+    my $status = shift;
+    $class->check_required_attributes(@_);
+    $class->SUPER::set_update_status($status, $class->keyhash_to_string(@_));
+}
+
 
 package Learnable::KanjiVocab;
 
 use parent -norequire, 'Model::Learnable';
 
-# subclass only responsible for marshalling/checking key arguments
+sub required_attributes { ( vocab_id => 0) }
+
+sub keyhash_to_string {
+    my $class = shift;
+    my %opt   = @_;		# expected to have been validated
+    return "$opt{vocab_id}";
+}
+sub keystring_to_hash {
+    my $class  = shift;
+    local($_)  = shift;
+    die "Not a valid key string for $class: $_\n" unless /^(\d+)$/;
+    return { vocab_id => $1 };
+}
 sub get_status {
-    warn join "\n", @_;
-    my $self = shift;
-    my $opt = {
-	vocab_id => 0,
-	@_
-    };
-    die "Extra parameters to $self::get_status\n" unless 1 == keys %$opt;
-    die "Bad vocab_id passed to $self::get_status\n" unless $opt->{vocab_id} > 0;
-    $self->SUPER::get_status($opt->{vocab_id});
+    my $class = shift;
+    $class->check_required_attributes(@_);
+    $class->SUPER::get_status("$_[1]");
+}
+sub set_update_status {
+    my $class = shift;
+    my $status = shift;
+    $class->check_required_attributes(@_);
+    $class->SUPER::set_update_status($status, "$_[1]");
 }
 
 

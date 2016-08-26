@@ -70,9 +70,13 @@ die unless defined($web_data_db) and defined($core_26k_db);
 # Global: per-kanji vocab dictionary
 my %vocab_dict = ();
 
+# Define these early so that we can insert "dummy" on-yomi record
+my ($heisig6_seq, $yomi_rec_seq, $vocab_rec_seq, $link_rec_seq, @junk) 
+   = (0, 0, 0, 0, 0);
+my %yomi_records = ();
+
+
 # Choice of making Jouyou kanji db or showing info for a single kanji
-
-
 if ($kanji eq "--fromdb") {
     # Display from db created with --makedb
     $kanji = shift @ARGV or die "--fromdb needs more args";
@@ -95,7 +99,7 @@ if ($kanji eq "--fromdb") {
 	my $vocab = "N" . $vid->jlpt_grade . " " . $vid->vocab_ja . 
 	    " => " . $vid->vocab_kana;
 	my $yomi;
-	if ($kv_link->yomi_id != 0) {
+	if ($kv_link->yomi_id != 1) {
 	    $yomi = " reading $kanji as " . $kv_link->yomi_id->yomi_type .
 		":" . $kv_link->yomi_id->yomi_kana . " (" .
 		$kv_link->yomi_id->yomi_hira . ")";
@@ -122,7 +126,7 @@ if ($kanji eq "--fromdb") {
 	    #	    print $tally -> 
 	}
 	# a bit awkward, but it works
-	grep { $failed_count = $_->yomi_count if 0 == $_->yomi_id } $krec->tallies;
+	grep { $failed_count = $_->yomi_count if 1 == $_->yomi_id } $krec->tallies;
 	print "$failed_count had no match\n";
     } else {
 	print 0 + @failed . " had no match\n";
@@ -130,7 +134,7 @@ if ($kanji eq "--fromdb") {
 
     print "Summary of readings:\n";
     for my $tally ($krec->tallies) {
-	next if 0 == $tally->yomi_id;
+	next if 1 == $tally->yomi_id;
 	printf("  %02d time(s)  %s:%s\n", $tally->yomi_count,
 	       $tally->yomi_id->yomi_type,
 	       $tally->yomi_id->yomi_kana);
@@ -142,6 +146,9 @@ if ($kanji eq "--fromdb") {
 
     # Make updates a lot faster by turning off auto-commit:
     KanjiReadings::DBI->begin_work;
+
+    # Create a dummy on-yomi for unmatched vocab
+    yomi_record("*", "*", "*");
 
     #my $kanji_list = [qw/降 雨 行/];	# small test set
     my $kanji_list = get_jouyou_list();
@@ -172,11 +179,9 @@ exit(0);
 #
 # Helper functions below cache anything that is to be added to the db
 
-my ($heisig6_seq, $yomi_rec_seq, $vocab_rec_seq, $link_rec_seq, @junk) = (0) x 10;
-my %yomi_records = ();
 sub yomi_record {
     my ($type, $kana, $hira, @o) = @_;
-    die "bad type '$type'" unless $type eq 'on' or $type eq 'kun';
+    die "bad type '$type'" unless $type =~ m/(on|kun|\*)/;
     die unless $hira;
     die if @o;
 
@@ -267,7 +272,7 @@ sub yomi_tally_record {
     my ($kanji, $yomi_id, $yomi_count, $adj_count, $eg, @o) = @_;
     die if @o;
     die unless $kanji;
-    $yomi_id = 0 unless $yomi_id;
+    $yomi_id = 1 unless $yomi_id;
     $yomi_count = 0 unless $yomi_count;
     $adj_count = 0 unless $adj_count;
     $eg = 0 unless $eg;
@@ -324,7 +329,7 @@ sub save_readings {
     # Then the yomi (stashing yomi id as we go; hence scan failed too)
     foreach my $item (@$matched_list, @$failed_list) {
 	unless ($item->{kanji_type}) {
-	    $item->{yomi_id} = 0;
+	    $item->{yomi_id} = 1;
 	    next;
 	}
 	my $yomi_id = yomi_record(
