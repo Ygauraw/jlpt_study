@@ -19,11 +19,6 @@ GUI::KanjiExplorer->new->build_window;
 
 Gtk2->main;
 
-# Until I figure out how to control auto-commit from with the program,
-# I'll have to do it manually on program exit
-print "Exiting; writing data to database\n";
-KanjiReadings::DBI->dbi_commit;
-
 package GUI::KanjiExplorer;
 
 use strict;
@@ -278,18 +273,18 @@ sub build_window {
 		expand => 1,
 		#		height => 600,
 		
-		width  => 600,
+		width  => 800,
 		content => [
 		    Gtk2::Ex::FormFactory::Table->new(
 			expand => 1,
 			layout => <<'END',
                         +---->-------------------+---------+
                         '     Search Box         '  Go     |
-                        +->>-------------------+-+-->------+
+                        +->>-------------------+>+---------+
                         ^ Pixbuf               | Matched   |
                         +-[----+---->-+------]-+           |
                         | JLPT |Jouyou|   RTK  |           |
-                        +------+------+--------+           |
+                        +->----+------+--------+           |
                         | Tallies              |           |
                         +----------------------+-----------+
                         ^          Failed                  |
@@ -445,10 +440,10 @@ sub build_jlpt {
     );
 }
 
+
 sub build_tallies {
     my $self = shift;
     Gtk2::Ex::FormFactory::Form->new(
-#	height  => 120,
 	expand  => 1,
 	content => [
 	    Gtk2::Ex::FormFactory::Label->new(
@@ -576,6 +571,12 @@ sub set_exemplary {
 
 # Build a menu that can be used on either the matched or failed
 # panels. Meant to be called from a button_press_event handler.
+sub menu_separator {
+    my $menu = shift or die;
+    my $menu_item = Gtk2::SeparatorMenuItem->new;
+    $menu_item->show;
+    $menu->append($menu_item);
+}
 sub vocab_panel_popup_menu {
     my ($self, $sl, $event, $panel) = @_;
     return 0 if ($event->button != 3);
@@ -621,7 +622,7 @@ sub vocab_panel_popup_menu {
     my $menu_items = 0;
 
     for my $char (sort { $a cmp $b } keys %other_kanji) {
-	$menu_item = Gtk2::MenuItem->new("Look up $char");
+	$menu_item = Gtk2::MenuItem->new("Jump to $char");
 	$menu_item->signal_connect(
 	    activate => sub {
 		$self->jump_to_kanji($char);
@@ -631,14 +632,10 @@ sub vocab_panel_popup_menu {
 	$menu_item->show;
 	$menu->append($menu_item);
     }
-    
+
     # Add menu item for copying either vocab or reading
     if (@selected_rows == 1) {
-	if ($menu_items) {
-	    $menu_item = Gtk2::SeparatorMenuItem->new;
-	    $menu_item->show;
-	    $menu->append($menu_item);
-	}	    
+	menu_separator($menu) if ($menu_items);
 	for my $col (2,3) {
 	    my $copy_text = $row_ref->[$col];
 	    $menu_item = Gtk2::MenuItem->new("Copy $copy_text");
@@ -655,9 +652,7 @@ sub vocab_panel_popup_menu {
 
     # Add menu item for setting exemplary vocab
     if (@selected_rows == 1) {
-	$menu_item = Gtk2::SeparatorMenuItem->new;
-	$menu_item->show;
-	$menu->append($menu_item);
+	menu_separator($menu);
 	# need vocab_id for this to work; it must be a non-displayed
 	# field in the row_ref above.
 	my $vocab_id = $row_ref->[COL_VOCAB_ID];
@@ -676,6 +671,30 @@ sub vocab_panel_popup_menu {
 	$menu->append($menu_item);
     }
 
+    # Add SRS-like actions
+    if (@selected_rows == 1) {	# don't include with multiple selections
+	menu_separator($menu);
+	# These names are a bit "meh"
+	my @srs_names = ("Bury Forever", "Bury Long Time", "Bury Medium Time",
+			 "Bury Short Time", "Clear Status", "Learning", "Reviewing",
+			 "SRS 1 (Near)", "SRS 2", "SRS 3", "SRS 4 (Far)");
+	foreach my $status (-4 .. 6) {
+	    my $name = $srs_names[$status + 4];
+	    my $vocab_id = $row_ref->[COL_VOCAB_ID];
+	    $menu_item = Gtk2::MenuItem->new($name);
+	    $menu_item->signal_connect(
+		activate => sub {
+		    warn "Will set status for $panel kanji $kanji to $name";
+		    Learnable::KanjiVocab->set_update_status($status,
+							     vocab_id => $vocab_id);
+		    $self->{ff}->update;
+		}
+	    );
+	    $menu_item->show;
+	    $menu->append($menu_item);
+	    
+	}
+    }    
 
     $menu->popup(undef,undef,undef,undef,$event->button, $event->time);
     
@@ -685,7 +704,6 @@ sub vocab_panel_popup_menu {
 sub build_matched {
     my $self = shift;
     Gtk2::Ex::FormFactory::Form->new(
-#	height  => 400,
 	expand  => 1,
 	content => [
 	    Gtk2::Ex::FormFactory::Label->new(
