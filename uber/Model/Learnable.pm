@@ -3,6 +3,8 @@ package Model::Learnable;
 use strict;
 use warnings;
 
+use utf8;
+
 use Model::LearnableStorage;
 
 our %class_name_id;
@@ -28,9 +30,11 @@ sub status_text {
 
 sub get_status {
     my $class = shift;
-    my $key   = shift || die "$class: Key must not be null\n";
     die "Class/type $class not registered in database"
 	unless exists $class_name_id{$class};
+
+    $class->check_required_attributes(@_);
+    my $key = $class->keyhash_to_string(@_);
     
     my $status = LearnableCurrentStatus->retrieve(
 	class_id   => $class_name_id{$class},
@@ -41,8 +45,9 @@ sub get_status {
 
 # insert/update
 sub set_update_status {
-    my ($class, $newstatus, $key, @junk) = @_;
-    die "Excess arguments\n" if @junk;
+    my $class = shift;
+    my $newstatus = shift;
+    my $key = $class->keyhash_to_string(@_);
     my $class_id = $class_name_id{$class} or die "Class $class not in db\n";
     my ($now, $cur, $hist, $oldstatus) = (time);
 
@@ -91,6 +96,22 @@ sub check_required_attributes {
     }
 }
 
+package Learnable::Kanji;
+
+use parent -norequire, 'Model::Learnable';
+
+sub required_attributes { ( kanji => 0 ) }
+sub keyhash_to_string {
+    my $class = shift;
+    my %opt   = @_;		# expected to have been validated
+    return "$opt{kanji}";
+}
+sub keystring_to_hash {
+    my $class  = shift;
+    local($_)  = shift;
+    die "Not a valid key string for $class: $_\n" unless /^(\w)$/;
+    return { kanji => $1 };
+}
 
 package Learnable::KanjiExemplar;
 
@@ -110,25 +131,12 @@ sub keystring_to_hash {
     die "Not a valid key string for $class: $_\n" unless /^(\w+):(\d+)$/;
     return { kanji => $1, yomi_id => $2 };
 }
-sub get_status {
-    my $self = shift;
-    $self->check_required_attributes(@_);
-    $self->SUPER::get_status($self->keyhash_to_string(@_));
-}
-sub set_update_status {
-    my $class = shift;
-    my $status = shift;
-    $class->check_required_attributes(@_);
-    $class->SUPER::set_update_status($status, $class->keyhash_to_string(@_));
-}
-
 
 package Learnable::KanjiVocab;
 
 use parent -norequire, 'Model::Learnable';
 
 sub required_attributes { ( vocab_id => 0) }
-
 sub keyhash_to_string {
     my $class = shift;
     my %opt   = @_;		# expected to have been validated
@@ -140,17 +148,5 @@ sub keystring_to_hash {
     die "Not a valid key string for $class: $_\n" unless /^(\d+)$/;
     return { vocab_id => $1 };
 }
-sub get_status {
-    my $class = shift;
-    $class->check_required_attributes(@_);
-    $class->SUPER::get_status("$_[1]");
-}
-sub set_update_status {
-    my $class = shift;
-    my $status = shift;
-    $class->check_required_attributes(@_);
-    $class->SUPER::set_update_status($status, "$_[1]");
-}
-
 
 1;
