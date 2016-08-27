@@ -8,15 +8,16 @@ create table classes (
   class_name  TEXT NOT NULL
 );
 
-insert into classes values (1, 'Learnable::Podcast');
-insert into classes values (2, 'Learnable::ReadingText');
-insert into classes values (3, 'Learnable::KanjiExemplar');
-insert into classes values (4, 'Learnable::VocabWebData');
-insert into classes values (5, 'Learnable::Grammar');
-insert into classes values (6, 'Learnable::CoreVocab');
-insert into classes values (7, 'Learnable::Core2k');
-insert into classes values (8, 'Learnable::Core6k');
-insert into classes values (9, 'Learnable::KanjiVocab');
+insert into classes values (1,  'Learnable::Podcast');
+insert into classes values (2,  'Learnable::ReadingText');
+insert into classes values (3,  'Learnable::KanjiExemplar');
+insert into classes values (4,  'Learnable::VocabWebData');
+insert into classes values (5,  'Learnable::Grammar');
+insert into classes values (6,  'Learnable::CoreVocab');
+insert into classes values (7,  'Learnable::Core2k');
+insert into classes values (8,  'Learnable::Core6k');
+insert into classes values (9,  'Learnable::KanjiVocab');
+insert into classes values (10, 'Learnable::Kanji');
 
 -- 
 create table config (

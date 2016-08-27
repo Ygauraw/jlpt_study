@@ -42,6 +42,18 @@ use constant {
     COL_STATUS_ID  => 7,	# numeric status value, not displayed
     COL_STATUS     => 8,	# textual status value
 };
+# Same for the tally table
+use constant {
+    TAL_KANJI      => 0,
+    TAL_COUNT      => 1,
+    TAL_YOMI_ID    => 2,
+    TAL_YOMI_TYPE  => 3,
+    TAL_YOMI_KANA  => 4,
+    TAL_VOCAB_ID   => 5,
+    TAL_EXEMPLAR   => 6,
+    TAL_STATUS     => 7,
+};
+
 
 our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir, $rtkinfo);
 BEGIN {
@@ -178,7 +190,8 @@ sub new {
 		my $self = shift;
 		warn "Asked to get tallies, kanji is " . $self->kanji . "\n";
 		my @outlist = ();
-		my ($has_failed, $eg_failed, $failed_status) = (0, '', 0);
+		my ($has_failed, $eg_failed, $eg_failed_id, $failed_status) = (0,'',0,0);
+
 		foreach my $tally ($self->tallies) {
 		    my $y = $tally->yomi_id;
 		    my $status = Learnable::KanjiExemplar->get_status(
@@ -188,26 +201,34 @@ sub new {
 		    $status = Model::Learnable->status_text($status);
 		    if (1 == $y) {
 			$has_failed += $tally->adj_count || $tally->yomi_count;
-			$eg_failed = $tally->exemplary_vocab_id->vocab_ja if
-			    $tally->exemplary_vocab_id;
+			$eg_failed_id = $tally->exemplary_vocab_id;
+			$eg_failed = '';
+			$eg_failed = $eg_failed_id->vocab_ja if $eg_failed_id;
 			$failed_status = $status;
 			next;
 		    };
+		    my @vocab = (0, '');
+		    my $vocab_id = $tally->exemplary_vocab_id;
+		    @vocab = ("$vocab_id", $vocab_id->vocab_ja) if ($vocab_id);
 		    push @outlist, [
+			$self->kanji,
 			$tally->adj_count || $tally->yomi_count,
+			"$y",	# yomi_id, stringified
 			$y->yomi_type,
 			$y->yomi_kana,
-			($tally->exemplary_vocab_id
-			 ?  $tally->exemplary_vocab_id->vocab_ja : ''),
+			@vocab,
 			$status,
 			]
 		}
 		# put failed at the end, but only if at least one exists
 		if ($has_failed) {
 		    push @outlist, [
+			$self->kanji,
 			$has_failed,
+			1,
 			"*",
 			"*",
+			"$eg_failed_id",
 			$eg_failed,
 			$failed_status,
 		    ];
@@ -323,7 +344,6 @@ sub build_search {
     Gtk2::Ex::FormFactory::Combo->new(
 	label   => "Enter a kanji or an RTK frame number/keyword",
 	attr    => "gui.search_term",
-	# later implement history feature
 	tip     =>
 	"Enter a single kanji, RTK frame #, RTK keyword or \"r\" for a random Jouyou kanji",
     )
@@ -388,22 +408,6 @@ sub build_go {
     )
 }
 
-sub build_summary {
-    my $self = shift;
-    Gtk2::Ex::FormFactory::Form->new(
-	content => [
-	    Gtk2::Ex::FormFactory::Label->new(
-		label   => "Summary of readings",
-		attr => "kanji.summary",
-	    ),
-#	    Gtk2::Ex::FormFactory::List->new(
-#		attr => "kanji.summary",
-#		columns => ["JLPT", "Vocab", "Reading", "Type", "Kana"],
-#	    )
-	],
-    );
-}
-
 sub build_pixbuf {
     my $self  = shift;
     my $kanji = $self->{kanji};
@@ -440,6 +444,60 @@ sub build_jlpt {
     );
 }
 
+sub tally_panel_popup_menu {
+    my ($self, $sl, $event) = @_;
+    return 0 if ($event->button != 3);
+
+    warn "Got right-click on tallies table\n";
+    # Find out where the click went
+    my ($path, $col, $cell_x, $cell_y)
+	= $sl->get_path_at_pos ($event->x, $event->y);
+    # Find row based on the TreeView path
+    my $row_ref = $sl->get_row_data_from_path ($path);
+    warn "row_ref is of type " . ref($row_ref);
+    warn "This row contains " . (join ", ", @$row_ref) . "\n";
+
+    # Build a popup menu with option to copy text
+    my $copy_text = $row_ref->[TAL_YOMI_KANA];
+    my $menu = Gtk2::Menu->new();
+    my $menu_item = Gtk2::MenuItem->new("Copy $copy_text");
+    $menu_item->signal_connect(
+	activate => sub {
+	    Gtk2::Clipboard->get(Gtk2::Gdk->SELECTION_CLIPBOARD)
+		->set_text($copy_text);
+	}
+    );
+    $menu_item->show;
+    $menu->append($menu_item);
+
+    # option to clear exemplar, if it's set
+    if ($row_ref->[TAL_VOCAB_ID]) {
+	menu_separator($menu);
+	$menu_item = Gtk2::MenuItem->new("Clear Exemplar");
+	my $yomi_id = $row_ref->[TAL_YOMI_ID];
+	$menu_item->signal_connect(
+	    activate => sub {
+		my $kanji   = $row_ref->[TAL_KANJI];
+		my $yomi_tally =
+		    KanjiReadings::KanjiYomiTally->retrieve(
+			kanji   => $kanji,
+			yomi_id => $yomi_id);
+		$yomi_tally->exemplary_vocab_id(0);
+		# Also unset learning status
+		Learnable::KanjiExemplar->set_update_status(0,
+                    kanji   => $kanji,
+                    yomi_id => $yomi_id);
+		$self->{ff_tally}->update;
+	    }
+	);
+	$menu_item->show;
+	$menu->append($menu_item);
+    }
+
+    $menu->popup(undef,undef,undef,undef,$event->button, $event->time);
+
+    return 1;
+}
 
 sub build_tallies {
     my $self = shift;
@@ -449,9 +507,10 @@ sub build_tallies {
 	    Gtk2::Ex::FormFactory::Label->new(
 		label   => "Reading Tallies",
 	    ),
-	    Gtk2::Ex::FormFactory::List->new(
+	    $self->{ff_tally} = Gtk2::Ex::FormFactory::List->new(
 		attr => "kanji.tallies",
-		columns => ["Count", "Type", "Reading", "Exemplar", "Status" ],
+		columns => [qw/kanji Count yomi_id Type Reading vocab_id Exemplar Status/],
+		visible => [0,1,0,1,1,0,1,1],
 		height  => 120,
 		scrollbars => ["never", "automatic"],
 		#		expand => 1,
@@ -466,7 +525,7 @@ sub build_tallies {
 			# from Gtk2::SimpleList pod:
 			my ($sl, $path, $column) = @_;
 			my $row_ref = $sl->get_row_data_from_path ($path);
-			my $kana = $row_ref->[2];
+			my $kana = $row_ref->[TAL_YOMI_KANA];
 
 			# Talk to the underlying Gtk2::Ex::Simple::List
 			my $list = $self->{ff_matched};
@@ -478,10 +537,6 @@ sub build_tallies {
 			    ++$i;
 			}
 		    },
-
-		    # Kind of hard to find examples for how to do a
-		    # popup menu and clipboard pasting. Figured this
-		    # from various sources...
 		    button_press_event => sub {
 			my ($sl,$event) = @_;
 			# Need to consume right mouse button press or
@@ -489,35 +544,7 @@ sub build_tallies {
 			return ($event->button == 3);
 		    },
 		    button_release_event => sub {
-			my ($sl, $event) = @_;
-			return 0 if ($event->button != 3);
-			warn "Got right-click on tallies table\n";
-			# Find out where the click went
-			my ($path, $col, $cell_x, $cell_y)
-			    = $sl->get_path_at_pos ($event->x, $event->y);
-			# Find row based on the TreeView path
-			my $row_ref = $sl->get_row_data_from_path ($path);
-			warn "row_ref is of type " . ref($row_ref);
-			warn "This row contains " . (join ", ", @$row_ref) . "\n";
-
-			# Build a popup menu with option to copy text
-			my $copy_text = $row_ref->[2];
-			my $menu = Gtk2::Menu->new();
-			my $menu_item = Gtk2::MenuItem->new("Copy $copy_text");
-			$menu_item->signal_connect(
-			    activate => sub {
-				Gtk2::Clipboard->get(Gtk2::Gdk->SELECTION_CLIPBOARD)
-				    ->set_text($copy_text);
-			    }
-			);
-			$menu_item->show;
-			$menu->append($menu_item);
-
-			warn "menu is a " . ref($menu);
-			#$menu->popup($event->x,$event->y,$event->button, $event->time);
-			$menu->popup(undef,undef,undef,undef,$event->button, $event->time);
-
-			return 1;
+			$self->tally_panel_popup_menu(@_);
 		    }
 		},
 	    )
@@ -526,7 +553,7 @@ sub build_tallies {
 }
 
 sub set_exemplary {
-    my ($self, $kanji, $yomi_id, $vocab_id) = @_;
+    my ($self, $kanji, $yomi_id, $vocab_id, $panel) = @_;
 
     warn "in set_exemplary\n";
     warn "self is a " . ref($self) . "\n";
@@ -566,7 +593,16 @@ sub set_exemplary {
     if ($oldstatus < 1) {
 	Learnable::KanjiVocab->set_update_status(1, vocab_id => $vocab_id);
     }
-    $self->{ff}->update;
+
+    # And kanji
+    $oldstatus = Learnable::Kanji->get_status(kanji => $kanji);
+    if ($oldstatus < 1) {
+	Learnable::Kanji->set_update_status(1, kanji => $kanji);
+    }
+
+    # Manually update the affected panels (matched/failed plus tally)
+    $self->{"ff_$panel"}->update;
+    $self->{ff_tally}->update;
 }
 
 # Build a menu that can be used on either the matched or failed
@@ -623,11 +659,7 @@ sub vocab_panel_popup_menu {
 
     for my $char (sort { $a cmp $b } keys %other_kanji) {
 	$menu_item = Gtk2::MenuItem->new("Jump to $char");
-	$menu_item->signal_connect(
-	    activate => sub {
-		$self->jump_to_kanji($char);
-	    }
-	);
+	$menu_item->signal_connect(activate => sub { $self->jump_to_kanji($char) } );
 	$menu_items++;
 	$menu_item->show;
 	$menu->append($menu_item);
@@ -640,11 +672,10 @@ sub vocab_panel_popup_menu {
 	    my $copy_text = $row_ref->[$col];
 	    $menu_item = Gtk2::MenuItem->new("Copy $copy_text");
 	    $menu_item->signal_connect(
-		activate => sub {
+		activate => sub { 
 		    Gtk2::Clipboard->get(Gtk2::Gdk->SELECTION_CLIPBOARD)
-			->set_text($copy_text);
-		}
-	    );
+			->set_text($copy_text)
+		} );
 	    $menu_item->show;
 	    $menu->append($menu_item);
 	}
@@ -664,7 +695,7 @@ sub vocab_panel_popup_menu {
 		# exemplary vocab id set.
 		warn "Will set exemplar for $panel kanji $kanji to vocab id $vocab_id";
 		my $yomi_id = $panel eq "failed" ? 1 : $row_ref->[COL_YOMI_ID];
-		$self->set_exemplary($kanji, $yomi_id, $vocab_id);
+		$self->set_exemplary($kanji, $yomi_id, $vocab_id, $panel);
 	    }
 	);
 	$menu_item->show;
@@ -687,7 +718,7 @@ sub vocab_panel_popup_menu {
 		    warn "Will set status for $panel kanji $kanji to $name";
 		    Learnable::KanjiVocab->set_update_status($status,
 							     vocab_id => $vocab_id);
-		    $self->{ff}->update;
+		    $self->{"ff_$panel"}->update;
 		}
 	    );
 	    $menu_item->show;
@@ -741,7 +772,7 @@ sub build_failed {
 	    Gtk2::Ex::FormFactory::Label->new(
 		label   => "Unmatched Vocab",
 	    ),
-	    Gtk2::Ex::FormFactory::List->new(
+	    $self->{ff_failed} = Gtk2::Ex::FormFactory::List->new(
 		attr    => "kanji.failed",
 		columns => ["JLPT", "Vocab_id", "Vocab", "Reading", "Status#", "Status"],
 		visible => [1,0,1,1,0,1],
