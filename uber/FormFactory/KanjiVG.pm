@@ -2,7 +2,7 @@ package Gtk2::Ex::FormFactory::KanjiVG;
 
 # A small wrapper around FF::Image to display a KanjiVG graphic for a kanji
 
-use parent Gtk2::Ex::FormFactory::Image;
+use base Gtk2::Ex::FormFactory::Image;
 
 use Glib qw/TRUE FALSE/;
 use Gtk2::WebKit;
@@ -30,7 +30,6 @@ sub new {
 };
 
 # "Public interface" is through setting the kanji attribute
-sub 
 
 sub get_image_file {
     my $self = shift;
