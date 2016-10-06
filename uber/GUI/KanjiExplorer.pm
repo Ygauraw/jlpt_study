@@ -6,6 +6,7 @@ use warnings;
 use utf8;
 
 use Util::JA_Script qw(has_kanji has_hira strip_non_kanji);
+use GUI::KanjiDetails;
 use Carp;
 
 use Glib qw/TRUE FALSE/; 
@@ -36,7 +37,8 @@ use constant {
 };
 
 
-our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir, $rtkinfo);
+our ($AUTOLOAD, %get_set_attr, $DEBUG, $kanjivg_dir, $rtkinfo, 
+     %kanji_windows, %vocab_windows);
 BEGIN {
     $DEBUG=1;
     %get_set_attr = (
@@ -45,7 +47,8 @@ BEGIN {
     ));
     $kanjivg_dir = '/home/dec/JLPT_Study/kanjivg/kanjivg-r20160426/kanji';
     $rtkinfo = LoadFile("./rtk_kanji.yaml") or die;
-    
+    %kanji_windows = ();
+    %vocab_windows = ();
 }
 sub AUTOLOAD {
     my $self = shift;
@@ -397,6 +400,19 @@ sub build_pixbuf {
 	# height => 400, # does nothing!
 	scale_to_fit => 1, 
 	# scale => 1.25,
+	signal_connect => {
+	    button_press_event => sub {
+		warn "Image was activated\n";
+		my ($widget,$event) = @_;
+		if  ($event->type eq '2button-press') {
+		    warn "double-click\n";
+		    $self->launch_kanji_window;
+		} else {
+		    warn "Non-double-click event\n";
+		}
+		return 1;
+	    }
+	}
     );
 }
 
@@ -771,6 +787,23 @@ sub build_failed {
 	    )
 	]
     )
+}
+
+sub launch_kanji_window {
+    my $self = shift;
+    my $kanji = $self->{kanji};
+
+    return if exists $kanji_windows{$kanji};
+
+    my $win = new GUI::KanjiDetails(
+	kanji => $kanji,
+	death_hook => sub {
+	    warn "In death callback for Kanji window $kanji\n";
+	    delete $kanji_windows{$kanji};
+	}
+    );
+    die "Failed to launch kanji window '$kanji'\n" unless ref($win);
+    $kanji_windows{$kanji} = $win;
 }
 
 1;

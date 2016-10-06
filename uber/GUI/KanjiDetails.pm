@@ -32,6 +32,7 @@ sub new {
     my %opts = (
 	context => undef,
 	kanji   => undef,
+	death_hook => undef,
 	toplevel => 0,
 	@_,
     );
@@ -40,17 +41,20 @@ sub new {
 
     # Rethinking how FF works. Why not have a separate context for
     # each KanjiDetails window? 
-    
-    my $context = $opts{context} or die "KanjiWindow needs context => ref option\n";
 
-    # We want a unique object name for attributes in this window
+    die "Don't supply us with a context" if defined $opts{context};
+    
+    #    my $context = $opts{context} or die "KanjiWindow needs context => ref option\n";
+    my $context = Gtk2::Ex::FormFactory::Context->new;
+
+    # Use a unique object name for attributes in this window
     my $basename = "gui_kanji_$kanji";
 
     my $self = bless { context => $context, kanji => $kanji,
 		       toplevel => $opts{toplevel},
 		       basename => $basename,
+		       death_hook => $opts{death_hook},
 		       _kanji => KanjiReadings::Kanji->retrieve($kanji) };
-
 
     # GUI attributes; won't use depends since FF won't be synchronous
     $context->add_object(
@@ -94,6 +98,11 @@ sub build_window {
 		],
 		closed_hook => sub {
 		    $self->{ff}->ok();
+		    if (defined $self->{death_hook}) {
+			$self->{death_hook}->();
+		    }
+		    # No need to clean up since we use a local context:
+		    # $self->{context}->remove_object($self->{basename});
 		}
 	    )
 	]
@@ -148,7 +157,7 @@ sub build_table {
     );
 }
 
-sub 
+#sub 
 
 sub get_kanji_file {
     my $self = shift;
