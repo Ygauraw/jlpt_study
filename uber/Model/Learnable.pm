@@ -45,6 +45,7 @@ sub set_update_note {
 	class_id => $class_id, class_key => $key
     );
     if (defined($cur)) {
+	return if $cur->note eq $newnote;
 	$cur->note($newnote);
     } else {
 	$cur = LearnableNote->insert({
