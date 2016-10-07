@@ -4,6 +4,7 @@ package GUI::KanjiDetails;
 
 use FormFactory::KanjiVG;
 use Model::KanjiReadings;
+use Model::Learnable;
 
 
 our $format = <<'_END';
@@ -81,6 +82,10 @@ sub build_window {
 	name => "$basename.notes",
 	object => $self
     );
+#    $context->add_object(
+#	name => "$basename.newstatus",
+#	object => $self
+#    );
     
     # I don't want every keystroke in a notes-type box to trigger a
     # database write, so I'll try setting sync to false on the
@@ -94,7 +99,9 @@ sub build_window {
 	context => $context,
 	content => [
 	    Gtk2::Ex::FormFactory::Window->new(
-		label => "Editing Kanji . $self->{kanji}",
+		title => "Editing Kanji . $self->{kanji}",
+		height => 400,
+		width => 600,
 		content => [
 		    $self->build_table,
 		],
@@ -151,15 +158,36 @@ sub build_table {
 	    Gtk2::Ex::FormFactory::Label->new(label => "New Tag"),
 	    Gtk2::Ex::FormFactory::Label->new(label => "Jouyou"),
 	    Gtk2::Ex::FormFactory::Label->new(label => "Other English"),
-	    Gtk2::Ex::FormFactory::Label->new(label => "OldStat"),
+	    Gtk2::Ex::FormFactory::Label->new(label => "Current Status:  \n  " .
+					      Learnable::Kanji->status_text( 
+					      Learnable::Kanji->get_status(
+						  kanji => $kanji))),
 	    Gtk2::Ex::FormFactory::Label->new(label => "Enter kanji notes below"),
-	    Gtk2::Ex::FormFactory::Label->new(label => "NewStatus"),
+	    Gtk2::Ex::FormFactory::Popup->new(attr => "$basename.newstatus",
+			      items => Model::Learnable->get_statuses_2d
+),
 	    Gtk2::Ex::FormFactory::TextView->new(attr => "$basename.notes"),
 	]
     );
 }
 
-#sub 
+#sub get_newstatus_list {
+#    my $self = shift;
+#    my $kanji = $self->{kanji};
+#    return Model::Learnable->get_statuses_hash
+#}
+sub get_newstatus {
+    my $self = shift;
+    my $kanji = $self->{kanji};
+    Learnable::Kanji->get_status(kanji => $kanji);
+}
+sub set_newstatus {
+    my $self = shift;
+    my $value = shift;
+    my $kanji = $self->{kanji};
+    warn "Asked to set status for kanji $kanji to $value\n";
+    Learnable::Kanji->set_update_status($value, kanji => $kanji);
+}
 
 sub get_kanji_file {
     my $self = shift;

@@ -8,17 +8,36 @@ use utf8;
 use Model::LearnableStorage;
 
 our %class_name_id;
-our @status_names = ( '', 'Learning', 'Reviewing',
-		      'SRS 1', 'SRS 2', 'SRS 3', 'SRS 4','SRS 5',
-		      'Buried (-5)', 'Buried (-4)', 'Buried (-3)', 'Buried (-2)',
-		      'Buried (-1)');
+our @status_names;
+our @status_2d_array;
+our %status_2d_hash;
 
 BEGIN {
     my $iter = LearnableClass->retrieve_all;
     while (my $class = $iter->next) {
 	$class_name_id{$class->class_name} = $class->id;
     }
+    @status_names = ( '-', 'Learning', 'Reviewing',
+		      'SRS 1', 'SRS 2', 'SRS 3', 'SRS 4','SRS 5',
+		      'Buried (-5)', 'Buried (-4)', 'Buried (-3)',
+		      'Buried (-2)', 'Buried (-1)');
+    for (-5 .. +7) {
+	warn "Adding $_\n";
+	push @status_2d_array, [$_, $status_names[$_]];
+	$status_2d_hash{$_} = $status_names[$_];
+    }
+    warn "Have " . scalar(@status_2d_array) . " status elements\n";
 }
+
+sub get_statuses_2d {
+    warn "Have a list of " . scalar(@status_names) . " named statuses\n";
+    warn "Have " . scalar(@status_2d_array) . " status elements\n";
+    [@status_2d_array]
+}
+sub get_statuses_hash {
+    \%status_2d_hash
+}
+
 
 sub get_note {
     my $class = shift;
