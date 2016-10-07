@@ -18,9 +18,11 @@ our $format = <<'_END';
 +---------+ +----------------------------+---------+
 ' Jouyou  | ' OtherEnglish                         |
 +---------+ +--------------------------------------+
-' RTK     | | NoteHead                             |
+' OldStat | | NoteHead                             |
 +---------+ +->------------------------------------+
-' Status  | ^ Notes                                |
+' NewStat | ^ Notes                                |
++---------+ |                                      |
+'         | |                                      |
 |         | |                                      |
 |         | |                                      |
 +---------+-+--------------------------------------+
@@ -121,13 +123,13 @@ sub set_story {
 
 sub get_notes {
     my $self = shift;
-    warn "in get_notes";
-    $self->{notes};
+    Learnable::Kanji->get_note(kanji => $self->{kanji});
 }
 sub set_notes {
     my $self = shift;
-    warn "Setting notes to $_[0]\n";
-    $self->{notes} = $_[0];
+    my $note = shift;
+    warn "Setting notes to $note\n";
+    Learnable::Kanji->set_update_note($note, kanji => $self->{kanji});
 }
 
 sub build_table {
@@ -149,9 +151,9 @@ sub build_table {
 	    Gtk2::Ex::FormFactory::Label->new(label => "New Tag"),
 	    Gtk2::Ex::FormFactory::Label->new(label => "Jouyou"),
 	    Gtk2::Ex::FormFactory::Label->new(label => "Other English"),
-	    Gtk2::Ex::FormFactory::Label->new(label => "RTK"),
+	    Gtk2::Ex::FormFactory::Label->new(label => "OldStat"),
 	    Gtk2::Ex::FormFactory::Label->new(label => "Enter kanji notes below"),
-	    Gtk2::Ex::FormFactory::Label->new(label => "Status"),
+	    Gtk2::Ex::FormFactory::Label->new(label => "NewStatus"),
 	    Gtk2::Ex::FormFactory::TextView->new(attr => "$basename.notes"),
 	]
     );

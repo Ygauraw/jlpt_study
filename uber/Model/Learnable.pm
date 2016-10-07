@@ -20,6 +20,40 @@ BEGIN {
     }
 }
 
+sub get_note {
+    my $class = shift;
+    die "Class/type $class not registered in database"
+	unless exists $class_name_id{$class};
+    $class->check_required_attributes(@_);
+    my $key = $class->keyhash_to_string(@_);
+
+    my $note = LearnableNote->retrieve(
+	class_id   => $class_name_id{$class},
+	class_key  => $key);
+    return '' unless (defined($note));
+    $note->note;
+}
+
+sub set_update_note {
+    my $class = shift;
+    my $newnote = shift;
+    my $key = $class->keyhash_to_string(@_);
+    my $class_id = $class_name_id{$class} or die "Class $class not in db\n";
+    my ($cur, $hist, $oldstatus);
+
+    $cur = LearnableNote->retrieve(
+	class_id => $class_id, class_key => $key
+    );
+    if (defined($cur)) {
+	$cur->note($newnote);
+    } else {
+	$cur = LearnableNote->insert({
+	    class_id => $class_id, class_key => $key,
+	    note => $newnote});
+    }
+    $cur->update;
+}
+
 sub status_text {
     my $class = shift;
     my $status = shift;

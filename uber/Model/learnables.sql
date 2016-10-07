@@ -65,4 +65,9 @@ create table list_contents (
   added_time   INTEGER
 );
 
-
+-- one note per learnable should be enough
+create table notes (
+  class_id     INTEGER NOT NULL,
+  class_key    TEXT NOT NULL,
+  note         TEXT
+);

@@ -46,6 +46,15 @@ __PACKAGE__->table  ('config');
 __PACKAGE__->columns(Primary => qw(c_id));
 __PACKAGE__->columns(Others  => qw(c_name c_value));
 
+package LearnableNote;
+use parent -norequire, 'LearnableStorage';
+
+__PACKAGE__->table  ('notes');
+__PACKAGE__->columns(Primary => qw(class_id class_key));
+__PACKAGE__->columns(Others  => qw(note));
+
+__PACKAGE__->has_a(class_id => 'LearnableClass');
+
 package LearnableCurrentStatus;
 use parent -norequire, 'LearnableStorage';
 
