@@ -28,8 +28,7 @@ package BreenKanji::EngMeaning;
 use base 'BreenKanji::DBI';
 
 __PACKAGE__->table('english_meanings');
-__PACKAGE__->columns(Primary => qw(literal));
-__PACKAGE__->columns(Others  => qw(english));
+__PACKAGE__->columns(Primary => qw(literal english));
 
 package BreenKanji::KanjiReading;
 use base 'BreenKanji::DBI';

@@ -5,7 +5,10 @@ package GUI::KanjiDetails;
 use FormFactory::KanjiVG;
 use Model::KanjiReadings;
 use Model::Learnable;
+use Model::BreenKanji;
 
+use strict;
+use warnings;
 
 our $format = <<'_END';
 +->-------+-+->--------------+->---------+---------+
@@ -157,7 +160,10 @@ sub build_table {
 	    Gtk2::Ex::FormFactory::Label->new(label => "JLPT"),
 	    Gtk2::Ex::FormFactory::Label->new(label => "New Tag"),
 	    Gtk2::Ex::FormFactory::Label->new(label => "Jouyou"),
-	    Gtk2::Ex::FormFactory::Label->new(label => "Other English"),
+	    Gtk2::Ex::FormFactory::Label->new(attr  => "$basename.other_english",
+					      inactive => 'insensitive',
+					      active_cond => sub {1},
+	    ),
 	    Gtk2::Ex::FormFactory::Label->new(label => "Current Status:  \n  " .
 					      Learnable::Kanji->status_text( 
 					      Learnable::Kanji->get_status(
@@ -165,10 +171,19 @@ sub build_table {
 	    Gtk2::Ex::FormFactory::Label->new(label => "Enter kanji notes below"),
 	    Gtk2::Ex::FormFactory::Popup->new(attr => "$basename.newstatus",
 			      items => Model::Learnable->get_statuses_2d
-),
+	    ),
 	    Gtk2::Ex::FormFactory::TextView->new(attr => "$basename.notes"),
 	]
     );
+}
+
+sub get_other_english {
+    my $self = shift;
+    my $kanji = $self->{kanji};
+    my @en_means = ();
+    my $iter = BreenKanji::EngMeaning->search(literal => $kanji);
+    while (my $line = $iter->next) { push @en_means, $line->english }
+    return "English Meaning(s): " . join ", ", @en_means;
 }
 
 #sub get_newstatus_list {
