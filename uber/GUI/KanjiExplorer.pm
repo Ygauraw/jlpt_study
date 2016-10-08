@@ -7,6 +7,7 @@ use utf8;
 
 use Util::JA_Script qw(has_kanji has_hira strip_non_kanji);
 use GUI::KanjiDetails;
+use GUI::VocabDetails;
 use Carp;
 
 use Glib qw/TRUE FALSE/; 
@@ -745,6 +746,12 @@ sub build_matched {
 		expand => 1,
 		selection_mode => "multiple",
 		signal_connect => {
+		    row_activated => sub {
+			my ($sl,$path,$column) = @_;
+			warn "double-click on matched kanji list\n";
+			$self->launch_vocab_window(@_);
+			return 1;
+		    },
 		    button_press_event => sub {
 			my ($sl,$event) = @_;
 			return ($event->button == 3);
@@ -776,6 +783,12 @@ sub build_failed {
 		expand => 1,
 		selection_mode => "multiple",
 		signal_connect => {
+		    row_activated => sub {
+			my ($sl,$path,$column) = @_;
+			warn "double-click on failed kanji list\n";
+			$self->launch_vocab_window(@_);
+			return 1;
+		    },
 		    button_press_event => sub {
 			my ($sl,$event) = @_;
 			return ($event->button == 3);
@@ -804,6 +817,32 @@ sub launch_kanji_window {
     );
     die "Failed to launch kanji window '$kanji'\n" unless ref($win);
     $kanji_windows{$kanji} = $win;
+}
+sub launch_vocab_window {
+    my $self = shift;
+    my ($sl, $path, $column) = @_;
+    my $row_ref = $sl->get_row_data_from_path ($path);
+    my $kana = $row_ref->[TAL_YOMI_KANA];
+
+    warn "Got double-click on a vocab list\n";
+    warn "row_ref is of type " . ref($row_ref);
+    warn "This row contains " . (join ", ", @$row_ref) . "\n";
+
+    # Pull out vocab ID and Japanese text
+    my $vocab_id = $row_ref->[COL_VOCAB_ID];
+    my $vocab    = $row_ref->[COL_VOCAB];
+
+    return if exists $vocab_windows{$vocab_id};
+
+    my $win = new GUI::VocabDetails(
+	vocabid => $vocab_id,
+	death_hook => sub {
+	    warn "In death callback for Vocab window $vocab\n";
+	    delete $vocab_windows{$vocab_id};
+	}
+    );
+    die "Failed to launch vocab window '$vocab'\n" unless ref($win);
+    $vocab_windows{$vocab_id} = $win;
 }
 
 1;
