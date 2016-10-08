@@ -111,6 +111,10 @@ sub set_update_status {
     );
     if (defined($cur)) {
 	$oldstatus = $cur->status;
+	if ($oldstatus eq $newstatus) {
+	    LearnableStorage->end_work;
+	    return
+	}	    
 	$cur->status($newstatus);
 	$cur->change_time($now);
     } else {

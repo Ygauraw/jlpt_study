@@ -19,7 +19,7 @@ our $format = <<'_END';
 |         | |                            |         |
 +---------+ |                            +---------+
 ' JLPT    | |                            ' NewTag  |
-+---------+ +----------------------------+---------+
++---------+ +----->----------------------+---------+
 ' Jouyou  | ' OtherEnglish                         |
 +---------+ +--------------------------------------+
 ' OldStat | | NoteHead                             |
@@ -102,7 +102,7 @@ sub build_window {
 	context => $context,
 	content => [
 	    Gtk2::Ex::FormFactory::Window->new(
-		title => "Editing Kanji . $self->{kanji}",
+		title => "Editing Kanji $self->{kanji}",
 		height => 400,
 		width => 600,
 		content => [
