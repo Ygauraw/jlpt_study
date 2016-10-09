@@ -170,11 +170,11 @@ sub get_english_list {
 	    my $sense_num = $data->rebkeb_num;
 	    my $eng_iter = BreenDict::EngSearch->search(
 		ent_seq => $ent_seq,
-		sense_num => $sense_num);
-	    my $eng_data = $eng_iter->next;
-	    push @list, ["Edict", $eng_data->english ];
-	    warn "Edict lookup returned more than one row\n"
-		if $eng_iter->next;
+		# sense_num => $sense_num
+	    );
+	    while (my $eng_data = $eng_iter->next) {
+		push @list, ["Edict", $eng_data->english ];
+	    }
 	}
     }
     return \@list;
