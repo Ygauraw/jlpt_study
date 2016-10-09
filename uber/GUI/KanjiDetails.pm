@@ -126,16 +126,15 @@ sub get_story {
 }
 sub set_story {
     my $self = shift;
-    warn "in get_notes";
     warn "Setting story to $_[0]\n";
     $self->{story} = $_[0];
 }
 
-sub get_notes {
+sub get_note {
     my $self = shift;
     Learnable::Kanji->get_note(kanji => $self->{kanji});
 }
-sub set_notes {
+sub set_note {
     my $self = shift;
     my $note = shift;
     warn "Setting notes to $note\n";
@@ -172,7 +171,7 @@ sub build_table {
 	    Gtk2::Ex::FormFactory::Popup->new(attr => "$basename.newstatus",
 			      items => Model::Learnable->get_statuses_2d
 	    ),
-	    Gtk2::Ex::FormFactory::TextView->new(attr => "$basename.notes"),
+	    Gtk2::Ex::FormFactory::TextView->new(attr => "$basename.note"),
 	]
     );
 }
