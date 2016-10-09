@@ -43,8 +43,10 @@ package WebData::VocabByJLPTGrade;
 use base 'WebData::DBI';
 
 __PACKAGE__->table('vocab_by_jlpt_grade');
+__PACKAGE__->columns(Primary  => # not really a primary key
+		     qw/ja_regular ja_kana/);
 __PACKAGE__->columns(Others  => 
-		     qw/ja_regular ja_kana 
+		     qw/
                         en_best en_jlpt en_tanos en_tagaini pos
                         jlpt_level
                         jlpt_level_jlpt jlpt_level_tanos jlpt_level_tagaini
