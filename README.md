@@ -108,10 +108,42 @@ different variables:
 * select from Core2k or Core6k lists
 * selection of challenge mode: kanji (test reading) or sound (tests listening and writing)
 
-
+Double-clicking on a test that you haven't finished yet brings up that
+test.  The following shows a sample kanji challenge mode test:
 
 <img src="Screenshots/Screenshot- Vocabulary Tester.png?raw=true">
+
+This has all the bits you'd expect. You have to try to read the text
+and then answer the questions based on whether you could
+read/understand the vocab item/sentence.
+
+When you click the button on the bottom, it shows the answer:
+
 <img src="Screenshots/Screenshot- Vocabulary Tester-1.png?raw=true">
+
+All the Core2k/Core6k entries have audio with them, so after clicking
+to reveal the answer, the play button at the top right becomes active
+so that you can pause/replay the audio (which auto-plays). The answer
+radio buttons are active all the time so you can "pre-fill" answers
+before seeing/hearing the translation.
+
+There's also an audio/sound challenge mode, which looks like the following:
+
 <img src="Screenshots/Screenshot- Vocabulary Tester-2.png?raw=true">
+
+Here, the audio play/pause button is always active, so you can listen
+as often as you want. The code can also display the standard volume
+control in the white area, but I took it out since it wasn't really
+useful.
+
+Note that two of the questions are different from the kanji challenge
+mode. The answers you give are stored in different fields in the
+database so you can do SQL queries to look up, eg, vocab that you know
+by ear, but can't write.
+
+Finally, clicking the "show answer" button does what you expect:
+
 <img src="Screenshots/Screenshot- Vocabulary Tester-3.png?raw=true">
 
+That's it for this README. I will add more notes and detailed info in
+the wiki pages here on github.
